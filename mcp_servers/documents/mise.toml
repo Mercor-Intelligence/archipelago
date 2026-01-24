@@ -1,0 +1,45 @@
+[env]
+APP_FS_ROOT = "/filesystem"
+
+[env._.python.venv]
+path = ".venv"
+create = true
+
+[tools]
+uv = "0.6.10"
+python = "3.13"
+
+[tasks.install]
+run = "uv sync --all-extras"
+description = "Install dependencies"
+
+[tasks.test]
+run = "pytest"
+description = "Run tests"
+
+[tasks.typecheck]
+run = "basedpyright"
+description = "Run type checker"
+
+[tasks.lint]
+run = "ruff check ."
+description = "Run linter"
+
+[tasks.format]
+run = "ruff format ."
+description = "Format code"
+
+[tasks.start]
+run = "cd mcp_servers/docs_server && uv run python main.py"
+description = "Start the MCP server"
+depends = ["populate"]
+
+[tasks.build]
+run = "echo 'No build step required for Python MCP server'"
+description = "Build the project (no-op for pure Python)"
+depends = ["install"]
+
+[tasks.populate]
+run = "echo 'No data to populate'"
+description = "Populate data (no-op for this service)"
+depends = ["build"]

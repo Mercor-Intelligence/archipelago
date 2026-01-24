@@ -1,0 +1,67 @@
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+
+[project]
+name = "archipelago-environment"
+version = "0.1.0"
+description = "Environment for Archipelago"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "aioboto3>=15.4.0",
+    "aiobotocore>=2.25.0",
+    "aiofiles>=24.1.0",
+    "asgi-lifespan>=2.1.0",
+    "asyncer>=0.0.9",
+    "datadog-api-client>=2.44.0",
+    "fastapi>=0.121.1",
+    "fastmcp>=2.12.4",
+    "httpx>=0.27.0",
+    "loguru>=0.7.3",
+    "pydantic-settings>=2.11.0",
+    "uvicorn[standard]>=0.38.0",
+]
+
+[dependency-groups]
+dev = [
+    "basedpyright>=1.34.0",
+    "ruff>=0.14.5",
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest-xdist>=3.5.0",
+    "testcontainers>=4.10.0",
+    "types-aioboto3>=15.2.0",
+    "types-aiobotocore-s3>=2.24.3",
+]
+
+[tool.basedpyright]
+typeCheckingMode = "recommended"
+reportUnusedCallResult = "none"
+failOnWarnings = false
+exclude = [".venv", ".git", ".tmp", "venv", "mcp_servers"]
+
+[tool.ruff.lint]
+# Enable linting rules
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "W",   # pycodestyle warnings
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade
+    "C90", # mccabe complexity
+]
+
+ignore = [
+    "E501",  # Line too long
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 15
+
+[tool.ruff.lint.flake8-bugbear]
+# FastAPI uses function calls as defaults for dependency injection - this is by design
+extend-immutable-calls = ["fastapi.File", "fastapi.Query", "fastapi.Depends", "fastapi.Form"]
