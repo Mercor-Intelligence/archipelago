@@ -8,21 +8,16 @@ Usage:
 """
 
 import os
-import mimetypes
 from pathlib import Path
 from inspect_ai import Task, task, eval
 from inspect_ai.dataset import Sample
-from inspect_ai.solver import TaskState, Generate, generate
+from inspect_ai.solver import TaskState
 from inspect_ai.scorer import Score, Target, accuracy, scorer
 from inspect_ai.tool import tool
-from inspect_ai.model import ChatMessageUser, ContentImage, user_prompt
+from inspect_ai.model import ContentImage, user_prompt
 from inspect_ai.agent import Agent, AgentState, agent, react, sandbox_agent_bridge
 from inspect_ai.util import sandbox
 
-
-# ============================================================================
-# FILESYSTEM TOOLS
-# ============================================================================
 
 def _resolve_path(path: str) -> str:
     """Resolve a path relative to sandbox working directory."""
@@ -189,10 +184,6 @@ def get_directory_tree():
     return execute
 
 
-# ============================================================================
-# DATASET
-# ============================================================================
-
 def create_dataset() -> list[Sample]:
     """
     Create dataset with initial filesystem files.
@@ -230,10 +221,6 @@ def create_dataset() -> list[Sample]:
     ]
 
 
-# ============================================================================
-# SCORER
-# ============================================================================
-
 @scorer(metrics=[accuracy()])
 def find_gorilla_scorer():
     """
@@ -268,10 +255,6 @@ def find_gorilla_scorer():
     
     return score
 
-
-# ============================================================================
-# AGENTS
-# ============================================================================
 
 @agent
 def claude_code_agent() -> Agent:
@@ -310,10 +293,6 @@ def claude_code_agent() -> Agent:
 
     return execute
 
-
-# ============================================================================
-# TASK DEFINITION
-# ============================================================================
 
 @task
 def simple_task(agent_type: str = "react"):
@@ -381,23 +360,3 @@ Available tools:
         name="simple_task"
     )
 
-
-# ============================================================================
-# CLI ENTRY POINT
-# ============================================================================
-
-if __name__ == "__main__":
-    # Run evaluation locally
-    results = eval(
-        simple_task(),
-        model="openai/gpt-4o",
-        log_dir="./logs"
-    )
-    
-    # Display results
-    print(f"\n{'='*60}")
-    print(f"Simple Task Results:")
-    print(f"  Accuracy: {results[0].metrics['accuracy']:.2f}")
-    print(f"  Status: {results[0].status}")
-    print(f"  Samples: {len(results[0].samples)}")
-    print(f"{'='*60}\n")
