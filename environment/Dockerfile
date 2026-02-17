@@ -7,6 +7,12 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/* \
  && update-ca-certificates
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    libc-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+
 # Make python3 point to 3.13
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.13 1 \
  && python3 --version
@@ -50,6 +56,10 @@ RUN cd /app/mcp_servers/presentations/mcp_servers/slides_server && uv sync --all
 
 # Install: code
 RUN cd /app/mcp_servers/code/mcp_servers/code_execution_server && export INSTALL_MEDICINE=false INSTALL_SCICOMP=false && apt-get update -qq && apt-get install -y -qq proot; GROUPS=""; [ "$INSTALL_MEDICINE" = "true" ] && GROUPS="$GROUPS --group medicine"; [ "$INSTALL_SCICOMP" = "true" ] && GROUPS="$GROUPS --group scicomp"; uv sync --all-extras$GROUPS
+
+# Compile the sandbox library (to /app/lib/ for consistency with production)
+RUN mkdir -p /app/lib && \
+    gcc -shared -fPIC -O2 -o /app/lib/sandbox_fs.so /app/mcp_servers/code/mcp_servers/code_execution_server/sandbox_fs.c -ldl -lpthread
 
 # Install: pdfs
 RUN cd /app/mcp_servers/pdfs/mcp_servers/pdf_server && uv sync --all-extras
