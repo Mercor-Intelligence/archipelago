@@ -1,0 +1,17 @@
+services:
+  environment:
+    image: archipelago-environment:latest
+    build:
+      context: ..
+      dockerfile: environment/Dockerfile
+    container_name: archipelago-environment
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s

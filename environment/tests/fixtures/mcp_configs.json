@@ -1,0 +1,193 @@
+{
+  "mcpServers": {
+    "chat": {
+      "cwd": "/tmp",
+      "env": {
+        "HAS_STATE": "true",
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "chat_server",
+        "GITHUB_TOKEN": "SECRET/RLS_GITHUB_READ_TOKEN",
+        "STATE_LOCATION": "/.apps_data/chat",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "git clone --depth 1 https://${GITHUB_TOKEN}@github.com/Mercor-Intelligence/mercor-rls-chat.git /tmp/mercor-rls-chat 2>/dev/null || true && cd /tmp/mercor-rls-chat && uv sync --all-extras 2>/dev/null || true && cd /tmp/mercor-rls-chat/mcp_servers/chat_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    },
+    "code_execution": {
+      "cwd": "/tmp",
+      "env": {
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "code_execution_server",
+        "GITHUB_TOKEN": "SECRET/RLS_GITHUB_READ_TOKEN",
+        "USE_INDIVIDUAL_TOOLS": "true",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "apt-get update -qq && apt-get install -y -qq gcc libc6-dev && git clone --depth 1 https://${GITHUB_TOKEN}@github.com/Mercor-Intelligence/mercor-rls-code-execution.git /tmp/mercor-rls-code-execution && cd /tmp/mercor-rls-code-execution/mcp_servers/code_execution_server && mkdir -p /app/lib && gcc -shared -fPIC -O2 -o /app/lib/sandbox_fs.so sandbox_fs.c -ldl -lpthread && cd /tmp/mercor-rls-code-execution && uv sync --all-extras && cd /tmp/mercor-rls-code-execution/mcp_servers/code_execution_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    },
+    "spreadsheets": {
+      "cwd": "/tmp",
+      "env": {
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "sheets_server",
+        "GITHUB_TOKEN": "SECRET/RLS_GITHUB_READ_TOKEN",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "git clone --depth 1 https://${GITHUB_TOKEN}@github.com/Mercor-Intelligence/mercor-rls-sheets.git /tmp/mercor-rls-sheets 2>/dev/null || true && cd /tmp/mercor-rls-sheets && uv sync --all-extras 2>/dev/null || true && cd /tmp/mercor-rls-sheets/mcp_servers/sheets_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    },
+    "filesystem": {
+      "cwd": "/tmp",
+      "env": {
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "filesystem_server",
+        "GITHUB_TOKEN": "SECRET/RLS_GITHUB_READ_TOKEN",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "git clone --depth 1 https://${GITHUB_TOKEN}@github.com/Mercor-Intelligence/mercor-rls-filesystem.git /tmp/mercor-rls-filesystem 2>/dev/null || true && cd /tmp/mercor-rls-filesystem && uv sync --all-extras 2>/dev/null || true && cd /tmp/mercor-rls-filesystem/mcp_servers/filesystem_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    },
+    "mail": {
+      "cwd": "/tmp",
+      "env": {
+        "HAS_STATE": "true",
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "mail_server",
+        "GITHUB_TOKEN": "SECRET/RLS_GITHUB_READ_TOKEN",
+        "STATE_LOCATION": "/.apps_data/mail",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "git clone --depth 1 https://${GITHUB_TOKEN}@github.com/Mercor-Intelligence/mercor-rls-mail.git /tmp/mercor-rls-mail 2>/dev/null || true && cd /tmp/mercor-rls-mail && uv sync --all-extras 2>/dev/null || true && cd /tmp/mercor-rls-mail/mcp_servers/mail_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    },
+    "pdfs": {
+      "cwd": "/tmp",
+      "env": {
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "pdf_server",
+        "GITHUB_TOKEN": "SECRET/RLS_GITHUB_READ_TOKEN",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "git clone --depth 1 https://${GITHUB_TOKEN}@github.com/Mercor-Intelligence/mercor-rls-pdf.git /tmp/mercor-rls-pdf 2>/dev/null || true && cd /tmp/mercor-rls-pdf && uv sync --all-extras 2>/dev/null || true && cd /tmp/mercor-rls-pdf/mcp_servers/pdf_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    },
+    "presentations": {
+      "cwd": "/tmp",
+      "env": {
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "slides_server",
+        "GITHUB_TOKEN": "SECRET/RLS_GITHUB_READ_TOKEN",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "git clone --depth 1 https://${GITHUB_TOKEN}@github.com/Mercor-Intelligence/mercor-rls-slides.git /tmp/mercor-rls-slides 2>/dev/null || true && cd /tmp/mercor-rls-slides && uv sync --all-extras 2>/dev/null || true && cd /tmp/mercor-rls-slides/mcp_servers/slides_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    },
+    "sql_execution": {
+      "cwd": "/tmp",
+      "env": {
+        "HAS_STATE": "true",
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "sql_execution_server",
+        "GITHUB_TOKEN": "SECRET/RLS_GITHUB_READ_TOKEN",
+        "STATE_LOCATION": "/.apps_data/sql_execution_server",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "git clone --depth 1 https://${GITHUB_TOKEN}@github.com/Mercor-Intelligence/mercor-rls-sql-execution.git /tmp/mercor-rls-sql-execution 2>/dev/null || true && cd /tmp/mercor-rls-sql-execution && uv sync --all-extras 2>/dev/null || true && cd /tmp/mercor-rls-sql-execution/mcp_servers/sql_execution_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    },
+    "web_search": {
+      "cwd": "/tmp",
+      "env": {
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "websearch_server",
+        "GITHUB_TOKEN": "SECRET/RLS_GITHUB_READ_TOKEN",
+        "SEARCH_MCP_GOOGLE_CSE_ID": "test",
+        "SEARCH_MCP_GOOGLE_API_KEY": "test",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "git clone --depth 1 https://${GITHUB_TOKEN}@github.com/Mercor-Intelligence/mercor-rls-websearch.git /tmp/mercor-rls-websearch 2>/dev/null || true && cd /tmp/mercor-rls-websearch && uv sync --all-extras 2>/dev/null || true && cd /tmp/mercor-rls-websearch/mcp_servers/websearch_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    },
+    "documents": {
+      "cwd": "/tmp",
+      "env": {
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "docs_server",
+        "GITHUB_TOKEN": "SECRET/RLS_GITHUB_READ_TOKEN",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "git clone --depth 1 https://${GITHUB_TOKEN}@github.com/Mercor-Intelligence/mercor-rls-docs.git /tmp/mercor-rls-docs 2>/dev/null || true && cd /tmp/mercor-rls-docs && uv sync --all-extras 2>/dev/null || true && cd /tmp/mercor-rls-docs/mcp_servers/docs_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    }
+  }
+}

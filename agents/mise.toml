@@ -1,0 +1,28 @@
+[env]
+_.python.venv = { path = ".venv", create = true }
+_.file = '.env'
+PYTHONPATH = "."
+
+[tasks.lint]
+description = "Run ruff linter"
+run = "ruff check ."
+
+[tasks."lint:fix"]
+description = "Run ruff linter with auto-fix"
+run = "ruff check --fix ."
+
+[tasks.format]
+description = "Format code with ruff"
+run = "ruff format ."
+
+[tasks."format:check"]
+description = "Check code formatting without modifying"
+run = "ruff format --check ."
+
+[tasks.typecheck]
+description = "Run type checking with basedpyright"
+run = "basedpyright"
+
+[tasks.check]
+description = "Run all checks (lint, format, typecheck)"
+depends = ["lint:fix", "format", "typecheck", "yaml:fmt"]
