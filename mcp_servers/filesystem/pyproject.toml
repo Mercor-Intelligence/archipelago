@@ -92,5 +92,4 @@ ignore = [
 
 
 [tool.uv.sources]
-fastmcp = ">=3.2.0"
 mcp-schema = { path = "packages/mcp_schema" }

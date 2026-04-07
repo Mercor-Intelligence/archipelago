@@ -70,5 +70,4 @@ ignore = [
 per-file-ignores = { "mcp_servers/**/tools/_meta_tools.py" = ["E501"] }
 
 [tool.uv.sources]
-fastmcp = ">=3.2.0"
 mcp-schema = { path = "packages/mcp_schema" }
