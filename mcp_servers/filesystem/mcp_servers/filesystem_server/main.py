@@ -36,7 +36,7 @@ mcp.tool(get_directory_tree)
 async def _flatten_tool_schemas():
     for tool in mcp._local_provider._components.values():
         if getattr(tool, "parameters", None):
-            tool.parameters = flatten_schema(tool.parameters)
+            tool.parameters = flatten_schema(tool.parameters)  # type: ignore[attr-defined]
 
 
 _flatten_tool_schemas_task: asyncio.Task[None] | None = None
