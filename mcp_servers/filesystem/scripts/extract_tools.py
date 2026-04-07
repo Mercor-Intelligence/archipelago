@@ -10,7 +10,7 @@ from main import mcp  # noqa: E402
 
 
 async def main():
-    tools = await mcp.get_tools()
+    tools = await mcp.list_tools()
     result = []
     for tool in tools.values():
         entry = {"name": tool.name, "description": tool.description or ""}

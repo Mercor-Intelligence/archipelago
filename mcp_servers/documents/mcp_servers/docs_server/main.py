@@ -84,7 +84,7 @@ else:
 
 async def _flatten_tool_schemas():
     """Flatten all registered tool parameter schemas for runtime compatibility."""
-    for tool in (await mcp.get_tools()).values():
+    for tool in (await mcp.list_tools()).values():
         params = getattr(tool, "parameters", None)
         if isinstance(params, dict):
             tool.parameters = flatten_schema(params)

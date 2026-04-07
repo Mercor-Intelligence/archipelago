@@ -76,7 +76,7 @@ async def extract_from_server(server_path: str):
         mcp_instance = main.mcp
 
         # Extract tools
-        tools = await mcp_instance.get_tools()
+        tools = await mcp_instance.list_tools()
         server_tools = []
         for tool in tools.values():
             entry = {"name": tool.name, "description": tool.description or ""}
