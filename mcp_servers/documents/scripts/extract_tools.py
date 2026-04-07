@@ -78,7 +78,7 @@ async def extract_from_server(server_path: str):
         # Extract tools
         tools = await mcp_instance.list_tools()
         server_tools = []
-        for tool in tools.values():
+        for tool in tools:
             entry = {"name": tool.name, "description": tool.description or ""}
             if hasattr(tool, "parameters") and tool.parameters:
                 entry["inputSchema"] = tool.parameters

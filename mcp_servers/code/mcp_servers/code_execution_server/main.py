@@ -30,7 +30,7 @@ mcp.tool(code_exec)
 
 
 async def _flatten_tool_schemas():
-    for tool in (await mcp.list_tools()).values():
+    for tool in (await mcp.list_tools()):
         if getattr(tool, "parameters", None):
             tool.parameters = flatten_schema(tool.parameters)
 
