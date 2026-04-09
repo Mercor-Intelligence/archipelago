@@ -22,7 +22,7 @@ dependencies = [
     "firecrawl-py>=4.12.0",
     "google-auth>=2.0.0",
     "httpx>=0.27.0",
-    "litellm>=1.81.15",
+    "litellm==1.83.0",
     "loguru>=0.7.3",
     "modal>=1.0.0",
     "openpyxl>=3.1.0",
