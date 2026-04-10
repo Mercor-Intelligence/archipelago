@@ -1,0 +1,102 @@
+# CSV Import Configuration for Greenhouse MCP Server
+#
+# This file defines how nested JSON columns in CSV imports should be parsed
+# and inserted into child tables. It also defines sample data for the UI.
+#
+# To add a new parent-child relationship:
+# 1. Add the parent table under 'nested_imports'
+# 2. For each nested JSON column, specify:
+#    - child_table: The target child table name
+#    - fk_column: The foreign key column in the child table
+#    - value_columns: List of columns to insert (or is_tag_list: true for tags)
+# 3. Add corresponding sample_data for the UI generator
+
+nested_imports:
+  candidates:
+    phone_numbers:
+      child_table: candidate_phone_numbers
+      fk_column: candidate_id
+      value_columns:
+        - value
+        - type
+    email_addresses:
+      child_table: candidate_email_addresses
+      fk_column: candidate_id
+      value_columns:
+        - value
+        - type
+    addresses:
+      child_table: candidate_addresses
+      fk_column: candidate_id
+      value_columns:
+        - value
+        - type
+    educations:
+      child_table: candidate_educations
+      fk_column: candidate_id
+      value_columns:
+        - school_name
+        - degree
+        - discipline
+        - start_date
+        - end_date
+    employments:
+      child_table: candidate_employments
+      fk_column: candidate_id
+      value_columns:
+        - company_name
+        - title
+        - start_date
+        - end_date
+    website_addresses:
+      child_table: candidate_website_addresses
+      fk_column: candidate_id
+      value_columns:
+        - value
+        - type
+    social_media_addresses:
+      child_table: candidate_social_media_addresses
+      fk_column: candidate_id
+      value_columns:
+        - value
+    tags:
+      child_table: candidate_tags
+      fk_column: candidate_id
+      is_tag_list: true  # Special handling: looks up/creates tags, then links
+
+sample_data:
+  candidates:
+    phone_numbers:
+      - value: "+1-555-0101"
+        type: mobile
+      - value: "+1-555-0102"
+        type: work
+    email_addresses:
+      - value: "candidate{idx}@email.com"
+        type: personal
+      - value: "candidate{idx}@work.com"
+        type: work
+    addresses:
+      - value: "123 Main St, City, ST 12345"
+        type: home
+    educations:
+      - school_name: State University
+        degree: Bachelor's
+        discipline: Computer Science
+        start_date: "2015-09-01"
+        end_date: "2019-05-15"
+    employments:
+      - company_name: Tech Corp
+        title: Software Engineer
+        start_date: "2019-06-01"
+        end_date: null
+    website_addresses:
+      - value: "https://linkedin.com/in/candidate{idx}"
+        type: personal
+    social_media_addresses:
+      - value: "https://github.com/candidate{idx}"
+    tags:
+      is_string_list: true
+      values:
+        - Engineering
+        - Senior

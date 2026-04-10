@@ -1,0 +1,176 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_264b126d1075495caa8e229d81fd5a35",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bb43c9f39511450f8e23634b874d3122",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the number of respondents whose Switching Likelihood is 3 or higher and lists CyrusOne as the best in-class competitor is 2",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_59c6f68a8f564046af53d0a6b612f5bd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bb43c9f39511450f8e23634b874d3122",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the number of respondents whose Switching Likelihood is 3 or higher and lists Digital Realty Trust as the best in-class competitor is 11",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_265cb4edb1f9453dbba0e06ff44fa5f9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bb43c9f39511450f8e23634b874d3122",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the number of respondents whose Switching Likelihood is 3 or higher and lists Equinix as the best in-class competitor is 2",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b741c51c24f54430a6e8adbf831a61fb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bb43c9f39511450f8e23634b874d3122",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the number of respondents whose Switching Likelihood is 3 or higher and lists Iron Mountain as the best in-class competitor is 12",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9ca11856d19b4261bfb3e9245c0e37a2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bb43c9f39511450f8e23634b874d3122",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the number of respondents whose Switching Likelihood is 3 or higher and lists Other as the best in-class competitor is 3",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_72d76f6f2d8142c68655b572e5e717dc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bb43c9f39511450f8e23634b874d3122",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the average adjusted NPS for respondents with a Switching Likelihood that equals 3 or higher is 54",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4047ae0f7ce143d08235ff5774f34015",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bb43c9f39511450f8e23634b874d3122",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the average adjusted NPS for respondents with average data needs (in TB) Between 500 and 1,000 Terabytes is 50",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bd6c78eb47fa49a3937d4c454ef0f8ff",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bb43c9f39511450f8e23634b874d3122",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the average adjusted NPS for respondents with average monthly cost of at least $100 kW/month or more is 49",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

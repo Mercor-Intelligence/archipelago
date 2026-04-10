@@ -1,0 +1,254 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_6446752a02cc47bf8555676d216c2b5e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4f1ff514a53a4eefb7c3501e76829a99",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the average of switching likelihood for somewhat interested respondents is 4.00 (acceptable range 3.96 to 4.04)",
+        "modality": "Free text",
+        "negative_criteria": "States the average of switching likelihood for somewhat interested is any other number than 4.00.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cd34fe0904e34f4a9cdafda7f4d44740",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4f1ff514a53a4eefb7c3501e76829a99",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the average of switching likelihood for very interested respondents is 2.83 (acceptable range 2.80 to 2.86)",
+        "modality": "Free text",
+        "negative_criteria": "States the average of switching likelihood for very interested is any other number than 2.83.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dfca8e84eb514524a78db29107304239",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4f1ff514a53a4eefb7c3501e76829a99",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the count for Lowest cost/pricing for the Somewhat interested respondents is 5",
+        "negative_criteria": "States the count for Lowest cost/pricing for the Somewhat interested row is any other value than 5.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_159a44f98be44a0f8be426ac73f10259",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4f1ff514a53a4eefb7c3501e76829a99",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the count for Lowest cost/pricing for the Very interested respondents is 4",
+        "negative_criteria": "States the count for Lowest cost/pricing for the Very interested row is any other value than 4.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8dcb1569d7944b38981bcc5286cab08d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4f1ff514a53a4eefb7c3501e76829a99",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the count for High server connection/reliability for the Somewhat interested respondents is 3",
+        "negative_criteria": "States the count for High server connection/reliability for the Somewhat interested respondents is any other value than 3.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 18,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1f296b9540d54a549a7dfa2729cd1b40",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4f1ff514a53a4eefb7c3501e76829a99",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the count for High server connection/reliability for the Very interested respondents is 1",
+        "negative_criteria": "States the count for High server connection/reliability for the Very interested row is any other value than 1.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 20,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b9251a0d9b844b4a81fcaa1456999672",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4f1ff514a53a4eefb7c3501e76829a99",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the count for Robust cybersecurity for the Somewhat interested respondents is 1",
+        "negative_criteria": "States the count for Robust cybersecurity for the Somewhat interested row is any other value than 1.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 24,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_26d1dd8d80ea4c97969617622562046f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4f1ff514a53a4eefb7c3501e76829a99",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the count for Robust cybersecurity for the Very interested respondents is 3",
+        "negative_criteria": "States the count for Robust cybersecurity for the Very interested row is any other value than 3.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 26,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3371297077ae45e69ff62080480c1c4e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4f1ff514a53a4eefb7c3501e76829a99",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the count for Best customer service for the Somewhat interested respondents is 3",
+        "negative_criteria": "States the count for Best customer service for the Somewhat interested row is any other value than 3.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 30,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_056606a290ea413bb7696e5505a64a48",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4f1ff514a53a4eefb7c3501e76829a99",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the count for Best customer service for the Very interested respondents is 4",
+        "negative_criteria": "States the count for Best customer service for the Very interested row is any other value than 4.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 32,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1318d77e2d5e4ba8afb92c26aa3855d4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4f1ff514a53a4eefb7c3501e76829a99",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the count for Strongest public sector expertise for the Somewhat interested respondents is 2",
+        "negative_criteria": "States the count for Strongest public sector expertise for the Somewhat interested row is any other value than 2.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 36,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c61e9bfc07d849dd8655999a31dfeffd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4f1ff514a53a4eefb7c3501e76829a99",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the count for Strongest public sector expertise for the Very interested respondents is 0",
+        "negative_criteria": "States the count for Strongest public sector expertise for the Very interested row is any other value than 0.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 38,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_e1abce15f7e94add9a4446e1f6073f10",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0c0e58f32a14b8388d4c75065b831f2",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Cohort 1 has 11.2% +/- 0.5% of subscribers with overdue or disputed payments (subgroup X)",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report what percentage of subscribers are in subgroup X for each of the three cohorts.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c484ca37b6844803a669c4e0de263887",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0c0e58f32a14b8388d4c75065b831f2",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Cohort 2 has 10.5% +/- 0.5% of subscribers with overdue or disputed payments (subgroup X)",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report what percentage of subscribers are in subgroup X for each of the three cohorts.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_468ee6ec622a4e6b9bbf915d3352921a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0c0e58f32a14b8388d4c75065b831f2",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Cohort 3 has 11.0% +/- 0.5% of subscribers with overdue or disputed payments (subgroup X)",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report what percentage of subscribers are in subgroup X for each of the three cohorts.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_699de875b5594b4b8aabedf26d089b9e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0c0e58f32a14b8388d4c75065b831f2",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports 18.0% +/- 0.5% of subgroup X in Cohort 1 also have at least one invoice of pending payment status.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report what percentage of subgroup X subscribers also have at least one invoice of pending payment status",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_49b26b1faf0646e29ba90932f3cc9696",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0c0e58f32a14b8388d4c75065b831f2",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports 22.7% +/- 0.5% of subgroup X in Cohort 2 also have at least one invoice of pending payment status.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report what percentage of subgroup X subscribers also have at least one invoice of pending payment status",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_82d78ea288b94f21bd479db05b686bc8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0c0e58f32a14b8388d4c75065b831f2",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports 24.5% +/- 0.5% of subgroup X in Cohort 3 also have at least one invoice of pending payment status.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report what percentage of subgroup X subscribers also have at least one invoice of pending payment status",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

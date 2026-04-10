@@ -1,0 +1,280 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_dfe0882e98144c269b1923f89cd8cc0c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bb969f0aa187414b897305923be8ab53",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has been diagnosed with breast cancer. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This requires synthesizing information from both the patient chart and the script. In the chart Onc Patient 9, tab clinical notes, row 203, column E, it states, \"Malignant neoplasm of upper-outer quadrant of right breast in female.\" The script indicates, \"You were diagnosed several years ago with cancer. You were cancer-free for a while, but the same cancer you had before has returned.\" This implies the patient has been diagnosed with breast cancer.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b97a96d64e664546abc1e558c8d67ebc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bb969f0aa187414b897305923be8ab53",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's breast cancer is metastatic. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is indicated by information in the script. \"About 18 months ago, scans showed that the cancer had returned in the bones and a few small spots in the liver.\" Because the cancer is spreading to the liver and bones, it is metastatic.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc 9 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_41a6c9e4511f408c9f8776177dec5d5d"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2e94146719e548d39c0d8aaaec228ae0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bb969f0aa187414b897305923be8ab53",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has already had endocrine therapy.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"You started an aromatase inhibitor along with a CDK4/6 inhibitor, which controlled the disease for more than a year. When the last scan showed growth in the liver and new bone lesions, we switched you to fulvestrant injections.\" This is from the script. Fulvestrant and aromatase inhibitor therapy both qualify as endocrine therapy. \"Aromatase inhibitors are a group of endocrine agents.\" https://www.bcm.edu/healthcare/specialties/oncology/cancer-treatment/chemotherapy/endocrine-therapy. \n\n\"Fulvestrant is a novel endocrine therapy for breast cancer.\" https://pubmed.ncbi.nlm.nih.gov/20156170/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc 9 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_41a6c9e4511f408c9f8776177dec5d5d"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_594a033903684939b32811818836b43f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bb969f0aa187414b897305923be8ab53",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's cancer has an ESR1 mutation.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is clearly stated in the attached lab results. \"ESR1\tPositive.\" ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 9 Labs - Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_41a6c9e4511f408c9f8776177dec5d5d"
+          }
+        ]
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1ee960d6d0724e85b838c9933cc7d849",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bb969f0aa187414b897305923be8ab53",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's cancer is HER2 negative.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is clearly stated in the attached lab results. \"HER2\tNegative.\" ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 9 Labs - Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_41a6c9e4511f408c9f8776177dec5d5d"
+          }
+        ]
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_14379a526a0742db819ede4320fc43d2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bb969f0aa187414b897305923be8ab53",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient does not want elacestrant.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from the attached script. Patient: \u201cYes, please not elacestrant.\u201d",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc 9 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_41a6c9e4511f408c9f8776177dec5d5d"
+          }
+        ]
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a70b385777d94e3d9266c71c096e0c9f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bb969f0aa187414b897305923be8ab53",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the most appropriate next treatment option is imlunestrant. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The next, best treatment option is imlunestrant. \"Imlunestrant is indicated for the treatment of adults with ER-positive, HER2-negative, ESR1-mutated advanced or metastatic breast cancer with disease progression following at least one line of endocrine therapy.\" The patient matches all indications for this treatment option. https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/217639s000lbl.pdf",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_be80fac532474d43832b23d228eec9eb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bb969f0aa187414b897305923be8ab53",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that imlunestrant is dosed orally. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the route of administration of imlunestrant. \"The recommended dosage is 400 mg orally once daily\" https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/218881s000lbl.pdf",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_324fca12bc3d4042b3250419b232babc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bb969f0aa187414b897305923be8ab53",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that imlunestrant is taken once daily. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the frequency of imlunestrant. \"The recommended dosage is 400 mg orally once daily\" https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/218881s000lbl.pdf",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f2a89d4453b1460fb43950b7d7fb3d67",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bb969f0aa187414b897305923be8ab53",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that imlunestrant is dosed at 400 mg.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the dosing of imlunestrant. \"The recommended dosage is 400 mg orally once daily\" https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/218881s000lbl.pdf",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

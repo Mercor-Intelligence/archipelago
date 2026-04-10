@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "In the DCF model, please make the following changes for S&P Global:\n\n•\tUpdate the risk-free rate for S&P Global to be the 10 year treasury rate on Jan 2, 2026.\n•\tUpdate the long-term growth rate by calculating the month-over-month growth rate using CPI values from August 1, 2025 and September 1, 2025, then annualizing it by multiplying by 12.\n\nProvide the updated Equity value per share for S&P Global under both the Perpetuity and EBITDA method, rounded to two decimals."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Equity Value per Share under the Perpetuity Growth Method is $428.84... (ver_69f7f14256414a17bb5e6f8abc0450a3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Equity Value per Share under the Perpetuity Growth Method is $428.84 (acceptable range $424.55 to $433.13)."
+        }
+      ]
+    },
+    {
+      "name": "Equity Value per Share under the EBITDA Multiple Method is $400.17 (acceptable... (ver_18ef714e74c84fe5bde008ea5e5eabe0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Equity Value per Share under the EBITDA Multiple Method is $400.17 (acceptable range $396.17 to $404.17)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-249-jl01-ce0e9aaf"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_ce0e9aaf841c48169556db68f945d552",
+    "task_name": "World 249_JL01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_224b1fceeb244a4f97441beb08007f9a",
+        "golden_text_response": "Equity Value per Share\n•\tPerpetuity Growth Method: $428.84\n•\tEBITDA Multiple Method: $400.17\n",
+        "golden_file_responses": "snap_c2321125fccd4760b992e89f4fdac09e"
+      }
+    ]
+  }
+}

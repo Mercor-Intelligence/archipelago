@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Liverbird and the City executed the Disposition & Development Agreement (the \"Agreement\"), which includes a predevelopment loan in the first phase of the agreement's performance conditioned on compliance with California Environmental Quality Act (\"CEQA\"). \n\nA third-party group, Save the Zone, filed a complaint alleging that the City violated CEQA by failing to complete an Environmental Impact Report (\"EIR\"). The City is considering filing a motion to dismiss on the grounds that the CEQA compliance can be postponed under the circumstances.\n\nIs the City likely to prevail on the motion to dismiss? Provide your response in the console according to the following: 1) \"Yes/No\" conclusion; and 2) 1-2 sentence explanation."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States \"Yes\" to indicate that the City will likely prevail on a motion to... (ver_be3d79d7a63d4e06948134cc22628169)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States \"Yes\" to indicate that the City will likely prevail on a motion to dismiss because CEQA compliance can be postponed under the circumstances."
+        }
+      ]
+    },
+    {
+      "name": "States that the City's commitment to the project remains contingent on CEQA... (ver_7fdd382ba65e43b68a9f21eaafd593b2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the City's commitment to the project remains contingent on CEQA compliance, including completion of an EIR."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world428-dm-01-de10f957"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_de10f9575d434ffa9cf4ceb4c407a1c8",
+    "task_name": "World428_DM_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_85f79557c0a94f0893e4861b57bef4c1",
+        "golden_text_response": "Yes, the City is likely to prevail in its motion to dismiss because CEQA compliance can be postponed under the circumstances: the City's commitment to the project remains contingent on CEQA compliance, including completion of an EIR.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

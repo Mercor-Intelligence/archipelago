@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "\nAssociates at Strain & Co. conducted in-depth research and produced a dataset summarizing inpatient hospital data for the 100 most common DRGs (diagnosis-related groups) across U.S. hospitals.\n\nThis dataset provides benchmarking context for inpatient services relevant to mental health or comparable procedures, including the Esketamine/Ketamine-Assisted Psychotherapy (KAP) rollout for HappyHospital. It may also be used to analyze patient volumes at facilities with high discharge counts, which could signal higher patient loads and readiness for advanced therapies.\n\nTo support HappyHospital’s assessment of readiness for advanced therapies across its seven operational states (IL, IN, MI, MN, MO, OH, WI), answer the following using the provided dataset:\n\nHappyHospital is focused exclusively on DRG 065 (intracranial hemorrhage or cerebral infarction with CC).\n\nWhich state has the highest average Total Discharges per provider for DRG 065, and what is the average Total Discharges for that state?\n\nRound the final answer to the nearest whole number and provide the response directly in the console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the state with the highest Average Total Discharges per provider... (ver_bcb5b9e14704498d99573e6081eba2bc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the state with the highest Average Total Discharges per provider for DRG 065 is Michigan."
+        }
+      ]
+    },
+    {
+      "name": "States that Michigan's Average Total Discharges per provider for DRG 065 is 55... (ver_026b34940bf64d1488acc21fa3cf59e6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Michigan's Average Total Discharges per provider for DRG 065 is 55 (acceptable range 54 to 56)."
+        }
+      ]
+    },
+    {
+      "name": "States that Michigan's Average Total Discharge is a value other than 55 (ver_026b34940bf64d1488acc21fa3cf59e6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Michigan's Average Total Discharge is a value other than 55."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-hxa54360-be29342b"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_be29342b63014ef387beda442d00fe4b",
+    "task_name": "Task hxa54360",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_a6210eb084d8499b80ba90d059f1fcba",
+        "golden_text_response": "The state with the highest average Total Discharges per provider for DRG 065 is Michigan, with 55 average total discharges per provider.\n \n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

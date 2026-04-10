@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "We had to let Andrew Saunders go. Please update Employee list in Bamboo tool. Please just state what the average span of control is for the Board Members (all 6 CEO direct reports, excluding CEO himself) after this change using updated Bamboo database only. Please state just the final answer rounded to 1 decimal place in the console. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the average span of control for the Board Members (all 6 CEO... (ver_f207d6dd04a3475e8e291a068ee77796)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average span of control for the Board Members (all 6 CEO direct reports, excluding CEO himself) after the change is 8.3 (acceptable range 8.2 to 8.4)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh 601-mb-3-ccef6806"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_ccef6806ebaf402e983e973c145ba6c5",
+    "task_name": "601 - MB_3",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_e82cc96319f04c60af95b2eee71cbe15",
+        "golden_text_response": "The average span of control for the Board Member (all 6 CEO direct reports, excluding CEO himself) after the change is 8.3",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

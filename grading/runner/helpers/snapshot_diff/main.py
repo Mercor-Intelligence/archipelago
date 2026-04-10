@@ -515,10 +515,16 @@ class SnapshotDiffGenerator:
             )
             raise
 
+    # Snapshot subsystem directories that contain user-visible files.
+    # "filesystem" is the general-purpose filesystem; ".apps_data" holds
+    # application state (e.g. Nextcloud, KiCad, etc.).
+    _SNAPSHOT_SUBSYSTEMS = ("filesystem/", ".apps_data/")
+
     def _list_zip_files(self, zip_file: zipfile.ZipFile) -> list[dict[str, Any]]:
         """
-        List all files in a zip file within the 'filesystem' base directory.
+        List all files in a zip file within snapshot subsystem directories.
 
+        Processes files under both 'filesystem/' and '.apps_data/' subsystems.
         Skips hidden files (starting with .) and macOS metadata files.
         Handles nested directory structures (e.g., snapshot_name/filesystem/)
         """
@@ -537,30 +543,52 @@ class SnapshotDiffGenerator:
             if "/__MACOSX/" in info.filename or info.filename.startswith("__MACOSX/"):
                 continue
 
-            # Only process files that have filesystem/ in their path
-            if "filesystem/" not in info.filename:
+            # Find which subsystem this file belongs to by picking the
+            # top-level (leftmost) subsystem prefix.  This avoids misclassifying
+            # e.g. .apps_data/nextcloud/filesystem/data.txt as a filesystem/ file.
+            subsystem_prefix = None
+            prefix_idx = -1
+            for prefix in self._SNAPSHOT_SUBSYSTEMS:
+                idx = info.filename.find(prefix)
+                if idx != -1 and (prefix_idx == -1 or idx < prefix_idx):
+                    subsystem_prefix = prefix
+                    prefix_idx = idx
+
+            if subsystem_prefix is None:
                 continue
 
-            # Extract the path after the last occurrence of filesystem/
-            filesystem_idx = info.filename.rfind("filesystem/")
-            if filesystem_idx == -1:
-                continue
-
-            relative_path = info.filename[filesystem_idx + len("filesystem/") :]
+            relative_path = info.filename[prefix_idx + len(subsystem_prefix) :]
 
             # Skip if it results in empty path
             if not relative_path:
                 continue
 
-            # Skip hidden files (any path component starting with .)
+            # Skip hidden files.
+            # For filesystem/, skip if ANY path component starts with "."
+            # (e.g. .config/app.conf, .ssh/keys) to avoid leaking hidden dirs.
+            # For .apps_data/, only skip hidden filenames since subdirectories
+            # like .apps_data/nextcloud/ legitimately use dot-prefixed dirs.
             path_parts = relative_path.split("/")
-            if any(part.startswith(".") for part in path_parts):
-                logger.debug(f"Skipping hidden file: {relative_path}")
-                continue
+            if subsystem_prefix == "filesystem/":
+                if any(part.startswith(".") for part in path_parts):
+                    logger.debug(f"Skipping hidden file: {relative_path}")
+                    continue
+            else:
+                filename = path_parts[-1]
+                if filename.startswith("."):
+                    logger.debug(f"Skipping hidden file: {relative_path}")
+                    continue
+
+            # For filesystem/ files, use just the relative path (backwards compatible).
+            # For .apps_data/ files, keep the prefix to avoid path collisions.
+            if subsystem_prefix == "filesystem/":
+                display_path = relative_path
+            else:
+                display_path = f"{subsystem_prefix}{relative_path}"
 
             files.append(
                 {
-                    "name": relative_path,
+                    "name": display_path,
                     "full_path": info.filename,  # Keep full path for reading from zip
                     "metadata": {
                         "size": info.file_size,

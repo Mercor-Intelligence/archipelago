@@ -1,0 +1,468 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "ResourceCo wants to use insights from the David Richardson interview to update the Scenario B data center financial model.\n\nUse the highest value in the interview’s Annual OPEX range to update Year 4 OPEX, hold all other assumptions constant, and recalculate Year 4 Operating Profit/EBIT, EBITDA, Net Income, and FCF.\n\nNext, use the lowest value in the interview’s total CAPEX range to update Year 4 CapEx, keeping the updated OPEX. Assume Year 4 depreciation equals 20% of the revised CapEx, then recalculate Year 4 Depreciation, EBITDA, Net Income, and FCF, holding all other assumptions constant.\n\nFrom the interview, identify the largest Annual OPEX driver and, using the top value in its range, calculate its share of total updated OPEX.\n\nReturn all results in a console message. Round percentages to the nearest whole percent and report currency in $M, rounded to $0.01M."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the updated OPEX Scenario B model Year 4 Operating Profit/ EBIT value... (ver_23c7b3c130b14d74b6dc2296e3ab34e2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the updated OPEX Scenario B model Year 4 Operating Profit/ EBIT value is 10.75 (acceptable range 10.64 to 10.86)."
+        }
+      ]
+    },
+    {
+      "name": "States the updated OPEX Scenario B model Year 4 Operating Profit/ EBIT is any... (ver_23c7b3c130b14d74b6dc2296e3ab34e2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the updated OPEX Scenario B model Year 4 Operating Profit/ EBIT is any value other than 10.75."
+        }
+      ]
+    },
+    {
+      "name": "States the updated OPEX Scenario B model Year 4 EBITDA value is $25.75 M... (ver_3d08a8015db3418dbba47cd320877add)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the updated OPEX Scenario B model Year 4 EBITDA value is $25.75 M (acceptable range $25.49 to $26.01)."
+        }
+      ]
+    },
+    {
+      "name": "States the updated OPEX Scenario B model Year 4 EBITDA is any value other than... (ver_3d08a8015db3418dbba47cd320877add)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the updated OPEX Scenario B model Year 4 EBITDA is any value other than $25.75 M."
+        }
+      ]
+    },
+    {
+      "name": "States the updated OPEX Scenario B model Year 4 Net Income value is $7.75 M... (ver_0b7e22a8f4cd4203a91b33651e492796)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the updated OPEX Scenario B model Year 4 Net Income value is $7.75 M (acceptable range $7.67 to $7.83)."
+        }
+      ]
+    },
+    {
+      "name": "States the updated OPEX Scenario B model Year 4 Net Income is any value other... (ver_0b7e22a8f4cd4203a91b33651e492796)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the updated OPEX Scenario B model Year 4 Net Income is any value other than $7.75 M."
+        }
+      ]
+    },
+    {
+      "name": "States the updated OPEX Scenario B model Year 4 Free Cash Flow value is $2.75... (ver_43a5247fe96a4b07b82cc590b698931f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the updated OPEX Scenario B model Year 4 Free Cash Flow value is $2.75 M (acceptable range $2.72 to $2.78)."
+        }
+      ]
+    },
+    {
+      "name": "States the updated OPEX Scenario B model Year 4 Free Cash Flow is any value... (ver_43a5247fe96a4b07b82cc590b698931f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the updated OPEX Scenario B model Year 4 Free Cash Flow is any value other than $2.75 M."
+        }
+      ]
+    },
+    {
+      "name": "States the updated OPEX and CAPEX Scenario B model Year 4 Depreciation value... (ver_70e73a5f02ba44448baa0865e448c96c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the updated OPEX and CAPEX Scenario B model Year 4 Depreciation value is $24.00 M (acceptable range $23.76 to $24.24)."
+        }
+      ]
+    },
+    {
+      "name": "States the updated OPEX and CAPEX Scenario B model Year 4 Depreciation value... (ver_70e73a5f02ba44448baa0865e448c96c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the updated OPEX and CAPEX Scenario B model Year 4 Depreciation value is any value other than $24.00 M."
+        }
+      ]
+    },
+    {
+      "name": "States the updated OPEX and CAPEX Scenario B model Year 4 EBITDA value is... (ver_44fd941664fb4f8d9c819340317aadbe)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the updated OPEX and CAPEX Scenario B model Year 4 EBITDA value is $34.75 M (acceptable range $34.40 to $35.10)."
+        }
+      ]
+    },
+    {
+      "name": "States the updated OPEX and CAPEX Scenario B model Year 4 EBITDA value is any... (ver_44fd941664fb4f8d9c819340317aadbe)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the updated OPEX and CAPEX Scenario B model Year 4 EBITDA value is any value other than $34.75 M."
+        }
+      ]
+    },
+    {
+      "name": "States the updated OPEX and CAPEX Scenario B model Year 4 Net Income value is... (ver_074165c63a17425189e9da3cedf5b6b8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the updated OPEX and CAPEX Scenario B model Year 4 Net Income value is $7.75 M (acceptable range $7.67 to $7.83)."
+        }
+      ]
+    },
+    {
+      "name": "States the updated OPEX and CAPEX Scenario B model Year 4 Net Income value is... (ver_074165c63a17425189e9da3cedf5b6b8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the updated OPEX and CAPEX Scenario B model Year 4 Net Income value is any value other than $7.75 M."
+        }
+      ]
+    },
+    {
+      "name": "States the updated OPEX and CAPEX Scenario B model Year 4 Free Cash Flow value... (ver_ddd1b493c31f437db4bb990a25dcf341)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the updated OPEX and CAPEX Scenario B model Year 4 Free Cash Flow value is -$88.25 M (acceptable range $-89.13 to $-87.37)."
+        }
+      ]
+    },
+    {
+      "name": "States the updated OPEX and CAPEX Scenario B model Year 4 Free Cash Flow value... (ver_ddd1b493c31f437db4bb990a25dcf341)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the updated OPEX and CAPEX Scenario B model Year 4 Free Cash Flow value is any value other than -$88.25 M."
+        }
+      ]
+    },
+    {
+      "name": "States the largest OPEX cost driver is Power (ver_c8d31380cf6049c08bc6a4c6de52ccb0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the largest OPEX cost driver is Power."
+        }
+      ]
+    },
+    {
+      "name": "States the largest OPEX cost driver is 59% of the total OPEX (acceptable range... (ver_658a520e23c541ed8eba784fe39978f2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the largest OPEX cost driver is 59% of the total OPEX (acceptable range 58% to 60%)."
+        }
+      ]
+    },
+    {
+      "name": "States the largest OPEX cost driver is any value other than 59% of the total... (ver_658a520e23c541ed8eba784fe39978f2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the largest OPEX cost driver is any value other than 59% of the total OPEX."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh word115-lb-task01-2dcc109a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_2dcc109ac38643d3b0f8e743a19b1cfa",
+    "task_name": "Word115_LB_Task01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_7f5b01a6bb854e1eb6f203d0d96eebb7",
+        "golden_text_response": "Updated OPEX Year 4 Operating Profit/ EBIT: $10.75 M \nUpdated OPEX Year 4 EBITDA: $25.75 M \nUpdated OPEX Year 4 Net Income: $7.75 M \nUpdated OPEX Year 4 Free Cash Flow: $2.75 M \n\nUpdated CAPEX and OPEX Year 4 Depreciation: $24.00 M\nUpdated CAPEX and OPEX Year 4 EBITDA: $34.75 M\nUpdated CAPEX and OPEX Year 4 Net Income: $7.75 M \nUpdated CAPEX and OPEX Year 4 Free Cash Flow: -$88.25 M \n\nThe largest Operating Expense driver is Power. \nPower's percentage of total OPEX: 59% \n\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Make the following changes to the merger model\n1.\tFor the RAMBUS vs SLAB analysis, update the %SG&A Synergies to 85%\n2.\tUpdate the SLAB acquisition share price to its average daily share price between Oct 1 and Dec 31 2025 (inclusive of start and end dates)\n3. Update the Advisory fees and financing fees to 0.2% and 1.0% respectively\n4.\tCreate a 5 year Pro Forma Income statement forecast with the following assumptions.\n a.\tTreat the current pro forma income statement as Year 1.\n b.\tFor Year 2, grow revenue by the weighted average growth rate of RMBS's and SLAB's revenue between 2024 and the annualized revenue using the 9 months 2025 data. Use the annualized 9M 2025 revenue as the weights.\n c.\t   Starting in Year 3, reduce the growth rate by 2 percentage points each year.\n d.   Calculate Cost of revenue for Year 2 using pro forma proportion of revenue + 0.5pp. For each following year, decrease the ratio by 0.5pp annually to calculate.\n e.   For each of SG&A and Other Operating Expense, Year 2 revenue ratio is pro forma + 1pp. Then decrease the ratio 1pp annually for each following year.\n f.\t   After Year 1, set Advisory & Financing Fees to zero.\n g.\tKeep the Net Interest Income, Provision for Income Taxes and weighted average shares outstanding fixed at the Year 1 level through out the forecast period.\nCalculate the EPS accretion/(dilution) in year 2, 3, 4 and 5. Present answer in % to 2 decimal places"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States Year 2 EPS Accretion is -23.18% (acceptable range -23.41% to -22.95%) (ver_70fc264964a946eb935baf104d528748)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Year 2 EPS Accretion is -23.18% (acceptable range -23.41% to -22.95%)."
+        }
+      ]
+    },
+    {
+      "name": "States Year 3 EPS Accretion is 14.14% (acceptable range 14.00% to 14.28%) (ver_f2b11b5a463b44cd918ef8fe2ab0446a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Year 3 EPS Accretion is 14.14% (acceptable range 14.00% to 14.28%)."
+        }
+      ]
+    },
+    {
+      "name": "States Year 4 EPS Accretion is 62.81% (acceptable range 62.18% to 63.44%) (ver_c80a215303704515bb3f55c4aa6b7bb1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Year 4 EPS Accretion is 62.81% (acceptable range 62.18% to 63.44%)."
+        }
+      ]
+    },
+    {
+      "name": "States Year 5 EPS Accretion is 124.38% (acceptable range 123.14% to 125.62%) (ver_9630f9fc6f0f4a47a518d5f602ac4eae)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Year 5 EPS Accretion is 124.38% (acceptable range 123.14% to 125.62%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world248-oa-task01-0a7a81f1"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_0a7a81f135d8497c93b8e783c1243c8d",
+    "task_name": "World248_OA_Task01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_90c026f4b054436e922648beba071e38",
+        "golden_text_response": "Year 2 EPS Accretion: -23.18%\nYear 3 EPS Accretion: 14.14%\nYear 4 EPS Accretion: 62.81%\nYear 5 EPS Accretion: 124.38%",
+        "golden_file_responses": "snap_d88602dc26b94d4aab8365f182c140b9"
+      }
+    ]
+  }
+}

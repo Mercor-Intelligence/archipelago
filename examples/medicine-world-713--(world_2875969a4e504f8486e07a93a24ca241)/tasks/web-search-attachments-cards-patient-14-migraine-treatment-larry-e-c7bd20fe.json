@@ -1,0 +1,284 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 14” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nThe patient's current date of birth is 01/01/1965. The patient’s date of birth has been recorded incorrectly in the patient's chart; please disregard the listed date. Today's date is 01/12/2026.\n\nThe attached AI scribe conversation is between a PGY-2 Emergency Resident who is presenting her case to the Attending Emergency Medicine Physician.\n\nBased on a review of the patient's chart and radiology report, what is the most appropriate response to guide the resident regarding the need for a lumbar puncture, and what is the rationale? What is the single best remaining treatment for the headache that should be offered to the patient with an explanation? Please review the patient's chart to verify there are no contraindications to your recommended treatment. Answers should be in line with the most recent clinical guidelines as of January 12, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient’s head CT shows no evidence of intracranial hemorrhage. (ver_12d9bc2ab65a4f8987d1c87a905ab194)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient’s head CT shows no evidence of intracranial hemorrhage."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient’s head CT was performed within 6 hours of the onset of... (ver_d9902d84779c495ea37dada6dacdfaf6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient’s head CT was performed within 6 hours of the onset of the headache."
+        }
+      ]
+    },
+    {
+      "name": "States that a normal head CT scan within 6 hours of the onset of the headache... (ver_110c7a46e11a4f7988102534ac7efa70)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that a normal head CT scan within 6 hours of the onset of the headache precludes the need for a lumbar puncture."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient should not receive a lumbar puncture. (ver_f5ca891bb5d841a8b1f48cb32be3f1eb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient should not receive a lumbar puncture."
+        }
+      ]
+    },
+    {
+      "name": "Utilizes the 2025 American Headache Society guideline for managing a migraine... (ver_09a0bb84ff81475fb596712b19333220)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Utilizes the 2025 American Headache Society guideline for managing a migraine headache in an emergency setting."
+        }
+      ]
+    },
+    {
+      "name": "States that prochlorperazine intravenous is one of the Level A evidence for... (ver_412ed51e100f4ac5b053f421867d15ce)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that prochlorperazine intravenous is one of the Level A evidence for managing a migraine headache."
+        }
+      ]
+    },
+    {
+      "name": "States that a greater occipital nerve block is one of the Level A evidence for... (ver_e80715bd525e41b8b130bdcada7db94a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that a greater occipital nerve block is one of the Level A evidence for managing a migraine headache."
+        }
+      ]
+    },
+    {
+      "name": "Identifies that Level A evidence is a must-offer recommendation. (ver_708274ed21ae435ab188bf321dbaabb1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies that Level A evidence is a must-offer recommendation."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has already received IV prochlorperazine. (ver_5bc21e5b3c6d407c83af308a21c55ab9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has already received IV prochlorperazine."
+        }
+      ]
+    },
+    {
+      "name": "States that this patient has no contraindications to the administration of a... (ver_7df87156ba6146f18118511f04ad3f4a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that this patient has no contraindications to the administration of a greater occipital nerve block."
+        }
+      ]
+    },
+    {
+      "name": "States that the single best remaining treatment for the patient’s migraine... (ver_abbd007cdbdb49a5acba8aec678036f6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the single best remaining treatment for the patient’s migraine headache should be a greater occipital nerve block."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-cards-patient-14-migraine-treatment-larry-e-c7bd20fe"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_c7bd20fe22b645c8a597b768426e8908",
+    "task_name": "Web Search_Attachments_Cards_Patient 14 - Migraine treatment - Larry E",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_62e2d686c63d47a8812e78bb6b2cbc2e",
+        "golden_text_response": "Question 1: Based on a review of the patient's chart and radiology report, what is the most appropriate response to guide the resident regarding the need for a lumbar puncture, and what is the rationale? \n\nNo. Consistent with the American College of Emergency Physicians (ACEP) policy on the diagnosis of subarachnoid hemorrhage, the patient’s head CT was obtained within 6 hours of headache onset and interpreted as an age-appropriate normal study without evidence of subarachnoid hemorrhage. Therefore, subarachnoid hemorrhage has been ruled out. The patient would not require a lumbar puncture. \n\nQuestion 2: What is the single best remaining treatment for the headache that should be offered to the patient with an explanation? Please review the patient's chart to verify there are no contraindications to your recommended treatment. \n\nAccording to guidelines published in December 2025 by The American Headache Society, IV prochlorperazine and a greater occipital nerve block have \"Level A\" evidence and \"must be offered\" to a patient presenting to the emergency department for a migraine headache requiring intravenous therapy as long as a contraindication does not exist. Review of the patient's chart does not reveal any contraindications to an occipital nerve block. Therefore, because the patient has already received prochlorperazine IV, a greater occipital nerve block should be offered.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

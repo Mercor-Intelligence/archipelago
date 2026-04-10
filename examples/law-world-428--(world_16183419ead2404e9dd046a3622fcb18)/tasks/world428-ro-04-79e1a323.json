@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "During the due diligence period, Liverbird discovers sewage waste under the surface of a portion of the site to be developed. They have determined it will cost an extra $100,000 to remove this sewage. Create a list of steps that Liverbird must follow in order to request a reduction in the purchase price from the city under the latest version of the disposition & development agreement. Provide citations for each step."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States 1. Compile written reports from qualified consultants documenting the... (ver_51dd689d0f2e4c86ab3e37d4eb88bc6b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 1. Compile written reports from qualified consultants documenting the contamination. V.2 - DDA Draft Section 5.3(b)."
+        }
+      ]
+    },
+    {
+      "name": "States 2. Draft a written request to the City for a $100,000 reduction of the... (ver_e5a3844693c1479b9c8cccc6cc60f5d8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2. Draft a written request to the City for a $100,000 reduction of the purchase price with the supporting documentation from Step 1. V.2 - DDA Draft Section 5.3(b)."
+        }
+      ]
+    },
+    {
+      "name": "States 3. Deliver the written notice by personal service, certified mail, or... (ver_9f8514d6be304b1891354bdd4551ff73)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 3. Deliver the written notice by personal service, certified mail, or reputable overnight courier. V.2 - DDA Draft Section 18.2."
+        }
+      ]
+    },
+    {
+      "name": "States the specific recipient of the written notice is City of San Dimas,... (ver_0f224f7eea9e4674953d9e1538b10c24)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the specific recipient of the written notice is City of San Dimas, Attn: Myric, City Attorney. V.2 - DDA Draft Section 18.2."
+        }
+      ]
+    },
+    {
+      "name": "States the written notice must be addressed to 245 East Bonita Avenue, San... (ver_4fee208e6ad048eab4ede57d3c1e0cd1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the written notice must be addressed to 245 East Bonita Avenue, San Dimas, CA 91773. V.2 - DDA Draft Section 18.2."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world428-ro-04-79e1a323"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_79e1a323feaf429d94e3e476ec72b671",
+    "task_name": "World428_RO_04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_a5e8d10de0b94d6ca74909cd82663c03",
+        "golden_text_response": "1. Compile written reports from qualified consultants documenting the contamination. V.2 - DDA Draft Section 5.3(b).\n2. Draft a written request to the City for a $100,000 reduction of the purchase price with the supporting documentation from Step 1. V.2 - DDA Draft Section 5.3(b).\n3. Deliver the written notice by personal service, certified mail, or reputable overnight courier addressed to (V.2 - DDA Draft Section 18.2):\nCity of San Dimas\nAttn: Myric, City Attorney\n245 East Bonita Avenue\nSan Dimas, CA 91773",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_a229250d223c4f4088d8c95bd6cd5974",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44270235ca7a4ebaa9245eb0733b0bff",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that based on the Executive Comparison Matrix, the candidate source type that has the highest average Overall Score is Internal Candidates. ",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dd8ac738276c4a579a44555a8ea1ff69",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44270235ca7a4ebaa9245eb0733b0bff",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that based on the Executive Comparison Matrix, the percentage difference between the internal and external candidates is 3.8% (acceptable range 3.76% to 3.84%).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

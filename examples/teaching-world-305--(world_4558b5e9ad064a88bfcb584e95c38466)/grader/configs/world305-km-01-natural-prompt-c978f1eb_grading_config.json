@@ -1,0 +1,208 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_24d9fe2f31c343fbb4f3698dc7d05f85",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c978f1eb29104e78815f5d41e9f55346",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Mason Brown as the student with the lowest final grade",
+        "modality": "Free text",
+        "negative_criteria": "Identifies a name other than Mason Brown as the student with the lowest final grade.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Mason Brown has a final grade of 66.3%.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a09b674faace4f2a8d8a0ff6dfb5793b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c978f1eb29104e78815f5d41e9f55346",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies \u201cArgument Writing Diagnostic\u201d as Mason Brown\u2019s lowest scoring assignment",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Argument Writing Diagnostic grade is 59%",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_085daedb572a42caab888b98a55e6a28",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c978f1eb29104e78815f5d41e9f55346",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies \u201cFigurative Language Quiz\u201d as Mason Brown\u2019s lowest scoring assignment",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Figurative Language Quiz grade is 59%",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3b1829434af14bd2b64d22f289dad0a3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c978f1eb29104e78815f5d41e9f55346",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Mentions in the letter that Mason Brown has the opportunity to re-do their lowest scoring assessment/quiz assignment from the trimester",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e1727ef52d174f00b6e010c21dc662e5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c978f1eb29104e78815f5d41e9f55346",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Mentions \u201cArgument Writing Diagnostic\u201d as Mason Brown\u2019s lowest assessment grade in the letter",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4c9872e8448b4fb484adcd8a95798f6a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c978f1eb29104e78815f5d41e9f55346",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Mentions \u201cFigurative Language Quiz\u201d as Mason Brown\u2019s lowest assessment grade in the letter",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8360002144a44bbf8fa3010bb995dd91",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c978f1eb29104e78815f5d41e9f55346",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Mentions that \u201cArgument Writing Diagnostic\u201d falls in the Writing domain in the letter",
+        "modality": "Free text",
+        "negative_criteria": "Mentions that \u201cArgument Writing Diagnostic\u201d falls in a domain other than Writing in the letter.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_61b305980af345a784850f67bf7952c7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c978f1eb29104e78815f5d41e9f55346",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Mentions that \u201cFigurative Language Quiz\u201d falls in the Language domain in the letter",
+        "modality": "Free text",
+        "negative_criteria": "Mentions that \u201cFigurative Language Quiz\u201d falls in a domain other than Language in the letter.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_42473e65fc5145c5a6a976cc86d9fd6a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c978f1eb29104e78815f5d41e9f55346",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Mentions in the letter that Mason Brown can choose to re-do one other assignment from the trimester in the domains of his lowest assessment grade",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

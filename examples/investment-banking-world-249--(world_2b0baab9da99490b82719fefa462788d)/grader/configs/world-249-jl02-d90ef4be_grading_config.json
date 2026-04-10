@@ -1,0 +1,110 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_7b10c67329b446069ba5f7d1650debe6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d90ef4bef3864b9b8cfdd2349da88125",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The Shareholder Equity Value Creation - $ is 11,060 million (acceptable range 10,949 to 11,171)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f911b06d53a8442e99e94baa08d3211c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d90ef4bef3864b9b8cfdd2349da88125",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the 2030 Ratings Revenue % Growth is 11.52% (acceptable range 11.40% to 11.64%)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6dac15d4dc7740a781d31e24fb7390ee",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d90ef4bef3864b9b8cfdd2349da88125",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the allocation % for S&P Mobility is 94% (acceptable range 93% to 95%)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1905839638e346418ccd0ca5cf6b3378",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d90ef4bef3864b9b8cfdd2349da88125",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the allocation % for RemainCo is 6% (acceptable range 5.9% to 6.1%)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

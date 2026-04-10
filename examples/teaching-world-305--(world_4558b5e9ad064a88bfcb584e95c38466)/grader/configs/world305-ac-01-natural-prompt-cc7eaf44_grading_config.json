@@ -1,0 +1,276 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_c3eb8bc69f3f4a38b7d437270007d260",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7eaf44249a49cfb8e5f7c8fc8179f6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the trimester 1 grade for Mason Brown as 66.3% (acceptable range 65.6% to 67.0%)",
+        "modality": "Free text",
+        "negative_criteria": "Identifies the trimester 1 grade for Mason Brown as a value other than 66.3%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the grade book and report card, it is extracted that Mason has a trimester 1 grade of 66.3%.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_623fadd558384de9993189abfe85ee81",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7eaf44249a49cfb8e5f7c8fc8179f6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the lowest scoring assignments for Mason Brown as 59.0% (acceptable range 58.4% to 59.6%)",
+        "modality": "Free text",
+        "negative_criteria": "Identifies the lowest scoring assignments for Mason Brown as something other than 59%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the grade book it is extracted that Mason's lowest scoring assignments were both 59.0% for a figurative language quiz and argument writing diagnostic.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c17bc4a9425b4fd49b369c69b13264cd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7eaf44249a49cfb8e5f7c8fc8179f6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies grade average for Mason for assessments as 67.0% (acceptable range 66.3% to 67.7%)",
+        "modality": "Free text",
+        "negative_criteria": "Identifies the grade average for assessments as something other than 67%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From Mason's report card, it is extracted that his average for assessments is 67.0%.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4b3641c85c8349a5942a1708661ef1d7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7eaf44249a49cfb8e5f7c8fc8179f6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies grade average for Mason for homework as 63.6% (acceptable range 63.0% to 64.2%)",
+        "modality": "Free text",
+        "negative_criteria": "Identifies grade average for homework as something other than 63.6%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From Mason's report card, it is extracted that his average for homework is 63.6%.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ca1d4ec0c70b4b08958bc2fed05ff6df",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7eaf44249a49cfb8e5f7c8fc8179f6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies grade average for Mason for classwork is 66.1% (acceptable range 65.4% to 66.8%)",
+        "modality": "Free text",
+        "negative_criteria": "Identifies grade average for classwork as something other than 66.1%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From Mason's report card, it is extracted that his average for classwork is 66.1%.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_46c6a18ed46844b18a21ffb0489d6259",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7eaf44249a49cfb8e5f7c8fc8179f6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that Mason receives special education services",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7cd9cea16ba642cc92884693d10e9d84",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7eaf44249a49cfb8e5f7c8fc8179f6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Selects guided writing support as a resource to implement for the student the TKAM unit",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Using the information that Mason is receiving other school services, two strategies have been identified that could fit with his learning plan.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b6a73cd4272747e38a13f97a385938bd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7eaf44249a49cfb8e5f7c8fc8179f6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Selects multiple modalities for reading as a resource to implement for the student for the TKAM unit",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Using the information that Mason is receiving other school services, two strategies have been identified that could fit with his learning plan.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d14c19e775264cfeb39ae9b2e0590463",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7eaf44249a49cfb8e5f7c8fc8179f6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Reiterates the importance of consistent attendance moving into the next unit",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_025fb734ca23438090daae9dd2e7b5b4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7eaf44249a49cfb8e5f7c8fc8179f6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies that Mason had 2 Tardies in Trimester 1",
+        "modality": "Free text",
+        "negative_criteria": "Identifies that Mason had a value other than 2 Tardies in Trimester 1.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_caa2ad6d5fd049118afd0a75c1688ed4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7eaf44249a49cfb8e5f7c8fc8179f6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies that Mason had 1 unexcused absence in Trimester 1",
+        "modality": "Free text",
+        "negative_criteria": "Identifies that Mason had a number of than 1 unexcused absence in Trimester 1.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0796752d245d456085ad9096812a7b63",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7eaf44249a49cfb8e5f7c8fc8179f6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes information that Mason receives gifted and talented services",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

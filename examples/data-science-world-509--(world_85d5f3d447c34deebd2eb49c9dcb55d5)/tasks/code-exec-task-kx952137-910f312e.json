@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use these files risk_integrated_data.csv and staged_loan_data.csv. The credit team wants to understand whether variable rate loans exhibit stable repayment behavior through 2024 or whether they drop in and out of good standing. Treat each month as a snapshot, and evaluate stability at the loan level. For each variable rate loan, define its month to month stability rate as the proportion of consecutive month pairs where the loan is Current in both datasets (defined as Days_Past_Due equals 0) in month t and also Current in month t+1, relative to the number of consecutive month pairs where the loan is observed as Current in month t. Compute this per loan across the 2024 months available, excluding loans with no eligible pairs (where the denominator is zero) from all calculations. Report (as percentages rounded to two decimals): the average stability rate across variable-rate loans, the median stability rate, the percent of variable rate loans with zero stable transitions (out of those with at least one eligible pair), the percent with stability above 50%, and among the subset of variable rate loans present in the earliest 2024 snapshot, the percent whose personal stability exceeds the overall average. Also provide the complete Python file used for the analysis."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports the average stability rate across variable-rate loans as 88.53% (+/-... (ver_db433590ac984a5284d9a9b2f474ba99)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the average stability rate across variable-rate loans as 88.53% (+/- 0.05%)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the median stability rate as 90.00%, acceptable range (+/- 0.05%). (ver_140dde73a7f84d0aa57d9405cbd403a2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the median stability rate as 90.00%, acceptable range (+/- 0.05%)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the percent of variable rate loans with zero stable transitions as... (ver_338ca37ba91d4486b66858b7e5ec5a01)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the percent of variable rate loans with zero stable transitions as 0.00%, acceptable range [0.00%, 0.05%]."
+        }
+      ]
+    },
+    {
+      "name": "Reports the percent of variable rate loans with stability above 50% as 98.60%... (ver_90d84cb3f86d4854a47b7e8b5d764983)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the percent of variable rate loans with stability above 50% as 98.60% (+/- 0.05%)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the percent of variable rate loans that are present in the earliest... (ver_661b65071c7d444fb393a9667c7ec362)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the percent of variable rate loans that are present in the earliest 2024 snapshot whose personal stability exceeds the overall average as 69.97% (+/- 0.05%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh code-exec-task-kx952137-910f312e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_910f312efb4f4e43b81dc759d60e9cca",
+    "task_name": "Code Exec - Task kx952137",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_5cbf2c06b685480396c039af4f2f7eab",
+        "golden_text_response": "avg_variable_rate_stability_pct: 88.53\nmedian_variable_rate_stability_pct: 90.00\npct_variable_rate_loans_zero_stable_transitions: 0.00\npct_variable_rate_loans_stability_gt_50_pct: 98.60\npct_earliest_2024_variable_rate_loans_above_avg: 69.97\n\n\n```\nimport pandas as pd\nimport numpy as np\n\nrisk = pd.read_csv(\"risk_integrated_data.csv\")\nstaged = pd.read_csv(\"staged_loan_data.csv\")\n\nrisk[\"Report_Date\"] = pd.to_datetime(risk[\"Report_Date\"])\nstaged[\"Report_Date\"] = pd.to_datetime(staged[\"Report_Date\"])\n\nrisk[\"month\"] = risk[\"Report_Date\"].dt.to_period(\"M\")\nstaged[\"month\"] = staged[\"Report_Date\"].dt.to_period(\"M\")\n\n# 2024 snapshots for risk/staged datasets\nrisk_2024 = risk[risk[\"month\"].astype(str).str.startswith(\"2024\")].copy()\nrisk_2024 = risk_2024.rename(columns={\"Days_Past_Due\": \"Days_Past_Due_risk\"})\n\nstaged_sub = staged[[\"Loan_ID\", \"month\", \"Interest_Type\", \"Days_Past_Due\"]].drop_duplicates()\nstaged_sub = staged_sub.rename(columns={\"Days_Past_Due\": \"Days_Past_Due_staged\"})\n\n# only loan months present in both files\ndf = risk_2024.merge(staged_sub, on=[\"Loan_ID\", \"month\"], how=\"inner\")\n\n# variable rate loans \ndf = df[df[\"Interest_Type\"].astype(str).str.lower().str.contains(\"variable\", na=False)].copy()\n\ndf[\"is_current\"] = df[\"Days_Past_Due_risk\"].eq(0) & df[\"Days_Past_Due_staged\"].eq(0) \n\n# Monthly stability on consecutive months\ndf = df.sort_values([\"Loan_ID\", \"month\"])\ndf[\"next_month\"] = df.groupby(\"Loan_ID\")[\"month\"].shift(-1)\ndf[\"next_is_current\"] = df.groupby(\"Loan_ID\")[\"is_current\"].shift(-1)\n\ndf[\"is_consecutive\"] = df[\"next_month\"].eq(df[\"month\"] + 1)\ndf[\"eligible_pair\"] = df[\"is_consecutive\"] & df[\"is_current\"]\ndf[\"stable_pair\"] = df[\"eligible_pair\"] & df[\"next_is_current\"].eq(True)\n\nloan_stats = df.groupby(\"Loan_ID\", as_index=False).agg(\n    eligible_pairs=(\"eligible_pair\", \"sum\"),\n    stable_pairs=(\"stable_pair\", \"sum\")\n)\n\nloan_stats[\"stability_rate\"] = np.where(\n    loan_stats[\"eligible_pairs\"] > 0,\n    loan_stats[\"stable_pairs\"] / loan_stats[\"eligible_pairs\"],\n    np.nan\n)\n\n# loans with no eligible pairs\neligible_loans = loan_stats[loan_stats[\"eligible_pairs\"] > 0].copy()\nrates = eligible_loans[\"stability_rate\"]\n\navg_rate = rates.mean() * 100\nmedian_rate = rates.median() * 100\npct_zero_stable = (eligible_loans[\"stable_pairs\"].eq(0)).mean() * 100\npct_rate_gt_50 = (rates > 0.5).mean() * 100\n\nearliest_month = df[\"month\"].min()\nearliest_loans = df.loc[df[\"month\"].eq(earliest_month), \"Loan_ID\"].unique()\neligible_earliest = eligible_loans[eligible_loans[\"Loan_ID\"].isin(earliest_loans)]\n\npct_earliest_above_avg = (eligible_earliest[\"stability_rate\"] > (avg_rate / 100)).mean() * 100\n\nprint(f\"avg_variable_rate_stability_pct: {avg_rate:.2f}\")\nprint(f\"median_variable_rate_stability_pct: {median_rate:.2f}\")\nprint(f\"pct_variable_rate_loans_zero_stable_transitions: {pct_zero_stable:.2f}\")\nprint(f\"pct_variable_rate_loans_stability_gt_50_pct: {pct_rate_gt_50:.2f}\")\nprint(f\"pct_earliest_2024_variable_rate_loans_above_avg: {pct_earliest_above_avg:.2f}\")\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

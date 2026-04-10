@@ -1,0 +1,44 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_05e95b3cbe094e4d87aaf0bed1993be7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cff13ac2da2e454e982160d5e2936dc9",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that Liverbird cannot recover any portion of their deposit",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Section 2 of the final exclusive negotiation agreement states that the agreement expires after 6 months. Section 3 states that under these conditions, the deposit is nonrefundable. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

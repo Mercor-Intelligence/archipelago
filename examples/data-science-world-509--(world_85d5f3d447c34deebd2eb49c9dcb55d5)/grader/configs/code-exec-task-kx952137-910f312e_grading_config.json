@@ -1,0 +1,117 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_db433590ac984a5284d9a9b2f474ba99",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_910f312efb4f4e43b81dc759d60e9cca",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the average stability rate across variable-rate loans as 88.53% (+/- 0.05%).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirms the average stability rate across variable-rate loans value.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_140dde73a7f84d0aa57d9405cbd403a2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_910f312efb4f4e43b81dc759d60e9cca",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the median stability rate as 90.00%, acceptable range (+/- 0.05%).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirms the median stability rate value.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_338ca37ba91d4486b66858b7e5ec5a01",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_910f312efb4f4e43b81dc759d60e9cca",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the percent of variable rate loans with zero stable transitions as 0.00%, acceptable range [0.00%, 0.05%].",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirms the percent of variable rate loans with zero stable transitions value.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_90d84cb3f86d4854a47b7e8b5d764983",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_910f312efb4f4e43b81dc759d60e9cca",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the percent of variable rate loans with stability above 50% as 98.60% (+/- 0.05%).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirms the percent of variable rate loans with stability above 50% value.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_661b65071c7d444fb393a9667c7ec362",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_910f312efb4f4e43b81dc759d60e9cca",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the percent of variable rate loans that are present in the earliest 2024 snapshot whose personal stability exceeds the overall average as 69.97% (+/- 0.05%).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirms the percent of variable rate loans that are present in the earliest 2024 snapshot whose personal stability exceeds the overall average value.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "eval_config_name": "Output LLM",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "4658aec9-7eeb-4c9b-84c2-5464345e345f",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Update the merger model for RMBS and MTSI using, as of 01/02/2026, the closing price and number of weighted average diluted shares outstanding for RMBS and MTSI based on the income statement\n- RMBS stand-alone equity value\n- MTSI stand-alone equity value\n- MTSI stand-alone equity value at bid premium\n- Total consideration\n- Pro forma bidder shares outstanding\n- Exchange ratio for MTSI shareholders\n- Ownership by RMBS\n- Ownership by MTSI\n\nRound all monetary figures other than share prices to thousands with no decimals, share prices to two decimals, ratios to one decimal, and percentages to one decimal. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States RMBS stand-alone equity value is 10,817,747 (acceptable range... (ver_7f68eb6741e84564912941efcf2c80d4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States RMBS stand-alone equity value is 10,817,747 (acceptable range 10,709,570 to 10,925,924)."
+        }
+      ]
+    },
+    {
+      "name": "States MTSI stand-alone equity value is 12,944,591 (acceptable range... (ver_34bfefce94b64641a3d9d136950d242a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States MTSI stand-alone equity value is 12,944,591 (acceptable range 12,815,145 to 13,074,037)."
+        }
+      ]
+    },
+    {
+      "name": "States the MTSI stand-alone equity value at bid premium is 15,533,509... (ver_75f6889b0baf470bb4d01cd440765121)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the MTSI stand-alone equity value at bid premium is 15,533,509 (acceptable range 15,378,174 to 15,688,844)."
+        }
+      ]
+    },
+    {
+      "name": "States total consideration is 15,533,509 (acceptable range 15,378,174 to... (ver_5a34f40a08184b4098ae89d12dcf79fa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States total consideration is 15,533,509 (acceptable range 15,378,174 to 15,688,844)."
+        }
+      ]
+    },
+    {
+      "name": "States Pro Forma Bidder Shares Outstanding is 265,424 (acceptable range... (ver_c7944d63996a4df6907334f8e9cd7d00)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Pro Forma Bidder Shares Outstanding is 265,424 (acceptable range 262,770 to 268,078)."
+        }
+      ]
+    },
+    {
+      "name": "States the Exchange Ratio for MTSI Shareholders is 2.1 (acceptable range 2.08... (ver_11fcdd78fbf84a5fa674302e5fc652d6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Exchange Ratio for MTSI Shareholders is 2.1 (acceptable range 2.08 to 2.12)."
+        }
+      ]
+    },
+    {
+      "name": "States the ownership by RMBS is 41.1% (acceptable range 40.7% to 41.5%) (ver_8053a27fc6954bb399f71e8358a797b9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the ownership by RMBS is 41.1% (acceptable range 40.7% to 41.5%)."
+        }
+      ]
+    },
+    {
+      "name": "States the ownership by MTSI is 58.9% (acceptable range 58.3% to 59.5%) (ver_a3c339e8c8214a38b6972cf64072cd50)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the ownership by MTSI is 58.9% (acceptable range 58.3% to 59.5%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world248-cgf-01-a54b8d6d"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_a54b8d6df5b44fe4b77123f71a943b9f",
+    "task_name": "World248_CGF_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_a4d02b1036594c66a01aecfe36150c6f",
+        "golden_text_response": "RMBS stand-alone equity value: 10,817,747\nMTSI stand-alone equity value: 12,944,591\nMTSI stand-alone equity value at bid premium: 15,533,509\nTotal consideration: 15,533,509\nPro Forma Bidder Shares Outstanding: 265,424\nExchange Ratio for MTSI Shareholders: 2.1\nOwnership by RMBS: 41.1%\nOwnership by MTSI: 58.9%",
+        "golden_file_responses": "snap_cb351cfbb0a74789ab8abef006345e4f"
+      }
+    ]
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_832b9c3b939841db99f29a6d619b8a43",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f2b84f9692c34f0e82823e6361bc09ff",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports 39 rolling features were created in the final dataset (exact threshold).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm 39 rolling features were correctly created in the final dataset by counting each rolling sum/mean/rate column as one feature and excluding any intermediate rolling numerators/denominators.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_534fb613c8704f6a91c92265d89be809",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f2b84f9692c34f0e82823e6361bc09ff",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the 12 months rolling loan count on 2024-12-31 for Construction sector as 10140 +/- 100.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the 12 months rolling loan count on 2024-12-31 for Construction sector correctly calculated as 10140 excluding current month.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_32ff39e311da4ff49fe1fc262ab89c1b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f2b84f9692c34f0e82823e6361bc09ff",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the 12 months rolling expected loss amount on 2024-12-31 for Construction sector as $5.404bn (+/-0.250bn).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the 12 months rolling expected loss amount on 2024-12-31 for Construction sector correctly calculated as $5.404bn (+/-0.010) excluding current month.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fd96ef16dd6146a4988111e35f428e86",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f2b84f9692c34f0e82823e6361bc09ff",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the 12 months rolling expected loss rate on 2024-12-31 for Construction sector as 0.286 (+/-0.010).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the 12 months rolling expected loss rate on 2024-12-31 for Construction sector correctly calculated as 0.286 (+/-0.010) excluding current month.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b60e1f2c1d4c45cdad6078b732fc23e0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f2b84f9692c34f0e82823e6361bc09ff",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the 12 months rolling delinquency rate on 2024-12-31 for Construction sector as 0.122 (+/-0.010).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confrim the 12 months rolling delinquency rate on 2024-12-31 for Construction sector correctly calculated as 0.122 (+/-0.010) excluding current month.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "eval_config_name": "Output LLM",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "4658aec9-7eeb-4c9b-84c2-5464345e345f",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

@@ -1,0 +1,284 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 14” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\nThe patient calls the cardiology office on 1/9/2026, stating that he is still experiencing palpitations. He does not wish to undergo any procedures or change his oral medication regimen. What clinical trial should this patient be considered for? Please explain your reasoning. Answers should be in line with the most recent clinical guidelines as of January 9, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Mentions that the patient has a known history of atrial fibrillation (AF). (ver_a86522fa890248aa8f70133bda9a3ed2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient has a known history of atrial fibrillation (AF)."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the patient was seen in the cardiology office for symptomatic... (ver_dcc2a4964a6a428193b88d232eb56361)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient was seen in the cardiology office for symptomatic palpitations."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the workup for palpitations in the patient revealed atrial... (ver_b2ac6212c79c4efa935d4cd48b601e70)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the workup for palpitations in the patient revealed atrial fibrillation on the Holter monitor."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the patient’s AF is symptomatic despite oral medication therapy. (ver_7f3ef42192e14d01ae803f8854ac492d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient’s AF is symptomatic despite oral medication therapy."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the patient wants a way to treat their symptomatic AF that does... (ver_a14ffb586aa04b9e96b043b514b28472)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient wants a way to treat their symptomatic AF that does not involve any procedures."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the patient does not wish to change his oral medication. (ver_f4a1c6f61ac9461193ab0ca538991624)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient does not wish to change his oral medication."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that Etripamil is in clinical testing for the treatment of... (ver_d93664ff5b9e44cfb3a852fb0f8b9f4b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that Etripamil is in clinical testing for the treatment of symptomatic AF."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that Etripamil is an intranasal medication. (ver_47e1bd5ed67c4e14941bf76533fb9120)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that Etripamil is an intranasal medication."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the patient should be considered for Etripamil to treat their... (ver_bbe032ccf4cf40f1a719f3ea1b4438a4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient should be considered for Etripamil to treat their symptomatic AF."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that ReVeRA-301 is an active clinical trial testing Etripamil for... (ver_1f415938e75842fb93628078efbecd82)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that ReVeRA-301 is an active clinical trial testing Etripamil for symptomatic AF."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient should be considered for the ReVeRA-301 clinical trial. (ver_60c6781190b247c1b7001e4fcb8aad70)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient should be considered for the ReVeRA-301 clinical trial."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-cards-patient-14-etripamil-steven-i-26bc67bf"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_26bc67bf1dc647acb0e749268fd7f359",
+    "task_name": "Web Search_Attachments_Cards_Patient 14 - Etripamil - Steven I",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_2369be9c290140b0b3919bdfe6439d66",
+        "golden_text_response": "The patient presented to the cardiology office with symptomatic palpitations consistent with episodic atrial fibrillation as per their Holter monitor. The patient tried beta-blockers (Metoprolol succinate 50 mg BID) without relief in symptoms. The patient is now seeking a way to control their symptomatic AF without procedures or changes to their oral medication regimen. The clinical trial that the patient should be considered for is ReVeRA-301, as it is testing the intranasal Etripamil for possible symptomatic relief in AF patients.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

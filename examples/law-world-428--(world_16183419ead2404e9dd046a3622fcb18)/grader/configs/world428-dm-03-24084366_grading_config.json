@@ -1,0 +1,66 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_d19b843fd2f047ff93556fa9e05ffdaa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_24084366073e4dc59e57d33475bd7b72",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States \"No\" to indicate that the City is unlikely to prevail in its argument",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The fact pattern closely resembles City of Patterson v. Stanislaus County (\u201cPatterson\u201d), both of which attached the DDA as an exhibit and where the defendant had taken steps that commit the agency to a definite course of action in regard to a project. In Patterson, the court held that the question of whether approval of the MOU without prior environmental review violated CEQA turns on two subsidiary questions: 1) whether the plans for the development were sufficiently definite and detailed to constitute a \"project\"; and 2) if so, whether the county's action on the MOU, in light of all the surrounding circumstances, was a commitment to proceed with the project sufficient to constitute an \"approval\" of it. Here, we are examining the second prong to determine whether the City is likely to succeed. \n\nThe City's conduct related to the DDA could improperly limit the discussion of project alternatives and mitigation measures in the EIR that were undertaken subsequent to the Agreement\u2019s execution, which warrants a denial of City's motion. The City had effectively foreclosed any meaningful options to going forward with the project given that if it failed to close escrow by December 31, 2022, the Zone become subject to heightened environmental requirements that were effective prior to the Agreement's execution. \n\nLegal standard - Source: City of Patterson v. Stanislaus County\n--Page 2: The question of whether approval of the MOU without prior environmental review violated CEQA turns on two subsidiary questions: whether the plans for the Crows Landing development were sufficiently definite and detailed to constitute a \"project\" within the meaning of the law, and, if so, whether the county's action on the MOU, in light of all the surrounding circumstances, was a commitment to proceed with the project sufficient to constitute an \"approval\" of it within the meaning of the law.\n-- Page 7: Whether an agency's decision constitutes an \"approval\" depends on whether the decision cuts off alternative courses of action that prior environmental review might have supported. \"`Approval' means the decision by a public agency which commits the agency to a definite course of action in regard to a project ....\" ... \"If, as a practical matter, the agency has foreclosed any meaningful options to going forward with the project, then for purposes of CEQA the agency has `approved' the project.\" (Remy, et al., Guide to CEQA, supra, p. 71.) If environmental review were allowed to be delayed until after an agency has taken action foreclosing meaningful options, \"EIR's would likely become nothing more than post hoc rationalizations to support action already taken.\"--Page 7: Despite the breadth of this definition, however, whether a plan of action is a project ripe for CEQA review depends on the definiteness of the plan. If the plan is still too indefinite to be subject to meaningful environmental review, environmental review is not yet required, for review must occur \"late enough to provide meaningful information for environmental assessment.\" \n\nRelevant Facts:\nSource: City of Patterson v. Stanislaus County,\n--Page 2: Apart from the agreement to negotiate in good faith, the MOU did not bind the parties. A detailed description of the development\u2014representing the parties' ultimate goal\u2014was attached to the MOU in the form of a draft Disposition and Development Agreement (DDA), which the parties intended to work toward executing.\n--Page 8: The county argues that its action on the MOU did not constitute approval of the development because the MOU stated that it was nonbinding and that any future approval of the project would be subject to CEQA compliance. Relying on Save Tara, supra, 45 Cal.4th 116, Patterson claims the county's action constituted an approval despite this language in the MOU\t\n\nSource: DDA \n--Section 10: PROJECT DESCRIPTION; PLANS; SCOPE; USE OF SITE - 10.1 Scope of Development.\u2028 The Project shall be generally consistent with the Scope of Development attached as Exhibit B\u2026\n--Exhibit B \u2013 Scope of Development, A. General - Developer agrees that the Site shall be developed and improved in accordance with the provisions of this Agreement including all attachments, and the plans, drawings, and related documents approved by City pursuant hereto. Developer, its supervising architect, engineers, and contractor shall work with City staff to coordinate the overall design and improvements\n\nSource: 344 W Bonita 2022 Sale Oversight Board\n-- On August 25, 2020, the City entered into an Exclusive Negotiating Agreement (ENA) with PSQ to negotiate the sale and ultimate development of the Property. Since then, the Successor Agency has been working with PSQ on multiple variations of its proposed project concept, site due diligence, and negotiation of a Disposition and Development Agreement (DDA) regarding the sale and future development of the Property. As part of its site due diligence efforts, PSQ hired geotechnical (Signal Geoscience) and environmental (Converse Consultants) consultants to conduct various studies of the Property. These studies, conducted in August/September 2021, identified the presence of extensive undocumented fill and environmental contaminants that would require certain mitigation measures; substantially increasing the cost of development and negatively affecting the land value of the Property, which has resulted in an agreed upon purchase price of $2,635,600. \n--Effective January 1, 2020, the California Surplus Land Act (Government Code 54220 et seq.) (\u201cSLA\u201d) was amended to clarify certain requirements regarding the sale of surplus land...However, if the Successor Agency and PSQ fail to close escrow by December 31, 2022, the Property will become subject to the requirements of the amended SLA prior to its sale or lease. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e6674df4d05a4e99b4719d8d99711c0d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_24084366073e4dc59e57d33475bd7b72",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the City's conduct in relation to the proposed DDA could be considered an \"approval\" of the project, thereby creating a genuine dispute of material fact",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The City's conduct related to the DDA could improperly limit the discussion of project alternatives and mitigation measures in the EIR that were undertaken subsequent to the Agreement\u2019s execution, which warrants a denial of City's motion. The City had effectively foreclosed any meaningful options to going forward with the project given that if it failed to close escrow by December 31, 2022, the Zone become subject to heightened environmental requirements. \n\nLegal standard - Source: City of Patterson v. Stanislaus County\n--Page 2: The question of whether approval of the MOU without prior environmental review violated CEQA turns on two subsidiary questions: whether the plans for the Crows Landing development were sufficiently definite and detailed to constitute a \"project\" within the meaning of the law, and, if so, whether the county's action on the MOU, in light of all the surrounding circumstances, was a commitment to proceed with the project sufficient to constitute an \"approval\" of it within the meaning of the law.\n-- Page 7: Whether an agency's decision constitutes an \"approval\" depends on whether the decision cuts off alternative courses of action that prior environmental review might have supported. \"`Approval' means the decision by a public agency which commits the agency to a definite course of action in regard to a project ....\" ... \"If, as a practical matter, the agency has foreclosed any meaningful options to going forward with the project, then for purposes of CEQA the agency has `approved' the project.\" (Remy, et al., Guide to CEQA, supra, p. 71.) If environmental review were allowed to be delayed until after an agency has taken action foreclosing meaningful options, \"EIR's would likely become nothing more than post hoc rationalizations to support action already taken.\"--Page 7: Despite the breadth of this definition, however, whether a plan of action is a project ripe for CEQA review depends on the definiteness of the plan. If the plan is still too indefinite to be subject to meaningful environmental review, environmental review is not yet required, for review must occur \"late enough to provide meaningful information for environmental assessment.\" \n\nRelevant Facts:\nSource: City of Patterson v. Stanislaus County,\n--Page 2: Apart from the agreement to negotiate in good faith, the MOU did not bind the parties. A detailed description of the development\u2014representing the parties' ultimate goal\u2014was attached to the MOU in the form of a draft Disposition and Development Agreement (DDA), which the parties intended to work toward executing.\n--Page 8: The county argues that its action on the MOU did not constitute approval of the development because the MOU stated that it was nonbinding and that any future approval of the project would be subject to CEQA compliance. Relying on Save Tara, supra, 45 Cal.4th 116, Patterson claims the county's action constituted an approval despite this language in the MOU\t\n\nSource: DDA \n--Section 10: PROJECT DESCRIPTION; PLANS; SCOPE; USE OF SITE - 10.1 Scope of Development.\u2028 The Project shall be generally consistent with the Scope of Development attached as Exhibit B\u2026\n--Exhibit B \u2013 Scope of Development, A. General - Developer agrees that the Site shall be developed and improved in accordance with the provisions of this Agreement including all attachments, and the plans, drawings, and related documents approved by City pursuant hereto. Developer, its supervising architect, engineers, and contractor shall work with City staff to coordinate the overall design and improvements\n\nSource: 344 W Bonita 2022 Sale Oversight Board\n-- On August 25, 2020, the City entered into an Exclusive Negotiating Agreement (ENA) with PSQ to negotiate the sale and ultimate development of the Property. Since then, the Successor Agency has been working with PSQ on multiple variations of its proposed project concept, site due diligence, and negotiation of a Disposition and Development Agreement (DDA) regarding the sale and future development of the Property. As part of its site due diligence efforts, PSQ hired geotechnical (Signal Geoscience) and environmental (Converse Consultants) consultants to conduct various studies of the Property. These studies, conducted in August/September 2021, identified the presence of extensive undocumented fill and environmental contaminants that would require certain mitigation measures; substantially increasing the cost of development and negatively affecting the land value of the Property, which has resulted in an agreed upon purchase price of $2,635,600. \n--Effective January 1, 2020, the California Surplus Land Act (Government Code 54220 et seq.) (\u201cSLA\u201d) was amended to clarify certain requirements regarding the sale of surplus land...However, if the Successor Agency and PSQ fail to close escrow by December 31, 2022, the Property will become subject to the requirements of the amended SLA prior to its sale or lease. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

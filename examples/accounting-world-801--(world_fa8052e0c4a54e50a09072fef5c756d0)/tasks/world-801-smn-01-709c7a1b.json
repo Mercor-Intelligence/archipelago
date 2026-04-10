@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Referencing the PurchaseOrders document on Xero, output the total authorised purchase orders of Redwood for FY2024. In addition, output the total authorised purchase orders in FY2024 as a percentage of Fixed Assets (Net) in FY2024 in the model. \n\n\nPresent monetary values in $ terms. Round all values to two decimals."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the amount of authorised purchase orders in FY2024 for Redwood is... (ver_1df560d32e6043a1b9b5d09f51f2f17e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the amount of authorised purchase orders in FY2024 for Redwood is $3,410,520.66 (acceptable range $3,376,415.45 to $3,444,625.87)."
+        }
+      ]
+    },
+    {
+      "name": "States the total authorised purchase orders in FY2024 as a percentage of Fixed... (ver_774c92b8a880422bb29a2401e79fe9fe)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the total authorised purchase orders in FY2024 as a percentage of Fixed Assets (Net) in FY 2024 for Redwood is 5.41% (acceptable range 5.36% to 5.46%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-801-smn-01-709c7a1b"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_709c7a1b88f347aea58b401e42da5788",
+    "task_name": "World 801_SMN_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_9e5b2dd79396411e92a8e41eefc14715",
+        "golden_text_response": "States the amount of authorised purchase orders in FY2024 for Redwood is $3,410,520.66.\n\nStates the total authorised purchase orders in FY2024 as a percentage of Fixed Assets (Net) in FY 2024 for Redwood is 5.41%. ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

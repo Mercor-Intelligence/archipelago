@@ -1,0 +1,148 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_d7215b0fdb3541f1b2be02e8333b3a2e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a40724034ae4e8088809a2bfce63319",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that one of the top 3 candidates for the Chief of Staff position is Shuri Black.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b2a0ba3e4c9941439a0b80daa9715be9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a40724034ae4e8088809a2bfce63319",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that one of the top 3 candidates for the Chief of Staff position is Ryan Howard.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_db7cc9d4d0d24f07a57bbff9e1136dfd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a40724034ae4e8088809a2bfce63319",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that one of the top 3 candidates for the Chief of Staff position is Sarah Lee.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2c784280db9345dc8b4834b1bf7b27f2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a40724034ae4e8088809a2bfce63319",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the score, as per the internal scoring methodology, for Shuri Black is 92.46 (acceptable range 91.54 to 93.38)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8a093d154127463babd309458d8a48c3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a40724034ae4e8088809a2bfce63319",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the score, as per the internal scoring methodology, for Ryan Howard is 90.09 (acceptable range 89.19 to 90.99)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7a711fa706ff4901aa59590b6aa51967",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a40724034ae4e8088809a2bfce63319",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the score, as per the internal scoring methodology, for Sarah Lee is 89.63 (acceptable range 88.73 to 90.53).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

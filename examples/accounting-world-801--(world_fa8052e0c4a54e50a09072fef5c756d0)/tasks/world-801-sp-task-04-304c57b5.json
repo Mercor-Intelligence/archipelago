@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Calculate the Revenue Documentation Gap (the percentage of Net Revenue not captured by formal Invoices) and the Tax Debt Coverage Multiple (Net Operational Cash Flow relative to the Total Tax Underpaid) for the 2021 and 2022 fiscal years using the Trial Balance Summary, Tax Exposure, Xero Invoices, and Bank Transactions data.\n\nAssumptions:\nFor Invoiced Amount, include only ACCREC (Accounts Receivable) type invoices with AUTHORISED or PAID status for the respective fiscal year.\nFor Net Operational Cash Flow, calculate the sum of RECEIVE bank transactions minus the sum of SPEND bank transactions, considering only those with AUTHORISED status and denominated in USD.\nTotal Tax Underpaid should be from both the Federal and State Tax Exposure.\n\nPresent the Revenue Documentation Gap in % and the Tax Debt Coverage Multiple as a decimal (e.g., 1.50x), rounded to two decimal places to the console for each year to the console"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the Revenue Documentation Gap for the year 2021 is 96.46%... (ver_27dcf82db2f94e0bab7356499058e309)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Revenue Documentation Gap for the year 2021 is 96.46% (acceptable range 96.45% to 96.47%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Revenue Documentation Gap for the year 2022 is 98.09%... (ver_895b4d249b6d45d1a0251f1f711d8b29)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Revenue Documentation Gap for the year 2022 is 98.09% (acceptable range 98.08% to 98.10%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Tax Debt Coverage Multiple for the year 2021 is 0.80x... (ver_e16bec95c19447fba59acbed9136f591)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Tax Debt Coverage Multiple for the year 2021 is 0.80x (acceptable range 0.79x to .081x)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Tax Debt Coverage Multiple for the year 2022 is 2.41x... (ver_fc6d8824eb5143849a70d50fbd7f55ef)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Tax Debt Coverage Multiple for the year 2022 is 2.41x (acceptable range 2.40x to .2.42x)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-801-sp-task-04-304c57b5"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_304c57b57c1241e3b6d98763745b5340",
+    "task_name": " World 801 SP_Task 04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_dd8904c068f84bf28b75e649f46b8033",
+        "golden_text_response": "For the 2021 fiscal year, the Revenue Documentation Gap was 96.46% with a Tax Debt Coverage Multiple of 0.80x. For the 2022 fiscal year, the Revenue Documentation Gap was 98.09% with a Tax Debt Coverage Multiple of 2.41x.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

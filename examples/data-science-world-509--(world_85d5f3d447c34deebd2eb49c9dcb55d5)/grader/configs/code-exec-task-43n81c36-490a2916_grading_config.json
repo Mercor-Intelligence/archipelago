@@ -1,0 +1,132 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_e3b9bd00da454db4b140beb02f0cdad6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_490a29161fb5417ca751524297b5b4da",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the first inflection window as spanning from 2023-09 to 2023-10.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Finds the inflection window ask for in order to verify the values on the chart.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_52a18d19c1e143e0aef476e80b6beca2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_490a29161fb5417ca751524297b5b4da",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the second inflection window as spanning from 2024-05 to 2024-06.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Finds the inflection window ask for in order to verify the values on the chart.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6cb2be34b1a14be0958a737ff885f6b9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_490a29161fb5417ca751524297b5b4da",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that the variable loss change in dollars is $461291139 +/- $100.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Finds the correct variable loss change in dollars",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7ed2d5842389436aa2aea80830075a10",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_490a29161fb5417ca751524297b5b4da",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the variable loss change in percent is 59.87% (+/- 0.05%)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Finds the correct variable loss change in percent.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1382ae747fad438d93afcb78fb134ab9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_490a29161fb5417ca751524297b5b4da",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that the total portfolio expected loss change across the window is explained by variable rate loans is 100.83% (+/- 0.05%).",
+        "autogen_source": null,
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Finds the correct  total portfolio expected loss change across the window explained by variable rate loans.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "eval_config_name": "Output LLM",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "4658aec9-7eeb-4c9b-84c2-5464345e345f",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

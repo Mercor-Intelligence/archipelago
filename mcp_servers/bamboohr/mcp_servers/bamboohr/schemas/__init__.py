@@ -1,0 +1,160 @@
+"""API schemas for BambooHR MCP server.
+
+This package contains Pydantic models that define:
+- Input schemas: Request validation
+- Output schemas: Response structure
+- API configuration: URL templates, HTTP methods
+
+Organized by domain:
+- employee.py: Employee CRUD operations
+- time_off.py: Time-off requests, balances, policies
+- common.py: Shared types (pagination, errors, metadata)
+"""
+
+from .base import APIConfigurable
+from .common import (
+    CountryResponse,
+    ErrorResponse,
+    FieldDefinitionResponse,
+    FieldOption,
+    FieldsResponse,
+    ListFieldResponse,
+    PaginatedResponse,
+    Pagination,
+    ResetStateInput,
+    ResetStateResponse,
+    StateResponse,
+    SuccessResponse,
+    UserResponse,
+    UsersResponse,
+    ValidationErrorDetail,
+    ValidationErrorResponse,
+)
+from .employee import (
+    CompanyInfoResponse,
+    DirectoryEmployee,
+    DirectoryEntry,
+    DirectoryField,
+    DirectoryResponse,
+    EmployeeBase,
+    EmployeeCompensation,
+    EmployeeCreate,
+    EmployeeGetInput,
+    EmployeeResponse,
+    EmployeeRestrictedFields,
+    EmployeeUpdate,
+    GetDirectoryOutput,
+)
+from .time_off import (
+    AssignedPolicyEntry,
+    AssignPolicyResponse,
+    BalanceAdjustmentResponse,
+    BalanceEntry,
+    CreateTimeOffPolicyRequest,
+    CreateTimeOffPolicyResponse,
+    CreateTimeOffTypeRequest,
+    CreateTimeOffTypeResponse,
+    DefaultHoursResponse,
+    EmployeePolicyEntry,
+    EstimateFutureBalanceEntry,
+    EstimateFutureBalancesInput,
+    EstimateFutureBalancesOutput,
+    GetTypesResponse,
+    GetTypesTimeOffTypeResponse,
+    PolicyAssignment,
+    PolicyAssignmentInput,
+    PolicyListEntry,
+    RemovedPolicyEntry,
+    TimeOffBalanceResponse,
+    TimeOffBalancesInput,
+    TimeOffBalancesResponse,
+    TimeOffBalanceUpdate,
+    TimeOffPoliciesResponse,
+    TimeOffPolicyResponse,
+    TimeOffRequestCreate,
+    TimeOffRequestResponse,
+    TimeOffRequestsInput,
+    TimeOffRequestsResponse,
+    TimeOffRequestStatusUpdate,
+    TimeOffTypeResponse,
+    TimeOffTypesResponse,
+    WhosOutEntry,
+    WhosOutInput,
+    WhosOutResponse,
+)
+
+__all__ = [
+    # Base
+    "APIConfigurable",
+    # Common
+    "Pagination",
+    "PaginatedResponse",
+    "ErrorResponse",
+    "ValidationErrorDetail",
+    "ValidationErrorResponse",
+    "SuccessResponse",
+    "ResetStateInput",
+    "ResetStateResponse",
+    "FieldOption",
+    "ListFieldResponse",
+    "FieldDefinitionResponse",
+    "FieldsResponse",
+    "CountryResponse",
+    "StateResponse",
+    "UserResponse",
+    "UsersResponse",
+    # Employee
+    "EmployeeBase",
+    "EmployeeRestrictedFields",
+    "EmployeeCompensation",
+    "EmployeeCreate",
+    "EmployeeUpdate",
+    "EmployeeGetInput",
+    "EmployeeResponse",
+    "DirectoryEntry",
+    "DirectoryResponse",
+    "DirectoryField",
+    "DirectoryEmployee",
+    "GetDirectoryOutput",
+    "CompanyInfoResponse",
+    # Time Off
+    "TimeOffTypeResponse",
+    "TimeOffTypesResponse",
+    "GetTypesTimeOffTypeResponse",
+    "DefaultHoursResponse",
+    "GetTypesResponse",
+    "TimeOffPolicyResponse",
+    "TimeOffPoliciesResponse",
+    "TimeOffRequestCreate",
+    "TimeOffRequestStatusUpdate",
+    "TimeOffRequestResponse",
+    "TimeOffRequestsInput",
+    "TimeOffRequestsResponse",
+    "TimeOffBalanceResponse",
+    "TimeOffBalancesInput",
+    "TimeOffBalancesResponse",
+    "TimeOffBalanceUpdate",
+    "PolicyAssignment",
+    "WhosOutInput",
+    "WhosOutEntry",
+    "WhosOutResponse",
+    # Policy Tools
+    "PolicyAssignmentInput",
+    "PolicyListEntry",
+    "EmployeePolicyEntry",
+    "AssignedPolicyEntry",
+    "RemovedPolicyEntry",
+    "AssignPolicyResponse",
+    # Balance Tools
+    "BalanceEntry",
+    "BalanceAdjustmentResponse",
+    # Create Type/Policy Tools
+    "CreateTimeOffTypeRequest",
+    "CreateTimeOffTypeResponse",
+    "CreateTimeOffPolicyRequest",
+    "CreateTimeOffPolicyResponse",
+    # Estimate Future Balances Tools
+    "EstimateFutureBalancesInput",
+    "EstimateFutureBalanceEntry",
+    "EstimateFutureBalancesOutput",
+]

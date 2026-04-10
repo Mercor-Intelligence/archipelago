@@ -1,0 +1,284 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "SBP received the attached email from OSHA and has drafted the attached response email. Explain the facts of the complaint. Then state whether the response email is sufficient for SBP's goal of defending itself from the retaliation claim and why or why not. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the draft email indicates that Anthony Porter failed to enforce... (ver_a7810c44d9104475a2d256575e4ca6b1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the draft email indicates that Anthony Porter failed to enforce the work stop directive dated October 5, 2025."
+        }
+      ]
+    },
+    {
+      "name": "States that the work stop directive dated October 5, 2025 was not addressed to... (ver_73d63db0ef2d4563a62b98cdb2c40a16)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the work stop directive dated October 5, 2025 was not addressed to Anthony Porter."
+        }
+      ]
+    },
+    {
+      "name": "States that there is no record in the personnel file that Mr. Porter received... (ver_ae924f4c34024b77a9b20a797dd186ca)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that there is no record in the personnel file that Mr. Porter received the work stop directive."
+        }
+      ]
+    },
+    {
+      "name": "States that there is no record in the communications map that Mr. Porter... (ver_75664e432f474d8681249f5adaabd3b3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that there is no record in the communications map that Mr. Porter received the work stop directive."
+        }
+      ]
+    },
+    {
+      "name": "States that if SBP makes a claim to OSHA that is not supported by the... (ver_2db0c8863da74136a2262017be0ccfa2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that if SBP makes a claim to OSHA that is not supported by the evidence, it could damage SBP’s credibility with OSHA."
+        }
+      ]
+    },
+    {
+      "name": "States that Mr. Porter’s failure to enforce the work stop directive dated... (ver_9ef501033dd743f0bb1dc64f37262ad8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Mr. Porter’s failure to enforce the work stop directive dated October 5, 2025 is not mentioned in his November 3, 2025 Performance Review."
+        }
+      ]
+    },
+    {
+      "name": "States that Mr. Porter’s failure to enforce the work stop directive dated... (ver_9406043431ac46ab9c6bf5892a3cf6a5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Mr. Porter’s failure to enforce the work stop directive dated October 5, 2025 is not mentioned in his November 4, 2025 Notice of Termination."
+        }
+      ]
+    },
+    {
+      "name": "States that SBP only cited Porter’s failure to enforce the work-stop after... (ver_ad5509ed5f374d089a14df2c22464931)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that SBP only cited Porter’s failure to enforce the work-stop after Porter filed a retaliation complaint with OSHA."
+        }
+      ]
+    },
+    {
+      "name": "States that because the failure to enforce the work-stop was omitted during... (ver_3ef4252aa9ce49299805c983732f8607)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that because the failure to enforce the work-stop was omitted during the performance review and termination process, it appears to be a post-hoc justification designed to hide a retaliatory motive."
+        }
+      ]
+    },
+    {
+      "name": "States that an admission of a post hoc justification for firing could damage... (ver_8c05cff7893242a2b76c5eb581b757ab)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that an admission of a post hoc justification for firing could damage SBP’s credibility with OSHA."
+        }
+      ]
+    },
+    {
+      "name": "States that the draft email is not sufficient for SBP’s defense against... (ver_fd62722181be4407ba9579b5c1d59b31)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the draft email is not sufficient for SBP’s defense against Anthony Porter’s retaliation claim."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh lawworld437-naf-01-eb57ea8f"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_eb57ea8fa48749cebf2510ff9cf578c2",
+    "task_name": "LawWorld437_NAF_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d3b8fe19fa4944629b9f72654dc8c269",
+        "golden_text_response": "The draft email indicates that Anthony Porter failed to enforce the work stop directive dated October 5, 2025.  However, the work stop directive dated October 5, 2025 was only addressed to SteelTree Solutions and not to Anthony Porter.  There is no record in the personnel file that Mr. Porter received the work stop directive.  There is no record in the communications map that Mr. Porter received the work stop directive.  Making a claim to OSHA that is not supported by the evidence could damage SBP’s credibility with OSHA.  \n\nAdditionally, Mr. Porter’s failure to enforce the work stop directive dated October 5, 2025 is not mentioned in his November 3, 2025 Performance Review or in his November 4, 2025 Notice of Termination.  SBP not mentioning Anthony Porter’s failure to enforce the work stop directive dated October 5, 2025 in his November 3, 2025 Performance Review or his November 4, 2025 Notice of Termination but later mentioning it in the response to Anthony Porter’s retaliation complaint with OSHA appears to be a post-hoc justification or pretext for his termination, as it was not listed as a factor considered at the time of termination.  SBP making a claim to OSHA that appears to be admission of a post hoc justification for firing could damage SBP’s credibility with OSHA.  \n\nThe draft email is not sufficient and may harm SBP’s defense against Anthony Porter’s retaliation claim.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

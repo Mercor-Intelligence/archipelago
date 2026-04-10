@@ -1,0 +1,393 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_b11147060cd54965b041ff2705e26cbb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_940fe6b7b6e04a338365989f9b0d5f9f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient's current cardiac monitor demonstrates an increased duration of non-sustained ventricular tachycardia (NSVT) compared to prior cardiac monitoring.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient previously wore a Holter monitor in 2012, which showed \u201cvery frequent PVCs [premature ventricular complexes]\u201d and \u201cbrief (maximum 6-beat) episodes non-sustained ventricular tachycardia [NSVT]\u201d.  The phone conversation indicates that the patient is having palpitations during episodes of PVCs that \"lasted almost 30 seconds.\"  This is indicative of runs of NSVT.  NSVT is defined by the occurrence of three or more PVCs in a row lasting less than 30 seconds.  The patient is having longer durations of NSVT than she has had in the past, which lasted at maximum 6 beats. \n\n\u201cIn 2012 a echocardiogram showed mitral valve prolapse with preserved left ventricular systolic function and no significant mitral insufficiency.  The same year she wore a Holter monitor that showed brief (maximum 6-beat) episodes of nonsustained ventricular tachycardia and very frequent PVCs.\u201d  CLINICALNOTES - Progress Notes - Column D - Row 167\n\nCards_Patient 13 Script Monitoring:\n \"Physician: Well, my secretary gave me your faxed report from the monitoring company.  I spent the first five minutes of my morning reviewing it.  It appears that you\u2019re having PVCs.\n\nPatient: I think I\u2019ve had that before.\n\nPhysician: Yes, it appears they are quite frequent.  Have you been noticing palpitations?\n\nPatient: Yes, more frequently than usual.  I had some yesterday and they lasted almost 30 seconds.\n\nPhysician: Yes, that\u2019s what I\u2019m seeing on the report here.  Are you able to come into the office sometime next week to talk more about your results?\"\n\n\"Nonsustained ventricular tachycardia (NSVT), defined as \u22653 consecutive beats arising below the atrioventricular node and lasting up to 30 seconds with a rate exceeding 100 bpm, is frequently identified in clinical practice.\"  https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.123.066049",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Script Monitoring.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_be11b0ce121a4afc9f857e228e863767"
+          }
+        ]
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6181f02bf2dc4f7cb8bdbe88ec9f6eb0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_940fe6b7b6e04a338365989f9b0d5f9f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that the duration of the patient's NSVT on the current cardiac monitor is a concerning sign for ventricular tachycardia.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The phone conversation indicates that the patient is having palpitations during episodes of PVCs that \"lasted almost 30 seconds.\"  This is indicative of runs of NSVT.  NSVT is defined by the occurrence of three or more PVCs in a row lasting up to 30 seconds.  The duration of the reported episode of NSVT is close to 30 seconds, nearly meeting the definition of ventricular tachycardia.  This is a critical safety point that must be identified because ventricular tachycardia is a potentially life-threatening arrhythmia that is responsible for the majority of sudden cardiac deaths in the United States.\n\nCards_Patient 13 Script Monitoring:\n \"Physician: Well, my secretary gave me your faxed report from the monitoring company.  I spent the first five minutes of my morning reviewing it.  It appears that you\u2019re having PVCs.\n\nPatient: I think I\u2019ve had that before.\n\nPhysician: Yes, it appears they are quite frequent.  Have you been noticing palpitations?\n\nPatient: Yes, more frequently than usual.  I had some yesterday and they lasted almost 30 seconds.\n\nPhysician: Yes, that\u2019s what I\u2019m seeing on the report here.  Are you able to come into the office sometime next week to talk more about your results?\"\n\n\"Nonsustained ventricular tachycardia (NSVT), defined as \u22653 consecutive beats arising below the atrioventricular node and lasting up to 30 seconds with a rate exceeding 100 bpm, is frequently identified in clinical practice.\"  https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.123.066049\n\n\"Ventricular tachycardia (VT) is a wide complex arrhythmia of ventricular origin, defined as three or more consecutive beats at a rate of more than 100 beats per minute. Sustained ventricular tachycardia is defined as tachycardia that continues for more than 30 seconds or leads to hemodynamic compromise within 30 seconds and requires intervention....Ventricular tachycardia is a potentially life-threatening arrhythmia, and it is responsible for the majority of sudden cardiac deaths in the United States.\"\nhttps://www.ncbi.nlm.nih.gov/books/NBK532954/",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Script Monitoring.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_be11b0ce121a4afc9f857e228e863767"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_855a0501ff9941b4b6a14a7b7229fc3c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_940fe6b7b6e04a338365989f9b0d5f9f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient's echocardiogram is mostly unchanged from the prior echocardiogram.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Echocardiogram 5/4/2021:  There is moderate holosystolic prolapse of both leaflets of the mitral valve. Posterior>Anterior. 2. Left ventricular ejection fraction, by estimation, is 65 to 70%. The left ventricle has normal function. The left ventricle has no regional wall motion abnormalities. Left ventricular diastolic parameters were normal. The average left ventricular global longitudinal strain is - 20.7 %. 3. Right ventricular systolic function is normal. The right ventricular size is normal. There is normal pulmonary artery systolic pressure. 4. The mitral valve is myxomatous. Mild mitral valve regurgitation. No evidence of mitral stenosis. 5. Tricuspid valve regurgitation is mild to moderate. 6. The aortic valve is normal in structure. Aortic valve regurgitation is trivial. No aortic stenosis is present. 7. The inferior vena cava is normal in size with greater than 50% respiratory variability, suggesting right atrial pressure of 3 mmHg.\"\nCLINICALNOTES - Consult Note - Row D - Column 176\n\nCards 13 TTE.pdf: \"There is moderate holosystolic prolapse of both leaflets of the mitral  valve. Posterior>Anterior. The mitral valve is myxomatous. Mild mitral valve regurgitation. No evidence of mitral stenosis.\nLeft ventricular ejection fraction, by estimation, is 65 to 70%. The left ventricle has normal function. There is mild septal wall hypokinesis. Left ventricular diastolic parameters were  normal. \nRight ventricular systolic function is normal. The right ventricular  size is normal. There is normal pulmonary artery systolic pressure.  \nTricuspid valve regurgitation is mild to moderate.\nThe aortic valve is normal in structure. Aortic valve regurgitation is  trivial. No aortic stenosis is present. \nThe inferior vena cava is normal in size with greater than 50%  respiratory variability, suggesting right atrial pressure of 3 mmHg.\"",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Cards 13 TTE.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_be11b0ce121a4afc9f857e228e863767"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ce68be74b2cf4a27af6bcae67998fcc7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_940fe6b7b6e04a338365989f9b0d5f9f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient's echocardiogram demonstrates new septal wall hypokinesis.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Cards 13 TTE.pdf: \"Left ventricular ejection fraction, by estimation, is 65 to 70%. The left ventricle has normal function. There is mild septal wall hypokinesis. Left ventricular diastolic parameters were  normal.\"\n\nSeptal wall hypokinesis is new in comparison to the last echocardiogram on record.\n\n\"Echocardiogram 5/4/2021:  There is moderate holosystolic prolapse of both leaflets of the mitral valve. Posterior>Anterior. 2. Left ventricular ejection fraction, by estimation, is 65 to 70%. The left ventricle has normal function. The left ventricle has no regional wall motion abnormalities. Left ventricular diastolic parameters were normal. The average left ventricular global longitudinal strain is - 20.7 %. 3. Right ventricular systolic function is normal. The right ventricular size is normal. There is normal pulmonary artery systolic pressure. 4. The mitral valve is myxomatous. Mild mitral valve regurgitation. No evidence of mitral stenosis. 5. Tricuspid valve regurgitation is mild to moderate. 6. The aortic valve is normal in structure. Aortic valve regurgitation is trivial. No aortic stenosis is present. 7. The inferior vena cava is normal in size with greater than 50% respiratory variability, suggesting right atrial pressure of 3 mmHg.\"\nCLINICALNOTES - Consult Note - Row D - Column 176",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Cards 13 TTE.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_be11b0ce121a4afc9f857e228e863767"
+          }
+        ]
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_11b9116d79e24d99a7fac3df65022689",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_940fe6b7b6e04a338365989f9b0d5f9f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States septal wall hypokinesis is a common manifestation of ischemic heart disease.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Regional wall motion abnormality (RWMA) is a common manifestation of ischemic heart disease detected through echocardiography.\"\nhttps://www.sciencedirect.com/science/article/pii/S2405844023104324",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dd7c2df4bafa4841bb02af37432ec3f4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_940fe6b7b6e04a338365989f9b0d5f9f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States ischemic heart disease is the most common cause of ventricular tachycardia.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Ischemic heart disease is the most common cause of ventricular tachycardia, and VT has a wide range of clinical presentations, including palpitations, chest pain, shortness of breath, syncope, and cardiac arrest.\"\nhttps://www.ncbi.nlm.nih.gov/books/NBK532954/",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5a59ed1a1b7649e78a2ea56fa8da36ae",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_940fe6b7b6e04a338365989f9b0d5f9f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the echocardiogram finding of septal wall hypokinesis is most likely responsible for the patient's increased burden of NSVT.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has an echocardiogram that is largely unchanged from the prior on record, but she has a new finding of septal wall hypokinesis.  Regional wall motion abnormalities are a common manifestation of ischemic heart disease.  The most common cause of ventricular tachycardias is ischemic heart disease.  Therefore, the patient\u2019s increased burden of NSVT is most likely attributable to the septal wall hypokinesis, which itself suggests underlying obstructive coronary disease.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Cards 13 TTE.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_be11b0ce121a4afc9f857e228e863767"
+          },
+          {
+            "name": "Cards_Patient 13 Script Monitoring.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_be11b0ce121a4afc9f857e228e863767"
+          }
+        ]
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2f02fec3789a4c3ea216d0f0bb9781d3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_940fe6b7b6e04a338365989f9b0d5f9f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States CPT code 99445 is assigned for remote physiological monitoring devices with daily recording or programmed alert transmission used for 2 to 15 days in a 30-day-period.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "It is important to precisely define CPT codes.  Approximations do not meet the requirement for a CPT code and can lead to services not being reimbursed.\n\n\"Remember: the CPT code must accurately describe the procedure or service being performed, rather than approximate that procedure or service.\"\nhttps://www.ama-assn.org/practice-management/cpt/faqs-cpt-codes-health-tech-innovation\n\n\"CPT 99445  Remote monitoring of physiologic parameter(s) (eg, weight, blood pressure, pulse oximetry, respiratory flow rate), initial device(s) supply with daily recording(s) or programmed alert(s) transmission, 2-15 days in a 30-day period.\"\nhttps://www.uhcprovider.com/content/dam/provider/docs/public/policies/index/commercial/remote-physiologic-monitoring-01012026.pdf",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_44678557a5b040b0ba737b9fd40ee686",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_940fe6b7b6e04a338365989f9b0d5f9f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (numerical)",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has been wearing the recently supplied remote monitoring device for the past 14 days.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The encounter involves remote monitoring of physiological parameters with a wearable cardiac monitor, a device that takes at least daily recordings of heart rhythm, and the patient has been wearing it continuously since initial supply 14 days ago (December 29, 2025 to January 12, 2026).\n\nCards_Patient 13 Script: \"The encounter below is AI scribe documentation of a phone call occurring from 0800 to 0805 on 1/12/2026...\n\nI understand you had your appointment to set up the monitor on the morning of December 29th. Is that correct?\n\nPatient: Yes, I\u2019ve had the monitor on since then.\"",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Script Monitoring.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_be11b0ce121a4afc9f857e228e863767"
+          }
+        ]
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c6256c34bcac4950917eb491e4e24ff4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_940fe6b7b6e04a338365989f9b0d5f9f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement",
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Assigns CPT code 99445 to this patient's encounter. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The encounter involves remote monitoring of physiological parameters with a wearable cardiac monitor, a device that takes at least daily recordings of heart rhythm, and the patient has been wearing it continuously since initial supply 14 days ago (December 29, 2025 to January 12, 2026).\n\nCards_Patient 13 Script: \"The encounter below is AI scribe documentation of a phone call occurring from 0800 to 0805 on 1/12/2026...\n\nI understand you had your appointment to set up the monitor on the morning of December 29th. Is that correct?\n\nPatient: Yes, I\u2019ve had the monitor on since then.\"\n\n\"CPT 99445  Remote monitoring of physiologic parameter(s) (eg, weight, blood pressure, pulse oximetry, respiratory flow rate), initial device(s) supply with daily recording(s) or programmed alert(s) transmission, 2-15 days in a 30-day period.\"\nhttps://www.uhcprovider.com/content/dam/provider/docs/public/policies/index/commercial/remote-physiologic-monitoring-01012026.pdf",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Script Monitoring.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_be11b0ce121a4afc9f857e228e863767"
+          }
+        ]
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f1b11b482888468b9317a6430c4be793",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_940fe6b7b6e04a338365989f9b0d5f9f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States CPT code 99470 is assigned for the first 10 minutes of remote physiologic monitoring treatment services provided by a qualified health care professional in a calendar month requiring 1 real-time interactive communication with the patient or caregiver.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "It is important to precisely define CPT codes.  Approximations do not meet the requirement for a CPT code and can lead to services not being reimbursed.\n\n\"Remember: the CPT code must accurately describe the procedure or service being performed, rather than approximate that procedure or service.\"\nhttps://www.ama-assn.org/practice-management/cpt/faqs-cpt-codes-health-tech-innovation\n\n\"99470 Remote physiologic monitoring treatment management services, clinical staff/physician/other qualified health care professional time in a calendar month requiring 1 real-time interactive communication with the patient/caregiver during the calendar month; first 10 minutes\"\nhttps://www.uhcprovider.com/content/dam/provider/docs/public/policies/index/commercial/remote-physiologic-monitoring-01012026.pdf",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_29ce43e110b64ab7835f6b1fbb630d88",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_940fe6b7b6e04a338365989f9b0d5f9f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (numerical)",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the physician provided a total of 10 minutes of remote physiologic monitoring treatment services during this patient encounter (acceptable range 9.9 to 10).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has a remote cardiac monitor that is being managed by the physician, who spent 5 minutes reviewing the monitoring data and 5 minutes discussing results with the patient (10 minutes total) over the phone, meeting the requirement for a real-time interactive communication.\n\n\"The encounter below is AI scribe documentation of a phone call occurring from 0800 to 0805 on 1/12/2026.\"\n\"Physician: Well, my secretary gave me your faxed report from the monitoring company.  I spent the first five minutes of my morning reviewing it.  It appears that you\u2019re having PVCs.\"",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Script Monitoring.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_be11b0ce121a4afc9f857e228e863767"
+          }
+        ]
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7bca875fdba34b3890265cc6650d103a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_940fe6b7b6e04a338365989f9b0d5f9f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Reasoning (numerical)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Assigns CPT code 99470 to this patient's encounter. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has a remote cardiac monitor that is being managed by the physician, who spent 5 minutes reviewing the monitoring data and 5 minutes discussing results with the patient (10 minutes total) over the phone, meeting the requirement for a real-time interactive communication.\n\n\"The encounter below is AI scribe documentation of a phone call occurring from 0800 to 0805 on 1/12/2026.\"\n\"Physician: Well, my secretary gave me your faxed report from the monitoring company.  I spent the first five minutes of my morning reviewing it.  It appears that you\u2019re having PVCs.\"\n\n\"99470 Remote physiologic monitoring treatment management services, clinical staff/physician/other qualified health care professional time in a calendar month requiring 1 real-time interactive communication with the patient/caregiver during the calendar month; first 10 minutes\"\nhttps://www.uhcprovider.com/content/dam/provider/docs/public/policies/index/commercial/remote-physiologic-monitoring-01012026.pdf",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Script Monitoring.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_be11b0ce121a4afc9f857e228e863767"
+          }
+        ]
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

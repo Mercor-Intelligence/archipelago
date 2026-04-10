@@ -1,0 +1,192 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The team wants to do some deep dive into a subset of borrowers and their loans. Identify from 1.11.2026 Habor Capital Final.pdf: the two most risk concentrated sectors (slide 3) and the first month (month X) when High risk (D) and Distressed (F) loans combined expand beyond 50% (slide 6). Filter from enriched_loan_data.csv data since month X (inclusive) till the end of 2024 for borrowers: (1) in the two high risk sectors, (2) whose expected loss for month X requires VP approval, and (3) whose delinquency bucket status worsened in month X compared to month X-1. Risk framework and definitions are documented in Executive Documentation - Harbor Capital Risk Dashboard.docx. Export those data into a new excel file named enrich_loan_data_subset.xlsx. Create a pivot table in a new sheet named \"Summary\" and summarise the \"Loss_Balance_Ratio\" by Month_Key (row). Filter in the pivot table for borrowers that have been in business for more than 5 years and are of Variable interest type. \"Loss_Balance_Ratio\" is defined as the ratio between total expected loss and total current balance. Round the numbers to 3 decimal points. Use formulas directly in the sheets so the pivot table can update seamlessly when the data changes."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "The Loss_Balance_Ratio for 2024-06 is 0.457 +/- 0.005 (ver_cb05ce2ba1194e36b2090ffd34a7c4fe)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The Loss_Balance_Ratio for 2024-06 is 0.457 +/- 0.005."
+        }
+      ]
+    },
+    {
+      "name": "The Loss_Balance_Ratio for 2024-07 0.401 +/- 0.005 (ver_8d4635a14e2b412086dd7e06000ef533)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The Loss_Balance_Ratio for 2024-07 0.401 +/- 0.005."
+        }
+      ]
+    },
+    {
+      "name": "The Loss_Balance_Ratio for 2024-08 is 0.396 +/- 0.005 (ver_1d8b96f5596c45349c8e5ae5c6e79ffc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The Loss_Balance_Ratio for 2024-08 is 0.396 +/- 0.005."
+        }
+      ]
+    },
+    {
+      "name": "The Loss_Balance_Ratio for 2024-09 is 0.393 +/- 0.005 (ver_a467a2fb74bc457bafbbb55e860255f0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The Loss_Balance_Ratio for 2024-09 is 0.393 +/- 0.005."
+        }
+      ]
+    },
+    {
+      "name": "The Loss_Balance_Ratio for 2024-10 is 0.400 +/- 0.005 (ver_5c95d099eea5482ea11505cc7b839144)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The Loss_Balance_Ratio for 2024-10 is 0.400 +/- 0.005."
+        }
+      ]
+    },
+    {
+      "name": "The Loss_Balance_Ratio for 2024-11 is 0.394 +/- 0.005 (ver_a5f2975d16184ba29267b1c66ed85695)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The Loss_Balance_Ratio for 2024-11 is 0.394 +/- 0.005."
+        }
+      ]
+    },
+    {
+      "name": "The Loss_Balance_Ratio for 2024-12 is 0.397 +/- 0.005 (ver_5ee9b08bde2f4c99ab26e6e0f476e348)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The Loss_Balance_Ratio for 2024-12 is 0.397 +/- 0.005."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sheets-task-q64u0788-050f0e67"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_050f0e674ec34bae961fb47a2e04ac45",
+    "task_name": "Sheets - Task q64u0788",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_4d0de05b308c4a919d561f0f09b30525",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_646ab63d84d34e848aec5720a0689564"
+      }
+    ]
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_44782830dbc348c79fe87ff65264cc83",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2434d7ed052347cd9dfd00f377540daa",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has a history of hypertension.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from the chart the patient's prior history. \n\n\"Essential (primary) hypertension\"\nTab-Diagnoses, Column-I, Row-295.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4b893dc1e34948dbbc32d5d2860eb23e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2434d7ed052347cd9dfd00f377540daa",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient's blood pressure is greater than 180/120 mmHg.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from the script. the patient's blood pressure is \"240/140\" and that is greater than 180/120.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9aecdfc25c0643bda0a01ced8d001883",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2434d7ed052347cd9dfd00f377540daa",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient is being admitted for treatment of extended spectrum beta-lactamase (ESBL) urinary tract infection (UTI).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from the script and the attachment. The patient has \"ESBL\" and is only \"S\" to \"ertapenem\". From the script the patient is admitted for IV antibiotics. \n\n\"Patient: Hi, doc. I am having some burning with urination.\nPhysician: Yes, unfortunately, you have a urine infection. With your last urine culture you will need to stay for IV antibiotics.\nPatient: Can I go home?\nPhysician: Unfortunately the only option is by IV so I have admitted you to the hospital.\"",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d81a809228b447058ea2ab648b9ddaa7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2434d7ed052347cd9dfd00f377540daa",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient is unlikely to have target-organ damage from high blood pressure. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient is unlikely to have end-organ damage without reporting any significant symptoms (dizziness, headache, abdominal pain etc) and normal CMP per the script. \n\n\"A hypertensive emergency is an acute, marked elevation in blood pressure that is associated with signs of target-organ damage. These can include pulmonary edema, cardiac ischemia, neurologic deficits, acute renal failure, aortic dissection, and eclampsia.\" \nhttps://www.ncbi.nlm.nih.gov/books/NBK470371/ \n\nThere is no indication from the script or prompt that the patient is having cardiac or neurologic symptoms, or vascular emergency or renal failure.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b648f6001c6048f9a8cdfb12a89cd274",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2434d7ed052347cd9dfd00f377540daa",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that the 2025 guidelines \"A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines\" addresses management of severe hypertension in hospitalized patients.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"2025 AHA/ACC/AANP/AAPA/ABC/ACCP/ ACPM/AGS/AMA/ASPC/NMA/PCNA/ SGIM Guideline for the Prevention, Detection, Evaluation and Management of High Blood Pressure in Adults: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines\" \"Antihypertensive drug treatment should be used with extreme caution in hospitalized patients with asymptomatic severe hypertension because spontaneous falls in BP without any antihypertensive agents occur commonly, at a rate of 40% to 50%.10 Observational studies have shown that initiation or intermittent use of additional IV or oral antihypertensive medications in patients hospitalized for noncardiac conditions are associated with increased risk of in-hospital mortality, AKI, and prolonged hospital stay.8,11 Asymptomatic patients with severe hypertension can be treated with careful and frequent monitoring using standing medications and avoiding as-needed medications.\"\nhttps://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8c8bcf2d9cb143daacf3ce111df29e1f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2434d7ed052347cd9dfd00f377540daa",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that hospitalized patients with severe hypertension without target organ damage should not receive acute blood pressure lowering therapy.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"For adults with severe hypertension (>180/120 mm Hg) who are hospitalized for noncardiac conditions without evidence of acute target organ damage, intermittent use of additional IV or oral antihypertensive medications are not recommended to acutely reduce BP\"\n https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b97c588939e7490290996f22945ff880",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2434d7ed052347cd9dfd00f377540daa",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies increased in-hospital mortality as a risk associated with acute blood pressure lowering.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Antihypertensive drug treatment should be used with extreme caution in hospitalized patients with asymptomatic severe hypertension because spontaneous falls in BP without any antihypertensive agents occur commonly, at a rate of 40% to 50%.10 Observational studies have shown that initiation or intermittent use of additional IV or oral antihypertensive medications in patients hospitalized for noncardiac conditions are associated with increased risk of in-hospital mortality, AKI, and prolonged hospital stay.8,11 Asymptomatic patients with severe hypertension can be treated with careful and frequent monitoring using standing medications and avoiding as-needed medications.\"https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_aacaf239464b41b1a8fa09839de5c43f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2434d7ed052347cd9dfd00f377540daa",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies acute kidney injury as a risk associated with acute blood pressure lowering.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Antihypertensive drug treatment should be used with extreme caution in hospitalized patients with asymptomatic severe hypertension because spontaneous falls in BP without any antihypertensive agents occur commonly, at a rate of 40% to 50%.10 Observational studies have shown that initiation or intermittent use of additional IV or oral antihypertensive medications in patients hospitalized for noncardiac conditions are associated with increased risk of in-hospital mortality, AKI, and prolonged hospital stay.8,11 Asymptomatic patients with severe hypertension can be treated with careful and frequent monitoring using standing medications and avoiding as-needed medications.\"https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001357",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_276a387848ed4ed3bc6d6d149101013e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2434d7ed052347cd9dfd00f377540daa",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies prolonged hospital stay as a risk associated with acute blood pressure lowering.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Antihypertensive drug treatment should be used with extreme caution in hospitalized patients with asymptomatic severe hypertension because spontaneous falls in BP without any antihypertensive agents occur commonly, at a rate of 40% to 50%.10 Observational studies have shown that initiation or intermittent use of additional IV or oral antihypertensive medications in patients hospitalized for noncardiac conditions are associated with increased risk of in-hospital mortality, AKI, and prolonged hospital stay.8,11 Asymptomatic patients with severe hypertension can be treated with careful and frequent monitoring using standing medications and avoiding as-needed medications.\"https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001358",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9046b4a7c51f4784b531c356d91f3d87",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2434d7ed052347cd9dfd00f377540daa",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that the patient requires close monitoring.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Antihypertensive drug treatment should be used with extreme caution in hospitalized patients with asymptomatic severe hypertension because spontaneous falls in BP without any antihypertensive agents occur commonly, at a rate of 40% to 50%.10 Observational studies have shown that initiation or intermittent use of additional IV or oral antihypertensive medications in patients hospitalized for noncardiac conditions are associated with increased risk of in-hospital mortality, AKI, and prolonged hospital stay.8,11 Asymptomatic patients with severe hypertension can be treated with careful and frequent monitoring using standing medications and avoiding as-needed medications.\"https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001359",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_90cb1887a05e4d1cb9506c7822506626",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2434d7ed052347cd9dfd00f377540daa",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that continuation of standing antihypertensive medications is appropriate in this patient",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Antihypertensive drug treatment should be used with extreme caution in hospitalized patients with asymptomatic severe hypertension because spontaneous falls in BP without any antihypertensive agents occur commonly, at a rate of 40% to 50%.10 Observational studies have shown that initiation or intermittent use of additional IV or oral antihypertensive medications in patients hospitalized for noncardiac conditions are associated with increased risk of in-hospital mortality, AKI, and prolonged hospital stay.8,11 Asymptomatic patients with severe hypertension can be treated with careful and frequent monitoring using standing medications and avoiding as-needed medications.\"https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001360",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_357b6202d88741a7904f254ff7135fda",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2434d7ed052347cd9dfd00f377540daa",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Concludes no additional IV antihypertensive medications are recommended for this patient. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has severe asymptomatic hypertension and is admitted for a noncardiac condition. As per the following guidelines, the patient should not be prescribed additional IV antihypertensives, as it is associated with risks. \n\n\"Antihypertensive drug treatment should be used with extreme caution in hospitalized patients with asymptomatic severe hypertension because spontaneous falls in BP without any antihypertensive agents occur commonly, at a rate of 40% to 50%.10 Observational studies have shown that initiation or intermittent use of additional IV or oral antihypertensive medications in patients hospitalized for noncardiac conditions are associated with increased risk of in-hospital mortality, AKI, and prolonged hospital stay.8,11 Asymptomatic patients with severe hypertension can be treated with careful and frequent monitoring using standing medications and avoiding as-needed medications.\"https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001361",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "San Dimas Community College is building residential housing on its campus (the \"Project\"). The Project will be comprised of 4 acres, 75% of which is surrounded by qualified urban uses. The Project was not previously evaluated in an Environmental Impact Report (EIR) for San Dimas Community College's campus' most recent long-term development plan. Is San Dimas Community College required to consider alternatives to the location of the Project in the Project's EIR? Provide an answer and explanation."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the project was not previously evaluated in an EIR for San Dimas... (ver_374dc1f6ebe64a788c642c8d7e21860b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the project was not previously evaluated in an EIR for San Dimas Community College's campus' most recent long-term development plan."
+        }
+      ]
+    },
+    {
+      "name": "States that San Dimas Community College is required to consider alternatives... (ver_9bac913878644187b9e0a8084e90d5e8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that San Dimas Community College is required to consider alternatives to the Project's location in the Project's EIR."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world428-js-03-251f083a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_251f083ae2eb4324864cb5fed9bda317",
+    "task_name": "World428_JS_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c9be5006e75748e8a0b61b0d7d66ac59",
+        "golden_text_response": "San Dimas Community College is required to consider alternatives to the Project's location in the Project's EIR because the Project was not previously evaluated in an EIR for San Dimas Community College's campus' most recent long-term development plan",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

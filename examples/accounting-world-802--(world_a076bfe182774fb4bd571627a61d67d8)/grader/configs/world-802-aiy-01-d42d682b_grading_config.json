@@ -1,0 +1,85 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_0d11feeba10349ada69c40bbea4da9e3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d42d682bc2454bd5bb472fb365eee99e",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States 2024 Net income is -$91,359,461 (acceptable range $-92,273,056 to $-90,445,866)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1f182f7877784ce69e60e5d489ba2d8f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d42d682bc2454bd5bb472fb365eee99e",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States 2024 Total assets are $291,671,202 (acceptable range $288,754,490 to $294,587,914)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3a3ed98849494946a19df4faefc453f3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d42d682bc2454bd5bb472fb365eee99e",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States 2024 Total Liabilities are $324,183,370 (acceptable range $320,941,536 to $327,425,204)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

@@ -1,0 +1,87 @@
+[env]
+STATE_LOCATION = "${STATE_LOCATION:-./.apps_data/workday}"
+WORKDAY_DB_PATH = "${WORKDAY_DB_PATH:-./.apps_data/workday/data.db}"
+
+[env._.python.venv]
+path = ".venv"
+create = true
+
+[tools]
+python = "3.13"
+uv = "0.6.10"
+
+[tasks.install]
+run = "uv sync --all-extras"
+description = "Install dependencies"
+
+[tasks.build]
+# NOTE: arco.env.build isn't being synced to lifecycle_config.build.env, so we set DATABASE_URL inline.
+# Create state directory. Tables are created via SQLAlchemy create_all (alembic removed for simplicity).
+run = "mkdir -p \"${STATE_LOCATION:-./.apps_data/workday}\""
+description = "Initialize database directory"
+depends = ["install"]
+
+[tasks.start]
+run = "cd mcp_servers/workday && uv run --no-sync python ../../scripts/_mcp_wrapper.py"
+description = "Start the MCP server"
+depends = ["populate"]
+# Pass through environment variables for server configuration
+env = { GUI_ENABLED = "{{env.GUI_ENABLED}}", MCP_TRANSPORT = "http" }
+
+[tasks.populate]
+# Import CSV data from STATE_LOCATION after snapshot extraction.
+# Task input files (CSV) are extracted to STATE_LOCATION by the runtime.
+run = """
+STATE_LOCATION="${STATE_LOCATION:-/.apps_data/workday}"
+WORKDAY_DB_PATH="${WORKDAY_DB_PATH:-${STATE_LOCATION}/data.db}"
+
+if [ -d "${STATE_LOCATION}" ] && ls "${STATE_LOCATION}"/*.csv 1>/dev/null 2>&1; then
+  echo "Importing CSV files from ${STATE_LOCATION} into ${WORKDAY_DB_PATH}..."
+  uv run --no-sync python scripts/import_csv.py --dir "${STATE_LOCATION}" --db "${WORKDAY_DB_PATH}"
+else
+  echo "No CSV files to import from ${STATE_LOCATION}"
+fi
+"""
+description = "Import CSV data into database (runs at container startup)"
+depends = ["build"]
+
+[tasks.lint]
+run = "ruff check ."
+description = "Run linter"
+
+[tasks.format]
+run = "ruff format ."
+description = "Format code"
+
+[tasks.test]
+run = "pytest"
+description = "Run tests"
+
+[tasks.typecheck]
+run = "echo 'No typecheck configured'"
+description = "Run type checker"
+
+# UI tasks
+[tasks."ui:install"]
+run = "cd ui/workday && npm install"
+description = "Install UI dependencies"
+
+[tasks."ui:dev"]
+run = "cd ui/workday && npm run dev"
+description = "Start UI development server"
+depends = ["ui:install"]
+
+[tasks."ui:build"]
+run = "cd ui/workday && npm run build"
+description = "Build UI for production"
+depends = ["ui:install"]
+
+[tasks."ui:start"]
+run = "cd ui/workday && npm run start"
+description = "Start UI production server"
+depends = ["ui:build"]
+
+[tasks."ui:lint"]
+run = "cd ui/workday && npm run lint"
+description = "Lint UI code"
+depends = ["ui:install"]

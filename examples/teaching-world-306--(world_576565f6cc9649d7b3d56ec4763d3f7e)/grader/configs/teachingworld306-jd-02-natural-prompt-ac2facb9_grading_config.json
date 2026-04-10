@@ -1,0 +1,241 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_f5c44577add141e3af12d6dcf0523d39",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ac2facb9695d4537afce2c9e7611f7f1",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "criteria": "Identifies Navy Peterson as the student in the IEP document",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0ce3be5eeac74217a9c4be6a3b253114",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ac2facb9695d4537afce2c9e7611f7f1",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "IEP is in the same format as the IEP template",
+        "modality": "Free text",
+        "negative_criteria": "",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Model can extract the correct file without error",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "IEPs and 504s/Granite_504_Blank.docx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b5e21800cc4c4b048155f1a8a1632443",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ac2facb9695d4537afce2c9e7611f7f1",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Enters Navy Peterson's ID number as 700014 (acceptable range 693 to 707)",
+        "modality": "Free text",
+        "negative_criteria": "Enters any other number other than 700014.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Model is expected to successfully extract correct students (Navy Peterson) ID number.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_628c558eac07485280e6e990c440b022",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ac2facb9695d4537afce2c9e7611f7f1",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Enters the student's grade level as 9th grade (acceptable range 8.9 to 9.1)",
+        "modality": "Free text",
+        "negative_criteria": "Enters the student's grade level as anything other than 9th grade.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_94a4e05bcc9747d492aa7a42ace8bc5c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ac2facb9695d4537afce2c9e7611f7f1",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States Navy Peterson was absent 1 day",
+        "modality": "Free text",
+        "negative_criteria": "States the number of days Navy Peterson was absent as anything other than 1.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Model was expected to use the roster/attendance of Navy Peterson and report in the IEP document how many days she was absent.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_16727554e45349aba3090eedea366f39",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ac2facb9695d4537afce2c9e7611f7f1",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the number of days the Navy Peterson was tardy as 0",
+        "modality": "Free text",
+        "negative_criteria": "Extracts the number of days Navy Peterson was tardy to Biology class as anything other than 0.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The model can locate Navy Peterson from the roster/attendance sheet and locate the number of times she has been tardy.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_db3172e1c0b2437995da7f601074d81e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ac2facb9695d4537afce2c9e7611f7f1",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the average for the student's grade in Biology as 96% (acceptable range 95% to 97%)",
+        "modality": "Free text",
+        "negative_criteria": "Calculates the average of the student's grades in Biology as anything other than 96%.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The model can correctly perform the correct numerical reasoning/computing to generate the average grade for Navy Peterson.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Gradebook /9th Grade Biology Grades.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e9ff49e3d96d432c86c7ff10d7952531",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ac2facb9695d4537afce2c9e7611f7f1",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists any two of the accommodations listed in the gifted policy that aligned with having a high grade including tiered assignments, open-ended assignments, enrichment or acceleration",
+        "modality": "Free text",
+        "negative_criteria": "Lists any accommodation other than those found in the Amethyst Academy Gifted Program Accommodation Policy.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Model is able to understand the accommodations and associate the 2 that correlate to having a high grade.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Amethyst Academy Gifted Program Accommodation policy.pdf",
+            "source": "task",
+            "snapshotId": "snap_38eff6f2207c420dbe8872a7c4a0838a"
+          }
+        ]
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fcdb471454f44f6098e794929d334463",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ac2facb9695d4537afce2c9e7611f7f1",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Names the file 'Peterson Navy 700014'",
+        "modality": "Free text",
+        "negative_criteria": "Names the file anything other than 'Peterson Navy 700014'.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "migrate-nextjs-to-mcp-view",
+  "version": "1.0.0",
+  "description": "Migrate a Next.js MCP UI from ui/ folder to rls-ui MCPView format compatible with biome/rl-studio/frontend",
+  "author": "Claude",
+  "invocation": {
+    "type": "prompt",
+    "prompt_file": "prompt.md"
+  },
+  "capabilities": [
+    "file-read",
+    "file-write",
+    "bash-execution"
+  ]
+}

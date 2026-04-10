@@ -1,0 +1,85 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_38990c990994408d8d03e99d894b2cd7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ab6e9d5d3c3749628f9c58d3729063aa",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the worker ID for the recommended hire is WRK-201",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_df2333987ce84f088f81629f470a0cf2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ab6e9d5d3c3749628f9c58d3729063aa",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the hire date for the hired employee is 26 Jan 2026 (acceptable range 25.7 to 26.3).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_72b87ceb511d4a8cb47d7795602f30c1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ab6e9d5d3c3749628f9c58d3729063aa",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of active workers in CC-001 as of 27th Jan 2026 is 20",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

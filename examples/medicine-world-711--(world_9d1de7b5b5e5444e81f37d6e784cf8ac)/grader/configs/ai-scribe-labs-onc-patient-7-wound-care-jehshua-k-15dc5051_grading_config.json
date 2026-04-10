@@ -1,0 +1,385 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_ae06d386afa04266afcd7677805a57c7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15dc5051dad64de8928de05f8b632ec9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's lab results demonstrate leukocytosis.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient's labs in the attached \"CBC with Diff\" show an elevated white blood cell (WBC) count of 11.4, indicating leukocytosis.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 7 - CBC with diff.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_d2974b1eb2d7419b8478ce97efd91a9d"
+          }
+        ]
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2464639c2c4a4780a5752cfffe7ee004",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15dc5051dad64de8928de05f8b632ec9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the abdominal wound is likely surrounded by an area of cellulitis.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient reports tenderness at the wound site and erythema on the abdomen. It is most likely that this wound has a local infection, namely cellulitis. In addition, the patient's laboratory results demonstrate leukocytosis, a sign of infection. \n\n\"Patients with cellulitis typically present with a poorly demarcated area of erythema that is warm, swollen, and tender to the touch. The area should be palpated to assess for fluctuance, which may indicate a developing abscess. Clinicians should also note any warmth, tenderness, or purulent drainage during gentle palpation.\" (https://www.ncbi.nlm.nih.gov/books/NBK549770/#article-19114.s6)",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 7 - AI Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_d2974b1eb2d7419b8478ce97efd91a9d"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6a984bb984794c83a4f471638b5413cc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15dc5051dad64de8928de05f8b632ec9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient is currently on immunosuppressive medications.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient is currently on methotrexate and steroids for the management of rheumatoid arthritis, and has been for many years at this point. Chronic use of steroids and methotrexate places the patient at risk of immunosuppression and opportunistic infections, or of worsening of current infection \n(Tab - CLINICALNOTES, Note Type - Progress Notes, Column - D, Row - 244).",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_835fa54598f14e21b0a394ec8a1d3062",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15dc5051dad64de8928de05f8b632ec9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient should be hospitalized for treatment of cellulitis at the abdominal wound site. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "A patient who is elderly, potentially immunocompromised (e.g., receiving chronic methotrexate treatment), and who has progressing cellulitis should be hospitalized during the course of treatment.\n\n\"Hospitalization with the initiation of systemic antibiotics may be necessary for patients who present with systemic signs of infection (defined as 2 or more systemic inflammatory response criteria, such as fever above 38\u00b0 C, heart rate greater than 90 beats/min, respiratory rate over 20 breaths/min, leukocytosis with white blood cell count above 12,000/mm\u00b3, leukopenia with white blood cell count below 4000/mm\u00b3, or bandemia \u226510%).[12] Admission should also be considered for those who have failed outpatient treatment, are immunocompromised, exhibit rapidly progressing erythema, are unable to tolerate oral medications, or have cellulitis overlying or near an indwelling medical device.\" (https://www.ncbi.nlm.nih.gov/books/NBK549770/#article-19114.s6)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_98080e1f7c584c11aae959015d4324a7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15dc5051dad64de8928de05f8b632ec9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the wound on the right, proximal, posterior leg does not require clinical staging. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The most recent wound care note as of 10/3/22 documents that the wound in this location has completely healed and epithelialized, with 100% area and volume reduction  (Tab - CLINICALNOTES, Note Type - Progress Note, Column - D, Row - 244). It therefore does not require any clinical staging.\n\n\"Wound Status: Healed - Epithelialized\" (Tab - CLINICALNOTES, Note Type - Progress Note, Column - D, Row - 244).",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1b016bf32c584cfe905a63d28a4f67bf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15dc5051dad64de8928de05f8b632ec9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the wound located on the right malleolus has a WIfI stage of 1.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The wound located on the right malleolus is open, shows granulation tissue, but doesn't have any exposed structures, gangrene, or signs of infection (Tab - CLINICALNOTES, Note Type - Progress Note, Column - D, Row - 244). Therefore, it has the following subscores - W: 1 (shallow ulcer with no exposed structures or gangrene), I: 0 (ABI > .80), and fI: 0 (no infection). This correlates to clinical stage 1 according to Table IVa of the SVS publication on WIfI classification (https://www.jvascsurg.org/article/S0741-5214(13)01515-2/fulltext#sec-3).",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9eb5120004434c8d8c85ed628d3003ac",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15dc5051dad64de8928de05f8b632ec9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the wound located on the right, distal, posterior leg is WIfI stage 1.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This wound is open, with granulation tissue, no exposed structures, no gangrene, and no signs of infection. It also demonstrates a continuous reduction in area and volume indicating healing processes (Tab - CLINICALNOTES, Note Type - Progress Note, Column - D, Row - 244). Therefore, it has the following subscores - W: 1 (shallow ulcer with no exposed structures or gangrene), I: 0 (ABI > .80), and fI: 0 (no infection). This correlates to clinical stage 1 according to Table IVa of the SVS publication on WIfI classification (https://www.jvascsurg.org/article/S0741-5214(13)01515-2/fulltext#sec-3).",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_29a1b4e3886e4cffa1c7a6df4d019078",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15dc5051dad64de8928de05f8b632ec9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the wound located on the right, distal, anterior leg is WIfI stage 1.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The wound located on the right, distal, anterior leg is open, with granulation tissue, no exposed structures, no gangrene, and no signs of infection. It also demonstrates a continuous reduction in area and volume indicating healing processes  (Tab - CLINICALNOTES, Note Type - Progress Note, Column - D, Row - 244). Therefore, it has the following subscores - W: 1 (shallow ulcer with no exposed structures or gangrene), I: 0 (ABI > .80), and fI: 0 (no infection). This correlates to clinical stage 1 according to Table IVa of the SVS publication on WIfI classification (https://www.jvascsurg.org/article/S0741-5214(13)01515-2/fulltext#sec-3).",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fa7852121b244ea8a86b748b1caee9e3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15dc5051dad64de8928de05f8b632ec9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Concludes that no vascular intervention is necessary for the patient\u2019s WIfI stage 1 wounds.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Wounds corresponding to a WIfI clinical stage of 1 don't require vascular intervention. See table IVa of the SVS publication on WIfI classification (https://www.jvascsurg.org/article/S0741-5214(13)01515-2/fulltext#sec-3).",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_520b37cc191f4c6bb72c8d2bf41015c8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15dc5051dad64de8928de05f8b632ec9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Concludes that wound care for the right lower extremity should continue with local wound care for the patient\u2019s WIfI stage 1 wounds.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Given that the wounds in the RLE are showing signs of healing with pink granulation tissue and no necrosis, no vascular intervention is necessary, and instead, the patient can continue the pre-determined local wound care regimens.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_81ea686126f843229776e18fbda154f1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15dc5051dad64de8928de05f8b632ec9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that there is a discrepancy for the WIfI calculation between the patient\u2019s left lower extremity ankle-brachial index and toe pressure.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "ABIs and toe pressures are means of grading vascularization of the extremities and are essential to management planning; when they are discordant, toe pressures are preferred in WIfI calculations. In this patient, the LLE TP is 26 mmHg, which corresponds to grade 3 ischemia, whereas the ABI is in the grade 2 range. (Tab - CLINICALNOTES, Note Type - Progress Notes, Column - D, Row - 246).",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ca2a4d67a63b4935a327b3fa92e81a04",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15dc5051dad64de8928de05f8b632ec9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that WIfI stage of the patient\u2019s left lower extremity should follow toe pressure for grading.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt says that \"ABIs and pressures are identical to the last visit\" and the clinical record documents the most recent left extremity toe pressure as being 26 mmHg. Where ABI and toe pressure are mismatched, toe pressures are preferred in WIfI calculations. (Tab - CLINICALNOTES, Note Type - Progress Notes, Column - D, Row - 246).\n\n\"If the ABI is unreliable or incompressible, TP or TcPO2 measurements must be performed to stratify the degree of ischemia.\" (https://www.jvascsurg.org/article/S0741-5214(13)01515-2/fulltext#sec-5)",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_14aa9d6631434d49a4f9bb788c88a501",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15dc5051dad64de8928de05f8b632ec9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the wound located on the left, distal, midline leg is WIfI stage 3.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The wound located on the left, distal, midline leg is open, with granulation tissue, and without exposed structures or gangrene (Tab - CLINICALNOTES, Note Type - Progress Note, Column - D, Row - 244). Therefore, it has the following subscores - W: 1 (shallow ulcer with no exposed structures or gangrene), I: 3 (TP < 30 mmHg), and fI: 0 (no infection). This correlates to clinical stage 3 according to Table IVa of the SVS publication on WIfI classification (https://www.jvascsurg.org/article/S0741-5214(13)01515-2/fulltext#sec-3).",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_26698c1cce54428d8b3926190accbd44",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15dc5051dad64de8928de05f8b632ec9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has a clinical symptom of feeling cold in the left lower leg. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Clinically, the patient reports coldness in the left lower extremity, with concern for reduced vascular flow in the left lower leg.\nFrom the script: \"Doctor: Do your legs ever feel cold or numb?\nPatient: Not that I\u2019ve noticed. It is getting colder outside though so maybe I feel more cold in my feet but I\nthink that\u2019s probably the weather.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_15722a85c8ba45cb8e8dd54dd2676ad0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15dc5051dad64de8928de05f8b632ec9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that this patient should undergo evaluation for left limb revascularization.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Clinically, the patient reports coldness in the left lower extremity, with concern for reduced vascular flow in the left lower leg. Given the WIfI stage 3 wound in her left leg and the history of previous left limb revascularization, it would appear that the attempt failed or is progressing slowly. Revascularization, whether operative or nonoperative, would be advisable in this patient. \n\nFrom the script: \"Doctor: Do your legs ever feel cold or numb?\nPatient: Not that I\u2019ve noticed. It is getting colder outside though so maybe I feel more cold in my feet but I\nthink that\u2019s probably the weather.\"\n\n\"6.12 - Consider revascularization for average-risk patients with intermediate limb threat (eg, WIfI stages 2 and 3) and significant perfusion deficits (eg, WIfI ischemia grades 2 and 3).\" (https://pmc.ncbi.nlm.nih.gov/articles/PMC8369495/#S18)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 7 - AI Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_d2974b1eb2d7419b8478ce97efd91a9d"
+          }
+        ]
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

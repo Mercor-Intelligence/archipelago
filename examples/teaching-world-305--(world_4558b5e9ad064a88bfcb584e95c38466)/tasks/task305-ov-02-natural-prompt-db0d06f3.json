@@ -1,0 +1,243 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Please make a new doc with an open-ended question for the unit exam asking students to explain the meaning of the following quote from the novel To Kill A Mockingbird: “until you climb into his skin and walk around in it”. Provide both the state code and description of the relevant standard. Note the chapter/page number where the quote appears in the full text PDF version. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Includes CC.1.3.8.F as the state standard number (ver_be22852f40f748ed9a955ba7f5bbb74a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes CC.1.3.8.F as the state standard number."
+        }
+      ]
+    },
+    {
+      "name": "Includes a number other than CC.1.3.8.F as the standard number. (ver_be22852f40f748ed9a955ba7f5bbb74a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a number other than CC.1.3.8.F as the standard number."
+        }
+      ]
+    },
+    {
+      "name": "States the state standard description is \"Analyze the influence of the words... (ver_cf5db89e2cb74646bbcc293070f49675)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the state standard description is \"Analyze the influence of the words and phrases in a text including figurative and connotative meanings and how they shape meaning and tone\"."
+        }
+      ]
+    },
+    {
+      "name": "States “until you climb into his skin and walk around in it\" verbatim in the... (ver_e0944bd3a8b54aacbb6104a5ab1bf271)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States “until you climb into his skin and walk around in it\" verbatim in the question."
+        }
+      ]
+    },
+    {
+      "name": "Includes a request to provide the meaning of the quote in the question (ver_6cc212d8351243048b8ecce7dbb76914)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a request to provide the meaning of the quote in the question."
+        }
+      ]
+    },
+    {
+      "name": "States that the quote is in chapter 3 in the novel (ver_03622fc4c95045cc841c25f5261cead4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the quote is in chapter 3 in the novel."
+        }
+      ]
+    },
+    {
+      "name": "Provides a statement that the quote “until you climb into his skin and walk... (ver_03622fc4c95045cc841c25f5261cead4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides a statement that the quote “until you climb into his skin and walk around in it” is in a chapter other than 3 in the novel."
+        }
+      ]
+    },
+    {
+      "name": "States that the quote is on page 30 in the novel (ver_fe66e465ee5b4792a257e8326a66804d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the quote is on page 30 in the novel."
+        }
+      ]
+    },
+    {
+      "name": "States that the quote “until you climb into his skin and walk around in it” is... (ver_fe66e465ee5b4792a257e8326a66804d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the quote “until you climb into his skin and walk around in it” is on a page other than 30 in the novel."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task305-ov-02-natural-prompt-db0d06f3"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_db0d06f3ef1447b188be40c4dc4b6358",
+    "task_name": "Task305_ov_02 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_161e9bc44c734aa3a4725617b1eff291",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_10113308d87849959158f96e9ca64957"
+      },
+      {
+        "golden_response_id": "gold_0d286edae8984470833d1747d9d2f542",
+        "golden_text_response": ". ",
+        "golden_file_responses": "snap_10113308d87849959158f96e9ca64957"
+      }
+    ]
+  }
+}

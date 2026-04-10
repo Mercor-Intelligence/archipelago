@@ -1,0 +1,15 @@
+{
+  "requires_network": false,
+  "tools_requiring_network": [],
+  "tools_offline": [
+    "code_execution",
+    "excel",
+    "filesystem",
+    "looker",
+    "pdfs",
+    "powerpoint",
+    "sql_execution",
+    "tableau",
+    "word"
+  ]
+}

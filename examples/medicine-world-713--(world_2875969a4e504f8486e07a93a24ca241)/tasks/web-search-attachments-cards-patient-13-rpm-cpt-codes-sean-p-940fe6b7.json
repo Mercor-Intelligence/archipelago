@@ -1,0 +1,330 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 13” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nPatient 13 is called to discuss testing results. PDFs are attached documenting the conversation between Patient 13 and the physician, as well as the patient's recent echocardiogram.\n\n1. Compare the cardiac monitor findings to prior documented monitor findings on record.  \n2. What echocardiogram feature is most likely to be responsible for the findings discussed in the conversation? Explain your reasoning.\n3. Indicate the CPT codes that apply to this encounter. Explain your reasoning.\nAnswers should be in line with the most recent clinical guidelines as of January 12, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Recognizes the patient's current cardiac monitor demonstrates an increased... (ver_b11147060cd54965b041ff2705e26cbb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient's current cardiac monitor demonstrates an increased duration of non-sustained ventricular tachycardia (NSVT) compared to prior cardiac monitoring."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that the duration of the patient's NSVT on the current cardiac... (ver_6181f02bf2dc4f7cb8bdbe88ec9f6eb0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that the duration of the patient's NSVT on the current cardiac monitor is a concerning sign for ventricular tachycardia."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the patient's echocardiogram is mostly unchanged from the prior... (ver_855a0501ff9941b4b6a14a7b7229fc3c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient's echocardiogram is mostly unchanged from the prior echocardiogram."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the patient's echocardiogram demonstrates new septal wall... (ver_ce68be74b2cf4a27af6bcae67998fcc7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient's echocardiogram demonstrates new septal wall hypokinesis."
+        }
+      ]
+    },
+    {
+      "name": "States septal wall hypokinesis is a common manifestation of ischemic heart... (ver_11b9116d79e24d99a7fac3df65022689)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States septal wall hypokinesis is a common manifestation of ischemic heart disease."
+        }
+      ]
+    },
+    {
+      "name": "States ischemic heart disease is the most common cause of ventricular... (ver_dd7c2df4bafa4841bb02af37432ec3f4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States ischemic heart disease is the most common cause of ventricular tachycardia."
+        }
+      ]
+    },
+    {
+      "name": "States the echocardiogram finding of septal wall hypokinesis is most likely... (ver_5a59ed1a1b7649e78a2ea56fa8da36ae)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the echocardiogram finding of septal wall hypokinesis is most likely responsible for the patient's increased burden of NSVT."
+        }
+      ]
+    },
+    {
+      "name": "States CPT code 99445 is assigned for remote physiological monitoring devices... (ver_2f02fec3789a4c3ea216d0f0bb9781d3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States CPT code 99445 is assigned for remote physiological monitoring devices with daily recording or programmed alert transmission used for 2 to 15 days in a 30-day-period."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has been wearing the recently supplied remote... (ver_44678557a5b040b0ba737b9fd40ee686)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has been wearing the recently supplied remote monitoring device for the past 14 days."
+        }
+      ]
+    },
+    {
+      "name": "Assigns CPT code 99445 to this patient's encounter. (ver_c6256c34bcac4950917eb491e4e24ff4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns CPT code 99445 to this patient's encounter."
+        }
+      ]
+    },
+    {
+      "name": "States CPT code 99470 is assigned for the first 10 minutes of remote... (ver_f1b11b482888468b9317a6430c4be793)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States CPT code 99470 is assigned for the first 10 minutes of remote physiologic monitoring treatment services provided by a qualified health care professional in a calendar month requiring 1 real-time interactive communication with the patient or caregiver."
+        }
+      ]
+    },
+    {
+      "name": "States that the physician provided a total of 10 minutes of remote physiologic... (ver_29ce43e110b64ab7835f6b1fbb630d88)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the physician provided a total of 10 minutes of remote physiologic monitoring treatment services during this patient encounter (acceptable range 9.9 to 10)."
+        }
+      ]
+    },
+    {
+      "name": "Assigns CPT code 99470 to this patient's encounter. (ver_7bca875fdba34b3890265cc6650d103a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns CPT code 99470 to this patient's encounter."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-cards-patient-13-rpm-cpt-codes-sean-p-940fe6b7"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_940fe6b7b6e04a338365989f9b0d5f9f",
+    "task_name": "Web Search_Attachments_Cards Patient 13 - RPM CPT Codes - Sean P",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_2dbd17c0a97c4c45a9ed0d80012b2e38",
+        "golden_text_response": "1. Compare the cardiac monitor findings to prior documented monitor findings on record.\n\nThe patient's current cardiac monitor shows an increased duration of non-sustained ventricular tachycardia (NSVT) compared to previous monitoring. The patient previously wore a cardiac monitor in 2012, which showed “very frequent PVCs [premature ventricular complexes]” and “brief (maximum 6-beat) episodes of non-sustained ventricular tachycardia [NSVT]”. The current encounter notes that the patient has palpitations during episodes of PVCs that \"lasted almost 30 seconds.\" The duration of the NSVT is now approaching that of sustained ventricular tachycardia, indicating a potential progression of the arrhythmia.\n\n2. What echocardiogram feature is most likely to be responsible for the findings discussed in the conversation? Explain your reasoning.\n\nThe patient's echocardiogram shows minimal change compared with the previous study, but it now reveals new septal wall hypokinesis. Septal wall hypokinesis is a common sign of ischemic heart disease, which is also the leading cause of ventricular tachycardia. The presence of septal wall hypokinesis on the echocardiogram is likely responsible for the patient's increased frequency of non-sustained ventricular tachycardia (NSVT).\n\n3. Indicate the CPT codes that apply to this encounter. Explain your reasoning. Answers should be in line with the most recent clinical guidelines as of January 12, 2026.\n\nThe CPT code 99445 is assigned for remote physiological monitoring devices that record data daily or transmit programmed alerts for 2 to 15 days within a 30-day period. The patient has been wearing the recently supplied remote monitoring device for the past 14 days. Therefore, CPT code 99445 is assigned for this patient’s encounter.\n\nCPT code 99470 is assigned for the first 10 minutes of remote physiologic monitoring treatment services provided by a qualified healthcare professional in a calendar month. This code requires at least one real-time interactive communication with the patient or caregiver. During this patient's encounter, the physician provided 10 minutes of remote physiologic monitoring services. Consequently, CPT code 99470 is assigned for this patient’s encounter.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

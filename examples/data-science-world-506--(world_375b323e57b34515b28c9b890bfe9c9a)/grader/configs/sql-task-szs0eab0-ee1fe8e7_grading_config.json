@@ -1,0 +1,148 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_9ce5ba16a0664342b550db6f32f30344",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ee1fe8e7b7ef4d90acce9d8702cea253",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Reports \"Apple iPhone 12\" as the antecedent for the highest\u2011lift rule where the consequent is \"Apple iPhone 15 Plus\".",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the highest\u2011lift rule where the consequent is \"Apple iPhone 15 Plus\" is correctly identifed as with \"Apple iPhone 12\" as the antecedent, excluding where trade_in_device is missing or \"Old device\".",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_257158a1ce5c4a708447eae7e125704e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ee1fe8e7b7ef4d90acce9d8702cea253",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the pair count for the highest\u2011lift rule where the consequent is \"Apple iPhone 15 Plus\" as exactly 4 (acceptable range 3.96 to 4.04).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the pair count for the highest\u2011lift rule where the consequent is \"Apple iPhone 15 Plus\" is correctly calculated as exactly 4.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_de0ecc3a3ddc486ca6b9a0ff20d4328a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ee1fe8e7b7ef4d90acce9d8702cea253",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the confidence for the highest\u2011lift rule where the consequent is \"Apple iPhone 15 Plus\" as 0.0261 (+/- 0.0010).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the confidence for the highest\u2011lift rule where the consequent is \"Apple iPhone 15 Plus\" is correctly calculated as 0.0261 (+/- 0.0010).",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5a91b834920a4ccd9fc9e0b24ff91532",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ee1fe8e7b7ef4d90acce9d8702cea253",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the support for the highest\u2011lift rule where the consequent is \"Apple iPhone 15 Plus\" as 0.0049 (+/- 0.0010).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the support for the highest\u2011lift rule where the consequent is \"Apple iPhone 15 Plus\" correctly calculated as 0.0049 (+/- 0.0010).",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3c220a3cc7fa4d9da0db9ee837c0dae2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ee1fe8e7b7ef4d90acce9d8702cea253",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the lift for the highest\u2011lift rule where the consequent is \"Apple iPhone 15 Plus\" as 1.4292 (+/- 0.0100).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the lift for the highest\u2011lift rule where the consequent is \"Apple iPhone 15 Plus\" is correctly calculated as 1.4292 (+/- 0.0100).",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_06b6a6f4fb4c460eb78c16c2a5e714dc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ee1fe8e7b7ef4d90acce9d8702cea253",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the leverage for the highest\u2011lift rule where the consequent is \"Apple iPhone 15 Plus\" as 0.0015 (+/- 0.0010).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the leverage for the highest\u2011lift rule where the consequent is \"Apple iPhone 15 Plus\" is correctly calculated as 0.0015 (+/- 0.0010).",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

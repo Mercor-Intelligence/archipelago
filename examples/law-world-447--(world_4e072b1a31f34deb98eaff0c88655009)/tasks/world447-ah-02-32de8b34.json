@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "During a diligence call, one of the CineCorp execs described a transaction that sounded related party. We need a representation in the acquisition agreement about this to make sure we get full disclosure and protection. Take the one from the Broadcom Inc. / VMware, Inc. Merger Agreement and make whatever necessary edits to make it work for our asset purchase agreement (draft dated December 1, 2025)."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States all of the following: \"there are no transactions, agreements,... (ver_d69fce0123124143a3ae1249f227ad31)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States all of the following: \"there are no transactions, agreements, arrangements, or understandings between Seller and any Affiliate (including any officer or director) of Seller.\"."
+        }
+      ]
+    },
+    {
+      "name": "States all of the following: \"there are no transactions, agreements,... (ver_ee8afa884bff4913b87d6499b66c70e9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States all of the following: \"there are no transactions, agreements, arrangements, or understandings between Seller and any beneficial owner, directly or indirectly, of 5% or more of the outstanding equity interests of Seller.\" (acceptable range 4.95% to 5.05%)."
+        }
+      ]
+    },
+    {
+      "name": "States that disclosed transactions are an exception to the related party... (ver_f9fba2bb69b64072ba6c4643ca06041d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that disclosed transactions are an exception to the related party transaction representation."
+        }
+      ]
+    },
+    {
+      "name": "States the following as an exception to the related party transaction... (ver_046047bba9ab4d9795b0c29265086330)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the following as an exception to the related party transaction representation: \"any compensation or other employment arrangements entered into between Seller and any director or officer thereof in the ordinary course of business.\"."
+        }
+      ]
+    },
+    {
+      "name": "States that the related party transactions representation is limited to all of... (ver_25f88cb64a124e448ff5bce207c0f455)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the related party transactions representation is limited to all of the following: \"the Business or the Purchased Assets.\"."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world447-ah-02-32de8b34"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4e072b1a31f34deb98eaff0c88655009",
+    "world_name": "Law World 447",
+    "task_id": "task_32de8b348c0d4affb54983ee4155499e",
+    "task_name": "World447_AH_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_22f4a2a2700b42e9a547c697b36398fe",
+        "golden_text_response": "Original Broadcom Inc. / VMware, Inc. language:\nSection 4.24. Related Party Transactions. Except (x) as set forth in the Company SEC Documents filed with the SEC prior to the date hereof, (y) any compensation or other employment arrangements entered into between the Company or any Company Subsidiary, on the one hand, and any director or officer thereof, on the other hand, in the ordinary course of business consistent with past practice and (z) ordinary course commercial Contracts with Dell (and its Subsidiaries), there are no transactions, agreements, arrangements or understandings between the Company or any Company Subsidiary, on the one hand, and (a) any affiliate (including any officer or director) thereof (but not including any wholly owned Subsidiary of the Company), on the other hand, or (b) any beneficial owner, directly or indirectly, of 5% or more of the shares of Company Common Stock, on the other hand.\n\nProposed language:\nRelated Party Transactions. Except for (a) any compensation or other employment arrangements entered into between Seller and any director or officer thereof in the ordinary course of business and (b) as set forth in Schedule [INSERT], there are no transactions, agreements, arrangements, or understandings between Seller, on the one hand, and (i) any Affiliate (including any officer or director) of Seller, or (ii) any beneficial owner, directly or indirectly, of 5% or more of the outstanding equity interests of Seller, on the other hand, in each case that relates to the Business or the Purchased Assets.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

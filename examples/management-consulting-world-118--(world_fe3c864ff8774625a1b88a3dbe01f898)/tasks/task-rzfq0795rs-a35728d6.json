@@ -1,0 +1,215 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Calculate the average percentage of medicare payments as a proportion of all covered charges (based on payments detail) for hospitals in pilot states, as identified in the rollout plan. Only consider hospitals which have emergency services (as indicated in hospitals general information). Report final answer in console.\n\nRound percentages to two decimal points. Disregard column \"average_medicare_payments_2\" in the payment detail sheet. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the average % medicare payments for IL is 21.07% (acceptable range... (ver_fae9cb654f1549d795d8ba802562d301)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average % medicare payments for IL is 21.07% (acceptable range 20.86% to 21.28%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average % medicare payments for IL is a value other than 21.07% (ver_fae9cb654f1549d795d8ba802562d301)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average % medicare payments for IL is a value other than 21.07%."
+        }
+      ]
+    },
+    {
+      "name": "States that the average % medicare payments for MI is 31.65% (acceptable range... (ver_440066beaa0745adad087072b7d0e45f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average % medicare payments for MI is 31.65% (acceptable range 31.33% to 31.97%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average % medicare payments for MI is a value other than 31.65% (ver_440066beaa0745adad087072b7d0e45f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average % medicare payments for MI is a value other than 31.65%."
+        }
+      ]
+    },
+    {
+      "name": "States that the average % medicare payments for MN is 31.45% (acceptable range... (ver_c9f53c2de3ad4ef49dd76173ad791b1f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average % medicare payments for MN is 31.45% (acceptable range 31.14% to 31.76%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average % medicare payments for MN is a value other than 31.45% (ver_c9f53c2de3ad4ef49dd76173ad791b1f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average % medicare payments for MN is a value other than 31.45%."
+        }
+      ]
+    },
+    {
+      "name": "States that the average % medicare payments for OH is 23.21% (acceptable range... (ver_f0a40adc037249baa7924a83c97b380d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average % medicare payments for OH is 23.21% (acceptable range 22.98% to 23.44%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average % medicare payments for OH is a value other than 23.21% (ver_f0a40adc037249baa7924a83c97b380d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average % medicare payments for OH is a value other than 23.21%."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-rzfq0795rs-a35728d6"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_a35728d615ad42df9b65316a5ccda32e",
+    "task_name": "Task rzfq0795rs",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_a0def8b8229a40c08744c3723bfc1bd7",
+        "golden_text_response": "The average % medicare payments (wrt covered charges) for pilot states is:\n\nIL - 21.07%\nMI - 31.65%\nMN - 31.45%\nOH - 23.21%",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 13” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n----\n\nPatient 13 attends her clinic appointment on January 3, 2026. She reports dysuria and fever. According to the most recent US Infectious Diseases Society of America (IDSA) guideline as of December 2025, what is the next best treatment for this patient? Provide an explanation."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient has a history of recurrent urinary tract infections. (ver_aa952a791ab34564ac2602bf7f47af94)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has a history of recurrent urinary tract infections."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that the patient currently has another urinary tract infection. (ver_a137e861157c4130893e7f46437f940c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that the patient currently has another urinary tract infection."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that the patient's most recent urine culture showed growth of... (ver_6c04c13fa5e64edd859e914d089faf44)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that the patient's most recent urine culture showed growth of Acinetobacter baumannii."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that Acinetobacter baumannii is carbapenem-resistant in the... (ver_8a1ed3b2d8e84852ab11223bff3a3b73)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that Acinetobacter baumannii is carbapenem-resistant in the patient's most recent urine culture."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has not received any antimicrobial therapy. (ver_5871fd875e03464f924b4e50a0689f46)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has not received any antimicrobial therapy."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient should receive a combination of antibiotics as... (ver_9b5418ae3676416cab4a55cc7493666a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient should receive a combination of antibiotics as standard therapy for carbapenem-resistant Acinetobacter baumannii infection."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes sulbactam-durlobactam as the first component of the combination... (ver_8e9161e2c53042b099cdcc3171c7547c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes sulbactam-durlobactam as the first component of the combination antibiotic therapy for carbapenem-resistant Acinetobacter baumannii infection."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes meropenem as the second component of the combination antibiotic... (ver_b8c44261a17c43df8f4e7aaacd7968ce)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes meropenem as the second component of the combination antibiotic therapy for carbapenem-resistant Acinetobacter baumannii infection."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes imipenem-cilastatin as an alternative for meropenem. (ver_7990a4236ecd4f0b87d095f466e278b7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes imipenem-cilastatin as an alternative for meropenem."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-cards-patient-13-crab-edmund-h-7d5203d3"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_7d5203d3946c447a8ac70221c37c439b",
+    "task_name": "Labs_Image_AI Scribe_Cards_Patient 13 - CRAB-Edmund H",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_534f636d63d641ee82d2bdbd7d48110c",
+        "golden_text_response": "The patient has a history of recurrent urinary tract infections, and urine culture–guided therapy is indicated. A recent urine culture is available and should guide antimicrobial selection. The culture grew carbapenem-resistant Acinetobacter baumannii (CRAB). The organism is resistant to all tested antibiotics, including carbapenems. The patient has not yet received antimicrobial therapy. The preferred treatment regimen for CRAB infections is sulbactam-durlobactam in combination with a carbapenem, such as imipenem-cilastatin or meropenem. ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

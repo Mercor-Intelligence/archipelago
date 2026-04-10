@@ -1,0 +1,110 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_42e096c89dc1401cbd84f16d4d0ae2ec",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d41f3b1d09d94b3c859503f4106f12f9",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States RMBS shareholder accretion/dilution in the MTSI scenario is -5.36% (acceptable range -5.41% to -5.31%)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_84ec567efc7148ffa1d0395e9879d2f5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d41f3b1d09d94b3c859503f4106f12f9",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States RMBS shareholder accretion/dilution in the ONTO scenario is 1.65% (acceptable range 1.63% to 1.67%)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ecc9167306584f87b5e4f691003620ef",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d41f3b1d09d94b3c859503f4106f12f9",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States RMBS shareholder accretion/dilution in the SLAB scenario is -22.82% (acceptable range -23.05% to -22.59%)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9c2fa167d84d4a2fabdbb86cf5d94fb0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d41f3b1d09d94b3c859503f4106f12f9",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States average RMBS shareholder accretion/dilution is -8.84% (acceptable range -8.93% to -8.75%)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

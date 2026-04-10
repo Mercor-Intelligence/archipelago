@@ -1,0 +1,266 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Make a copy of the Absence Grade Book and fill in empty cells with ABS or ANR based on the additional grade scale information in the English 8 syllabus as well as trimester 1 attendance data (EAB = Excused Absence, UAB = Unexcused Absence). "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Fills cell for Ella Clark under the assignment “Daily Preparedness Checks... (ver_e7f501ad391c49ea93c175acfa873d9f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Fills cell for Ella Clark under the assignment “Daily Preparedness Checks 9/10/25” with the letters “ABS”."
+        }
+      ]
+    },
+    {
+      "name": "Fills cell for Ella Clark under the assignment “Daily Preparedness Checks... (ver_e7f501ad391c49ea93c175acfa873d9f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Fills cell for Ella Clark under the assignment “Daily Preparedness Checks 9/10/25” with the letters “ANR”."
+        }
+      ]
+    },
+    {
+      "name": "Fills cell for Elijah Russo under the assignment “Character Traits Graphic... (ver_d8648326ffb4473abf96ef346d78a5c4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Fills cell for Elijah Russo under the assignment “Character Traits Graphic Organizer 9/12/25” with the letters “ANR”."
+        }
+      ]
+    },
+    {
+      "name": "Fills cell for Elijah Russo under the assignment “Character Traits Graphic... (ver_d8648326ffb4473abf96ef346d78a5c4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Fills cell for Elijah Russo under the assignment “Character Traits Graphic Organizer 9/12/25” with the letters “ABS”."
+        }
+      ]
+    },
+    {
+      "name": "Fills cell for Aaliyah Hoffman under the assignment “Figurative Language Quiz... (ver_b040567b206c48ab8a8e40ba00f7e06d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Fills cell for Aaliyah Hoffman under the assignment “Figurative Language Quiz 9/23/25” with the letters “ABS”."
+        }
+      ]
+    },
+    {
+      "name": "Fills cell for Noah Lehman under the assignment “Plot Diagram Activity... (ver_b040567b206c48ab8a8e40ba00f7e06d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Fills cell for Noah Lehman under the assignment “Plot Diagram Activity 9/15/25” with the letters “ABS”."
+        }
+      ]
+    },
+    {
+      "name": "Fills cell for Lucas DeLuca under the assignment “Annotating a Text... (ver_a7f1a73853274a2588aa178fd0b2a583)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Fills cell for Lucas DeLuca under the assignment “Annotating a Text Mini-Lesson 9/17/25” with the letters “ABS”."
+        }
+      ]
+    },
+    {
+      "name": "Fills cell for Lucas DeLuca under the assignment “Annotating a Text... (ver_a7f1a73853274a2588aa178fd0b2a583)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Fills cell for Lucas DeLuca under the assignment “Annotating a Text Mini-Lesson 9/17/25” with the letters “ANR”."
+        }
+      ]
+    },
+    {
+      "name": "Fills cell for Emma Miller under the assignment “Figurative Language Quiz... (ver_24604f9c82774b7ab0f6ab3b7c358703)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Fills cell for Emma Miller under the assignment “Figurative Language Quiz 9/23/25” with the letters “ANR”."
+        }
+      ]
+    },
+    {
+      "name": "Fills cell for Mason Brown under the assignment “Vocabulary Frayer Models... (ver_24604f9c82774b7ab0f6ab3b7c358703)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Fills cell for Mason Brown under the assignment “Vocabulary Frayer Models 9/25/25” with the letters “ANR”."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-305-mld-03-natural-prompt-527b7bba"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_527b7bba8342444ba6ad57c51ccbf69d",
+    "task_name": "World 305_MLD_03 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_91c072fb17b04b228449c7db8c6e20c4",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_95e0a065f832494fb411d4799667d6bc"
+      },
+      {
+        "golden_response_id": "gold_d0104af4e3764e9d8766b40813eb4c1c",
+        "golden_text_response": "File uploaded. ",
+        "golden_file_responses": "snap_5a8da35ca4e0430f96ca975d3648e18b"
+      }
+    ]
+  }
+}

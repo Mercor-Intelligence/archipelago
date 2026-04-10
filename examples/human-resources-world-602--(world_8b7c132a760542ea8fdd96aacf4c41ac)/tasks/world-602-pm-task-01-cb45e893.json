@@ -1,0 +1,215 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The leadership team wants to identify employees at risk of attrition and proactively issue retention bonuses.\n\nUsing the attached employee master data (Employee_Master_File_Updated.xlsx), additional employee data (Additional Employee Data.xlsx) and attrition assessment policy (Attrition Risk Assessment Policy.pdf), assess attrition risk, classify employees into a 2×2 matrix and calculate retention bonus payouts. \n\nRound final values to 2 decimal places. Share in console:\n1. Number of employees in each quadrant of the 2x2 matrix: stable, light risk, overworked, critical risk\n2. Total retention bonus payout to employees in each quadrant of the 2x2 matrix: stable, light risk, overworked, critical risk"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of employees in 'stable' quadrant of the 2x2 matrix is... (ver_44ddca500d794d2f8224fc7a624b4ae0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of employees in 'stable' quadrant of the 2x2 matrix is 945.00 (acceptable range 935.55 to 954.45)."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of employees in 'light risk' quadrant of the 2x2 matrix... (ver_7564483cab9048b18f93c59d82f2dc9e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of employees in 'light risk' quadrant of the 2x2 matrix is 665.00 (acceptable range 658.35 to 671.65)."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of employees in 'overworked' quadrant of the 2x2 matrix... (ver_4873977d17f047d0a17b52dcdb732c6c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of employees in 'overworked' quadrant of the 2x2 matrix is 1629.00 (acceptable range 160 to 164)."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of employees in 'critical risk' quadrant of the 2x2... (ver_17820b7301f74dc48cb002123e4e187c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of employees in 'critical risk' quadrant of the 2x2 matrix is 1057.00 (acceptable range 104 to 106)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total retention bonus payout to employees in 'stable' quadrant... (ver_ecaae19a319e4996b5c20db3a6098a54)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total retention bonus payout to employees in 'stable' quadrant of the 2x2 matrix is $0.00."
+        }
+      ]
+    },
+    {
+      "name": "States that the total retention bonus payout to employees in 'light risk'... (ver_2d7c6ce5a7fe490a868b4f6dfeef514a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total retention bonus payout to employees in 'light risk' quadrant of the 2x2 matrix is $1,656,078.45 (acceptable range $1,639,517.67 to $1,672,639.23)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total retention bonus payout to employees in 'overworked'... (ver_5d12534a16ec49429977422c074d70c9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total retention bonus payout to employees in 'overworked' quadrant of the 2x2 matrix is $0.00."
+        }
+      ]
+    },
+    {
+      "name": "States that the total retention bonus payout to employees in 'critical risk'... (ver_3aadbb0c4f5c47efb6c95cf1d186428e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total retention bonus payout to employees in 'critical risk' quadrant of the 2x2 matrix is $4,590,077.66 (acceptable range $4,544,176.88 to $4,635,978.44)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-602-pm-task-01-cb45e893"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_cb45e8934c2c4734b24b03939a1f025e",
+    "task_name": "World 602_PM_Task 01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_1e3ff6088fc94ba195d9720de234704a",
+        "golden_text_response": "1. Number of employees in 'stable' quadrant of the 2x2 matrix is 945.00\n2. Number of employees in 'light risk' quadrant of the 2x2 matrix is 665.00\n3. Number of employees in 'overworked' quadrant of the 2x2 matrix is 1629.00\n4. Number of employees in 'critical risk' quadrant of the 2x2 matrix is 1057.00\n5. Total retention bonus payout to employees in 'stable' quadrant of the 2x2 matrix is $0.00\n6. Total retention bonus payout to employees in 'light risk' quadrant of the 2x2 matrix is $1,656,078.45 \n7. Total retention bonus payout to employees in 'overworked' quadrant of the 2x2 matrix is $0.00\n8. Total retention bonus payout to employees in 'critical risk' quadrant of the 2x2 matrix is $4,590,077.66",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

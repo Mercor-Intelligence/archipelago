@@ -1,0 +1,307 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "You have access to SQL tables, subscribers and invoices. I want you to perform an analysis only on overdue or pending invoices with a billing period start date in 2025, and subscribers with a credit score greater than 400. Each qualifying invoice contributes its full total amount as outstanding balance, and if a subscriber has multiple qualifying invoices, all of them must be included. Exclude subscribers with no qualifying invoices. For each city, I need the number of distinct subscribers with at least one qualifying invoice, the total outstanding amount across all qualifying invoices, and the total amount due per subscriber (defined as total outstanding amount divided by the distinct subscriber count). For each payment status, give me the top three cities ranked by total amount due per subscriber, breaking ties by city name in ascending alphabetical order. Output all values rounded to the nearest whole number."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Identifies the city with the highest total amount due per subscriber for... (ver_55b758479f704aeeb9408efeb66c1a51)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the city with the highest total amount due per subscriber for overdue invoices as Allentown."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the city with the second highest total amount due per subscriber... (ver_28af58a3c3064c6cad0f74e6d5e57847)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the city with the second highest total amount due per subscriber for overdue invoices as Athens."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the city with the third highest total amount due per subscriber for... (ver_d852f2dbf815461d9a154ebac2461941)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the city with the third highest total amount due per subscriber for overdue invoices as Philadelphia."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the city with the highest total amount due per subscriber for... (ver_d6c186b697194763ae13c0adffdc9324)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the city with the highest total amount due per subscriber for pending invoices as Elizabeth."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the city with the second highest total amount due per subscriber... (ver_5a849d81b8e94bd197966da9870af0f7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the city with the second highest total amount due per subscriber for pending invoices as Fort Wayne."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the city with the third highest total amount due per subscriber for... (ver_9881f48eb0ec4a758a6aaeabaff6dcdd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the city with the third highest total amount due per subscriber for pending invoices as Norfolk."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the total amount due per subscriber for overdue invoices in... (ver_60d68c744f1144d89a845b5b5783615c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the total amount due per subscriber for overdue invoices in Allentown as exactly 234 (acceptable range 232 to 236)."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the total amount due per subscriber for overdue invoices in Athens... (ver_eb53536dcfb242a9bb51f818fc25002a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the total amount due per subscriber for overdue invoices in Athens as exactly 153 (acceptable range 151 to 155)."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the total amount due per subscriber for overdue invoices in... (ver_3c4838de37a44547be0e924991a906a4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the total amount due per subscriber for overdue invoices in Philadelphia as exactly 144 (acceptable range 143 to 145)."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the total amount due per subscriber for pending invoices in... (ver_0c8ee3dbcd36464698b83980b6e9d930)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the total amount due per subscriber for pending invoices in Elizabeth as exactly 151 (acceptable range 149 to 153)."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the total amount due per subscriber for pending invoices in Fort... (ver_f38abf494ffb407e999d1a74892942b3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the total amount due per subscriber for pending invoices in Fort Wayne as exactly 137 (acceptable range 136 to 138)."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the total amount due per subscriber for pending invoices in Norfolk... (ver_ddad78b9c4894d09a8f3bf754e884db7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the total amount due per subscriber for pending invoices in Norfolk as exactly 137 (acceptable range 136 to 138)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sql-task-kk14-867d9f2e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_867d9f2ebd3e46018664971e24c5ae77",
+    "task_name": "SQL - Task KK14",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_ac4426fdb26247ac970c0e15d764dda5",
+        "golden_text_response": "The output for the analysis is as follows:\npayment_status    city    amount_due_per_subscriber\noverdue    Allentown    234\noverdue    Athens    153\noverdue    Philadelphia    144\npending    Elizabeth    151\npending    Fort Wayne    137\npending    Norfolk    137\n\nThe SQL for the analysis is as follows:\n'''\nWITH qualified_invoices AS (\n    SELECT\n        i.invoice_id,\n        i.subscriber_id,\n        LOWER(i.payment_status) AS payment_status,\n        i.total_amount\n    FROM invoices i\n    JOIN subscribers s\n        ON i.subscriber_id = s.subscriber_id\n    WHERE LOWER(i.payment_status) IN ('overdue', 'pending')\n      AND strftime('%Y', i.billing_period_start) = '2025'\n      AND s.credit_score > 400\n),\ncity_aggregates AS (\n    SELECT\n        qi.payment_status,\n        s.city,\n        COUNT(DISTINCT qi.subscriber_id) AS subscriber_count,\n        SUM(qi.total_amount) AS total_outstanding_amount\n    FROM qualified_invoices qi\n    JOIN subscribers s\n        ON qi.subscriber_id = s.subscriber_id\n    GROUP BY qi.payment_status, s.city\n),\nfinal_metrics AS (\n    SELECT\n        payment_status,\n        city,\n        total_outstanding_amount * 1.0 / subscriber_count AS amount_due_per_subscriber\n    FROM city_aggregates\n),\nranked AS (\n    SELECT\n        payment_status,\n        city,\n        amount_due_per_subscriber,\n        ROW_NUMBER() OVER (\n            PARTITION BY payment_status\n            ORDER BY amount_due_per_subscriber DESC, city ASC\n        ) AS rn\n    FROM final_metrics\n)\nSELECT\n    payment_status,\n    city,\n    CAST(ROUND(amount_due_per_subscriber) AS INTEGER) AS amount_due_per_subscriber\nFROM ranked\nWHERE rn <= 3\nORDER BY payment_status, rn;\n'''\n\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

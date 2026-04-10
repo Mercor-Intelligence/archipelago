@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "To improve pipeline hygiene in Greenhouse, the recruiting team is conducting a one-time application clean-up exercise.\n\nFirst, reject all applications that were created on or before 12 November 2024 using the Reject Application action, with the rejection note “Old applications clean-up.”\n\nNext, in line with the updated application policy that allows a candidate to have only one active application at any point in time, review candidates with multiple active applications across different job IDs. For each such candidate, retain only the most recently updated application and reject all other active applications. If multiple applications have the same updated date, retain the one with the most recent created date. If the created dates are also the same, retain the application with the most recent applied date. All applications rejected as part of this step should use the rejection note “Multiple job applications clean-up.”\n\nDo not round intermediate values. Round final values to the nearest integer. Share the following in the console:\n1. Final number of active applications after all clean-up actions.\n2. Number of applications rejected with the rejection note “Multiple job applications clean-up”"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that final number of active applications after all clean-up actions is... (ver_8dee2c06d35146228f1adefbefa724cb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that final number of active applications after all clean-up actions is 93."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of applications rejected with the rejection note... (ver_17ad41b8aa44483fabedc83ac3f9be2a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of applications rejected with the rejection note “Multiple job applications clean-up” is 6 (acceptable range 5.9 to 6.1)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-602-pm-task-03-608675d0"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_608675d0f52745d5ab8c84a803cf6f5a",
+    "task_name": "World 602_PM_Task 03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_143adf6726294ff2a3b2c53ceed21627",
+        "golden_text_response": "1. States that final number of active applications after all clean-up actions is 93.\n\n2. States that the number of applications rejected with the rejection note “Multiple job applications clean-up” is 6.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

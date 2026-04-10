@@ -1,0 +1,12 @@
+{
+  "agent": {
+    "name": "SQL Execution Smoke Test Agent",
+    "config_id": "react_toolbelt_agent",
+    "timeout": 300,
+    "max_steps": 30
+  },
+  "task_prompt": "You are testing the SQL execution MCP server. IMPORTANT: First use toolbelt_list_tools to discover available tools, then use toolbelt_add_tool to add execute_sql before using it.\n\nAfter adding the tool, execute:\n1. execute_sql with query='SELECT 1 + 1 AS result'\n2. execute_sql with query='CREATE TABLE test (id INTEGER, name TEXT)'\n3. execute_sql with query='INSERT INTO test VALUES (1, \"smoke test\")'\n4. execute_sql with query='SELECT * FROM test'\n5. execute_sql with query='DROP TABLE test'\n\nReport the actual output from each execution.",
+  "expected_tools": ["execute_sql"],
+  "required_tools": ["execute_sql"],
+  "orchestrator": {"model": "gemini/gemini-2.5-flash", "temperature": 0.0}
+}

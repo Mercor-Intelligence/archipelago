@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The Committee to Relocate Arnold (the Committee) has filed a California Environmental Quality Act (CEQA) action against the City of San Dimas 50 days after the city filed a Notice of Exemption for a 3-year road closure to build a statue of Arnold Schwarzenegger. The Notice of Exemption indicates that the road will be abandoned. Was the CEQA action filed within the statute of limitations? Provide a brief answer and explanation."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the statute of limitations was 180 days (ver_d5585c2395ab45238a64c29bd3d7a376)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the statute of limitations was 180 days."
+        }
+      ]
+    },
+    {
+      "name": "States that the CEQA action was filed within the statute of limitations (ver_6e71b3e1c7cf4f2495b119a297d63a49)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the CEQA action was filed within the statute of limitations."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world428-js-02-5a51bfaf"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_5a51bfafdacf4585a1c239d10661ee23",
+    "task_name": "World428_JS_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_93ede968fcf24424ae69764b850c2bff",
+        "golden_text_response": "The CEQA action was filed within the statute of limitations because the statute of limitations was 180 days.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_9de3748370ea497681379d8e92a1ab05",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f6f4fa4d8cb04bf88f92fac82d2a0d92",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "Returns slide 5 of \"ESL- The Spanish Market.pptx\" with all of the following edits: (1) titled \"santero\" and (2) includes the following definition: \"Local artists who carve and paint bultos; saint-makers.\"",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Slides/ESL- The Spanish Market.pptx",
+            "index": null,
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_171d533c00dd4eafa6b05e6659f20849",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f6f4fa4d8cb04bf88f92fac82d2a0d92",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "Returns slide 6 of \"ESL- The Spanish Market.pptx\" with all of the following edits: (1) titled \"gesso\" and (2) includes the following definition: \"A paste that covers the bulto to prepare it for painting.\"",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Slides/ESL- The Spanish Market.pptx",
+            "index": null,
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e9ebb5602823437c8d76e778d5b0ec60",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f6f4fa4d8cb04bf88f92fac82d2a0d92",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "Returns slide 7 of \"ESL- The Spanish Market.pptx\" with all of the following edits: (1) titled \"pigments\" and (2) includes the following definition: \"They are usually colored powders that give color to paint.\"",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Slides/ESL- The Spanish Market.pptx",
+            "index": null,
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_76ef858dd47d4452ae4e885b09e95e14",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f6f4fa4d8cb04bf88f92fac82d2a0d92",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "Returns slide 8 of \"ESL- The Spanish Market.pptx\" with all of the following edits: (1) titled \"varnish\" and (2) includes the following definition: \"A covering that is applied to protect the paint and sculpture.\"",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Slides/ESL- The Spanish Market.pptx",
+            "index": null,
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4bc3f71963b1484ab0c1701700a9d30c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f6f4fa4d8cb04bf88f92fac82d2a0d92",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "Returns slide 9 of \"ESL- The Spanish Market.pptx\" with all of the following edits: (1) titled \"charcoal\" and (2) includes the following definition: \"Usually made from heating wood or other natural things without air.\"",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Slides/ESL- The Spanish Market.pptx",
+            "index": null,
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_eb5cb80765674afaadad25365f732fe6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f6f4fa4d8cb04bf88f92fac82d2a0d92",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Style / formatting"
+        ],
+        "criteria": "Returns a slide deck containing 9 slides.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": "Should only be 9 slides long after edits.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    },
+    {
+      "eval_config_id": "72d7d96a-9d94-4a38-bbe3-96c08ded727c",
+      "eval_config_name": "Content Length Check Verifier",
+      "eval_defn_id": "content_length_check",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

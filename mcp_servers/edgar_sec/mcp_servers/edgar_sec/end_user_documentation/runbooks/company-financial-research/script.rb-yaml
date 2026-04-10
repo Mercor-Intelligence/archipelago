@@ -1,0 +1,117 @@
+# Company Financial Research
+# Generated for: edgar_sec
+# Scenario: Research Apple's SEC filings and financial data
+#
+# Note: *tool_panel and *sidebar anchors are auto-injected by the runbook-builder.
+# Run `python run.py --show-defaults` to see all available anchors.
+
+url: http://localhost:3000
+
+output: screenshots
+
+defaults:
+  server: edgar_sec
+
+steps:
+  # Step 1: Initial view
+  - TakeScreenshot
+
+  # Step 2: Select Lookup CIK tool
+  - SelectTool:
+      tool: lookup-cik
+      category: Lookup & Utilities
+  - FillToolParam:
+      params:
+        ticker: AAPL
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 3: Execute CIK lookup
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 4: Select Get Company Submissions
+  - SelectTool:
+      tool: get-company-submissions
+      category: Filings & Data
+  - FillToolParam:
+      params:
+        cik: "0000320193"
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 5: Execute and view filings
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 6: Select Get Company Facts
+  - SelectTool:
+      tool: get-company-facts
+      category: Filings & Data
+  - FillToolParam:
+      params:
+        cik: "0000320193"
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 7: Execute and view all facts
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 8: Select Get Company Concept
+  - SelectTool:
+      tool: get-company-concept
+      category: Filings & Data
+  - FillToolParam:
+      params:
+        cik: "0000320193"
+        taxonomy: us-gaap
+        tag: Revenues
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 9: Execute and view revenue history
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 10: Select Get Frames for cross-company comparison
+  - SelectTool:
+      tool: get-frames
+      category: Filings & Data
+  - FillToolParam:
+      params:
+        taxonomy: us-gaap
+        tag: Revenues
+        unit: USD
+        period: CY2018
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 11: Execute and view cross-company data
+  - ExecuteTool
+  - Wait: 3000
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800

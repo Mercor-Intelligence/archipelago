@@ -1,0 +1,185 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_30c23cee834b43dfa14f9870b68682a4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b39d72559b6a4865b1b362343761c5d7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies PA RL standard CC.1.3.8.E as missing from the unit",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b05728e67c6f4a2db82477757a218d42",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b39d72559b6a4865b1b362343761c5d7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies PA RL standard CC.1.3.8.G as missing from the unit",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f524d6284da0417cbe47d102e0db9ca0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b39d72559b6a4865b1b362343761c5d7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies PA RL standard CC.1.3.8.H as missing from the unit",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dda7e01d5e774ee6b8a5b0a88429a78d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b39d72559b6a4865b1b362343761c5d7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies PA RL standard CC.1.3.8.I as missing from the unit",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7ddfbb68e59b41ea8de9a864e08b1d55",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b39d72559b6a4865b1b362343761c5d7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies PA RL standard CC.1.3.8.J as missing from the unit",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5da218666ffd4d6a8a078e8167ed62d6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b39d72559b6a4865b1b362343761c5d7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies that Lesson 10 can be aligned to identified gap standard CC.1.3.8.G",
+        "modality": "Free text",
+        "negative_criteria": "Identifies any PA standard other than CC.1.3.8.G to align with Lesson 10.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0f331a201d71469cbe5ceaabac554113",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b39d72559b6a4865b1b362343761c5d7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies that Lesson 11 cannot be aligned to any of the identified gap standards",
+        "modality": "Free text",
+        "negative_criteria": "Identifies any PA standard aligning to Lesson 11.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1994deee10674e77868c38e065cf1123",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b39d72559b6a4865b1b362343761c5d7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies that Lesson 12 can be aligned to identified gap standard CC.1.3.8.H",
+        "modality": "Free text",
+        "negative_criteria": "Identifies any PA standard other than CC.1.3.8.H aligning with Lesson 12.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

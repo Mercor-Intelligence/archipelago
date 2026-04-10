@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "To comply with newly executed non-compete agreements, the recruiting team must enforce updated eligibility rules in Greenhouse.\n\nA non-compete agreement with BigBox Retail, Digital Marketplace Ltd, FashionCo, and Global Retail Corp was signed and came into effect on 1-Feb-2026. For applications applied on or after the non-compete signing date, candidates who are from one of the non-compete firms must have at least 12 months between their employment end date at the non-compete firm and their application applied date. Candidates who do not meet this requirement must be rejected using the Reject Application tool with rejection note: “Rejected due to non-compete.” \n\nAdditionally, candidates from these firms who have at least 12 months between their employment end date at the non-compete firm and their application applied date should be moved directly to Stage 5 and tagged as “Competitor Talent.”\n\nApplications with no employment data will be assumed not to be from non-compete firms.\n\nDo not round intermediate calculations. Round final values to the nearest integer. Share the following in the console:\n1. Final number of active applications post all movements\n2. Final number of applications in Stage 5 post all movements"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the final number of active applications post all movements is 59. (ver_429d05569d71419483bb2de49280e020)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the final number of active applications post all movements is 59."
+        }
+      ]
+    },
+    {
+      "name": "States that the final number of applications in Stage 5 post all movements is... (ver_c7529a1e6f064763919a5d0118f61e6a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the final number of applications in Stage 5 post all movements is 21."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-603-pm-task-03-0678fb72"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_0678fb724cc54bb685a71569b29ef550",
+    "task_name": "World 603_PM_Task 03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_b4727efd4eb74bc08a335376d08b1c88",
+        "golden_text_response": "1. States that the final number of active applications post all movements is 59.\n\n2. States that the final number of applications in Stage 5 post all movements is 21.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

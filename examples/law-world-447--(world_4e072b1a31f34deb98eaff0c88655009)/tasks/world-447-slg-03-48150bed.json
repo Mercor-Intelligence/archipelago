@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The Asset Purchase Agreement between CineCorp (as the seller) and Streamiverse (as the buyer) has multiple short intellectual property provisions, all of which essentially describe that Streamiverse will own the IP being sold by CineCorp. Use the INE Entertainment Master Production Services Agreement to draft new, expanded intellectual property provisions that clarify CineCorp's rights and responsibilities, focusing on provisions that will be protective of CineCorp as the seller. CineCorp is particularly concerned about limiting the time frame of the agreement, ensuring there are no obvious loopholes for employees to circumvent the language of the agreement, and limiting its financial commitment to the IP being purchased by Streamiverse.\n\nKeep in mind that INE was the purchaser, so relevant provisions may have to be adapted to be more protective of CineCorp. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that Streamiverse has no rights to related works created after the time... (ver_60a4d4bd1d674b429681a341b7ecc3d7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Streamiverse has no rights to related works created after the time of the agreement."
+        }
+      ]
+    },
+    {
+      "name": "States that this agreement shall bind any and all employees and contractors of... (ver_05e3fd75aef34550a12e1355d6656b2c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that this agreement shall bind any and all employees and contractors of both parties."
+        }
+      ]
+    },
+    {
+      "name": "States that Streamiverse has the exclusive duty to market purchased materials. (ver_cae925b7934444359c1a9eb1dcaeb8c9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Streamiverse has the exclusive duty to market purchased materials."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-447-slg-03-48150bed"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4e072b1a31f34deb98eaff0c88655009",
+    "world_name": "Law World 447",
+    "task_id": "task_48150bed9e9d4996990a940e7d2bf850",
+    "task_name": "World 447_SLG_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_11355aa3a10043e8a7a089552ed6c27c",
+        "golden_text_response": "NEW IP PROVISIONS \n\n1. Buyer is purchasing all works produced, developed, created, or suggested in connection with this transaction prior to or during the term of the agreement, and shall not have the right to any sequels, spinoffs, or other material created by CineCorp thereafter.\n2. This agreement shall bind any and all employees and/or contractors of the Buyer and Seller, including without limitation, the other creative team members engaged by Buyer and Seller to the relevant terms herein.\n3. Buyer shall have the exclusive duty to distribute, transmit, exhibit, broadcast, market, and advertise the purchased material. \n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,519 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Mrs. A has decided to apply to be a National Board Certified Teacher, and is preparing materials to submit for the second component - Differentiation in Instruction. Mrs. A has to submit a written commentary analyzing an individual students' strengths and needs as part of this. She has decided to use the work of Mason Brown to complete this component. Can you help support her application by generating a new word document that lists Mason's lowest performing standards?\n\nThe 8th Standards Mastery file should have information on Mason's lowest performing standards. His lowest performing standards are those where his score is more than 43 points below the standard's class average. Can you please list the standard codes (no need for further details) and how many points below average Mason's score is for each of these standards? \n\nAlso give Mason's lowest performing domain using the PACore file. A domain is the starting code (CC.1.2 - CC.1.5) where individual standards are grouped. Please include the domain title  along with the difference between Mason's average and the class average for the given domain. Ideally we'd like to see all score differences up to at least 1 decimal place."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Lists CC.1.2.8.E as one of the lowest performing standards (ver_bdf2d295ad844eb4a28f189e54095907)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists CC.1.2.8.E as one of the lowest performing standards."
+        }
+      ]
+    },
+    {
+      "name": "Lists CC.1.4.8.E as one of the lowest performing standards (ver_1bdb3971f8ee4485aad9e36549085381)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists CC.1.4.8.E as one of the lowest performing standards."
+        }
+      ]
+    },
+    {
+      "name": "Lists CC.1.4.8.P as one of the lowest performing standards (ver_c6cf503d34b648c7a7f5e9bbf3025033)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists CC.1.4.8.P as one of the lowest performing standards."
+        }
+      ]
+    },
+    {
+      "name": "Lists CC.1.5.8.D as one of the lowest performing standards (ver_e0fc382b297d464b9c3f06ad09e10f24)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists CC.1.5.8.D as one of the lowest performing standards."
+        }
+      ]
+    },
+    {
+      "name": "Lists CC.1.5.8.G as one of the lowest performing standards (ver_23bffbe5c7024ef6a938a8e6206bbef0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists CC.1.5.8.G as one of the lowest performing standards."
+        }
+      ]
+    },
+    {
+      "name": "States Mason's points are 44.3 below the class average for standard CC.1.2.8.E (ver_c1e3b9a9d16e4b83aa8fc489d384f771)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Mason's points are 44.3 below the class average for standard CC.1.2.8.E."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Mason's points below class average for standard CC.1.2.8.E as a... (ver_c1e3b9a9d16e4b83aa8fc489d384f771)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Mason's points below class average for standard CC.1.2.8.E as a number other than 44.3."
+        }
+      ]
+    },
+    {
+      "name": "States Mason's points are 43.3 below the class average for standard CC.1.4.8.E (ver_d411ffb2e27c42119d989f9d2a965475)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Mason's points are 43.3 below the class average for standard CC.1.4.8.E."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Mason's points below class average for standard CC.1.4.8.E a a... (ver_d411ffb2e27c42119d989f9d2a965475)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Mason's points below class average for standard CC.1.4.8.E a a number other than 43.3."
+        }
+      ]
+    },
+    {
+      "name": "States Mason's points are 43.1 below the class average for standard CC.1.4.8.P (ver_9c6cabca9fdb4abd824c326eac1821c9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Mason's points are 43.1 below the class average for standard CC.1.4.8.P."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Mason's points below class average for standard CC.1.4.8.P as a... (ver_9c6cabca9fdb4abd824c326eac1821c9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Mason's points below class average for standard CC.1.4.8.P as a number other than 43.1."
+        }
+      ]
+    },
+    {
+      "name": "States Mason's points are 44.6 below the class average for standard CC.1.5.8.D (ver_4d081627a97d4999ace58d5c78ec35c7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Mason's points are 44.6 below the class average for standard CC.1.5.8.D."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Mason's points below class average for standard CC.1.5.8.D as a... (ver_4d081627a97d4999ace58d5c78ec35c7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Mason's points below class average for standard CC.1.5.8.D as a number other than 44.6."
+        }
+      ]
+    },
+    {
+      "name": "States Mason's points are 43.4 below the class average for standard CC.1.5.8.G (ver_7401acc215e54afda8dfe00d14c61147)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Mason's points are 43.4 below the class average for standard CC.1.5.8.G."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Mason's points below class average for standard CC.1.5.8.G as a... (ver_7401acc215e54afda8dfe00d14c61147)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Mason's points below class average for standard CC.1.5.8.G as a number other than 43.4."
+        }
+      ]
+    },
+    {
+      "name": "States domain code CC.1.5 is the lowest performing domain category (ver_6c2c47cd112e4b4a9581c22ca3806c61)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States domain code CC.1.5 is the lowest performing domain category."
+        }
+      ]
+    },
+    {
+      "name": "Identifies a domain code other than 1.5 as Mason's lowest performing domain... (ver_6c2c47cd112e4b4a9581c22ca3806c61)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies a domain code other than 1.5 as Mason's lowest performing domain category."
+        }
+      ]
+    },
+    {
+      "name": "States \"Speaking & Listening\" is the domain title for the domain code CC.1.5 (ver_b6e8f398bca54f17ac34dfa863131c80)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States \"Speaking & Listening\" is the domain title for the domain code CC.1.5."
+        }
+      ]
+    },
+    {
+      "name": "Includes a title other than Speaking & Listening next to the identified domain. (ver_b6e8f398bca54f17ac34dfa863131c80)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a title other than Speaking & Listening next to the identified domain."
+        }
+      ]
+    },
+    {
+      "name": "States the difference between Mason's average and the class average for the... (ver_b14cddd81aeb47dabb550271d73cd8c9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the difference between Mason's average and the class average for the CC.1.5 domain is 38.2."
+        }
+      ]
+    },
+    {
+      "name": "States the difference between Mason's average and the class average for the... (ver_b14cddd81aeb47dabb550271d73cd8c9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the difference between Mason's average and the class average for the CC.1.5 domain is something other than 38.2."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world305-krm-02-natural-prompt-d0dcb092"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_d0dcb092678c453780bcc896a49ab8fd",
+    "task_name": "World305_KRM_02 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_aeb0eb2aa7224a1c9f4fb68251ddb5dc",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_c7c30e7f02b545238296fa9d21cc3e85"
+      },
+      {
+        "golden_response_id": "gold_6273e5970a324eb8986a3abe230c8174",
+        "golden_text_response": "See attached file ",
+        "golden_file_responses": "snap_c7c30e7f02b545238296fa9d21cc3e85"
+      }
+    ]
+  }
+}

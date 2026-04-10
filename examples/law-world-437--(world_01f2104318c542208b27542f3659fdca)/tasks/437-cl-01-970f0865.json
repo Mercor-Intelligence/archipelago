@@ -1,0 +1,59 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Considering the damage categories outlined in the Fraud Remedies Memo and the Aas decision, which is the weakest category of damages for Sweetmarch Build Partners \"SBP\" to sustain in court? \n\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that \"Schedule Delay Costs\" is the weakest category for SBP to sustain... (ver_82d46279ba7c41949ffbe9dd7bc0cd07)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that \"Schedule Delay Costs\" is the weakest category for SBP to sustain in court."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh 437-cl-01-970f0865"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_970f0865f5c1450999a415b19858615f",
+    "task_name": "437_CL_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c8292f3d1ba54b6cb19d7084d50cdfd8",
+        "golden_text_response": "Schedule Delay Costs is the weakest category of damages for Sweetmarch Build Partners \"SBP\" to sustain in court.",
+        "golden_file_responses": null
+      },
+      {
+        "golden_response_id": "gold_41975686334349a88e4fe65f61701e34",
+        "golden_text_response": "Pure economic losses are not typically recoverable in tort, and preparing an insurance claim is pure economic loss, so this is the weakest category of damages for SBP to sustain in court.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Request Time Off",
+  "pdf_page": 5,
+  "steps": [
+    {
+      "step": 1,
+      "action": "Homepage with Time Off card (get_balances)"
+    },
+    {
+      "step": 2,
+      "action": "Who's Out section (get_whos_out)"
+    },
+    {
+      "step": 3,
+      "action": "Full calendar view (get_whos_out)"
+    },
+    {
+      "step": 4,
+      "action": "Request Time Off form (get_types, get_balances)"
+    },
+    {
+      "step": 5,
+      "action": "Send Request button = bamboo_time_off_create_request"
+    }
+  ]
+}

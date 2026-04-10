@@ -1,0 +1,445 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "From the P&L of the Happy Hospital for 2026, present in the financial model by making all the corrections listed in the instructions below.\n\n1.\tState the new per-session price in Michigan in 2026 for ketamine TRD treatment, which is the highest possible integer that is lower than the mean session price in the previous year in that state. Use the Ketamine session sample to calculate this new price. \n2.\tState the updated:\n- COGS for 2026 with the sum of sub-components. Report this figure with a negative sign.\n- Gross Profit (in $) for 2026.\n- Gross Margin (in %) for 2026.\n- SG&A for 2026 as the sum of all its subcomponents. Assume that the percentage of revenue represented by each SG&A component remains unchanged from the original P&L. Report the updated SG&A figure with a negative sign.\n- EBIT for 2026.\n- EBIT margin in % for 2026.\n- EBITDA for 2026, assuming \"Training amortization\" represents all relevant Depreciation & Amortization.\n- EBITDA margin in % for 2026. \n\nReport response as a message in console, report USD figures and percentages rounded to the nearest integer."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "State that the new per session price in Michigan in 2026 for ketamine TRD... (ver_49a2d783d4194703a60bf6834b97e20c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the new per session price in Michigan in 2026 for ketamine TRD treatment is $400 (acceptable range $396 to $404)."
+        }
+      ]
+    },
+    {
+      "name": "State that the new per session price in Michigan in 2026 for ketamine TRD... (ver_49a2d783d4194703a60bf6834b97e20c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the new per session price in Michigan in 2026 for ketamine TRD treatment is any other value than $400.4."
+        }
+      ]
+    },
+    {
+      "name": "State that the updated COGS for 2026 are ($17,149,248) (acceptable range... (ver_ff168868bf9c4b7285e04afd72fecbb2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the updated COGS for 2026 are ($17,149,248) (acceptable range $16,977,756 to $17,320,740)."
+        }
+      ]
+    },
+    {
+      "name": "State that the updated COGS for 2026 are any other value than ($17,149,248) (ver_ff168868bf9c4b7285e04afd72fecbb2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the updated COGS for 2026 are any other value than ($17,149,248)."
+        }
+      ]
+    },
+    {
+      "name": "State that the updated Gross Profit for 2026 is $4,011,811 (acceptable range... (ver_0163de8d0a4e4e488fb231afa6cae8ab)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the updated Gross Profit for 2026 is $4,011,811 (acceptable range $3,971,693 to $4,051,929)."
+        }
+      ]
+    },
+    {
+      "name": "State that the updated Gross Profit for 2026 is any value other than $4,011,811 (ver_0163de8d0a4e4e488fb231afa6cae8ab)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the updated Gross Profit for 2026 is any value other than $4,011,811."
+        }
+      ]
+    },
+    {
+      "name": "State that the updated Gross Margin for 2026 is 19% (acceptable range 18.8% to... (ver_ee10ee10aa7f42c6ad39499e090f301d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the updated Gross Margin for 2026 is 19% (acceptable range 18.8% to 19.2%)."
+        }
+      ]
+    },
+    {
+      "name": "State that the updated Gross Margin for 2026 is any value other than 19% (ver_ee10ee10aa7f42c6ad39499e090f301d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the updated Gross Margin for 2026 is any value other than 19%."
+        }
+      ]
+    },
+    {
+      "name": "State that the updated SG&A for 2026 is ($2,539,327) (acceptable range... (ver_a49d55d771914494afdfed29deb61533)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the updated SG&A for 2026 is ($2,539,327) (acceptable range $2,513,934 to $2,564,720)."
+        }
+      ]
+    },
+    {
+      "name": "State that the updated SG&A for 2026 is any value other than ($2,539,327) (ver_a49d55d771914494afdfed29deb61533)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the updated SG&A for 2026 is any value other than ($2,539,327)."
+        }
+      ]
+    },
+    {
+      "name": "State that the updated EBIT for 2026 is $1,472,484 (acceptable range... (ver_f25237b17a7645cebb11286adeab74f7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the updated EBIT for 2026 is $1,472,484 (acceptable range $1,457,759 to $1,487,209)."
+        }
+      ]
+    },
+    {
+      "name": "State that the updated EBIT for 2026 is any value other than $1,472,484 (ver_f25237b17a7645cebb11286adeab74f7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the updated EBIT for 2026 is any value other than $1,472,484."
+        }
+      ]
+    },
+    {
+      "name": "State that the updated EBIT margin for 2026 is 7% (acceptable range 6.9% to... (ver_1a7edeb3b24141a0b8f3b4c14059687b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the updated EBIT margin for 2026 is 7% (acceptable range 6.9% to 7.1%)."
+        }
+      ]
+    },
+    {
+      "name": "State that the updated EBIT margin for 2026 is any other value than 7% (ver_1a7edeb3b24141a0b8f3b4c14059687b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the updated EBIT margin for 2026 is any other value than 7%."
+        }
+      ]
+    },
+    {
+      "name": "State that the updated EBITDA for 2026 is $1,636,644 (acceptable range... (ver_207d8ce0e78a4a108d18f2ba6e9e1144)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the updated EBITDA for 2026 is $1,636,644 (acceptable range $1,620,278 to $1,653,010)."
+        }
+      ]
+    },
+    {
+      "name": "State that the updated EBITDA for 2026 is any value other than $1,636,644 (ver_207d8ce0e78a4a108d18f2ba6e9e1144)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the updated EBITDA for 2026 is any value other than $1,636,644."
+        }
+      ]
+    },
+    {
+      "name": "State that the updated EBITDA margin for 2026 is 8% (acceptable range 7.9% to... (ver_e2c1081fe13648daba774342e727815e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the updated EBITDA margin for 2026 is 8% (acceptable range 7.9% to 8.1%)."
+        }
+      ]
+    },
+    {
+      "name": "State that the updated EBITSA margin for 2026 is any value other than 8% (ver_e2c1081fe13648daba774342e727815e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the updated EBITSA margin for 2026 is any value other than 8%."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-vivde933-d5d2aad8"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_d5d2aad8ed7745cf9e4bd42950526286",
+    "task_name": "Task vivde933",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_a4bb1d7b6bdf4a33a8c4b6f08ac425d3",
+        "golden_text_response": "1.\tThe new per session price in Michigan in 2026 for ketamine TRD treatment is $400\n2.\tThe updated COGS for 2026 are ($17,149,248)\n3.\tThe updated Gross Profit for 2026 is $4,011,811\n4.\tThe updated Gross Margin for 2026 is 19%\n5.\tThe updated SG&A for 2026 is ($2,539,327)\n6.\tThe updated EBIT for 2026 is $1,472,484\n7.\tThe updated EBIT margin for 2026 is 7%\n8.\tThe updated EBITDA for 2026 is $1,636,644\n9.\tThe updated EBITDA margin for 2026 is 8%",
+        "golden_file_responses": "snap_ab3fcb60158246f996afefa44fc08dbc"
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_555d437b31fa45a2b5149018ac8a9fb9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f73fde7d806d4134997e9b7c17e3299d",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the total number of employees scoring <= 2 as per the compensation-fitment framework is 101",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5f1fb270dafd44d7805520a48a163fe3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f73fde7d806d4134997e9b7c17e3299d",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the total annual compensation for employees scoring <= 2 as per the compensation-fitment framework is $6,674,000 (acceptable range $6,607,260 to $6,740,740)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

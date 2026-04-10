@@ -1,0 +1,49 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_69e91ccafd514b17887a3e7cc4fbd732",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_886bd965ab8e4fb9b12a1a2f134af875",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the revised Total Cumulative Exposure for Redwood for tax years 2021-2023 is $5,372,537.80",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Calculate the revised exposure after incorporating the revisions required to revenue timing adjustments.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    },
+    {
+      "eval_config_id": "73ae82d0-3202-469d-8df5-46f747dce15f",
+      "eval_config_name": "Multi Rep",
+      "eval_defn_id": "output_llm_multi_representation",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

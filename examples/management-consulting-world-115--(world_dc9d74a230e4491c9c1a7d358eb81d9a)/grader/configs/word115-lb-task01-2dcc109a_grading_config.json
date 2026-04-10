@@ -1,0 +1,218 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_23c7b3c130b14d74b6dc2296e3ab34e2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2dcc109ac38643d3b0f8e743a19b1cfa",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the updated OPEX Scenario B model Year 4 Operating Profit/ EBIT value is 10.75 (acceptable range 10.64 to 10.86)",
+        "negative_criteria": "States the updated OPEX Scenario B model Year 4 Operating Profit/ EBIT is any value other than 10.75",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3d08a8015db3418dbba47cd320877add",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2dcc109ac38643d3b0f8e743a19b1cfa",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the updated OPEX Scenario B model Year 4 EBITDA value is $25.75 M (acceptable range $25.49 to $26.01)",
+        "negative_criteria": "States the updated OPEX Scenario B model Year 4 EBITDA is any value other than $25.75 M",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0b7e22a8f4cd4203a91b33651e492796",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2dcc109ac38643d3b0f8e743a19b1cfa",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the updated OPEX Scenario B model Year 4 Net Income value is $7.75 M (acceptable range $7.67 to $7.83)",
+        "negative_criteria": "States the updated OPEX Scenario B model Year 4 Net Income is any value other than $7.75 M",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_43a5247fe96a4b07b82cc590b698931f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2dcc109ac38643d3b0f8e743a19b1cfa",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the updated OPEX Scenario B model Year 4 Free Cash Flow value is $2.75 M (acceptable range $2.72 to $2.78)",
+        "negative_criteria": "States the updated OPEX Scenario B model Year 4 Free Cash Flow is any value other than $2.75 M",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_70e73a5f02ba44448baa0865e448c96c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2dcc109ac38643d3b0f8e743a19b1cfa",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the updated OPEX and CAPEX Scenario B model Year 4 Depreciation value is $24.00 M (acceptable range $23.76 to $24.24)",
+        "negative_criteria": "States the updated OPEX and CAPEX Scenario B model Year 4 Depreciation value is any value other than $24.00 M ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_44fd941664fb4f8d9c819340317aadbe",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2dcc109ac38643d3b0f8e743a19b1cfa",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the updated OPEX and CAPEX Scenario B model Year 4 EBITDA value is $34.75 M (acceptable range $34.40 to $35.10)",
+        "negative_criteria": "States the updated OPEX and CAPEX Scenario B model Year 4 EBITDA value is any value other than $34.75 M ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_074165c63a17425189e9da3cedf5b6b8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2dcc109ac38643d3b0f8e743a19b1cfa",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the updated OPEX and CAPEX Scenario B model Year 4 Net Income value is $7.75 M (acceptable range $7.67 to $7.83)",
+        "negative_criteria": "States the updated OPEX and CAPEX Scenario B model Year 4 Net Income value is any value other than $7.75 M ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ddd1b493c31f437db4bb990a25dcf341",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2dcc109ac38643d3b0f8e743a19b1cfa",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the updated OPEX and CAPEX Scenario B model Year 4 Free Cash Flow value is -$88.25 M (acceptable range $-89.13 to $-87.37)",
+        "negative_criteria": "States the updated OPEX and CAPEX Scenario B model Year 4 Free Cash Flow value is any value other than -$88.25 M ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c8d31380cf6049c08bc6a4c6de52ccb0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2dcc109ac38643d3b0f8e743a19b1cfa",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the largest OPEX cost driver is Power ",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_658a520e23c541ed8eba784fe39978f2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2dcc109ac38643d3b0f8e743a19b1cfa",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the largest OPEX cost driver is 59% of the total OPEX (acceptable range 58% to 60%)",
+        "negative_criteria": "States the largest OPEX cost driver is any value other than 59% of the total OPEX",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

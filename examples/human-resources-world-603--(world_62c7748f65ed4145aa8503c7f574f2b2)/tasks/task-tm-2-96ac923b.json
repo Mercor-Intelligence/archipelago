@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Review the data in the filesystem, specifically the Candidate Pipeline Stage Tracker, the Executive Comparison Matrix, and the Cultural Fit Assessment Matrix.\n\nUsing these files, determine the total time candidates spent in the recruiting process from initial sourcing through to their final recorded stage- focusing only on those who successfully passed the hiring manager review.\n\nTo ensure accuracy, incorporate the results of our recent follow-up survey (Updated executive matrix.csv and Updated cultural fit matrix.csv). Leadership has found the survey's accuracy to be inconsistent; consequently, it should only be treated as the primary source for Skill Score and the standard deviation of cultural score. For all other fields, the original matrix files remain the preferred source. However, if data for a candidate is missing from the original files, fill in the missing information from the new survey, if available.\n\nNext, calculate a weighted \"Profile Score\" for these candidates by weighting their Experience Score, Skill Score, and Normalized Cultural Fit Rating (Min=0, Max=10) at 30%, 30%, and 40%, respectively. During this process, you must exclude any candidate who has a cultural score standard deviation of more than 0.9 or a primary cultural concern that explicitly mentions concern about travel requirements fitting their situation. \n\nReport the average Profile Score for two groups: candidates with a timeline of 20 days or less versus those with a timeline of 30 days or more. Format these averages to two decimal places and provide your response as a message in the console. Ensure any candidates where any scoring data is unavailable are excluded from the final analysis. (A score of 0 is possible). "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the average Profile Score for candidates in process for 20 days or... (ver_cfcd30f034a4420d9e33056f251f7599)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average Profile Score for candidates in process for 20 days or less is 0.80 (acceptable range 0.79 to 0.81)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average Profile Score for candidates in process for 30 days or... (ver_ea079a2ea3824d1d8755e5e4d76e1699)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average Profile Score for candidates in process for 30 days or more is 0.62 (acceptable range 0.61 to 0.63)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-tm-2-96ac923b"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_96ac923b348f48c1bb081a002adb3526",
+    "task_name": "Task_TM_2",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_1868b1dee90b4112afa991e0ed9b20c7",
+        "golden_text_response": "The average Profile Score for candidates in process for 20 days or less is 0.80.\nThe average Profile Score for candidates in process for 30 days or more is 0.62.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

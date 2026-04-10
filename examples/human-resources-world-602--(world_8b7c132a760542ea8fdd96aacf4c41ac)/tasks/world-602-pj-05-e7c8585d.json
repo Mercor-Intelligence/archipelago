@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Management has refreshed market salary benchmarks for a subset of roles (refer file Salary Benchmark Refresh_2026.xlsx) and plans to revise next year’s compensation in line with the updated market rates, while maintaining each employee’s historical compa ratio (refer file Employee_Master_File_Updated.xlsx). For roles where updated benchmarking is not available, a standard salary increase of 2% will be applied and historical market benchmarks would be utilized for compa ratio calculations. The revised compensation is subject to a maximum salary increase of 15%. \n\nBased on these assumptions, what should be the maximum permissible compa ratio (rounded to three decimal places) if the total annual compensation for all active employees should not exceed 300 Mn USD. Provide your answer directly in the console. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that based on the given assumptions and considering the total annual... (ver_2b638c3ade5f4c3593456dced0fa34ee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on the given assumptions and considering the total annual compensation for all active employees should not exceed 300 Mn USD, the maximum permissible compa ratio is 1.155 (acceptable range 1.143 to 1.167)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-602-pj-05-e7c8585d"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_e7c8585d81a44923b748eb4028457d61",
+    "task_name": "World 602_PJ_05",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_81fc3b6a902e4389b3b2891d08660dbd",
+        "golden_text_response": "Based on the given assumptions and considering the total annual compensation for all active employees should not exceed 300 Mn USD, the maximum permissible compa ratio is 1.155",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

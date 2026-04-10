@@ -1,0 +1,14 @@
+{
+  "admin": {
+    "userId": "user_001",
+    "password": "admin123",
+    "roles": ["admin", "user"],
+    "scopes": ["read", "write", "delete"]
+  },
+  "viewer": {
+    "userId": "user_002",
+    "password": "view123",
+    "roles": ["viewer"],
+    "scopes": ["read"]
+  }
+}

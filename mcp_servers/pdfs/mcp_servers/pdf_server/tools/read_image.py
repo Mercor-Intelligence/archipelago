@@ -62,7 +62,7 @@ def read_image(
         if len(base64_data) == 0:
             raise ValueError("Image data is empty")
 
-        image_bytes = base64.b64decode(base64_data)
+        image_bytes = base64.b64decode(base64_data, validate=True)
         return Image(data=image_bytes, format="jpeg")
 
     except ValueError:

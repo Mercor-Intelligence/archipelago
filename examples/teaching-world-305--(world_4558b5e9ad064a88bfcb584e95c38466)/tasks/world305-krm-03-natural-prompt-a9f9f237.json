@@ -1,0 +1,473 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "In a new document, create an answer key for multiple choice questions 1 through 8 from Unit Assessment, Chapters 1-14 exam by labeling each incorrect answer choice either misconceptions literal, comprehension, analysis, or application. Only do the labeling for questions 5-8. \n\nLiteral - the answer reflects a basic factual recall error, such as wrong name, place, or time. \nExample: Says Walter refuses lunch (factually incorrect). \n\nComprehension - the answer shows partial understanding of the text, but confuses events or characters, showing a misunderstanding about what happened within the text. While the answer \"knows\" what happened, it misunderstands \"why\" it happened. \nExample: Says Walter doesn't want to eat his lunch because he's rude (misunderstands why Walter doesn't want to eat lunch, which is because his family is poor and proud). \n\nAnalysis - the answer has accurate details but misinterprets the meaning or significance of the events. Details may be correct, but the answer draws an incorrect or incomplete conclusion about what the details mean or reveal about a character or event. \nExample: Says Atticus made Jem read to her as a punishment (misunderstands the significance of the event - it's a moral lesson).\n\nApplication - the answer is not grounded in the text and applies assumptions as opposed to textual evidence. The answer includes an opinion or personal assumption. \nExample: Says that the jury would vote guilty because that's what everyone did back then (includes personal/historical assumptions as opposed to text evidence)."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Includes Questions 1, 2, 3, 4, 5, 6, 7, and 8 from \"Answerkey Unit Assessment,... (ver_85ef17e54c214d5384a2fe132c997f56)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes Questions 1, 2, 3, 4, 5, 6, 7, and 8 from \"Answerkey Unit Assessment, Chapters 1-14 Exam\" in new document \"Answer Key Misconceptions 1-8\"."
+        }
+      ]
+    },
+    {
+      "name": "Labels Question 5 answer choice a as a literal misconception (ver_971509e26147485bad04ddb5a275a23d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels Question 5 answer choice a as a literal misconception."
+        }
+      ]
+    },
+    {
+      "name": "Labels Question 5 answer choice a as a literal misconception. (ver_971509e26147485bad04ddb5a275a23d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels Question 5 answer choice a as a literal misconception."
+        }
+      ]
+    },
+    {
+      "name": "Labels Question 5 answer choice b as a literal misconception (ver_228d7450ebc64a608dac9654817cb923)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels Question 5 answer choice b as a literal misconception."
+        }
+      ]
+    },
+    {
+      "name": "Labels Question 5 answer choice b as a misconception other than literal. (ver_228d7450ebc64a608dac9654817cb923)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels Question 5 answer choice b as a misconception other than literal."
+        }
+      ]
+    },
+    {
+      "name": "Labels Question 6 answer choice a as a comprehension misconception (ver_6ff3eb75c1c24eddb875b99386bf1695)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels Question 6 answer choice a as a comprehension misconception."
+        }
+      ]
+    },
+    {
+      "name": "Labels Question 6 answer choice a as a misconception other than comprehension. (ver_6ff3eb75c1c24eddb875b99386bf1695)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels Question 6 answer choice a as a misconception other than comprehension."
+        }
+      ]
+    },
+    {
+      "name": "Labels Question 6 answer choice b as a comprehension misconception (ver_09f89bf7eb484f65ae5216ef3078e1c2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels Question 6 answer choice b as a comprehension misconception."
+        }
+      ]
+    },
+    {
+      "name": "Labels Question 6 answer choice b as a misconception other than comprehension. (ver_09f89bf7eb484f65ae5216ef3078e1c2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels Question 6 answer choice b as a misconception other than comprehension."
+        }
+      ]
+    },
+    {
+      "name": "Labels Question 6 answer choice c as a comprehension misconception (ver_11d7105ec71a4d699e3abd7f8dea3f59)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels Question 6 answer choice c as a comprehension misconception."
+        }
+      ]
+    },
+    {
+      "name": "Labels Question 6 answer choice c as a comprehension misconception. (ver_11d7105ec71a4d699e3abd7f8dea3f59)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels Question 6 answer choice c as a comprehension misconception."
+        }
+      ]
+    },
+    {
+      "name": "Labels Question 7 answer choice a as an application misconception (ver_f2b26636279f4d9ab41d7b864fb3fcee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels Question 7 answer choice a as an application misconception."
+        }
+      ]
+    },
+    {
+      "name": "Labels Question 7 answer choice a as a misconception other than comprehension. (ver_f2b26636279f4d9ab41d7b864fb3fcee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels Question 7 answer choice a as a misconception other than comprehension."
+        }
+      ]
+    },
+    {
+      "name": "Labels Question 7 answer choice b as a comprehension misconception (ver_300de90d0b704bfca7de7696b0501083)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels Question 7 answer choice b as a comprehension misconception."
+        }
+      ]
+    },
+    {
+      "name": "Labels Question 7 answer choice b as a misconception other than comprehension. (ver_300de90d0b704bfca7de7696b0501083)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels Question 7 answer choice b as a misconception other than comprehension."
+        }
+      ]
+    },
+    {
+      "name": "Labels Question 8 answer choice a as an application misconception (ver_b0acb1fe446843bbbd42745227ee5851)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels Question 8 answer choice a as an application misconception."
+        }
+      ]
+    },
+    {
+      "name": "Labels Question 8 answer choice a as a misconception other than comprehension. (ver_b0acb1fe446843bbbd42745227ee5851)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels Question 8 answer choice a as a misconception other than comprehension."
+        }
+      ]
+    },
+    {
+      "name": "Labels Question 8 answer choice c as an application misconception (ver_bd5ecfb4cc654d8283854e425f1f25a7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels Question 8 answer choice c as an application misconception."
+        }
+      ]
+    },
+    {
+      "name": "Labels Question 8 answer choice c as a misconception other than application. (ver_bd5ecfb4cc654d8283854e425f1f25a7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels Question 8 answer choice c as a misconception other than application."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world305-krm-03-natural-prompt-a9f9f237"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_a9f9f23747f34028ba9b503bbbd18180",
+    "task_name": "World305_KRM_03 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_24814795d0824808be4baaf537c4babd",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_0f4104cef5ae47399c8354826525f880"
+      },
+      {
+        "golden_response_id": "gold_280ee65ae097431585283c4ec8b062af",
+        "golden_text_response": "See attached file. ",
+        "golden_file_responses": "snap_8b472075965c4901a75911338ea946de"
+      }
+    ]
+  }
+}

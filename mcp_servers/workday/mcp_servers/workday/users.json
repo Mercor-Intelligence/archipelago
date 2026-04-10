@@ -1,0 +1,44 @@
+{
+  "coordinator": {
+    "userId": "coordinator",
+    "password": "coordinator",
+    "roles": ["pre_onboarding_coordinator"],
+    "scopes": ["read", "write"]
+  },
+  "hr_admin": {
+    "userId": "hr_admin",
+    "password": "hr_admin",
+    "roles": ["hr_admin"],
+    "scopes": ["read", "write", "approve", "override", "case:read", "case:write", "timeline:read", "timeline:write", "message:read", "message:write", "attachment:read", "attachment:write", "audit:read"]
+  },
+  "hr_bp": {
+    "userId": "hr_bp",
+    "password": "hr_bp",
+    "roles": ["hr_business_partner"],
+    "scopes": ["read", "propose"]
+  },
+  "manager": {
+    "userId": "manager",
+    "password": "manager",
+    "roles": ["hiring_manager", "manager"],
+    "scopes": ["read", "confirm", "case:read", "timeline:read", "message:read", "message:write", "attachment:read", "audit:read"]
+  },
+  "auditor": {
+    "userId": "auditor",
+    "password": "auditor",
+    "roles": ["auditor"],
+    "scopes": ["read"]
+  },
+  "case_owner": {
+    "userId": "case_owner",
+    "password": "case_owner",
+    "roles": ["case_owner"],
+    "scopes": ["case:read", "case:write", "timeline:read", "timeline:write", "message:read", "message:write", "attachment:read", "attachment:write", "audit:read"]
+  },
+  "hr_analyst": {
+    "userId": "hr_analyst",
+    "password": "hr_analyst",
+    "roles": ["hr_analyst"],
+    "scopes": ["case:read", "timeline:read", "message:read", "attachment:read", "audit:read"]
+  }
+}

@@ -1,0 +1,491 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Our client, HappyHospital, has two empanelled EHR/IT providers, and all IT & EHR expense is the final billed amount for maintaining the EHR system.\nQ1. In 2025, these providers gave a combined $5,000,000 discount. Calculate the client’s total 2025 discount percentage and report the names of both providers, assuming each one’s discount rate equals this overall percentage.\nA market analysis file lists facilities, providers, discounts, and an “Exclusivity Flag.” Use the updated mapping to correct this flag. If a facility is missing from the mapping, set Exclusivity = 1 when only one provider is empanelled (exclusive) and 0 when multiple providers are empanelled (non‑exclusive).\nQ2. After updating exclusivity, compute the arithmetic‑mean discount percentage for each provider using only facilities with Exclusivity = 0.\nQ3. Compare the 2025 discount percentage from Q1 with each empanelled provider’s average non‑exclusive discount from Q2 and identify which empanelled provider(s) give higher discounts to non‑exclusive facilities than to HappyHospitals.\n\nAssumptions:\nRound all final numbers to two decimal places.\nProvide all results as console messages.​"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that CareSphere is one of the two empanelled providers (ver_627768838d814276a37320577d495095)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that CareSphere is one of the two empanelled providers."
+        }
+      ]
+    },
+    {
+      "name": "States that Medisoft is one of the two empanelled providers (ver_9350c36306d84f6988aecb4707e2c75d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Medisoft is one of the two empanelled providers."
+        }
+      ]
+    },
+    {
+      "name": "States that the discount offered by two empanelled providers is 5.88%... (ver_c3b1a6fcfbb44c5cbfc9b8e54f4e9ead)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the discount offered by two empanelled providers is 5.88% (acceptable range 5.82% to 5.94%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the discount offered by two empanelled providers is a value other... (ver_c3b1a6fcfbb44c5cbfc9b8e54f4e9ead)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the discount offered by two empanelled providers is a value other than 5.88%."
+        }
+      ]
+    },
+    {
+      "name": "States that the average discount offered by AstraCore Software is 5.83%... (ver_99ddbc60b3914ed8bfd2533a50d712c8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average discount offered by AstraCore Software is 5.83% (acceptable range 5.77% to 5.89%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average discount offered by AstraCore Software is a value... (ver_99ddbc60b3914ed8bfd2533a50d712c8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average discount offered by AstraCore Software is a value other than 5.83%."
+        }
+      ]
+    },
+    {
+      "name": "States that the average discount offered by BlueQuark Technologies is 5.96%... (ver_9484d6a60c4749b3aa723116d0922582)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average discount offered by BlueQuark Technologies is 5.96% (acceptable range 5.90% to 6.02%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average discount offered by BlueQuark Technologies is a value... (ver_9484d6a60c4749b3aa723116d0922582)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average discount offered by BlueQuark Technologies is a value other than 5.96%."
+        }
+      ]
+    },
+    {
+      "name": "States that the average discount offered by CareSphere is 6.07% (acceptable... (ver_db1d4242e24b43449de7a9fbf53e435c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average discount offered by CareSphere is 6.07% (acceptable range 6.01% to 6.13%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average discount offered by CareSphere is a value other than... (ver_db1d4242e24b43449de7a9fbf53e435c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average discount offered by CareSphere is a value other than 6.07%."
+        }
+      ]
+    },
+    {
+      "name": "States that the average discount offered by CrestEdge Solutions is 6.01%... (ver_070d71951bbd46daa73f2a6d4c30acb7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average discount offered by CrestEdge Solutions is 6.01% (acceptable range 5.95% to 6.07%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average discount offered by CrestEdge Solutions is a value... (ver_070d71951bbd46daa73f2a6d4c30acb7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average discount offered by CrestEdge Solutions is a value other than 6.01%."
+        }
+      ]
+    },
+    {
+      "name": "States that the average discount offered by Medisoft is 6.22% (acceptable... (ver_2d0dfd6d2dc541cbb571c5bd5083ae5c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average discount offered by Medisoft is 6.22% (acceptable range 6.16% to 6.28%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average discount offered by Medisoft is a value other than 6.22% (ver_2d0dfd6d2dc541cbb571c5bd5083ae5c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average discount offered by Medisoft is a value other than 6.22%."
+        }
+      ]
+    },
+    {
+      "name": "States that the average discount offered by NimbusLogic Systems is 6.04%... (ver_187bc14896584b41b29f04e6f7f9463f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average discount offered by NimbusLogic Systems is 6.04% (acceptable range 5.98% to 6.10%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average discount offered by NimbusLogic Systems is a value... (ver_187bc14896584b41b29f04e6f7f9463f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average discount offered by NimbusLogic Systems is a value other than 6.04%."
+        }
+      ]
+    },
+    {
+      "name": "States that the average discount offered by SynapseWave Labs is 5.85%... (ver_1033f816acca49f8847c8be40d8d1694)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average discount offered by SynapseWave Labs is 5.85% (acceptable range 5.79% to 5.91%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average discount offered by SynapseWave Labs is a value other... (ver_1033f816acca49f8847c8be40d8d1694)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average discount offered by SynapseWave Labs is a value other than 5.85%."
+        }
+      ]
+    },
+    {
+      "name": "States that the discount offered to the client by CareSphere is lower than the... (ver_d23c3236eb754ded81579f0d61c109c3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the discount offered to the client by CareSphere is lower than the discount provided by it to the market for non-exclusive partnerships."
+        }
+      ]
+    },
+    {
+      "name": "States that the discount offered to the client by Medisoft is lower than the... (ver_41110c7916354bfabeace0771f4eb325)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the discount offered to the client by Medisoft is lower than the discount provided by it to the market for non-exclusive partnerships."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-by5z4475-b96a156e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_b96a156e1238496fb397e7f227ba9903",
+    "task_name": "Task by5z4475",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_1558633565f94538ab9af007529c4efb",
+        "golden_text_response": "1. Discount offered by the two empanelled providers in FY25 was 5.88%. These providers are Medisoft and Caresphere.\n\n2. Average discount percentages offered by various providers (Non-Exclusive partnerships)\n\nAstraCore Software\t| 5.83%\nBlueQuark Technologies\t| 5.96%\nCareSphere\t| 6.07%\nCrestEdge Solutions\t| 6.01%\nMedisoft\t| 6.22%\nNimbusLogic Systems\t| 6.04%\nSynapseWave Labs\t| 5.85%\n\n3. Discount offered to market for non exclusive partnerships, by CareSphere (6.07%) and Medisoft (6.22%) is higher than what our client got by the same empanelled providers in FY25 (5.88%)",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

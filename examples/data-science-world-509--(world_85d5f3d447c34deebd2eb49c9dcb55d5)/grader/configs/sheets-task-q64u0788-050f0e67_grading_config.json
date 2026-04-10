@@ -1,0 +1,176 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_cb05ce2ba1194e36b2090ffd34a7c4fe",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_050f0e674ec34bae961fb47a2e04ac45",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The Loss_Balance_Ratio for 2024-06 is 0.457 +/- 0.005",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested to calculate the \"Loss_Balance_Ratio\" by Month_Key (rows) in a pivot table",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8d4635a14e2b412086dd7e06000ef533",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_050f0e674ec34bae961fb47a2e04ac45",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The Loss_Balance_Ratio for 2024-07 0.401 +/- 0.005",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested to calculate the \"Loss_Balance_Ratio\" by Month_Key (rows) in a pivot table",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1d8b96f5596c45349c8e5ae5c6e79ffc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_050f0e674ec34bae961fb47a2e04ac45",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The Loss_Balance_Ratio for 2024-08 is 0.396 +/- 0.005",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested to calculate the \"Loss_Balance_Ratio\" by Month_Key (rows) in a pivot table",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a467a2fb74bc457bafbbb55e860255f0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_050f0e674ec34bae961fb47a2e04ac45",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The Loss_Balance_Ratio for 2024-09 is 0.393 +/- 0.005",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested to calculate the \"Loss_Balance_Ratio\" by Month_Key (rows) in a pivot table",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5c95d099eea5482ea11505cc7b839144",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_050f0e674ec34bae961fb47a2e04ac45",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The Loss_Balance_Ratio for 2024-10 is 0.400 +/- 0.005",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested to calculate the \"Loss_Balance_Ratio\" by Month_Key (rows) in a pivot table",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a5f2975d16184ba29267b1c66ed85695",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_050f0e674ec34bae961fb47a2e04ac45",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The Loss_Balance_Ratio for 2024-11 is 0.394 +/- 0.005",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested to calculate the \"Loss_Balance_Ratio\" by Month_Key (rows) in a pivot table",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5ee9b08bde2f4c99ab26e6e0f476e348",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_050f0e674ec34bae961fb47a2e04ac45",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The Loss_Balance_Ratio for 2024-12 is 0.397 +/- 0.005",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested to calculate the \"Loss_Balance_Ratio\" by Month_Key (rows) in a pivot table",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "eval_config_name": "Output LLM",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "4658aec9-7eeb-4c9b-84c2-5464345e345f",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

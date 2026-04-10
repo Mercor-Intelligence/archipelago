@@ -1,0 +1,218 @@
+// AUTO-GENERATED - DO NOT EDIT MANUALLY
+// Generated from MCP servers: {{ servers | map(attribute='name') | join(', ') }}
+
+/** Field definition for nested object sub-fields */
+export interface FieldDefinition {
+  name: string;
+  label: string;
+  type: 'string' | 'number' | 'boolean' | 'date' | 'datetime' | 'object' | 'array';
+  required: boolean;
+  description: string;
+  minLength?: number;
+  maxLength?: number;
+  min?: number;
+  max?: number;
+  enum?: string[];
+  default?: any;
+  /** Whether this field accepts multiple values */
+  isList?: boolean;
+  /** For nested object fields, the sub-field definitions */
+  fields?: FieldDefinition[];
+}
+
+export interface DataType {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  icon?: string;
+  server: string;
+  _internal: {
+    method: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
+    url: string;
+    requiresAuth: boolean;
+  };
+  parameters?: {
+    name: string;
+    label: string;
+    type: 'string' | 'number' | 'boolean' | 'date' | 'datetime' | 'object' | 'array';
+    required: boolean;
+    description: string;
+    placeholder?: string;
+    location: 'query' | 'body' | 'header' | 'path';
+    minLength?: number;
+    maxLength?: number;
+    min?: number;
+    max?: number;
+    enum?: string[];
+    enumDescriptions?: Record<string, string>;
+    pattern?: string;
+    jsonExample?: string;
+    isJsonField?: boolean;
+    default?: any;
+    /** Whether this parameter accepts multiple values (rendered as a list with add/remove) */
+    isList?: boolean;
+    /** For object types, the sub-field definitions for structured input */
+    fields?: FieldDefinition[];
+  }[];
+}
+
+{# Macro for rendering field definitions recursively #}
+{% macro render_fields(fields) %}
+[
+{% for field in fields %}
+      {
+        name: '{{ field.name }}',
+        label: '{{ field.label }}',
+        type: '{{ field.type }}',
+        required: {{ field.required | lower }},
+        description: {{ field.description | tojson }},
+        {% if field.minLength is defined %}minLength: {{ field.minLength }},{% endif %}
+        {% if field.maxLength is defined %}maxLength: {{ field.maxLength }},{% endif %}
+        {% if field.min is defined %}min: {{ field.min }},{% endif %}
+        {% if field.max is defined %}max: {{ field.max }},{% endif %}
+        {% if field.enum %}enum: {{ field.enum | tojson }},{% endif %}
+        {% if field.default is defined %}default: {{ field.default | tojson }},{% endif %}
+        {% if field.isList %}isList: true,{% endif %}
+        {% if field.fields %}fields: {{ render_fields(field.fields) }},{% endif %}
+      },
+{% endfor %}
+    ]
+{% endmacro %}
+
+export const dataTypes: DataType[] = [
+{% for tool in tools %}
+  {
+    id: '{{ tool.id }}',
+    name: '{{ tool.name }}',
+    category: '{{ tool.category }}',
+    description: {{ tool.description | tojson }},
+    {% if tool.icon %}icon: '{{ tool.icon }}',{% endif %}
+    server: '{{ tool.server }}',
+    _internal: {
+      method: '{{ tool._internal.method }}',
+      url: '{{ tool._internal.url }}',
+      requiresAuth: {{ tool._internal.requiresAuth | lower }},
+    },
+    {% if tool.parameters %}
+    parameters: [
+    {% for param in tool.parameters %}
+      {
+        name: '{{ param.name }}',
+        label: '{{ param.label }}',
+        type: '{{ param.type }}',
+        required: {{ param.required | lower }},
+        description: {{ param.description | tojson }},
+        {% if param.placeholder %}placeholder: '{{ param.placeholder }}',{% endif %}
+        location: '{{ param.location }}',
+        {% if param.minLength is defined %}minLength: {{ param.minLength }},{% endif %}
+        {% if param.maxLength is defined %}maxLength: {{ param.maxLength }},{% endif %}
+        {% if param.min is defined %}min: {{ param.min }},{% endif %}
+        {% if param.max is defined %}max: {{ param.max }},{% endif %}
+        {% if param.enum %}enum: {{ param.enum | tojson }},{% endif %}
+        {% if param.enumDescriptions %}enumDescriptions: {{ param.enumDescriptions | tojson }},{% endif %}
+        {% if param.pattern %}pattern: '{{ param.pattern }}',{% endif %}
+        {% if param.isJsonField %}isJsonField: {{ param.isJsonField | lower }},{% endif %}
+        {% if param.jsonExample %}jsonExample: `{{ param.jsonExample }}`,{% endif %}
+        {% if param.default is defined %}default: {{ param.default | tojson }},{% endif %}
+        {% if param.isList %}isList: true,{% endif %}
+        {% if param.fields %}fields: {{ render_fields(param.fields) }},{% endif %}
+      },
+    {% endfor %}
+    ],
+    {% endif %}
+  },
+{% endfor %}
+];
+
+export function getDataTypeById(id: string): DataType | undefined {
+  return dataTypes.find(dt => dt.id === id);
+}
+
+export function getDataTypesByCategory(): Record<string, DataType[]> {
+  return dataTypes.reduce((acc, dt) => {
+    if (!acc[dt.category]) {
+      acc[dt.category] = [];
+    }
+    acc[dt.category].push(dt);
+    return acc;
+  }, {} as Record<string, DataType[]>);
+}
+
+export function getDataTypesByServer(): Record<string, DataType[]> {
+  return dataTypes.reduce((acc, dt) => {
+    if (!acc[dt.server]) {
+      acc[dt.server] = [];
+    }
+    acc[dt.server].push(dt);
+    return acc;
+  }, {} as Record<string, DataType[]>);
+}
+
+// Sample Data for Database Tables
+export interface TableColumn {
+  name: string;
+  type: string;
+  required: boolean;
+  primaryKey: boolean;
+}
+
+export interface SampleDataTable {
+  tableName: string;
+  modelName: string;
+  description: string;
+  rowCount: number;
+  csvContent: string;
+  server: string;
+  columns: TableColumn[];
+}
+
+export const sampleDataTables: SampleDataTable[] = [
+{% for table in sample_data_tables %}
+  {
+    tableName: '{{ table.tableName }}',
+    modelName: '{{ table.modelName }}',
+    description: {{ table.description | tojson }},
+    rowCount: {{ table.rowCount }},
+    csvContent: {{ table.csvContent | tojson }},
+    server: '{{ table.server }}',
+    columns: [
+    {% for col in table.columns %}
+      { name: '{{ col.name }}', type: '{{ col.type }}', required: {{ col.required | lower }}, primaryKey: {{ col.primaryKey | lower }} },
+    {% endfor %}
+    ],
+  },
+{% endfor %}
+];
+
+export function getSampleDataByServer(): Record<string, SampleDataTable[]> {
+  return sampleDataTables.reduce((acc, table) => {
+    if (!acc[table.server]) {
+      acc[table.server] = [];
+    }
+    acc[table.server].push(table);
+    return acc;
+  }, {} as Record<string, SampleDataTable[]>);
+}
+
+// API Model Documentation
+export interface ModelField {
+  type: string;
+  required: boolean;
+  description: string;
+  default: string | null;
+}
+
+export interface Model {
+  name: string;
+  docstring: string;
+  fields: Record<string, ModelField>;
+  bases: string[];
+  is_enum: boolean;
+}
+
+export const models: Model[] = {{ models | tojson }};
+
+export function getModelByName(name: string): Model | undefined {
+  return models.find(m => m.name === name);
+}

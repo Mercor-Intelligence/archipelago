@@ -1,0 +1,44 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_5d285e624e3c44928052bb6687c76933",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_891eb284948940c28fce911e06245db1",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that the City is in default under the Disposition and Development Agreement",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Under section 5.3 of the DDA, the City was obligated to respond within 30 days to the request for a price reduction. This timing element is a material term, as time is of the essence under the DDA (per section 11.2).  Although the City could have been excused under section 11.2(b) due to the force majeure event (the earthquake), the force majeure provision requires \"prompt written notice,\" and notices under the agreement must be \"delivered by personal service, certified mail, or reputable overnight courier.\" The email from the City was not valid notice and thus the force majeure provision (11.2(b)) does not apply.\n\nUnder section 17.1, a party is in default if they fail to perform a material obligation and that failure continues for 30 days after written notice from the non-defaulting party. In this case, the City failed to perform a material obligation (responding within 30 days) and that failure continued for 30 days after written notice from Liverbird. Thus, the City is in default. I've included the relevant excerpts from the DDA below.\n\n5.3 Purchase Price Adjustments.\u2028\na)\tThe Parties acknowledge that the agreed Purchase Price reflects a deduction for the existing storm drain easement on the Site.\nb)\tDuring the Due Diligence Period, if Developer discovers, through written reports from qualified consultants, significant environmental contamination or other material development constraints on the Site that were not previously disclosed and that materially increase the cost or reduce the developable area of the Project, Developer may request a reduction of the Purchase Price in writing and provide supporting documentation.\nc)\tCity shall respond within thirty (30) days by either agreeing to a price reduction (in an amount agreed by the Parties) or declining to reduce the Purchase Price. If City declines, Developer may, within fifteen (15) days after City\u2019s response, terminate this Agreement by written notice, in which case the Deposit shall be returned to Developer and the Parties shall have no further obligations except those that expressly survive termination.\n\n11.2 Time of the Essence; Extensions.\u2028 Time is of the essence, subject to: \n(a) written extensions approved by both Parties; and \n(b) delays caused by force majeure events (e.g., war, natural disasters, strikes, acts of God) beyond the reasonable control of the delayed Party, which shall extend deadlines for the period of such delay, upon prompt written notice.\n\n17.1 Default and Notice.\n\u2028(a) A Party shall be in default if it fails to perform a material obligation under this Agreement and such failure continues for thirty (30) days after written notice from the non\u2011defaulting Party, or, if the default cannot reasonably be cured within 30 days, if the defaulting Party fails to commence and diligently pursue cure within such 30 days.\u2028\n(b) Notices of default shall describe the breach in reasonable detail.\n\n18.2 Notices.\u2028  All notices shall be in writing and delivered by personal service, certified mail, or reputable overnight courier to the addresses set forth below \n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

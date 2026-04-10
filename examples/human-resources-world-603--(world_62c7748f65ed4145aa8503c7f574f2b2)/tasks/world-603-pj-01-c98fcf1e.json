@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The management suspects that the hiring manager has a negative view of the candidates with higher work experience. Calculate the difference in average experience score of all the candidates rejected at hiring manager review stage v/s those who were advanced past the hiring manager review stage. Also, calculate the difference in composite score of all the candidates rejected at hiring manager review stage v/s those who were advanced past the hiring manager review stage, for comparison.\n\nComposite score is the average of average skill rating, average overall interview and average cultural fit ratings. Experience score for all candidates is incorrectly represented on a scale of 0 to 1, Adjust the values on the scale of 0 to 10 instead. Refer to the files 'Candidate Pipeline Stage Tracker.xlsx' and 'Executive_Candidate_Comparison_Matrix.xlsx'.\n\nProvide your answers in the console, rounded to three decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the difference in average experience score of all the candidates... (ver_f458fc6bf656465980e58bec41acdeb0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the difference in average experience score of all the candidates rejected at hiring manager review stage v/s those who advanced past the hiring manager review stage is 0.396 (acceptable range 0.392 to 0.400)."
+        }
+      ]
+    },
+    {
+      "name": "States that the difference in average composite score of all the candidates... (ver_78aa931149e54a5497819bc0402d458a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the difference in average composite score of all the candidates rejected at hiring manager review stage v/s those who advanced past the hiring manager review stage is -0.290 (acceptable range -0.293 to -0.287)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-603-pj-01-c98fcf1e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_c98fcf1e0eb34cf18f7c37867f803f7e",
+    "task_name": "World 603_PJ_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_412b25cf6d1749a3ae43891cb9ded58e",
+        "golden_text_response": "Difference in average experience score of all the candidates rejected at hiring manager review stage v/s those who advanced past the hiring manager review stage: 0.396 \nDifference in average composite score of all the candidates rejected at hiring manager review stage v/s those who advanced past the hiring manager review stage: -0.290\n\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

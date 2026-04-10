@@ -1,0 +1,243 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The client expects higher upfront Capex to improve data center profitability under these assumptions: Total Capacity = 55 MW, Fully Ramped = 95%, Build Capex = $400M.\n\nCreate a new tab titled “Alternate Scenario Metrics” and report: Year 10 Revenue, Gross Profit, EBITDA, Net Income, Free Cash Flow, TV, and NPV.\n\nReplicate the Scenario B data center model with these updates while holding all other assumptions constant. In Year 7, set revenue to 95% × 55 MW × $2.22M annual lease rate, then apply the existing growth rate thereafter. Reflect higher Capex by setting Year 0 Capex to $200M (replacing $100M). Update depreciation to $20M in Year 4, increasing by $0.5M per year.\n\nRound all outputs to two decimal places. If the updated NPV exceeds the original Scenario B NPV, also calculate and list the IRR in the new tab, rounded to the nearest hundredth."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Creates a new tab labeled \"Alternate Scenario Metrics\" (ver_de7bbf86af7e44cf927076a541f7f8ec)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a new tab labeled \"Alternate Scenario Metrics\"."
+        }
+      ]
+    },
+    {
+      "name": "States that the alternate scenario Year 10 revenue is $124.91M (acceptable... (ver_fcf47ed268684a87a6f542620ab57219)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the alternate scenario Year 10 revenue is $124.91M (acceptable range $123.66 to $126.16)."
+        }
+      ]
+    },
+    {
+      "name": "States that the alternate scenario Year 10 Gross Profit is $104.91M... (ver_ba75d1cbc6064c3cbc7715a7f9522501)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the alternate scenario Year 10 Gross Profit is $104.91M (acceptable range $103.86 to $105.96)."
+        }
+      ]
+    },
+    {
+      "name": "States that the alternate scenario Year 10 EBITDA is $96.69M (acceptable range... (ver_173d6e20eb204bb3a4ee8988af2377a6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the alternate scenario Year 10 EBITDA is $96.69M (acceptable range $95.72 to $97.66)."
+        }
+      ]
+    },
+    {
+      "name": "States that the alternate scenario Year 10 Net Income as $47.51M (acceptable... (ver_564a5cf7e0d94931931fcbbe6b1738d9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the alternate scenario Year 10 Net Income as $47.51M (acceptable range $47.03 to $47.99)."
+        }
+      ]
+    },
+    {
+      "name": "States that the alternate scenario Year 10 Free Cash Flow is $60.51M... (ver_ea3d7d5f6af5411e9bd6deaa1497850f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the alternate scenario Year 10 Free Cash Flow is $60.51M (acceptable range $59.90 to $61.12)."
+        }
+      ]
+    },
+    {
+      "name": "States that the alternate scenario Year 10 TV is $954.26M (acceptable range... (ver_31c44959249243f0b4a37592eb498c69)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the alternate scenario Year 10 TV is $954.26M (acceptable range $944.72 to $963.80)."
+        }
+      ]
+    },
+    {
+      "name": "States that the alternate scenario NPV is $206.25M (acceptable range $204.19... (ver_f272e6aa8d204ec3bccbf88c6ffbba02)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the alternate scenario NPV is $206.25M (acceptable range $204.19 to $208.31)."
+        }
+      ]
+    },
+    {
+      "name": "States that the alternate scenario IRR is 15.03% (acceptable range 14.88% to... (ver_7a26ea31460f43bba0cbf55bf634e2aa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the alternate scenario IRR is 15.03% (acceptable range 14.88% to 15.18%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world115-cp-01-474acfd1"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_474acfd11f584c168f2d561915f68631",
+    "task_name": "world115_cp_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_8236b0130c3540e0b98524741c8bf69b",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_0b2d32c3f27b49f692da2c3e7d76b199"
+      },
+      {
+        "golden_response_id": "gold_f0c8b853aa91404c82da9d6cd96c21ba",
+        "golden_text_response": "See attached.",
+        "golden_file_responses": "snap_0b2d32c3f27b49f692da2c3e7d76b199"
+      }
+    ]
+  }
+}

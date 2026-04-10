@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the model calculate the equity value per share for S&P Global under the following assumptions.\n\nAssumptions:\n1) For the period 2026 to 2030 decrease non-subscription/transaction revenue growth by 50 bps each year from current values.\n2) For the period 2026 to 2030 increase depreciation and amortization % of revenue by 75 bps each year from current values.\n3)Use the the closing share price as of 1/7/2026 for SPGI share price\n4) Use beta of 1.207\n5) Increase equity risk premium by 25 bps from current value\n6) Use the EBITDA method to calculate the equity value per share\n7) Round to two decimal places and present data in $"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States S&P Global equity value per share is $378.02 (acceptable range $374.24... (ver_403b5fbb7591411297fe0ed3b4e33864)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States S&P Global equity value per share is $378.02 (acceptable range $374.24 to $381.80)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-249-sb-06-588d809e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_588d809eeb4645feba517427f9c6f019",
+    "task_name": "World 249 SB 06",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_7dfa4a5d96704c92a57132f882e51b24",
+        "golden_text_response": " S&P Global equity value per share : $378.02",
+        "golden_file_responses": "snap_78243d0082e040d59c949dd44bd2cdf6"
+      }
+    ]
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The CHRO is ready to review the final shortlist for the Head of Automation position. Please evaluate the full external candidate pool from the \"External outreach candidate list.xlsx\" and identify the top 3 candidates based on their final composite scores. \n\nTo ensure consistency in our technical assessment, you must apply specific scoring protocols derived from our \"Candidate evaluation methodology - HoA.docx\" and the \"Technical maturity scoring rubric.png.\" When calculating the Technical Maturity Score, any candidate with a Role Category that explicitly includes the word \"Automation\" must be classified as Level 5. Our leadership team has determined that these roles involve direct oversight of robotics and autonomous systems at scale, regardless of whether the individual appears in the supplemental override documentation. \n\nFor all other candidates, you must use the standard mapping provided in the rubric. Additionally, you must refer to the \"Technical maturity override.docx\" for specific candidates whose expertise exceeds their baseline title. All other scoring components, such as Strategic Alignment and Company Scale, must be calculated using the candidate's existing profile data. Scoring brackets defined in the methodology are inclusive on both ends.\n\nPlease identify the top 3 candidates by name and provide their final composite scores rounded to two decimal places. In the event of a tie, the candidate with the highest number of \"Relevant Experience (Years)\" must be ranked higher. Also tell me who is the Platinum Lead with the lowest score. Provide your final answer directly in the console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that one of the top 3 candidates for the Head of Automation position is... (ver_e2bf56fa830d4ec1af7a2a60216e6328)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the top 3 candidates for the Head of Automation position is Paul Blue."
+        }
+      ]
+    },
+    {
+      "name": "States that one of the top 3 candidates for the Head of Automation position is... (ver_dc5cece56ca7412592a06863c372ec7c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the top 3 candidates for the Head of Automation position is Jason Lewis."
+        }
+      ]
+    },
+    {
+      "name": "States that one of the top 3 candidates for the Head of Automation position is... (ver_bad44033da17421dbdf4e494cc67ac5c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the top 3 candidates for the Head of Automation position is James Rhodes."
+        }
+      ]
+    },
+    {
+      "name": "States that the score, as per the internal scoring methodology, for Jason... (ver_a3bff876f3ca4c0f85d44e6b54d86b5e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the score, as per the internal scoring methodology, for Jason Lewis is 91.67 (acceptable range 90.75 to 92.59)."
+        }
+      ]
+    },
+    {
+      "name": "States that the score, as per the internal scoring methodology, for James... (ver_c05711dbbb25476b8711ea6884dac8cc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the score, as per the internal scoring methodology, for James Rhodes is 90.04 (acceptable range 89.14 to 90.94)."
+        }
+      ]
+    },
+    {
+      "name": "States that the score, as per the internal scoring methodology, for Paul Blue... (ver_005b6c07b77649d0bfed58a32aa493c6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the score, as per the internal scoring methodology, for Paul Blue is 94.21 (acceptable range 93.27 to 95.15)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Platinum Lead with the lowest score is James Rhodes. (ver_9f44bd04d2da4e8ba74f23c219752ce4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Platinum Lead with the lowest score is James Rhodes."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-tm-3-b37605ba"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_b37605bae5c646908bb0368373502473",
+    "task_name": "Task_TM_3",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_62e82431db2346e0a1087223e512d296",
+        "golden_text_response": "The top 3 candidates and their respective scores are\n\nPaul Blue: 94.21\nJason Lewis:  91.67\nJames Rhodes: 90.04\n\nJames Rhodes is the platinum lead with the lowest score. \n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

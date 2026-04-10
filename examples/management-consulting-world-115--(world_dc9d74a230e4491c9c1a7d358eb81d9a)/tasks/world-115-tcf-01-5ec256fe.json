@@ -1,0 +1,330 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "ResourceCo is closing a gold mine and wants to assess whether it has underestimated long-term water remediation risks and costs.\n\n1. Expert cost analysis\nUsing only the expert interview documents provided, analyze estimated cost ranges for water-related risks.\n\n(a) Use expert interview transcripts from the following experts: Eleanor Vance, James Martinez, Robert Kellerman, James Kowalski, and Robert Chen. Include only expert estimates that provide a minimum and maximum cost range.\n(b) Include only costs specific to water treatment, water monitoring, or water management. Exclude mixed water/non-water costs without a water-only breakdown. Treat O&M and biological monitoring as water-related.\n(e) If costs are described as perpetual, indefinite, or without a defined duration, assume 40 years and determine the total minimum and maximum costs over that period.\n(f) Calculate and return the average minimum and average maximum total cost across experts. \n\n2. Company cost estimate\nUsing company data in the scenario A costing model's 30-year cost schedule, determine ResourceCo’s estimated total costs for water remediation at the mine site as follows:\n\n(a) Include only 30-year capital and operating costs for the Water Treatment Plant and monitoring.\n(b) Calculate and return the total water-related CAPEX, OPEX, and total cost (sum of CAPEX and OPEX).\n\n3. Comparison\nCompare the company’s total water-related cost to the average expert range. State whether it falls within the range. If not, return how far below the bottom end or above the top end of the range the estimate is.\n\nReport outputs in a console message, with all values in millions of USD (rounded to one decimal). "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that experts' average total minimum water remediation cost is $48.0M... (ver_b2ec0c5d8c8740728b1a4337e715aebf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that experts' average total minimum water remediation cost is $48.0M (acceptable range $47.5 to $48.5)."
+        }
+      ]
+    },
+    {
+      "name": "States that experts' average total minimum cost is a number other than $48.0M (ver_b2ec0c5d8c8740728b1a4337e715aebf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that experts' average total minimum cost is a number other than $48.0M."
+        }
+      ]
+    },
+    {
+      "name": "States that experts' average total maximum water remediation cost is $123.0M... (ver_d513423091244dbab5612653b97b95ad)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that experts' average total maximum water remediation cost is $123.0M (acceptable range $121.8 to $124.2)."
+        }
+      ]
+    },
+    {
+      "name": "States that experts' average total maximum cost is a number other than $123.0M (ver_d513423091244dbab5612653b97b95ad)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that experts' average total maximum cost is a number other than $123.0M."
+        }
+      ]
+    },
+    {
+      "name": "States that total water-related capex is $13.8M (acceptable range $13.7 to... (ver_67beafd981a94f1d86c0a28a9a950ff0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that total water-related capex is $13.8M (acceptable range $13.7 to $13.9)."
+        }
+      ]
+    },
+    {
+      "name": "States that total capex is a number other than $13.8M (ver_67beafd981a94f1d86c0a28a9a950ff0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that total capex is a number other than $13.8M."
+        }
+      ]
+    },
+    {
+      "name": "States that total water-related opex is $17.2M (acceptable range $17.0 to $17.4) (ver_341bdfdfa2844ca28c9a28c43f75b7fc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that total water-related opex is $17.2M (acceptable range $17.0 to $17.4)."
+        }
+      ]
+    },
+    {
+      "name": "States that total opex is a number other than $17.2M (ver_341bdfdfa2844ca28c9a28c43f75b7fc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that total opex is a number other than $17.2M."
+        }
+      ]
+    },
+    {
+      "name": "States that total water cost is $31.0M (acceptable range $30.7 to $31.3) (ver_3715ec3df1db43eda9a3217b0398f29d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that total water cost is $31.0M (acceptable range $30.7 to $31.3)."
+        }
+      ]
+    },
+    {
+      "name": "States that total water cost is a number other than $31.0M (ver_3715ec3df1db43eda9a3217b0398f29d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that total water cost is a number other than $31.0M."
+        }
+      ]
+    },
+    {
+      "name": "States that client's estimate of total water costs does not fall within the... (ver_bfc9a457f2f94b84b510c166c2017d92)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that client's estimate of total water costs does not fall within the average expert range of water remediation costs."
+        }
+      ]
+    },
+    {
+      "name": "States the amount that client's total water estimate is below experts' average... (ver_cb9d9b24dd054a95be0db4e456ac8970)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the amount that client's total water estimate is below experts' average total minimum cost is $17.0M (acceptable range $16.8 to $17.2)."
+        }
+      ]
+    },
+    {
+      "name": "States the amount that client's total water estimate is below experts' average... (ver_cb9d9b24dd054a95be0db4e456ac8970)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the amount that client's total water estimate is below experts' average total minimum cost is a number other than $17.0M."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-115-tcf-01-5ec256fe"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_5ec256fe1ee845aaa86f0b239a4caa09",
+    "task_name": "world_115_tcf_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_974c668a84464566bf458282a1b7a13c",
+        "golden_text_response": "1.\tThe average expert-estimated total water remediation cost ranges from $48.0 million to $123.0 million.\n\n2.\tBased on the company’s 30-year cost schedule, total water-related capital expenditures are $13.8 million, total water-related operating expenses are $17.2 million, and total estimated water-related costs are $31.0 million.\n\n3.\tThe client’s estimated total water-related cost does not fall within the expert range and is $17.0 million below the average expert minimum estimate.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

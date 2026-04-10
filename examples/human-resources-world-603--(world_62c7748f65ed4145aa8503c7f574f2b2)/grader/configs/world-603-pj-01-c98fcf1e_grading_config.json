@@ -1,0 +1,64 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_f458fc6bf656465980e58bec41acdeb0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c98fcf1e0eb34cf18f7c37867f803f7e",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the difference in average experience score of all the candidates rejected at hiring manager review stage v/s those who advanced past the hiring manager review stage is 0.396 (acceptable range 0.392 to 0.400)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_78aa931149e54a5497819bc0402d458a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c98fcf1e0eb34cf18f7c37867f803f7e",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the difference in average composite score of all the candidates rejected at hiring manager review stage v/s those who advanced past the hiring manager review stage is -0.290 (acceptable range -0.293 to -0.287)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

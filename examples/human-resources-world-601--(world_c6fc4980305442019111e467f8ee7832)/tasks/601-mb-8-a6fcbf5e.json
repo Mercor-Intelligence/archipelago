@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Rachel needs to go on maternity leave. Please move all active candidates she was handling to Chris in the Greenhouse system and state how many was moved. Please state how many from these candidates could we expect on average to be hired, if the hire to applied ratio stays the same as we have up till now with the candidates who finalized their recruitment process. Please answer in console and round your number to 1 decimal place."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of active candidates moved to Chris (Recruiter ID 2)... (ver_074455dfeca445f7ad2dff02a2634674)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of active candidates moved to Chris (Recruiter ID 2) from Rachel (Recruiter ID 1) in the Greenhouse system is 60.0."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of candidates we could expect on average to be hired is... (ver_3551f60345794685933a55c34b9e49f1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of candidates we could expect on average to be hired is 35.5 (acceptable range 35.1 to 35.9)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh 601-mb-8-a6fcbf5e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_a6fcbf5e47f14d9e80559c72f604484f",
+    "task_name": "601 - MB_8",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_1f7c950c706245dca9a85fa081414663",
+        "golden_text_response": "The number of active candidates moved to Chris from Rachel in the Greenhouse system is 60.0.\nThe number of candidates we could expect on average to be hired is 35.5.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

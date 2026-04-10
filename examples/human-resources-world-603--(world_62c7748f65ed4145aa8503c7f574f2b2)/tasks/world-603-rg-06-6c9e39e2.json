@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "We want to compare benchmark U.S. geographic ideal distribution for the candidate pipeline for executive hiring in the retail industry to the geographic diversity of our existing external pipeline.\n\nSpecifically, we're interested in the % distributions of all applicants in a region, relative to all regions. Use Geohraphic benchmarking.pptx and Geographical heat map.xlsx. For each region, what is the percentage point difference between the proportion of applicants from a given region in the benchmark data versus our existing pipeline data (i.e., benchmark - existing pipeline), for the same region?\n\nProvide your final answers directly in the console, rounded to 2 decimal places, i.e., 0.01%. Do not round any intermediate calculations. Please exclude international candidates from the calculations. Use regions as defined in the heat map file. Review the files in the filesystem."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the percentage point difference between the proportion of applicants... (ver_4a088acf90434e7799331c34a99f2b65)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percentage point difference between the proportion of applicants from the East Coast in the benchmark data versus our existing pipeline data is 4.87% (acceptable range 4.82% to 4.92%)."
+        }
+      ]
+    },
+    {
+      "name": "States the percentage point difference between the proportion of applicants... (ver_49ccd4e2e4e44160a285a5cf102eb2cf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percentage point difference between the proportion of applicants from the West Coast in the benchmark data versus our existing pipeline data is -22.67% (acceptable range -22.90% to -22.44%)."
+        }
+      ]
+    },
+    {
+      "name": "States the percentage point difference between the proportion of applicants... (ver_e772bd9eeeb94494a42fb0dbbd05b6d4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percentage point difference between the proportion of applicants from the South in the benchmark data versus our existing pipeline data is -4.20% (acceptable range -4.24% to -4.16%)."
+        }
+      ]
+    },
+    {
+      "name": "States the percentage point difference between the proportion of applicants... (ver_ca04af55cfd6497ea57d768b2cb18d97)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percentage point difference between the proportion of applicants from the Midwest in the benchmark data versus our existing pipeline data is 8.58% (acceptable range 8.49% to 8.67%)."
+        }
+      ]
+    },
+    {
+      "name": "States the percentage point difference between the proportion of applicants... (ver_b79eff129cbb4d4bbc7f50752d388d3d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percentage point difference between the proportion of applicants from the West in the benchmark data versus our existing pipeline data is 9.51% (acceptable range 9.41% to 9.61%)."
+        }
+      ]
+    },
+    {
+      "name": "States the percentage point difference between the proportion of applicants... (ver_a07fa9f6820b4e97822f95a1c1d41847)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percentage point difference between the proportion of applicants from the Northeast in the benchmark data versus our existing pipeline data is 3.92% (acceptable range 3.88% to 3.96%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-603-rg-06-6c9e39e2"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_6c9e39e263784978a5bfdf85acf961c8",
+    "task_name": "World 603_RG_06",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d9fa0bdc132d432e8f4f282ec6203e72",
+        "golden_text_response": "The percentage point difference between the proportion of applicants from a given region in the benchmark data versus our existing pipeline data, is, for each region, as follows:\n\nEast Coast\t4.87%\nMidwest\t8.58%\nNortheast\t3.92%\nSouth\t-4.20%\nWest\t9.51%\nWest Coast\t-22.67%",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

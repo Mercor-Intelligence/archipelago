@@ -1,0 +1,88 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_50a70b6d8cd44b34b9c06e4444e328d8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4f55a5a13c204d0a875ee9d34d12d2b7",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that Anthony Porter\u2019s OSHA 11(c) retaliation complaint relies solely on temporal proximity to prove a causal nexus between his protected activity - the October 13, 2025 OSHA safety complaint, and his November 4, 2025 discharge",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The Secretary alleged temporal proximity to establish a causal nexus between his protected activity (October 13, 2025 OSHA safety violation report) and his discharge (November 4, 2025). The district court complaint alleges as follows:\n\n8.  On October 14, 2025, Mr. Porter engaged in further protected activity by filing a formal safety complaint with the Occupational Safety and Health Administration (OSHA).\n9.  Defendant had knowledge of Mr. Porter's protected activities.\n10.  On November 4, 2025, less than three weeks after his reports, Defendant terminated Mr. Porter's employment.\n11.  The termination was a direct result of Mr. Porter\u2019s reports of workplace safety concerns and his exercise of rights protected under the Act.\n\nPORTER DISTRICT COURT COMPLAINT.pdf at pp. 1-2. Identification of this factual basis for the temporal proximity argument is as essential first step to analyzing the argument's weaknesses.\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2d333bd775be4f11810ae64cda7957b7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4f55a5a13c204d0a875ee9d34d12d2b7",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that Porter\u2019s discharge was caused by the November 3, 2025 performance evaluation, in which Jordan McAllister recommended discharge for continuing performance deficiencies",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "\nPorter\u2019s discharge was caused by the November 3, 2025 performance evaluation, in which Jordan McAllister recommended discharge for continuing performance deficiencies, as follows:\n\nSupervisor Assessment\nWhile Anthony maintains a positive attitude, the persistent deficiencies in work ethic and\ncommunication have significantly harmed project progress. Given the ongoing\nperformance issues and lack of improvement, continued employment is not\nrecommended.\nRecommendation: Termination. \n\nAPorter performance review 11.3.25.pdf at pp. 1-2. identification of the precipitating factor for the termination, i.e., the November 3, 2025 performance evaluation, is essential to an analysis of identification of the real reason for the discharge.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0b5764a3f141400cb003fad986f16037",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4f55a5a13c204d0a875ee9d34d12d2b7",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the timing of November 3, 2025 performance evaluation was dictated by employer policy, which required that the evaluation would be conducted in the first week of November, 2025",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The timing of November 3, 2025 performance evaluation was dictated by employer policy, which required that the evaluation would be conducted in the first week of November, 2025. The handbook provides as follows:\n\n8.2 Annual Performance Review SBP conducts a formal annual performance review to summarize and evaluate each employee\u2019s performance over the preceding year. \n\nKey components of the annual review include: \n\nTiming Annual reviews are generally conducted in early November. This timeframe allows the Company to evaluate project timelines, budget cycles, and workforce planning needs before year-end. SBP may adjust the timing when business needs require.\n\nSBP employee handbook section 8 - performance management.pdf, at pp. 1-2. Identification of this item is critical to rebutting the temporal proximity argument, since the termination decision was made in temporal proximity to the protected activity solely because the employee handbook dictated the timing of the performance evaluation to be the first week of November, 2025, not the timing of the protected activity.\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

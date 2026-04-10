@@ -1,0 +1,86 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_a7be671be9964484946099eda2f5a446",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_35e00550fd214b58a7609f44cc2fae8f",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)",
+          "Tool Use"
+        ],
+        "weight": 1,
+        "criteria": "The % change of the average manager's span of control in Finance team is 900% (acceptable range 891% to 909%)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d7a994f693684c46aeed6479f6870896",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_35e00550fd214b58a7609f44cc2fae8f",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Tool Use"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of Finance Analysts to hire is 6.\n",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Creates 6 new Finance Analyst employees in BambooHR\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9a9e975d7b874e5c9850f27486c8b09c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_35e00550fd214b58a7609f44cc2fae8f",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Tool Use"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of managers to terminate is 3.\n",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Updates the status of 3 Finance Managers in BambooHR to inactive\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

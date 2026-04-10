@@ -1,0 +1,110 @@
+[arco]
+source = "foundry_app"
+name = "Bloomberg"
+version = "1.0.0"
+
+[arco.env.host]
+REPO_URL = "https://github.com/Mercor-Intelligence/mercor-bloomberg.git"
+# Shell script color codes
+BLUE = ""
+GREEN = ""
+RED = ""
+YELLOW = ""
+NC = ""
+# Shell script utility vars
+PROJECT_ROOT = ""
+OSTYPE = ""
+METHOD = ""
+WATCH_CMD = ""
+CLAUDE_PROJECTS_DIR = ""
+OUTPUT_DIR = ""
+DAEMON_MODE = ""
+PID_FILE = ""
+# Smoke test / build vars
+BUILD_IMAGE = ""
+ENVIRONMENT_IMAGE = "archipelago-environment:test"
+
+[arco.env.build]
+STATE_LOCATION = "/.apps_data/bloomberg"
+
+[arco.env.runtime]
+MODE = "online"
+PYTHONPATH = "."
+APP_FS_ROOT = "/filesystem"
+MCP_TRANSPORT = "http"
+MCP_PORT = "5000"
+INTERNET_ENABLED = "true"
+GUI_ENABLED = "true"
+USE_MOCK = "false"
+MOCK_OPENBB = "false"
+DATABASE_URL = ""
+DUCKDB_PATH = "data/offline.duckdb"
+ENV_FILE = ".env.local"
+OPENBB_DATA_DIR = ""
+TOOLS = ""
+DEST_DIR = ""
+SRC_DIR = ""
+HAS_STATE = "true"
+STATE_LOCATION = "/.apps_data/bloomberg"
+
+[arco.env.runtime.schema.MODE]
+type = "string"
+label = "Data mode"
+description = "Use 'offline' to read from bundled DuckDB, 'online' to use FMP API"
+
+[arco.env.runtime.schema.INTERNET_ENABLED]
+type = "bool"
+label = "Internet access"
+description = "Allow the MCP server to make outbound network requests"
+
+[arco.env.runtime.schema.GUI_ENABLED]
+type = "bool"
+label = "GUI mode"
+description = "Enable GUI mode to expose all individual tools instead of consolidated meta-tools"
+
+[arco.secrets.host]
+GITHUB_TOKEN = "RLS_GITHUB_READ_TOKEN"
+RLS_GITHUB_READ_TOKEN = "RLS_GITHUB_READ_TOKEN"
+
+[arco.secrets.build]
+
+[arco.secrets.runtime]
+FMP_API_KEY = "FMP_API_KEY"
+
+[[arco.error_injection_scenarios]]
+name = "intermittent_timeouts"
+description = "Simulates intermittent network timeouts across all tools"
+error_rules = [
+    { error_type = "timeout", tool = "*", probability = 0.0, message = "Request timed out. Please try again." }
+]
+
+[[arco.error_injection_scenarios]]
+name = "rate_limiting"
+description = "Simulates API rate limiting across all tools"
+error_rules = [
+    { error_type = "rate_limit", tool = "*", probability = 0.0, message = "Rate limit exceeded. Please wait before retrying." }
+]
+
+[[arco.error_injection_scenarios]]
+name = "server_errors"
+description = "Simulates occasional server errors"
+error_rules = [
+    { error_type = "server_error", tool = "*", probability = 0.0, message = "Internal server error. Please try again later." }
+]
+
+[[arco.error_injection_scenarios]]
+name = "permission_denied"
+description = "Simulates permission errors on data operations"
+error_rules = [
+    { error_type = "permission_denied", tool = "*", probability = 0.0, message = "Permission denied: insufficient privileges for this operation" }
+]
+
+[[arco.error_injection_scenarios]]
+name = "mixed_failures"
+description = "Combination of various failure modes for comprehensive testing"
+error_rules = [
+    { error_type = "timeout", tool = "*", probability = 0.0, message = "Request timed out" },
+    { error_type = "rate_limit", tool = "*", probability = 0.0, message = "Rate limit exceeded" },
+    { error_type = "server_error", tool = "*", probability = 0.0, message = "Internal server error" },
+    { error_type = "malformed_response", tool = "*", probability = 0.0, message = "Received malformed response from server" }
+]

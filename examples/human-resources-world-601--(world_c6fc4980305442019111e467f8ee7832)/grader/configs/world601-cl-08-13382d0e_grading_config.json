@@ -1,0 +1,106 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_b6f37e22c7ab4a6ca8d829d73e75a59d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_13382d0e3109444191eab5d5c86eba6c",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Tool Use"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of new Divisions created in BambooHR is 2 (acceptable range 1.98 to 2.02)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Adds two new divisions in BambooHR (Industry Solutions and Public Sector Solutions)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d717f35fa18c4dc4ae9dd0fae293b11e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_13382d0e3109444191eab5d5c86eba6c",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Tool Use"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of employees with Division information being updated is 25 (acceptable range 24.8 to 25.2)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "CRO is in the direction and as such not in this division.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_01bd0d54fd164d5ebb74bf6d3d1719c5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_13382d0e3109444191eab5d5c86eba6c",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the the average span of control in the Industry Solutions division once the future state organization is fully implemented is 3.20 (acceptable range 3.17 to 3.23)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0f95e76115654276a2450c404cf3be62",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_13382d0e3109444191eab5d5c86eba6c",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the the average span of control in the Public Sector division once the future state organization is fully implemented is 2.67 (acceptable range 2.64 to 2.70)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

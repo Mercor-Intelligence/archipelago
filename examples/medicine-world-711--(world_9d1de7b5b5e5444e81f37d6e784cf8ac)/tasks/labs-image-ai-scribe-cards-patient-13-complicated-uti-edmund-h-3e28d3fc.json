@@ -1,0 +1,261 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 13” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n----\n\nPatient 13 visits her clinic appointment on 3rd January 2026. She reports dysuria and some chills. She denies fever or back pain or abdominal pain. She has normal vitals. Her physical exam is normal. The patient verifies that her reaction to Macrobid in the past was charted in error and it was actually macrolide not Macrobid. What is the best next step for treatment? Provide an explanation."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the patient has complicated cystitis. (ver_b192878fc30246619f5153b98a7f0abc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient has complicated cystitis."
+        }
+      ]
+    },
+    {
+      "name": "States the patient's complicated cystitis is due to an extended-spectrum... (ver_abb262dad9db45c2a6200fe31b5e6aa3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient's complicated cystitis is due to an extended-spectrum beta-lactamase producing Escherichia coli."
+        }
+      ]
+    },
+    {
+      "name": "States the patient has not been treated for the complicated cystitis. (ver_958e6be1ebc7456997a7a24ef5c6abc7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient has not been treated for the complicated cystitis."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes nitrofurantoin is wrongly listed as an allergy in the patient's... (ver_995b5c5a67c6492ab591bc264ce3b63c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes nitrofurantoin is wrongly listed as an allergy in the patient's chart."
+        }
+      ]
+    },
+    {
+      "name": "States trimethoprim sulfamethoxazole is first-line for complicated urinary... (ver_3f3efb21f6c0408a9c4daa5845f2e02d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States trimethoprim sulfamethoxazole is first-line for complicated urinary tract infections caused by extended-spectrum beta-lactamase producing organisms."
+        }
+      ]
+    },
+    {
+      "name": "States imipenem is second-line for complicated urinary tract infections caused... (ver_72df1540b9ba4b6bb9277a63eb80ec06)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States imipenem is second-line for complicated urinary tract infections caused by extended-spectrum beta-lactamase producing organisms."
+        }
+      ]
+    },
+    {
+      "name": "States nitrofurantoin is not an treatment option in complicated cystitis. (ver_518562009f84425481ac5a7a4e2e4ee1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States nitrofurantoin is not an treatment option in complicated cystitis."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that the patient is clinically stable. (ver_aa29de97d47846f188bf976c8f754dea)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that the patient is clinically stable."
+        }
+      ]
+    },
+    {
+      "name": "States imipenem would be preferred in critically ill patients. (ver_01af3b89182c4a58a88b2afb6f25b07a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States imipenem would be preferred in critically ill patients."
+        }
+      ]
+    },
+    {
+      "name": "States trimethoprim sulfamethoxazole is the next best step for treatment in... (ver_c5a271bb3ae14a9991abec49fd9cacb9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States trimethoprim sulfamethoxazole is the next best step for treatment in this patient."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-cards-patient-13-complicated-uti-edmund-h-3e28d3fc"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_3e28d3fc0b4a47ec920ec32a7330979f",
+    "task_name": "Labs_Image_AI Scribe_Cards_Patient 13 - Complicated UTI - Edmund H ",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d298bbeaf4bd4ce1925b92276036bf17",
+        "golden_text_response": "The patient has a urine culture and is not currently taking antibiotics previously prescribed by urgent care. The urine culture demonstrates an extended spectrum beta lactamase producing urinary tract infection with susceptibility to nitrofurantoin, trimethoprim sulfamethoxazole, and imipenem. The patient reports dysuria with chills and meets criteria for complicated cystitis. However she is clinically stable and is likely approaching more severe sepsis. Chart review initially suggested an adverse reaction to nitrofurantoin; however, the patient confirms this was an error and the reaction was to macrolides, not nitrofurantoin. Nitrofurantoin is not appropriate for complicated cystitis. Trimethoprim sulfamethoxazole, ciprofloxacin, or levofloxacin are preferred treatment options for pyelonephritis or complicated urinary tract infections caused by extended spectrum beta lactamase producing organisms. Ertapenem, meropenem, and imipenem cilastatin are preferred agents when resistance patterns or toxicities preclude the use of trimethoprim sulfamethoxazole or fluoroquinolones, or can be considered if the patient is critically unwell. Therefore, the best next step in treatment is to initiate trimethoprim sulfamethoxazole.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

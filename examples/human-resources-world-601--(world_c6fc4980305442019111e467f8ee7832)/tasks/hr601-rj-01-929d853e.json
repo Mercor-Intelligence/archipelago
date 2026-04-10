@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the organizational hierarchy file (Organizational Hierarchy File.xlsx), the job title reference architecture (Job Title Reference Architecture.xlsx), the attached performance & salary data of all the employees, role mapping, and the market benchmark data, identify how many employees have a Compa-Ratio below 0.85 (severely underpaid) AND a Performance Rating of 4 or 5.\n\nPlease provide your answers directly in the console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of employees have both a Compa-Ratio below 0.85... (ver_6197563d0a174c9abf6713feedb0ff19)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of employees have both a Compa-Ratio below 0.85 (severely underpaid) and a Performance Rating of 4 or 5 is 35."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh hr601-rj-01-929d853e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_929d853e54bb4ebe93b2180b788f1810",
+    "task_name": "HR601_RJ 01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_8e4da5d860c8489ebbf85cc3804f1c9d",
+        "golden_text_response": "The number of employees that have both a Compa-Ratio below 0.85 (severely underpaid) and a Performance Rating of 4 or 5 is 35.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

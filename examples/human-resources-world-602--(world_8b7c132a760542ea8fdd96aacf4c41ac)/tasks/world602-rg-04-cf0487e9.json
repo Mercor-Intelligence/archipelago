@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The company is going through restructuring and wants to pause all active hiring for existing job postings. Please move all active candidates to the Reject status.\n\nAs part of the restructuring, they want to evaluate their existing candidate list to identify high-potential, relevant profiles as per the new Op model and move them directly into a phone interview round. \n\nBased on it, please create a new role, \"Generalist Nurse,\" with 5 openings. Create new applications for all candidates with \"Nurse\" in their titles that had active applications before the recent hiring freeze and move them to the phone interview round. Please use the same recruiter and coordinator_id as referenced in the candidate description when creating the new applications.\n\nAs the final output, please provide the total number of active applications at the phone interview stage for each recruiter after completing the steps above.\n\nProvide your answer directly in the console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the total number of active applications at the phone interview... (ver_15e87172bc464d15b63b95e79d5f7cd6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of active applications at the phone interview stage for Rachel W is 11 (acceptable range 10.9 to 11.1)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total number of active applications at the phone interview... (ver_83e843946a38465184a32f6d3c728a8b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of active applications at the phone interview stage for Maria Santos is 10 (acceptable range 9.9 to 10)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total number of active applications at the phone interview... (ver_6523a67fa6974c26994e74992b2245e7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of active applications at the phone interview stage for Michael Thompson is 8 (acceptable range 7.9 to 8.1)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total number of active applications at the phone interview... (ver_589170e7ce174197a6287ac4b197ddea)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of active applications at the phone interview stage for David Rodriguez is 12 (acceptable range 11.9 to 12.1)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world602-rg-04-cf0487e9"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_cf0487e9396c442eb535d5a1f00efa61",
+    "task_name": "World602_RG_04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_e18ef17c3caf40198eaa49445a34a69b",
+        "golden_text_response": "The total number of active applications at the phone interview stage for each recruiter after moving all the active applicants to the rejected status and then moving candidates who had \"Nurse\" in their current titles and had an \"Active\" status on applications prior to the freeze is as follows:\n\nRachel W: 11 \nMaria Santos: 10 \nMichael Thompson: 8 \nDavid Rodriguez: 12 ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

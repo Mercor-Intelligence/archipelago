@@ -1,0 +1,215 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the 'bamboo_employees.csv' HRIS employee data, generate a custom report showing the average gender pay gap by division, calculated as the average annual salary for men minus the average annual salary for women. State the average pay gap between men and women for each division in dollars, rounded to the nearest dollar. Ignore employees who are non-binary or who preferred not to specify their gender, as well as inactive or terminated employees. If a division does not have a mix of both male and female employees, consider that division to have a pay gap of zero. Output your results in console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that Customer Success has a gender pay gap of -$23,423 (acceptable... (ver_9d1e74b9486743b79ffd6eb808ce9993)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Customer Success has a gender pay gap of -$23,423 (acceptable range $-23,657 to $-23,189)."
+        }
+      ]
+    },
+    {
+      "name": "States that Engineering has a gender pay gap of -$20,741 (acceptable range... (ver_ab4d0b583c9545dab45b0b9e2019a418)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Engineering has a gender pay gap of -$20,741 (acceptable range $-20,948 to $-20,534)."
+        }
+      ]
+    },
+    {
+      "name": "States that Finance has a gender pay gap of $13,000 (acceptable range $12,870... (ver_8144cc30b7ae4f90b84d95a9bca6f967)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Finance has a gender pay gap of $13,000 (acceptable range $12,870 to $13,130)."
+        }
+      ]
+    },
+    {
+      "name": "States that HR has a gender pay gap of $42,889 (acceptable range $42,460 to... (ver_cc7eabea07fc41338907d6f4fbf70f90)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that HR has a gender pay gap of $42,889 (acceptable range $42,460 to $43,318)."
+        }
+      ]
+    },
+    {
+      "name": "States that Legal has a gender pay gap of $0. (ver_3da3184a92f9454bac8dcf89c3997763)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Legal has a gender pay gap of $0."
+        }
+      ]
+    },
+    {
+      "name": "States that Product has a gender pay gap of $3,272 (acceptable range $3,239 to... (ver_9aa58c8a5c654245950eadafaac8ef55)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Product has a gender pay gap of $3,272 (acceptable range $3,239 to $3,305)."
+        }
+      ]
+    },
+    {
+      "name": "States that Research has a gender pay gap of -$13,283 (acceptable range... (ver_f5ebe1743f3149f3b27c40fd938ed25a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Research has a gender pay gap of -$13,283 (acceptable range $-13,416 to $-13,150)."
+        }
+      ]
+    },
+    {
+      "name": "States that Sales has a gender pay gap of $15,510 (acceptable range $15,355 to... (ver_c5ced4b154c64da4b82435aaa95cef3a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Sales has a gender pay gap of $15,510 (acceptable range $15,355 to $15,665)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world601-bh-01-455a9520"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_455a9520b9e94fcb9bfbd3f38cdb7764",
+    "task_name": "World601_BH_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_62ca8ccfae4c4cbc8374a53034c39680",
+        "golden_text_response": "Average gender pay gap by division:\nCustomer Success: -$23,423\nEngineering: -$20,741\nFinance: $13,000\nHR: $42,889\nLegal: $0\nProduct: $3,272\nResearch: -$13,283\nSales: $15,510",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

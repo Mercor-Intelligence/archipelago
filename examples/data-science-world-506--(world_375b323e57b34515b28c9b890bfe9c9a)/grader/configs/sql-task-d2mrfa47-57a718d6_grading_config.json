@@ -1,0 +1,117 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_b02896a65b2647d8bcaf1b076b62cfaf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_57a718d6e3d445e98facba0df12beb38",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Determines the average daily usage for Low data, postpaid plans to be 3390.87MB +/- 0.05MB.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the mean of data_consumed_mb calculated from the subset of data_usage_daily for active plans in 2025 by plan type and usage category.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c040d0d5553d43db8d2444fd3b62bc57",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_57a718d6e3d445e98facba0df12beb38",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Determines the average daily usage for Low data usage, prepaid plans to be 3162.86MB +/- 0.05MB.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the mean of data_consumed_mb calculated from the subset of data_usage_daily for active plans in 2025 by plan type and usage category.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c8bf1f34456841bfb30f232580b27821",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_57a718d6e3d445e98facba0df12beb38",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Determines the average daily usage for Mid data usage, postpaid plans to be 3188.51MB +/- 0.05MB.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the mean of data_consumed_mb calculated from the subset of data_usage_daily for active plans in 2025 by plan type and usage category.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3287a4b68fed4f639ca884d90407bdf8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_57a718d6e3d445e98facba0df12beb38",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Determines the average daily usage for Unlimited data usage, postpaid plans to be 3027.62MB +/- 0.05MB.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the mean of data_consumed_mb calculated from the subset of data_usage_daily for active plans in 2025 by plan type and usage category.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_05628647b3a048cc98817b5961907899",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_57a718d6e3d445e98facba0df12beb38",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Determines the average daily usage for Unlimited data usage, prepaid plans to be 3732.38MB +/- 0.05MB.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the mean of data_consumed_mb calculated from the subset of data_usage_daily for active plans in 2025 by plan type and usage category.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

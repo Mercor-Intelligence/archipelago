@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Does the information typically required in SBP safety reports, as described in the employee handbook, conflict with OSHA's recommended practices for safety and health programs? Provide a \"yes\" or \"no\" answer. Keep in mind that the handbook provides a non-exhaustive list of the information that is typically required, so if the handbook fails to list something that OSHA recommends be covered by such reports, that shouldn't be considered a conflict."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that yes, the information typically required in SBP safety reports... (ver_58473403c0204d02ab9cbc6a65f9f030)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that yes, the information typically required in SBP safety reports conflicts with OSHA's recommended practices for safety and health programs."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world437-lb-01-f0066250"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_f0066250c3cf4bf39416fd25ed66b500",
+    "task_name": "World437_LB_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_7b26a2a478ee47d3b3ce226fb7fa6cab",
+        "golden_text_response": "Yes, the information typically required in SBP safety reports conflicts with OSHA's recommended practices for safety and health programs.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+id,title,field_ids,filters,created_by,created_at,updated_at
+1,Clinical Staffing Snapshot,"[""department"", ""job_title"", ""location"", ""status"", ""hire_date""]","{""status"": [""active"", ""leave""], ""department"": [""Nursing"", ""Physicians""]}",11,2025-10-25T10:00:00Z,2025-12-16T10:00:00Z
+2,Revenue Cycle Productivity,"[""department"", ""job_title"", ""location"", ""pay_type"", ""pay_rate"", ""salary""]","{""department"": [""Revenue Cycle""]}",13,2025-09-06T10:00:00Z,2025-09-08T10:00:00Z
+3,Turnover & Terminations,"[""department"", ""location"", ""hire_date"", ""termination_date"", ""status""]","{""status"": [""terminated""]}",12,2025-01-15T10:00:00Z,2025-01-22T10:00:00Z
+4,Remote/Hybrid Workforce,"[""department"", ""location"", ""status""]","{""custom_fields"": {""remote_status"": [""Hybrid"", ""Remote""]}}",2,2025-12-30T10:00:00Z,2026-01-27T10:00:00Z
+5,Credentialed Providers,"[""department"", ""job_title"", ""location"", ""status""]","{""department"": [""Physicians""], ""custom_fields"": {""clinical_privileges"": [""Full"", ""Limited""]}}",3,2025-06-08T10:00:00Z,2025-06-17T10:00:00Z

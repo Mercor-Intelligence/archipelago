@@ -39,6 +39,8 @@ async def run_lifecycle_hook(hook: LifecycleHook) -> None:
 
     # Build environment: start with container env, add hook-specific vars
     run_env = dict(os.environ)
+    # Hooks do not need direct access to the runner's Modal OIDC token.
+    run_env.pop("MODAL_IDENTITY_TOKEN", None)
     if hook.env:
         run_env.update(hook.env)
 

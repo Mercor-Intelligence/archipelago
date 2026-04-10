@@ -1,0 +1,318 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_62f25a744db14cdc9fcec1192f5f5da6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ff4fa90a30174c91980de5b7839ea86a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "For task 1, identifies the complexity of the text structure as \u201cMiddle High.\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a924d7e35717494dbf18d2b0eb149ecd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ff4fa90a30174c91980de5b7839ea86a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "For task 2, outputs \u201cNone Apply.\u201d",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a941125f3845461394a78a86c72f6bb6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ff4fa90a30174c91980de5b7839ea86a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "For task 3, outputs \"None Apply.\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b976f9a4041e4dc19fbe85d876141f2b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ff4fa90a30174c91980de5b7839ea86a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "For task 4, outputs Conventionality:  \u201coccasionally contains abstract and/or figurative language\u201d",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fa50ac66718a4fb09967218144baf564",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ff4fa90a30174c91980de5b7839ea86a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "For task 4, outputs Clarity:  \u201csomewhat complex language that is occasionally unfamiliar, archaic, discipline-specific, or overly academic\u201d",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_395c6db05eeb4941bfbaef1845762b69",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ff4fa90a30174c91980de5b7839ea86a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "For task 5, outputs Middle High",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_14a7efaea8ab4a1aa992a4afff031df7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ff4fa90a30174c91980de5b7839ea86a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "For task 6, outputs for Subject Matter Knowledge:  \"requires moderate levels of discipline-specific content knowledge; some theoretical knowledge may enhance understanding.\u201d",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9ac72cda4f044b76844934163ff5e082",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ff4fa90a30174c91980de5b7839ea86a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "For task 6, outputs for Intertextuality:  \u201csome references to/citations of other texts or outside ideas, theories, etc.\u201d",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c870035a2b194b61a97bae3bab7f9c2a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ff4fa90a30174c91980de5b7839ea86a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "For task 7, outputs Middle High",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_385453c095ba4bd388358bd7d8719157",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ff4fa90a30174c91980de5b7839ea86a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "For task 8, lists Liam Martinez, inappropriate",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a17e9fa4fe7b477aa288ae35e758c389",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ff4fa90a30174c91980de5b7839ea86a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "For task 8, lists Miles_Anderson, inappropriate",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_646360cc76794c0b9acee374ad2e6e75",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ff4fa90a30174c91980de5b7839ea86a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "For task 8, outputs Naomi Flores, inappropriate",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bee564a2fdf14fbb8cf90d339ac2943e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ff4fa90a30174c91980de5b7839ea86a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "For task 8, outputs Sophia Hernandez, inappropriate",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0791a3d72a0c45efa3431b1250c71e40",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ff4fa90a30174c91980de5b7839ea86a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "For task 8, outputs Matteo Rivera, inappropriate",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    },
+    {
+      "eval_config_id": "72d7d96a-9d94-4a38-bbe3-96c08ded727c",
+      "eval_config_name": "Content Length Check Verifier",
+      "eval_defn_id": "content_length_check",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

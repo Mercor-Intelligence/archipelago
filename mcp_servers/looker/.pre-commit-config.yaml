@@ -1,0 +1,38 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-added-large-files
+        args: ['--maxkb=2000']
+      - id: check-merge-conflict
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.5
+    hooks:
+      # Run the linter
+      - id: ruff
+        args: [--fix]
+      # Run the formatter
+      - id: ruff-format
+
+  # Run tests on changed MCP servers
+  # This catches logic bugs like invalid SQL generation
+  - repo: local
+    hooks:
+      - id: test-looker
+        name: Test Looker MCP Server
+        entry: bash -c 'if git diff --cached --name-only | grep -q "mcp_servers/looker/\|tests/test_looker.py"; then OFFLINE_MODE=true uv run --no-project pytest tests/test_looker.py -v --tb=short; fi'
+        language: system
+        pass_filenames: false
+        always_run: false
+
+      - id: test-pdf-workflow
+        name: Test PDF Render Task Workflow
+        entry: bash -c 'if git diff --cached --name-only | grep -q "repository_factory.py\|test_pdf_render_task_workflow.py"; then uv run --no-project pytest tests/test_pdf_render_task_workflow.py -v --tb=short; fi'
+        language: system
+        pass_filenames: false
+        always_run: false

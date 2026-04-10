@@ -1,0 +1,220 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_aa0191795c654e8a9cf51a233ae0b9c0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d7e8bd95e2fb425b993d247fd6952c1f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the patient has non-small cell lung cancer. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This can be found in the OpenEMR patient chart (Onc Patient 7), tab Clinical Notes, row 33, column E, which says, \"stage I non-small cell lung cancer.\" This also requires synthesizing the statement from the script, which says, \"I\u2019m sorry the lung cancer you developed several years ago has returned. It is the same type as before.\" Putting both together means this patient has non-small cell lung cancer. \nThe script also says. \"We know that it is non-squamous, but we need more information.\" and that it is metastatic \"Now, that same cancer has spread to some lymph nodes and a small spot in the opposite lung.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 7 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_a806855d52f94c0bac5904bc1c384eff"
+          }
+        ]
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_868f227b8d3c48fda9d3540d55beb0cf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d7e8bd95e2fb425b993d247fd6952c1f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the patient's cancer is metastatic.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The script says. \"We know that it is non-squamous, but we need more information.\" and that it is metastatic \"Now, that same cancer has spread to some lymph nodes and a small spot in the opposite lung.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 7 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_a806855d52f94c0bac5904bc1c384eff"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8a8b41bee208434886a94fb3fabea72e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d7e8bd95e2fb425b993d247fd6952c1f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the patient's cancer has a ROS1 mutation.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This can be found in the attached patient lab results. \"ROS1 Rearrangement Positive.\" \"G2032R.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 7 Labs - Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_a806855d52f94c0bac5904bc1c384eff"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f135484dd8454baaafaf06de5d82f493",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d7e8bd95e2fb425b993d247fd6952c1f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that talectrinib is effective against G2032R mutations.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Talectrinib has been shown to be effective against G2032R mutations. \"Taletrectinib exhibits in vivo activity in models harboring ROS1 wild-type (ROS1-CD74, ROS1-SLC34A2) and ROS1-G2032R resistance mutation fusions.\" https://aacrjournals.org/cancerres/article/85/8_Supplement_1/5612/758377/Abstract-5612-Taletrectinib-a-next-generation",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_642c451a864a4dbe81d1d9f198010f22",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d7e8bd95e2fb425b993d247fd6952c1f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States talectrinib is U.S. Food and Drug Administration (FDA) approved for metastatic ROS1-positive non-small cell lung cancer.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"On June 11, 2025, the Food and Drug Administration approved taletrectinib (Ibtrozi, Nuvation Bio Inc.), a kinase inhibitor, for adults with locally advanced or metastatic ROS1-positive non-small cell lung cancer (NSCLC).\"\n\nhttps://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-taletrectinib-ros1-positive-non-small-cell-lung-cancer",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0e0ab39173f24dce8e52b1146dcc46ef",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d7e8bd95e2fb425b993d247fd6952c1f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the most appropriate next treatment option is talectrinib.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient meets all of the indications to start talectrinib. \"Talectrinib is a kinase inhibitor indicated for the treatment of adult patients with locally advanced or metastatic ROS1-positive non-small cell lung cancer.\" https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219713s000lbl.pdf\nIt is also superior to lorlatinib as it is more suitable in TKI-naive patients.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7c6f121293d840bc8884505fe921b403",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d7e8bd95e2fb425b993d247fd6952c1f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that talectrinib is dosed once daily.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the frequency of talectrinib . \"Recommended Dosage: 600 mg orally once daily.\" https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219713s000lbl.pdf\nThis is suitable for the patient who wants to take as little pills as possible as per the script: \"\"I\u2019ve noticed I\u2019ve been getting pretty forgetful. I want to take as few pills as possible.\"",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_806b4bd3f75544d5b813b03318faf6a6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d7e8bd95e2fb425b993d247fd6952c1f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that talectrinib is dosed at 600 mg.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the dosage of talectrinib . \"Recommended Dosage: 600 mg orally once daily.\" https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219713s000lbl.pdf",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f1c1f606803f43489c2d4a9a5362b391",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d7e8bd95e2fb425b993d247fd6952c1f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that talectrinib is dosed orally.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the route of administration of talectrinib. \"Recommended Dosage: 600 mg orally once daily.\" https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219713s000lbl.pdf",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

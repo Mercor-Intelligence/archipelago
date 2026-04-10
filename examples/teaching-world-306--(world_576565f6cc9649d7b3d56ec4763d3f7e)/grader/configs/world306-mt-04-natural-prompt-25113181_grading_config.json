@@ -1,0 +1,308 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_19d62b9ae169488cb43b51b937f9daac",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_251131818a694c90bc593486dc8a2331",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies \"Case Study: Hawksbeard\" as a case study assignment",
+        "modality": "Free text",
+        "negative_criteria": "Identifies \"Case Study: Hawksbeard\"an category other than case study assignment.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_41e1fae1dd2a4be3b5e21f4695ffc81a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_251131818a694c90bc593486dc8a2331",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies \"Case Study: Rats\" as a case study assignment",
+        "modality": "Free text",
+        "negative_criteria": "Identifies \"Case Study: Rats\" any category other than case study assignment.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8373311dde004f9f86539268c21e4b24",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_251131818a694c90bc593486dc8a2331",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies \"Hawksbeard Garden Experiment\" as a lab assignment",
+        "modality": "Free text",
+        "negative_criteria": "Identifies \"Hawksbeard Garden Experiment\" as any category other than lab.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f866a3893c094ec282eac0db577bb1be",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_251131818a694c90bc593486dc8a2331",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies \"Evolving Creatures Lb\" as a lab assignment",
+        "modality": "Free text",
+        "negative_criteria": "Identifies \"Evolving Creatures Lb\" as any category other than lab.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d1c84e263ce04034af94c749847bd2f9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_251131818a694c90bc593486dc8a2331",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies \"Historical Rat Study\" as a bellwork assignment",
+        "modality": "Free text",
+        "negative_criteria": "Identifies \"Historical Rat Study\" as any category other than bellwork.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8adaf3bcdcfe4ce69814d32cfe2661ed",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_251131818a694c90bc593486dc8a2331",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies \"Rat Modeling Investigations \" as a bellwork assignment",
+        "modality": "Free text",
+        "negative_criteria": "Identifies \"Rat Modeling Investigations \" as any category other than bellwork.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3261b17930a7432a99651df4939a4e0d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_251131818a694c90bc593486dc8a2331",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies \" Exploring Juncos\u2019 Environment \" as a homework assignment",
+        "modality": "Free text",
+        "negative_criteria": "Identifies \" Exploring Juncos\u2019 Environment \" as any category other than homework.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9cc643bbd36c49dc9823bac127c5932f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_251131818a694c90bc593486dc8a2331",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies \" Letter from Lamarck \" as a homework assignment",
+        "modality": "Free text",
+        "negative_criteria": "Identifies \" Letter from Lamarck \" as any category other than homework.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3619905a989d4c4e8842ec111420b5a5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_251131818a694c90bc593486dc8a2331",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Outputs the total number of NHI's for case study category as 3 (acceptable range 2.97 to 3.03)",
+        "modality": "Free text",
+        "negative_criteria": "Outputs the total number of NHI's for case study category other than 3.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Gradebook /9th Grade Biology Grades.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3e627f6f4d824c6395a816fe36abd581",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_251131818a694c90bc593486dc8a2331",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Outputs the total number of NHI's for lab category as 5",
+        "modality": "Free text",
+        "negative_criteria": "Outputs the total number of NHI's for lab category other than 5.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Gradebook /9th Grade Biology Grades.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5ddf8bf8bc5f4482b1f9ba9cf0cf1c4c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_251131818a694c90bc593486dc8a2331",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Outputs the total number of NHI's for homework category as 7",
+        "modality": "Free text",
+        "negative_criteria": "Outputs the total number of NHI's for homework category other than 7.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Gradebook /9th Grade Biology Grades.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8cf9eb176d65491cb3cd1b1a5a2e5122",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_251131818a694c90bc593486dc8a2331",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Outputs the total number of NHI's for bellwork category as 8",
+        "modality": "Free text",
+        "negative_criteria": "Outputs the total number of NHI's for bellwork category other than 8.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Gradebook /9th Grade Biology Grades.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

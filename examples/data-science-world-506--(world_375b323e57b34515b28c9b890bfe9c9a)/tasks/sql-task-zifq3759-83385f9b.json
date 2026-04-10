@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "You have access to the tables 'subscriber_plans' and 'loyalty_credits'.\n\nOur retention team issued loyalty credits during January 2026, and finance wants to quantify the impact for subscribers who are under contract as of 2026-01-28. \n\nDefine under contract as: 'contract_end_date' is NULL, an empty string (''), or 'contract_end_date' is on/after 2026-01-28.\n\nCalculate the following metrics across all individual credit records for loyalty credits issued in January 2026 (2026-01-01 through 2026-01-31) to under-contract subscribers:\n\n1. Total credit amount\n2. Average credit amount\n3. Maximum single credit amount\n4. Minimum credit amount\n5. Standard deviation of credit amounts (using n-1 denominator)\n\nRound all values to 2 decimals.\n\nPlease use only SQLite queries to complete this entire analysis throughout all of its steps. Include your full SQLite query used for analysis as well as the requested results in the final output."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports the total credit amount as 7700.80 +/- 0.05. (ver_3c8937e427f74913b7cf39bbf8f590a3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the total credit amount as 7700.80 +/- 0.05."
+        }
+      ]
+    },
+    {
+      "name": "Reports the average credit amount (under-contract credits only) as 275.03 +/-... (ver_aa3eb87929ee4479aaaeb0b73bd35ab2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the average credit amount (under-contract credits only) as 275.03 +/- 0.05."
+        }
+      ]
+    },
+    {
+      "name": "Reports the maximum single credit amount issued to an under-contract... (ver_ef9e9c46bf1b4487967a24ea88525035)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the maximum single credit amount issued to an under-contract subscriber as 2500.00 +/- 0.05 (acceptable range 248 to 252)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the minimum credit amount issued to an under-contract subscriber as... (ver_bfd61e610e624f079813ed25bddb7345)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the minimum credit amount issued to an under-contract subscriber as -50.00 +/- 0.05 (acceptable range -50.50 to -49.50)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the standard deviation of credit amounts for under-contract... (ver_284be98c0ead4f598c0c390d93021e50)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the standard deviation of credit amounts for under-contract subscribers (using n-1 denominator) as 517.01 +/- 0.05 (acceptable range 511.84 to 522.18)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sql-task-zifq3759-83385f9b"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_83385f9b0cf74102ac101e3ff377f7b2",
+    "task_name": "SQL - Task zifq3759",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_312fcb4c3e8641a4ad5c8ada38860f2c",
+        "golden_text_response": " total_credit_amount  average_credit_amount  maximum_credit_amount  minimum_credit_amount  standard_deviation_credit_amount\n              7700.8                 275.03                 2500.0                  -50.0                            517.01\n```sql\nWITH CleanCredits AS (\n  SELECT\n    CAST(REPLACE(REPLACE(REPLACE(REPLACE(credit_amount, '$', ''), 'USD', ''), ',', ''), ' ', '') AS REAL) AS amt\n  FROM loyalty_credits\n  WHERE credit_date BETWEEN '2026-01-01' AND '2026-01-31'\n    AND subscriber_id IN (\n      SELECT subscriber_id FROM subscriber_plans\n      WHERE contract_end_date IS NULL OR contract_end_date = '' OR contract_end_date >= '2026-01-28'\n    )\n),\nStats AS (\n  SELECT\n    ROUND(SUM(amt), 2) AS total_credit_amount,\n    ROUND(AVG(amt), 2) AS average_credit_amount,\n    ROUND(MAX(amt), 2) AS maximum_credit_amount,\n    ROUND(MIN(amt), 2) AS minimum_credit_amount,\n    COUNT(*) AS n,\n    AVG(amt) AS mean_amt\n  FROM CleanCredits\n)\nSELECT\n  total_credit_amount,\n  average_credit_amount,\n  maximum_credit_amount,\n  minimum_credit_amount,\n  ROUND(\n    SQRT(\n      (SELECT SUM((amt - mean_amt) * (amt - mean_amt)) FROM CleanCredits, Stats) / (n - 1)\n    ), 2\n  ) AS standard_deviation_credit_amount\nFROM Stats;\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use the data center survey. \n\nFor each competitor, what is the number of respondents whose Switching Likelihood is 3 or higher that lists that competitor as the best in-class competitor? Also, refer to the attached note on calculating NPS.\n\nWhat is the simple average adjusted NPS for each of the following filters?\n-Switching Likelihood equals 3 or higher \n-Average data needs (in TB) is Between 500 and 1,000 Terabytes\n-Average monthly cost is at least $100 kW/month\n\nGive me your final answers as a message in the console, rounded to the nearest whole number."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of respondents whose Switching Likelihood is 3 or... (ver_264b126d1075495caa8e229d81fd5a35)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of respondents whose Switching Likelihood is 3 or higher and lists CyrusOne as the best in-class competitor is 2."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of respondents whose Switching Likelihood is 3 or... (ver_59c6f68a8f564046af53d0a6b612f5bd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of respondents whose Switching Likelihood is 3 or higher and lists Digital Realty Trust as the best in-class competitor is 11."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of respondents whose Switching Likelihood is 3 or... (ver_265cb4edb1f9453dbba0e06ff44fa5f9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of respondents whose Switching Likelihood is 3 or higher and lists Equinix as the best in-class competitor is 2."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of respondents whose Switching Likelihood is 3 or... (ver_b741c51c24f54430a6e8adbf831a61fb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of respondents whose Switching Likelihood is 3 or higher and lists Iron Mountain as the best in-class competitor is 12."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of respondents whose Switching Likelihood is 3 or... (ver_9ca11856d19b4261bfb3e9245c0e37a2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of respondents whose Switching Likelihood is 3 or higher and lists Other as the best in-class competitor is 3."
+        }
+      ]
+    },
+    {
+      "name": "States the average adjusted NPS for respondents with a Switching Likelihood... (ver_72d76f6f2d8142c68655b572e5e717dc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average adjusted NPS for respondents with a Switching Likelihood that equals 3 or higher is 54."
+        }
+      ]
+    },
+    {
+      "name": "States the average adjusted NPS for respondents with average data needs (in... (ver_4047ae0f7ce143d08235ff5774f34015)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average adjusted NPS for respondents with average data needs (in TB) Between 500 and 1,000 Terabytes is 50."
+        }
+      ]
+    },
+    {
+      "name": "States the average adjusted NPS for respondents with average monthly cost of... (ver_bd6c78eb47fa49a3937d4c454ef0f8ff)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average adjusted NPS for respondents with average monthly cost of at least $100 kW/month or more is 49."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world115-hlv-task05-bb43c9f3"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_bb43c9f39511450f8e23634b874d3122",
+    "task_name": "World115_HLV_Task05",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_6ef9b4f2dc0b4344878648f33ff7b081",
+        "golden_text_response": "Best-In-Class Competitor\nCyrusOne: 2\nDigital Realty Trust: 11\nEquinix: 2 \nIron Mountain: 12\nOther: 3\n\nThe average adjusted NPS for respondents with a Switching Likelihood that equals 3 or higher is 54\nThe average adjusted NPS for respondents with average data needs (in TB) is Between 500 and 1,000 Terabytes is 50\nThe average adjusted NPS for respondents with an average monthly cost that is at least $100 kW/month or more is 49",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

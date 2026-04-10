@@ -1,0 +1,154 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_8f8025dfb2dd4e8aa6c2c6f516291a06",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f833469dc4b04f498538b967782074e4",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "Concludes that STS is not subject to treble damages under the California False Claims Act",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"The California False Claims Act provides that any person who commits certain acts against the state or a political subdivision is liable to the state or political subdivision for treble damages.\" Fassberg Construction Co. v. Housing Authority of City of Los Angeles, 152 Cal. App. 4th 720 (2007).\n\nHowever, liability for treble damages under the Act requires that the false claim involve government funds. (C2)\n\nHere, Article 3.2 of the Prime Contract expressly states that \"NO federal, state, or local government funds, grants, subsidies, tax credits, bond proceeds, or other public financing of any kind are being used for this Project.\" (C5)\n\nBecause no government funds are involved, the FCA does not apply (C6) and STS is not subject to treble damages under the Act.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7d2441597f7645bc9a547be7babd79af",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f833469dc4b04f498538b967782074e4",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that treble damages under the California False Claims Act only apply to false claims involving government funds",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\nAs explained in Fassberg, \"Government Code section 12651, subdivision (a) states that a person who commits any of the \u201cacts\u201d listed in subdivision (a) is liable for treble damages.  Those \u201cacts\u201d include knowingly presenting \u201ca false claim\u201d and knowingly presenting \u201ca false record or statement to get a false claim paid or approved,\u201d as stated ante.\"\n\n\"A 'claim' is defined to 'include[\u2009] any request or demand for money, property, or services made to any employee, officer, or agent of the state or of any political subdivision.'\" Fassberg Construction Co. v. Housing Authority of City of Los Angeles, 152 Cal. App. 4th 720 (2007) (quoting Gov. Code \u00a7 12650(b)(1)).\n\nThis statutory definition establishes that the jurisdictional predicate for FCA liability is the involvement of government funds.\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5e326805a36142f3a455801a7b0aee44",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f833469dc4b04f498538b967782074e4",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that under the California False Claims Act, a \"claim\" is defined as a request or demand for money made to the state or a political subdivision",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Fassberg quotes California Government Code \u00a7 12650(b)(1): \"'Claim' includes any request or demand for money, property, or services made to any employee, officer, or agent of the state or of any political subdivision, or to any contractor, grantee, or other recipient, whether under contract or not, if any portion of the money, property, or services requested or demanded issued from, or was provided by, the state... or by any political subdivision thereof.\" Fassberg Construction Co. v. Housing Authority of City of Los Angeles, 152 Cal. App. 4th 720, 738 (2007) (footnote 8). \n\nThis definition establishes that FCA jurisdiction extends beyond direct claims to government entities. The definition also reaches claims to private contractors if government funds are the source. Conversely, where no government funds are involved, the statutory definition of \"claim\" is not satisfied and the FCA does not apply.\n\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a31fa5b28beb42efabe3a201a18ad56e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f833469dc4b04f498538b967782074e4",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that under the California False Claims Act, a \"claim\" is defined as a request to a contractor or recipient if any portion of the money issued from or was provided by the state or a political subdivision",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Fassberg quotes California Government Code \u00a7 12650(b)(1): \"'Claim' includes any request or demand for money, property, or services made to any employee, officer, or agent of the state or of any political subdivision, or to any contractor, grantee, or other recipient, whether under contract or not, if any portion of the money, property, or services requested or demanded issued from, or was provided by, the state... or by any political subdivision thereof.\" Fassberg Construction Co. v. Housing Authority of City of Los Angeles, 152 Cal. App. 4th 720, 738 (2007) (footnote 8). \n\nThis definition establishes that FCA jurisdiction extends beyond direct claims to government entities. The definition also reaches claims to private contractors if government funds are the source. Conversely, where no government funds are involved, the statutory definition of \"claim\" is not satisfied and the FCA does not apply.\n\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5f62e614657a4f7088e39abd3d7ddc4e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f833469dc4b04f498538b967782074e4",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the SBP Construction Contract expressly identifies that no government funds are involved in the project",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Article 3.2 of the SBP Construction Contract (SBP Construction Contract.pdf) states: \"Owner expressly represents and warrants that NO federal, state, or local government funds, grants, subsidies, tax credits, bond proceeds, or other public financing of any kind are being used for this Project. This Project is not a public works project within the meaning of California Labor Code Section 1720 et seq. and is not subject to prevailing wage requirements. This Project does not involve funds from any governmental entity or agency.\" This express contractual representation establishes the absence of government funds, which defeats the jurisdictional predicate for FCA liability under Gov. Code \u00a7 12650(b)(1).",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5a2203483fbe4aa1a7de05dd68fbcebd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f833469dc4b04f498538b967782074e4",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the California False Claims Act does not apply to STS's actions",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The California False Claims Act only applies to false claims involving government funds (C3/C4), and the contract which the fraud was committed explicitly did not involve government funds (C5). Therefore California False Claims Act does not apply to STS's actions.\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

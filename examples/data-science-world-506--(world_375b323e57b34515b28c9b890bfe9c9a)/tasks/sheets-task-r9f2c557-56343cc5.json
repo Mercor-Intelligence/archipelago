@@ -1,0 +1,307 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Please take the “promotional_campaigns.csv” file, convert it to an Excel file, and create a new Sheet in the new Excel file named “Promotion Calculations”. For each promotion type in the dataset, except data bonus promotions, please calculate the maximum and minimum number of days a promotion of that type lasted, inclusive of start and end dates. As well, please calculate the maximum and minimum absolute difference between target redemptions and actual redemptions for promotions in each promotion type, except data bonus promotions. Perform and display all the calculations I requested above using dynamic Excel formulas in the “Promotion Calculations” sheet."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Identifies the minimum promotion duration for promotions in the percentage... (ver_d767d6051dc24232a8e5c8347e936d83)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the minimum promotion duration for promotions in the percentage promotion type as 11."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the maximum promotion duration for promotions in the percentage... (ver_4fde6a0dc4dd439b88c8232d1107c0ed)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the maximum promotion duration for promotions in the percentage promotion type as 82."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the minimum promotion duration for promotions in the free months... (ver_fb4eabefe80e45dbb72b48c7cf0c43d1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the minimum promotion duration for promotions in the free months promotion type as 14."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the maximum promotion duration for promotions in the free months... (ver_29b6f01c417340178ee3d296d4aec65e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the maximum promotion duration for promotions in the free months promotion type as 84."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the minimum promotion duration for promotions in the fixed amount... (ver_84f94ceeb3b340d7a9aeb5b30ac3c5b6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the minimum promotion duration for promotions in the fixed amount promotion type as 12."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the maximum promotion duration for promotions in the fixed amount... (ver_16d9160a6b124f29951cab040bc03efb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the maximum promotion duration for promotions in the fixed amount promotion type as 84."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the minimum of the absolute value of the difference between target... (ver_4f78d5862f4e4a828b884aa524f8b219)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the minimum of the absolute value of the difference between target redemptions and actual redemptions for promotions in the percentage promotion type as 47."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the maximum of the absolute value of the difference between target... (ver_e4224c6c98a04dda8dd8f002303279d2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the maximum of the absolute value of the difference between target redemptions and actual redemptions for promotions in the percentage promotion type as 3434."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the minimum of the absolute value of the difference between target... (ver_932e516d3b8047199cf79de9b259f002)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the minimum of the absolute value of the difference between target redemptions and actual redemptions for promotions in the free months promotion type as 4."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the maximum of the absolute value of the difference between target... (ver_5a95950e66f14491af7c4625fd8051ca)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the maximum of the absolute value of the difference between target redemptions and actual redemptions for promotions in the free months promotion type as 3943."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the minimum of the absolute value of the difference between target... (ver_4ba4cda6e747405792ab7ea6b25464fa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the minimum of the absolute value of the difference between target redemptions and actual redemptions for promotions in the fixed amount promotion type as 505."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the maximum of the absolute value of the difference between target... (ver_34c5c0a7e2dc42ccb36ab937015c44d7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the maximum of the absolute value of the difference between target redemptions and actual redemptions for promotions in the fixed amount promotion type as 3273."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sheets-task-r9f2c557-56343cc5"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_56343cc59aba406e8a0ddfea9765ed2e",
+    "task_name": "Sheets - Task r9f2c557",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_ecdee400bc2846ea8f78160c0ae5ebd0",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_d8b621e3d9e1495496119a00a833d19d"
+      }
+    ]
+  }
+}

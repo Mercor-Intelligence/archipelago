@@ -1,0 +1,491 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "See Dr. B's speech to the board of education. Can you please output an updated draft for me (as a message in console) that fills in the missing datapoints? \nKeep in mind the following:\n- Break-even enrollment number is the number of students required for revenue to equal costs for FY26. \n- The student speaker is the student with the highest class average. \n- The percentages of each school’s total FY26 budget spent on professional development, and the class average, should be rounded to the nearest tenth while the percentage difference in facilities spending between the two schools should be rounded to the nearest whole number. All percentages should appear with '%'. \n- Any other number should be rounded to the nearest whole number."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that 2.8% of the total budget is dedicated to professional development... (ver_c878efa2870f4a32ad1d128b0cd4810b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that 2.8% of the total budget is dedicated to professional development at West Elm (acceptable range 2.77% to 2.83%)."
+        }
+      ]
+    },
+    {
+      "name": "Inputs a number other than 2.8% in place of [West Elm PD] in the speech. (ver_c878efa2870f4a32ad1d128b0cd4810b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs a number other than 2.8% in place of [West Elm PD] in the speech."
+        }
+      ]
+    },
+    {
+      "name": "States that 2.3% of the total budget is dedicated to professional development... (ver_30cbbb97c5f54faca61a8b514edf91cc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that 2.3% of the total budget is dedicated to professional development at Lake Park (acceptable range 2.28% to 2.32%)."
+        }
+      ]
+    },
+    {
+      "name": "Inputs a number other than 2.3% in place of [Lake Park PD] in the speech. (ver_30cbbb97c5f54faca61a8b514edf91cc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs a number other than 2.3% in place of [Lake Park PD] in the speech."
+        }
+      ]
+    },
+    {
+      "name": "States that Lake Park spends 18% more on administrative costs than West Elm... (ver_fd1701a3805643358767bde326d512bd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Lake Park spends 18% more on administrative costs than West Elm (acceptable range 17.8% to 18.2%)."
+        }
+      ]
+    },
+    {
+      "name": "Sets Administrative Costs to 18% in the speech. (ver_fd1701a3805643358767bde326d512bd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Sets Administrative Costs to 18% in the speech."
+        }
+      ]
+    },
+    {
+      "name": "States that Lake Park spends 10% more on facilities than West Elm (acceptable... (ver_32d02c89bc3f4a63a43b5f88fb5f5ca3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Lake Park spends 10% more on facilities than West Elm (acceptable range 9.9% to 10%)."
+        }
+      ]
+    },
+    {
+      "name": "Inputs a number other than 10% in place of [Facilities Costs] in the speech. (ver_32d02c89bc3f4a63a43b5f88fb5f5ca3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs a number other than 10% in place of [Facilities Costs] in the speech."
+        }
+      ]
+    },
+    {
+      "name": "States that West Elm spends $180,000 less on administration and facilities... (ver_538c3b1e0bd44615822bf56f8bc88c74)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that West Elm spends $180,000 less on administration and facilities combined than Lake Park."
+        }
+      ]
+    },
+    {
+      "name": "Inputs a number other than $180,000 in place of [Facilities & Administration... (ver_538c3b1e0bd44615822bf56f8bc88c74)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs a number other than $180,000 in place of [Facilities & Administration Spending] in the speech."
+        }
+      ]
+    },
+    {
+      "name": "States that the break-even enrollment at West Elm is 564 (acceptable range 558... (ver_8af66ad3161940ada4841eab279e8b86)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the break-even enrollment at West Elm is 564 (acceptable range 558 to 570)."
+        }
+      ]
+    },
+    {
+      "name": "Inputs a number other than 564 in place of [West Elm Enrollment] in the speech. (ver_8af66ad3161940ada4841eab279e8b86)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs a number other than 564 in place of [West Elm Enrollment] in the speech."
+        }
+      ]
+    },
+    {
+      "name": "States that the break-even enrollment at Lake Park is 554 (acceptable range... (ver_727c162e564249808bb496ed830ed66a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the break-even enrollment at Lake Park is 554 (acceptable range 548 to 560)."
+        }
+      ]
+    },
+    {
+      "name": "Inputs a number other than 554 in place of [Lake Park Enrollment] in the speech. (ver_727c162e564249808bb496ed830ed66a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs a number other than 554 in place of [Lake Park Enrollment] in the speech."
+        }
+      ]
+    },
+    {
+      "name": "States that last year's 7th graders (of Mrs. A's class) achieved an average... (ver_114c19eb9aa54822af016600e44340fa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that last year's 7th graders (of Mrs. A's class) achieved an average score of 1284 (acceptable range 127 to 129)."
+        }
+      ]
+    },
+    {
+      "name": "Inputs a number other than 1284 in place of [EOY Average] in the speech. (ver_114c19eb9aa54822af016600e44340fa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs a number other than 1284 in place of [EOY Average] in the speech."
+        }
+      ]
+    },
+    {
+      "name": "States that the current 8th graders (of Mrs. A's class) hold a class average... (ver_8c3173d9ab45450a84909ae8c060bf4e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the current 8th graders (of Mrs. A's class) hold a class average of 86.5%after Trimester 1 (acceptable range 85.6% to 87.4%)."
+        }
+      ]
+    },
+    {
+      "name": "Inputs a number other than 86.5% in place of [Class Average] in the speech. (ver_8c3173d9ab45450a84909ae8c060bf4e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs a number other than 86.5% in place of [Class Average] in the speech."
+        }
+      ]
+    },
+    {
+      "name": "States that the student speaker is Grace King. (ver_517ea2d649af4c2386d267caa2a5153a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the student speaker is Grace King."
+        }
+      ]
+    },
+    {
+      "name": "Inputs something other than Grace King in place of [Student Name] in the speech. (ver_517ea2d649af4c2386d267caa2a5153a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs something other than Grace King in place of [Student Name] in the speech."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world305-krm-06-natural-prompt-aa360902"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_aa360902e5ef46f696bde9220385dbbc",
+    "task_name": "World305_KRM_06 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c88419e2b16d4baa992c93e31d6d0290",
+        "golden_text_response": "Good evening, members of the Board,\n\nThank you for the opportunity to speak tonight. As Principal of West Elm Middle School, I’d like to share a brief overview of how our FY26 budget reflects both our fiscal responsibility and our unwavering commitment to student achievement.\n\nWest Elm and Lake Park are similar in size, each serving approximately 560 students, and we both operate with comparable total budgets of about seven million dollars. West Elm has a break-even enrollment of 564 and Lake Park has a break-even enrollment of 554. However, how those funds are allocated tells a very different story.\n\nAt West Elm, our local revenue totals $1,600,000 while our federal revenue is $1,200,000. At Lake Park, their local revenue totals $1,550,000 and their federal revenue is $1,300,000.\n\nAt West Elm, we dedicate 2.8% of our total budget to professional development. This is an investment in teacher growth and instructional excellence. At Lake Park, only 2.3% of their budget is allocated for professional development.\n\nAdditionally, Lake Park spends 18% more on administrative costs and 10% more on facilities. In total, West Elm spends $180,000 less on administration and facilities combined than Lake Park. This allows us to direct those dollars more efficiently toward classrooms and student learning.\n\nI also want to highlight the outstanding performance of Mrs. A’s class on last year’s end-of-year assessment. Our 7th graders achieved an average scale score of 1284, placing them among the highest-performing groups in the state. This year, that same cohort, who are now 8th graders, holds a class average of 86.5% after Trimester 1.\n\nTo share a student perspective, I’d like to invite Grace King, one of Mrs. A’s students, to speak briefly about their experience in her classroom.\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The merger scenario with RMBS and ONTO in the model is updated with the following assumptions:\n- 50% cash consideration\n- 0% bid premium\n- 90% SG&A synergies\n- ONTO share price is the closing share price on 1/2/26\n\nOutput the total pro forma combined equity value in thousands to the nearest whole number."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States total pro forma combined equity value is $17,803,036 thousand... (ver_518133cc2a144c05855e977ec5f3d33e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States total pro forma combined equity value is $17,803,036 thousand (acceptable range $17,625,006 to $17,981,066)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world248-rl-03-2901da2d"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_2901da2d0cc14bc397e3cd40491aded6",
+    "task_name": "World248_RL_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_787d6bada50843898702940d36ac1962",
+        "golden_text_response": "Total pro forma combined equity value is $17,803,036 thousand",
+        "golden_file_responses": "snap_0c6db8be20de4055b79311322fe8f071"
+      }
+    ]
+  }
+}

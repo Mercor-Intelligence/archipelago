@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "To address near-term talent gaps and reduce hiring lead times, HR team is evaluating the feasibility of rehiring select employees that were previously terminated.\n\nAssess rehire eligibility and compensation for terminated employees using the attached rehire analysis excel (Terminated_Employees_Rehire_Analysis.xlsx), rehire policy (Rehire_Eligibility_and_Compensation_Policy.pdf) and employee master data (Employee_Master_File_Updated.xlsx).\n\nRound final values to 2 decimal places. Share the following in the console:\n1. Total number of terminated employees eligible for rehire\n2. Total maximum allowable salary payout for each of these categories: (i) employees resigned due to personal reasons, (ii) employees resigned due to relocation, and (iii) employees resigned due to new opportunity."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the total number of terminated employees eligible for rehire is... (ver_65432ecc336143be80330d50a566af60)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of terminated employees eligible for rehire is 275.00."
+        }
+      ]
+    },
+    {
+      "name": "States that the total maximum allowable salary payout for employees resigned... (ver_2d4a2849384b43e5a384847b6a1c4b90)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total maximum allowable salary payout for employees resigned due to personal reasons is $6,682,220.90 (acceptable range $6,615,398.69 to $6,749,043.11)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total maximum allowable salary payout for employees resigned... (ver_87b4c212d86943b0b081839992abe082)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total maximum allowable salary payout for employees resigned due to relocation is $2,612,852.70 (acceptable range $2,586,724.17 to $2,638,981.23)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total maximum allowable salary payout for employees resigned... (ver_148544a7701e4e6894683d505396ebe8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total maximum allowable salary payout for employees resigned due to new opportunity is $11,590,147.60 (acceptable range $11,474,246.12 to $11,706,049.08)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-602-pm-task-02-25c8564e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_25c8564e000d4261b6658448d29516dc",
+    "task_name": "World 602_PM_Task 02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_313c54ee197b49b9b3d17eea6bfdedc4",
+        "golden_text_response": "1. Total number of terminated employees eligible for rehire is 275.00\n2. Total maximum allowable salary payout for employees resigned due to personal reasons is $6,682,220.90\n3. Total maximum allowable salary payout for employees resigned due to relocation is $2,612,852.70\n4. Total maximum allowable salary payout for employees resigned due to new opportunity is $11,590,147.60 \n  ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

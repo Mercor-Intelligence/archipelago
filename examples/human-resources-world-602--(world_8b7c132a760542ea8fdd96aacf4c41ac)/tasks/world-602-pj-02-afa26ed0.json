@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Management has approved a plan to increase bed capacity across its facilities - as outlined in the attached expansion plan. Also, management wants to maintain at minimum the following nurse-to-bed ratio at each of its facilities:\n- 1 nurse from the Medical–Surgical Nursing department for every 12 beds \n- 1 nurse from the Intensive Care Unit (ICU) department for every 15 beds \n\nBased on the target number of beds, determine the additional number of nurses to be hired for the Medical–Surgical Nursing and Intensive Care Unit departments, respectively, assuming that all the existing nursing staff will be retained as-is. Update the sheet with your results."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the number of additional hires for Medical–Surgical Nursing is 36... (ver_fc155e1a490e4a04ba804e3614594d6b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the number of additional hires for Medical–Surgical Nursing is 36 (acceptable range 35.6 to 36.4)."
+        }
+      ]
+    },
+    {
+      "name": "States the number of additional hires for Intensive Care Unit (ICU) is 25 (ver_00bbeea87a614addae1c475058223895)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the number of additional hires for Intensive Care Unit (ICU) is 25."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-602-pj-02-afa26ed0"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_afa26ed0d3ea484c8daeba18cb41072d",
+    "task_name": "World 602_PJ_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_8d2c51e560334e098ece9e8346c214dc",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_caff2f9a655847fb938de63a1fd32e8c"
+      }
+    ]
+  }
+}

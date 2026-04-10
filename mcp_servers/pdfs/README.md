@@ -339,7 +339,7 @@ PDF operations: create, read, search, and extract images from .pdf files.
 | `annotation` | string? | null | Image annotation key for 'read_image' |
 | `query` | string? | null | Search text. Matches names, descriptions. Case-insensitive. |
 | `case_sensitive` | boolean? | null | Case-sensitive search (default: False) |
-| `whole_documents` | boolean? | null | Match whole words only (default: False) |
+| `whole_word` | boolean? | null | Match whole words only (default: False) |
 | `max_results` | integer? | null | Maximum results to return (default: 100) |
 | `context_chars` | integer? | null | Context characters around match (default: 50) |
 

@@ -1,0 +1,15 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  output: 'export',
+  distDir: 'out',
+  basePath: '/ui/{{ project_name }}',
+  assetPrefix: '/ui/{{ project_name }}',
+  images: {
+    unoptimized: true,
+  },
+}
+
+module.exports = nextConfig
+

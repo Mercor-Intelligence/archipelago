@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "We have received the attached “termination notice” from the city. Was the termination notice valid under the Exclusive Negotiating Agreement? Regardless of validity of the notice, can the City keep the requested amount of $50,000 from the deposit?  \n\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the provided termination notice was not valid under the ENA (ver_ab61512e43014be4b83556102e47ae2e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the provided termination notice was not valid under the ENA."
+        }
+      ]
+    },
+    {
+      "name": "States that City is not entitled to keep entire $50,000 deposit at issue (ver_e5d74082f8454b5db4c3bf2754918f1f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that City is not entitled to keep entire $50,000 deposit at issue."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world426-lz-01-57743793"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_5774379355fa440eaa9a7cd721b5768c",
+    "task_name": "World426-LZ-01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_e28de9f7097e4dd9bdf9a04916337192",
+        "golden_text_response": "Based on a review of the Termination Notice and the Exclusive Negotiating Agreement (ENA), here are the answers to your questions:\n1. Was the termination notice valid?  No.  \n2. Can the City keep the requested amount of $50,000?  No.  \n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

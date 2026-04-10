@@ -14,6 +14,7 @@ Individual tools:
 - list_events, read_event, create_event, update_event, delete_event
 """
 
+import asyncio
 import os
 
 from fastmcp import FastMCP
@@ -21,6 +22,8 @@ from fastmcp.server.middleware.error_handling import (
     ErrorHandlingMiddleware,
     RetryMiddleware,
 )
+from mcp_middleware.injected_errors import setup_error_injection
+from mcp_schema import flatten_schema
 from middleware.logging import LoggingMiddleware
 from middleware.validation_error_sanitizer import ValidationErrorSanitizerMiddleware
 
@@ -54,7 +57,22 @@ else:
     mcp.tool(calendar)
     mcp.tool(calendar_schema)
 
+
+async def _flatten_tool_schemas():
+    for tool in (await mcp.get_tools()).values():
+        if getattr(tool, "parameters", None):
+            tool.parameters = flatten_schema(tool.parameters)
+
+
+try:
+    asyncio.get_running_loop()
+except RuntimeError:
+    asyncio.run(_flatten_tool_schemas())
+
 if __name__ == "__main__":
+    # Set up error injection middleware (reads from /.apps_data/calendar-server/.config/injected_errors.json)
+    setup_error_injection(mcp)
+
     transport = os.getenv("MCP_TRANSPORT", "http").lower()
     if transport == "http":
         port = int(os.getenv("MCP_PORT", "5000"))

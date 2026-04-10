@@ -1,0 +1,468 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Write a letter addressed to the parents or guardians of Mason Brown stating his trimester 1 grade; lowest scoring assignments; averages for homework, assessments, and classwork and how the weights of the low scores could be impacting their overall grade; what other school services they're receiving; number of tardies and unexcused absences; reiteration of the importance of consistent attendance as we move to the next unit; and two relevant strategies to implement for the next unit on To Kill a Mockingbird. Round final numerical values to a tenth of a percentage"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Identifies the trimester 1 grade for Mason Brown as 66.3% (acceptable range... (ver_c3eb8bc69f3f4a38b7d437270007d260)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the trimester 1 grade for Mason Brown as 66.3% (acceptable range 65.6% to 67.0%)."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the trimester 1 grade for Mason Brown as a value other than 66.3%. (ver_c3eb8bc69f3f4a38b7d437270007d260)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the trimester 1 grade for Mason Brown as a value other than 66.3%."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the lowest scoring assignments for Mason Brown as 59.0% (acceptable... (ver_623fadd558384de9993189abfe85ee81)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the lowest scoring assignments for Mason Brown as 59.0% (acceptable range 58.4% to 59.6%)."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the lowest scoring assignments for Mason Brown as something other... (ver_623fadd558384de9993189abfe85ee81)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the lowest scoring assignments for Mason Brown as something other than 59%."
+        }
+      ]
+    },
+    {
+      "name": "Identifies grade average for Mason for assessments as 67.0% (acceptable range... (ver_c17bc4a9425b4fd49b369c69b13264cd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies grade average for Mason for assessments as 67.0% (acceptable range 66.3% to 67.7%)."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the grade average for assessments as something other than 67%. (ver_c17bc4a9425b4fd49b369c69b13264cd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the grade average for assessments as something other than 67%."
+        }
+      ]
+    },
+    {
+      "name": "Identifies grade average for Mason for homework as 63.6% (acceptable range... (ver_4b3641c85c8349a5942a1708661ef1d7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies grade average for Mason for homework as 63.6% (acceptable range 63.0% to 64.2%)."
+        }
+      ]
+    },
+    {
+      "name": "Identifies grade average for homework as something other than 63.6%. (ver_4b3641c85c8349a5942a1708661ef1d7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies grade average for homework as something other than 63.6%."
+        }
+      ]
+    },
+    {
+      "name": "Identifies grade average for Mason for classwork is 66.1% (acceptable range... (ver_ca1d4ec0c70b4b08958bc2fed05ff6df)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies grade average for Mason for classwork is 66.1% (acceptable range 65.4% to 66.8%)."
+        }
+      ]
+    },
+    {
+      "name": "Identifies grade average for classwork as something other than 66.1%. (ver_ca1d4ec0c70b4b08958bc2fed05ff6df)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies grade average for classwork as something other than 66.1%."
+        }
+      ]
+    },
+    {
+      "name": "States that Mason receives special education services (ver_46c6a18ed46844b18a21ffb0489d6259)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Mason receives special education services."
+        }
+      ]
+    },
+    {
+      "name": "Selects guided writing support as a resource to implement for the student the... (ver_7cd9cea16ba642cc92884693d10e9d84)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Selects guided writing support as a resource to implement for the student the TKAM unit."
+        }
+      ]
+    },
+    {
+      "name": "Selects multiple modalities for reading as a resource to implement for the... (ver_b6a73cd4272747e38a13f97a385938bd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Selects multiple modalities for reading as a resource to implement for the student for the TKAM unit."
+        }
+      ]
+    },
+    {
+      "name": "Reiterates the importance of consistent attendance moving into the next unit (ver_d14c19e775264cfeb39ae9b2e0590463)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reiterates the importance of consistent attendance moving into the next unit."
+        }
+      ]
+    },
+    {
+      "name": "Identifies that Mason had 2 Tardies in Trimester 1 (ver_025fb734ca23438090daae9dd2e7b5b4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies that Mason had 2 Tardies in Trimester 1."
+        }
+      ]
+    },
+    {
+      "name": "Identifies that Mason had a value other than 2 Tardies in Trimester 1. (ver_025fb734ca23438090daae9dd2e7b5b4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies that Mason had a value other than 2 Tardies in Trimester 1."
+        }
+      ]
+    },
+    {
+      "name": "Identifies that Mason had 1 unexcused absence in Trimester 1 (ver_caa2ad6d5fd049118afd0a75c1688ed4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies that Mason had 1 unexcused absence in Trimester 1."
+        }
+      ]
+    },
+    {
+      "name": "Identifies that Mason had a number of than 1 unexcused absence in Trimester 1. (ver_caa2ad6d5fd049118afd0a75c1688ed4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies that Mason had a number of than 1 unexcused absence in Trimester 1."
+        }
+      ]
+    },
+    {
+      "name": "Includes information that Mason receives gifted and talented services (ver_0796752d245d456085ad9096812a7b63)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes information that Mason receives gifted and talented services."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world305-ac-01-natural-prompt-cc7eaf44"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_cc7eaf44249a49cfb8e5f7c8fc8179f6",
+    "task_name": "World305_AC_01 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_e785a8b3679f4aa28c10fe8fab3ff49b",
+        "golden_text_response": "Dear Parents/Guardians of Mason Brown, \n\nI hope this letter finds you well. I am writing to you today to discuss trimester 1 grades for English Language Arts. Mason is a bright student, but I have noticed a pattern of low grades in this class. My records show that he ended the trimester with a grade of 66.3%. Mason’s lowest scoring assignments were 59.0% for a figurative language quiz and argument writing diagnostic. His averages for assessments, homework, and classwork are 67.0%, 63.6%, and 66.1% respectively. \n\nI know that Mason is utilizing school resources for his dyslexia and I am committed to ensuring his success in my class. I want to propose two other strategies to add into the mix that can be implemented as we head into our next unit covering To Kill A Mockingbird:\n\n* Guided writing support: This involves using speech-to-text tools to help with writing responses, as well as modeling how to cite textual evidence, and provides sentence frames or graphic organizers.\n\n* Utilizing multiple modalities for reading: An audiobook version will be provided to students so Mason can listen and follow along with the physical book. I will also encourage more micro-chunked reading of 1-2 chapters at a time followed by comprehension questions to solidify understanding. \n\nI also wanted to reiterate the importance of regular attendance. The unit we are entering will be challenging, and it is important that students are present and on-time to class in order to avoid falling behind. My records show that Mason does have two tardies and one unexcused absence, but going forward I know that we can work together to set a goal to have no tardies or unexcused absences in the next trimester. \n\nI am committed to Mason’s success as we move through the school year. Should he need any further assistance, don’t hesitate to reach out to me.\n\nSincerely, \n\nMrs. A ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

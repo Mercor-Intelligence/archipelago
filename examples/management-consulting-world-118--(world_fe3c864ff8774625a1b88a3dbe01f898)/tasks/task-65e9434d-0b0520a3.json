@@ -1,0 +1,629 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Assume today is January 4, 2026. The procurement manager is sourcing beds for a new facility and has shared Vendor_04  (attached) along with the Facility Requirements Checklist v0.3 and the Phased Rollout Roadmap v0.1\n\n1. State the total number of beds required for all unfit facilities, defined as facilities that either partially meet or do not meet the therapy environment requirement, combined, assuming each facility needs 2 rooms and each room requires 2 beds.\n\n2. Identify the most reliable vendor based on the following criteria:\na. For the “therapy” bed type, state the order acceptance rate for each vendor across all deliveries made from January 1 to June 30 over the years 2021–2024. The acceptance rate is the number of accepted therapy bed orders delivered in that period divided by the total therapy bed orders delivered in that period (regardless of order size). State one total acceptance rate value per vendor. A vendor qualifies only if its acceptance rate is greater than 40%.\n b. For each vendor, state the straight unweighted average TAT (number of calendar days from order date to delivery date) across all its orders. Using the average TAT and the “Room Retrofitting” timeline in Phased Rollout Roadmap v0.1, determine whether the delivery date implied by the average TAT falls on or before the “Room Retrofitting” end date. Vendors that meet both criteria qualify for order placement. If multiple vendors remain eligible, select the one with the lowest total cost for the required number of beds, which will be calculated in Step 3.\n\n3. State the total order cost for each of the three vendors using the bed requirement from Step 1. Apply each vendor’s tiered pricing model using a banded approach in which each unit tier applies only to the units within that band. Then report the total cost for Vendor 1, Vendor 2, and Vendor 3. Use the following structures:\n- Vendor 1: Beds 1–50 at $25 each, beds 51–80 at $20 each, beds 81–150 at $15 each, beds 151–200 (and above) at $10 each.\n- Vendor 2: Beds 1–50 at $80 each, beds 51–80 at $70 each, beds 81–150 at $60 each, beds 151–200 (and above) at $50 each.\n- Vendor 3: Beds 1–50 at $50 each, beds 51–80 at $45 each, beds 81–150 at $35 each, beds 151–200 (and above) at $30 each.\n\nState a recommendation of the vendor that meets the qualification criteria in Step 2a and 2b, and the recommended vendor's total order cost; if multiple meet the criteria, recommend the vendor with the lowest total cost from Step 3.\n\n4. State the last acceptable ordering date for the recommended vendor to ensure timely delivery before “Room Retrofitting” concludes. The process requires 5 calendar days of pre-work by the manager, 1 calendar day to place the order, 7 calendar days for vendor acceptance, and then the vendor’s average TAT. Using the recommended vendor’s average TAT plus these additional days, subtract the total from the “Room Retrofitting” completion date to identify the final acceptable ordering date.\n\nRound TAT values to the nearest integer and all monetary and percentage figures to two decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the total number of beds needed is 140 (ver_4db4d53369fd4a60b3090bd83896fcf5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of beds needed is 140."
+        }
+      ]
+    },
+    {
+      "name": "States that the total number of beds needed is a value other than 140 (ver_4db4d53369fd4a60b3090bd83896fcf5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of beds needed is a value other than 140."
+        }
+      ]
+    },
+    {
+      "name": "States that the order acceptance rate for \"Therapy\" beds by Vendor 1 is 33.33%... (ver_47faa2ec5da0423ca8f64204e1467393)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the order acceptance rate for \"Therapy\" beds by Vendor 1 is 33.33% (acceptable range 33.00% to 33.66%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the order acceptance rate for \"Therapy\" beds by Vendor 1 is a... (ver_47faa2ec5da0423ca8f64204e1467393)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the order acceptance rate for \"Therapy\" beds by Vendor 1 is a value other than 33.33%."
+        }
+      ]
+    },
+    {
+      "name": "States that the order acceptance rate for \"Therapy\" beds by Vendor 2 is 58.33%... (ver_da305d83ca6c4759b61e0a558dc2af16)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the order acceptance rate for \"Therapy\" beds by Vendor 2 is 58.33% (acceptable range 57.75% to 58.91%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the order acceptance rate for \"Therapy\" beds by Vendor 2 is a... (ver_da305d83ca6c4759b61e0a558dc2af16)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the order acceptance rate for \"Therapy\" beds by Vendor 2 is a value other than 58.33%."
+        }
+      ]
+    },
+    {
+      "name": "States that the order acceptance rate for \"Therapy\" beds by Vendor 3 is 55.56%... (ver_825fcd868bf3493d84bf610ce4186e20)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the order acceptance rate for \"Therapy\" beds by Vendor 3 is 55.56% (acceptable range 55.00% to 56.12%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the order acceptance rate for \"Therapy\" beds by Vendor 3 is a... (ver_825fcd868bf3493d84bf610ce4186e20)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the order acceptance rate for \"Therapy\" beds by Vendor 3 is a value other than 55.56%."
+        }
+      ]
+    },
+    {
+      "name": "States that average TAT for therapy beds for vendor 1 is 159 days (acceptable... (ver_5203606f28f24d9ca5faae6c518f6e2e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that average TAT for therapy beds for vendor 1 is 159 days (acceptable range 157 to 161)."
+        }
+      ]
+    },
+    {
+      "name": "States that average TAT for therapy beds for vendor 1 is a value other than... (ver_5203606f28f24d9ca5faae6c518f6e2e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that average TAT for therapy beds for vendor 1 is a value other than 159 days."
+        }
+      ]
+    },
+    {
+      "name": "States that the average TAT for therapy beds for vendor 2 is 26 days... (ver_8dba2fba9f6741c38582437b21610271)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average TAT for therapy beds for vendor 2 is 26 days (acceptable range 25.7 to 26.3)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average TAT for therapy beds for vendor 2 is a value other... (ver_8dba2fba9f6741c38582437b21610271)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average TAT for therapy beds for vendor 2 is a value other than 26 days."
+        }
+      ]
+    },
+    {
+      "name": "States that the average TAT for therapy beds for vendor 3 is 166 days... (ver_174691de650d42b6bab9d581b0d2d780)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average TAT for therapy beds for vendor 3 is 166 days (acceptable range 164 to 168)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average TAT for therapy beds for vendor 3 is a value other... (ver_174691de650d42b6bab9d581b0d2d780)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average TAT for therapy beds for vendor 3 is a value other than 166 days."
+        }
+      ]
+    },
+    {
+      "name": "States that the total cost of order for Vendor 1 is $2,750.00 (acceptable... (ver_67ec094ad9b2485daca62d789153a6f4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total cost of order for Vendor 1 is $2,750.00 (acceptable range $2,722.50 to $2,777.50)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total cost of order for Vendor 1 is a value other than $2,750.00 (ver_67ec094ad9b2485daca62d789153a6f4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total cost of order for Vendor 1 is a value other than $2,750.00."
+        }
+      ]
+    },
+    {
+      "name": "States that the total order cost for Vendor 2 is $9,700.00 (acceptable range... (ver_e4187808257740db936a93b21e52bb91)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total order cost for Vendor 2 is $9,700.00 (acceptable range $9,603.00 to $9,797.00)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total order cost for Vendor 2 is a value other than $9,700.00 (ver_e4187808257740db936a93b21e52bb91)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total order cost for Vendor 2 is a value other than $9,700.00."
+        }
+      ]
+    },
+    {
+      "name": "States that the total cost of order for Vendor 3 is $5,950.00 (acceptable... (ver_8e016a9018ac4a90a2b5fbf988154c59)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total cost of order for Vendor 3 is $5,950.00 (acceptable range $5,890.50 to $6,009.50)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total cost of order for Vendor 1 is a value other than $5,950.00 (ver_8e016a9018ac4a90a2b5fbf988154c59)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total cost of order for Vendor 1 is a value other than $5,950.00."
+        }
+      ]
+    },
+    {
+      "name": "States that the recommended vendor is Vendor 2 (ver_37e82b9517914eb98dbd8beb3e978814)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the recommended vendor is Vendor 2."
+        }
+      ]
+    },
+    {
+      "name": "States that the recommended vendor is a vendor other than \"Vendor 2\" (ver_37e82b9517914eb98dbd8beb3e978814)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the recommended vendor is a vendor other than \"Vendor 2\"."
+        }
+      ]
+    },
+    {
+      "name": "States that the final order value with the recommended Vendor is $9,700.00... (ver_ce8753158fa54994a2cd2b0adc08643f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the final order value with the recommended Vendor is $9,700.00 (acceptable range $9,603.00 to $9,797.00)."
+        }
+      ]
+    },
+    {
+      "name": "States that the final order value with the recommended Vendor is a value other... (ver_ce8753158fa54994a2cd2b0adc08643f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the final order value with the recommended Vendor is a value other than $9,700.00."
+        }
+      ]
+    },
+    {
+      "name": "States that the last acceptable ordering date for the recommended vendor is... (ver_a5c1ae542efd4b118cd95af7c413dbf3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the last acceptable ordering date for the recommended vendor is 1st March, 2026."
+        }
+      ]
+    },
+    {
+      "name": "States that the last acceptable ordering date for the recommended vendor is a... (ver_a5c1ae542efd4b118cd95af7c413dbf3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the last acceptable ordering date for the recommended vendor is a value other than 1st March, 2026."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-65e9434d-0b0520a3"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_0b0520a3fd61442b82eae0123b451a17",
+    "task_name": "Task 65e9434d",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_bc8265e2e819430e960b67fe59e164f3",
+        "golden_text_response": "1. \n\nTotal number of beds needed = 140 beds\n\n2. Order acceptance range of various vendors is as follows-\n \nVendor 1- 33.33%\nVendor 2- 58.33%\nVendor 3- 55.56%\n\nAverage TAT for the vendors is as follows-\n\nVendor1\t= 159 days\nVendor2\t= 26 days\nVendor3\t= 166 days\n\nVendor 2 is the only vendor which satisfies all the criteria provided by the client.\n\nThe average order value for 140 beds for various vendors is-\n\nVendor 1\t\t $2,750.00\nVendor 2\t\t $9,700.00\nVendor 3\t\t $5,950.00\n\n3. The last day for procurement manager to order is March 1st, 2026.\n\nFinal recommended vendor is Vendor 2, with total order value of $9,700.00\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_a7997b6f169d4427b944946424a670d2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_02c701bf005f41f488af8f6a1efecf58",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the Approaching Standards letter is the correct option for Liam",
+        "modality": "Free text",
+        "negative_criteria": "Determines that an option other than the Approaching Standards letter is the correct option.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_53dc34b07db14f63b8e26c99b1c36e53",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_02c701bf005f41f488af8f6a1efecf58",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes the current date as \"February 12th, 2024\"",
+        "modality": "Free text",
+        "negative_criteria": "Includes the current date as a date other than \"February 12th, 2024\".",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2ebe1666c1fd4a728d57d0d652c3a66d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_02c701bf005f41f488af8f6a1efecf58",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the Subject line as \"AP US History Update: Approaching Standards\"",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d2eae74739cb4881a47311ba80afe046",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_02c701bf005f41f488af8f6a1efecf58",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Addresses the letter as \"To Liam Martinez's Parent\"",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ba74ab0d4cd24f2ca9cb3a17228bedb0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_02c701bf005f41f488af8f6a1efecf58",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes a summary of the Teacher Annotation",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b034eca62bfb4e62be9b5b559e1eb007",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_02c701bf005f41f488af8f6a1efecf58",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Indicates that the end-of-term assignment is from the Road to War Unit",
+        "modality": "Free text",
+        "negative_criteria": "Indicates that the end-of-term assignment is from a unit other than the Road to War Unit.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a9e83f1060f04bcd9d6a392affdd8b60",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_02c701bf005f41f488af8f6a1efecf58",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes a reminder to complete the end-of-term assignment",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    },
+    {
+      "eval_config_id": "72d7d96a-9d94-4a38-bbe3-96c08ded727c",
+      "eval_config_name": "Content Length Check Verifier",
+      "eval_defn_id": "content_length_check",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

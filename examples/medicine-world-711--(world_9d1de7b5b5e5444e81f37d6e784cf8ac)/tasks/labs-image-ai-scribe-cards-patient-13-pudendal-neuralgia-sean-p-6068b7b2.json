@@ -1,0 +1,399 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 13” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nPatient 13 presents to the clinic for evaluation.\nPDFs are attached documenting the conversation between Patient 13 and the physician, as well as the patient's imaging. Assume physical exam findings are unchanged from the most recent documented exam on record, and that the neurologic exam is normal.\n\nBased on the patient's history and presentation, indicate the best next step to establish the underlying diagnosis.  Provide the CPT code, if applicable.  Provide an ICD-10 code for the likely underlying diagnosis.  Explain your reasoning."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Recognizes that the patient has pain in the anatomical distribution of the... (ver_37a3b3271583443ea20955ebafb78f61)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that the patient has pain in the anatomical distribution of the pudendal nerve."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that the patient has worsened pain with sitting. (ver_5473d302b6984dc481a80294fc3a3ab3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that the patient has worsened pain with sitting."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that the patient is not woken at night by the pain. (ver_611747ce86d0446ca81c23f8c9490df8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that the patient is not woken at night by the pain."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that the patient has no objective sensory loss on clinical... (ver_f3acf8ac4fe54509894161aad8517246)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that the patient has no objective sensory loss on clinical examination."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient meets 4 of the 5 Nantes criteria for diagnosis of... (ver_ea900fc2a5224c7eb0d3f8f40785142b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient meets 4 of the 5 Nantes criteria for diagnosis of pudendal neuralgia."
+        }
+      ]
+    },
+    {
+      "name": "States the patient has a history of sacrospinous ligament fixation. (ver_e8c451d48308400fa87ea68503c6cac6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient has a history of sacrospinous ligament fixation."
+        }
+      ]
+    },
+    {
+      "name": "Explains that a pudendal neuralgia is a complication of sacrospinous ligament... (ver_21d6a716760d403983e320abacad671a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Explains that a pudendal neuralgia is a complication of sacrospinous ligament fixation."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes at least one of the patient symptoms consistent with pudendal... (ver_ab16a0acf8054ab79bbf45cbaa0bb7cb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes at least one of the patient symptoms consistent with pudendal neuralgia: urinary incontinence, fecal incontinence, dyspareunia."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that the patient’s MRI findings are consistent with degenerative... (ver_62278c9811eb48888f50234e9b7a1e19)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that the patient’s MRI findings are consistent with degenerative disc disease."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that the patient’s MRI findings make compressive spinal pathology... (ver_827912f6a8364306b559c4d7e3770816)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that the patient’s MRI findings make compressive spinal pathology less likely as a cause of the patient's symptoms."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that the patient’s normal pelvic CT scan makes malignancy less... (ver_292f83eeae8f49c693d5043591f884e5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that the patient’s normal pelvic CT scan makes malignancy less likely as a cause of the patient's symptoms."
+        }
+      ]
+    },
+    {
+      "name": "States the underlying diagnosis is likely pudendal neuralgia. (ver_3cebe8ea774c4c5eae02a60be4db2f2d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the underlying diagnosis is likely pudendal neuralgia."
+        }
+      ]
+    },
+    {
+      "name": "Concludes that the best next step is an image-guided pudendal nerve block. (ver_a0e5016bc5af4294b67088d1e38da4f3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Concludes that the best next step is an image-guided pudendal nerve block."
+        }
+      ]
+    },
+    {
+      "name": "States that an image-guided pudendal nerve block is both diagnostic and... (ver_ac46984a6770480f8c1cbcc8b6bdb2b8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that an image-guided pudendal nerve block is both diagnostic and therapeutic."
+        }
+      ]
+    },
+    {
+      "name": "States that the CPT code for the image-guided pudendal nerve block is 64430... (ver_ea79a52582e64a95aaf2adb05a706305)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the CPT code for the image-guided pudendal nerve block is 64430 (acceptable range 638 to 650)."
+        }
+      ]
+    },
+    {
+      "name": "States that the ICD-10 code for the pudendal neuralgia is G58.8. (ver_548448ed9ce64dd2a8bad714b5fa2d53)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the ICD-10 code for the pudendal neuralgia is G58.8."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-cards-patient-13-pudendal-neuralgia-sean-p-6068b7b2"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_6068b7b20b204ec1ac0cbda8b17989dc",
+    "task_name": "Labs_Image_AI Scribe_Cards Patient 13 - Pudendal Neuralgia - Sean P",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_7b054dc6b6884c6cbbfd58e447f58642",
+        "golden_text_response": "The patient currently meets 4 of the 5 Nantes criteria, a widely used diagnostic framework for pudendal neuralgia.\n\nI. Pain in the anatomical territory of the pudendal nerve (pelvic pain)\nII. Pain worsened by sitting (\"Sorry, I need to stand.\", \"I can’t do Peloton anymore because it hurts too bad.\")\nIII. The patient is not woken at night by the pain. (\"Yeah, and it’s really affecting my sleep. Once I can fall asleep, I’m good. Getting to sleep is the issue\")\nIV. No objective sensory loss on clinical examination (\"Assume a normal neurologic exam.\")\n\nThe patient has a history of sacrospinous fixation, a procedure that can cause pudendal neuralgia. Pudendal neuralgia can present with urinary incontinence, fecal incontinence, or dyspareunia, all of which the patient developed following surgery. The MRI is consistent with degenerative disc disease and makes compressive spinal pathology an unlikely cause of these acute-on-chronic symptoms. The patient's history of breast cancer makes metastatic malignancy an important consideration, but the normal CT pelvis makes this less likely. The fifth Nantes criterion is a positive anesthetic pudendal nerve block, which makes a pudendal nerve block the next best step for both diagnostic and therapeutic purposes. This should be imaging-guided, which significantly increases the reliability of the nerve block.\n\nThe correct CPT code is 64430, \"INJECTION(S), ANESTHETIC AGENT(S) AND/OR STEROID; PUDENDAL NERVE\".\n\nThe correct ICD-10 code is G58.8, \"Other specified mononeuropathies\".",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

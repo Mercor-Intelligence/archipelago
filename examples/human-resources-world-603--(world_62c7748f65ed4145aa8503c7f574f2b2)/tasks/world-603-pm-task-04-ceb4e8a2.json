@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "To expedite the executive hiring process, the recruiting team is prioritizing active applications in Greenhouse based on interviewer feedback captured in scorecards and notes.\n\nBased on overall recommendations in scorecards and 'body' in notes, take the following actions on active applications in Greenhouse:\na. Applications with a scorecard overall recommendation of “definitely_not” or “no” should be rejected.\nb. Applications with a scorecard overall recommendation of “strong_yes” should be moved directly to Stage 5 and the candidates should be tagged “Final Shortlist - Batch 1.”\nc. Applications with a scorecard overall recommendation of “yes” should be moved directly to Stage 5 and candidates should be tagged “Final Shortlist - Batch 2” IF at least 1 criteria is true: (i) the application is currently in Stage 3, or (ii) 'body' in notes indicates the candidate has a strong background in scaling omnichannel retail businesses, or (iii) 'body' in notes indicates candidate is a potential fit for confidential SVP role. All remaining applications in this category should be rejected.\nd. Applications with a scorecard overall recommendation of “mixed” or “no_decision” should be reviewed for role alignment. If the 'body' in notes indicates the candidate is a potential fit for confidential SVP role, move the application to Stage 4 and apply the tag “Final Shortlist - Batch 3.” All other applications in this category should be rejected.\n\nRound final values to nearest integer.  Share the following in the console:\n1. Post all movements, total number of active applications in Stage 4\n2. Post all movements, total number of active applications in Stage 5\n3. Post all movements, total number of rejected applications "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the total number of active applications in Stage 4, post all... (ver_1cdb9de816de4cdabe5e27de1e2a89f5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of active applications in Stage 4, post all movements, is 3."
+        }
+      ]
+    },
+    {
+      "name": "States that the total number of active applications in Stage 5, post all... (ver_ba2f4036716e455889f6b1e20ee7bfa5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of active applications in Stage 5, post all movements, is 16."
+        }
+      ]
+    },
+    {
+      "name": "States that the total number of rejected applications, post all movements, is... (ver_7b76d34d01aa4ae4b86b1cede1d8aaf4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of rejected applications, post all movements, is 84."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-603-pm-task-04-ceb4e8a2"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_ceb4e8a24dff4027b03adf0d1f966f51",
+    "task_name": "World 603_PM_Task 04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_0d526b52a2b84cc9b613ea821f694ad3",
+        "golden_text_response": "1. States that the total number of active applications in Stage 4, post all movements, is 3.\n\n2. States that the total number of active applications in Stage 5, post all movements, is 16.\n\n3. States that the total number of rejected applications, post all movements, is 84.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

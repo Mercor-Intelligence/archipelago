@@ -1,0 +1,54 @@
+{
+  "hr_admin": {
+    "userId": "user_hr_admin",
+    "employeeId": 1,
+    "password": "hr_admin_secret",
+    "roles": ["hr_admin"],
+    "scopes": [
+      "read:employees",
+      "write:employees",
+      "delete:employees",
+      "read:time_off",
+      "write:time_off",
+      "delete:time_off",
+      "read:reports",
+      "write:reports",
+      "read:metadata",
+      "write:metadata",
+      "read:datasets",
+      "admin:system"
+    ],
+    "description": "Full access to all employee data, time-off management, reports, and system configuration"
+  },
+  "manager": {
+    "userId": "user_manager",
+    "employeeId": 2,
+    "password": "manager_secret",
+    "roles": ["manager"],
+    "scopes": [
+      "read:employees",
+      "read:time_off",
+      "write:time_off",
+      "read:reports",
+      "read:datasets",
+      "read:metadata"
+    ],
+    "description": "Read access to direct reports data, time-off approval for team, read-only reports, access to metadata (user listings)"
+  },
+  "employee": {
+    "userId": "user_employee",
+    "employeeId": 3,
+    "password": "employee_secret",
+    "roles": ["employee"],
+    "scopes": [
+      "read:profile",
+      "write:profile",
+      "read:employees",
+      "read:time_off",
+      "write:time_off",
+      "read:time_off:self",
+      "write:time_off:self"
+    ],
+    "description": "Self-service access only - own profile, own time-off requests, view directory (filtered to self)"
+  }
+}

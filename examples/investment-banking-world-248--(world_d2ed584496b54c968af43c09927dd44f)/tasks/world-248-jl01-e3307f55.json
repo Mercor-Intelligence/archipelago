@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Calculate the forecasted year-end FY2027-FY2029 share prices for the combined company RMBS and ONTO (including synergies) based on the following assumptions: \n\n- Use the corresponding closing share prices of the individual entities to compute the P/E ratios for the end of FY2023, FY2024 and Q3 2025.\n- Leverage the average of the computed P/E ratios and EPS values of the combined entity to output the forecasted share prices. Round all outputs to two decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "The forecasted share price for 2027 is $104.40 (acceptable range $103.36 to... (ver_1dc29f2460b848c7bddceb2bd602297b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The forecasted share price for 2027 is $104.40 (acceptable range $103.36 to $105.44)."
+        }
+      ]
+    },
+    {
+      "name": "The forecasted share price for 2028 is $118.26 (acceptable range $117.08 to... (ver_9f85008dbbe84c969f4f1826de2665c8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The forecasted share price for 2028 is $118.26 (acceptable range $117.08 to $119.44)."
+        }
+      ]
+    },
+    {
+      "name": "The forecasted share price for 2029 is $130.22 (acceptable range $128.92 to... (ver_3bbb2ed8775e4b97b09f2c2bcffa281c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The forecasted share price for 2029 is $130.22 (acceptable range $128.92 to $131.52)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-248-jl01-e3307f55"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_e3307f557fcb48eaa7bcbaf7756ccf15",
+    "task_name": "World 248_JL01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_7496113ae8ec480083ada0d102e2eb0f",
+        "golden_text_response": "The forecasted share price for 2027 is $104.40 \nThe forecasted share price for 2028 is $118.26\nThe forecasted share price for 2029 is $130.22",
+        "golden_file_responses": "snap_85ea810ecc714a3d836bb25ade3adea4"
+      }
+    ]
+  }
+}

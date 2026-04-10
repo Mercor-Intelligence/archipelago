@@ -1,0 +1,491 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Write a Trimester 2 progress report for Mason Brown including his grade average for each of: assessments, quizzes, classwork & practice, homework & independent reading, participation & preparedness, and overall grade average. All assignment and overall grade averages should be rounded to the nearest tenth. Include Mason's name and disability category, and sign it from Mrs. A, mrsA@email.com, 123-456-789. The overall grade average should be calculated by averaging the five category averages together, not by averaging all individual assignment scores. Output the report as a message in the console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Inputs Mason in place of [Person] throughout the progress report (ver_01ebb17356d24e548920bb19b4b185b5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs Mason in place of [Person] throughout the progress report."
+        }
+      ]
+    },
+    {
+      "name": "Inputs something other than Mason for [Person] throughout the letter. (ver_01ebb17356d24e548920bb19b4b185b5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs something other than Mason for [Person] throughout the letter."
+        }
+      ]
+    },
+    {
+      "name": "Inputs 123-456-789 in place of [Phone] in the progress report (ver_654b7d9421d54f5c88e4b248eb9a2766)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs 123-456-789 in place of [Phone] in the progress report."
+        }
+      ]
+    },
+    {
+      "name": "Inputs something other than 123-456-789 in place of [Phone] in the progress... (ver_654b7d9421d54f5c88e4b248eb9a2766)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs something other than 123-456-789 in place of [Phone] in the progress report."
+        }
+      ]
+    },
+    {
+      "name": "Inputs mrsA@email.com in place of [Email] in the progress report (ver_7464460a02b640458449289f003387ed)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs mrsA@email.com in place of [Email] in the progress report."
+        }
+      ]
+    },
+    {
+      "name": "Inputs something other than mrsA@email in place of [Email] in the progress... (ver_7464460a02b640458449289f003387ed)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs something other than mrsA@email in place of [Email] in the progress report."
+        }
+      ]
+    },
+    {
+      "name": "Inputs 'Specific Learning Disability (Dyslexia)' in place of [Primary... (ver_94e739c89147474280b7610924c5abd9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs 'Specific Learning Disability (Dyslexia)' in place of [Primary Disability Category] in the progress report."
+        }
+      ]
+    },
+    {
+      "name": "Inputs something other than 'Specific Learning Disability (Dyslexia)' in place... (ver_94e739c89147474280b7610924c5abd9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs something other than 'Specific Learning Disability (Dyslexia)' in place of [Primary Disability Category] in the progress report."
+        }
+      ]
+    },
+    {
+      "name": "Inputs 67.0% in place of [Assessment Average] in the progress report (ver_7dc5b1a8389b476d912a86093b572fd3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs 67.0% in place of [Assessment Average] in the progress report."
+        }
+      ]
+    },
+    {
+      "name": "Inputs a number other than 67.0% in place of [Assessment Average] in the IEP... (ver_7dc5b1a8389b476d912a86093b572fd3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs a number other than 67.0% in place of [Assessment Average] in the IEP progress report."
+        }
+      ]
+    },
+    {
+      "name": "Inputs 62.6% in place of [Quiz Average] in the progress report (ver_c660a9c604ae4c69b67dcf43866be07e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs 62.6% in place of [Quiz Average] in the progress report."
+        }
+      ]
+    },
+    {
+      "name": "Inputs a number other than 62.6% in place of [Quiz Average] in the progress... (ver_c660a9c604ae4c69b67dcf43866be07e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs a number other than 62.6% in place of [Quiz Average] in the progress report."
+        }
+      ]
+    },
+    {
+      "name": "Inputs 66.1% in place of [Classwork & Practice Average] in the progress report (ver_3a722d7dcd244cea8919934b794de885)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs 66.1% in place of [Classwork & Practice Average] in the progress report."
+        }
+      ]
+    },
+    {
+      "name": "Inputs a number other than 66.1% in place of [Classwork & Practice Average] in... (ver_3a722d7dcd244cea8919934b794de885)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs a number other than 66.1% in place of [Classwork & Practice Average] in the progress report."
+        }
+      ]
+    },
+    {
+      "name": "Inputs 63.6% in place of [Homework & Independent Reading Average] in the... (ver_464c899afde94fb992d69a4cdafeb6ac)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs 63.6% in place of [Homework & Independent Reading Average] in the progress report."
+        }
+      ]
+    },
+    {
+      "name": "Inputs a number other than 63.6% in place of [Homework & Independent Reading... (ver_464c899afde94fb992d69a4cdafeb6ac)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs a number other than 63.6% in place of [Homework & Independent Reading Average] in the progress report."
+        }
+      ]
+    },
+    {
+      "name": "Inputs 72.5% in place of [Participation & Preparedness Average] in the... (ver_aebc6b404ab041cab1cb8af7e7279a0a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs 72.5% in place of [Participation & Preparedness Average] in the progress report."
+        }
+      ]
+    },
+    {
+      "name": "Inputs a number other than 72.5% in place of [Participation & Preparedness... (ver_aebc6b404ab041cab1cb8af7e7279a0a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs a number other than 72.5% in place of [Participation & Preparedness Average] in the progress report."
+        }
+      ]
+    },
+    {
+      "name": "Inputs 66.4% in place of [Trimester 2 Average] in the progress report (ver_2462c5bda051451685f323d1a3ce32ee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs 66.4% in place of [Trimester 2 Average] in the progress report."
+        }
+      ]
+    },
+    {
+      "name": "Inputs a number other than 66.4% in place of [Trimester 2 Average] in the... (ver_2462c5bda051451685f323d1a3ce32ee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Inputs a number other than 66.4% in place of [Trimester 2 Average] in the progress report."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world305-krm-05-natural-prompt-4984d331"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_4984d3312f954139966cc48e49209926",
+    "task_name": "World305_KRM_05 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_9d7b8cbd59f64ad9bad998768ff7dd2b",
+        "golden_text_response": "Mason\nSpecific Learning Disability (Dyslexia) \n\nDear Parent/Guardian of Mason,\n\nI hope this message finds you well. As we close out our Trimester 2 reporting period, I want to share an update on your child’s progress in English Language Arts. \n\nMason has been focusing on reading comprehension, vocabulary development, and writing fluency through a variety of engaging lessons and small-group activities. Mason continues to grow in confidence and skill, and I’m proud of the effort they bring to class each day. \n\nPlease see Trimester 2 grade information below. \n\nAssessments: 67.0%\nQuizzes: 62.6%\nClasswork & Practice: 66.1%\nHomework & Independent Reading: 63.6%\nParticipation & Preparedness: 72.5%\nTrimester 2: 66.4%\n\nThank you for your continued support and partnership in helping Mason succeed. \n\nWarm Regards, \n\nMrs. A \nmrsA@email.com\n123-456-789\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

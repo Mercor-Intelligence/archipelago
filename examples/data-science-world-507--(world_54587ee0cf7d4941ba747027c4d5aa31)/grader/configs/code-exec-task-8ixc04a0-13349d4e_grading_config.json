@@ -1,0 +1,190 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_3a3144dd44f641f2969a2db4f69317ff",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_13349d4e2989463a97cf25a294191d8d",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the number of F gender and active accounts as exactly 1710\n",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report the number of accounts grouped by gender (F/M) and account status (active/suspended/cancelled)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_826ccea536db442fb9d0a20ac22102b2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_13349d4e2989463a97cf25a294191d8d",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the number of F gender and cancelled accounts as exactly 162\n",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report the number of accounts grouped by gender (F/M) and account status (active/suspended/cancelled)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_397bfc059bab4227b15e7063e7a954bd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_13349d4e2989463a97cf25a294191d8d",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the number of F gender and suspended accounts as exactly 13",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report the number of accounts grouped by gender (F/M) and account status (active/suspended/cancelled)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_14d4de3db86049e7b96e0b7b315ff949",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_13349d4e2989463a97cf25a294191d8d",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the number of M gender and active accounts as exactly 1762",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report the number of accounts grouped by gender (F/M) and account status (active/suspended/cancelled)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3fa18b28413245528c7f7b536c1b99b5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_13349d4e2989463a97cf25a294191d8d",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the number of M gender and cancelled accounts as exactly 172",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report the number of accounts grouped by gender (F/M) and account status (active/suspended/cancelled)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8d9b34093042446b88a6dffa06a7f29f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_13349d4e2989463a97cf25a294191d8d",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the number of M gender and suspended accounts as exactly 16",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report the number of accounts grouped by gender (F/M) and account status (active/suspended/cancelled)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b4ca2f8569d540b8a3c2136076c40430",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_13349d4e2989463a97cf25a294191d8d",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the chi2 statistic as 0.287 +/- 0.005",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report the test statistics and p-value of the Chi-square independence test, rounded to 3 decimal points",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4fa3309361ae4356a2b08cb68563dc83",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_13349d4e2989463a97cf25a294191d8d",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the chi2 p-value as 0.866 +/- 0.005",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report the test statistics and p-value of the Chi-square independence test, rounded to 3 decimal points",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

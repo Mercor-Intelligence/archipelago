@@ -1,0 +1,146 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_af61b15d22dc4e5c9ed3c308106e9598",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0821b226f80649c78f50ba7e3849a16c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the gross profit CAGR for 2026-2040 using only Happy hospital financials graph is -6.94% (acceptable range -7.01% to -6.87%)",
+        "negative_criteria": "States that the gross profit CAGR for 2026-2040 using only Happy hospital financials graph is any other value than -6.94%\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. Calculate correct value of COGS for each year 2026 and 2040, by summing all of its subcomponents, which is: $17.1M in 2026 and $6.5M in 2040\n2. Calculate gross profit for year 2026 and 2040, by subtracting the COGS from the revenues, which is:  $5.2M in 2026 and  $1.9M 2040\n3. Calculate gross profit CAGR for 2026-2040, using gross profits calculated in previous step and number of years between the two dates, which is: -6.94%\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f669befb4e114b6e87f8f8d1f13596ce",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0821b226f80649c78f50ba7e3849a16c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the EBIT CAGR for 2026-2040 using only the Happy hospital financials graph is -8.69% (acceptable range -8.78% to -8.60%)",
+        "negative_criteria": "States that the EBIT CAGR for 2026-2040 using only the Happy hospital financials graph is any other value than -8.69%\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. Calculate correct value of COGS for each year 2026 and 2040, by summing all of its subcomponents, which is: $17.1M in 2026 and $6.5M in 2040\n2. Calculate gross profit for year 2026 and 2040, by subtracting the COGS from the revenues, which is:  $5.2M in 2026 and  $1.9M 2040\n3. Calculate correct value of SG&A for each year 2026 and 2040, by summing all of its subcomponents, which is: $2.7M in 2026 and $1.2M in 2040\n4. Calculate EBIT for year 2026 and 2040, by subtracting the SG&A from gross profit, which is  $2.5M in 2026 and  $0.7M in 2040\n5. Calculate EBIT CAGR for 2026-2040, using EBITs calculated in previous step and number of years between the two dates, which is -8.69%",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4b4d6de452ea4f8e909ad99b60d40fa5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0821b226f80649c78f50ba7e3849a16c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the gross profit CAGR for 2026-2040 using the client ready Strategic Recommendation & Implementation Plan deck is -6.94% (acceptable range -7.01% to -6.87%)",
+        "negative_criteria": "States that the gross profit CAGR for 2026-2040 using only the client ready Strategic Recommendation & Implementation Plan deck is any other value than -6.94%\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. Calculate correct value of COGS for each year 2026 and 2040, by summing all of its subcomponents, which is: $17.1M in 2026 and $6.5M in 2040\n2. Calculate gross profit for year 2026 and 2040, by subtracting the COGS from the revenues, which is:  $5.2M in 2026 and  $1.9M 2040\n3. Calculate gross profit CAGR for 2026-2040, using gross profits calculated in previous step and number of years between the two dates, which is: -6.94%\n\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6d3d0d7dc8a34216b8adf32466032b9f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0821b226f80649c78f50ba7e3849a16c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the EBIT CAGR for 2026-2040 using only the client ready Strategic Recommendation & Implementation Plan deck is -8.69% (acceptable range -8.78% to -8.60%)",
+        "negative_criteria": "States that the EBIT CAGR for 2026-2040 using only the client ready Strategic Recommendation & Implementation Plan deck is any other value than -8.69%\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. Calculate correct value of COGS for each year 2026 and 2040, by summing all of its subcomponents, which is: $17.1M in 2026 and $6.5M in 2040\n2. Calculate gross profit for year 2026 and 2040, by subtracting the COGS from the revenues, which is:  $5.2M in 2026 and  $1.9M 2040\n3. Calculate correct value of SG&A for each year 2026 and 2040, by summing all of its subcomponents, which is: $2.7M in 2026 and $1.2M in 2040\n4. Calculate EBIT for year 2026 and 2040, by subtracting the SG&A from gross profit, which is  $2.5M in 2026 and  $0.7M in 2040\n5. Calculate EBIT CAGR for 2026-2040, using EBITs calculated in previous step and number of years between the two dates, which is -8.69%\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_443e5d9ab4f84763abca88bdd61cc1c3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0821b226f80649c78f50ba7e3849a16c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States \"no\" to answer if there is any difference between the outcomes of step 1 and step 2 gross profit CAGR",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The answers in criteria 1 and 3 are identical",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c61ed471a0394b0a8ddfbd662df6cbac",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0821b226f80649c78f50ba7e3849a16c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States \"no\" to answer if there is any difference between the outcomes of step 1 and step 2 EBIT CAGR calculation",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The answers in criteria 2 and 4 are identical",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

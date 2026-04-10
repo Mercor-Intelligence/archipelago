@@ -1,0 +1,21 @@
+# Table name mappings for data_to_postgres.py
+#
+# This config file controls how data files are loaded into PostgreSQL:
+# - Map filenames to custom table names
+# - Exclude files from loading
+#
+# File format:
+#   mappings:
+#     filename_without_extension: target_table_name
+#   exclude:
+#     - filename_to_skip
+
+mappings:
+  # Example: map a file to a different table name
+  # customer_data_2024: customers
+  # orders_backup: orders
+
+exclude:
+  # Example: skip test or backup files
+  # - test_data
+  # - backup_orders

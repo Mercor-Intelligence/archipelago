@@ -1,0 +1,106 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_17d9782d80c942e6999d0a43a0f7ded4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d03da8e64267462ebf78cf7b3a952611",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that based on the corrected pay schedules, the updated annual bonus payout for active employees in Customer Success is $660,890.0",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f08ced36d38342bfafeb504c6bde8d98",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d03da8e64267462ebf78cf7b3a952611",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that based on the corrected pay schedules, the updated annual bonus payout for active employees in G&A is $1,819,520.0 (acceptable range $1,801,324.8 to $1,837,715.2)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_314559e668d34d6ba75137a2f2a4fe82",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d03da8e64267462ebf78cf7b3a952611",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that based on the corrected pay schedules, the updated annual bonus payout for active employees in Sales is $1,575,140.0 (acceptable range $1,559,388.6 to $1,590,891.4)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c5904150d70d43bc94441919c1551da3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d03da8e64267462ebf78cf7b3a952611",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that based on the corrected pay schedules, the updated annual bonus payout for active employees in R&D is $4,491,070.0 (acceptable range $4,446,159.3 to $4,535,980.7)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

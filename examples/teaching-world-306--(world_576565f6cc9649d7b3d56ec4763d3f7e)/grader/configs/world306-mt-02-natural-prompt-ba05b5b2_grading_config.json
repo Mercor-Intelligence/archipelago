@@ -1,0 +1,290 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_5f4ba226da714a3196dafe3291e140b3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ba05b5b20ca14d73a874367703ab6e88",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Jensen, McKay as one of the IEP students with a grade average lower than 70",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Jensen, McKay  is an IEP student with a grade average of 54.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dd13607ab75a4c4d869f9d8d3930c2a1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ba05b5b20ca14d73a874367703ab6e88",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Thomas, Makenna as one of the IEP students with a grade average lower than 70",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Thomas, Makenna is an IEP student with grade average of 68.08.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c76f44ca1a0c49f9a8800759d77dbd73",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ba05b5b20ca14d73a874367703ab6e88",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Robinson, Halle as one of the IEP students with a grade average lower than 70",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Robinson, Halle is an IEP student with a grade average of 65.66.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e67a15f7524d46a0937365fc546b2a36",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ba05b5b20ca14d73a874367703ab6e88",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Taylor, Avery as one of the IEP students with a grade average lower than 70",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Taylor, Avery is an IEP student with a grade average of 54.83.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f4f40a51c167437093edc5fbafc31640",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ba05b5b20ca14d73a874367703ab6e88",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Fox, Everleigh as one of the IEP students with a grade average lower than 70",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Fox, Everleigh is an IEP student with a grade average of 62.83.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_262ccc0c0ce942f6911b2e436a4446ac",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ba05b5b20ca14d73a874367703ab6e88",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Taylor, Noah as one of the IEP students with a grade average lower than 70",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Taylor, Noah is an IEP student with a grade average of 64.83.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dd860cf688f94fa2b26ffce0585cefde",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ba05b5b20ca14d73a874367703ab6e88",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the attendance rate of Jensen, McKay as 80% (acceptable range 79% to 81%)",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Jensen, McKay has an 80% attendance rate.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Rosters-absences /Science Class Attendance Rate.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dd61e921fbf74ddf8ff229037a2059b8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ba05b5b20ca14d73a874367703ab6e88",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the attendance rate of Thomas, Makenna as 95.6% (acceptable range 94.6% to 96.6%)",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Thomas, Makenna has 95.6% attendance rate.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_572e919fe9d443669d3b1d3dc1512f77",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ba05b5b20ca14d73a874367703ab6e88",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the attendance rate of Robinson, Halle as 94.4% (acceptable range 93.5% to 95.3%)",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Robinson, Halle has a 94.4% attendance rate.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9826a08e0f3a4b34b931be4cc2c6edb2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ba05b5b20ca14d73a874367703ab6e88",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the attendance rate of Taylor, Avery as 95.6% (acceptable range 94.6% to 96.6%)",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Taylor, Avery has 95.6 attendance rate.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_12baa17c48de4d75b95c9fc793d357fe",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ba05b5b20ca14d73a874367703ab6e88",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the attendance rate of Fox, Everleigh as 96.7% (acceptable range 95.7% to 97.7%)",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Fox, Everleigh has 96.7 attendance rate.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_869b44a6c6294fa98ae9a1c427fa5751",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ba05b5b20ca14d73a874367703ab6e88",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the attendance rate of Taylor, Noah as 98.9% (acceptable range 97.9% to 99.9%)",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Taylor, Noah has 98.9 attendance rate.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

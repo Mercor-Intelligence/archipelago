@@ -1,0 +1,43 @@
+[env._.python.venv]
+path = ".venv"
+create = true
+
+[tools]
+uv = "0.6.10"
+python = "3.13"
+
+[tasks.format]
+run = "ruff format ."
+description = "Format code"
+
+[tasks.build]
+run = "echo 'No build required'"
+description = "Build the project (no-op for pure Python)"
+
+[tasks.install]
+run = "uv sync --all-extras"
+description = "Install dependencies"
+
+[tasks.lint]
+run = "ruff check ."
+description = "Run linter"
+
+[tasks.test]
+run = "pytest"
+description = "Run tests"
+
+[tasks.typecheck]
+run = "basedpyright"
+description = "Run type checker"
+
+[tasks.start]
+run = "uv run --no-sync python -m mcp_servers.bloomberg.main"
+description = "Start the MCP server"
+depends = ["install"]
+
+[tasks.populate]
+run = """
+mkdir -p "${STATE_LOCATION}" data && count=$(ls "${STATE_LOCATION}"/*.duckdb 2>/dev/null | wc -l) && if [ "$count" -gt 1 ]; then echo "Error: expected at most 1 .duckdb file but found $count" >&2; exit 1; elif [ "$count" -eq 1 ]; then cp "${STATE_LOCATION}"/*.duckdb data/offline.duckdb; fi
+"""
+description = "Copy DuckDB fixtures into place for offline mode"
+depends = ["build"]

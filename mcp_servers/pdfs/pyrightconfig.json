@@ -1,7 +1,5 @@
 {
-  "include": [
-    "mcp_servers"
-  ],
+  "include": ["mcp_servers"],
   "exclude": [
     "**/node_modules",
     "**/__pycache__",
@@ -55,3 +53,4 @@
   "reportMissingParameterType": "none",
   "reportIncompatibleMethodOverride": "none"
 }
+

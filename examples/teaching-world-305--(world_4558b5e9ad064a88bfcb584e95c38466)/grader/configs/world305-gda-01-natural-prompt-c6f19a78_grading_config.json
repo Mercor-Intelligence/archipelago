@@ -1,0 +1,243 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_62609c3c7068446fa4ac9a45fa1c2a40",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c6f19a78fc9c4190a728cc4966f723c2",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes \"To Kill a Mockingbird Part 2\" in the unit title field",
+        "modality": "Free text",
+        "negative_criteria": "Includes text other than \"To Kill a Mockingbird Part 2\" in the unit title field.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 17,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6003a1ea72be4771be6936270d2fa614",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c6f19a78fc9c4190a728cc4966f723c2",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes \"ELA (8th grade)\" in the course field",
+        "modality": "Free text",
+        "negative_criteria": "Includes text other than \"ELA (8th grade)\" in the course field.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 18,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_08ab8c2381b14643a491dcd4ce7442d9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c6f19a78fc9c4190a728cc4966f723c2",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes \"10/27/2025\" in the unit start date field",
+        "modality": "Free text",
+        "negative_criteria": "Includes a date other than \"10/27/2025\" in the unit start date field.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 19,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4ded90625e154315bdca23ecff208b66",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c6f19a78fc9c4190a728cc4966f723c2",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes \"11/14/2025\" in the unit end date field",
+        "modality": "Free text",
+        "negative_criteria": "Includes a date other than \"11/14/2025\" in the unit end date field.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 20,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_78e553dd01ee430fb42d718099b555e9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c6f19a78fc9c4190a728cc4966f723c2",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates total instructional days as 14 (acceptable range 13.9 to 14.1)",
+        "modality": "Free text",
+        "negative_criteria": "Calculates total instructional days as a number of other than 14.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 21,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5d5c1811b1464c02a22a8ffaf977ae2d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c6f19a78fc9c4190a728cc4966f723c2",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes 13 content in the total number of lessons field",
+        "modality": "Free text",
+        "negative_criteria": "Includes a number other than 13 for content in the total number of lessons field.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 23,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dc0505fd1ec1418ab2b2d556ef393191",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c6f19a78fc9c4190a728cc4966f723c2",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes 1 review in the total number of lessons field",
+        "modality": "Free text",
+        "negative_criteria": "Includes a number other than 1 for review in the total number of lessons field.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 24,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_83612e85a5814707af681d6bde430296",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c6f19a78fc9c4190a728cc4966f723c2",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes 1 exam in the total number of lessons field",
+        "modality": "Free text",
+        "negative_criteria": "Includes a number other than 1 for exam in the total number of lessons field.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 25,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_14e97cab48eb407185762ba4735af4a9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c6f19a78fc9c4190a728cc4966f723c2",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes the summary of unit 2 from The To Kill A Mockingbird Curriculum Guide in the summary of unit field",
+        "modality": "Free text",
+        "negative_criteria": "Includes the summary of a unit other than unit 2 from The To Kill A Mockingbird Curriculum Guide in the summary of unit field.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "To Kill A Mockingbird curriculum guideESSENTIALQUESTIONSANDSTANDARDS.xlsx",
+            "source": "world",
+            "snapshotId": "snap_bebca1298bd04ba3a95356e6da5a6fc6"
+          }
+        ]
+      },
+      "verifier_index": 26,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f07010ff42c34f7a9412f0e21f7eb93e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c6f19a78fc9c4190a728cc4966f723c2",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes To Kill A Mockingbird essential questions from the curriculum guide in the essential questions field",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "To Kill A Mockingbird curriculum guideESSENTIALQUESTIONSANDSTANDARDS.xlsx",
+            "source": "world",
+            "snapshotId": "snap_bebca1298bd04ba3a95356e6da5a6fc6"
+          }
+        ]
+      },
+      "verifier_index": 27,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

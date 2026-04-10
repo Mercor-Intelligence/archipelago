@@ -1,0 +1,192 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "SteelTreeSolutions (STS) filed a complaint against Sweetmarch Build Partners (SBP) in California for breach of contract for unpaid work that STS performed between Sept. 5, 2025 and Oct. 5, 2025. STS has a Class A and a Class B license issued on Jan. 1, 2023; both expire on Jan. 1, 2027.  STS also engaged Robert Jones for this work. Robert is a qualified individual and the responsible managing officer who certified that he owned 30% of STS. SBP never spoke with Robert during their engagement with STS. SBP has also learned that Robert was actively involved in STS's work until he left the country on Sept. 5, 2025.\n\nSBP paid STS a total of $75,000 for the work it performed between Sept. 5, 2025 and Oct. 5, 2025.  STS claims that SBP owes STS an additional $250,000 for the work that was performed between Aug. 1, 2025, and Oct. 5, 2025. Will SBP be able to successfully file a counterclaim to recover the $75,000 it paid to STS under California Business and Professions Code section 7068.2? Explain your answer."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that Sweetmarch Build Partners will not be able to successfully file a... (ver_ebef42514ae24402a2ac0538c7e08d4c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Sweetmarch Build Partners will not be able to successfully file a counterclaim to recover the $75,000 it paid to SteelTreeSolutions under California Business and Professions Code section 7068.2."
+        }
+      ]
+    },
+    {
+      "name": "States any of the following: (1) that Sweetmarch Build Partners can file the... (ver_7c8a38244d35411a84d0c6d106a7f0ab)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States any of the following: (1) that Sweetmarch Build Partners can file the counterclaim if SteelTreeSolutions was an unlicensed contractor and (2) that Sweetmarch Build Partners' counterclaim is governed by California Business and Professions Code 7031(b)."
+        }
+      ]
+    },
+    {
+      "name": "States that a contractor's license is automatically replaced if all of the... (ver_6b049ee3f83b4f9f809c364c06279c07)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that a contractor's license is automatically replaced if all of the following conditions are met: (1) the qualifier is disassociated from the licensed entity; and (2) the entity did not replace the disassociated qualifer after 90 days from the qualifier's disassociation."
+        }
+      ]
+    },
+    {
+      "name": "States that SteelTreeSolutions did not replace the qualifer (Robert Jones). (ver_c258619d052f4e5b82500f31ed42e291)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that SteelTreeSolutions did not replace the qualifer (Robert Jones)."
+        }
+      ]
+    },
+    {
+      "name": "States that Robert Jones disassociated from SteelTreeSolutions on September 5,... (ver_fb45fb1e32f449dda94fd947b362a8ef)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Robert Jones disassociated from SteelTreeSolutions on September 5, 2025."
+        }
+      ]
+    },
+    {
+      "name": "States that SteelTreeSolutions' license would have been suspended on December... (ver_9b6b726c377f4988840360077913648f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that SteelTreeSolutions' license would have been suspended on December 4, 2025."
+        }
+      ]
+    },
+    {
+      "name": "States that SteelTreeSolutions was a licensed contractor at the time it... (ver_b375ce1539c24c898a848ba01524dd8b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that SteelTreeSolutions was a licensed contractor at the time it performed the $75,000 of work for Sweetmarch Build Partners."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world437-js-02-f47ff7eb"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_f47ff7eb31e940d5990d06fd7ff5829c",
+    "task_name": "World437_JS_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_90c2d0b1768743dbac5ad30a12414cfe",
+        "golden_text_response": "Sweetmarch Build Partners (SBP) will not be able to successfully file a counterclaim to recover the $75,000 it paid to SteelTreeSolutions (STS) under California Business and Professions Code section 7068.2. Importantly, SBP can only file a counterclaim if STS was an unlicensed contractor, pursuant to California Business and Professions Code 7031(b). In this case, the question is whether STS lost its license by virtue of California Business and Professions Code 7068.2 \"if the qualifier is disassociated from the licensed entity, the entity has 90 days to replace the qualifier. If the qualifier is not replaced, the contractor's license issued to the entity is automatically replaced.\"\n\nSince STS did not replace the qualifer (Robert Jones), STS's license would have been suspended on December 4, 2025, i.e. 90 days after September 5, 2025 (the date on which the qualifier Robert Jones was disassociated from STS). Thus, STS had an active license between September 5, 2025 and October 5, 2025 when the work was performed. Because STS was a licensed contractor at the time it performed the $75,000 of work for SBP, SBP is unable to file a counterclaim.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

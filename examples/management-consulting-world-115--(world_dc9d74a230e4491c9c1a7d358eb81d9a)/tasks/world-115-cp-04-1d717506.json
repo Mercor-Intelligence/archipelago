@@ -1,0 +1,496 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The client wants updated 2025 financial statement projections reflecting new Capex. Create a new worksheet with the following metrics:\n\nIncome Statement: 2025 Sales, Gross Profit, Operating Profit, Net Income from Continuing Operations.\nBalance Sheet: 2025 Total Assets, Total Liabilities.\nCash Flow Statement: 2025 Net Income, Operating, Investing, and Financing Cash Flow.\n\nReport all metrics in $M, rounded to the nearest $M.\n\nUse the ResourceCo financial statements spreadsheet and apply the below assumptions.\n\n For the 2025 Income Statement: \n- Revenue increases 4% vs. 2024\n- COGS remains the same percentage of revenue as 2024\n- Reclamation & Remediation increases 40% vs. 2023\n- Apply the 2025 tax rate from the latest Scenario B data center model\n- Set 2025 Advanced projects, research & development equal to Year 0 Capex from the Scenario B model added to 2024 Advanced projects, research & development\n-2025 Depreciation & Amortization equals 2024 D&A plus 20% of 2025 Advanced projects, R&D.\n\nFor the 2025 Balance Sheet, use 2024 values and assume:\n- Property, plant and mine development, net increases by the sum of Years 0–2 Capex from the Scenario B model, financed 25% by short-term debt and 75% by long-term debt, reflected in liabilities.\n\nFor the 2025 Cash Flow Statement, use 2024 values and assume:\n- Net Income equals updated 2025 Net Income from Continuing Operations\n- Depreciation & Amortization equals the 2025 Income Statement value\n- Add the new short- and long-term debt to Financing Cash Flow. Subtract total added debt from Investing Cash Flow under Additions to property, plant and mine development\n\nAssume all 2025 values equal 2024 values unless explicitly stated otherwise."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States 2025 Sales is $21,601 million (acceptable range $21,385 to $21,817) (ver_91d48742d0384930857ea387f8fbc902)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Sales is $21,601 million (acceptable range $21,385 to $21,817)."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Sales is any value other than $21,601 million (ver_91d48742d0384930857ea387f8fbc902)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Sales is any value other than $21,601 million."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Gross Profit is $11,238 million (acceptable range $11,126 to... (ver_672c57db3d34455d80cefdf4bde8c762)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Gross Profit is $11,238 million (acceptable range $11,126 to $11,350)."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Gross Profit is any value other than $11,238 million (ver_672c57db3d34455d80cefdf4bde8c762)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Gross Profit is any value other than $11,238 million."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Operating Profit is $4,277 million (acceptable range $4,234 to... (ver_90ecb1ed3e784f2b97d5273a2d2f5c2a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Operating Profit is $4,277 million (acceptable range $4,234 to $4,320)."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Operating Profit is any value other than $4,277 million (ver_90ecb1ed3e784f2b97d5273a2d2f5c2a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Operating Profit is any value other than $4,277 million."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Net Income from Continuing Operations is $2,856 million... (ver_0e1b1e73b92e4c8f8a5440d22be1b3fb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Net Income from Continuing Operations is $2,856 million (acceptable range $2,827 to $2,885)."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Net Income from Continuing Operations is any value other than... (ver_0e1b1e73b92e4c8f8a5440d22be1b3fb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Net Income from Continuing Operations is any value other than $2,856 million."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Total Assets is $61,507 million (acceptable range $60,892 to... (ver_8f7bb5813f9d464fa6bd62935f017c59)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Total Assets is $61,507 million (acceptable range $60,892 to $62,122)."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Total Assets is any value other than $61,507 million (ver_8f7bb5813f9d464fa6bd62935f017c59)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Total Assets is any value other than $61,507 million."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Total Liabilities is $27,448 million (acceptable range $27,174 to... (ver_08e38c0641be4fb9a288e9328d754c0f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Total Liabilities is $27,448 million (acceptable range $27,174 to $27,722)."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Total Liabilities is any value other than $27,448 million (ver_08e38c0641be4fb9a288e9328d754c0f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Total Liabilities is any value other than $27,448 million."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Net Income is $2,856 million (acceptable range $2,827 to $2,885) (ver_3bedaf9824184a83b4cbc46856e0fff1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Net Income is $2,856 million (acceptable range $2,827 to $2,885)."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Net Income is any value other than $2,856 million (ver_3bedaf9824184a83b4cbc46856e0fff1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Net Income is any value other than $2,856 million."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Operating Cash Flow is $8,018 million (acceptable range $7,938 to... (ver_a582f17914334a12afd1928c7cffd8ea)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Operating Cash Flow is $8,018 million (acceptable range $7,938 to $8,098)."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Operating Cash Flow is any value other than $8,018 million (ver_a582f17914334a12afd1928c7cffd8ea)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Operating Cash Flow is any value other than $8,018 million."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Investing Cash Flow is -$3,851 million (acceptable range $-3,890... (ver_94ae761dd0ae41119ec2d6f97a4dd3ad)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Investing Cash Flow is -$3,851 million (acceptable range $-3,890 to $-3,812)."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Investing Cash Flow is any value other than -$3,851 million (ver_94ae761dd0ae41119ec2d6f97a4dd3ad)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Investing Cash Flow is any value other than -$3,851 million."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Financing Cash Flow is -$3,483 million (acceptable range $-3,518... (ver_f13d265827e44aa1b3dae0fa07458886)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Financing Cash Flow is -$3,483 million (acceptable range $-3,518 to $-3,448)."
+        }
+      ]
+    },
+    {
+      "name": "States 2025 Financing Cash Flow is any value other than -$3,483 million (ver_f13d265827e44aa1b3dae0fa07458886)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2025 Financing Cash Flow is any value other than -$3,483 million."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-115-cp-04-1d717506"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_1d717506c7c147adb3628b03dd7c5f87",
+    "task_name": "world 115_cp_04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_e13ef45f6db746bca215046a29cc05e6",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_2a1db265bd6945f3a06316902ebbbc83"
+      },
+      {
+        "golden_response_id": "gold_6970db8e0c38490497bdb5a4cf7b2dc6",
+        "golden_text_response": "See file",
+        "golden_file_responses": "snap_2a1db265bd6945f3a06316902ebbbc83"
+      }
+    ]
+  }
+}

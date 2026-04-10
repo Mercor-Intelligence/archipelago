@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Make the following changes to the RAMBUS vs SLAB analysis:\n1.\tUpdate the % cash consideration to 15%\n2.\tUpdate the % SG&A Synergies to 50%\n3.\tUpdate the Advisory Fees to 0.5%\n4.\tIn the Pro Forma Expected Combined Valuation calculation, replace the Bidder’s EV/EBITDA multiple with a weighted average of the EV/EBITDA multiples for RMBS and SLAB (Similar to the way the weighted average EV/EBITDA Multiple has been calculated in the MTSI and ONTO Merger analysis). However, for SLAB, instead of using its implied EV/EBITDA, use the average EV/TTM EBITDA multiple of the following peer group: ADI, MCHP, and NXPI.\n5.\tFor each peer, use their enterprise value and trailing twelve months (TTM) EBITDA as reported in the most recent quarter available as of January 3, 2026.\n6.\tOutput to 2 decimal places\na.\t% Value Accretion /(Dilution) to RMBS Shareholders\nb.\t % Value Accretion /(Dilution) to SLAB Shareholders "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the % Value Accretion /(Dilution) to RMBS Shareholders is -30.96%... (ver_a1e864ef36694f03b9242f2795b0043f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the % Value Accretion /(Dilution) to RMBS Shareholders is -30.96% (acceptable range -31.27% to -30.65%)."
+        }
+      ]
+    },
+    {
+      "name": "States the % Value Accretion /(Dilution) to SLAB Shareholders is -11.58%... (ver_83d8250fc2a0429e9deea14bbc24889e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the % Value Accretion /(Dilution) to SLAB Shareholders is -11.58% (acceptable range -11.70% to -11.46%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world248-oa-task04-1df3a72a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_1df3a72a8d7647f480a94a4f241f5be8",
+    "task_name": "World248_OA_Task04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d32e8bd59b614271b975bfe37c33f1cc",
+        "golden_text_response": "% Value Accretion /(Dilution) to RMBS Shareholders: -30.96%\n% Value Accretion /(Dilution) to SLAB Shareholders : -11.58%\n",
+        "golden_file_responses": "snap_20228d59900b4cae97993609cc175f44"
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Calculate the 2023 'Adjusted Statutory-to-Actual Tax Variance' for Redwood Components. Reconcile the 'Reported DTA' found on the Control & Assumptions sheet as the opening balance against the 'Net TI Increase' from the Taxable Income Bridge as the period movement. Use the statutory combined state and federal tax rate. Provide the final variance rounded to two decimal places"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the 2023 'Adjusted Statutory-to-Actual Tax Variance' for Redwood... (ver_5bd44a6b36d24dc0857430e97a35ee64)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 2023 'Adjusted Statutory-to-Actual Tax Variance' for Redwood Components is $1,960,582.86 (acceptable range $1,940,977.03 to $1,980,188.69)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh accounting-801-sp-task-1-ef1bde01"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_ef1bde0186dd4f87a38f08653df3667b",
+    "task_name": "Accounting 801 SP Task 1",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_2ae6c80c983c4f0980ba77cb89eb3bf9",
+        "golden_text_response": "The 2023 Adjusted Statutory-to-Actual Tax Variance for Redwood Components is $1,960,582.86",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,316 @@
+# Onboard a New Analytics Team
+# Generated for: tableau
+# Scenario: Complete workflow for onboarding a new analytics team including
+#           user creation, project setup, content management, permissions,
+#           and data export
+#
+# Tools exercised: 11 tools across 7 categories
+#   - tableau_list_sites (Sites)
+#   - tableau_create_user (Users)
+#   - tableau_create_group (Groups)
+#   - tableau_create_project (Projects)
+#   - tableau_create_workbook (Workbooks)
+#   - tableau_create_datasource (Datasources)
+#   - tableau_create_workbook_connection (Workbooks)
+#   - tableau_add_user_to_group (Groups)
+#   - tableau_grant_permission (Permissions)
+#   - tableau_list_views (Views)
+#   - tableau_query_view_data_to_file (Views)
+#
+# This runbook uses variable capture to chain tool outputs.
+# IDs are automatically captured from responses and used in subsequent steps.
+
+url: http://localhost:3000
+
+output: screenshots
+
+defaults:
+  server: tableau-tableau
+
+steps:
+  # ============================================================
+  # PHASE 0: Reset database to clean state
+  # ============================================================
+  # Clear any leftover data from previous runs (auto-reseeds via init_db)
+  - SelectTool:
+      tool: clear_database
+      category: Database
+  - FillToolParam:
+      params:
+        mode: truncate
+        confirm: true
+  - ExecuteTool
+  - Wait: 500
+
+  # ============================================================
+  # PHASE 1: Discovery - Find the site we'll work with
+  # ============================================================
+
+  # Step 1: Initial view - show the MCP UI
+  - TakeScreenshot
+
+  # Step 2: List available sites to get site_id
+  - SelectTool:
+      tool: list_sites
+      category: Sites
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 3: Execute list sites and capture the first site's ID
+  - ExecuteTool:
+      capture:
+        site_id: $.sites[0].id
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # ============================================================
+  # PHASE 2: Create base resources (no dependencies except site_id)
+  # ============================================================
+
+  # Step 4: Create the team lead user
+  - SelectTool:
+      tool: create_user
+      category: Users
+  - FillToolParam:
+      params:
+        site_id: "{{ site_id }}"
+        name: marketing.lead
+        email: marketing.lead@example.com
+        site_role: Creator
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 5: Execute user creation and capture user_id
+  - ExecuteTool:
+      capture:
+        user_id: $.id
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 6: Create team group
+  - SelectTool:
+      tool: create_group
+      category: Groups
+  - FillToolParam:
+      params:
+        site_id: "{{ site_id }}"
+        name: Marketing Analytics Team
+        description: Access group for the Marketing Analytics team
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 7: Execute group creation and capture group_id
+  - ExecuteTool:
+      capture:
+        group_id: $.id
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # ============================================================
+  # PHASE 3: Create project (needs user_id as owner)
+  # ============================================================
+
+  # Step 8: Create the team project
+  - SelectTool:
+      tool: create_project
+      category: Projects
+  - FillToolParam:
+      params:
+        site_id: "{{ site_id }}"
+        name: Marketing Analytics
+        description: Analytics workspace for the Marketing team
+        owner_id: "{{ user_id }}"
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 9: Execute project creation and capture project_id
+  - ExecuteTool:
+      capture:
+        project_id: $.id
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # ============================================================
+  # PHASE 4: Create content (needs project_id and user_id)
+  # ============================================================
+
+  # Step 10: Create workbook
+  - SelectTool:
+      tool: create_workbook
+      category: Workbooks
+  - FillToolParam:
+      params:
+        site_id: "{{ site_id }}"
+        name: Campaign Performance Dashboard
+        project_id: "{{ project_id }}"
+        owner_id: "{{ user_id }}"
+        description: Monthly campaign performance metrics
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 11: Execute workbook creation and capture workbook_id
+  - ExecuteTool:
+      capture:
+        workbook_id: $.id
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 12: Create datasource
+  - SelectTool:
+      tool: create_datasource
+      category: Datasources
+  - FillToolParam:
+      params:
+        site_id: "{{ site_id }}"
+        name: Marketing Campaign Data
+        project_id: "{{ project_id }}"
+        owner_id: "{{ user_id }}"
+        connection_type: postgres
+        description: Marketing campaign metrics from the data warehouse
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 13: Execute datasource creation and capture datasource_id
+  - ExecuteTool:
+      capture:
+        datasource_id: $.id
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 14: Link workbook to datasource
+  - SelectTool:
+      tool: create_workbook_connection
+      category: Workbooks
+  - FillToolParam:
+      params:
+        site_id: "{{ site_id }}"
+        workbook_id: "{{ workbook_id }}"
+        datasource_id: "{{ datasource_id }}"
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 15: Execute connection creation
+  - ExecuteTool
+  - Wait: 1500
+
+  # ============================================================
+  # PHASE 5: Configure access (needs user_id, group_id, project_id)
+  # ============================================================
+
+  # Step 16: Add user to group
+  - SelectTool:
+      tool: add_user_to_group
+      category: Groups
+  - FillToolParam:
+      params:
+        site_id: "{{ site_id }}"
+        group_id: "{{ group_id }}"
+        user_id: "{{ user_id }}"
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 17: Execute add user to group
+  - ExecuteTool
+  - Wait: 1500
+
+  # Step 18: Grant project permissions to the group
+  - SelectTool:
+      tool: grant_permission
+      category: Permissions
+  - FillToolParam:
+      params:
+        site_id: "{{ site_id }}"
+        resource_type: project
+        resource_id: "{{ project_id }}"
+        grantee_type: group
+        grantee_id: "{{ group_id }}"
+        capability: Write
+        mode: Allow
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 19: Execute permission grant
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # ============================================================
+  # PHASE 6: Export data (demonstrate file export functionality)
+  # ============================================================
+
+  # Step 20: List available views to find the demo view
+  - SelectTool:
+      tool: list_views
+      category: Views
+  - FillToolParam:
+      params:
+        site_id: "{{ site_id }}"
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 21: Execute list views and capture the demo view's ID
+  - ExecuteTool:
+      capture:
+        view_id: $.views[0].id
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 22: Export view data to CSV file
+  - SelectTool:
+      tool: query_view_data_to_file
+      category: Views
+  - FillToolParam:
+      params:
+        site_id: "{{ site_id }}"
+        view_id: "{{ view_id }}"
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 23: Execute view data export
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 24: Go to Files page to view the exported CSV
+  - Goto: http://localhost:3000/files
+  - Wait: 1500
+  - TakeScreenshot:
+      max_height: 800

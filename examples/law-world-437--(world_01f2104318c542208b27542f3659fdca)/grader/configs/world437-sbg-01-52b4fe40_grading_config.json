@@ -1,0 +1,330 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_1cda303e2a334657b6e3be8de22c6967",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_52b4fe40e549437a9242603dfd9daab1",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States a Total Claim discrepancy range of 1,405,600 to 555,600",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "SBP Delay and Damages Report.V2.docx\u00a0Total Claim Range $1.47M \u2013 $2.32M\nIndependent Damages Report - Hired Expert.docx\u00a0Total Claim $2,875,600 \nTotal Claim Range discrepancy = 1,405,600 ($2,875,600 - $1.47M) to 555,600 ($2,875,600 - $2.32M) ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_54f32dbf3e4540af8429b34b68f3e90b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_52b4fe40e549437a9242603dfd9daab1",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States an Extended General Conditions discrepancy range of 703,200 to 453,200",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "SBP Delay and Damages Report.V2.docx\u00a0Extended General Conditions range estimate 400,000-650,000\nIndependent Damages Report - Hired Expert.docx Extended General Conditions estimate\u00a01,103,200\nTotal discrepancy = 703,200 (1,103,200 - 400,000) to 453,200 (1,103,200-650,000) ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_902626867b554e7d8963af7cfc029ad4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_52b4fe40e549437a9242603dfd9daab1",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States a Rework & Replacement discrepancy range of 260,480 to 50,480",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "SBP Delay and Damages Report.V2.docx\u00a0Rework & Replacement range estimate 560,000-770,000\nIndependent Damages Report - Hired Expert.docx Rework & Replacement estimate 820,480\nTotal discrepancy =  260,480 (820,480 - 560,000) to 50,480 (820,480-770,000) ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6fd6137c86534697bac7ea6a9691de0a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_52b4fe40e549437a9242603dfd9daab1",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States a Fraudulent Invoicing discrepancy of 241,340 (acceptable range 238,927 to 243,753)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "SBP Delay and Damages Report.V2.docx\u00a0N/A\t(the in-house document does not contain a category for Fraudulent Invoicing \nIndependent Damages Report - Hired Expert.docx Fraudulent Invoicing claim estimate 241,340\t\nTotal discrepancy =  241,340",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_86917b7013f14c1ea8f765f4c6b542ad",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_52b4fe40e549437a9242603dfd9daab1",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States a Labor Inefficiency discrepancy range of 55,080 to -4,920 (acceptable range 54,529 to 55,631)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "SBP Delay and Damages Report.V2.docx\u00a0Labor Inefficiency 90,000-150,000 estimate \nIndependent Damages Report - Hired Expert.docx Labor Inefficiency 145,080 estimate \nTotal discrepancy =  55,080 (145,080 - 90,000) to -4,920 (145,080 - 150,000) ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_36a5391691d44c008058c83fe6ac04db",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_52b4fe40e549437a9242603dfd9daab1",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States an Insurance & OSHA Costs discrepancy range of 205,900 to 115,900",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "SBP Delay and Damages Report.V2.docx\u00a0Insurance & OSHA Costs range 145,000-235,000\t\nIndependent Damages Report - Hired Expert.docx Insurance & OSHA Costs estimate 350,900\t\nTotal Insurance & OSHA Costs discrepancy 205,900 (350,900 - 145,000) to 115,900 (350,900 - 235,000) ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1f04ee01db0441c298a4457af16c226b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_52b4fe40e549437a9242603dfd9daab1",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States an Investigative/QA Costs discrepancy range of -35,000 to -75,000 (acceptable range -35,350 to -34,650)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "SBP Delay and Damages Report.V2.docx\u00a0Investigative/QA Costs range 35,000-75,000\nIndependent Damages Report - Hired Expert.docx Investigative/QA Costs N/A, not referenced in file \nTotal Investigative/QA Costs discrepancy -35,000 (0-35,000) to -75,000 (0-75,000)",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b67f2ade06e143e793e4697dd63f5fd5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_52b4fe40e549437a9242603dfd9daab1",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States a Home Office Overhead discrepancy range of -140,000 to -190,000 (acceptable range -141,400 to -138,600)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "SBP Delay and Damages Report.V2.docx\u00a0Home Office Overhead range 140,000-190,000\nIndependent Damages Report - Hired Expert.docx Home Office Overhead N/A, not referenced in file \nTotal Home Office Overhead discrepancy -140,000 (0-140,000) to -190,000 (0-190,000) ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8026255442914369be9907df7b8c5f8a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_52b4fe40e549437a9242603dfd9daab1",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States an Acceleration/Liquidated Damages Exposure discrepancy range of 114,600 to -35,400 (acceptable range 113,454 to 115,746)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "SBP Delay and Damages Report.V2.docx\u00a0Acceleration/Liquidated Damages range 100,000-250,000\nIndependent Damages Report - Hired Expert.docx Acceleration/Liquidated Damages estimate 214,600 \nTotal Investigative/QA Costs discrepancy 114,600 (214,600 - 100,000) to -35,400 (214,600 - 250,000) ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ebce823d57c0472fbd618f7e955dcbab",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_52b4fe40e549437a9242603dfd9daab1",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Creates a \"Notes\" column for Extended General Conditions, as the category with the largest discrepancy",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "EXTENDED GENERAL CONDITIONS category has a total discrepancy of 703,200-453,200, which is the largest discrepancy as compared between the two reports. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_38a74313353a44439ccb068a9b7af2e4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_52b4fe40e549437a9242603dfd9daab1",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the fact that the in-house report calculates damages delays of 100 days (acceptable range 99.0 to 101)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "See SBP Delay and Damages Report.V2.docx. This is a reason for the discrepancy between the two compared values. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a40af6c85a8d444e87cbb2d5fb150d69",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_52b4fe40e549437a9242603dfd9daab1",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the fact that the in-house report calculates damages delays at a range of $4,000-$6,500/day (acceptable range $3,960 to $4,040)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "See SBP Delay and Damages Report.V2.docx. This is a reason for the discrepancy between the two compared values. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c771c05213d54eae8e196cbbbdd9e675",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_52b4fe40e549437a9242603dfd9daab1",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the fact that the hired expert report calculates damages delays of 112 days (acceptable range 111 to 113)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "See Independent Damages Report - Hired Expert.docx .This is a reason for the discrepancy between the two compared values. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_457ce2f925d942a68b880206f2b29ce8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_52b4fe40e549437a9242603dfd9daab1",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the fact that the hired expert report calculates damages delays at a rate of $9,850/day (acceptable range $9,752 to $9,948)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "See Independent Damages Report - Hired Expert.docx. This is a reason for the discrepancy between the two compared values. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

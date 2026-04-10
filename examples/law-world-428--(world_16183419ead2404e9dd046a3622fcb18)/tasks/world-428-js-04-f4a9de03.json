@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Citizens for Open Spaces (the \"Plaintiff\") has filed a California Environmental Quality Act complaint against the City of San Dimas (the \"City\") seeking to set aside the City's approval of a Disposition and Development Agreement between the City and Liverbird Development Co. without first completing an environmental impact report (EIR) for the project. The court ruled in favor of the City and the Plaintiff appealed. During the pendency of the appeal, the City approved a final EIR for the project and minor work on the project has begun. Is the Plaintiff's appeal likely now moot? Please provide an answer and explanation."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the approval for the Disposition and Development Agreement for the... (ver_45b81bca877e408a83ed5a8eb2662c72)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the approval for the Disposition and Development Agreement for the project can still be set aside."
+        }
+      ]
+    },
+    {
+      "name": "States that the appeal is likely not moot (ver_33f506761b434c4bb9a49785d65044fb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the appeal is likely not moot."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-428-js-04-f4a9de03"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_f4a9de03d44640699a670f1cfbf2cab0",
+    "task_name": "World_428_JS_04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_2d9e2d2e61de486cb04b2951803258d7",
+        "golden_text_response": "The Appeal is not moot because the approval for the Disposition and Development Agreement for the project can still be set aside.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

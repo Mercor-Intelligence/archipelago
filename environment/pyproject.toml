@@ -37,6 +37,9 @@ dev = [
     "types-aiobotocore-s3>=2.24.3",
 ]
 
+[tool.uv]
+exclude-newer = "7 days"
+
 [tool.basedpyright]
 typeCheckingMode = "recommended"
 reportUnusedCallResult = "none"
@@ -65,3 +68,4 @@ max-complexity = 15
 [tool.ruff.lint.flake8-bugbear]
 # FastAPI uses function calls as defaults for dependency injection - this is by design
 extend-immutable-calls = ["fastapi.File", "fastapi.Query", "fastapi.Depends", "fastapi.Form"]
+

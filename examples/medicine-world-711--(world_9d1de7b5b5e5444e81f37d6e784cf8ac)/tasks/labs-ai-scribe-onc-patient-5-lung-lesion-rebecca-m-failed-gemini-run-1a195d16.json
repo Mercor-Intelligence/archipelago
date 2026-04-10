@@ -1,0 +1,353 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_patient_5” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes. Additional patient information can be found in the filesystem.\n\n-----\n\nPrompt: Oncology patient 5 presents for a routine oncology appointment. His usual consultant has recently retired, and a new clinician will assume his care. The patient raises concerns about his kidneys and lungs. \n\n1. Please clarify any points of confusion the patient noted regarding tumor involvement in his kidneys.\n2. The patient undergoes a lung biopsy of the lung lesion noted on imaging. Please explain how the lung pathology results might alter the stage of the rectal tumor, if applicable."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient believes the tumor has grown into the kidneys. (ver_d1f7d56369c140f5aa966350385eebc2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient believes the tumor has grown into the kidneys."
+        }
+      ]
+    },
+    {
+      "name": "States that there is no evidence of renal involvement by tumor on imaging. (ver_8f4b773c15e441859054f8dbd47706a9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that there is no evidence of renal involvement by tumor on imaging."
+        }
+      ]
+    },
+    {
+      "name": "States that there is ureter damage as a side-effect of radiation therapy. (ver_6caa0a49401f4f53ab91933cc0952175)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that there is ureter damage as a side-effect of radiation therapy."
+        }
+      ]
+    },
+    {
+      "name": "Concludes that the patient should be informed about no tumor involvement in... (ver_31be5e7897a7499f89d3eb0f339d9303)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Concludes that the patient should be informed about no tumor involvement in the kidneys."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's lung biopsy shows a tumor composed of cells with... (ver_937aaabf67c348dba59f6a286bae5db9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's lung biopsy shows a tumor composed of cells with finely granular chromatin."
+        }
+      ]
+    },
+    {
+      "name": "Explains that tumor cells with finely granular chromatin are a feature of lung... (ver_fd2c1425451040d0bd037ed1c7579d11)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Explains that tumor cells with finely granular chromatin are a feature of lung neuroendocrine tumors (NETs)."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's lung tumor is positive for neuroendocrine markers. (ver_893f9473c7c049ef8b13bc5d077e08a9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's lung tumor is positive for neuroendocrine markers."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's lung tumor is positive for pan-cytokeratins. (ver_6196eed638ad423790bd889b47f45d2b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's lung tumor is positive for pan-cytokeratins."
+        }
+      ]
+    },
+    {
+      "name": "Explains that a lung neuroendocrine tumor is associated with a positive stain... (ver_911a7a54dbc6406b8bbcdd2b3fade67a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Explains that a lung neuroendocrine tumor is associated with a positive stain for neuroendocrine markers."
+        }
+      ]
+    },
+    {
+      "name": "Explains that a lung neuroendocrine tumor is associated with a positive stain... (ver_41167cef40834be79b5f3b9132ef34de)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Explains that a lung neuroendocrine tumor is associated with a positive stain for pan-cytokeratins."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's lung tumor is consistent with a neuroendocrine tumor... (ver_4e9ad308ffe44d48a9932e373cc15ce5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's lung tumor is consistent with a neuroendocrine tumor (NET)."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's rectal tumor is a rectal adenocarcinoma. (ver_c350b70749b047f292c5ce6ab041270d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's rectal tumor is a rectal adenocarcinoma."
+        }
+      ]
+    },
+    {
+      "name": "Explains that the patient's lung tumor is a separate entity from the patient's... (ver_802650fc9ce54be7999535502564b4c6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Explains that the patient's lung tumor is a separate entity from the patient's rectal adenocarcinoma."
+        }
+      ]
+    },
+    {
+      "name": "Explains that the patient's lung tumor does not alter the staging of the... (ver_c1314744db8a481b9ce413c419dc2c86)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Explains that the patient's lung tumor does not alter the staging of the patient's rectal tumor."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-ai-scribe-onc-patient-5-lung-lesion-rebecca-m-failed-gemini-run-1a195d16"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_1a195d16757643f48243f4329e4ba476",
+    "task_name": "Labs_AI Scribe_Onc Patient 5 - Lung lesion - Rebecca M (failed Gemini run)",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_64aa179b0ffa4a9a8ce2206a1c742fa5",
+        "golden_text_response": "1. Please clarify any points of confusion noted by the patient in relation to tumor involvement within his kidneys.\n- During the consultation, the patient comments that \"I was told something about tumor growing into my kidneys\".\n- Recent clinical notes state that the patient has suffered ureteric damage as a side effect of radiation therapy. \n- Recent imaging confirms no evidence of tumor within the patient's kidneys. \n- The patient should be reassured that there is no tumor involvement within his kidneys. \n\n2. The patient undergoes a lung biopsy for the lesion noted in his lung on imaging. Please explain how the pathology results of this biopsy (attached) alter the stage of the rectal tumor, if applicable. \n- The lung biopsy shows a tumor composed of cells with finely granular chromatin with positive staining for pan-cytokeratins, synaptophysin, and CD56. These features are characteristic of pulmonary neuroendocrine tumors (NETs). \n- A biopsy from this patient's rectal tumor performed previously confirmed rectal adenocarcinoma. \n- Therefore, the lung tumor is a separate entity from the rectal tumor and will be staged separately - the staging of the rectal carcinoma is not changed.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

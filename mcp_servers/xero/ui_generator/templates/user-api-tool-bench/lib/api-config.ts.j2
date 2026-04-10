@@ -1,0 +1,136 @@
+// AUTO-GENERATED - DO NOT EDIT MANUALLY
+// Generated from MCP servers: {{ servers | map(attribute='name') | join(', ') }}
+// Generation timestamp: {{ generation_time }}
+
+export interface DataType {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  icon?: string;
+  server: string;
+  _internal: {
+    method: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
+    url: string;
+    requiresAuth: boolean;
+  };
+  parameters?: {
+    name: string;
+    label: string;
+    type: 'string' | 'number' | 'boolean' | 'date' | 'datetime' | 'array' | 'object';
+    required: boolean;
+    description: string;
+    placeholder?: string;
+    location: 'query' | 'body' | 'header' | 'path';
+    minLength?: number;
+    maxLength?: number;
+    min?: number;
+    max?: number;
+    enum?: string[];
+    enumDescriptions?: Record<string, string>;
+    pattern?: string;
+    jsonExample?: string;
+    isJsonField?: boolean;
+    default?: any;
+  }[];
+}
+
+export const dataTypes: DataType[] = [
+{% for tool in tools %}
+  {
+    id: '{{ tool.id }}',
+    name: '{{ tool.name }}',
+    category: '{{ tool.category }}',
+    description: {{ tool.description | tojson }},
+    {% if tool.icon %}icon: '{{ tool.icon }}',{% endif %}
+    server: '{{ tool.server }}',
+    _internal: {
+      method: '{{ tool._internal.method }}',
+      url: '{{ tool._internal.url }}',
+      requiresAuth: {{ tool._internal.requiresAuth | lower }},
+    },
+    {% if tool.parameters %}
+    parameters: [
+    {% for param in tool.parameters %}
+      {
+        name: '{{ param.name }}',
+        label: '{{ param.label }}',
+        type: '{{ param.type }}',
+        required: {{ param.required | lower }},
+        description: {{ param.description | tojson }},
+        {% if param.placeholder %}placeholder: '{{ param.placeholder }}',{% endif %}
+        location: '{{ param.location }}',
+        {% if param.minLength is defined %}minLength: {{ param.minLength }},{% endif %}
+        {% if param.maxLength is defined %}maxLength: {{ param.maxLength }},{% endif %}
+        {% if param.min is defined %}min: {{ param.min }},{% endif %}
+        {% if param.max is defined %}max: {{ param.max }},{% endif %}
+        {% if param.enum %}enum: {{ param.enum | tojson }},{% endif %}
+        {% if param.pattern %}pattern: '{{ param.pattern }}',{% endif %}
+        {% if param.isJsonField %}isJsonField: {{ param.isJsonField | lower }},{% endif %}
+        {% if param.jsonExample %}jsonExample: `{{ param.jsonExample }}`,{% endif %}
+        {% if param.default is defined %}default: {{ param.default | tojson }},{% endif %}
+      },
+    {% endfor %}
+    ],
+    {% endif %}
+  },
+{% endfor %}
+];
+
+export function getDataTypeById(id: string): DataType | undefined {
+  return dataTypes.find(dt => dt.id === id);
+}
+
+export function getDataTypesByCategory(): Record<string, DataType[]> {
+  return dataTypes.reduce((acc, dt) => {
+    if (!acc[dt.category]) {
+      acc[dt.category] = [];
+    }
+    acc[dt.category].push(dt);
+    return acc;
+  }, {} as Record<string, DataType[]>);
+}
+
+export function getDataTypesByServer(): Record<string, DataType[]> {
+  return dataTypes.reduce((acc, dt) => {
+    if (!acc[dt.server]) {
+      acc[dt.server] = [];
+    }
+    acc[dt.server].push(dt);
+    return acc;
+  }, {} as Record<string, DataType[]>);
+}
+
+// Sample Data for Database Tables
+export interface SampleDataTable {
+  tableName: string;
+  modelName: string;
+  description: string;
+  rowCount: number;
+  csvContent: string;
+  server: string;
+}
+
+export const sampleDataTables: SampleDataTable[] = [
+{% for table in sample_data_tables %}
+  {
+    tableName: '{{ table.tableName }}',
+    modelName: '{{ table.modelName }}',
+    description: {{ table.description | tojson }},
+    rowCount: {{ table.rowCount }},
+    csvContent: `{{ table.csvContent | replace('`', '\\`') | replace('\\', '\\\\') }}`,
+    server: '{{ table.server }}',
+  },
+{% endfor %}
+];
+
+export function getSampleDataByServer(): Record<string, SampleDataTable[]> {
+  return sampleDataTables.reduce((acc, table) => {
+    if (!acc[table.server]) {
+      acc[table.server] = [];
+    }
+    acc[table.server].push(table);
+    return acc;
+  }, {} as Record<string, SampleDataTable[]>);
+}
+

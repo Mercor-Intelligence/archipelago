@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "I'm preparing a report on device upgrade patterns for our finance team, using our historical transaction data which reportedly contains some data recording inconsistencies from the legacy system migration. They want to understand how quickly customers are adopting newly released devices to help with inventory planning.\n\nFor all smartphone purchases made in 2024 and 2025, calculate the average number of days between when each device model was released and when customers actually purchased it. Also report the 75th percentile adoption lag to identify when the bulk of early adoption has occurred, and the count of distinct device models that had at least 10 purchases during this period. These metrics will inform us about typical adoption lag from official availability and help forecast future release cycles.\n\nUse the tables device_purchases and devices for this analysis (join on device_id), and round the average and percentile to the nearest whole number of days. Provide your full SQLite query and the final results."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports average number of days between device release and customer purchase as... (ver_3bb1a3596a4e4a2a91b6d98ece736074)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports average number of days between device release and customer purchase as 709 (strict threshold)."
+        }
+      ]
+    },
+    {
+      "name": "Reports 75th percentile adoption lag as 896 days (strict threshold) (ver_f21c3e9bd87c4d78badef003e225639c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports 75th percentile adoption lag as 896 days (strict threshold)."
+        }
+      ]
+    },
+    {
+      "name": "Reports count of distinct device models with at least 10 purchases as 33... (ver_9987aa36c4724dd1988a61037b7839b0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports count of distinct device models with at least 10 purchases as 33 (strict threshold)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sql-task-ahow0cf2-5b3becd9"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_5b3becd9a0c540e0b3594ccde6f4b8d8",
+    "task_name": "SQL - Task ahow0cf2",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_158d4e1421ed41e997658c464521aa5a",
+        "golden_text_response": "avg_adoption_lag_days\n709\n\npercentile_75_adoption_lag_days\n896\n\ndevice_models_with_10plus_purchases\n33\n\n``` sql \n\n\nWITH valid_purchases AS (\n    SELECT\n        dp.purchase_id,\n        dp.device_id,\n        dp.purchase_date,\n        d.release_date,\n        julianday(dp.purchase_date) - julianday(d.release_date) AS adoption_lag_days\n    FROM device_purchases dp\n    JOIN devices d ON dp.device_id = d.device_id\n    WHERE d.device_type = 'smartphone'\n      AND strftime('%Y', dp.purchase_date) IN ('2024', '2025')\n      AND julianday(dp.purchase_date) >= julianday(d.release_date)\n),\ndevice_volume AS (\n    SELECT\n        device_id,\n        COUNT(*) AS purchase_count\n    FROM valid_purchases\n    GROUP BY device_id\n    HAVING COUNT(*) >= 10\n)\nSELECT\n    ROUND(AVG(vp.adoption_lag_days)) AS avg_adoption_lag_days,\n    (\n        SELECT ROUND(adoption_lag_days)\n        FROM valid_purchases\n        ORDER BY adoption_lag_days\n        LIMIT 1 OFFSET (SELECT CAST(COUNT(*) * 0.75 AS INTEGER) FROM valid_purchases)\n    ) AS percentile_75_adoption_lag_days,\n    (SELECT COUNT(*) FROM device_volume) AS device_models_with_10plus_purchases\nFROM valid_purchases vp;\n\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_1dde9b88fd0a453baec5fdffee1ba639",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b5360652480744329e647150ae128a12",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Provides the main job of the Legislative branch -- \"Makes the laws.\"",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "The 3 Branches.pptx",
+            "source": "task",
+            "snapshotId": "snap_42a5bad6bd5e4846a9d7301e3bc4d033"
+          },
+          {
+            "name": "Worksheets /NS - ESL-Understanding the U.S. Government .pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_972dba6579be482b828f4a825cf06a6a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b5360652480744329e647150ae128a12",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Provides the key parts of the Legislative branch -- Congress (Senate & House of Representatives)",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "The 3 Branches.pptx",
+            "source": "task",
+            "snapshotId": "snap_42a5bad6bd5e4846a9d7301e3bc4d033"
+          },
+          {
+            "name": "Worksheets /NS - ESL-Understanding the U.S. Government .pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b62536e56949440aa44a131508195d15",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b5360652480744329e647150ae128a12",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "Mentions the Executive branch in slide 3 of The 3 Branches.pptx deck",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "The 3 Branches.pptx",
+            "source": "task",
+            "snapshotId": "snap_42a5bad6bd5e4846a9d7301e3bc4d033"
+          },
+          {
+            "name": "Worksheets /NS - ESL-Understanding the U.S. Government .pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bc20ce264c8d4750ad2ee4396656c173",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b5360652480744329e647150ae128a12",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides the main job of the Executive branch -- \"Carries out the laws\"",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "The 3 Branches.pptx",
+            "source": "task",
+            "snapshotId": "snap_42a5bad6bd5e4846a9d7301e3bc4d033"
+          },
+          {
+            "name": "Worksheets /NS - ESL-Understanding the U.S. Government .pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dec304fc1dff404b8e06735e5f693b61",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b5360652480744329e647150ae128a12",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "Provides the key parts of the Executive branch -- \"President, Vice President, Cabinet\"",
+        "modality": "Free text",
+        "negative_criteria": "Provides the key parts of the Executive branch without mentioning the President, Vice President, and Cabinet.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "The 3 Branches.pptx",
+            "source": "task",
+            "snapshotId": "snap_42a5bad6bd5e4846a9d7301e3bc4d033"
+          },
+          {
+            "name": "Worksheets /NS - ESL-Understanding the U.S. Government .pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8d4de9433a9848ec80b122ee3a9aa426",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b5360652480744329e647150ae128a12",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "Mentions the Judicial branch in slide 4 of The 3 Branches.pptx deck",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "The 3 Branches.pptx",
+            "source": "task",
+            "snapshotId": "snap_42a5bad6bd5e4846a9d7301e3bc4d033"
+          },
+          {
+            "name": "Worksheets /NS - ESL-Understanding the U.S. Government .pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0a3f35eabd1a420384e6ec7c63c548a2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b5360652480744329e647150ae128a12",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "Provides the main job of the Judicial branch -- \"Interprets the laws\"",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "The 3 Branches.pptx",
+            "source": "task",
+            "snapshotId": "snap_42a5bad6bd5e4846a9d7301e3bc4d033"
+          },
+          {
+            "name": "Worksheets /NS - ESL-Understanding the U.S. Government .pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_334a224ee423443c9667836fd7773c1e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b5360652480744329e647150ae128a12",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "Provides the key parts of the Judicial branch -- \"Supreme Court and other federal courts\"",
+        "modality": "Free text",
+        "negative_criteria": "Provides the key parts of the Judicial branch without mentioning the Supreme Court and other federal courts.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "The 3 Branches.pptx",
+            "source": "task",
+            "snapshotId": "snap_42a5bad6bd5e4846a9d7301e3bc4d033"
+          },
+          {
+            "name": "Worksheets /NS - ESL-Understanding the U.S. Government .pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    },
+    {
+      "eval_config_id": "72d7d96a-9d94-4a38-bbe3-96c08ded727c",
+      "eval_config_name": "Content Length Check Verifier",
+      "eval_defn_id": "content_length_check",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

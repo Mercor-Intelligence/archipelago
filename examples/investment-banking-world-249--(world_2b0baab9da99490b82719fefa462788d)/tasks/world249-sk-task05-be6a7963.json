@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Calculate using the model the total enterprise value (TEV) using the terminal value – growth in perpetuity approach for S&P Global (consolidated entity) under the following assumptions:\n•\tSet the interest rate for the Senior Notes due 2030 equal to the 1‑month U.S. Treasury yield as of December 31, 2025 plus a 0.5% pricing spread.\n•\tSet the interest rate for the Senior Notes due 2032 equal to the 1‑month U.S. Treasury yield as of December 31, 2025 plus a 1.0% pricing spread.\n•\tSet the interest rate for the Senior Notes due 2033 equal to the 1‑month U.S. Treasury yield as of December 31, 2025 plus a 1.25% pricing spread.\n•\tSet the interest rate for the Senior Notes due 2037 equal to the 1‑month U.S. Treasury yield as of December 31, 2025 plus a 1.5% pricing spread.\n•\tApply mid year convention\n\nPresent the result in USD millions, rounded to the nearest dollar."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that Total Enterprise value (EV) - growth in perpetuity approach is... (ver_0e5828bc146f4c4ab7c6e1f228f709ff)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Total Enterprise value (EV) - growth in perpetuity approach is $140,400 million (acceptable range $138,996 to $141,804)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world249-sk-task05-be6a7963"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_be6a7963369d4c558b3bfb80a8f3805e",
+    "task_name": "World249_SK_Task05",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_da93ad6b4aa84fadbf915f636ba2e424",
+        "golden_text_response": "Total Enterprise value (EV) - growth in perpetuity approach is $140,400 million",
+        "golden_file_responses": "snap_0aa993470059474bb664b24264673ef4"
+      }
+    ]
+  }
+}

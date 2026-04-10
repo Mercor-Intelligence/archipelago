@@ -1,0 +1,194 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_9a4a5b111c6d49e5a85b5bda07ddc38a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0348667e83f640a3a8240d02ddccbb0b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the #1 ranked overall readiness score is 4.2",
+        "negative_criteria": "States that the #1 ranked overall readiness score is a number other than 4.2.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_96c2c62d0db94906a883975bc7243640",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0348667e83f640a3a8240d02ddccbb0b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the #2 ranked overall readiness score is 4.1",
+        "negative_criteria": "States that the #2 ranked overall readiness score is a number other than 4.1.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_56a6fa8aa5b14dfd9b589feda967649a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0348667e83f640a3a8240d02ddccbb0b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the #3 ranked overall readiness score is 4.0",
+        "negative_criteria": "States that the #3 ranked overall readiness score is a number other than 4.0.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_293c7d3f9fb242d5958962f9ccb7f243",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0348667e83f640a3a8240d02ddccbb0b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the third lowest readiness scores is 3.9",
+        "negative_criteria": "States that the third lowest readiness scores is a value other than 3.9.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9fbcf0f54fa54fefbcc7872e18d4e1e9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0348667e83f640a3a8240d02ddccbb0b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the second lowest overall readiness scores is 3.3",
+        "negative_criteria": "States that the second lowest overall readiness scores is a value other than 3.3.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_349baf29ca91418eb658e7f5704a2b1d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0348667e83f640a3a8240d02ddccbb0b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the lowest overall readiness scores is 2.9",
+        "negative_criteria": "States that the lowest overall readiness scores is a value other than 2.9.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_834c21476eaa43988340d036a4b18f01",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0348667e83f640a3a8240d02ddccbb0b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the weighted average overall readiness score for the Engagement Manager\u2019s assessment is 3.7 (acceptable range 3.66 to 3.74)",
+        "negative_criteria": "States that the weighted average overall readiness score for the Engagement Manager\u2019s assessment is a number other than 3.7.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_02d5b0fb44e1402e9d3e479dc35b9ccd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0348667e83f640a3a8240d02ddccbb0b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the weighted average overall readiness score for the associate\u2019s original assessment is 3.5 (acceptable range 3.46 to 3.54)",
+        "negative_criteria": "States that the weighted average overall readiness score for the associate\u2019s original assessment is a number other than 3.5.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_61e2e08ee90740a795aa1b6f7460678a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0348667e83f640a3a8240d02ddccbb0b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that absolute value change in the weighted average readiness scores between the associate\u2019s assessment and the engagement manager\u2019s new assessment is 0.2 (acceptable range 0.198 to 0.202)",
+        "negative_criteria": "States that absolute value change in the weighted average readiness scores between the associate\u2019s assessment and the engagement manager\u2019s new assessment is a number other than 0.2.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

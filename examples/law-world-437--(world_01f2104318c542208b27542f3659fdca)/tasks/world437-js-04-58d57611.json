@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The Occupational Safety and Health Administration (OSHA) attempted to contact Anthony Porter to conduct a screening interview about the whistleblower complaint he filed. Since they could not reach Anthony after making two phone calls during different times of the day, OSHA administratively closed the case and sent him a letter (via certified mail dated November 8, 2025) informing Anthony of the case’s closure with instructions on how to continue pursuing the complaint. Anthony did not contact OSHA with his desire to pursue the complaint until December 3, 2025. Did Anthony Porter timely inform OSHA that he desired to continue to pursue the complaint? Provide an explanation."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that Anthony Porter contacted OSHA before the expiration of the... (ver_4a0e16b7649d45eba3e7d80fc2ff17fc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Anthony Porter contacted OSHA before the expiration of the statutory filing period for his orginal whistleblower complaint."
+        }
+      ]
+    },
+    {
+      "name": "States that Anthony Porter's contact with OSHA stating his desire to pursue... (ver_85472409be894634a67a7126f976eb45)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Anthony Porter's contact with OSHA stating his desire to pursue the complaint was timely."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world437-js-04-58d57611"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_58d57611943749a0b631f3dfd546f504",
+    "task_name": "World437_JS_04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_aceb071e8f7f4faa8a82b5d27915f1d9",
+        "golden_text_response": "Anthony Porter's contact with OSHA stating his desire to pursue the complaint was timely because he contacted OSHA before the expiration of the statutory filing period for his original whistleblower complaint. ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "While shortlisting candidates, a team member identified that the location address being displayed in the application data (applications table sheet & the expanded candidate list info sheet) is not of their home location, but of their university. Since interviews for each candidate need to be planned with an interviewer in the same time zone (for which the interviewer-interviewee mapping was confirmed), can you tell me how many interviews would not need a location change?\n\nThe correct addresses are attached. Please provide all your answers directly in the console. (Round percentages to 2 decimals)\n\nPlease assume that each country has its own unique and only one time zone & all candidates need to be interviewed. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that based on the comparison of application addresses to the corrected... (ver_2a4a13de142b48779a00ebd9c878fa74)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on the comparison of application addresses to the corrected home addresses, the number of interviews that can stay the same is 6."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-q98s23d7-fc71207e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_fc71207ef9f244e0bacb8e0047e89237",
+    "task_name": "Task q98s23d7",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_bda783fe00a74d9089b782967221e7cf",
+        "golden_text_response": "Based on the comparison of application addresses to the corrected home addresses, a total of 6 interviews would not need to be changed.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

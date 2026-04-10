@@ -1,0 +1,268 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_9ad430117a5d4e49920ba19830fb6b4c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fb52bc0d83c94af1b3b4dc4954cc6d5d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has at least 1 of the following signs or symptoms of heart failure: dyspnea, fatigue, hypoxia.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Doctor: Hi, Ms. Jones. Tell me what\u2019s going on today. \nPatient: Doctor, I\u2019m feeling a bit short of breath and tired all the time. \nDoctor: How long has this been going on? \nPatient: I\u2019ve noticed it for maybe a week or two, but it\u2019s definitely been getting worse over \nthe past few days. I notice it more when I\u2019m going for walks and going up and down stairs. \" - Onc_Patient 9 script1.pdf\n\n\n\"The most commonly reported symptom is shortness of breath. This must be classified as exertional, positional (orthopnea), and acute or chronic. Other commonly reported symptoms of CHF include chest pain, anorexia, and exertional fatigue.\" -https://www.ncbi.nlm.nih.gov/books/NBK430873/\n\n\"Conclusions: Despite receiving optimized medical care, HF patients still experienced mild to moderate hypoxemia.\" - https://onlinejcf.com/article/S1071-9164(17)30452-9/fulltext",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_82f1de613b0c4383a5fda988f02450cc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fb52bc0d83c94af1b3b4dc4954cc6d5d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's echocardiogram shows reduced ejection fraction.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Left Ventricle:\nThe left ventricle is mildly to moderately dilated. Global hypokinesis is present without regional wall motion abnormalities. Left ventricular systolic function is moderately to severely reduced.\n\u2022\tEstimated left ventricular ejection fraction (LVEF): 30\u201335%\n\u2022\tLV end-diastolic dimension: increased\n\u2022\tNo left ventricular hypertrophy\" - \"Onc_Patient 9 echo\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1fa15efa94774868b2b4e032cd8eea13",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fb52bc0d83c94af1b3b4dc4954cc6d5d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the patient's clinical presentation is suggestive of heart failure with reduced ejection fraction.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "See dependencies.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ac59e240b02b49a2a57290dadb944ac0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fb52bc0d83c94af1b3b4dc4954cc6d5d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the patient has a history of treatment with at least one HER2-targeted medication: Trastuzumab, pertuzumab.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"(1) neoadjuvant chemotherapy consisting of carboplatin, docetaxel, trastuzumab and pertuzumab given every 21 days x 6 started 01/26/2021  (2) trastuzumab and pertuzumab to be continued to complete a year (through January 2022)\" - [CLINICALNOTES], Note type - [Progress Notes], Column - [D], Row - [38]\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c8ca3c6354764898ad977f4b995de1b1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fb52bc0d83c94af1b3b4dc4954cc6d5d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that HER2-targeted medications (trastuzumab and pertuzumab) increase the risk of systolic dysfunction.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": " \"Trastuzumab, an anti-ErbB2 monoclonal antibody, reduces cancer recurrence and mortality in HER2-positive breast cancer patients, but unexpectedly induces cardiac dysfunction, especially when used in combination with anthracycline-based chemotherapy. Novel approved ErbB2-targeting drugs, including lapatinib, pertuzumab, and trastuzumab-emtansine, also potentially cause cardiotoxicity, although early clinical studies demonstrate their cardiac safety profile.\" -https://pubmed.ncbi.nlm.nih.gov/31650186/\n\n\"In patients who received trastuzumab in conjunction with paclitaxel, the incidence of cardiac dysfunction was similarly increased (13% versus 1%), although patients experienced a lesser degree of functional impairment.140,141 Subsequent large-scale, randomized, adjuvant clinical trials have demonstrated a significant, but predominantly reversible, cardiotoxic effect that manifests itself as an asymptomatic decline in LVEF.136 In these studies, the reported incidence of severe HF and death was 3% to 4%; symptomatic HF, 2% to 5%; and asymptomatic decline in LVEF, 8% to 14%.141,142 A meta-analysis of 10 281 patients from 8 randomized trials identified a combined RR of 5.11 for HF and 1.83 for LVEF decline.\" -https://www.ahajournals.org/doi/10.1161/CIR.0000000000000426?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed\n\n\"5.1 Left Ventricular Dysfunction\nPERJETA can cause left ventricular dysfunction, including symptomatic heart failure. Decreases in LVEF have been reported with drugs that block HER2 activity, including PERJETA.\" -https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=17f85d17-ab71-4f5b-9fe3-0b8c822f69ff",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dcd0006b3a694d7cb282b1f094f9dfb8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fb52bc0d83c94af1b3b4dc4954cc6d5d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's treatment with HER2-targeted medications was completed 4 years prior to presentation.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The date of presentation is 1/2026. The treatment was completed in 2022.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_86f1ef66452c42de90eb3907e6fcc06e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fb52bc0d83c94af1b3b4dc4954cc6d5d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that breast cancer patients with history of treatment with trastuzumab have an increased risk of cardiovascular disease up to 10 years after treatment.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Anthracyclines and/or trastuzumab receipt was associated with increased ischemic heart disease risks after 5 or more years (adjusted HR5-<10years = 1.51, 95% CI = 1.06 to 2.14; adjusted HR\u226510 years = 1.86, 95% CI = 1.18 to 2.93) with no clear age effects, and stroke risk (adjusted HR = 1.33, 95% CI = 1.05 to 1.69), which did not vary by time or age. There was some evidence of long-term cardiomyopathy and/or HF and ischemic heart disease risks with other chemotherapies. Among women aged younger than 65 treated with anthracyclines and/or trastuzumab, up to 16% developed CVD by 10 years (20-54 years = 6.91%; 55-64 years = 16.00%), driven by cardiomyopathy and/or HF (20-54 years = 3.90%; 55-64 years = 9.78%).\n\nConclusions: We found increased long-term risks of cardiomyopathy and/or HF and ischemic heart disease among breast cancer survivors treated with anthracyclines and/or trastuzumab and increased cardiomyopathy and/or HF risk among women aged younger than 65 years.\" - https://pubmed.ncbi.nlm.nih.gov/38718210/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f82a6262ca8f44fe9cb11d92cd615334",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fb52bc0d83c94af1b3b4dc4954cc6d5d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that history of treatment with HER2-targeted medications (trastuzumab, pertuzumab) likely led to the patient's clinical presentation.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Anthracyclines and/or trastuzumab receipt was associated with increased ischemic heart disease risks after 5 or more years (adjusted HR5-<10years = 1.51, 95% CI = 1.06 to 2.14; adjusted HR\u226510 years = 1.86, 95% CI = 1.18 to 2.93) with no clear age effects, and stroke risk (adjusted HR = 1.33, 95% CI = 1.05 to 1.69), which did not vary by time or age. There was some evidence of long-term cardiomyopathy and/or HF and ischemic heart disease risks with other chemotherapies. Among women aged younger than 65 treated with anthracyclines and/or trastuzumab, up to 16% developed CVD by 10 years (20-54 years = 6.91%; 55-64 years = 16.00%), driven by cardiomyopathy and/or HF (20-54 years = 3.90%; 55-64 years = 9.78%).\n\nConclusions: We found increased long-term risks of cardiomyopathy and/or HF and ischemic heart disease among breast cancer survivors treated with anthracyclines and/or trastuzumab and increased cardiomyopathy and/or HF risk among women aged younger than 65 years.\" - https://pubmed.ncbi.nlm.nih.gov/38718210/ ",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d5caa622e96349c69641521daeab2973",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fb52bc0d83c94af1b3b4dc4954cc6d5d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has a history of radiation therapy to her right supraclavicular nodes.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\u201cCurative  Radiation Treatment Dates: 7/12/2021 through 8/20/2021 Site Technique Total Dose (Gy) Dose per Fx (Gy) Completed Fx Beam Energies  Breast, Right: Breast_Rt 3D 50/50 2 25/25 10X  Breast, Right: Breast_Rt_PAB_SCV 3D 50/50 2 25/25 10X, 15X  Breast, Right: Breast_Rt_Bst 3D 10/10 2 5/5 6X, 10X   Narrative: The patient tolerated radiation therapy relatively well.\u201d -  [CLINICALNOTES], Note type - [Progress Notes], Column - [D], Row - [129]",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3071092a71ed4d4aa39c44003b281329",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fb52bc0d83c94af1b3b4dc4954cc6d5d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that among female patients with breast cancer, major cardiac events increase by 7.4% per radiation Gray unit of mean heart dose.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"There is a dosage relationship for CVD and RT dosages; for example, among female patients with breast cancer in Denmark and Sweden, major cardiac events increased by 7.4% per radiation Gray unit of mean heart dose, irrespective of preexisting CV risk factors.\"\n-\thttps://onlinejcf.com/article/S1071-9164(24)00363-4/fulltext \n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_18c349e8d4ea45f791bba7bc8ab7efdc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fb52bc0d83c94af1b3b4dc4954cc6d5d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's history of radiation therapy increases her risk of major cardiac events by 8.88% (acceptable range is 8.5% to 9%).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"There is a dosage relationship for CVD and RT dosages; for example, among female patients with breast cancer in Denmark and Sweden, major cardiac events increased by 7.4% per radiation Gray unit of mean heart dose, irrespective of preexisting CV risk factors.\"\n-\thttps://onlinejcf.com/article/S1071-9164(24)00363-4/fulltext \n\n1.2 Gy x 7.4% = 8.88% (~9%)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

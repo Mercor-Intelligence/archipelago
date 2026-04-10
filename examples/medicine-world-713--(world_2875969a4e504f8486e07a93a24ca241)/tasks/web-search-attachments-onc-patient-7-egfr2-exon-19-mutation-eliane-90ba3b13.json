@@ -1,0 +1,399 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 7” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nPrompt: \nThe patient presents to her oncologist to re-establish care after a few years. Refer to the reference files \"Onc_Patient 7,\" \"Onc_Patient 7 script.pdf,\" and “Labs.pdf”.\n\nWhat is the next best systemic treatment option for this patient? What dosage is recommended for this medication? What frequency and route of administration are recommended for this medication? What is the most common reason for dose reduction? Provide a clinical rationale.\n\nAnswers should be in line with the most clinical guidelines as of January 13, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient has a history of stage I non-small cell lung cancer... (ver_6da07c817160404482620355f108d60c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has a history of stage I non-small cell lung cancer (NSCLC)."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient previously received EGFR tyrosine kinase inhibitors. (ver_8de8eb223de84339a6bd4ed23a0bb98c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient previously received EGFR tyrosine kinase inhibitors."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient previously received platinum-based chemotherapy. (ver_c946f0bbec6c448d9cb41e9a190e573f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient previously received platinum-based chemotherapy."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient now has metastatic disease. (ver_1707067418474b66a91dd5147751b665)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient now has metastatic disease."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's biopsy shows recurrence of NSCLC. (ver_7eefb539331d472b919df346b37624e1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's biopsy shows recurrence of NSCLC."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's biopsy has an EGFR Exon 19 deletion mutation. (ver_0869d2659a0a4e42afc706e15c25aade)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's biopsy has an EGFR Exon 19 deletion mutation."
+        }
+      ]
+    },
+    {
+      "name": "Recommends lazertinib plus amivantamab-vmjw as the next best systemic therapy... (ver_c550590ab2474c558ef2c3492b4ee08b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recommends lazertinib plus amivantamab-vmjw as the next best systemic therapy option for this patient."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient’s current weight is 48.2 kg. (acceptable range 47.2 to... (ver_c939d121281140e8a6c37be98de04389)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient’s current weight is 48.2 kg. (acceptable range 47.2 to 49.2 kg)."
+        }
+      ]
+    },
+    {
+      "name": "States that lazertinib dosage is 240 mg (acceptable range 238 to 242). (ver_af24daaab47340ecbbac571dc6ae7fcf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that lazertinib dosage is 240 mg (acceptable range 238 to 242)."
+        }
+      ]
+    },
+    {
+      "name": "States that lazertinib is given orally. (ver_b702a69534e94c72ab958714621110ad)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that lazertinib is given orally."
+        }
+      ]
+    },
+    {
+      "name": "States that lazertinib is given once daily. (ver_917b4c44fe634e198831f97e5cc42b91)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that lazertinib is given once daily."
+        }
+      ]
+    },
+    {
+      "name": "States that amivantamab-vmjw dosage is 1050 mg (acceptable range 104 to 106). (ver_4cef72ec299e4799a4074557c3697873)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that amivantamab-vmjw dosage is 1050 mg (acceptable range 104 to 106)."
+        }
+      ]
+    },
+    {
+      "name": "States that amivantamab-vmjw is given intravenously. (ver_36d0383396ee46f1b293478dc04317a7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that amivantamab-vmjw is given intravenously."
+        }
+      ]
+    },
+    {
+      "name": "States that amivantamab-vmjw is given weekly for the first 4 weeks. (ver_d094de8089a14a80a37d19a36a939478)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that amivantamab-vmjw is given weekly for the first 4 weeks."
+        }
+      ]
+    },
+    {
+      "name": "States that amivantamab-vmjw is given every 2 weeks after the first 4 weeks. (ver_14d9ae4960464e5888bab1222be731ec)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that amivantamab-vmjw is given every 2 weeks after the first 4 weeks."
+        }
+      ]
+    },
+    {
+      "name": "States the most common reason for dose reduction is dermatological adverse... (ver_cbcc096779664b73b8adff5ac1309f57)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the most common reason for dose reduction is dermatological adverse reactions."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-onc-patient-7-egfr2-exon-19-mutation-eliane-90ba3b13"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_90ba3b136b824b56aee37f578dcf2430",
+    "task_name": "Web Search_Attachments_Onc Patient 7 - EGFR2 exon 19 mutation - Eliane",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d8176273758f4b598339337672bbb644",
+        "golden_text_response": "1. What is the best systemic treatment option for this patient? \n\nThe patient has a history of stage I non-small cell lung cancer (NSCLC) and previously received EGFR tyrosine kinase inhibitors and platinum-based chemotherapy. The disease is currently metastatic, with biopsy-proven recurrence of NSCLC and an EGFR exon 19 deletion mutation. The recommended next systemic therapy options for this patient are lazertinib plus amivantamab-vmjw.\n\n2. What dosage is recommended for this medication? \nFor a patient weighing 48.2 kg, the recommended dosing for lazertinib plus amivantamab is 240 mg lazertinib and 1050 mg amivantamab-vmjw.\n\n3. What frequency and route of administration are recommended for this medication? \nLazertinib is administered orally once daily.\nAmivantamab-vmjw is administered intravenously weekly for the first 4 weeks, then every 2 weeks starting in cycle 2. \n\n5. What is the most common reason for dose reduction? \nThe most common reason for dose reduction is dermatologic adverse reactions. \n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

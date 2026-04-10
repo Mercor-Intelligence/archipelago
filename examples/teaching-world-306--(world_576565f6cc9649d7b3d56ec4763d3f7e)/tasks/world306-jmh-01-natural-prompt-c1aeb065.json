@@ -1,0 +1,399 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Calculate 9th-grade Biology student's overall average grades, treating all assignments equally and the \"NHI\" (Not Handed In) entries as zero.\nWho are the 5 students with the lowest average? Report directly in console and round final answers to two decimal places.\nProvide the list as the identified student's first initial, last name and average%. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Identifies student B. Wilson has one of the 10 lowest grade averages (ver_a1321750735b4ffc974757b0de9746e6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies student B. Wilson has one of the 10 lowest grade averages."
+        }
+      ]
+    },
+    {
+      "name": "Identifies any other students have one of the 10 lowest grade averages, other... (ver_a1321750735b4ffc974757b0de9746e6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies any other students have one of the 10 lowest grade averages, other than B. Wilson, M. Jensen, A. Taylor, E. Jackson, N. Jensen, E. Jackson, H. Hill, H. Young, L. Wood or E. Fox."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the overall average for B. Wilson as 49.92% (acceptable range... (ver_358c6c9a289f45c59ec0e5893a934124)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the overall average for B. Wilson as 49.92% (acceptable range 49.42% to 50.42%)."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the overall grade average for B. Wilson as anything other than... (ver_358c6c9a289f45c59ec0e5893a934124)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the overall grade average for B. Wilson as anything other than 49.92%."
+        }
+      ]
+    },
+    {
+      "name": "Identifies student M. Jensen has one of the 10 lowest grade averages (ver_59e1982bf8d74716a6117035d3f73c2b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies student M. Jensen has one of the 10 lowest grade averages."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the overall average for M. Jensen as 54.00% (acceptable range... (ver_ce46bb083c6347a0adf99ed599dd64e9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the overall average for M. Jensen as 54.00% (acceptable range 53.46% to 54.54%)."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the overall grade average for M. Jensen as anything other than... (ver_ce46bb083c6347a0adf99ed599dd64e9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the overall grade average for M. Jensen as anything other than 54.00%."
+        }
+      ]
+    },
+    {
+      "name": "Identifies student A. Taylor has one of the 10 lowest grade averages (ver_21feeb757be44aa9ab4a76d863a70891)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies student A. Taylor has one of the 10 lowest grade averages."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the overall average for A. Taylor as 54.83% (acceptable range... (ver_edd18c692a02450da5152cf8dc7d5a56)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the overall average for A. Taylor as 54.83% (acceptable range 54.28% to 55.38%)."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the overall grade average for A. Taylor as anything other than... (ver_edd18c692a02450da5152cf8dc7d5a56)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the overall grade average for A. Taylor as anything other than 54.83%."
+        }
+      ]
+    },
+    {
+      "name": "Identifies student E. Jackson has one of the 10 lowest grade averages (ver_83607b69c8404cb994b9286fa0c15d9b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies student E. Jackson has one of the 10 lowest grade averages."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the overall average for E. Jackson as 55.33% (acceptable range... (ver_87b66d4f068b48dda55cbba00e8d89ca)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the overall average for E. Jackson as 55.33% (acceptable range 54.78% to 55.88%)."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the overall grade average for E. Jackson as anything other than... (ver_87b66d4f068b48dda55cbba00e8d89ca)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the overall grade average for E. Jackson as anything other than 60.25%."
+        }
+      ]
+    },
+    {
+      "name": "Identifies student N. Jensen has one of the 10 lowest grade averages (ver_0fb79ee88cee4d1fb06203e6d777abbe)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies student N. Jensen has one of the 10 lowest grade averages."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the overall average for N. Jensen as 56.75% (acceptable range... (ver_436d1ce2162144e6950e2e5a583a0323)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the overall average for N. Jensen as 56.75% (acceptable range 56.18% to 57.32%)."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the overall grade average for N. Jensen as anything other than... (ver_436d1ce2162144e6950e2e5a583a0323)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the overall grade average for N. Jensen as anything other than 56.75%."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world306-jmh-01-natural-prompt-c1aeb065"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_576565f6cc9649d7b3d56ec4763d3f7e",
+    "world_name": "Teaching World 306",
+    "task_id": "task_c1aeb065edbf416cb103443797cbc786",
+    "task_name": "world306_JMH_01 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_925cf306d2e5491c9de6397bc91e37dd",
+        "golden_text_response": "1. B. Wilson - 49.92%\n2. M. Jensen - 54.00%\n3. A. Taylor - 54.83%\n4. E. Jackson - 55.33%\n5. N. Jensen - 56.75%\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

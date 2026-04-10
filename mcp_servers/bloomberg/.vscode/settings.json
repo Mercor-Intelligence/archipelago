@@ -1,0 +1,6 @@
+{
+  "python.analysis.extraPaths": [
+    "./src",
+    "./src/shared"
+  ]
+}

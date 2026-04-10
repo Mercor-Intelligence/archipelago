@@ -1,0 +1,128 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "We just finish the first unit of To Kill A Mockingbird (\"TKAM\") (see the unit overview). Can you update the TKAM Unit 2 Overview with the unit end date, total instructional days for the unit, pages left, and pages to read per day based on the version of the book we're using. The semester ends on December 19th. Please exclude days when Dallastown students do not have school, days when students have Keystone exams, half days, December 18th and 19th, and 2 additional days from total instructional days. Round down to the nearest whole number and add any remaining pages to the last instructional day."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the Total Instructional Days for Unit 2 is 20 (ver_d21d209a528a496dbd9edd31ab5fb9c1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Total Instructional Days for Unit 2 is 20."
+        }
+      ]
+    },
+    {
+      "name": "States the number of pages of reading left for the novel is 140 (acceptable... (ver_91dd7104a1cb47d08cf0f80ba04a8ff3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the number of pages of reading left for the novel is 140 (acceptable range 139 to 141)."
+        }
+      ]
+    },
+    {
+      "name": "States the number of pages of reading per instructional day is 7 (acceptable... (ver_def1e017a4a446f884dae3e720244b8b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the number of pages of reading per instructional day is 7 (acceptable range 6.9 to 7.1)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Unit END date is 12/02/2025 (acceptable range 11.9 to 12.1) (ver_971d0094d21f4e1c8425aaa90958a602)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Unit END date is 12/02/2025 (acceptable range 11.9 to 12.1)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world305-ov-01-natural-prompt-d607acb7"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_d607acb73512486a8786e41de4fca492",
+    "task_name": "World305_ov_01 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_e1cc6a12ef3c4d26a59e83d279e369b9",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_77870ee6e36e446eac0f220219f4b8ac"
+      },
+      {
+        "golden_response_id": "gold_88f7d077f11648c2b93c22750fd2d386",
+        "golden_text_response": "[File attached]",
+        "golden_file_responses": "snap_77870ee6e36e446eac0f220219f4b8ac"
+      }
+    ]
+  }
+}

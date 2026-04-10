@@ -1,0 +1,18 @@
+{
+  "pythonVersion": "3.12",
+  "typeCheckingMode": "standard",
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false,
+  "extraPaths": [".", "../../packages/mcp_middleware", "../../packages/mcp_cache"],
+  "exclude": [
+    "auth/oauth_pkce.py",
+    "auth/oauth_manager.py",
+    "db/models/bank_transaction.py",
+    "db/models/budget.py",
+    "db/models/contact.py",
+    "db/models/invoice.py",
+    "providers/offline/reports.py",
+    "providers/online/_base.py",
+    "rate_limiter.py"
+  ]
+}

@@ -1,0 +1,165 @@
+version: "1.0"
+project_name: "greenhouse"
+
+servers:
+  - name: greenhouse
+    display_name: "Greenhouse ATS"
+    description: "Greenhouse Applicant Tracking System - Manage candidates, jobs, and applications"
+    tools_module: "mcp_servers.greenhouse.tools"
+    base_url: "http://localhost:8000"
+    requires_auth: true
+    auth_type: "bearer"
+
+categories:
+  - name: "Candidates"
+    description: "Search, view, and manage candidate profiles"
+    servers: [greenhouse]
+
+  - name: "Applications"
+    description: "Manage job applications and hiring workflow"
+    servers: [greenhouse]
+
+  - name: "Jobs"
+    description: "Create and manage job postings and stages"
+    servers: [greenhouse]
+
+  - name: "Users"
+    description: "Manage Greenhouse users and permissions"
+    servers: [greenhouse]
+
+  - name: "Feedback"
+    description: "Scorecards and interview feedback"
+    servers: [greenhouse]
+
+  - name: "Activity"
+    description: "Activity feeds and audit logs"
+    servers: [greenhouse]
+
+  - name: "Job Board"
+    description: "Public job board and applications"
+    servers: [greenhouse]
+
+  - name: "Admin"
+    description: "Administrative and system tools"
+    servers: [greenhouse]
+
+tool_overrides:
+  # Candidates
+  - tool: "greenhouse.greenhouse_candidates_search"
+    category: "Candidates"
+    display_name: "Search Candidates"
+
+  - tool: "greenhouse.greenhouse_candidates_get"
+    category: "Candidates"
+    display_name: "Get Candidate"
+
+  - tool: "greenhouse.greenhouse_candidates_create"
+    category: "Candidates"
+    display_name: "Create Candidate"
+
+  - tool: "greenhouse.greenhouse_candidates_update"
+    category: "Candidates"
+    display_name: "Update Candidate"
+
+  - tool: "greenhouse.greenhouse_candidates_add_note"
+    category: "Candidates"
+    display_name: "Add Note"
+
+  - tool: "greenhouse.greenhouse_candidates_add_tag"
+    category: "Candidates"
+    display_name: "Add Tag"
+
+  # Applications
+  - tool: "greenhouse.greenhouse_applications_list"
+    category: "Applications"
+    display_name: "List Applications"
+
+  - tool: "greenhouse.greenhouse_applications_get"
+    category: "Applications"
+    display_name: "Get Application"
+
+  - tool: "greenhouse.greenhouse_applications_create"
+    category: "Applications"
+    display_name: "Create Application"
+
+  - tool: "greenhouse.greenhouse_applications_advance_stage"
+    category: "Applications"
+    display_name: "Advance Stage"
+
+  - tool: "greenhouse.greenhouse_applications_hire"
+    category: "Applications"
+    display_name: "Hire Candidate"
+
+  - tool: "greenhouse.greenhouse_applications_reject"
+    category: "Applications"
+    display_name: "Reject Application"
+
+  # Jobs
+  - tool: "greenhouse.greenhouse_jobs_list"
+    category: "Jobs"
+    display_name: "List Jobs"
+
+  - tool: "greenhouse.greenhouse_jobs_get"
+    category: "Jobs"
+    display_name: "Get Job"
+
+  - tool: "greenhouse.greenhouse_jobs_get_stages"
+    category: "Jobs"
+    display_name: "Get Job Stages"
+
+  - tool: "greenhouse.greenhouse_jobs_create"
+    category: "Jobs"
+    display_name: "Create Job"
+
+  - tool: "greenhouse.greenhouse_jobs_update"
+    category: "Jobs"
+    display_name: "Update Job"
+
+  # Users
+  - tool: "greenhouse.greenhouse_users_list"
+    category: "Users"
+    display_name: "List Users"
+
+  - tool: "greenhouse.greenhouse_users_get"
+    category: "Users"
+    display_name: "Get User"
+
+  - tool: "greenhouse.greenhouse_users_create"
+    category: "Users"
+    display_name: "Create User"
+
+  # Feedback
+  - tool: "greenhouse.greenhouse_feedback_list"
+    category: "Feedback"
+    display_name: "List Feedback"
+
+  - tool: "greenhouse.greenhouse_feedback_submit"
+    category: "Feedback"
+    display_name: "Submit Feedback"
+
+  # Activity
+  - tool: "greenhouse.greenhouse_activity_get"
+    category: "Activity"
+    display_name: "Get Activity Feed"
+
+  # Job Board
+  - tool: "greenhouse.greenhouse_jobboard_list_jobs"
+    category: "Job Board"
+    display_name: "List Open Positions"
+
+  - tool: "greenhouse.greenhouse_jobboard_apply"
+    category: "Job Board"
+    display_name: "Apply for Job"
+
+  - tool: "greenhouse.greenhouse_jobboard_create_post"
+    category: "Job Board"
+    display_name: "Create Job Post"
+
+  # Admin
+  - tool: "greenhouse.greenhouse_reset_state"
+    category: "Admin"
+    display_name: "Reset Database"
+
+  - tool: "greenhouse.greenhouse_export_snapshot"
+    category: "Admin"
+    display_name: "Export Snapshot"

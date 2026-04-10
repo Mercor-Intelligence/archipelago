@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Revise the RMBS / ONTO merger analysis in the model as follows:\n1.\tUpdate equity values of both companies to market capitalization at market close at 01/07/2026\n2.\tChange % SG&A Synergies to 70%\n3.\tUse TTM 2025 numbers\nCalculate and output the following:\n1.\tPro Forma Combined EV with Synergies\n2.\tPro Forma Combined Equity Value\nRound $ values to thousands with 0 decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the Pro Forma Combined EV with Synergies is $21,058,109 thousand... (ver_546c57ab03cf4a6e8109dc1c51e0bf33)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Pro Forma Combined EV with Synergies is $21,058,109 thousand (acceptable range $20,847,528 to $21,268,690)."
+        }
+      ]
+    },
+    {
+      "name": "States the Pro Forma Combined Equity Value is $21,730,064 thousand (acceptable... (ver_a38fcf5c57e046f2bd4c8fbbb720e091)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Pro Forma Combined Equity Value is $21,730,064 thousand (acceptable range $21,512,763 to $21,947,365)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-248-ay04-14ea4875"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_14ea4875caa7465aa116c165e213d658",
+    "task_name": "World 248_AY04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_e52156e54d64413d8797bc177dd81dd5",
+        "golden_text_response": "1.\tPro Forma Combined EV with Synergies is $21,058,109 thousand\n2.\tPro Forma Combined Equity Value is $21,730,064 thousand\n",
+        "golden_file_responses": "snap_55020e5acce4430eb1016655e0ec3f31"
+      }
+    ]
+  }
+}

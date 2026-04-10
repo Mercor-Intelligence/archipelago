@@ -1,0 +1,445 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Mrs. A recently had an instructional walkthrough by Mrs. E who leads multilingual learning at her school. Mrs. E was dissatisfied with a vocabulary support character chart worksheet that Mrs. A gave to her students and has requested that she provide better vocabulary supports to meet the needs of the multilingual learners in her classroom. Mrs. E has provided us with three MLL support documents to help build this new worksheet.\n\nCan you help build the new worksheet by listing all Tier 2 words found in the description for the character Jean Louise Finch (Scout)? We only need to list these Tier 2 words - no need for other data. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Lists the word 'intelligent' in the message (ver_4f623dcb78a642078642237ccbb4bc3c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists the word 'intelligent' in the message."
+        }
+      ]
+    },
+    {
+      "name": "Includes a word other than intelligent, headstrong, outspoken, innocent,... (ver_4f623dcb78a642078642237ccbb4bc3c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a word other than intelligent, headstrong, outspoken, innocent, intolerant, discovers, cruel, violent, necessary, response, intolerance, understand, origins, dignity, anger, foundation, or narrator."
+        }
+      ]
+    },
+    {
+      "name": "Lists the word 'innocent' in the message (ver_9212f72f364a4c6c977bb0c53511d46b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists the word 'innocent' in the message."
+        }
+      ]
+    },
+    {
+      "name": "Lists 'intolerant' in the message (ver_0865b22c378c4f40a9e7c842dd355d67)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists 'intolerant' in the message."
+        }
+      ]
+    },
+    {
+      "name": "Lists 'discovers' in the message (ver_f2753d00633948c99678b6d61d7d63c2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists 'discovers' in the message."
+        }
+      ]
+    },
+    {
+      "name": "Lists 'cruel' in the message (ver_d6abe39d17524a9687dcc31b0e18307c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists 'cruel' in the message."
+        }
+      ]
+    },
+    {
+      "name": "Lists 'violent' in the message (ver_e2dfcdf15bb449eab7571ba4d2bf6119)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists 'violent' in the message."
+        }
+      ]
+    },
+    {
+      "name": "Lists 'necessary' in the message (ver_f4214d243e944b8d876b423e1bc87e8f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists 'necessary' in the message."
+        }
+      ]
+    },
+    {
+      "name": "Lists 'response' in the message (ver_5155fb6c2434450493a261d467ad78a3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists 'response' in the message."
+        }
+      ]
+    },
+    {
+      "name": "Lists 'intolerance' in the message (ver_8ada378687254f4894abb94c6ac45e4e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists 'intolerance' in the message."
+        }
+      ]
+    },
+    {
+      "name": "Lists 'understand' in the message (ver_4435e52a82ae4c7296d6d6034ec56235)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists 'understand' in the message."
+        }
+      ]
+    },
+    {
+      "name": "Lists 'origins' in the message (ver_d0e9d4ba926c4d95a48d2a967e746341)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists 'origins' in the message."
+        }
+      ]
+    },
+    {
+      "name": "Lists 'dignity' in the message (ver_842f3ac2f87f4b00833138437343980c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists 'dignity' in the message."
+        }
+      ]
+    },
+    {
+      "name": "Lists 'anger' in the message (ver_e83869776d224ddaa647c73fca660472)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists 'anger' in the message."
+        }
+      ]
+    },
+    {
+      "name": "Lists 'foundation' in the message (ver_9c63afe8b62a49e1ab98e432084f751a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists 'foundation' in the message."
+        }
+      ]
+    },
+    {
+      "name": "Lists the word 'headstrong' in the message (ver_cce6a091044541e68f0b279572c16043)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists the word 'headstrong' in the message."
+        }
+      ]
+    },
+    {
+      "name": "Lists the word 'outspoken' in the response (ver_ba948200434e409296c1307232382c4d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists the word 'outspoken' in the response."
+        }
+      ]
+    },
+    {
+      "name": "Lists the word 'narrator' in the message (ver_54d394a809d841d98a3a0d8b9ab7d9b2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists the word 'narrator' in the message."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world305-krm-07-natural-prompt-d8fccc11"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_d8fccc11cb8d42c5a836f3faf9592377",
+    "task_name": "World305_KRM_07 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_84da22c098924f088a479bc3d59193c2",
+        "golden_text_response": "intelligent\nheadstrong\noutspoken\ninnocent\nintolerant\ndiscovers\ncruel\nviolent\nnecessary\nresponse\nintolerance\nunderstand\norigins\ndignity\nanger\nfoundation\nnarrator",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+[arco]
+source = "foundry_app"
+name = "FMP"
+version = "1.0.0"
+
+[arco.env.host]
+REPO_URL = "https://github.com/Mercor-Intelligence/mercor-fmp.git"
+
+[arco.env.build]
+STATE_LOCATION = "/.apps_data/fmp"
+
+[arco.env.runtime]
+MCP_TRANSPORT = "http"
+MCP_PORT = "5000"
+APP_FS_ROOT = "/filesystem"
+FMP_OFFLINE_MODE = "false"
+INTERNET_ENABLED = "true"
+GUI_ENABLED = "true"
+HAS_STATE = "true"
+STATE_LOCATION = "/.apps_data/fmp"
+# Referenced by shared auth_server OAuth example (not used at runtime)
+XERO_CLIENT_ID = ""
+
+[arco.env.runtime.schema.FMP_OFFLINE_MODE]
+type = "string"
+label = "Offline mode"
+description = "Set 'true' to use bundled fixtures, 'false' for live FMP API"
+
+[arco.env.runtime.schema.INTERNET_ENABLED]
+type = "bool"
+label = "Internet access"
+description = "Allow the MCP server to make outbound network requests"
+
+[arco.env.runtime.schema.GUI_ENABLED]
+type = "bool"
+label = "GUI mode"
+description = "Enable GUI mode to expose all individual tools instead of consolidated meta-tools"
+
+[arco.secrets.host]
+GITHUB_TOKEN = "RLS_GITHUB_READ_TOKEN"
+
+[arco.secrets.build]
+
+[arco.secrets.runtime]
+FMP_API_KEY = "FMP_API_KEY"
+
+# Error injection scenarios for Dynamic Friction testing
+[[arco.injected_errors.scenarios]]
+name = "api_timeout"
+description = "Simulates API timeout errors"
+error_type = "timeout"
+error_message = "Request timed out after 30 seconds"
+affected_tools = ["*"]
+
+[[arco.injected_errors.scenarios]]
+name = "rate_limit"
+description = "Simulates rate limiting errors"
+error_type = "rate_limit"
+error_message = "Rate limit exceeded. Please retry after 60 seconds."
+affected_tools = ["*"]
+
+[[arco.injected_errors.scenarios]]
+name = "auth_expired"
+description = "Simulates authentication token expiration"
+error_type = "auth_error"
+error_message = "Authentication token has expired. Please re-authenticate."
+affected_tools = ["*"]
+
+[[arco.injected_errors.scenarios]]
+name = "service_unavailable"
+description = "Simulates service unavailability"
+error_type = "service_error"
+error_message = "Service temporarily unavailable. Please try again later."
+affected_tools = ["*"]
+
+[[arco.injected_errors.scenarios]]
+name = "invalid_response"
+description = "Simulates malformed API responses"
+error_type = "parse_error"
+error_message = "Failed to parse API response: unexpected format"
+affected_tools = ["*"]
+
+[[arco.injected_errors.scenarios]]
+name = "permission_denied"
+description = "Simulates permission/authorization errors"
+error_type = "permission_error"
+error_message = "Permission denied. Insufficient privileges for this operation."
+affected_tools = ["*"]
+
+[[arco.injected_errors.scenarios]]
+name = "resource_not_found"
+description = "Simulates missing resource errors"
+error_type = "not_found"
+error_message = "The requested resource was not found."
+affected_tools = ["*"]
+
+[[arco.injected_errors.scenarios]]
+name = "quota_exceeded"
+description = "Simulates API quota exhaustion"
+error_type = "quota_error"
+error_message = "API quota exceeded for the current billing period."
+affected_tools = ["*"]

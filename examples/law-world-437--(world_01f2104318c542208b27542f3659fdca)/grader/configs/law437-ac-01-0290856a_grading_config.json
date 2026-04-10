@@ -1,0 +1,242 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_1617cfb73df14ae0ab48f0aefba05e93",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0290856a69614351bf9fb1c5b28bc8c9",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that Porter filed his retaliation claim within 30 days",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Porter brought his whistleblower claim within 30 days of the discharge, so the timeliness issue has been satisfied. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ba73f4a1da3b452d95435244e344a79c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0290856a69614351bf9fb1c5b28bc8c9",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that Porter filed a safety complaint with OHSA, as required by 11(c) of the OSH Act",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "On 10/13/25, during a walkthrough of a construction site for his employer Sweetmarch Building Partners (SBP), Porter noticed W-beams with major integrity issues. Porter filed a report with his employer on 10/13/25 and with OHSA on 10/14/25 after no action had been taken by SBP.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_84be6ca4744d449eb52fd859aac11d5a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0290856a69614351bf9fb1c5b28bc8c9",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that Porter was discharged three weeks after filing his complaint",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Porter must prove an adverse employment action, and being discharged would qualify. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c8ccde2cee954fa68ca67493c332c0cd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0290856a69614351bf9fb1c5b28bc8c9",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that Porter must show his dismissal was caused by filing the OHSA complaint",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The most difficult part of the claim will be showing that his dismissal was due to filing the complaint, which is a factual analysis. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_aea67518f6124b03996324c553d16584",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0290856a69614351bf9fb1c5b28bc8c9",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that an employee is not immune from discharge for legitimate reasons even if they have filed a complaint",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "29 CRF 1977.6(a)",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_55c6893dd9784e69b761ba7712031dc4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0290856a69614351bf9fb1c5b28bc8c9",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that Porter received a mixed performance review on 11/1/24",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "On Porter\u2019s performance review of 11/1/24, several key strengths were noted. However, several areas for improvement were also discussed, including issues coordinating subcontractors, insufficient quality control walkthroughs, and lack of communication regarding emerging problems. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0cfb5400b7494243b39a4148d1a1175c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0290856a69614351bf9fb1c5b28bc8c9",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that Porter's supervisor emailed him about performance issues in 2025",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Porter\u2019s supervisor emailed him on 7/2/25 and 9/22/25 about issues to work on. The tone of these emails was not urgent, however, since the supervisor stated that it was \u201cnothing major\u201d and \u201cnot a catastrophe.\u201d",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_318b31bf61754793aa3a9a2bc42698cd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0290856a69614351bf9fb1c5b28bc8c9",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that Porter's 2025 performance review recommended termination of employment",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Porter\u2019s performance review of 11/3/25 stated that he was late and absent without timely notice, tasks were not completed until he was asked, and he repeatedly failed to notify managers of critical issues. Termination was recommended due to the ongoing performance issues and lack of improvement. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_51e805d5e12142caa453f283fb9c1a5c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0290856a69614351bf9fb1c5b28bc8c9",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that Porter's personnel file did not support many of the claims made in the 2025 performance review",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The personnel file did not note instances of Porter being late or absent without notification, and he was not placed on corrective action or a performance improvement plan.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7fa61bfdac8a4a708caec4c0d9711227",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0290856a69614351bf9fb1c5b28bc8c9",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that Porter is likely to have a sustainable claim for retaliation",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Whether Porter\u2019s discharge was due to poor performance or protected activity will be evaluated based on the case facts. However, due to the lack of documentation regarding the poor performance claims in his 2025 performance review, Porter is likely to have a sustainable claim for retaliation. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

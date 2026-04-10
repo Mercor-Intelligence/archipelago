@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "On June 20th, 2026, the City of San Dimas reached out to another developer to get their proposal for the 344 W Bonita property. Liverbird wants their deposit returned for the City violating the exclusive negotiating agreement. How much of their initial deposit Liverbird will be able to get back from the City?"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that Liverbird cannot recover any portion of their deposit (ver_05e95b3cbe094e4d87aaf0bed1993be7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Liverbird cannot recover any portion of their deposit."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world428-am-02-cff13ac2"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_cff13ac2da2e454e982160d5e2936dc9",
+    "task_name": "World428_AM_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_10c4b01fc7604b0dbf674162f8ba33e2",
+        "golden_text_response": "Liverbird would not be able to recover any portion of the deposit. ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

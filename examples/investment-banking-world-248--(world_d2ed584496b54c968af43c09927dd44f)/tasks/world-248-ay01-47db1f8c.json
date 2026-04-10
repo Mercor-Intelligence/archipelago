@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Forecast the pro-forma IS of the merger between RMBS and SLAB for 2025 – 2029 copying the format of the Pro Forma Forecast.  \n\nFor SLAB figures:\n1.\tPopulate the 2024 and TTM numbers from the SLAB financials. \n2.\tPopulate the following historical numbers for 2022 and 2023 for SLAB:\na.\tRevenue\nb.\tCost of Revenue\nc.\tSales, general and administrative\nd.\tOther operating expense\ne.\tInterest income and other income (expense), net\nf.\tProvision for (benefit from) income taxes\ng.\tWeighted-average diluted shares \n\nAssume historical trends will continue and use the 2023 – 2024 averages for growth rates and margins for SLAB; future WASO equals the SLAB pro forma value.\nAssume that annual SG&A synergies will be 20% of the Synergies / Shared cost in the SLAB post forma.\n\nUpdate the share price for RMBS and SLAB to the closing price at 01/05/2026.\n\nCalculate and output the projected EPS accretion or dilution % in 2027 with 2 decimal places.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the projected EPS accretion or dilution % in 2027 is -38.41%... (ver_ca1c5fd9fac24580a894cbd0fe5a0bfd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the projected EPS accretion or dilution % in 2027 is -38.41% (acceptable range -38.79% to -38.03%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-248-ay01-47db1f8c"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_47db1f8c3fd9422f9c0a20fd81c12858",
+    "task_name": "World 248_AY01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_ce4093348b9f4acea84adbc755113590",
+        "golden_text_response": "The projected EPS accretion or dilution % in 2027 is -38.41%",
+        "golden_file_responses": "snap_dd1a963bbe0a46a2a0c05a7d41d504f9"
+      }
+    ]
+  }
+}

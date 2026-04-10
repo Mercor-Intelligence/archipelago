@@ -1,0 +1,358 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use the 2024 financial data from Vale 2024 Financial Statements - IFRS page 10 to fill in in Vale's TEV / Revenue, TEV / EBITDA, TEV / EBIT, P/E, Debt / EBITDA in in \"ResourceCo Comparable-Company-Analysis_vFF.xlsx\", Tab: 'Comparable Company'. Net income will be the value from the Income Statement labeled \"Net income from continuing operations attributable to Vale S.A.'s shareholders\". Calculate EBITDA using the depreciation found at the cash flows reconciliation section in the file \"Vale 2024 Financial Statements - IFRS.pdf\". Assume cash and cash equivalents for cash and all interest-bearing debt and leases as debt. P/E should be calculated by dividing Market Capitalization by Net Income. Also, calculate and update the 75th Percentile for TEV / EBITDA and TEV / EBIT across all companies. All numbers should be in \"multiples format\" and rounded to one decimal place. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States TEV/Revenue for Vale is 1.6x (acceptable range 1.58 to 1.62) (ver_575451f36cf04531a6e790bef3ce8ec5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States TEV/Revenue for Vale is 1.6x (acceptable range 1.58 to 1.62)."
+        }
+      ]
+    },
+    {
+      "name": "States TEV/Revenue for Vale is a different multiple than 1.6x. (ver_575451f36cf04531a6e790bef3ce8ec5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States TEV/Revenue for Vale is a different multiple than 1.6x."
+        }
+      ]
+    },
+    {
+      "name": "States TEV/EBITDA for Vale is 4.4x (acceptable range 4.36 to 4.44) (ver_8b42b2e4519544fcab819e0619ae7650)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States TEV/EBITDA for Vale is 4.4x (acceptable range 4.36 to 4.44)."
+        }
+      ]
+    },
+    {
+      "name": "States TEV/EBITDA for Vale is a different multiple than 4.4x. (ver_8b42b2e4519544fcab819e0619ae7650)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States TEV/EBITDA for Vale is a different multiple than 4.4x."
+        }
+      ]
+    },
+    {
+      "name": "States TEV/EBIT for Vale is 5.7x (acceptable range 5.6 to 5.8) (ver_0a1da58a1d91449a971940eed7d70dde)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States TEV/EBIT for Vale is 5.7x (acceptable range 5.6 to 5.8)."
+        }
+      ]
+    },
+    {
+      "name": "States TEV/EBIT for Vale is a different multiple than 5.7x. (ver_0a1da58a1d91449a971940eed7d70dde)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States TEV/EBIT for Vale is a different multiple than 5.7x."
+        }
+      ]
+    },
+    {
+      "name": "States P/E for Vale is 7.6x (acceptable range 7.5 to 7.7) (ver_a2c9c59c17d24a97a70e9cd127f036f3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States P/E for Vale is 7.6x (acceptable range 7.5 to 7.7)."
+        }
+      ]
+    },
+    {
+      "name": "States P/E for Vale is a different multiple than 7.6x. (ver_a2c9c59c17d24a97a70e9cd127f036f3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States P/E for Vale is a different multiple than 7.6x."
+        }
+      ]
+    },
+    {
+      "name": "States Debt/EBITDA for Vale is 1.1x (acceptable range 1.09 to 1.11) (ver_a4421bbb8e824760b29ffdc1c6d04ff0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Debt/EBITDA for Vale is 1.1x (acceptable range 1.09 to 1.11)."
+        }
+      ]
+    },
+    {
+      "name": "States Debt/EBITDA for Vale is a different multiple than 1.1x. (ver_a4421bbb8e824760b29ffdc1c6d04ff0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Debt/EBITDA for Vale is a different multiple than 1.1x."
+        }
+      ]
+    },
+    {
+      "name": "States 75th percentile TEV/EBITDA across all companies is 10.8x (acceptable... (ver_91037652eb6842c3ad4873f10e863633)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 75th percentile TEV/EBITDA across all companies is 10.8x (acceptable range 10.7 to 10.9)."
+        }
+      ]
+    },
+    {
+      "name": "States 75th percentile TEV/EBITDA across all companies is a different multiple... (ver_91037652eb6842c3ad4873f10e863633)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 75th percentile TEV/EBITDA across all companies is a different multiple than 10.8x."
+        }
+      ]
+    },
+    {
+      "name": "States 75th percentile TEV/EBIT across all companies is 17.6x (acceptable... (ver_7ee6c39d5f244472b395a520ef7b8e15)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 75th percentile TEV/EBIT across all companies is 17.6x (acceptable range 17.4 to 17.8)."
+        }
+      ]
+    },
+    {
+      "name": "States 75th percentile TEV/EBIT across all companies is a different multiple... (ver_7ee6c39d5f244472b395a520ef7b8e15)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 75th percentile TEV/EBIT across all companies is a different multiple than 17.6x."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-115-hlv-task-04-491e454a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_491e454aed2a4ae88d7894212eebdf58",
+    "task_name": "World 115_HLV_Task 04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f64fef2b398146dbb50ae20bef586282",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_1f45433790134ba186d9ff568210fc16"
+      },
+      {
+        "golden_response_id": "gold_bad41d3c34ec4568b351fefa655ff908",
+        "golden_text_response": "No text",
+        "golden_file_responses": "snap_1f45433790134ba186d9ff568210fc16"
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "We have proposed a new org structure (high level including the board and direct reports to the board). See it attached. Please update the employee list in Bamboo. State how many new roles you have added vs what we had in Bamboo employees list before. Please just state the number of roles in the console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of new roles that have been added vs what we had in... (ver_e8f014607ea845bca2a3c4f4b0798b16)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of new roles that have been added vs what we had in Bamboo employees list before is 2."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh 601-mb-2-adb0a7fd"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_adb0a7fdff354e9998909cc3bcf705e2",
+    "task_name": "601 - MB_2",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_7ba1dd6a14804daeb41e97ed87a61e7e",
+        "golden_text_response": "The number of new roles that have been added vs what we had in Bamboo employees list before is 2",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

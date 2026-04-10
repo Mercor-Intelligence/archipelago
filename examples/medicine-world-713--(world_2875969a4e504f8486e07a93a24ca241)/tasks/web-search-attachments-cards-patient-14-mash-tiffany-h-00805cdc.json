@@ -1,0 +1,307 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “cards_patient_14” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nPrompt:  A 55 year old man presents with vague right upper abdominal pain. Based on the patient's clinical history, what is the recommended first-line pharmacologic treatment for his primary diagnosis? Answers should be in line with the most recent clinical guidelines as of January 12, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient has hepatic steatosis. (ver_57b6aeb53a0e4f11b42a59b6e3e58661)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has hepatic steatosis."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient was on amiodarone for 2 months in the past. (ver_10e575d017d4413f9fd543524532ac62)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient was on amiodarone for 2 months in the past."
+        }
+      ]
+    },
+    {
+      "name": "States that amiodarone can cause hepatis steatosis. (ver_54100f6c9d7b446c8e06922e04f76c16)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that amiodarone can cause hepatis steatosis."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's CT scan showed no evidence of hepatic steatosis 6... (ver_166b663011334b5e9b5c2787f49c3adb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's CT scan showed no evidence of hepatic steatosis 6 months after amiodarone was discontinued."
+        }
+      ]
+    },
+    {
+      "name": "States the amiodarone is unlikely to be the cause of the patient’s hepatic... (ver_b311555f8eaf4fb3aebf6d2e29aaefca)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the amiodarone is unlikely to be the cause of the patient’s hepatic steatosis."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has elevated liver enzymes. (ver_65ea7e1265ae4e5f8eb92d53bdd3cd61)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has elevated liver enzymes."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has at least three of the following cardiometabolic... (ver_c79c74984e5a4172bd3093edb988335a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has at least three of the following cardiometabolic risk factors: diabetes mellitus, hypertension, hyperlipidemia, or overweight."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient’s liver biopsy shows hepatic steatosis with fibrosis. (ver_7c4851f01c014bdb904a73af030723e5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient’s liver biopsy shows hepatic steatosis with fibrosis."
+        }
+      ]
+    },
+    {
+      "name": "States that metabolic dysfunction-associated steatohepatitis (MASH) with stage... (ver_782fdd4619d84b34a1ecf9ce9b1de9f1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that metabolic dysfunction-associated steatohepatitis (MASH) with stage 2 fibrosis is the most likely primary diagnosis."
+        }
+      ]
+    },
+    {
+      "name": "States that GLP-1 (Glucagon like peptide) based therapy is a recommended... (ver_b0ae2a6636a144879063adbce3964856)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that GLP-1 (Glucagon like peptide) based therapy is a recommended treatment for overweight patients with diabetes."
+        }
+      ]
+    },
+    {
+      "name": "States that semaglutide has been approved to treat MASH with liver fibrosis. (ver_32fe42ba332646978fcafc873ce252ec)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that semaglutide has been approved to treat MASH with liver fibrosis."
+        }
+      ]
+    },
+    {
+      "name": "States that semaglutide is the recommended first-line treatment for this... (ver_e6fc35bc493e4b7e8d025fa5352bb75e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that semaglutide is the recommended first-line treatment for this patient."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-cards-patient-14-mash-tiffany-h-00805cdc"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_00805cdc50a3425f8847a38fb5755444",
+    "task_name": "Web Search_Attachments_Cards_Patient 14 - MASH - Tiffany H",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_5504d3350ef5401eb298404c577d231e",
+        "golden_text_response": "The patient's CT scan shows hepatic steatosis. Of note, the patient was on amiodarone in the past for a brief period of time between November 2023 and January 2024.  Amiodarone has been linked to hepatic steatosis. However on the prior CT scan from 8/5/2024, after the patient had been off amiodarone for 7 months, the liver does not show any abnormal findings.  The current CT scan from 1/10/2026 is the first mention of hepatic steatosis. This makes amiodarone an unlikely contributor to the patient's current findings. \n\nWhen compared to a prior CT scan from 8/2024, this is a new finding.  His laboratory results show elevation of the liver enzymes (AST = 202 U/L and ALT 148 U/L).  This patient has a history of multiple metabolic risk factors (diabetes, obesity, hypertension and dyslipidemia) and meets the criteria for metabolic dysfunction-associated steatohepatitis (MASH), including exclusion of other etiology (e.g. drug-induced). The histology report shows the results of a liver biopsy which confirms hepatic steatosis. There is also evidence of perisinusoidal fibrosis with portal fibrosis which correlates with stage 2 fibrosis. \n\nThe patient has a primary diagnosis of MASH with stage 2 fibrosis. He is also diabetes and overweight (BMI = 27 kg/m²). Given his clinical history, the recommended first-line pharmacologic treatment for his primary diagnosis is a GLP-1 based therapy. Semaglutide is a GLP-1 receptor agonist, and recommended first-line treatment for patients with MASH with stage 2 fibrosis.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

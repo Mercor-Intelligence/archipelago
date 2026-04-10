@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "On November 1, 2025, Liverbird notified the City of San Dimas (\"City\") of its intent to terminate their redevelopment negotiating agreement. Based on the attached expenses, how much of the good faith deposit is the City required to return to Liverbird?"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the amount of the good faith deposit the city has to return to... (ver_584e2298bac74d73b4281f43c1569566)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the amount of the good faith deposit the city has to return to Liverbird is $8,200 (acceptable range $8,118 to $8,282)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world428-ro-01-b6d91b40"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_b6d91b4092a142298691d69fe95e42c3",
+    "task_name": "World428_RO_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_66ced9871d6a42a3baf3d7472fff7b0d",
+        "golden_text_response": "The City has to return $8,200 of the good faith deposit to Liverbird.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

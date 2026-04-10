@@ -1,0 +1,69 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_17119c753b3b4da9a5c34b0f5c94be09",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_66a9419df8a64f6ebc38d34c172ccaab",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the state with the highest ROI is Wisconsin",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0c322a65660e419a881c816b798221dd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_66a9419df8a64f6ebc38d34c172ccaab",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the number of states where all the facilities can be brought to readiness is 2",
+        "modality": "Free text",
+        "negative_criteria": "States that the number of states where all the facilities can be brought to readiness is a value other than 2",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

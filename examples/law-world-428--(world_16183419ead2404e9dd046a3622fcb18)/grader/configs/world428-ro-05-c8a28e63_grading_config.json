@@ -1,0 +1,110 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_9022c4ec33434ea988ea426926121f08",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8a28e63af504d7faba0e130aba22fde",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States Liverbird was in Breach of the ENA for failing to wire the money by the 11/12 deadline",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The city had the right to demand the extra $25,000 under Section 3.2 of the ENA. So Liverbird was required to wire the money by the 11/12 deadline. However, the email thread shows Liverbird wired the money on 11/19 so they were in Breach of the ENA under Section 12.1(a) for failing to perform an obligation under the agreement.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_54a2a2212b144f878bb6626a736da939",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8a28e63af504d7faba0e130aba22fde",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that Liverbird properly cured the Breach by making the payment by 11/19",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Per Section 12.2(a), for monetary breaches, the breaching party has 5 business days to cure their breach. 5 business days after 11/12 is 11/19. By making the payment by 11/19, Liverbird cured their Breach under Section 12.2(a).",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d9bfadf05f914a3c8d999ab0dc40cb1f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8a28e63af504d7faba0e130aba22fde",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that since they properly cured the Breach, no Default occurred",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Liverbird cured their Breach, thus the Breach did not turn into a Default under Section 12.2.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4ebf37b03a9749c3b7b400cad48332ae",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8a28e63af504d7faba0e130aba22fde",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that Myric's termination of the final exclusive negotiating agreement is not valid under Section 12.4(a)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Myric cannot terminate the agreement under Section 12.4(a) without a Default occurring. A Default did not occur since Liverbird cured their Breach prior to it becoming a Default so they cannot terminate the agreement under Section 12.4(a).",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

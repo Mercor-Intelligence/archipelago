@@ -1,0 +1,376 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 14” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n----\n\nWhat clinical trial for heart failure does the patient meet the inclusion criteria and could potentially be enrolled in during this hospital stay? Ignore exclusion criteria and assume the patient can provide written informed consent. Please explain your reasoning. Answers should be in line with the most recent clinical guidelines as of January 9, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Mentions that the patient is admitted with the primary diagnosis of... (ver_29371cb52e2748ebb4f9fe2753ce045d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient is admitted with the primary diagnosis of decompensated heart failure."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the patient is hospitalized at Jersey Shore University Medical... (ver_da6d1199be7248ecb754f7f1aafa292d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient is hospitalized at Jersey Shore University Medical Center."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the patient is on intravenous Lasix 80 mg twice daily. (ver_21398e484e86440cb372535507743b25)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient is on intravenous Lasix 80 mg twice daily."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the patient has been on maximum tolerated dose of diuretic... (ver_0ac20a52c61a44ce902dc68c2e70a786)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient has been on maximum tolerated dose of diuretic therapy for multiple days."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the patient’s urine output over the last 12 hours was 1,200 mL. (ver_6e9d7a654d3d44d1954adbd7e646cd6b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient’s urine output over the last 12 hours was 1,200 mL."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the patient has jugular vein distension on physical exam. (ver_5adb6c760879476eaf3ebeebb8ae72f0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient has jugular vein distension on physical exam."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the patient has 2+ pitting edema on physical exam. (ver_db9c4f3102114ddcb16046ee12c2314a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient has 2+ pitting edema on physical exam."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the patient's chest X-ray read demonstrates congestion. (ver_d0fe00bdf80c4bf6a712c68138875d74)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient's chest X-ray read demonstrates congestion."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the patient has signs of congestion. (ver_52fec269867247f5a65551c736fd2ab8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient has signs of congestion."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the patient has signs of congestion despite treatment with... (ver_0c01fdd1c93e444a85be4731e36e2c05)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient has signs of congestion despite treatment with intravenous diuretics."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the patient is over the age of 21 years old (acceptable range... (ver_5a542d2b4b0b4e2296c37bc1f47259d2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient is over the age of 21 years old (acceptable range 20.8 to 21.2)."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the patient can provide written informed consent. (ver_7c9753f657694ef58ac057615ba80900)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient can provide written informed consent."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient meets the criteria to be included in the Diuretics... (ver_88e7592bcd11433fbb7cb26ad839cc6a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient meets the criteria to be included in the Diuretics Alone vs. Aortix Endovascular Device for Acute Heart Failure (DRAIN-HF) trial."
+        }
+      ]
+    },
+    {
+      "name": "States the DRAIN-HF clinical trial is actively recruiting patients at Jersey... (ver_b8a2165cd9a347ea941bc5b6b6b39d05)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the DRAIN-HF clinical trial is actively recruiting patients at Jersey Shore University Medical Center."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient could be considered for the DRAIN-HF clinical trial. (ver_cd5c9b7c385645e3a59c17a964258d30)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient could be considered for the DRAIN-HF clinical trial."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-cards-patient-14-drain-hf-steven-i-b23ccaf2"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_b23ccaf217af49969729df7d19d053b1",
+    "task_name": "Web Search_Attachments_Cards Patient 14 - DRAIN-HF - Steven I",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_00cb00dade964bc68ce4020015fa962f",
+        "golden_text_response": "The patient meets all criteria for the Diuretics Alone vs. Aortix Endovascular Device for Acute Heart Failure (DRAIN-HF) clinical trial: currently admitted to the hospital with a primary diagnosis of decompensated heart failure, diuresis with intravenous lasix 80 mg twice daily, being on maximally tolerated diuretic therapy, urine output of 1,200 mL over the past 12-hour period, jugular vein distension on physical exam, signs of congestion in chest X-ray read despite intravenous diuretics, age >21 years old, and ability to provide informed consent. Additonally, they are admitted to Jersey Shore Univeristy Medical Center which is a site that is actively enrolling patients for the clinical trial.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

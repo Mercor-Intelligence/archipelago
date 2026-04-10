@@ -1,0 +1,154 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_0da6fe6d5e054db28fb220a7580e3a84",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e26434d158b8435b8350e881c62013b2",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that SBP\u2019s defense is that Porter\u2019s November 4, 2025 termination was caused by Anthony Porter's performance deficiencies",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Porter\u2019s discharge was caused by the November 3, 2025 performance evaluation, in which Jordan McAllister recommended discharge for continuing and new performance deficiencies, as follows:\n\nSupervisor Assessment\nWhile Anthony maintains a positive attitude, the persistent deficiencies in work ethic and communication have [sic] significantly harmed project progress. Given the ongoing performance issues and lack of improvement, continued employment is not recommended.\nRecommendation: Termination. \n\nAPorter performance review 11.3.25.pdf at pp. 1-2. \n\nSupervisor email to A Porter 9.22.25.pdf. These continuing deficiencies were noted as reasons for discharge, as follows:\n\nSummary \n\nOver the past year, Anthony Porter has not demonstrated the improvement expected following his 2024 review. Several issues persisted and in some cases worsened. The most significant concerns relate to work ethic and communication. Despite coaching and feedback, Anthony has not met the essential performance standards required for his position. Key Concerns\n\nWork Ethic Decline Anthony frequently arrived late to the Fresno, CA work site and was absent without timely notice on multiple occasions. Tasks requiring immediate action were often left incomplete until prompted, leading to workflow disruptions.\nCommunication Failures Anthony repeatedly failed to notify project managers of critical issues\u2014including subcontractor delays, material shortages, and site-readiness concerns\u2014until after they had already impacted the Fresno project schedule.\nLack of Initiative Anthony did not follow through on commitments relating to daily site-readiness checks and regular status reporting. These lapses caused confusion and required other supervisors to intervene.\n\nAPorter performance review 11.3.25.pdf at p. 1.\n\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e5930264f1e34e3ea53f30052f5679f9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e26434d158b8435b8350e881c62013b2",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that pretext testing evaluates whether SBP took the adverse action against Porter for the legitimate business reason that the SBP asserts or whether the action against Porter was in fact retaliation for Porter\u2019s engaging in protected activity",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The Whistleblower Investigations Manual states that pretext testing is mandatory for responses to OSHA retaliation complaints such as Anthony Porter's complaint, which alleges that the discharge was made because he engaged in protected activity by making a safety complaint out to OSHA on October 13, 2025. The Manual provides the mechanism for testing responses. The Manual provides:\n\nTesting the evidence supporting and refuting Respondent\u2019s defense is a critical part of a whistleblower investigation. OSHA refers to this testing loosely as \u201cpretext testing\u201d , . . Investigators are required to conduct pretext testing of Respondent\u2019s defense. \n\nA pretextual position or argument is a statement that is put forward to conceal a true\npurpose for an adverse action.\n\u2022 Thus, pretext testing evaluates whether the employer took the adverse action against the\nemployee for the legitimate business reason that the employer asserts or whether the\naction against the employee was in fact retaliation for Complainant\u2019s engaging in\nprotected activity.\n\nWhistleblower Investigations Manual.pdf at p. 47.\n\nSBP's response to the retaliation complaint must withstand pretext testing with respect to the reason for Porter's discharge, for specific continuing performance deficiencies. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c2dc0672b6ee49e987d14ff7aa151055",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e26434d158b8435b8350e881c62013b2",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that proper pretext testing requires the investigator to look at any direct evidence of retaliation (such as statements of managers that action is being taken because of Complainant\u2019s protected activity) that may shed light on what role, if any, the protected activity played in the employer\u2019s decision to take adverse action",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The Whistleblower Investigations Manual states: \"Proper pretext testing requires the investigator to look at any direct evidence of retaliation (such\nas statements of managers that action is being taken because of Complainant\u2019s protected activity) and the circumstantial evidence that may shed light on what role, if any, the protected activity played in the employer\u2019s decision to take adverse action.\"\n\nWhistleblower Investigations Manual.pdf at p. 47.  This analysis will be applied to SBP's response to Porter's retaliation complaint alleging performance deficiencies were the reason for Porter's discharge. The investigator first identifies the evidence upon which the discrimination allegations are based, and evaluates the sufficiency of that evidence. In Porter's case, he alleges circumstantial evidence in the form of temporal proximity between the protected activity (October 13, 2025) and the discharge (November 4, 2025).",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d0c3ed144d254fc1966865f64afc1b08",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e26434d158b8435b8350e881c62013b2",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that proper pretext testing requires the investigator to look at any circumstantial evidence that may shed light on what role, if any, the protected activity played in the employer\u2019s decision to take adverse action",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The Whistleblower Investigations Manual states: \"Proper pretext testing requires the investigator to look at any direct evidence of retaliation (such\nas statements of managers that action is being taken because of Complainant\u2019s protected activity) and the circumstantial evidence that may shed light on what role, if any, the protected activity played in the employer\u2019s decision to take adverse action.\"\n\nWhistleblower Investigations Manual.pdf at p. 47.  This analysis will be applied to SBP's response to Porter's retaliation complaint alleging performance deficiencies were the reason for Porter's discharge. The investigator first identifies the evidence upon which the discrimination allegations are based, and evaluates the sufficiency of that evidence. In Porter's case, he alleges circumstantial evidence in the form of temporal proximity between the protected activity (October 13, 2025) and the discharge (November 4, 2025).",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ab8233851d104327be49901f765fa42e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e26434d158b8435b8350e881c62013b2",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that relevant circumstantial evidence can include a wide variety of evidence, such as temporal proximity between the protected activity and the adverse action",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The Whistleblower Investigations Manual directs the investigation of the response to Porter's retaliation complaint, and defines relevant circumstancial evidence as follow:\n\nRelevant circumstantial evidence can include a wide variety of evidence, such as:\n\nAn employer\u2019s shifting explanations for its actions; \nThe falsity of an employer\u2019s explanation for the adverse action taken; \nTemporal proximity between the protected activity and the adverse action; \nInconsistent application of an employer\u2019s policies or rules against the employee as compared to similarly situated employees who did not engage in protected activity;\nA change in the employer\u2019s behavior toward Complainant after they engaged (or were suspected of engaging) in protected activity; and \nOther evidence of antagonism or hostility toward protected activity. \n\nWhistleblower Investigations Manual.pdf at pp. 47-48. \n\nPorter alleges temporal proximity between the protected activity and the adverse action, implying that the discharge was a pretext for a discharge that was actually motivated by the fact that Porter reported safety concerns to OSHA. APorter OSHA retaliation complaint 11.6.25.pdf at p. 1.\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_667a57da8b2a4c3f81b7688a9ccc4fbb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e26434d158b8435b8350e881c62013b2",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the Whistleblower Investigations Manual outlines procedures for handling retaliation complaints under the various whistleblower statutes for which responsibility was delegated to OSHA",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The Whistleblower Investigations Manual states its scope: \u201cThis manual outlines procedures and other information relative to the handling of retaliation complaints under the various whistleblower statutes for which responsibility was delegated to OSHA, and may be used as a ready reference.\u201d  Whistleblower Investigations Manual.pdf at p. 1. The Manual is therefore the objectively correct source for the method of pretext testing for the SBP's response to Porter's retaliation complaint , which is the mandatory procure used for testing responses to OSHA retaliation complaints.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

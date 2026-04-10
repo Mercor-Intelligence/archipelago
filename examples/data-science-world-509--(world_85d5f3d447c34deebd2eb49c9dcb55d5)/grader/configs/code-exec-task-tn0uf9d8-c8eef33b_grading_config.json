@@ -1,0 +1,154 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_d3f23b2821d44321b392097e868454f1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8eef33b90454867a32892324be458f2",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the overall roll rate for delinquency as 3.24% (+/-0.1%).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the overall roll rate for delinquency correctly calculated as 3.24% (+/-0.1%) aggregated across both inflection month pairs.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_babcc4cc221b47199951d5a9f4359f81",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8eef33b90454867a32892324be458f2",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the overall cure rate for delinquency as 3.23% (+/-0.1%).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the overall cure rate for delinquency correctly calculated as 3.23% (+/-0.1%) aggregated across both inflection month pairs.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4c61550f121f4ae688ce941746f00525",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8eef33b90454867a32892324be458f2",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the overall stay rate for delinquency as 93.53% (+/-0.1%).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the overall stay rate for delinquency correctly calculated as 93.53% (+/-0.1%) aggregated across both inflection month pairs.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_431308926b4a49eb9fbaf5d4d8fb72b3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8eef33b90454867a32892324be458f2",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the overall roll rate for internal risk grade as 42.29% (+/-0.1%).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the overall roll rate for internal risk grade correctly calculated as 42.29% (+/-0.1%) aggregated across both inflection month pairs.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_478cb098d1164aff97f6ba7e9e6e27bb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8eef33b90454867a32892324be458f2",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the overall cure rate for internal risk grade as 1.08% (+/-0.1%).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the overall cure rate for internal risk grade correctly calculated as 1.08% (+/-0.1%) aggregated across both inflection month pairs.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f42a3fdc5b8a4d24a847d8fa74a281e2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8eef33b90454867a32892324be458f2",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the overall stay rate for internal risk grade as 56.63% (+/-0.1%).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the overall stay rate for internal risk grade correctly calculated as 56.63% (+/-0.1%) aggregated across both inflection month pairs.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "eval_config_name": "Output LLM",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "4658aec9-7eeb-4c9b-84c2-5464345e345f",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

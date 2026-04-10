@@ -1,0 +1,291 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_5d305c7b0a284046ba0ee1a88b78adaf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86df58262e634945b104c4f282ba3e6a",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has been diagnosed with a diffuse midline glioma. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This can be found in the attached script. \"We believe this is a diffuse midline glioma.\" ",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f0a3014988a3446da3c7dfa07fbbcca6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86df58262e634945b104c4f282ba3e6a",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's cancer is H3K27M positive.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This can be found in the attached investigation report. \"H3K27M positive\" ",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_87bf66f16ca74c03aa768c290679e793",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86df58262e634945b104c4f282ba3e6a",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the most appropriate next treatment option is dordaviprone.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient meets all of the indications for this treatment. \"MODEYSO is a protease activator indicated for the treatment of adult and pediatric patients 1 year of age and older with diffuse midline glioma harboring an H3 K27M mutation with progressive disease following prior therapy.\" https://pp.jazzpharma.com/pi/modeyso.en.USPI.pdf",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_de9d8caf2cc4425e856978d7e77e938e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86df58262e634945b104c4f282ba3e6a",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that dordaviprone is dosed at 625 mg.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the dose of dordaviprone. \"The recommended dose in adult patients is 625 mg orally once weekly.\" https://pp.jazzpharma.com/pi/modeyso.en.USPI.pdf",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e000fb37ab414a54a3ed1adbd15bf2c7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86df58262e634945b104c4f282ba3e6a",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that dordaviprone is dosed weekly.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the frequency of dordaviprone. \"The recommended dose in adult patients is 625 mg orally once weekly.\" https://pp.jazzpharma.com/pi/modeyso.en.USPI.pdf",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8f29055c2bf7440ebcfdd3e36353f914",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86df58262e634945b104c4f282ba3e6a",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that dordaviprone carries a risk of QT prolongation. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"MODEYSO causes concentration dependent QTc interval prolongation.\" https://pp.jazzpharma.com/pi/modeyso.en.USPI.pdf",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2469fb13c08e497fb4fe4ce3b567508f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86df58262e634945b104c4f282ba3e6a",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has heart failure. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This can be found in the chart Onc Patient 7, tab Diagnoses, row 232, column I, which states \"diastolic congestive heart failure.\"",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ea59b8825f924569b2072b173c356a14",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86df58262e634945b104c4f282ba3e6a",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that heart failure can increase the patient's risk of QT prolongation.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"In HF, there are several changes at the myocyte level that tend to prolong repolarization time and facilitate reentry. This electric remodeling goes hand in hand with structural remodeling. As remodeling progresses, delayed ventricular repolarization manifests as a prolonged QT on the surface ECG. The risk of all-cause mortality in HF patients has been shown to triple in the presence of QT prolongation.\" https://www.ahajournals.org/doi/10.1161/CIRCHEARTFAILURE.109.917781#:~:text=In%20HF%2C%20there%20are%20several,the%20presence%20of%20QT%20prolongation.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_55dc8ed92fde4b928eaaaf7106f136be",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86df58262e634945b104c4f282ba3e6a",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient should be managed with serial electrocardiograms (ECG).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Monitor ECG and electrolytes before starting MODEYSO and periodically during treatment.\" https://pp.jazzpharma.com/pi/modeyso.en.USPI.pdf",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a59cf655fd9146b28ec0ea7ea50e1cf2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86df58262e634945b104c4f282ba3e6a",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that dordaviprone should be interrupted if the patient's QT interval is greater than 500 ms.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"QTc absolute value >500 ms OR An increase of >60 ms from baseline. Interrupt MODEYSO until QTc interval \u2264480 ms OR return to baseline. Resume MODEYSO at the next lower dose level.\" https://pp.jazzpharma.com/pi/modeyso.en.USPI.pdf",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9c071520350e443f9a0f1fc298a63dcd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86df58262e634945b104c4f282ba3e6a",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that dordaviprone should be interrupted if the patient's QT increases more than 60 ms above baseline.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"QTc absolute value >500 ms OR An increase of >60 ms from baseline. Interrupt MODEYSO until QTc interval \u2264480 ms OR return to baseline. Resume MODEYSO at the next lower dose level.\" https://pp.jazzpharma.com/pi/modeyso.en.USPI.pdf",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6c8b537317c143ff985ca097b091ecc1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86df58262e634945b104c4f282ba3e6a",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that dordaviprone should be resumed once the patient's QT returns to baseline.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"QTc absolute value >500 ms OR An increase of >60 ms from baseline. Interrupt MODEYSO until QTc interval \u2264480 ms OR return to baseline. Resume MODEYSO at the next lower dose level.\" https://pp.jazzpharma.com/pi/modeyso.en.USPI.pdf",
+        "is_primary_objective": true
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e13025e3ee93445f86ec9d31abc2b0f3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86df58262e634945b104c4f282ba3e6a",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that dordaviprone should be resumed once the patient's QT drops below or equal to 480 ms.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"QTc absolute value >500 ms OR An increase of >60 ms from baseline. Interrupt MODEYSO until QTc interval \u2264480 ms OR return to baseline. Resume MODEYSO at the next lower dose level.\" https://pp.jazzpharma.com/pi/modeyso.en.USPI.pdf",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d552dc87b4894038a01402ee3a0d33fa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86df58262e634945b104c4f282ba3e6a",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that, if interrupted, dordaviprone should be resumed at a reduced dose.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"QTc absolute value >500 ms OR An increase of >60 ms from baseline. Interrupt MODEYSO until QTc interval \u2264480 ms OR return to baseline. Resume MODEYSO at the next lower dose level.\" https://pp.jazzpharma.com/pi/modeyso.en.USPI.pdf",
+        "is_primary_objective": true
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

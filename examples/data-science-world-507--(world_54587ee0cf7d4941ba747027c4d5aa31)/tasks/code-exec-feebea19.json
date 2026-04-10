@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "A global streaming platform is investigating potential network problems during subscription payments by users using failed_payments.csv and subscribers.csv. The goal is to detect user segments that repeatedly face network issues.\n\nClean the failed_payments dataset by converting the amount into numeric values. Pick only U.S. dollar amounts and only those payment_ids for which the failure reason is Network error or Timeout.\n\nGet the subscriber details for these picked payment ids using the subscribers.csv. Focus only on non-free subscribers, remove the rest from the analysis.\nNow using the combination of countries and the payment attempted months only, find 3 groups with maximum number of payment failures (unique users).\nCalculate the percentage distribution of users by gender within these 3 groups.\n\nProvide your full analysis as a Python script. Round the distribution values to 2 decimals. The answer should be country, payment attempted month, percentage of male, percentage of female for the 3 groups in any order.\n\nAlso give the final output in your answer."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Calculates the Male percentage distribution for country US and month 7 as... (ver_9d4f3f3a461d454aacf317f4afc2ab8a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the Male percentage distribution for country US and month 7 as 42.86 (acceptable range 42.43 to 43.29)."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the Male percentage distribution for country US and month 8 as... (ver_215a68c5f55448a9923459f01c041744)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the Male percentage distribution for country US and month 8 as 50.00 (acceptable range 49.50 to 50.50)."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the Male percentage distribution for country US and month 12 as... (ver_62343cdf81184b4aac492cf2559bb37d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the Male percentage distribution for country US and month 12 as 66.67 (acceptable range 66.00 to 67.34)."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the Female percentage distribution for country US and month 7 as... (ver_2fdcc9436bbc4f1aa6789a6b1895f2dd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the Female percentage distribution for country US and month 7 as 50.00 (acceptable range 49.50 to 50.50)."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the Female percentage distribution for country US and month 8 as... (ver_c28fc4cb970e4eb2acb158baca130fc3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the Female percentage distribution for country US and month 8 as 43.75 (acceptable range 43.31 to 44.19)."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the Female percentage distribution for country US and month 12 as... (ver_99243237cf044189a53211e71d2d9463)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the Female percentage distribution for country US and month 12 as 25.00 (acceptable range 24.75 to 25.25)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh code-exec-feebea19"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_54587ee0cf7d4941ba747027c4d5aa31",
+    "world_name": "Data Science World 507",
+    "task_id": "task_feebea192830446da40cb6dd6a5d79e5",
+    "task_name": "Code Exec",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_630eff2c22fb44f8978651c2710ccb2d",
+        "golden_text_response": "country  payment_month      M      F\n US              7        42.86  50.00\n US              8        50.00  43.75\n US             12        66.67  25.00\n\n```\nimport pandas as pd\nimport re\n\n\nfailed = pd.read_csv(\"/content/failed_payments.csv\")\nsubs = pd.read_csv(\"/content/subscribers.csv\")\ndef extract_usd_amount(row):\n   NUMBER_WORDS = {\n       \"zero\": 0, \"one\": 1, \"two\": 2, \"three\": 3, \"four\": 4,\n       \"five\": 5, \"six\": 6, \"seven\": 7, \"eight\": 8, \"nine\": 9,\n       \"ten\": 10, \"eleven\": 11, \"twelve\": 12, \"thirteen\": 13,\n       \"fourteen\": 14, \"fifteen\": 15, \"sixteen\": 16,\n       \"seventeen\": 17, \"eighteen\": 18, \"nineteen\": 19,\n       \"twenty\": 20, \"thirty\": 30, \"forty\": 40, \"fifty\": 50,\n       \"sixty\": 60, \"seventy\": 70, \"eighty\": 80, \"ninety\": 90\n   }\n\n\n   amount = row[\"amount\"]\n   currency = str(row[\"currency\"]).lower()\n\n\n\n   if not any(x in currency for x in [\"usd\", \"us dollar\", \"dollar\"]):\n       return None\n\n\n   if pd.isna(amount):\n       return None\n\n\n   amt = str(amount).lower()\n\n\n   nums = re.findall(r\"\\d+\\.?\\d*\", amt)\n   if nums:\n       return float(nums[0])\n   words = amt.split()\n   values = [NUMBER_WORDS[w] for w in words if w in NUMBER_WORDS]\n   if len(values) == 3:\n       return values[0] + values[1] / 100 + values[2] / 10000\n   if len(values) == 2:\n       return values[0] + values[1] / 100\n   if len(values) == 1:\n       return float(values[0])\n   return None\nfailed[\"amount_usd\"] = failed.apply(extract_usd_amount, axis=1)\nfailed = failed.dropna(subset=[\"amount_usd\"])\ndef normalize_payment_method(method):\n   if pd.isna(method):\n       return None\n   method = method.lower()\n   if method == \"card\":\n       return \"Debit\"\n   if \"credit\" in method or method == \"cc\":\n       return \"Credit\"\n   return method.title()\n\n\nfailed[\"payment_method\"] = failed[\"payment_method\"].apply(normalize_payment_method)\nfailed = failed[\n   failed[\"failure_reason\"].isin([\"Network error\", \"Timeout\"])\n]\nfailed[\"payment_attempted_date\"] = pd.to_datetime(\n   failed[\"attempt_date\"], errors=\"coerce\"\n)\nfailed[\"payment_month\"] = failed[\"payment_attempted_date\"].dt.month\nmerged = failed.merge(subs, on=\"user_id\", how=\"inner\")\nmerged = merged[merged[\"subscription_tier\"].str.lower() != \"free\"]\ncluster_counts = (\n   merged\n   .groupby([\"country\", \"payment_month\"])[\"user_id\"]\n   .nunique()\n   .reset_index(name=\"failure_count\")\n   .sort_values(\"failure_count\", ascending=False)\n   .head(3)\n)\ngender_dist = (\n   merged\n   .merge(\n       cluster_counts[[\"country\", \"payment_month\"]],\n       on=[\"country\", \"payment_month\"],\n       how=\"inner\"\n   )\n   .groupby([\"country\", \"payment_month\", \"gender\"])[\"user_id\"]\n   .nunique()\n   .reset_index(name=\"count\")\n)\n\n\ntotals = (\n   gender_dist\n   .groupby([\"country\", \"payment_month\"])[\"count\"]\n   .sum()\n   .reset_index(name=\"total\")\n)\n\n\ngender_dist = gender_dist.merge(\n   totals, on=[\"country\", \"payment_month\"]\n)\n\n\ngender_dist[\"percentage\"] = (\n   (gender_dist[\"count\"] / gender_dist[\"total\"]) * 100\n).round(2)\n\n\nfinal = (\n   gender_dist\n   .pivot_table(\n       index=[\"country\", \"payment_month\"],\n       columns=\"gender\",\n       values=\"percentage\",\n       fill_value=0\n   )\n   .reset_index()\n)\n\n\nfinal = final.rename(\n   columns={\n       \"Male\": \"percentage_male\",\n       \"Female\": \"percentage_female\"\n   }\n)\nprint(final[['country', 'payment_month', 'M', 'F']])\n\n\n```\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

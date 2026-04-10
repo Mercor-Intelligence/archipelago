@@ -1,0 +1,71 @@
+[arco]
+source = "foundry_app"
+name = "Mail"
+version = "1.0.0"
+
+[arco.env.host]
+REPO_URL = "https://github.com/Mercor-Intelligence/mercor-rls-mail.git"
+
+[arco.env.build]
+
+[arco.env.runtime]
+MCP_TRANSPORT = "http"
+MCP_PORT = "5000"
+HAS_STATE = "true"
+APP_FS_ROOT = "/filesystem"
+APP_APPS_DATA_ROOT = "/.apps_data"
+STATE_LOCATION = "/.apps_data/mail"
+USE_INDIVIDUAL_TOOLS = "true"
+
+[arco.env.runtime.schema.USE_INDIVIDUAL_TOOLS]
+type = "bool"
+label = "Use individual tools"
+description = "Enable individual tools for UI instead of consolidated meta-tools for LLMs"
+
+[arco.secrets.host]
+GITHUB_TOKEN = "RLS_GITHUB_READ_TOKEN"
+
+[arco.secrets.build]
+
+[arco.secrets.runtime]
+
+# Error Injection Scenarios for testing agent resilience
+[[arco.error_injection.scenarios]]
+name = "api_timeout"
+description = "Simulates API timeout when listing or searching emails"
+tool_pattern = "list_mails|search_mail|mail"
+error_type = "timeout"
+error_message = "Request timed out after 30 seconds while connecting to mail server"
+trigger_probability = 1.0
+
+[[arco.error_injection.scenarios]]
+name = "rate_limit"
+description = "Simulates rate limiting when sending too many emails"
+tool_pattern = "send_mail|reply_mail|reply_all_mail|forward_mail|mail"
+error_type = "rate_limit"
+error_message = "Rate limit exceeded: maximum 10 emails per minute. Please wait before sending more."
+trigger_probability = 1.0
+
+[[arco.error_injection.scenarios]]
+name = "permission_denied"
+description = "Simulates permission denied when accessing restricted mailbox"
+tool_pattern = "read_mail|list_mails|mail"
+error_type = "permission_denied"
+error_message = "Permission denied: insufficient privileges to access this mailbox"
+trigger_probability = 1.0
+
+[[arco.error_injection.scenarios]]
+name = "server_error"
+description = "Simulates internal mail server error"
+tool_pattern = "send_mail|forward_mail|mail"
+error_type = "server_error"
+error_message = "Internal server error: mail delivery service temporarily unavailable (error code 503)"
+trigger_probability = 1.0
+
+[[arco.error_injection.scenarios]]
+name = "malformed_response"
+description = "Simulates corrupted or malformed response from mail server"
+tool_pattern = "read_mail|search_mail|mail"
+error_type = "malformed_response"
+error_message = "Failed to parse mail server response: unexpected end of MIME data"
+trigger_probability = 1.0

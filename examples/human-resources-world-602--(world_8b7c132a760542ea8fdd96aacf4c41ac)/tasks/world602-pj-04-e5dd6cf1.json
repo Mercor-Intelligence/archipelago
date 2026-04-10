@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the attached 'Referral Program_v4.pdf' and 'Job_Requisitions_Replacement_vs_Growth.xlsx', calculate the total referral incentive payout for all open job positions (in USD, rounded to the nearest integer). \n\nProvide your answers directly in the console. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that based on the referral program, the total referral incentive payout... (ver_388934f93382415a8d03d331e0db8f88)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on the referral program, the total referral incentive payout for all open job positions is $633,750 (acceptable range $627,412 to $640,088)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world602-pj-04-e5dd6cf1"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_e5dd6cf18b9640098f8a7b85a10b81e9",
+    "task_name": "World602_PJ_04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_4f672cd65d944c5fb706c4bd67664c23",
+        "golden_text_response": "Based on the referral program, the total referral incentive payout for all open job positions is $633,750.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_28904ddab8be42b8bd659dcd487900e3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f4634f284e3543179d5bf6e824fee5f9",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the most likely reason is due to the confidentiality and privilege exception to disclosure in the APA. ",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Section 8.03 of the APA provides: \"Seller shall provide Buyer reasonable access to Business Records and personnel, subject to confidentiality and privilege.\" The most likely reason the Seller claimed they were required to withhold information was due to the confidentiality and privilege exception to disclosure. \n\nThe NVIDIA Corporation / SoftBank Group September 13, 2020 agreement contains the following language: \"provided, however, that, in the event that the Company withholds a document or information in circumstances in which any of Section 6.7(d)(i) through (iii) apply, then the Company shall make reasonable and appropriate substitute arrangements to promptly provide Parent and its Representatives such documents or information in a manner that does not result in such violation, conflict or waiver, as applicable\".\n\nWe can include the following in our APA: \"provided, however, that, in the event that the Company withholds a document or information, then the Company shall make reasonable and appropriate substitute arrangements to promptly provide Buyer with such documents or information in a manner that does not violate confidentiality or privilege, as applicable\".",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_05357179135a43edaaaafb6fb9c4a81e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f4634f284e3543179d5bf6e824fee5f9",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the following amendment should be proposed: \"provided, however, that, in the event that the Seller withholds a document, then the Seller shall make reasonable and appropriate substitute arrangements to promptly provide Buyer with such documents in a manner that does not violate confidentiality or privilege, as applicable\".",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Section 8.03 of the APA provides: \"Seller shall provide Buyer reasonable access to Business Records and personnel, subject to confidentiality and privilege.\" The most likely reason the Seller claimed they were required to withhold information was due to the confidentiality and privilege exception to disclosure. \n\nThe NVIDIA Corporation / SoftBank Group September 13, 2020 agreement contains the following language: \"provided, however, that, in the event that the Company withholds a document or information in circumstances in which any of Section 6.7(d)(i) through (iii) apply, then the Company shall make reasonable and appropriate substitute arrangements to promptly provide Parent and its Representatives such documents or information in a manner that does not result in such violation, conflict or waiver, as applicable\".\n\nWe can include the following in our APA: \"provided, however, that, in the event that the Company withholds a document or information, then the Company shall make reasonable and appropriate substitute arrangements to promptly provide Buyer with such documents or information in a manner that does not violate confidentiality or privilege, as applicable\".",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_05e0e4f941da4c63a3fd9bb5bdcbbcea",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f4634f284e3543179d5bf6e824fee5f9",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the following amendment should be proposed: \"provided, however, that, in the event that the Seller withholds information, then the Seller shall make reasonable and appropriate substitute arrangements to promptly provide Buyer with such information in a manner that does not violate confidentiality or privilege, as applicable\".",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Section 8.03 of the APA provides: \"Seller shall provide Buyer reasonable access to Business Records and personnel, subject to confidentiality and privilege.\" The most likely reason the Seller claimed they were required to withhold information was due to the confidentiality and privilege exception to disclosure. \n\nThe NVIDIA Corporation / SoftBank Group September 13, 2020 agreement contains the following language: \"provided, however, that, in the event that the Company withholds a document or information in circumstances in which any of Section 6.7(d)(i) through (iii) apply, then the Company shall make reasonable and appropriate substitute arrangements to promptly provide Parent and its Representatives such documents or information in a manner that does not result in such violation, conflict or waiver, as applicable\".\n\nWe can include the following in our APA: \"provided, however, that, in the event that the Company withholds a document or information, then the Company shall make reasonable and appropriate substitute arrangements to promptly provide Buyer with such documents or information in a manner that does not violate confidentiality or privilege, as applicable\".",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "d75f8557-805e-4b99-b3f6-eb71cb7e8385",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

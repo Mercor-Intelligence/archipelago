@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Please identify any relevant communications (reports, notices, etc.) recommended or required in section 5 of the employee handbook that Anthony Porter did not complete. Alternatively, if he completed all relevant communications, just say that. You can assume that he did not complete any communications aside from those that exist in his personnel file. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that Anthony Porter did not notify SBP of the alleged retaliation... (ver_77cd273b0336411bb4c51d5cf4e8d3ef)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Anthony Porter did not notify SBP of the alleged retaliation pursuant to Section 5.8 of the SBP Employee Handbook."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world437-lb-03-39d728d0"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_39d728d0f7f64f4b85e9fd24c7ecc696",
+    "task_name": "World437_LB_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_251413177b72496bb4455fa0bc5c4bff",
+        "golden_text_response": "Anthony Porter did not notify SBP of the alleged retaliation pursuant to Section 5.8 of the SBP Employee Handbook.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

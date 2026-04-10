@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The client has realized that hires from the current FY that were recruited through Greenhouse ATS haven't been updated in the Workday platform. Then, using the Get Application tool in GreenhouseATS, please retrieve all new hires from the current FY.\n\nThen, in the Wokrday application, create the new cost centre named CC-5000 and the job_id named JP-0100, with the title \"Generalist\", job family \"Administration\", and job level \"L3\". \n\nUsing the new-hire tool, please hire all current FY hires recruited through Greenhouse ATS for CC-5000, Org-ID 1010, and job profile ID JP-0100. \n\nAfter the above step, state the total number of employees in supervisory-type organizations.\n\nPlease report the answer directly in console. The financial year would be from 1st April 2025 to 31st March 2026. Both dates are inclusive.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the total number of employees in supervisory-type organisations is 43. (ver_57533431a61c4994b45eb4eaa31c5533)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the total number of employees in supervisory-type organisations is 43."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world602-rg-08-bbcc91c7"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_bbcc91c714c74761a83eb7061526a3c8",
+    "task_name": "World602_RG_08",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_8782adaea6c74e379641ed74b498028f",
+        "golden_text_response": "Successfully imported the workers' data, including job_profiles.csv, supervisory_organizations.csv, cost_centres.csv, locations.csv, positions.csv, workers.csv, and movements.csv, into the Workday application.\n\nSuccessfully retrieved 14 new hires from the Greenhouse ATS application.\n\nCreated a new cost centre titled CC-5000 in the Workday application.\n\nCreated a new job_id named JP-0100, with the title \"Generalist\", job family \"Administration\", and job level \"L3\" in the Workday application.\n\nHired all 14 new hires retrieved through Greenhouse ATS in CC-5000, Org-ID 1010, and job profile ID JP-0100. \n\nThe total number of employees in supervisory-type organisations is 43\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

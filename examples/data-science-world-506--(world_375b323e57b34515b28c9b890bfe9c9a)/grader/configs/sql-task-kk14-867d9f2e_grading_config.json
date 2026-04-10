@@ -1,0 +1,250 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_55b758479f704aeeb9408efeb66c1a51",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_867d9f2ebd3e46018664971e24c5ae77",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the city with the highest total amount due per subscriber for overdue invoices as Allentown.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically asks that for each payment status in the qualified invoices, return the top three cities, along with their total amount due per subscriber, breaking ties by city name in ascending alphabetical order. Allentown is the correct city with the highest total amount due per subscriber for overdue invoices.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_28af58a3c3064c6cad0f74e6d5e57847",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_867d9f2ebd3e46018664971e24c5ae77",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the city with the second highest total amount due per subscriber for overdue invoices as Athens.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically asks that for each payment status in the qualified invoices, return the top three cities, along with their total amount due per subscriber, breaking ties by city name in ascending alphabetical order. Athens is the correct city with the second highest total amount due per subscriber for overdue invoices.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d852f2dbf815461d9a154ebac2461941",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_867d9f2ebd3e46018664971e24c5ae77",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the city with the third highest total amount due per subscriber for overdue invoices as Philadelphia.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically asks that for each payment status in the qualified invoices, return the top three cities, along with their total amount due per subscriber, breaking ties by city name in ascending alphabetical order. Philadelphia is the correct city with the third highest total amount due per subscriber for overdue invoices.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d6c186b697194763ae13c0adffdc9324",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_867d9f2ebd3e46018664971e24c5ae77",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the city with the highest total amount due per subscriber for pending invoices as Elizabeth.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically asks that for each payment status in the qualified invoices, return the top three cities, along with their total amount due per subscriber, breaking ties by city name in ascending alphabetical order. Elizabeth is the correct city with the highest total amount due per subscriber for pending invoices.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5a849d81b8e94bd197966da9870af0f7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_867d9f2ebd3e46018664971e24c5ae77",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the city with the second highest total amount due per subscriber for pending invoices as Fort Wayne.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically asks that for each payment status in the qualified invoices, return the top three cities, along with their total amount due per subscriber, breaking ties by city name in ascending alphabetical order. Fort Wayne is the correct city with the second highest total amount due per subscriber for pending invoices.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9881f48eb0ec4a758a6aaeabaff6dcdd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_867d9f2ebd3e46018664971e24c5ae77",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the city with the third highest total amount due per subscriber for pending invoices as Norfolk.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically asks that for each payment status in the qualified invoices, return the top three cities, along with their total amount due per subscriber, breaking ties by city name in ascending alphabetical order. Norfolk is the correct city with the third highest total amount due per subscriber for pending invoices.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_60d68c744f1144d89a845b5b5783615c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_867d9f2ebd3e46018664971e24c5ae77",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the total amount due per subscriber for overdue invoices in Allentown as exactly 234 (acceptable range 232 to 236).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically asks that for each payment status in the qualified invoices, return the top three cities, along with their total amount due per subscriber, breaking ties by city name in ascending alphabetical order. 234 is the correct total amount due per subscriber for overdue invoices in Allentown.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_eb53536dcfb242a9bb51f818fc25002a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_867d9f2ebd3e46018664971e24c5ae77",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the total amount due per subscriber for overdue invoices in Athens as exactly 153 (acceptable range 151 to 155).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically asks that for each payment status in the qualified invoices, return the top three cities, along with their total amount due per subscriber, breaking ties by city name in ascending alphabetical order. 153 is the correct total amount due per subscriber for overdue invoices in Athens.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3c4838de37a44547be0e924991a906a4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_867d9f2ebd3e46018664971e24c5ae77",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the total amount due per subscriber for overdue invoices in Philadelphia as exactly 144 (acceptable range 143 to 145).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically asks that for each payment status in the qualified invoices, return the top three cities, along with their total amount due per subscriber, breaking ties by city name in ascending alphabetical order. 144 is the correct total amount due per subscriber for overdue invoices in Philadelphia.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0c8ee3dbcd36464698b83980b6e9d930",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_867d9f2ebd3e46018664971e24c5ae77",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the total amount due per subscriber for pending invoices in Elizabeth as exactly 151 (acceptable range 149 to 153).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically asks that for each payment status in the qualified invoices, return the top three cities, along with their total amount due per subscriber, breaking ties by city name in ascending alphabetical order. 151 is the correct total amount due per subscriber for pending invoices in Elizabeth.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f38abf494ffb407e999d1a74892942b3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_867d9f2ebd3e46018664971e24c5ae77",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the total amount due per subscriber for pending invoices in Fort Wayne as exactly 137 (acceptable range 136 to 138).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically asks that for each payment status in the qualified invoices, return the top three cities, along with their total amount due per subscriber, breaking ties by city name in ascending alphabetical order. 137 is the correct total amount due per subscriber for pending invoices in Fort Wayne.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ddad78b9c4894d09a8f3bf754e884db7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_867d9f2ebd3e46018664971e24c5ae77",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the total amount due per subscriber for pending invoices in Norfolk as exactly 137 (acceptable range 136 to 138).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically asks that for each payment status in the qualified invoices, return the top three cities, along with their total amount due per subscriber, breaking ties by city name in ascending alphabetical order. 137 is the correct total amount due per subscriber for pending invoices in Norfolk.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

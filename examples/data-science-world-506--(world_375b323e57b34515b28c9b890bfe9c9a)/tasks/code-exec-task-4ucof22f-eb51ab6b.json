@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "You have access to a CSV file 'legacy_billing_migration.csv' containing data from our legacy billing system migration project. The finance team needs to analyze migration outcomes to assess the financial impact and success rate of migrating accounts from the old system.\n\nFor the migration analysis, I need the following metrics:\n1. The total count of migrations with status complete\n2. The sum of old system balances for all complete migrations\n3. The total count of migrations with status failed\n4. The sum of old system balances for all failed migrations\n5. The percentage of migrations that are complete (rounded to 2 decimal places)\n\nRound all monetary values to 2 decimal places. Include your full Python code used for analysis as well as the requested results in the final output."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports the total count of migrations with status complete as 231 +/- 1. (ver_769c61ad8f74411289944b8ce58a2fdf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the total count of migrations with status complete as 231 +/- 1."
+        }
+      ]
+    },
+    {
+      "name": "Reports the sum of old system balances for all complete migrations as... (ver_c6d459961b48488681bd4d7ebb0fe35e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the sum of old system balances for all complete migrations as $16482.08 +/- $0.1."
+        }
+      ]
+    },
+    {
+      "name": "Reports the total count of migrations with status failed as 276 +/- 1. (ver_4c73d323462b4ca68d350c54bd9ff01c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the total count of migrations with status failed as 276 +/- 1."
+        }
+      ]
+    },
+    {
+      "name": "Reports the sum of old system balances for all failed migrations as $19682.86... (ver_ede0f443b9604c9db90c6f41d616f628)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the sum of old system balances for all failed migrations as $19682.86 +/- $0.1."
+        }
+      ]
+    },
+    {
+      "name": "Reports the percentage of migrations that are complete as 28.88% +/- 0.1% (ver_e1c13afc9e604eea91c87ae468842527)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the percentage of migrations that are complete as 28.88% +/- 0.1%."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh code-exec-task-4ucof22f-eb51ab6b"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_eb51ab6b99344ecc821851e240507537",
+    "task_name": "Code Exec - Task 4ucof22f",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_1ed04bb23f354f2d8fa40ee505cc39bc",
+        "golden_text_response": "Complete Count: 231\nComplete Balance Sum: $16482.08\nFailed Count: 276\nFailed Balance Sum: $19682.86\nComplete Percentage: 28.88%\n\n```python\nimport pandas as pd\n\n# Read the CSV file\ndf = pd.read_csv('csv-sheets/legacy_billing_migration.csv')\n\n# Filter using case-insensitive matching\ncomplete_df = df[df['migration_status'].str.lower() == 'complete']\nfailed_df = df[df['migration_status'].str.lower() == 'failed']\n\n# Convert balances to numeric, handling dollar sign format inconsistency\ncomplete_balances = pd.to_numeric(\n    complete_df['old_system_balance'].astype(str).str.replace('$', '', regex=False),\n    errors='coerce'\n)\nfailed_balances = pd.to_numeric(\n    failed_df['old_system_balance'].astype(str).str.replace('$', '', regex=False),\n    errors='coerce'\n)\n\n# Calculate metrics\ncomplete_count = len(complete_df)\ncomplete_balance_sum = round(complete_balances.sum(), 2)\n\nfailed_count = len(failed_df)\nfailed_balance_sum = round(failed_balances.sum(), 2)\n\ncomplete_percentage = round(100.0 * complete_count / len(df), 2)\n\n# Print results\nprint(f\"Complete Count: {complete_count}\")\nprint(f\"Complete Balance Sum: ${complete_balance_sum:.2f}\")\nprint(f\"Failed Count: {failed_count}\")\nprint(f\"Failed Balance Sum: ${failed_balance_sum:.2f}\")\nprint(f\"Complete Percentage: {complete_percentage}%\")\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

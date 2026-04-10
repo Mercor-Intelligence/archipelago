@@ -1,0 +1,39 @@
+application_id,offer_outcome,candidate_comment
+16,Declined,I accepted a position with another organization
+34,Accepted,
+49,Accepted,
+52,Declined,I have decided to withdraw from consideration
+61,Declined,The salary range does not meet my expectations
+92,Declined,The compensation offered was below my current salary
+99,Accepted,
+126,Declined,I have decided to withdraw my application
+135,Accepted,
+153,Accepted,
+155,Accepted,
+158,Accepted,
+173,Declined,Base salary offered is significantly below market rate
+178,Accepted,
+182,Accepted,
+187,Declined,I don't think I have sufficient clinical experience for this role
+188,Accepted,
+204,Accepted,
+209,Accepted,
+213,Declined,The schedule requirements don't work for my situation
+221,Accepted,
+224,Accepted,
+235,Declined,I did not feel I met the minimum qualifications for this role
+239,Declined,I feel my certifications are lacking for what this role requires
+256,Accepted,
+264,Accepted,
+268,Accepted,
+279,Accepted,
+284,Accepted,
+297,Accepted,
+314,Declined,I accepted a competing offer from another employer
+327,Accepted,
+337,Accepted,
+341,Accepted,
+349,Declined,The total compensation package was not competitive enough
+371,Accepted,
+390,Accepted,
+397,Accepted,

@@ -1,0 +1,261 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use the HappyHospital Overview to identify which one of the two EHR Platforms covers less percentage of sites. \n\nFor the previously identified EHR Platform, use IT Data v2, report the states for which the EHR Platform's coverage is greater than 15%. The coverage is defined as the percentage of facilities with the software used in that state. \n\nFor each of the identified states, calculate the average turnaround time (TAT). TAT is defined as the number of days between Initiation Date & Update of Record Date. Return the state and its respective average TAT in days. Round to two decimal places and report final answers directly in console.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that \"Medisoft\" is the EHR Provider with less coverage (ver_42ddd38b6421434998ab27da8f2d27d4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that \"Medisoft\" is the EHR Provider with less coverage."
+        }
+      ]
+    },
+    {
+      "name": "States MO is one of the states with coverage greater than 15% for Medisoft (ver_20e9ce1313ad4fffb19215c888e0d87f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States MO is one of the states with coverage greater than 15% for Medisoft."
+        }
+      ]
+    },
+    {
+      "name": "States MN is one of the states with coverage greater than 15% for Medisoft (ver_3e970c9343ba4d1dac4325202ba634e4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States MN is one of the states with coverage greater than 15% for Medisoft."
+        }
+      ]
+    },
+    {
+      "name": "States WI is one of the states with coverage greater than 15% for Medisoft (ver_eb4b6cdc09104d2cb17c4903a213ddde)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States WI is one of the states with coverage greater than 15% for Medisoft."
+        }
+      ]
+    },
+    {
+      "name": "States the average TAT for WI for Medisoft is 9.68 days (acceptable range 9.58... (ver_fe68d7de29a742a5b0321a271d90c0e8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average TAT for WI for Medisoft is 9.68 days (acceptable range 9.58 to 9.78)."
+        }
+      ]
+    },
+    {
+      "name": "States the average TAT for WI for Medisoft is a value other than 9.68 days (ver_fe68d7de29a742a5b0321a271d90c0e8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average TAT for WI for Medisoft is a value other than 9.68 days."
+        }
+      ]
+    },
+    {
+      "name": "States the average TAT for MN for Medisoft is 10.38 days (acceptable range... (ver_3720271ef375490aa0323dea74d6a3dd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average TAT for MN for Medisoft is 10.38 days (acceptable range 10.28 to 10.48)."
+        }
+      ]
+    },
+    {
+      "name": "States the average TAT for MN for Medisoft is a value other than 10.38 days (ver_3720271ef375490aa0323dea74d6a3dd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average TAT for MN for Medisoft is a value other than 10.38 days."
+        }
+      ]
+    },
+    {
+      "name": "States the average TAT for MO for Medisoft is 10.01 days (acceptable range... (ver_38d84359535e40328d1220fb79903103)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average TAT for MO for Medisoft is 10.01 days (acceptable range 9.910 to 10.11)."
+        }
+      ]
+    },
+    {
+      "name": "States the average TAT for MO for Medisoft is a value other than 10.01 days (ver_38d84359535e40328d1220fb79903103)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average TAT for MO for Medisoft is a value other than 10.01 days."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world118-rs-07-03b64b24"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_03b64b24f4df443fa6fb51bc0b1c8e0a",
+    "task_name": "World118_RS_07",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_5723e9da70794e58be1deb76ed3eb25a",
+        "golden_text_response": "Medisoft is the EHR platform that covers less percentage of sites\n\nMedisoft has a coverage of greater than 15% in WI, MN and MO.\n\nWI: 9.68 days\nMN:\t10.38 days\nMO:\t10.01 days",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

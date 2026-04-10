@@ -1,0 +1,245 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_2bb34d79b7694f0c880814c2506c3ec6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_30d2ab025f7f41a3b0b6253150f99982",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has non-small cell lung cancer. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This can be found in the OpenEMR patient chart (Onc Patient 7), tab CLINICALNOTES, note type - Progress Notes, row 33, column D, which says, \"stage I non-small cell lung cancer.\" \nThis also requires synthesizing the statement from the script, which says, \"I\u2019m sorry the lung cancer you developed several years ago has returned. It is the same type as before.\" Putting both together means this patient has non-small cell lung cancer. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc 7 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_e85d836c01b64477b78b6dcd360728f0"
+          }
+        ]
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1e228d3533b347e2bd3f94d96236b7fa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_30d2ab025f7f41a3b0b6253150f99982",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's cancer is metastatic.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is provided in the attached patient script. \"Now, that same cancer has spread to some lymph nodes and a small spot in the opposite lung.\" This statement indicates that the patient's lung cancer has metastasized. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc 7 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_e85d836c01b64477b78b6dcd360728f0"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_828ac19779334c99aba2b0ddba97e752",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_30d2ab025f7f41a3b0b6253150f99982",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's cancer has an EGFR exon 20 insertion mutation.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This can be found in the attached patient lab results. \"EGFR Exon 20 Insertion Positive.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc 7 Labs - Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_e85d836c01b64477b78b6dcd360728f0"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_db4239715ed94f5caaeb0b870da00585",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_30d2ab025f7f41a3b0b6253150f99982",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient previously received platinum-based chemotherapy.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This can be found in the attached patient script. \"You completed platinum\u2011based chemotherapy with immunotherapy.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc 7 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_e85d836c01b64477b78b6dcd360728f0"
+          }
+        ]
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b262be6345214ad5825ce4371de20f00",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_30d2ab025f7f41a3b0b6253150f99982",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the most appropriate next treatment option for this patient is sunvozertinib.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has experienced a recurrence of her lung cancer. Her medical record indicates she was previously diagnosed with non-small cell lung cancer, suggesting this is a recurrence of the disease. She has already been treated with platinum-based chemotherapy, and laboratory tests show an EGFR exon 20 insertion mutation. Sunvozertinib, a kinase inhibitor, is approved for treating adults with locally advanced or metastatic non-small cell lung cancer (NSCLC) harboring this mutation, especially if the disease has progressed after platinum-based treatment. \nthe OpenEMR patient chart (Onc Patient 7), tab CLINICALNOTES, note type - Progress Notes, row 33, column D\n\nThe patient meets all indications for sunvozertinib. \"Sunvozertinib (Zegfrovy) is a kinase inhibitor indicated for the treatment of adult patients with locally advanced or metastatic non-small cell lung cancer (NSCLC) with epidermal growth factor receptor (EGFR) exon 20 insertion mutations, as detected by an FDA-approved test, whose disease has progressed on or after platinum-based chemotherapy.\" \nhttps://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219839s000lbl.pdf",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc 7 Labs - Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_e85d836c01b64477b78b6dcd360728f0"
+          },
+          {
+            "name": "Onc 7 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_e85d836c01b64477b78b6dcd360728f0"
+          }
+        ]
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_431d83266b7041719eaa143d4b9a9606",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_30d2ab025f7f41a3b0b6253150f99982",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that sunvozertinib is dosed orally.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the route of administration of sunvozertinib. \"Recommended dosage: 200 mg orally once daily taken with food.\" https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219839s000lbl.pdf",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d5247c3e93df4cf5b2dd1a0c13752ebf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_30d2ab025f7f41a3b0b6253150f99982",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that sunvozertinib is dosed once daily.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the frequency of sunvozertinib. \"Recommended dosage: 200 mg orally once daily taken with food.\" https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219839s000lbl.pdf",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2fdf07d2e15c44c587f8732a90fd5228",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_30d2ab025f7f41a3b0b6253150f99982",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that sunvozertinib is dosed at 200 mg.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the dosage of sunvozertinib. \"Recommended dosage: 200 mg orally once daily taken with food.\" https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219839s000lbl.pdf",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1847ccb25d9a4ac88fccd9dcfa4e800c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_30d2ab025f7f41a3b0b6253150f99982",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that sunvozertinib is taken with food.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Sunvozertinib is taken with food. \"Recommended dosage: 200 mg orally once daily taken with food.\" https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/219839s000lbl.pdf",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

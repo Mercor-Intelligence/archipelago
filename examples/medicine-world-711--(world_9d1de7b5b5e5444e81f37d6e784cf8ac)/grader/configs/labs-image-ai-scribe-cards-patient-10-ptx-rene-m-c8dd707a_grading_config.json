@@ -1,0 +1,353 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_f6c542a125e041189d7a04d3c17041ac",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8dd707ae53a40c8ac890614430aca90",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient\u2019s unstable vital signs are concerning for tension physiology.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has a blood pressure of 70/58, which is hypotensive. The patient has a heart rate of 115, which is tachycardic. Therefore, the patient has unstable vital signs. Tension pneumothorax can present with hypotension and tachycardia, so the patient\u2019s unstable vital signs are concerning for a tension pneumothorax. \n\n\"Hypotension refers to a decrease in systemic blood pressure below normal levels. Although normal blood pressure typically ranges from 90/60 to 120/80 mm Hg, values below 90/60 mm Hg are generally considered hypotensive.\" \nhttps://www.ncbi.nlm.nih.gov/books/NBK499961/\n\"Sinus tachycardia is a regular cardiac rhythm in which the heart beats faster than normal and results in an increase in cardiac output. The normal resting heart rate for adults is between 60 and 100.\" https://www.ncbi.nlm.nih.gov/books/NBK553128/\n\u201cClinical diagnosis hinges on signs like hypotension, unilateral breath sounds, distended neck veins, and tracheal deviation.\u201d \u201cAdditional early physical signs include tachypnea, tachycardia, chest retractions, cyanosis, and jugular venous distension.\u201d\nTension Pneumothorax - StatPearls - NCBI Bookshelf",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e31e0c6b40a448d2a0e4a21c0c68ceb8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8dd707ae53a40c8ac890614430aca90",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient\u2019s right-sided chest tightness is a symptom of tension pneumothorax.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has right-sided chest tightness. The right-sided chest tightness is a symptom of tension pneumothorax. Therefore, the patient\u2019s right-sided chest tightness is a symptom of pneumothorax. \n\nFrom the patient\u2019s script:\n\u201cPatient: I feel tightness in my chest. [clutches chest] \nDoctor: How long have you been feeling this way? \nPatient: I don\u2019t really know, it feels like maybe 3 hours now on and off. I almost feel nauseous from it. \nDoctor: I see, I\u2019m sorry you\u2019re not feeling well. Where exactly is it hurting? \nPatient: It hurts right around here. [points to the right side of his chest].\u201d\n\n\u201cIn addition to dyspnea, patients frequently report sharp, pleuritic chest pain radiating to the ipsilateral back or shoulder.\u201d\nhttps://www.ncbi.nlm.nih.gov/books/NBK559090/",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Doctor Dictation Cards Patient 10 script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9f05d4c8b71a4d3bbace6949f6a51b7b"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d25e782b0bc64de084b14525f0c95abf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8dd707ae53a40c8ac890614430aca90",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has a history of dysphagia.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From openEMR (Cards_Patient 10)\n\u201cDysphagia:  -showing progress\u201d\nCLINICALNOTES \u2013 progress note \u2013 Column D \u2013 Row 336\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_759d1ad990db4bf1a16b60d40b70cfad",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8dd707ae53a40c8ac890614430aca90",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that dysphagia increases the risk for aspiration.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Oropharyngeal and esophageal dysphagia, often related to stroke, dementia, poor oral hygiene, or multiple chronic illnesses, increases the risk of aspiration.\" https://pubmed.ncbi.nlm.nih.gov/20074192/\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_33bf73c88e8043e5acca93b28d1b0ed9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8dd707ae53a40c8ac890614430aca90",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that aspiration can trigger the Valsalva maneuver.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Aspiration or choking can lead to coughing and the Valsalva maneuver. \n\"aspiration, forceful straining, coughing, sneezing, retching or vomiting, are all activities that require the Valsalva maneuver.\" https://pmc.ncbi.nlm.nih.gov/articles/PMC2988177/\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_24d20a59f04445b2b150176013ede3ae",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8dd707ae53a40c8ac890614430aca90",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the Valsalva maneuver is a risk factor for pneumothorax.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Activities that require the Valsalva maneuver and intense breathing work or coughing are well-known predisposing factors of pneumothorax.\"\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC2988177/\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4acb9b91f9974a92aefb2dd906e1334b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8dd707ae53a40c8ac890614430aca90",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient is at high risk of developing pneumothorax.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient\u2019s unstable vital signs are concerning for a tension pneumothorax, especially given the right-sided chest tightness, a symptom of this condition. The patient has a history of dysphagia, which increases the risk of aspiration; aspiration can trigger the Valsalva maneuver, itself a risk factor for pneumothorax. Consequently, the patient is at high risk of developing a pneumothorax. \nhttps://pubmed.ncbi.nlm.nih.gov/20074192/\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC2988177/",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d85243b6ecd744f484461c04cf21d12e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8dd707ae53a40c8ac890614430aca90",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that decreased lung markings on the patient\u2019s X-ray are indicative of pneumothorax.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The X-ray document states that there are decreased lung markings on the right, which are highly suggestive of a pneumothorax. \n\"The classic findings of pneumothorax on chest radiography are a white, visceral pleural line that is parallel to the chest wall, with a loss of vascular lung markings distal to the line\". https://www.saem.org/about-saem/academies-interest-groups-affiliates2/cdem/for-students/online-education/m4-curriculum/group-m4-respiratory/pneumothorax#:~:text=Pneumothorax%20is%20classically%20diagnosed%20with,ultrasound%20approaching%20that%20of%20CT.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "AI Scribe_Cards Patient 10-CXR .pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9f05d4c8b71a4d3bbace6949f6a51b7b"
+          }
+        ]
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e56d1752c03843698863b12cf9b1816e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8dd707ae53a40c8ac890614430aca90",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that a depressed right diaphragm on the patient\u2019s X-ray is an indication of a pneumothorax.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the chest X-ray report: \u201cRight depressed diaphragm.\u201d Pneumothorax can present with an ipsilateral depressed diaphragm. \n\"Presence of a pneumothorax on x-ray is noted with inferior displacement of the ipsilateral hemidiaphragm\". \nhttps://www.sciencedirect.com/topics/pharmacology-toxicology-and-pharmaceutical-science/tension-pneumothorax#:~:text=Radiographically%2C%20a%20tension%20pneumothorax%20presents%20as%20a,emergency%20percutaneous%20aspiration%20or%20chest%20tube%20insertion.100.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "AI Scribe_Cards Patient 10-CXR .pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9f05d4c8b71a4d3bbace6949f6a51b7b"
+          }
+        ]
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9ca128771fff4cd99b246bbd15c97a78",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8dd707ae53a40c8ac890614430aca90",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that hyperexpansion of the thorax on the patient\u2019s X-ray is an indication of tension pneumothorax.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the chest X-ray report: \u201cRight sided hyper-expansion and splayed ribs.\u201d Tension pneumothorax on X-ray may present with hyperexpansion of the thorax and splayed ribs. \n\"Radiographic features of increasing intrapleural pressure are ipsilateral hyper-expansion and splayed ribs\". \nhttps://radiopaedia.org/articles/tension-pneumothorax?lang=us\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "AI Scribe_Cards Patient 10-CXR .pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9f05d4c8b71a4d3bbace6949f6a51b7b"
+          }
+        ]
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ee3a7072206441cfa290391f5c5f4073",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8dd707ae53a40c8ac890614430aca90",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that splayed ribs on the patient\u2019s X-ray are an indication of tension pneumothorax.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the chest X-ray report: \u201cRight sided hyper-expansion and splayed ribs.\u201d Tension pneumothorax on X-ray may present with hyperexpansion of the lung and splayed ribs. \n\"Radiographic features of increasing intrapleural pressure are ipsilateral hyper-expansion and splayed ribs\". \nhttps://radiopaedia.org/articles/tension-pneumothorax?lang=us",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "AI Scribe_Cards Patient 10-CXR .pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9f05d4c8b71a4d3bbace6949f6a51b7b"
+          }
+        ]
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5632af2ee3db4703b57693795dd2b71d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8dd707ae53a40c8ac890614430aca90",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Concludes that the most likely diagnosis for this patient is tension pneumothorax.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient\u2019s unstable vital signs are concerning for a tension pneumothorax, especially given the right-sided chest tightness, a symptom of this condition. The patient has a history of dysphagia, which increases the risk of aspiration; aspiration can trigger the Valsalva maneuver, itself a risk factor for pneumothorax. Consequently, the patient is at high risk of developing a pneumothorax. Recognizing diagnostic signs, such as decreased lung markings and a depressed right diaphragm on X-ray, are indicative of a pneumothorax, while hyperexpansion of the lung and splayed ribs suggest a tension pneumothorax. The most likely diagnosis is a tension pneumothorax.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "AI Scribe_Cards Patient 10-CXR .pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9f05d4c8b71a4d3bbace6949f6a51b7b"
+          },
+          {
+            "name": "Doctor Dictation Cards Patient 10 script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9f05d4c8b71a4d3bbace6949f6a51b7b"
+          }
+        ]
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f0fb40edfef049e9aa4b25a2147fa4b9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8dd707ae53a40c8ac890614430aca90",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the next best step in management is immediate needle decompression.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Prompt recognition of a tension pneumothorax is crucial for emergent treatment. Once a tension pneumothorax is suspected, \"immediate management involves needle decompression followed by tube thoracostomy to restore lung expansion and alleviate hemodynamic compromise.\" https://www.ncbi.nlm.nih.gov/books/NBK559090/",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_de3e1f19291343eba23ef74267cd1987",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c8dd707ae53a40c8ac890614430aca90",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that a chest tube should be placed for definitive management following needle decompression.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "In tension pneumothorax, chest tube insertion is performed promptly after needle decompression. \n\"Immediate management involves needle decompression followed by tube thoracostomy to restore lung expansion and alleviate hemodynamic compromise.\" https://www.ncbi.nlm.nih.gov/books/NBK559090/\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

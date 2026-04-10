@@ -1,0 +1,192 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the \"Candidate Pipeline Stage Tracker.xlsx\" file in the filesystem, calculate what is our hire to candidate ratio and the percentage of candidates that were rejected at each stage of the process out of all the rejected candidates in the pool.\nPresent your answers via console message as percentages rounded to two decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the Hire to Candidate Ratio is 1.02% (acceptable range 1.01% to... (ver_ac545131424643e6ac2f0426a9bc7071)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Hire to Candidate Ratio is 1.02% (acceptable range 1.01% to 1.03%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentage of rejections that fell under the \"1. Sourcing /... (ver_e55ac8607705485e94ab8fb0f521eabe)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentage of rejections that fell under the \"1. Sourcing / Identified\" stage is 24.47% (acceptable range 24.23% to 24.71%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentage of rejections that fell under the \"2. Recruiter... (ver_f2889dba10d14411aff84be28fdc8ae5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentage of rejections that fell under the \"2. Recruiter Screen\" stage is 31.91% (acceptable range 31.59% to 32.23%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentage of rejections that fell under the \"3. Hiring... (ver_6be2ac05cac64421923cfd8896bbfd61)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentage of rejections that fell under the \"3. Hiring Manager Review\" stage is 21.28% (acceptable range 21.07% to 21.49%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentage of rejections that fell under the \"4. Panel... (ver_f40fa58a71154e3591abe2da73f5209e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentage of rejections that fell under the \"4. Panel Interview\" stage is 18.09% (acceptable range 17.91% to 18.27%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentage of rejections that fell under the \"5. Finalist... (ver_b4da2d5ea859484392a8131c420d9e2f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentage of rejections that fell under the \"5. Finalist Interview\" stage is 4.26% (acceptable range 4.22% to 4.30%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentage of rejections that fell under the \"6. Offer\" stage... (ver_88406985c1be467481b3d6c837824845)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentage of rejections that fell under the \"6. Offer\" stage is 0.00%."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-0cxeb2f9-4db81912"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_4db819129f8043f096e93114d0fab712",
+    "task_name": "Task 0cxeb2f9",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_e92c21eb277d47f691d88e5f6d5dc06b",
+        "golden_text_response": "The Hire to Candidate Ratio is 1.02% \n\nThe percentage of all rejections in each stage is as follows:\n1. Sourcing / Identified: 24.47% \n2. Recruiter Screen: 31.91% \n3. Hiring Manager Review: 21.28% \n4. Panel Interview: 18.09% \n5. Finalist Interview: 4.26% \n6. Offer: 0.00%\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

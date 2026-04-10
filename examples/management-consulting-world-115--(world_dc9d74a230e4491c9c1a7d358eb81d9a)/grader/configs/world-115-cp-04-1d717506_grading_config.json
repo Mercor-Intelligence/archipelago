@@ -1,0 +1,212 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_91d48742d0384930857ea387f8fbc902",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1d717506c7c147adb3628b03dd7c5f87",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States 2025 Sales is $21,601 million (acceptable range $21,385 to $21,817)",
+        "negative_criteria": "States 2025 Sales is any value other than $21,601 million",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_672c57db3d34455d80cefdf4bde8c762",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1d717506c7c147adb3628b03dd7c5f87",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States 2025 Gross Profit is $11,238 million (acceptable range $11,126 to $11,350)",
+        "negative_criteria": "States 2025 Gross Profit is any value other than $11,238 million",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_90ecb1ed3e784f2b97d5273a2d2f5c2a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1d717506c7c147adb3628b03dd7c5f87",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States 2025 Operating Profit is $4,277 million (acceptable range $4,234 to $4,320)",
+        "negative_criteria": "States 2025 Operating Profit is any value other than $4,277 million",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0e1b1e73b92e4c8f8a5440d22be1b3fb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1d717506c7c147adb3628b03dd7c5f87",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States 2025 Net Income from Continuing Operations is $2,856 million (acceptable range $2,827 to $2,885)",
+        "negative_criteria": "States 2025 Net Income from Continuing Operations is any value other than $2,856 million",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8f7bb5813f9d464fa6bd62935f017c59",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1d717506c7c147adb3628b03dd7c5f87",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States 2025 Total Assets is $61,507 million (acceptable range $60,892 to $62,122)",
+        "negative_criteria": "States 2025 Total Assets is any value other than $61,507 million",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_08e38c0641be4fb9a288e9328d754c0f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1d717506c7c147adb3628b03dd7c5f87",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States 2025 Total Liabilities is $27,448 million (acceptable range $27,174 to $27,722)",
+        "negative_criteria": "States 2025 Total Liabilities is any value other than $27,448 million",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3bedaf9824184a83b4cbc46856e0fff1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1d717506c7c147adb3628b03dd7c5f87",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States 2025 Net Income is $2,856 million (acceptable range $2,827 to $2,885)",
+        "negative_criteria": "States 2025 Net Income is any value other than $2,856 million",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a582f17914334a12afd1928c7cffd8ea",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1d717506c7c147adb3628b03dd7c5f87",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States 2025 Operating Cash Flow is $8,018 million (acceptable range $7,938 to $8,098)",
+        "negative_criteria": "States 2025 Operating Cash Flow is any value other than $8,018 million",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_94ae761dd0ae41119ec2d6f97a4dd3ad",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1d717506c7c147adb3628b03dd7c5f87",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States 2025 Investing Cash Flow is -$3,851 million (acceptable range $-3,890 to $-3,812)",
+        "negative_criteria": "States 2025 Investing Cash Flow is any value other than -$3,851 million",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f13d265827e44aa1b3dae0fa07458886",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1d717506c7c147adb3628b03dd7c5f87",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States 2025 Financing Cash Flow is -$3,483 million (acceptable range $-3,518 to $-3,448)",
+        "negative_criteria": "States 2025 Financing Cash Flow is any value other than -$3,483 million",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

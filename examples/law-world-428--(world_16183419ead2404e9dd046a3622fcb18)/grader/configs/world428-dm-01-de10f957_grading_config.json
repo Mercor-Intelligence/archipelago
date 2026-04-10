@@ -1,0 +1,66 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_be3d79d7a63d4e06948134cc22628169",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_de10f9575d434ffa9cf4ceb4c407a1c8",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States \"Yes\" to indicate that the City will likely prevail on a motion to dismiss because CEQA compliance can be postponed under the circumstances",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "In Tara, the court determined that timing of CEQA review depends on whether the agency has committed itself to the project so as to effectively preclude any alternatives or mitigation measures that CEQA would otherwise require to be considered, including the alternative of not going forward with the project.\n\nUnlike the defendant in Tara, the City has not yet committed itself to the project insofar as the execution of the agreement would be deemed an approval under \u00a7 21002 of CEQA. The City retains meaningful authority over CEQA matters by conditioning the pre-development loan (which the Tara defendant did not do), and therefore the project itself, on compliance with CEQA. Additionally, the agreement does not restrict the City's discretion to consider any and all mitigation measures, including the \u2018no project\u2019 alternative\u201d. \n\nSource: Tara v. City of West Hollywood\t\n-Page 8: We also observed that at a minimum an EIR must be performed before a project is approved, for \u201c[i]f post approval environmental review were allowed, EIR's would likely become nothing more than post hoc rationalizations to support action already taken.\u201d . . . The CEQA Guidelines define \u201capproval\u201d as \u201cthe decision by a public agency which commits the agency to a definite course of action in regard to a project.\u201d \n\n- Page 9: We adopt an intermediate position: A CEQA compliance condition can be a legitimate ingredient in a preliminary public-private agreement for exploration of a proposed project, but if the agreement, viewed in light of all the surrounding circumstances, commits the public agency as a practical matter to the [*628] project, the simple insertion of a CEQA compliance condition will not save the agreement from being considered an approval requiring prior environmental review\n\n-Page 9: the CEQA Guideline defining \u201capproval\u201d states that \u201cwith private projects, approval occurs upon the earliest commitment to issue or the issuance by the public agency of a discretionary contract, grant, subsidy, loan, or other form of financial assistance, lease, permit, license, certificate, or other entitlement for use of the project.\u201d\n\n-Page 11: For similar reasons, we have emphasized the practical over the formal in deciding whether CEQA review can be postponed, insisting it be done early enough to serve, realistically, as a meaningful contribution to public decisions.. . CEQA review should not be delayed to the point where it would \u201ccall for a burdensome reconsideration of decisions already made\u201d].) The full consideration of environmental effects CEQA mandates must not be reduced \u201c \u2018to a process whose result will be largely to generate paper, to [**136] produce an EIR that describes a journey whose destination is already predetermined.\u2019 \u201d\n\n- Page 14: In both versions of the agreement, moreover, City agreed to initially lend the developer nearly half a million dollars, a promise not conditioned on CEQA compliance. This predevelopment portion was to be advanced in the first phase of the agreement's performance, before EIR approval and issuance of other final approvals, and was to be repaid from project receipts over a period of up to 55 years. If City did not give final approval to the project, therefore, it would not be repaid. For a relatively small government like City's, this was not a trivial outlay, and it would be wasted unless City gave final approval to the project in some form.\u2003",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7fdd382ba65e43b68a9f21eaafd593b2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_de10f9575d434ffa9cf4ceb4c407a1c8",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the City's commitment to the project remains contingent on CEQA compliance, including completion of an EIR",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Under Tara, the City has not committed itself to the Zone project so as to effectively preclude any alternatives or mitigation measures that CEQA would otherwise require to be considered, including the alternative of not going forward with the project.\n- The agreement does not restrict the City's discretion to consider any and all mitigation measures, including the \u2018no project\u2019 alternative\u201d. \n- The agreement conditions the City's performance on CEQA compliance. \n- Unlike the defendant in Tara, the City's loan and phase 1 is additionally conditioned on CEQA compliance. \n- Similar to the cited case, McCloud, the agreement is \"subject to several \u201cifs\" in a way where the City retains meaningful discretion to consider alternatives, mitigation measures, and otherwise not go forward with the project by virtue of not proceeding with the loan required for phase 1.\n\nLegal Analysis\n-Page 13: In applying this principle to conditional development agreements, courts should look not only to the terms of the agreement but to the surrounding circumstances to determine whether, as a practical matter, the agency has committed itself to the project as a whole or to any particular features, so as to effectively preclude any alternatives or mitigation measures that CEQA would otherwise require to be considered, including the alternative of not going forward with the project. (See Cal.Code Regs, tit. 14, \u00a7 15126.6, subd. (e).) In this analysis, the contract's conditioning of final approval on CEQA compliance is relevant but not determinative.\n\nRelevant Facts\nSource: Disposition & Development Agreement\n2.1 Findings and Purpose.\u2028(a) The Site is currently underutilized, falling substantially short of its housing, revenue generating and job-generating potential. City therefore seeks to accomplish the sale and development of the Site . . . subject to compliance with the California Environmental Quality Act (Public Resources Code \u00a7 21000 et seq. (\u201cCEQA\u201d).\u2028\n\nSource: Tara v. City of West Hollywood\t\n- Pages 9-10: In Concerned McCloud Citizens v. McCloud Community Services Dist. (2007) 147 Cal.App.4th 181, 54 Cal.Rptr.3d 1 ( McCloud ), a district executed an agreement with a commercial spring water bottler for exclusive rights to bottle and sell water from the district's sources, contingent on, among other things, the district and the bottler \u201c \u2018completing, during the Contingency Period, proceedings under CEQA in connection with the Project, and the expiration of the applicable period for any challenge to the adequacy of District's and [the bottler's] compliance with CEQA without any challenge being filed.\u2019 \u201d ( Id. at p. 188, 54 Cal.Rptr.3d 1.) Relying in part on Stand Tall, the McCloud court held no EIR was required before the district executed the contingent bottling agreement. The agreement was subject to several \u201c \u2018ifs,\u2019 \u201d the court reasoned, continuing: \u201cThe biggest \u2018if\u2019 in the agreement however is if all discretionary permits, expressly defined as including CEQA documentation, review and approvals, along with the final adjudication of any legal challenges based on CEQA, are secured and all environmental, title, physical, water quality and economic aspects of the project are assessed.\u201d\n\n- Page 14: In both versions of the agreement, moreover, City agreed to initially lend the developer nearly half a million dollars, a promise not conditioned on CEQA compliance. This predevelopment portion was to be advanced in the first phase of the agreement's performance, before EIR approval and issuance of other final approvals, and was to be repaid from project receipts over a period of up to 55 years. If City did not give final approval to the project, therefore, it would not be repaid. For a relatively small government like City's, this was not a trivial outlay, and it would be wasted unless City gave final approval to the project in some form.\u2003",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

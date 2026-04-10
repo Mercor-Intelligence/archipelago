@@ -1,0 +1,315 @@
+# ================================================================================
+# Data Ingestion Framework - Reference Configuration
+# ================================================================================
+#
+# This is a comprehensive reference showing all available configuration options
+# for the data ingestion framework. Use this as a template for creating your
+# own ingestion configurations.
+#
+# The framework follows a simple pipeline: Source → Extractor → Persister
+#
+# Required sections:
+#   - source: Where to read data from
+#   - extractor: How to parse/extract records
+#   - pipeline: Processing options (optional)
+#
+# Note: Persister is passed programmatically via code, not configured in YAML
+#
+# ================================================================================
+
+# ================================================================================
+# SOURCE CONFIGURATION
+# ================================================================================
+# Defines where to read data from. The framework streams data via file handles
+# for constant memory usage, regardless of file size.
+
+source:
+  # ------ File Source (Currently Implemented) ------
+  type: file                    # Source type: "file" for local file system
+  path: /path/to/data/file.xml  # Absolute or relative path to the file
+
+  # Path Resolution:
+  # - Absolute paths: Used as-is (e.g., /path/to/data/file.xml)
+  # - Relative paths: Resolved relative to the config file directory
+  #   Example: If config is at project/config/ingestion.yaml
+  #            and path is ../data/file.xml
+  #            it resolves to project/data/file.xml
+  # This ensures the ingestion command works from any working directory
+
+  # Notes:
+  # - File handle remains open during extraction for streaming
+  # - Supports resume via byte offset (start_position parameter)
+  # - Works with any file size (tested with 10GB+ files)
+  # - No chunk_size needed - streaming handles memory automatically
+
+
+  # ------ HTTP Source (Future Implementation) ------
+  # type: http
+  # url: https://api.example.com/data
+  # headers:
+  #   Authorization: "Bearer YOUR_TOKEN"
+  #   Content-Type: "application/json"
+  # timeout: 30
+  # method: GET
+
+
+  # ------ S3 Source (Future Implementation) ------
+  # type: s3
+  # bucket: my-data-bucket
+  # key: data/export.xml
+  # region: us-east-1
+  # credentials:
+  #   access_key_id: YOUR_ACCESS_KEY
+  #   secret_access_key: YOUR_SECRET_KEY
+
+
+  # ------ Database Source (Future Implementation) ------
+  # type: database
+  # connection_string: postgresql://user:pass@localhost:5432/db
+  # query: "SELECT * FROM raw_data WHERE processed = false"
+
+
+# ================================================================================
+# EXTRACTOR CONFIGURATION
+# ================================================================================
+# Defines how to parse data and extract structured records.
+
+extractor:
+  # ------ XML Extractor (Currently Implemented) ------
+  type: xml                     # Extractor type: "xml" for XML documents
+
+  # Record Tags: XML tag names that represent individual records
+  # The extractor will yield one record for each matching tag
+  record_tags:
+    - us-patent-grant           # Primary record tag
+    # - backup-record           # Optional: multiple tags can be specified
+
+  # Namespace Mappings (Optional): Required for XML with namespaces
+  # namespaces:
+  #   ns: "http://www.example.com/namespace"
+  #   atom: "http://www.w3.org/2005/Atom"
+
+  # Field Definitions: Map XML elements to structured fields
+  # Each field must specify:
+  #   - xpath: XPath expression to extract value (relative to record tag)
+  #   - type: Data type (string, integer, decimal, date, array)
+  #   - required: Whether field must be present (default: false)
+  fields:
+    # ========== String Fields ==========
+    # Simple text extraction from XML elements or attributes
+    application_number:
+      xpath: .//application-reference/document-id/doc-number
+      type: string
+      required: true            # Validation error if missing
+
+    title:
+      xpath: .//invention-title
+      type: string
+      required: false           # Optional field, returns null if missing
+
+    # Attribute extraction (use @ prefix)
+    doc_type:
+      xpath: ./@doc-type
+      type: string
+      required: false
+
+    # ========== Integer Fields ==========
+    # Numeric fields without decimals
+    claim_count:
+      xpath: count(.//claims/claim)  # XPath functions supported
+      type: integer
+      required: false
+
+    sheet_count:
+      xpath: .//number-of-drawing-sheets
+      type: integer
+      required: false
+
+    # ========== Decimal Fields ==========
+    # Numeric fields with decimal precision
+    filing_fee:
+      xpath: .//fees/filing-fee
+      type: decimal
+      required: false
+
+    # ========== Date Fields ==========
+    # Date fields are returned as strings (raw from XML)
+    # Application should handle date parsing based on expected format
+    filing_date:
+      xpath: .//application-reference/document-id/date
+      type: date                # Returns raw string like "20240101" or "2024-01-01"
+      required: false
+
+    publication_date:
+      xpath: .//publication-reference/document-id/date
+      type: date
+      required: false
+
+    # ========== Array Fields ==========
+    # Extract multiple XML elements as structured JSON arrays
+    # Each array element will be a dict with sub-fields
+    inventors:
+      xpath: .//parties/inventors/inventor  # XPath to array items
+      type: array
+      required: false
+      array_item_fields:        # Fields to extract from each item
+        first_name:
+          xpath: ./addressbook/first-name
+        last_name:
+          xpath: ./addressbook/last-name
+        city:
+          xpath: ./addressbook/address/city
+        country:
+          xpath: ./addressbook/address/country
+
+    # Array with alternate XPath (using | operator for fallback)
+    applicants:
+      xpath: .//us-applicants/us-applicant
+      type: array
+      required: false
+      array_item_fields:
+        name:
+          xpath: ./addressbook/last-name | ./addressbook/orgname  # Try last-name first, then orgname
+        city:
+          xpath: ./addressbook/address/city
+        state:
+          xpath: ./addressbook/address/state
+        country:
+          xpath: ./addressbook/address/country
+
+    # Simple array (single field per item)
+    classifications:
+      xpath: .//classifications-ipcr/classification-ipcr
+      type: array
+      required: false
+      array_item_fields:
+        code:
+          xpath: ./classification-value
+        level:
+          xpath: ./classification-level
+
+
+  # ------ JSON Extractor (Future Implementation) ------
+  # type: json
+  # record_path: "$.data.records[*]"  # JSONPath to records
+  # fields:
+  #   id:
+  #     path: "$.id"
+  #     type: string
+  #     required: true
+  #   name:
+  #     path: "$.profile.name"
+  #     type: string
+
+
+  # ------ CSV Extractor (Future Implementation) ------
+  # type: csv
+  # delimiter: ","
+  # has_header: true
+  # fields:
+  #   application_number:
+  #     column: "App Number"      # Column name
+  #     type: string
+  #     required: true
+  #   filing_date:
+  #     column: "Filed Date"
+  #     type: date
+
+
+# ================================================================================
+# PIPELINE CONFIGURATION
+# ================================================================================
+# NOTE: Persister is typically passed programmatically via code, not in YAML config.
+#       See usage examples at the end of this file.
+#
+# ================================================================================
+# Optional settings that control processing behavior
+
+pipeline:
+  batch_size: 1000              # Number of records per batch insert
+                                # Larger = faster but more memory
+                                # Smaller = slower but less memory
+                                # Typical range: 100-10000
+
+  # ------ Future Options ------
+  # max_errors: 100             # Stop after N errors
+  # skip_validation: false      # Skip record validation
+  # parallel_workers: 4         # Process in parallel
+  # checkpoint_interval: 10000  # Save progress every N records
+
+
+# ================================================================================
+# FIELD TYPE REFERENCE
+# ================================================================================
+#
+# string:
+#   - Returns text content as Python str
+#   - Strips whitespace automatically
+#   - Returns None if element not found (and not required)
+#
+# integer:
+#   - Converts to Python int
+#   - Returns None if empty string or not found
+#   - Raises ValidationError if cannot convert
+#
+# decimal:
+#   - Converts to Python Decimal (precise decimal arithmetic)
+#   - Returns None if empty string or not found
+#   - Raises ValidationError if cannot convert
+#
+# date:
+#   - Returns raw string from XML (no parsing/formatting)
+#   - Application must handle date parsing
+#   - Common formats: "20240101", "2024-01-01", "2024-01-01T00:00:00Z"
+#
+# array:
+#   - Returns list of dicts
+#   - Each dict has keys from array_item_fields
+#   - Returns empty list [] if no elements found
+#   - Sub-fields use same types as above (except no nested arrays)
+#
+# ================================================================================
+# XPATH REFERENCE
+# ================================================================================
+#
+# Common XPath patterns:
+#   .//element              - Find element anywhere under current node
+#   ./element               - Find direct child element
+#   ./@attribute            - Extract attribute value
+#   ../parent               - Navigate to parent element
+#   element[1]              - First occurrence (XPath is 1-indexed)
+#   element[@attr='value']  - Filter by attribute
+#   text()                  - Extract text content
+#   count(.//element)       - Count matching elements
+#   xpath1 | xpath2         - Try xpath1, fallback to xpath2
+#
+# XPath functions:
+#   count()                 - Count nodes
+#   concat()                - Concatenate strings
+#   substring()             - Extract substring
+#   normalize-space()       - Trim whitespace
+#
+# ================================================================================
+# USAGE EXAMPLES
+# ================================================================================
+#
+# Basic usage:
+#   from data_ingestion.framework import IngestionFramework
+#   from my_app.persisters import MyPersister
+#
+#   framework = IngestionFramework('config.yaml')
+#   persister = MyPersister()
+#   stats = framework.run(persister)
+#   print(f"Processed {stats.records_processed} records")
+#
+# With resume:
+#   stats = framework.run(persister, start_position=byte_offset)
+#
+# With callback:
+#   def on_complete(stats):
+#       print(f"Success rate: {stats.success_rate}%")
+#
+#   framework = IngestionFramework('config.yaml', on_complete=on_complete)
+#   stats = framework.run(persister)
+#
+# ================================================================================

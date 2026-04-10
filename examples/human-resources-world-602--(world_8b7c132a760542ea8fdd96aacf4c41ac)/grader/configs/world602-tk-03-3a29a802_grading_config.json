@@ -1,0 +1,88 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_637062713d074463a94cd23ffc581c81",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3a29a802e55c4b55a386a5b548fcc30c",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)",
+          "Tool Use"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of Critical jobs that don\u2019t have a sourcer assigned is 4.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c84bdd3ae3644367b85751d52784ded1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3a29a802e55c4b55a386a5b548fcc30c",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Tool Use",
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Adds Maria Santos as the sourcer to the hiring team of job 198.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_296480f86d894816b080d6382ebf10a5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3a29a802e55c4b55a386a5b548fcc30c",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)",
+          "Tool Use"
+        ],
+        "weight": 1,
+        "criteria": "States that the value of the job_id field from the oldest of the Critical jobs is 198.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

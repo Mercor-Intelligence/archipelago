@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Please upload the organisation hierarchy, along with cost centers, movements, and locations, to Workday using the attached data. \n\nOnce complete, add the recommended hire for the COO position to the organisation, using the same CC, org, and profile ID as WRK-002. The worker ID for the recommended hire would be WRK-201, and the hire date would be 26 Jan 2026. Please provide the number of workers in CC-01 as of 5th Aug 2023, 5th Aug 2024, 5th Aug 2025, and 30th Jan 2026.\n\nPlease provide all your answers directly in the console. Use the username hr_admin and the password hr_admin for access."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the headcount for Cost Center CC-001 (Corporate G&A) on 5th Aug... (ver_4e9ffc1b871d43f1b7d2c5d856e89bc8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the headcount for Cost Center CC-001 (Corporate G&A) on 5th Aug 2023 is 18."
+        }
+      ]
+    },
+    {
+      "name": "States that the headcount for Cost Center CC-001 (Corporate G&A) on 5th Aug... (ver_d469f43788c54ad1967eead2e131015c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the headcount for Cost Center CC-001 (Corporate G&A) on 5th Aug 2024 is 19."
+        }
+      ]
+    },
+    {
+      "name": "States that the headcount for Cost Center CC-001 (Corporate G&A) on 5th Aug... (ver_6d4f50454a514a7083aad811c8e7f1d4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the headcount for Cost Center CC-001 (Corporate G&A) on 5th Aug 2025 is 19."
+        }
+      ]
+    },
+    {
+      "name": "States that the headcount for Cost Center CC-001 (Corporate G&A) on 30th Jan... (ver_444b743176264e75a9c5d158f86e7ddf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the headcount for Cost Center CC-001 (Corporate G&A) on 30th Jan 2026 is 20."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh hr603-rj-04-46c7c072"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_46c7c0720d7b47e897e520c01fa7aa4d",
+    "task_name": "HR603_RJ 04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_7cda79dd116c4ad39787a1ddd8636f5f",
+        "golden_text_response": "Successfully uploaded the organisation hierarchy, cost centres, movements, and locations to Workday. \n\nSuccessfully hired the recommended COO, WRK-201, using the same CC, org, and profile ID as WRK-002 in Workday\n\nThe headcount for Cost Center CC-001 (Corporate G&A) on the requested dates is:\n5th Aug 2023: 18\n5th Aug 2024: 19\n5th Aug 2025: 19\n30th Jan 2026: 20",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

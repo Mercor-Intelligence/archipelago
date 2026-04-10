@@ -312,7 +312,7 @@ class ReductoClient:
 
             # Check if this chunk has blocks with images
             blocks = chunk.get("blocks", [])
-            if isinstance(blocks, list):
+            if isinstance(blocks, list) and blocks:
                 for block in blocks:
                     if not isinstance(block, dict):
                         continue
@@ -352,7 +352,7 @@ class ReductoClient:
                     if content and not image_added:
                         text_parts.append(str(content))
             else:
-                # Fallback: just extract content from chunk
+                # Fallback: just extract content from chunk (no blocks or empty blocks)
                 content = chunk.get("content")
                 if content:
                     text_parts.append(str(content))
@@ -518,7 +518,7 @@ class ReductoClient:
             # Process all chunks for this page/slide/sheet
             for chunk in page_chunks:
                 blocks = chunk.get("blocks", [])
-                if isinstance(blocks, list):
+                if isinstance(blocks, list) and blocks:
                     for block in blocks:
                         if not isinstance(block, dict):
                             continue
@@ -554,7 +554,7 @@ class ReductoClient:
                         if content and not image_added:
                             page_text_parts.append(str(content))
                 else:
-                    # Fallback: extract from chunk directly
+                    # Fallback: extract from chunk directly (no blocks or empty blocks)
                     content = chunk.get("content")
                     if content:
                         page_text_parts.append(str(content))

@@ -1,0 +1,238 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "I need your help analyzing Talent and Recruiting data to look at scenarios to adjust recruiting priorities. Information about the scenarios can be found in 'Njeri Task Email.docx'. \n\nIn summary:\n-Identify how many R&D roles would be canceled using Njeri's scenarios\n-Estimate the overall cost savings for each scenario in R&D (using average base + bonus for active R&D roles)\n-Estimate the average cost per active role for each of Sales and Customer Success departments (also using average base + bonus)\n\nYou'll need to use 'Department Requisition Status.xlsx' and 'Employee Roster_Enhanced.xlsx' in the filesystem for the analysis and the bonus percentages (as percent of base) below using the most recent performance rating to estimate the bonus cost:\nExceeds 20%\nMeetings 10%\nBelow 0%\n\nGive me your final answers in a table in a new slide. For your final answers, round roles down to the nearest whole number and currency to the nearest dollar. Use simple averages."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of R&D roles that would be cancelled in the 15% of Open... (ver_655f3db9ca044fb485ed90a1e3fad19a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of R&D roles that would be cancelled in the 15% of Open R&D Reqs Cancelled scenario is 3."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of R&D roles that would be cancelled in the 20% of Open... (ver_4f4346a62c8942bc87b39d4d743d8dd9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of R&D roles that would be cancelled in the 20% of Open R&D Reqs Cancelled scenario is 4."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of R&D roles that would be cancelled in the 33% of Open... (ver_ef0a09a001a64bb18148438d0b7802ee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of R&D roles that would be cancelled in the 33% of Open R&D Reqs Cancelled scenario is 6."
+        }
+      ]
+    },
+    {
+      "name": "States that the overall estimated cost savings in the 15% of Open R&D Reqs... (ver_e8165fc894e64e01801b860e3dc77997)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the overall estimated cost savings in the 15% of Open R&D Reqs Cancelled scenario is $465,548 (acceptable range $460,893 to $470,203)."
+        }
+      ]
+    },
+    {
+      "name": "States that the overall estimated cost savings in the 20% of Open R&D Reqs... (ver_af4c8c85282847e0988027372006d6d3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the overall estimated cost savings in the 20% of Open R&D Reqs Cancelled scenario is $620,731 (acceptable range $614,524 to $626,938)."
+        }
+      ]
+    },
+    {
+      "name": "States that the overall estimated cost savings in the 33% of Open R&D Reqs... (ver_43bb861acc7d4fbfb2e0a21c1accd1e9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the overall estimated cost savings in the 33% of Open R&D Reqs Cancelled scenario is $931,096 (acceptable range $921,785 to $940,407)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average cost per active role in Customer Success is $147,361... (ver_616864a84f984ed6ada35ffef3114991)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average cost per active role in Customer Success is $147,361 (acceptable range $145,887 to $148,835)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average cost per active role in Sales is $186,007 (acceptable... (ver_250a0d8817a648aeb4771dcfaeb95dc9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average cost per active role in Sales is $186,007 (acceptable range $184,147 to $187,867)."
+        }
+      ]
+    },
+    {
+      "name": "Present final answers in a table in a new slide (ver_e965d282eb9c454b83f6d523ae4d9b31)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Present final answers in a table in a new slide."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world601-cl-03-9f6720c9"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_9f6720c9487c42a88d93c8a3cf8fdd3a",
+    "task_name": "World601_CL_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_82768f627198492ca2404cd8e5d3d434",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_4b51783f5baa41cd831f335436ce2c09"
+      }
+    ]
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the document titled The Red Scare Was Not Justified, analyze the first source. In a new Word document, provide the title of the source in bold. Also list out the constitutional amendments being violated.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the reference source by name: \"National Popular Government League To... (ver_bfcec1a5cb1a4bf3b8ceb6913a239c74)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the reference source by name: \"National Popular Government League To the American People: Report on the Illegal Practices of the U.S. Department of Justice May 1920\"."
+        }
+      ]
+    },
+    {
+      "name": "Bolds the source title National Popular Government League To the American... (ver_fa3ef3d70e5b406bb6cee37b9360da6c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Bolds the source title National Popular Government League To the American People: Report on the Illegal Practices of the U.S. Department of Justice May 1920."
+        }
+      ]
+    },
+    {
+      "name": "States that the Fourth Amendment is being violated (ver_0cd54a0f46c742c6a58946be8a0ea696)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Fourth Amendment is being violated."
+        }
+      ]
+    },
+    {
+      "name": "States that the Fifth Amendment is being violated (ver_d26ea35874a847249fee0a1a327e477b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Fifth Amendment is being violated."
+        }
+      ]
+    },
+    {
+      "name": "States that the Sixth Amendment is being violated (ver_853ac0bce9894fcab751375b59b8128d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Sixth Amendment is being violated."
+        }
+      ]
+    },
+    {
+      "name": "States that the Eighth Amendment is being violated (ver_c590728825fd4f818b58e1da2c21534c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Eighth Amendment is being violated."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world308-llb-01-natural-prompt-630af322"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_bb2868929444403db49771012f030f29",
+    "world_name": "Teaching World 308",
+    "task_id": "task_630af322ec8649a1bbde674c3edd0ea4",
+    "task_name": "World308_llb_01 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f9c2aff84e2140ffba7ac32d71391fcc",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_8951f380b790441ca430c4e5c97aed99"
+      }
+    ]
+  }
+}

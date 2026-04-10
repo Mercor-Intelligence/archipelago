@@ -1,0 +1,40 @@
+[arco]
+source = "foundry_app"
+name = "Greenhouse"
+display_name = "Greenhouse ATS"
+description = "Greenhouse Applicant Tracking System - Recruiting platform simulation with candidate management, job postings, applications, interviews, scorecards, and hiring workflows. Supports candidate pipeline tracking, job board integrations, interview scheduling, and hiring team collaboration."
+version = "1.0.0"
+
+[arco.env.host]
+REPO_URL = "https://github.com/Mercor-Intelligence/mercor-greenhouse.git"
+
+[arco.env.build]
+STATE_LOCATION = "/.apps_data/greenhouse"
+GREENHOUSE_DB_PATH = "/.apps_data/greenhouse/data.db"
+
+[arco.env.runtime]
+MCP_TRANSPORT = "http"
+MCP_PORT = "5000"
+APP_FS_ROOT = "/filesystem"
+HAS_STATE = "true"
+STATE_LOCATION = "/.apps_data/greenhouse"
+GREENHOUSE_DB_PATH = "/.apps_data/greenhouse/data.db"
+INTERNET_ENABLED = "false"
+GUI_ENABLED = "true"
+
+[arco.env.runtime.schema.INTERNET_ENABLED]
+type = "bool"
+label = "Internet access"
+description = "Allow the MCP server to make outbound network requests"
+
+[arco.env.runtime.schema.GUI_ENABLED]
+type = "bool"
+label = "GUI mode"
+description = "Enable GUI mode to expose all individual tools instead of consolidated meta-tools"
+
+[arco.secrets.host]
+GITHUB_TOKEN = "RLS_GITHUB_READ_TOKEN"
+
+[arco.secrets.build]
+
+[arco.secrets.runtime]

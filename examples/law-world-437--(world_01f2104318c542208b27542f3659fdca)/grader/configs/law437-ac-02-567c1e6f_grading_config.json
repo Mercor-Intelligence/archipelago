@@ -1,0 +1,132 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_8bc71562049a46f4956a2f0e1fed2741",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_567c1e6f81c94132a7e135e61b489b9b",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that University of Texas Southwestern Med Center v. Nassar held that \u201cbut for\u201d causation is used to prove Title VII retaliation claims",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "University of Texas Southwestern Med Center v. Nassar, 570 U.S. 338 (2013) held that \u201cbut for\u201d causation is used to prove Title VII retaliation claims. \u201cThis requires proof that the unlawful retaliation would not have occurred in the absence of the alleged wrongful action or actions of the employer.\u201d ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1e8675925d454281917b7ac3b681e57a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_567c1e6f81c94132a7e135e61b489b9b",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that, according to Bostock v. Clayton County, the but-for causation test does not require that the prohibited factor be the sole or primary reason for the adverse action",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "In Bostock, the Court stated, \"the adoption of the traditional but-for causation standard means a defendant cannot avoid liability just by citing some other factor that contributed to\nits challenged employment decision. So long as the plaintiff \u2019s sex was one but-for cause of that decision, that is enough to trigger the law.\" The CFR commentary states, \"Adding \u2018\u2018or primary\u2019\u2019\nfurther emphasizes the Supreme Court\u2019s holdings and reflects the language in Bostock that the protected factor need not be the primary reason for the adverse action. See Bostock, 140 S Ct. at\n1739.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3de57e7b92384968bbe8d6c2334c82b8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_567c1e6f81c94132a7e135e61b489b9b",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "State that 29 CRF 1977.6(b) was updated to reflect the Court's decisions in Nassar and Bostock",
+        "autogen_source": null,
+        "negative_criteria": "",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Effective September 3, 2021, OSHA amended 29 CRF 1977.6(b) to bring it in line with the Supreme Court\u2019s holdings in Nassar and Bostock. The commentary related to the updates states that the plaintiff must show that but for the protected activity, the employee would not have suffered the adverse action. Second, the rule contains citations to Nassar and Bostock. Third, the rule was amended to emphasize the Court\u2019s holding in Bostock that the protected factor need not be the primary reason for the adverse action. \"This final interpretive rule updates OSHA\u2019s 1973 section 11\u00a9 interpretive rule at 29 CFR 1977.6(b) to bring it in line with the Supreme Court\u2019s holdings in Gross, Nassar, and Bostock.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7834b8f5f656447db9c788510777fcde",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_567c1e6f81c94132a7e135e61b489b9b",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that Porter must prove \u201cbut-for\u201d causation",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "After the Court\u2019s rulings in Bostock and Nassar, as well as OSHA\u2019s changes to 29 CRF 1977.6(b), it is clear that the Porter must prove \u201cbut-for\u201d causation. University of Texas Southwestern Med Center v. Nassar, 570 U.S. 338 (2013) held that \u201cbut for\u201d causation is used to prove Title VII retaliation claims. \u201cThis requires proof that the unlawful retaliation would not have occurred in the absence of the alleged wrongful action or actions of the employer.\u201d The Court\u2019s reasoning was based upon the word choice \u201cbecause\u201d in the statue, which is also used in 11(c)(1). In Bostock v. Clayton County, 590 U. S. 644, (2020), The Court explained that but-for causation is established whenever a particular outcome would not have happened \u2018\u2018but for\u2019\u2019 the purported cause. The Court stated that but-for causation test \u2018\u2018directs us to change one thing at a time and see if the outcome changes. If it does, we have found a but-for cause.\u2019\u2019 Effective September 3, 2021, OSHA amended 29 CRF 1977.6(b) to bring it in line with the Supreme Court\u2019s holdings in Nassar and Bostock. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_612d8fdc67cd421f9ff9b4a2777c3cd6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_567c1e6f81c94132a7e135e61b489b9b",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that Porter does not need to prove that the protected factor was the primary reason for his being fired to prevail",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "As stated in section 1977.6(b), an employer\u2019s mixed motivation for an adverse action does not necessarily invalidate an employee\u2019s section 11(c) complaint. See 29 CFR\n1977.6(b) (\u2018\u2018[T]o establish a violation of section 11(c), [a]n employee\u2019s engagement in protected activity need not be the sole consideration behind discharge or other adverse action.\u2019\u2019).",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Redwood Components has acquired assets worth $17 million in 2024 with a useful life of 5 years, depreciating at straight-line for GAAP and double declining balance for tax. Calculate the net deferred tax roll forward value using the final tax exposure file, assuming:\n- Use blended tax rate, considering state tax is deducted federally\n- State apportionment factor of 85%\n- Valuation allowance of 20%\nRound $ amounts to the nearest whole numbers to the console"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that 2024 net Deferred tax roll forward is $862,402 (acceptable range... (ver_31b8e7503459440c878392afc8ceb0e5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that 2024 net Deferred tax roll forward is $862,402 (acceptable range $853,778 to $871,026)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh accounting-world-801-ar4-c30e6cef"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_c30e6cef04694b9f9bbf8d443af63655",
+    "task_name": "Accounting World 801_AR4",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f96ee7e11c034d25b28a9efeac409654",
+        "golden_text_response": "The 2024 net Deferred tax roll forward is $862,402",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

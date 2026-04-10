@@ -1,0 +1,284 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "I'm looking to analyze the delinquency pipeline for the two high-risk sectors. Using 'enriched_loan_data.csv', filter to rows for the two high-risk sectors identified in '1.11.2026 Habor Capital Final.pdf', and export those rows to a new Excel file named 'High_risk_sectors.xlsx'. In 'High_risk_sectors.xlsx', create a new sheet named \"High risk delinquency pipeline\". Calculate total \"Past Due Amount\" by delinquency bucket at the most recent date appearing in the filtered dataset for the combined two sectors (use Excel formulas and round all values to the nearest integer). In the \"High risk delinquency pipeline\" sheet, use the calculated metrics to create a chart for the combined sectors that mimics the \"Delinquency Pipeline\" chart from '1.11.2026 Habor Capital Final.pdf' (match the key visual characteristics: chart type, orientation, bucket order, color coding, and numeric labeling in each bar)."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Creates a bar chart in the “High risk delinquency pipeline” sheet. (ver_872f13bd48274ba29614c3d0e23b47a8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a bar chart in the “High risk delinquency pipeline” sheet."
+        }
+      ]
+    },
+    {
+      "name": "The bar chart's orientation is horizontal. (ver_0514f1d422cb44a497888f5bd30fc616)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The bar chart's orientation is horizontal."
+        }
+      ]
+    },
+    {
+      "name": "The first bar from top to bottom is \"1-30 Days\". (ver_0592346ac41d4964959243b19ef0a0e6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The first bar from top to bottom is \"1-30 Days\"."
+        }
+      ]
+    },
+    {
+      "name": "The second bar from top to bottom is \"31-90 Days\". (ver_80d11bd1ed78429c9f3670c66019c8c1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The second bar from top to bottom is \"31-90 Days\"."
+        }
+      ]
+    },
+    {
+      "name": "The third bar from top to bottom is \"90+ Days\". (ver_7fac03dc62d943a0b797a4f415c89c3e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The third bar from top to bottom is \"90+ Days\"."
+        }
+      ]
+    },
+    {
+      "name": "The bar for \"1-30 Days\" is yellow. (ver_69d56dccc4364045b8ff51d91ed0de8b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The bar for \"1-30 Days\" is yellow."
+        }
+      ]
+    },
+    {
+      "name": "The bar for \"31-90 Days\" is orange. (ver_845707edd0454d4d89e6d7c23c09e971)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The bar for \"31-90 Days\" is orange."
+        }
+      ]
+    },
+    {
+      "name": "The bar for \"90+ Days\" is red. (ver_12a0978bb9f14c999f0ba3e4ca914eb7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The bar for \"90+ Days\" is red."
+        }
+      ]
+    },
+    {
+      "name": "Labels the bar for \"1-30 Days\" as 154,620,276 +/- 1. (ver_6cd16ba17bf743e287cb5cec5491bdca)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels the bar for \"1-30 Days\" as 154,620,276 +/- 1."
+        }
+      ]
+    },
+    {
+      "name": "Labels the bar for \"31-90 Days\" as 57,787,641 +/- 1. (ver_7c042ade6fde405fbcd453c2e7b65cb2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels the bar for \"31-90 Days\" as 57,787,641 +/- 1."
+        }
+      ]
+    },
+    {
+      "name": "Labels the bar for \"90+ Days\" as 46,946,492 +/- 1. (ver_becfef7c72634d90ae551a9cef49000d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels the bar for \"90+ Days\" as 46,946,492 +/- 1."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sheets-task-ixqyc035-caab5413"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_caab5413bcb7469a9752d8d2aa3c69a7",
+    "task_name": "Sheets - Task ixqyc035",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c74405c18aa1442c910c9e5d72cd56dc",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_82bda9e4d9c24bb796eaca38a636a16e"
+      }
+    ]
+  }
+}

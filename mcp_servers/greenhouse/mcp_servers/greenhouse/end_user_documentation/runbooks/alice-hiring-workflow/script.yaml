@@ -1,0 +1,264 @@
+# Alice in Wonderland Hiring Workflow
+# A complete end-to-end demonstration of the Greenhouse hiring pipeline
+#
+# Cast of Characters:
+#   White Rabbit (recruiter) - Creates candidates, jobs, applications; advances pipeline
+#   Caterpillar (coordinator) - Adds interview notes and observations
+#   Queen of Hearts (hiring_manager) - Provides decisive feedback on candidates
+
+url: http://localhost:3000
+output: screenshots
+
+# Element selectors for focused screenshots
+selectors:
+  sidebar: &sidebar '[class*="lg:col-span-1"]'
+  tool_panel: &tool_panel '[data-screenshot="tool-panel"]'
+
+steps:
+  # ==========================================================================
+  # ACT 1: The White Rabbit Creates the Candidate
+  # "Oh dear! Oh dear! I shall be too late!"
+  # ==========================================================================
+
+  - TakeScreenshot  # 01: Initial view (full page for context)
+
+  # Scene 1: White Rabbit logs in
+  - Login:  # 02: Login credentials
+      persona: recruiter
+      screenshot_params:
+        element: *tool_panel
+        max_height: 600
+
+  # Reset the stage for our story (keep persona users)
+  - SelectTool: greenhouse_reset_state
+  - FillToolParam:
+      confirm: true
+      clear_users: false
+  - ExecuteTool
+
+  # Scene 2: Create our protagonist - Alice Liddell
+  - SelectTool: greenhouse_candidates_create
+  - TakeScreenshot:  # 03: Tool selected in sidebar
+      element: *sidebar
+      max_height: 600
+  - FillToolParam:
+      first_name: Alice
+      last_name: Liddell
+      company: Oxford University
+      title: Student of Curiosities
+  - FillListItems:
+      param: email_addresses
+      items:
+        - value: alice.liddell@oxford.ac.uk
+          type: personal
+  - TakeScreenshot:  # 04: Candidate form filled
+      element: *tool_panel
+      max_height: 800
+  - ExecuteTool
+  - TakeScreenshot:  # 05: Candidate created
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # ==========================================================================
+  # ACT 2: Creating the Perfect Job
+  # "Curiouser and curiouser!"
+  # ==========================================================================
+
+  # Scene 3: Create the Chief Explorer position
+  - SelectTool: greenhouse_jobs_create
+  - TakeScreenshot:  # 06: Tool selected in sidebar
+      element: *sidebar
+      max_height: 600
+  - FillToolParam:
+      name: Chief Explorer
+      status: open
+      notes: >
+        Seeking a curious individual who isn't afraid to fall down rabbit holes.
+        Must be comfortable with talking animals and impossible things before breakfast.
+        Wonderland Inc. is an equal opportunity employer of all creatures, real or imaginary.
+  - TakeScreenshot:  # 07: Job form filled
+      element: *tool_panel
+      max_height: 800
+  - ExecuteTool
+  - TakeScreenshot:  # 08: Job created
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # ==========================================================================
+  # ACT 3: Down the Rabbit Hole - Creating the Application
+  # "Begin at the beginning and go on till you come to the end: then stop."
+  # ==========================================================================
+
+  # Scene 4: Link Alice to the Chief Explorer job
+  - SelectTool: greenhouse_applications_create
+  - TakeScreenshot:  # 09: Tool selected in sidebar
+      element: *sidebar
+      max_height: 600
+  - FillToolParam:
+      candidate_id: 1
+      job_id: 1
+  - TakeScreenshot:  # 10: Application form filled
+      element: *tool_panel
+      max_height: 800
+  - ExecuteTool
+  - TakeScreenshot:  # 11: Application created
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # ==========================================================================
+  # ACT 4: The Caterpillar's Assessment
+  # "Who... are... YOU?"
+  # ==========================================================================
+
+  # Scene 5: Caterpillar logs in to assess Alice
+  - Login:  # 12: Coordinator login
+      persona: coordinator
+      screenshot_params:
+        element: *tool_panel
+        max_height: 600
+
+  - SelectTool: greenhouse_candidates_add_note
+  - TakeScreenshot:  # 13: Tool selected in sidebar
+      element: *sidebar
+      max_height: 600
+  - FillToolParam:
+      candidate_id: 1
+      user_id: 2
+      body: >
+        Initial Assessment - The Caterpillar's Observations:
+
+        I asked her "Who are you?" and she gave a most satisfactory confused answer.
+        This indicates excellent adaptability and self-reflection capabilities.
+
+        Key observations:
+        - Demonstrates remarkable curiosity (kept asking about the mushroom)
+        - Shows persistence (didn't leave despite my cryptic responses)
+        - Adaptable communication style (understood my smoke-ring semaphore)
+
+        Recommendation: Proceed to Queen's interview. She has potential.
+      visibility: public
+  - TakeScreenshot:  # 14: Note form filled
+      element: *tool_panel
+      max_height: 800
+  - ExecuteTool
+  - TakeScreenshot:  # 15: Note added
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # ==========================================================================
+  # ACT 5: The Queen's Verdict
+  # "Off with her head! ...Just kidding. HIRED!"
+  # ==========================================================================
+
+  # Scene 6: Queen of Hearts provides decisive feedback
+  - Login:  # 16: Hiring manager login
+      persona: hiring_manager
+      screenshot_params:
+        element: *tool_panel
+        max_height: 600
+
+  - SelectTool: greenhouse_feedback_submit
+  - TakeScreenshot:  # 17: Tool selected in sidebar
+      element: *sidebar
+      max_height: 600
+  - FillToolParam:
+      application_id: 1
+      interviewer_id: 3
+      overall_recommendation: "strong_yes"
+  - FillListItems:
+      param: attributes
+      items:
+        - name: Curiosity
+          type: Skills
+          rating: "strong_yes"
+          note: Asked excellent questions about Wonderland's organizational structure
+        - name: Adaptability
+          type: Skills
+          rating: "strong_yes"
+          note: Handled size changes with remarkable composure
+        - name: Leadership
+          type: Skills
+          rating: "yes"
+          note: Demonstrated authority when dealing with the card soldiers
+  - FillListItems:
+      param: questions
+      items:
+        - id: 1
+          question: Why do you want to work at Wonderland Inc?
+          answer: "I want to explore impossible things and make them possible. Also, your tea parties look delightful."
+        - id: 2
+          question: How do you handle unexpected challenges?
+          answer: "I eat cake labeled 'EAT ME' and drink from bottles labeled 'DRINK ME'. I've learned to embrace the unexpected."
+  - TakeScreenshot:  # 18: Feedback form filled
+      element: *tool_panel
+      max_height: 800
+  - ExecuteTool
+  - TakeScreenshot:  # 19: Feedback submitted
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # ==========================================================================
+  # ACT 6: Through the Looking Glass - Advancing the Pipeline
+  # "It's no use going back to yesterday, because I was a different person then."
+  # ==========================================================================
+
+  # Scene 7: White Rabbit advances Alice through the stages
+  - Login:  # 20: Recruiter returns
+      persona: recruiter
+      screenshot_params:
+        element: *tool_panel
+        max_height: 600
+
+  # Advance through all stages to Offer
+  - SelectTool: greenhouse_applications_advance_stage
+  - TakeScreenshot:  # 21: Tool selected in sidebar
+      element: *sidebar
+      max_height: 600
+  - FillToolParam:
+      application_id: 1
+  - ExecuteTool  # Application Review → Phone Screen
+
+  - SelectTool: greenhouse_applications_advance_stage
+  - FillToolParam:
+      application_id: 1
+  - ExecuteTool  # Phone Screen → Technical Interview
+
+  - SelectTool: greenhouse_applications_advance_stage
+  - FillToolParam:
+      application_id: 1
+  - ExecuteTool  # Technical Interview → Onsite
+
+  - SelectTool: greenhouse_applications_advance_stage
+  - FillToolParam:
+      application_id: 1
+  - ExecuteTool  # Onsite → Offer
+  - TakeScreenshot:  # 22: Advanced to Offer stage
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # ==========================================================================
+  # FINALE: The Happy Ending
+  # "Why, sometimes I've believed as many as six impossible things before breakfast."
+  # ==========================================================================
+
+  # Scene 8: Hire Alice!
+  - SelectTool: greenhouse_applications_hire
+  - TakeScreenshot:  # 23: Tool selected in sidebar
+      element: *sidebar
+      max_height: 600
+  - FillToolParam:
+      application_id: 1
+  - TakeScreenshot:  # 24: Hire form filled
+      element: *tool_panel
+      max_height: 800
+  - ExecuteTool
+  - TakeScreenshot:  # 25: Alice is hired!
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800

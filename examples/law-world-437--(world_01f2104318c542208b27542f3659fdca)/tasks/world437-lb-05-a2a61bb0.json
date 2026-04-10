@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "If Anthony Porter files a retaliation complaint with the California Labor Commission alleging that he was terminated in violation of CA Labor Code 6310, what is the latest date on which SBP might get notified by the Labor Commissioner that it has determined a violation has occurred? Assume standard timelines are followed and there are no appeals. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the latest date on which SBP might be notified of a violation is... (ver_21cda1e163d346e990ed07ae3da50f24)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the latest date on which SBP might be notified of a violation is November 4, 2027."
+        }
+      ]
+    },
+    {
+      "name": "States that Anthony Porter has one year from the date of the alleged unlawful... (ver_e610e24ef04e4fd8b326ac893ae73290)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Anthony Porter has one year from the date of the alleged unlawful termination to submit a retaliation complaint with the Labor Commissioner."
+        }
+      ]
+    },
+    {
+      "name": "States that the Labor Commissioner has one year from the date a complaint is... (ver_0ad8a0dbab5e4aacbea885662400013b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Labor Commissioner has one year from the date a complaint is filed to provide notice of its determination."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world437-lb-05-a2a61bb0"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_a2a61bb0a47748568822dd12fd49fbbc",
+    "task_name": "World437_LB_05",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_2195cc5c4b734313b9aef918feddb58b",
+        "golden_text_response": "The latest date on which SBP might be notified of a violation is November 4, 2027. According to Anthony Porter's OSHA complaint, the allegedly unlawful termination occurred on November 4, 2025. Under CA Labor Code section 98.7, he has one year from that date to submit a complaint (this can be extended for good cause, but the prompt directs the model to assume that standard timelines are followed). The Labor Commissioner then has one year from the date of the complaint to provide notice of its determination. Thus, the latest date on which SBP might get a notice of violation is two years from the date of the alleged violation (i.e., November 4, 2027). I've included relevant excerpts from CA Labor Code section 98.7 below:\n\n\"(a)(1) Any person who believes that they have been discharged or otherwise discriminated against in violation of any law under the jurisdiction of the Labor Commissioner may file a complaint with the division within one year after the occurrence of the violation. The one-year period may be extended for good cause.\"\n\n\"(e) The Labor Commissioner shall notify the complainant and respondent of the commissioner’s determination under subdivision (c) or paragraph (1) of subdivision (d), not later than one year after the filing of the complaint.\"\n\nAlso, CA Labor Code section 6312 clarifies that section 98.7 is applicable for alleged violations of section 6310 (the section at issue here): \"Any employee who believes that he or she has been discharged or otherwise discriminated against by any person in violation of Section 6310 or 6311 may file a complaint with the Labor Commissioner pursuant to Section 98.7.\"",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

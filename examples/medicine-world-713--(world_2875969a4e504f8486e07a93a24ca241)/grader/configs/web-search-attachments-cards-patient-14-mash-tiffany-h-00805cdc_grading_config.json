@@ -1,0 +1,257 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_57b6aeb53a0e4f11b42a59b6e3e58661",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_00805cdc50a3425f8847a38fb5755444",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has hepatic steatosis.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The impression of the attached CT report states \"Hepatic Steatosis\".",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_10e575d017d4413f9fd543524532ac62",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_00805cdc50a3425f8847a38fb5755444",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient was on amiodarone for 2 months in the past.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient was started on amiodarone during his cardiac surgery on 11/21/2023, as per the patient chart for Cards_Patient 14. During his follow up visit at cardiac rehab on 1/23/2024, amiodarone had been discontinued and was no longer listed on his med list.\n\n\"Hospital Course:  Mr. Michelsen presented to Triad Eye Institute PLLC and was brought to the operating room on 11/21/23. He underwent a CABG x 4 utilizing LIMA to LAD, SVG sequentially to Diagonal 1 and OM, and SVG to distal RCA. He tolerated the procedure well and was transferred to the SICU in stable condition.  The patient was extubated the evening of surgery.  The patient's pacing wires were removed without difficulty.  He was transitioned off IV Amiodarone to an oral regimen.  He has chronic atrial fibrillation. \"  Clinical Notes - Hospital Course - Column D - Row 99\n\n\"Cooper for Heart, Vascular, & Lung Health  Date 01/23/24       Visit Diagnosis: 11/21/23 CABG x 4, MAZE, LAA clipping  Patient's Home Medications on Admission:  Current Outpatient Medications:    amLODipine (NORVASC) 10 MG tablet, , Disp: , Rfl:    apixaban (ELIQUIS) 5 MG TABS tablet, Take 1 tablet (5 mg total) by mouth 2 (two) times daily., Disp: 60 tablet, Rfl: 6   aspirin buffered (BUFFERIN) 325 MG TABS tablet, Take by mouth., Disp: , Rfl:    Blood Glucose Monitoring Suppl (Dering Harbor) w/Device KIT, in the morning and at bedtime., Disp: , Rfl:    cetirizine (ZYRTEC ALLERGY) 10 MG tablet, Take 10 mg by mouth daily as needed for allergies., Disp: , Rfl:    Continuous Blood Gluc Sensor (DEXCOM G7 SENSOR) MISC, every 10 days for 30 days, Disp: , Rfl:    EPINEPHrine 0.3 mg/0.3 mL IJ SOAJ injection, Inject 0.3 mg into the muscle as needed for anaphylaxis., Disp: , Rfl:    ezetimibe (ZETIA) 10 MG tablet, Take 10 mg by mouth daily., Disp: , Rfl:    fluticasone (FLONASE) 50 MCG/ACT nasal spray, Place 1 spray into both nostrils daily as needed for allergies., Disp: , Rfl:    GLUCOSAMINE-CHONDROITIN PO, Take 1 tablet by mouth in the morning and at bedtime., Disp: , Rfl:    Inclisiran Sodium (LEQVIO Attica), , Disp: , Rfl:    insulin lispro (HUMALOG) 100 UNIT/ML injection, 8 units Subcutaneous twice a day, Disp: , Rfl:    Insulin Lispro Prot & Lispro (HUMALOG MIX 75/25 KWIKPEN) (75-25) 100 UNIT/ML Kwikpen, Inject 8-10 Units into the skin See admin  instructions. 10 units in the morning, 8 units at bedtime, Disp: , Rfl:    Insulin Pen Needle (SURE COMFORT PEN NEEDLES) 32G X 4 MM MISC, USE AS DIRECTED 2 TIMES DAILY for 90, Disp: , Rfl:    Lancet Devices (RELION LANCING DEVICE) MISC, , Disp: , Rfl:    Lancets MISC, , Disp: , Rfl:    metoprolol tartrate (LOPRESSOR) 50 MG tablet, TAKE 1 TABLET BY MOUTH 2 TIMES DAILY, Disp: 60 tablet, Rfl: 10   MULTIPLE VITAMIN PO, Take 1 tablet by mouth daily., Disp: , Rfl:    ONETOUCH VERIO test strip, 1 each 2 (two) times daily., Disp: , Rfl:    SYNJARDY 12.5-500 MG TABS, 1 tablet with meals Orally Twice a day. Replaces Xigduo, Disp: , Rfl:    tamsulosin (FLOMAX) 0.4 MG CAPS capsule, Take 0.4 mg by mouth every evening., Disp: , Rfl:\"    Clinical Notes - Progress Notes - Column D - Row 159\n\n ",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_54100f6c9d7b446c8e06922e04f76c16",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_00805cdc50a3425f8847a38fb5755444",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that amiodarone can cause hepatis steatosis.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Medications that have been linked to liver steatosis include amiodarone, glucocorticoids, methotrexate, and tamoxifen [48-50].\"\n\nhttps://www.uptodate.com/contents/clinical-features-and-diagnosis-of-metabolic-dysfunction-associated-steatotic-liver-disease-nonalcoholic-fatty-liver-disease-in-adults",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_166b663011334b5e9b5c2787f49c3adb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_00805cdc50a3425f8847a38fb5755444",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's CT scan showed no evidence of hepatic steatosis 6 months after amiodarone was discontinued. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"08/05/2024 CT Abdomen/Pelvis with contrast:\nThe liver, spleen, pancreas, adrenals and kidneys have a normal appearance.\"   Patient 14 Radiology\n\nAmiodarone had been discontinued in January 2024.  A CT scan was done approximately 6 months after amiodarone was discontinued. The CT scan report from 8/5/2024 shows no abnormal liver findings.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b311555f8eaf4fb3aebf6d2e29aaefca",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_00805cdc50a3425f8847a38fb5755444",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the amiodarone is unlikely to be the cause of the patient\u2019s hepatic steatosis. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"A transient rise in serum aminotransferase concentrations (aspartate aminotransferase [AST], alanine aminotransferase [ALT]) occurs in approximately 25 percent (range 15 to 50 percent) of patients soon after amiodarone is begun [46]. \"  https://www.uptodate.com/contents/amiodarone-clinical-uses-administration-and-adverse-effects\n\nThe patient's CT scan 6 months after amiodarone had been discontinued did not show any signs of hepatic steatosis.  This makes it highly unlikely that amiodarone is the cause of the patient's hepatic steatosis. ",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_65ea7e1265ae4e5f8eb92d53bdd3cd61",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_00805cdc50a3425f8847a38fb5755444",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has elevated liver enzymes. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Unexplained elevation in liver enzymes (alanine aminotransferase [ALT] and aspartate aminotransferase [AST])\" \nhttps://www.uptodate.com/contents/clinical-features-and-diagnosis-of-metabolic-dysfunction-associated-steatotic-liver-disease-nonalcoholic-fatty-liver-disease-in-adults\n\nThe attached document shows ALT is 148 U/L which is above the normal range of 10 - 40 U/L.   Patient 14 Labs.pdf\nThe attached document shows the AST is 202 U/L which is above the normal range of 12-38 U/L.    Patient 14 Labs.pdf",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c79c74984e5a4172bd3093edb988335a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_00805cdc50a3425f8847a38fb5755444",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has at least three of the following cardiometabolic risk factors: diabetes mellitus, hypertension, hyperlipidemia, or overweight. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient's clinical history reveals that he has multiple cardiometabolic risk factors including diabetes, hypertension, hyperlipidemia and a BMI = 27 kg/m2.\n\n\" Diagnosis Date   Allergy    Arthritis    Atrial fibrillation (HCC)    Coronary artery disease    Diabetes mellitus without complication (HCC)    Headache    Hyperlipidemia    Hypertension    Spinal headache  pt states it felt like a migraine (cluster) headache that was pulsating when he woke up from anesthesia\"   Clinical Notes - Progress Notes - Column D - Row 165\n\nThe patient's height is 69 inches.      Vitals - Column F - Row 23\nThe patient weight is 2940.8 ounces.  Vitals - Column L - Row 23\n\nThe patient's weight in pounds is 183.8 lbs.     (w lbs) = (w oz) \u00d7 (0.0625oz/lbs).    https://www.omnicalculator.com/conversion/ounces-to-pounds-converter\n\u200b\nThe patient's body mass index calculated using the CDC BMI calculator is 27 kg/m2.   https://www.cdc.gov/bmi/adult-calculator/index.html  ",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7c4851f01c014bdb904a73af030723e5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_00805cdc50a3425f8847a38fb5755444",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient\u2019s liver biopsy shows hepatic steatosis with fibrosis.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Diagnosis: Metabolic dysfunction-associated liver disease.\"  \"Gross Description: Liver parenchyma shows nodules with steatosis\"  \"Microscopic Description: Extensive macrovesicular steatosis with prominent balloon degeneration. Perisinusoidal fibrosis with portal fibrosis.\"   Patient 14 Report",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_782fdd4619d84b34a1ecf9ce9b1de9f1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_00805cdc50a3425f8847a38fb5755444",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that metabolic dysfunction-associated steatohepatitis (MASH) with stage 2 fibrosis is the most likely primary diagnosis.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Establishing the diagnosis \u2014 The diagnosis of MASLD is typically established on the basis of imaging demonstrating liver steatosis in the absence of other primary etiologies (eg, drug-induced liver injury) in patients with at least one metabolic risk factor (figure 1) [4]. We typically reserve diagnostic liver biopsy for patients with suspected MASLD when the diagnosis remains uncertain despite laboratory and imaging tests.\"   \n\n\"MASLD with metabolic dysfunction-associated steatohepatitis (MASH) \u2013 Patients with MASH have histologic evidence of inflammation and hepatocellular injury, such as ballooning of hepatocytes, with or without fibrosis. This category was formerly known as nonalcoholic steatohepatitis (NASH).\"\n\n\"Stage: Fibrosis stage 2 (F2)\t  Description:  Zone 3 perisinusoidal fibrosis with portal fibrosis\"\n\nhttps://www.uptodate.com/contents/clinical-features-and-diagnosis-of-metabolic-dysfunction-associated-steatotic-liver-disease-nonalcoholic-fatty-liver-disease-in-adults",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b0ae2a6636a144879063adbce3964856",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_00805cdc50a3425f8847a38fb5755444",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that GLP-1 (Glucagon like peptide) based therapy is a recommended treatment for overweight patients with diabetes.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"If a strong indication for body weight management is present, particularly in the setting of obesity-related comorbidities (eg, obstructive sleep apnea, metabolic dysfunction-associated steatohepatitis), GLP-1-based therapy is an effective option for initial treatment.\"  https://www.uptodate.com/contents/initial-management-of-hyperglycemia-in-adults-with-type-2-diabetes-mellitus",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_32fe42ba332646978fcafc873ce252ec",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_00805cdc50a3425f8847a38fb5755444",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that semaglutide has been approved to treat MASH with liver fibrosis. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"The US Food and Drug Administration (FDA) has approved semaglutide (Wegovy) injection for the treatment of adults with metabolic dysfunction\u2013associated steatohepatitis (MASH) and moderate to advanced liver fibrosis, making it the first glucagon-like peptide-1 receptor agonist (GLP-1 RA) available for this indication.\"  https://www.docwirenews.com/post/fda-grants-accelerated-approval-of-semaglutide-for-treatment-of-mash-with-liver-fibrosis",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e6fc35bc493e4b7e8d025fa5352bb75e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_00805cdc50a3425f8847a38fb5755444",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States that semaglutide is the recommended first-line treatment for this patient. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has MASH associated with type 2 diabetes and overweight, which is a strong indication for GLP-1 therapy, most notably semaglutide which has been approved by the FDA in 2025 for this indication.\n\n\"GLP-1-based therapy \u2013 For patients with MASH and stage \u22652 fibrosis, we suggest GLP-1-based therapy for treatment of MASH (Grade 2C). In addition to weight loss, GLP-1-based therapy improves steatohepatitis and fibrosis. Most patients with MASH also have another indication for GLP-1-based therapy (diabetes, obesity, overweight with weight-related comorbidity)... We suggest resmetirom, a thyroid hormone receptor-beta agonist, for patients with MASH and fibrosis stage F2 or F3 (table 2) who do not achieve sustained weight loss [36-38]. This includes patients who cannot access (or cannot tolerate) GLP-1-based therapy, as well as those for whom GLP-1-based therapy does not result in sufficient weight loss to normalize transaminases. \"    \nhttps://www.uptodate.com/contents/management-of-metabolic-dysfunction-associated-steatotic-liver-disease-nonalcoholic-fatty-liver-disease-in-adults\n\nThe uptodate guidelines are based on recent guidance from the FDA on semaglutide:\n\"The U.S. Food and Drug Administration has approved Wegovy (semaglutide) injection to treat metabolic-associated steatohepatitis (MASH) in adults with moderate-to-advanced fibrosis (excessive scar tissue in the liver). MASH, also known as nonalcoholic steatohepatitis, is a serious liver disease. Wegovy, which was first approved in 2017, is also approved for obesity or overweight and to reduce cardiovascular events, such as\u202fheart attacks, in individuals at high risk of these events. Approximately 6% of U.S. adults (14.9 million people) have MASH, and its prevalence is expanding.\"  \nhttps://www.fda.gov/drugs/news-events-human-drugs/fda-approves-treatment-serious-liver-disease-known-mash",
+        "is_primary_objective": true
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

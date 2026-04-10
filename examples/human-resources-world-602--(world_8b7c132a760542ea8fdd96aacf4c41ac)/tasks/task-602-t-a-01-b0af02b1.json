@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use only the attached Greenhouse application data along with the user data to identify the recruiter managing the highest number of active applications that have been in the pipeline for more than 14 days. \n\nI want you to reassign some of those active aging applications to the recruiter with the highest total volume of rejected applications overall. Reassign 50% of the active aging applications  (round to nearest integer) in each of the locations handled by the overloaded recruiter. \n\nAfter completion, to quality check, please answer the following questions: \n\n1. How many active aging applications are reassigned in Greenhouse from the overloaded recruiter to the new recruiter. \n2. What is the new total number of active aging applications under the receiving recruiter that are located in South Bend IN? \n3. What is the new total total number of active aging applications under the receiving recruiter that are located in Chicago, IL?\n4. What is the new number of active aging applications under the overloaded recruiter in Ann Arbor MI after the reassignment? "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of active aging applications that are reassigned in... (ver_59d5f024b5a14dc0a08af285ee88b976)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of active aging applications that are reassigned in Greenhouse from the overloaded recruiter to the new recruiter is 156 (acceptable range 154 to 158)."
+        }
+      ]
+    },
+    {
+      "name": "States the new total number of active aging applications under the receiving... (ver_8afc08c8de2544eca1fce89dfa72e66b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the new total number of active aging applications under the receiving recruiter located in South Bend IN is 24."
+        }
+      ]
+    },
+    {
+      "name": "States the new total number of active aging applications under the receiving... (ver_101d0020a3484d958dd8215e7cb51130)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the new total number of active aging applications under the receiving recruiter located in Chicago IL is 28."
+        }
+      ]
+    },
+    {
+      "name": "States the number of active aging applications under the overloaded recruiter... (ver_ce35b7acc0864b1faa9d205bacdc919e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the number of active aging applications under the overloaded recruiter in Ann Arbor MI is 15."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-602-t-a-01-b0af02b1"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_b0af02b111154dab85064c2388afcd10",
+    "task_name": "Task_602_T_A_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_3570f7d4b4034b3dafd7f43803ec8bcc",
+        "golden_text_response": "1. The number of active aging applications that are reassigned in Greenhouse from the overloaded recruiter to the new recruiter is 156.\n\n2. The new total number of active aging applications under the receiving recruiter located in South Bend IN is 24\n\n3. The new total number of active aging applications under the receiving recruiter located in Chicago IL is 28\n\n4. The number of active aging applications under the overloaded recruiter in Ann Arbor MI is 15\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

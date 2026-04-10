@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Based on the attached email chain, is Myric's termination of the final exclusive negotiating agreement valid? State whether it was valid with an explanation."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States Liverbird was in Breach of the ENA for failing to wire the money by the... (ver_9022c4ec33434ea988ea426926121f08)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Liverbird was in Breach of the ENA for failing to wire the money by the 11/12 deadline."
+        }
+      ]
+    },
+    {
+      "name": "States that Liverbird properly cured the Breach by making the payment by 11/19 (ver_54a2a2212b144f878bb6626a736da939)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Liverbird properly cured the Breach by making the payment by 11/19."
+        }
+      ]
+    },
+    {
+      "name": "States that since they properly cured the Breach, no Default occurred (ver_d9bfadf05f914a3c8d999ab0dc40cb1f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that since they properly cured the Breach, no Default occurred."
+        }
+      ]
+    },
+    {
+      "name": "States that Myric's termination of the final exclusive negotiating agreement... (ver_4ebf37b03a9749c3b7b400cad48332ae)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Myric's termination of the final exclusive negotiating agreement is not valid under Section 12.4(a)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world428-ro-05-c8a28e63"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_c8a28e63af504d7faba0e130aba22fde",
+    "task_name": "World428_RO_05",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_9f37221e8bab4a239a300ef773a587cb",
+        "golden_text_response": "Liverbird was in Breach of the ENA for failing to wire the money by the 11/12 deadline. However, they properly cured the Breach by making the payment by 11/19. Since they properly cured the Breach, no Default occurred. Therefore, Myric's termination of the final exclusive negotiating agreement is not valid under Section 12.4(a). ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

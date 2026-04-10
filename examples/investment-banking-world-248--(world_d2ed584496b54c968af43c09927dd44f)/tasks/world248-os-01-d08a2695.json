@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Update the merger model by increasing pro forma EPS to 10% of KLAC's June 30th 2025 diluted EPS. Alter MTSI's 2025 revenue to achieve the target pro forma EPS. Assume the same gross margin and all other values unchanged for 2025. Please return MTSI's updated EPS (rounded to one decimal place) and 2025 cost of revenue (rounded to the nearest whole number) expressed in $ thousands."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States MTSI EPS is $7.1 (acceptable range $7.0 to $7.2) (ver_ead1c3c9ba69451cb6f13f0dcea7e389)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States MTSI EPS is $7.1 (acceptable range $7.0 to $7.2)."
+        }
+      ]
+    },
+    {
+      "name": "States MTSI 2025 cost of revenue is ($920,814) thousand (acceptable range... (ver_55e3920ccd984aeba3e9f25b3f106955)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States MTSI 2025 cost of revenue is ($920,814) thousand (acceptable range $911,606 to $930,022)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world248-os-01-d08a2695"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_d08a2695e8cd4157b7ac1c7bb1a32938",
+    "task_name": "World248_OS_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_abc6136034504178be76552e308bc407",
+        "golden_text_response": "MTSI EPS: $7.1\nMTSI 2025 cost of revenue: ($920,814) thousand\n",
+        "golden_file_responses": "snap_057d1228087f4abfae8453869461f988"
+      }
+    ]
+  }
+}

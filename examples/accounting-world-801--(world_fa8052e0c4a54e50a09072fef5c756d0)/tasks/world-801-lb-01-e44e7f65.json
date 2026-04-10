@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "A case has been made for the work conducted by vendor “Liam Turner” in FY2022 be eligible for add-back during FY2022. Note: The vendor worked solely on strategic projects not included in the normal course of business; the expenses of this vendor have historically been charged to operating expenses and is EBITDA-impacting. \n\nReferencing the invoice and contact file data on Xero, output the total expense amount the vendor billed to Redwood in FY2022. Also, output the adjusted FY2022 EBITDA of Redwood, assuming the vendor’s expenses are treated as add-back. \n\nRefer to the trial balance for EBITDA figures. Round all values to the nearest whole dollar."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the 2022 cost of Liam Turner to Redwood is $75,546 (acceptable range... (ver_76d5bd939839458bb3150f18fe592120)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the 2022 cost of Liam Turner to Redwood is $75,546 (acceptable range $74,791 to $76,301)."
+        }
+      ]
+    },
+    {
+      "name": "States the 2022 EBITDA if Liam Turner's cost to Redwood had been treated as... (ver_e46ebdc7b9a2466ea4d98df14620e929)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the 2022 EBITDA if Liam Turner's cost to Redwood had been treated as add-back is $55,075,546 (acceptable range $54,524,791 to $55,626,301)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-801-lb-01-e44e7f65"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_e44e7f65789e452fb002bb21ededffd3",
+    "task_name": "World-801-LB-01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_a2ff6ad93ff64160ac6a18e92bb8013c",
+        "golden_text_response": "States the 2022 cost of Liam Turner to Redwood is $75,546.\n\nStates the 2022 EBITDA if Liam Turner's cost to Redwood had been treated as add-back is $55,075,546.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

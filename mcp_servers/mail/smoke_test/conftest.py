@@ -224,6 +224,7 @@ cp -r {repo_mount_path} {repo_work_path}
 {state_cmd}
 cd {repo_work_path}
 {export_cmds}
+export MISE_PYTHON_PRECOMPILED_FLAVOR=install_only_stripped
 mise trust -y
 mise run install
 mise run build 2>/dev/null || true

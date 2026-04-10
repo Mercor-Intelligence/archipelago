@@ -1,0 +1,353 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "We want to identify new high potential ancillary businesses for Forma. We have gathered information on ancillary launches by comparable businesses in past few years. We want to conduct an analysis and determine which ancillary offerings have driven the highest improvement in revenue growth rates, using the trends provided in ancilliary launch revenue trends\n\nFor this analysis, we will compare the 2-year CAGR before launch with the 2-year CAGR post launch - that is, CAGR from launch year minus two to the launch year, and CAGR from the launch year to two years post-launch.\n\nReport the following as a response in the console:\n1) What is the overall improvement in CAGR across all the launches by Forma's competitors\n2) Which are the top two ancillary offerings by total margin improvement, and how much improvement in CAGR did each of them deliver?\n3) Which are the bottom two ancillary offerings by total margin improvement, and what change in CAGR did they deliver?\n\nAggregate revenues across all launches to calculate the average CAGRs. Round final CAGR values and  intermediary calculations to two decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States overall improvement in 2-year CAGR across all competitor launches is... (ver_9aa563b65bd64ad097a914899e24d36b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States overall improvement in 2-year CAGR across all competitor launches is 0.65% (acceptable range 0.64% to 0.66%)."
+        }
+      ]
+    },
+    {
+      "name": "States overall improvement in 2-year CAGR across all competitor launches is... (ver_9aa563b65bd64ad097a914899e24d36b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States overall improvement in 2-year CAGR across all competitor launches is anything other than 0.65%."
+        }
+      ]
+    },
+    {
+      "name": "States Smart Home Setup as one of the top two ancillary offerings (ver_eed4f3ebdd8e4cb786f74d74467720eb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Smart Home Setup as one of the top two ancillary offerings."
+        }
+      ]
+    },
+    {
+      "name": "States Premium Delivery as one of the top two ancillary offerings (ver_71e696782a3947068d13c50be5ad9459)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Premium Delivery as one of the top two ancillary offerings."
+        }
+      ]
+    },
+    {
+      "name": "States Subscription Care Plan as one of the bottom two ancillary offerings (ver_d2b7aaa8e4fd4d2bb1627e468690d39b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Subscription Care Plan as one of the bottom two ancillary offerings."
+        }
+      ]
+    },
+    {
+      "name": "States Furniture Insurance as one of the bottom two ancillary offerings (ver_97e942ccc06b4230b9522058acf79f46)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Furniture Insurance as one of the bottom two ancillary offerings."
+        }
+      ]
+    },
+    {
+      "name": "States difference in 2-year CAGR for Smart Home Setup is 0.96% (acceptable... (ver_8fab0f04375d4e27b75189b5947fb8c5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States difference in 2-year CAGR for Smart Home Setup is 0.96% (acceptable range 0.95% to 0.97%)."
+        }
+      ]
+    },
+    {
+      "name": "States difference in 2-year CAGR for Smart Home Setup is anything other than... (ver_8fab0f04375d4e27b75189b5947fb8c5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States difference in 2-year CAGR for Smart Home Setup is anything other than 0.96%."
+        }
+      ]
+    },
+    {
+      "name": "States difference in 2-year CAGR for Premium Delivery is 0.77% (acceptable... (ver_2cbfcc88dded491a998cb264fb912fd0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States difference in 2-year CAGR for Premium Delivery is 0.77% (acceptable range 0.76% to 0.78%)."
+        }
+      ]
+    },
+    {
+      "name": "States difference in 2-year CAGR for Premium Delivery is anything other than... (ver_2cbfcc88dded491a998cb264fb912fd0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States difference in 2-year CAGR for Premium Delivery is anything other than 0.77%."
+        }
+      ]
+    },
+    {
+      "name": "States difference in 2-year CAGR for Subscription Care Plan is -0.13%... (ver_77c4d3e434df4a1d8a8c4306ecfbe5ad)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States difference in 2-year CAGR for Subscription Care Plan is -0.13% (acceptable range -0.131% to -0.129%)."
+        }
+      ]
+    },
+    {
+      "name": "States difference in 2-year CAGR for Subscription Care Plan is anything other... (ver_77c4d3e434df4a1d8a8c4306ecfbe5ad)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States difference in 2-year CAGR for Subscription Care Plan is anything other than -0.13%."
+        }
+      ]
+    },
+    {
+      "name": "States difference in 2-year CAGR for Furniture Insurance is -0.06% (acceptable... (ver_da8f62e7f4c843308381c0e4cde50dea)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States difference in 2-year CAGR for Furniture Insurance is -0.06% (acceptable range -0.061% to -0.059%)."
+        }
+      ]
+    },
+    {
+      "name": "States difference in 2-year CAGR for Furniture Insurance is anything other... (ver_da8f62e7f4c843308381c0e4cde50dea)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States difference in 2-year CAGR for Furniture Insurance is anything other than -0.06%."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-ay-03-48f4b5cd"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_93767f48e4d9497a8f6b129492a1ae14",
+    "world_name": "Management Consulting World 122",
+    "task_id": "task_48f4b5cde544435eab13140e5d3b734d",
+    "task_name": "Task AY 03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_fcf42596722743e2b4177497fac12ea8",
+        "golden_text_response": "1) Overall improvement in 2-year CAGR across all competitor launches is 0.65%\n\n2) Top two ancillary offerings and corresponding improvement in 2-year CAGR:\n- Smart Home Setup: 0.96%\n- Premium Delivery: 0.77 pp%\n\n3) Bottom two ancillary offerings and corresponding change in 2-year CAGR:\n- Subscription Care Plan: -0.13%\n- Furniture Insurance: -0.06%",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Help update the S&P Global DCF model for the following (i) S&P Mobility dis-synergies as a percentage of revenue are 200 bps higher per year from 2026 to 2029, (ii) RemainCo stranded costs as a % of revenue are 300 bps higher in 2026 and 100 bps higher from 2027 to 2029, (iii) S&P Mobility operating-related expenses (which FDS labels as cost of revenue), selling and general expenses, and depreciation and amortization as a % of revenue from 2026 onwards remain flat and the same as FDS's FY2025 percentages (assume that FDS's D&A is fully baked into FDS's cost of revenue).\n\nBased on these changes, report the following outputs:\n1) Pro Forma EV (Post Spin Off) - SOTP Separate Entities.\n2) Shareholder Equity Value Creation - %.\n\nRound all monetary units to the nearest million and percentages to two decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States Pro Forma EV (Post Spin Off) - SOTP Separate Entities is $139,752M... (ver_51cf015e5695463a92f3e4ed91ced022)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Pro Forma EV (Post Spin Off) - SOTP Separate Entities is $139,752M (acceptable range $138,354 to $141,150)."
+        }
+      ]
+    },
+    {
+      "name": "States Shareholder Equity Value Creation is 3.39% (acceptable range 3.36% to... (ver_103f2baad2f34621acdaa9f67d2180d4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Shareholder Equity Value Creation is 3.39% (acceptable range 3.36% to 3.42%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world249-pf-02-1643453d"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_1643453d2b4846c692626fcd3b2ea24e",
+    "task_name": "World249-PF-02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_b0467c8442b84e4cb9014282cc88d86f",
+        "golden_text_response": "Pro Forma EV (Post Spin Off) - SOTP Separate Entities: $139,752M\nShareholder Equity Value Creation: 3.39%",
+        "golden_file_responses": "snap_d5623d02c745410586c64a68f03146d8"
+      }
+    ]
+  }
+}

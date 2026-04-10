@@ -1,0 +1,7 @@
+id,name,color,paid,units
+1,Vacation,#2D9CDB,true,hours
+2,Sick,#EB5757,true,hours
+3,Personal,#F2C94C,true,hours
+4,Bereavement,#9B51E0,true,days
+5,Jury Duty,#27AE60,true,days
+6,Unpaid Leave,#828282,false,days

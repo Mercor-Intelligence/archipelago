@@ -1,0 +1,335 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Update the C9 lesson plan with lesson date, lesson outline, and homework assignment, adapting the journal lesson outline to request other metaphorical quotes from the last 8 pages of the chapter. The assignment should ask for the meaning of the text, the connotations of the word or phrase, and how the word choice reveals something about a character. Include the page numbers of the text excerpts."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Adds the date 10/21/2025 (ver_9d932c29ffb54daaac6dad6e7fbfc1ce)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Adds the date 10/21/2025."
+        }
+      ]
+    },
+    {
+      "name": "Adds a date other than 10/21/2025 to “C9_Lesson Plan.docx”. (ver_9d932c29ffb54daaac6dad6e7fbfc1ce)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Adds a date other than 10/21/2025 to “C9_Lesson Plan.docx”."
+        }
+      ]
+    },
+    {
+      "name": "Copies the 'Do Now', 'Guided Instruction', and 'Independent Practice' sections... (ver_5235691b466e424d854a0ab887fff3ee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Copies the 'Do Now', 'Guided Instruction', and 'Independent Practice' sections from “C9_Outline.docx” into \"C9_Lesson Plan.docx\"."
+        }
+      ]
+    },
+    {
+      "name": "Homework question 1 includes a metaphor extracted from the last 8 pages of... (ver_49d4dd451cea4427b5be95fcbe22e586)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Homework question 1 includes a metaphor extracted from the last 8 pages of chapter 9 (pages 84-91) of \"TKMFullText.pdf\"."
+        }
+      ]
+    },
+    {
+      "name": "Homework question 1 states the page number of the extracted quote (ver_df99a282ddbb4b038b46b5675c94be8e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Homework question 1 states the page number of the extracted quote."
+        }
+      ]
+    },
+    {
+      "name": "Homework question 1 asks for the meaning of the text excerpt (ver_0968ad927b794270a827d88f64f4b7d1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Homework question 1 asks for the meaning of the text excerpt."
+        }
+      ]
+    },
+    {
+      "name": "Homework question 1 asks for the connotations of the word or phrase in the... (ver_01c9350d4b834afd86247903416bf71c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Homework question 1 asks for the connotations of the word or phrase in the text excerpt."
+        }
+      ]
+    },
+    {
+      "name": "Homework question 1 asks how the word choice in the text excerpt reveals... (ver_5e8c512083ee481894438579bd82728a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Homework question 1 asks how the word choice in the text excerpt reveals something about a character."
+        }
+      ]
+    },
+    {
+      "name": "Homework question 2 includes a metaphor extracted from the last 8 pages of... (ver_d07249569b294ae59f5e550ca647ddda)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Homework question 2 includes a metaphor extracted from the last 8 pages of chapter 9 (pages 84-91) of \"TKMFullText.pdf\"."
+        }
+      ]
+    },
+    {
+      "name": "Homework question 2 states the page number of the extracted quote (ver_e9d176ba0f2a4fa7926b75853c63d696)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Homework question 2 states the page number of the extracted quote."
+        }
+      ]
+    },
+    {
+      "name": "Homework question 2 asks for the meaning of the text excerpt (ver_1c16d75227de44e99d0f08f87611c93d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Homework question 2 asks for the meaning of the text excerpt."
+        }
+      ]
+    },
+    {
+      "name": "Homework question 2 asks for the connotations of the word or phrase in the... (ver_5283f08d3dec4f3aa572670041a5a97a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Homework question 2 asks for the connotations of the word or phrase in the text excerpt."
+        }
+      ]
+    },
+    {
+      "name": "Homework question 2 asks how the word choice in the text excerpt reveals... (ver_a4147d46680a42d286ca2c4047356ae2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Homework question 2 asks how the word choice in the text excerpt reveals something about a character."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world305-eb-03-natural-prompt-34277430"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_34277430e3f34a6ca4b91e9ba7e3cf27",
+    "task_name": "world305_EB_03 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_71957d5c980b4a94b70c89e6f6994c1b",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_bb3717be1f584f2aafe1c7478d7e54c2"
+      },
+      {
+        "golden_response_id": "gold_9898a6e19184434b8a9a5e501e51d653",
+        "golden_text_response": "Attached.",
+        "golden_file_responses": "snap_bb3717be1f584f2aafe1c7478d7e54c2"
+      }
+    ]
+  }
+}

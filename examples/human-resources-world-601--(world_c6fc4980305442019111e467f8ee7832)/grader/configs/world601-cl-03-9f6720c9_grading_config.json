@@ -1,0 +1,211 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_655f3db9ca044fb485ed90a1e3fad19a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9f6720c9487c42a88d93c8a3cf8fdd3a",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of R&D roles that would be cancelled in the 15% of Open R&D Reqs Cancelled scenario is 3.",
+        "autogen_source": null,
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4f4346a62c8942bc87b39d4d743d8dd9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9f6720c9487c42a88d93c8a3cf8fdd3a",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of R&D roles that would be cancelled in the 20% of Open R&D Reqs Cancelled scenario is 4",
+        "autogen_source": null,
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ef0a09a001a64bb18148438d0b7802ee",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9f6720c9487c42a88d93c8a3cf8fdd3a",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of R&D roles that would be cancelled in the 33% of Open R&D Reqs Cancelled scenario is 6.",
+        "autogen_source": null,
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e8165fc894e64e01801b860e3dc77997",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9f6720c9487c42a88d93c8a3cf8fdd3a",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the overall estimated cost savings in the 15% of Open R&D Reqs Cancelled scenario is $465,548 (acceptable range $460,893 to $470,203).",
+        "autogen_source": null,
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_af4c8c85282847e0988027372006d6d3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9f6720c9487c42a88d93c8a3cf8fdd3a",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the overall estimated cost savings in the 20% of Open R&D Reqs Cancelled scenario is $620,731 (acceptable range $614,524 to $626,938).",
+        "autogen_source": null,
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_43bb861acc7d4fbfb2e0a21c1accd1e9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9f6720c9487c42a88d93c8a3cf8fdd3a",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the overall estimated cost savings in the 33% of Open R&D Reqs Cancelled scenario is $931,096 (acceptable range $921,785 to $940,407).",
+        "autogen_source": null,
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_616864a84f984ed6ada35ffef3114991",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9f6720c9487c42a88d93c8a3cf8fdd3a",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the average cost per active role in Customer Success is $147,361 (acceptable range $145,887 to $148,835).",
+        "autogen_source": null,
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_250a0d8817a648aeb4771dcfaeb95dc9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9f6720c9487c42a88d93c8a3cf8fdd3a",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the average cost per active role in Sales is $186,007 (acceptable range $184,147 to $187,867).",
+        "autogen_source": null,
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e965d282eb9c454b83f6d523ae4d9b31",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9f6720c9487c42a88d93c8a3cf8fdd3a",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Style / formatting"
+        ],
+        "weight": 1,
+        "criteria": "Present final answers in a table in a new slide",
+        "autogen_source": null,
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

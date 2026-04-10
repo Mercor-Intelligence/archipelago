@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Please run a new scenario in the financial model with the following adjustments:\n\n1. Calculate the unlevered beta for FDS, MCO, and MORN, using their respective levered beta values (0.74, 1.45, and 1.11). For the effective tax rates and Debt/Equity ratios, use FDS's values as of 2025-08-31, and MCO's and MORN's values as of 2024-12-31. Return the average unlevered beta for FDS, MCO, and MORN to two decimal places.\n2. Calculate SPGI's levered beta using the average unlevered beta from FDS, MCO, and MORN, along with SPGI's effective tax rate and Debt/Equity ratio as of 2024-12-31. Return SPGI's levered beta to two decimal places.\n\nPlease return the updated projected Enterprise Value (Stage 1 + 2). All monetary results must be displayed in USD millions, rounded to two decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States Enterprise value (stage 1 + 2) is $137,786.20M (acceptable range... (ver_06623abcd11e4c8f826a8e0969477534)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Enterprise value (stage 1 + 2) is $137,786.20M (acceptable range $136,408.34 to $139,164.06)."
+        }
+      ]
+    },
+    {
+      "name": "States the average unlevered beta for FDS, MCO, and MORN is 0.59 (acceptable... (ver_fd3704ad22aa49688fafcc5c7cf4191b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average unlevered beta for FDS, MCO, and MORN is 0.59 (acceptable range 0.58 to 0.60)."
+        }
+      ]
+    },
+    {
+      "name": "States the levered beta for SPGI is 0.76 (acceptable range 0.75 to 0.77) (ver_58bcedc6826f405eb523212e282f4712)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the levered beta for SPGI is 0.76 (acceptable range 0.75 to 0.77)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world249-hs-01-b727de52"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_b727de52acb946ad85aa6a8e86b62fc4",
+    "task_name": "World249-HS-01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c59442b21da146a48d82281b165c8725",
+        "golden_text_response": "The average unlevered beta for FDS, MCO, and MORN is 0.59\nThe levered beta for SPGI is 0.76\nEnterprise value (stage 1 + 2) is $137,786.20M",
+        "golden_file_responses": "snap_5db34cff55f14fec8c60eefa39a9f69f"
+      }
+    ]
+  }
+}

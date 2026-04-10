@@ -1,0 +1,261 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "We're evaluating borrower risk segmentation for credit origination. I have a Tableau workbook, Origination_Credit_Score.twbx, from the team, and need you to analyze the borrowers so we can inform underwriting strategy and pricing. You must first set this up in a Tableau workspace: deploy the workbook to a Tableau site, and once it's published, download the underlying data.\n\nUse Dim_Borrower_Master.csv to filter to retail borrowers only, and apply that filter to the underlying data before clustering. Review the underlying data and identify the component columns used to calculate Origination_Credit_Score (logic in Origination_Credit_Score_Calculation.pdf). Use only the raw values of these specific component columns as they appear in the data. Using these raw columns, standardize the features with z-score normalization (StandardScaler), fitting and transforming on the full filtered dataset.\n\nEvaluate KMeans for k=2..8 using silhouette score and select the k that maximizes silhouette. For reproducibility, explicitly set KMeans parameters for every fit in the evaluation loop and the final model as follows: random_state=42, n_init=10, init=\"k-means++\", max_iter=300. Fit the final model and assign each retail borrower to a cluster. Finally, identify the 10 retail borrowers on the watch list from 1.11.2026 Habor Capital Final.pdf (page 4 bar chart) and report their clusters by matching chart labels to the Borrower_Name column. Within your final output, provide the Python code used for the analysis and, for each of these 10 borrowers, report only the Borrower_Name and its associated Cluster."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports Company_10921_Retail is assigned to cluster 0. (ver_73a4339cb63f4cf5a31d7d4f32bddadb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Company_10921_Retail is assigned to cluster 0."
+        }
+      ]
+    },
+    {
+      "name": "Reports Company_10930_Retail is assigned to cluster 0. (ver_e8398e93469c456d9d941d925511ab4d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Company_10930_Retail is assigned to cluster 0."
+        }
+      ]
+    },
+    {
+      "name": "Reports Company_11067_Retail is assigned to cluster 4. (ver_f9b8daf60b7f4ccaadec1fedcf820b56)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Company_11067_Retail is assigned to cluster 4."
+        }
+      ]
+    },
+    {
+      "name": "Reports Company_11076_Retail is assigned to cluster 2. (ver_387e1d53c5954c6381c465fdbfd55db0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Company_11076_Retail is assigned to cluster 2."
+        }
+      ]
+    },
+    {
+      "name": "Reports Company_11737_Retail is assigned to cluster 3. (ver_20605dca5c374b479e0e567b991007f7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Company_11737_Retail is assigned to cluster 3."
+        }
+      ]
+    },
+    {
+      "name": "Reports Company_11747_Retail is assigned to cluster 4. (ver_a118381004384791b7fa7520f679239f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Company_11747_Retail is assigned to cluster 4."
+        }
+      ]
+    },
+    {
+      "name": "Reports Company_12289_Retail is assigned to cluster 3. (ver_993c3c6f58f84dc6ad7043655496bbfd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Company_12289_Retail is assigned to cluster 3."
+        }
+      ]
+    },
+    {
+      "name": "Reports Company_13566_Retail is assigned to cluster 2. (ver_9cbf8256bbdb47eb8dbbd5293cab0f95)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Company_13566_Retail is assigned to cluster 2."
+        }
+      ]
+    },
+    {
+      "name": "Reports Company_13724_Retail is assigned to cluster 2. (ver_895dee40e50543a99b4dbb24b40320e0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Company_13724_Retail is assigned to cluster 2."
+        }
+      ]
+    },
+    {
+      "name": "Reports Company_13732_Retail is assigned to cluster 0. (ver_bb8b37fdf8dd498298432e008efef162)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Company_13732_Retail is assigned to cluster 0."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh tableau-task-mwdd1e19-3f9b1603"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_3f9b160386f0466a9497908829502a2d",
+    "task_name": "Tableau - Task mwdd1e19",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_3631ebb06a08418aad3e2a17141bf8ea",
+        "golden_text_response": "Watchlist Cluster Assignments:\n       Borrower_Name  Cluster\nCompany_10921_Retail        0\nCompany_10930_Retail        0\nCompany_11067_Retail        4\nCompany_11076_Retail        2\nCompany_11737_Retail        3\nCompany_11747_Retail        4\nCompany_12289_Retail        3\nCompany_13566_Retail        2\nCompany_13724_Retail        2\nCompany_13732_Retail        0\n\n```python\nimport pandas as pd\nfrom sklearn.cluster import KMeans\nfrom sklearn.metrics import silhouette_score\nfrom sklearn.preprocessing import StandardScaler\n\n\nINPUT_PATH = \"Origination_Credit_Score.csv\"\nMASTER_PATH = \"Dim_Borrower_Master.csv\"\nMIN_K = 2\nMAX_K = 8\nRANDOM_STATE = 42\n\nFEATURE_COLS = [\n    \"Payment_History_Score\",\n    \"Utilization_Ratio\",\n    \"Credit_History_Years\",\n    \"New_Credit_Accounts_12M\",\n    \"Credit_Mix_Score\",\n]\n\nWATCHLIST_BORROWERS = [\n    \"Company_11076_Retail\",\n    \"Company_13566_Retail\",\n    \"Company_10921_Retail\",\n    \"Company_12289_Retail\",\n    \"Company_11737_Retail\",\n    \"Company_13732_Retail\",\n    \"Company_13724_Retail\",\n    \"Company_11747_Retail\",\n    \"Company_10930_Retail\",\n    \"Company_11067_Retail\",\n]\n\ndf = pd.read_csv(INPUT_PATH)\nmaster = pd.read_csv(MASTER_PATH)\n\n# Filter to retail borrowers using the master list.\nretail_ids = master.loc[master[\"NAICS_Sector\"] == \"Retail\", \"Borrower_ID\"].unique()\ndf = df[df[\"Borrower_ID\"].isin(retail_ids)].copy()\n\n# Standardize component features before clustering.\nfeatures = df[FEATURE_COLS].copy()\nscaler = StandardScaler()\nx = scaler.fit_transform(features)\n\n# Select k by maximizing silhouette score.\nbest_k = None\nbest_score = -1.0\nfor k in range(MIN_K, MAX_K + 1):\n    model = KMeans(n_clusters=k, n_init=10, init=\"k-means++\", max_iter=300, random_state=RANDOM_STATE)\n    labels = model.fit_predict(x)\n    if len(set(labels)) < 2:\n        continue\n    score = silhouette_score(x, labels)\n    if score > best_score:\n        best_score = score\n        best_k = k\n\n# Fit final model and assign cluster labels.\nkmeans = KMeans(n_clusters=best_k, n_init=10, init=\"k-means++\", max_iter=300, random_state=RANDOM_STATE)\ndf[\"Cluster\"] = kmeans.fit_predict(x)\n\n# Report cluster assignments for watchlist borrowers.\nwatchlist_map = master[[\"Borrower_ID\", \"Borrower_Name\"]]\nwatchlist = (\n    df.merge(watchlist_map, on=\"Borrower_ID\", how=\"left\")\n    .loc[lambda x: x[\"Borrower_Name\"].isin(WATCHLIST_BORROWERS)]\n    .loc[:, [\"Borrower_Name\", \"Borrower_ID\", \"Cluster\"]]\n    .sort_values(\"Borrower_Name\")\n)\n\nprint(\"Watchlist Cluster Assignments:\")\nif watchlist.empty:\n    print(\"No watchlist borrowers found in retail clustering output.\")\nelse:\n    print(watchlist[[\"Borrower_Name\", \"Cluster\"]].to_string(index=False))\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

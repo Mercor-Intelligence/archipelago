@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Save the Zone, a third-party group, filed a complaint alleging that the City violated CEQA by failing to complete an EIR prior to the execution of the Zone Redevelopment Exclusive Negotiating Agreement (the \"Agreement\"). Attached to the Agreement was a draft Disposition and Development Agreement (\"DDA\"), which is the subject of the parties' negotiation efforts.\n\nThe City is considering filing a motion for summary judgment on the grounds that even if the Agreement is deemed a project, the City's conduct does not constitute approval requiring prior environmental review.\n\nIs the City likely to prevail in its argument? Provide your response in the console according to the following: 1) \"Yes/No\" conclusion; and 2) 1-2 sentence explanation."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States \"No\" to indicate that the City is unlikely to prevail in its argument (ver_d19b843fd2f047ff93556fa9e05ffdaa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States \"No\" to indicate that the City is unlikely to prevail in its argument."
+        }
+      ]
+    },
+    {
+      "name": "States that the City's conduct in relation to the proposed DDA could be... (ver_e6674df4d05a4e99b4719d8d99711c0d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the City's conduct in relation to the proposed DDA could be considered an \"approval\" of the project, thereby creating a genuine dispute of material fact."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world428-dm-03-24084366"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_24084366073e4dc59e57d33475bd7b72",
+    "task_name": "World428_DM_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_058c31804a2843119cc44b371d760eea",
+        "golden_text_response": "No, the City's argument is unlikely to prevail because the City's conduct in relation to the proposed DDA could be considered an \"approval\" of the project, thereby creating a genuine dispute of material fact.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

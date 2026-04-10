@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Update the merger model with share prices for RMBS, MTSI, ONTO, and SLAB as of the close on 1/5/26. In addition, in each scenario:\n- revise SG&A synergies down 1000 basis points\n- triple the advisory fee percentage\n- increase RMBS's number of shares outstanding by 10% and decrease each target's number of shares outstanding by the same percentage\n\nBid premiums in each scenario should then be updated as follows:\n- 30% for the target with the highest share price as of the close on 1/5/26\n- 20% for the target with the second highest\n- 10% for the target with the lowest\n\nCash consideration in each scenario should then be updated as follows:\n- 75% for the target with the lowest share price as of the close on 1/5/26\n- 50% for the target with the second lowest\n- 25% for the target with the highest \n\nOutput the % accretion/dilution to RMBS shareholders in each scenario rounded to two decimal places. Then calculate the average % accretion/dilution to RMBS shareholders across all three scenarios."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States RMBS shareholder accretion/dilution in the MTSI scenario is -5.36%... (ver_42e096c89dc1401cbd84f16d4d0ae2ec)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States RMBS shareholder accretion/dilution in the MTSI scenario is -5.36% (acceptable range -5.41% to -5.31%)."
+        }
+      ]
+    },
+    {
+      "name": "States RMBS shareholder accretion/dilution in the ONTO scenario is 1.65%... (ver_84ec567efc7148ffa1d0395e9879d2f5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States RMBS shareholder accretion/dilution in the ONTO scenario is 1.65% (acceptable range 1.63% to 1.67%)."
+        }
+      ]
+    },
+    {
+      "name": "States RMBS shareholder accretion/dilution in the SLAB scenario is -22.82%... (ver_ecc9167306584f87b5e4f691003620ef)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States RMBS shareholder accretion/dilution in the SLAB scenario is -22.82% (acceptable range -23.05% to -22.59%)."
+        }
+      ]
+    },
+    {
+      "name": "States average RMBS shareholder accretion/dilution is -8.84% (acceptable range... (ver_9c2fa167d84d4a2fabdbb86cf5d94fb0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States average RMBS shareholder accretion/dilution is -8.84% (acceptable range -8.93% to -8.75%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world248-rl-01-d41f3b1d"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_d41f3b1d09d94b3c859503f4106f12f9",
+    "task_name": "World248_RL_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_af52b6323f3f4271b47f1d2acb831301",
+        "golden_text_response": "RMBS shareholder accretion/dilution in the MTSI scenario is -5.36%\nRMBS shareholder accretion/dilution in the ONTO scenario is 1.65%\nRMBS shareholder accretion/dilution in the SLAB scenario is -22.82%\nAverage RMBS shareholder accretion/dilution is -8.84%",
+        "golden_file_responses": "snap_1ad727a3124449ad93ecf2acf4197ca0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_ea53ddea2af8467c9e0c751b9f6ac16e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0d0ed0a295a14c76a323b431731391a8",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the total annual cost savings for 2025 under a scenario where fast-track promotions were not allowed and affected employees instead receive a standard 5% salary hike (effective January 1, 2025) is $105,026.4 (acceptable range $103,976.1 to $106,076.7).",
+        "autogen_source": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Model should be able to correctly identify the 14 employees with fast-track promotions and then calculate the corresponding cost savings potential",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

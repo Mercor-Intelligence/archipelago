@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Forma wants to understand most and least resource efficient categories. Based on the store wise headcount data, provide the category that has the highest sales/rep and the category that has the lowest sales/rep. What is the delta between them in $/sales rep?\n\nShare the output in console. Round all the calculations to nearest integer. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the highest Sales/Rep Category is Storage & Organization (ver_aef3ecfcbf654109a9291801fd4645b9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the highest Sales/Rep Category is Storage & Organization."
+        }
+      ]
+    },
+    {
+      "name": "States that the lowest sales/rep category is Office (ver_6ebfcfdfb70f43fb9b99d3267bbffb2a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the lowest sales/rep category is Office."
+        }
+      ]
+    },
+    {
+      "name": "States that the delta between highest and lowest sales/rep categories is... (ver_8c167061ade6464d8b56bb3ebb66288a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the delta between highest and lowest sales/rep categories is $2,460 per sales rep."
+        }
+      ]
+    },
+    {
+      "name": "States that the delta between highest and lowest sales/rep categories is... (ver_8c167061ade6464d8b56bb3ebb66288a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the delta between highest and lowest sales/rep categories is anything other than $2,460 per sales rep."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-ay-04-5d148426"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_93767f48e4d9497a8f6b129492a1ae14",
+    "world_name": "Management Consulting World 122",
+    "task_id": "task_5d1484263fe945c5938f18e5f3b49c90",
+    "task_name": "Task AY 04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_6c0a8d166f114c8883fea83f90bfcdb8",
+        "golden_text_response": "Resource Efficiency Analysis\n\nHighest Sales/Rep Category: Storage & Organization\nLowest Sales/Rep Category: Office\n\nDelta between Highest and Lowest: $2,460 per sales rep",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

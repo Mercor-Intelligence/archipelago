@@ -1,0 +1,238 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use Python to perform analysis on the system migration data in legacy_billing_migration.csv. Filter to include only records with a negative old system balance and without a complete migration status (hereafter referred to as \"Cohort X\").\nIn Cohort X, report the following metrics for the migration year 2022 and 2023 separately:\n1. the sum of old system balance (round the sum to the nearest integer),\n2. the number of unique legacy accounts,\n3. the number of unique legacy accounts that required manual intervention according to notes.\n\nYou also have access to the customer feedback records in customer_complaints.csv. Some of the Cohort X accounts have been assigned the new subscriber id and you will analyze their complaints using Python. Identify complaints from Cohort X accounts by matching their new subscriber id with the subscriber id in customer_complaints.csv since (>=) the migration date. Report the number of complaints lodged, the resolution rate (% value rounded to one decimal point) of these complaints (with resolution of resolved), and the number of complaints specifically related to billing errors.\n\nProvide python code along with the results."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Report the sum of old system balance (round the sum to the nearest integer) is... (ver_f42b541d7e6f453fb26f6e9a6cf18341)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report the sum of old system balance (round the sum to the nearest integer) is -1217 +/- 5 for migration year 2022."
+        }
+      ]
+    },
+    {
+      "name": "Report the number of unique legacy accounts is 59 for the migration year 2022. (ver_e73fd670d218437ea0821ee4970d7975)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report the number of unique legacy accounts is 59 for the migration year 2022."
+        }
+      ]
+    },
+    {
+      "name": "Report the number of unique legacy accounts that required manual intervention... (ver_4c1b28a4d26d4319adb47297a234000b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report the number of unique legacy accounts that required manual intervention according to notes is 16 for the migration year 2022."
+        }
+      ]
+    },
+    {
+      "name": "Report the sum of old system balance (round the sum to the nearest integer) is... (ver_c0eb88eb734946a5b9202de61b2894e9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report the sum of old system balance (round the sum to the nearest integer) is -1392 +/- 5 for migration year 2023."
+        }
+      ]
+    },
+    {
+      "name": "Report the number of unique legacy accounts is 60 for the migration year 2023. (ver_41d0dab459f2426c8ad04aed18e7c398)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report the number of unique legacy accounts is 60 for the migration year 2023."
+        }
+      ]
+    },
+    {
+      "name": "Report the number of unique legacy accounts that required manual intervention... (ver_ec6804a230d648a7a77e644afa07d64c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report the number of unique legacy accounts that required manual intervention according to notes is 22 for the migration year 2023."
+        }
+      ]
+    },
+    {
+      "name": "Report the number of complaints from Cohort X is 14 (ver_00b249ed2aa0406ab9b3fffdfa48eb6a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report the number of complaints from Cohort X is 14."
+        }
+      ]
+    },
+    {
+      "name": "Report the complaints resolution rate is 42.9% +/- 0.5% (ver_7bfe3ea19a734a39bf3caed5d51309ce)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report the complaints resolution rate is 42.9% +/- 0.5%."
+        }
+      ]
+    },
+    {
+      "name": "Report the number of complaints specifically related to billing errors is 6 (ver_e50a183d2228499c95cae2a1c4310e2d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report the number of complaints specifically related to billing errors is 6."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh code-exec-task-lw9v231c-4b77e138"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_4b77e13847464312a7156a09de40fc9c",
+    "task_name": "Code Exec - Task lw9v231c",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d91e949e48a040b5aa1aa1ef817372c6",
+        "golden_text_response": "For migration year 2022:\nthe sum of old system balance (round the sum to the nearest integer): -1217\nthe number of unique legacy accounts: 59\nthe number of unique legacy accounts that required manual intervention according to notes: 16\n\nFor migration year 2023:\nthe sum of old system balance (round the sum to the nearest integer): -1392\nthe number of unique legacy accounts: 60\nthe number of unique legacy accounts that required manual intervention according to notes: 22\n\nnumber of complaints from Cohort X: 14\ncomplaints resolution rate: 42.9%\nnumber of complaints specifically related to billing errors: 6\n\n\n```\nimport pandas as pd\n\n\ndf_migration=pd.read_csv('legacy_billing_migration.csv')\ndf_migration.head()\n\n\n# convert the old_system_balance to float, accounting for possible '$' and ',' in the strings\ndf_migration[\"old_system_balance_numeric\"] = (\n    df_migration.old_system_balance.str.replace(\"$\", \"\")\n    .str.replace(\",\", \"\")\n    .astype(\"float\")\n)\n# extract the migration_year, migration_date is clean and of ISO 8601 format\ndf_migration['migration_year']=df_migration.migration_date.apply(lambda x: int(x[:4]))\n\n\n# filter for records with a negative old system balance, \n# and also without a complete migration status, accounting for case variants in migration_status\ndf_migration_filter = df_migration[\n    (df_migration[\"old_system_balance_numeric\"] < 0)\n    & (df_migration.migration_status.str.lower().str.strip() != \"complete\")\n].copy()\n\n\n# calculate the required metrics, and for migration_year 2022 and 2023 separately\ndf_migration_filter[\"manual_intervention\"] = (\n    df_migration_filter[\"notes\"]\n    .fillna(\"\")\n    .str.strip()\n    .str.lower()\n    .eq(\"manual intervention required\")\n)\n\n\ndf_metrics = df_migration_filter.groupby(\"migration_year\").agg(\n    {\n        \"old_system_balance_numeric\": \"sum\",\n        \"legacy_account_id\": \"nunique\",\n        \"manual_intervention\": lambda s: df_migration_filter.loc[s.index[s], \"legacy_account_id\"].nunique(),\n    }\n)\n# precautionary, only include the migration_year of 2022 and 2023\ndf_metrics=df_metrics.loc[(2022,2023),:]\ndf_metrics.columns=['sum_balance','unique_accounts','accounts_manualIntervention']\n\n\nfor i in [2022,2023]:\n    print(f'For migration year {i}:')\n    print(f'the sum of old system balance (round the sum to the nearest integer): {df_metrics.loc[i, \"sum_balance\"]:.0f}')\n    print(f'the number of unique legacy accounts: {df_metrics.loc[i, \"unique_accounts\"]}')\n    print(f'the number of unique legacy accounts that required manual intervention according to notes: {df_metrics.loc[i, \"accounts_manualIntervention\"]}\\n')\n\n\ndf_complaint=pd.read_csv('customer_complaints.csv')\ndf_complaint.head()\n\n\n# join the migration data and complaints data\ndf_migration_filter[\"new_subscriber_id_int\"] = (\n    pd.to_numeric(df_migration_filter[\"new_subscriber_id\"], errors=\"coerce\")\n    .astype(\"Int64\")\n)\ndf_complaint[\"subscriber_id_int\"] = (\n    pd.to_numeric(df_complaint[\"subscriber_id\"], errors=\"coerce\")\n    .astype(\"Int64\")\n)\ndf_merge=df_migration_filter.merge(\n    df_complaint, left_on=\"new_subscriber_id_int\", right_on=\"subscriber_id_int\", how=\"left\"\n)\n\n\n# identify valid complaints by filtering for non-null complaint id and the complaint date post migration date\ndf_cohortComplaint = df_merge.loc[\n    (df_merge.complaint_id.notnull())\n    & (df_merge.complaint_date >= df_merge.migration_date)\n]\n\n\n# calculate resolution rate\nresolutionRate = (\n    df_cohortComplaint.resolution == \"resolved\"\n).sum() / df_cohortComplaint.shape[0]\n\n\n# calculate number of complaints related to billing errors\nnumComplaintBilling = (\n    df_cohortComplaint.complaint_type.str.lower() == \"billing error\"\n).sum()\n\n\nprint(f'number of complaints from Cohort X: {df_cohortComplaint.shape[0]}')\nprint(f'complaints resolution rate: {resolutionRate:.1%}')\nprint(f'number of complaints specifically related to billing errors: {numComplaintBilling}')\n\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,353 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “cards_patient_14” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nPrompt: A 55 year old man presents to the emergency room. His temperature is 35.9 °C. All other vitals are normal. Based on the patient's clinical history and personal requests, which vaccinations should be administered to the patient at this time? Briefly explain your response. Answers should be in line with the most recent clinical guidelines as of January 15th, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient has a dirty wound. (ver_fb3c68e50d0c481b914b8ffae5870aa5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has a dirty wound."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's last vaccination was more than 5 years ago. (ver_4caff86df4e141579719f180f8f6c308)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's last vaccination was more than 5 years ago."
+        }
+      ]
+    },
+    {
+      "name": "States that the Tdap vaccine should be administered to the patient at this time. (ver_c54b7c2fa5a14891938b1cde815c49eb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Tdap vaccine should be administered to the patient at this time."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has a severe acute illness. (ver_fc0ba368bf2e458784511f00945cc781)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has a severe acute illness."
+        }
+      ]
+    },
+    {
+      "name": "States that routine vaccinations should be deferred until the acute illness... (ver_af149b1bddb8499c984299ede48a2c12)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that routine vaccinations should be deferred until the acute illness has improved."
+        }
+      ]
+    },
+    {
+      "name": "States that an influenza vaccine is indicated in this patient. (ver_dd6737c00d614f26a438c60f58367f78)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that an influenza vaccine is indicated in this patient."
+        }
+      ]
+    },
+    {
+      "name": "States that the influenza vaccine should be deferred until the patient’s... (ver_dd9b9a1f21734012a95b4103a983a817)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the influenza vaccine should be deferred until the patient’s severe acute illness has improved."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient is at increased risk for severe RSV. (ver_331a40921ecb4aa28d195911f4ca54cb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient is at increased risk for severe RSV."
+        }
+      ]
+    },
+    {
+      "name": "States that the RSV vaccine is indicated in this patient. (ver_6a722d24fc6243c68c33660d34425908)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the RSV vaccine is indicated in this patient."
+        }
+      ]
+    },
+    {
+      "name": "States that the RSV vaccine should be deferred until the patient’s severe... (ver_b6a768b3ceff4fd2b83326d0b7811d9f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the RSV vaccine should be deferred until the patient’s severe acute illness has improved."
+        }
+      ]
+    },
+    {
+      "name": "States that the zoster vaccine is indicated in this patient. (ver_cb1695cbdd0d45c9bfed2c8cb421fb3e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the zoster vaccine is indicated in this patient."
+        }
+      ]
+    },
+    {
+      "name": "States that the zoster vaccine should be deferred until the patient’s severe... (ver_8aaf009c4096451fb8c3e12a11997a40)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the zoster vaccine should be deferred until the patient’s severe acute illness has improved."
+        }
+      ]
+    },
+    {
+      "name": "States that the pneumococcal vaccine is indicated in this patient. (ver_ad2baccdb5364467ba1b90bf185530f7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the pneumococcal vaccine is indicated in this patient."
+        }
+      ]
+    },
+    {
+      "name": "States that the pneumococcal vaccine should be deferred until the patient’s... (ver_76d08e16d9724c2ba22461f56b9a954c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the pneumococcal vaccine should be deferred until the patient’s severe acute illness has improved."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-cards-patient-14-cdc-vaccination-tiffany-h-61cbfefc"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_61cbfefc9f0d42788ff4acfa661cf13e",
+    "task_name": "Web Search_Attachments_Cards Patient 14 - CDC Vaccination - Tiffany H",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_8afeb696266a4e1e88569e025be1bac9",
+        "golden_text_response": "The patient is a 55-year-old male who presents with a dirty wound after cutting his finger on a nail and multilobar pneumonia. His last vaccine (of any kind) was in his 40s, more than 5 years ago. Since the exact date of his tetanus vaccine is unknown, a tetanus immunization is indicated and should be administered at this time.\n\nThe patient has had a cough for a few days and has not been feeling well. His chest X-ray is concerning for multilobar pneumonia. His temperature is 35.9 °C. His lab results show a white blood cell count of 3500 cells/microL. With these three criteria (temperature less than 36 °C, WBC less than 4000 cells/microL, and multilobar infiltrates) met, it is recommended to treat the patient for multilobar pneumonia in the ICU. This new diagnosis of multilobar pneumonia is a severe acute illness, and precautions must be taken regarding vaccinations. Although indicated for his age and chronic conditions, some vaccinations should be deferred until the acute illness has improved. \n\n1) Influenza - The influenza vaccine is recommended for all adults annually. Since the patient's last vaccine was in his 40s, an influenza vaccination is indicated, but should be deferred until the acute illness has improved.\n2) RSV - The RSV vaccine is recommended for adults between the ages of 50 and 75 who are at increased risk for severe RSV. The patient has a past medical history of chronic cardiovascular disease (coronary artery disease) as well as diabetes, both of which put him at increased risk for severe RSV. The RSV vaccine is indicated, but should also be deferred until the acute illness has improved.\n3) Zoster - The zoster vaccination is recommended for patients age 50 and older. Since this patient's last vaccine was in his 40s, a zoster vaccination is indicated, but should be deferred until the patient's acute illness has improved.\n4) Pneumococcal - The pneumococcal vaccine is recommended for patients age 50 and older whose vaccination history is unknown. Since the specifics of the patient's pneumococcal vaccination history are unknown, a pneumococcal vaccine is indicated, but should be deferred until the acute illness has improved.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

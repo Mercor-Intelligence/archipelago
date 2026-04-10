@@ -43,16 +43,6 @@ class Settings(BaseSettings):
     S3_DEFAULT_REGION: str = "us-west-2"
     """Default AWS region for S3 operations (e.g., 'us-west-2')."""
 
-    # S3 Credentials (for S3-compatible API access)
-    S3_ACCESS_KEY_ID: str | None = None
-    """AWS access key ID for S3 authentication. If not set, uses default credential chain."""
-
-    S3_SECRET_ACCESS_KEY: str | None = None
-    """AWS secret access key for S3 authentication. Required if S3_ACCESS_KEY_ID is set."""
-
-    S3_SESSION_TOKEN: str | None = None
-    """AWS session token for temporary credentials (optional)."""
-
     # Subsystem names for data extraction
     FILESYSTEM_SUBSYSTEM_NAME: str = "filesystem"
     """Name of the filesystem subsystem root directory."""

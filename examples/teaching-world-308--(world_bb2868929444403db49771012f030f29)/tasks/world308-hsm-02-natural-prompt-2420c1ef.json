@@ -1,0 +1,220 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Create a new doc by updating the JM US AZ syllabus 2013 file based on new objectives in the class discussion questions. Add questions to the 7 course objectives."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Creates a section under the Course Objectives section titled \"Class Discussion... (ver_2f32fafd3fd34f23b6282e6c652aaa71)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a section under the Course Objectives section titled \"Class Discussion Questions\" in \"JM-US-AZ Syllabus\"."
+        }
+      ]
+    },
+    {
+      "name": "Creates a discussion question about the economical, political and... (ver_2e915981480941e9b4bde3f078029d61)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a discussion question about the economical, political and philosophical reasons for the American Revolution."
+        }
+      ]
+    },
+    {
+      "name": "Creates a discussion question about the underlying causes of the Civil War and... (ver_d5912ac511894ec09cda2a4a21d09224)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a discussion question about the underlying causes of the Civil War and its impact on the economical and social structures of the U.S."
+        }
+      ]
+    },
+    {
+      "name": "Creates a discussion question about changes of the late 19th century from the... (ver_e009ee0b72454dd3be47bc3abbe52818)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a discussion question about changes of the late 19th century from the Industrial Revolution and Westward movement to the imperialism of the early 20th century."
+        }
+      ]
+    },
+    {
+      "name": "Creates a discussion question about the causes and results of WWI and WWII (ver_a41170032a164404b2823ffa72c41540)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a discussion question about the causes and results of WWI and WWII."
+        }
+      ]
+    },
+    {
+      "name": "Creates a discussion question about the development of the Cold War (ver_c08bdbb50ec242dab6d7d15817bfbc7b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a discussion question about the development of the Cold War."
+        }
+      ]
+    },
+    {
+      "name": "Creates a discussion question about the key events of the 1960's from Civil... (ver_d1a7daea05c0452d957e5de22c9a3ba8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a discussion question about the key events of the 1960's from Civil Rights to Vietnam."
+        }
+      ]
+    },
+    {
+      "name": "Creates a discussion question about the political, social, and economic... (ver_0f16db3bf3724411bb760364102d1024)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a discussion question about the political, social, and economic changes of the late 20th century and 21st century."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world308-hsm-02-natural-prompt-2420c1ef"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_bb2868929444403db49771012f030f29",
+    "world_name": "Teaching World 308",
+    "task_id": "task_2420c1ef7dd240af8002ddf61489c080",
+    "task_name": "world308_HSM_02 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_9c04632c52d3492ab9175c4126955437",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_363f443773b84f87a302d82775158572"
+      },
+      {
+        "golden_response_id": "gold_a5a80150d90e496190e6493f9baae7a6",
+        "golden_text_response": "Please see attached document.",
+        "golden_file_responses": "snap_363f443773b84f87a302d82775158572"
+      }
+    ]
+  }
+}

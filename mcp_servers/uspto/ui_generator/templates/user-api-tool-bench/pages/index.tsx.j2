@@ -1,0 +1,72 @@
+{% raw %}// AUTO-GENERATED - Generic MCP UI Index Page
+import { useState, useEffect } from 'react';
+import Head from 'next/head';
+import ApiTool from '@/components/ApiTool';
+
+interface AuthUser {
+  userId: string;
+  username: string;
+  roles: string[];
+  scopes: string[];
+  description?: string;
+  employeeId?: number;
+}
+
+interface AuthState {
+  token: string | null;
+  user: AuthUser | null;
+}
+
+const AUTH_STORAGE_KEY = '{% endraw %}{{ project_name | lower | replace(" ", "_") }}{% raw %}_auth';
+
+export default function Home() {
+  const [authState, setAuthState] = useState<AuthState>({ token: null, user: null });
+
+  // Load auth state from localStorage on mount
+  useEffect(() => {
+    const savedAuth = localStorage.getItem(AUTH_STORAGE_KEY);
+    if (savedAuth) {
+      try {
+        const parsed = JSON.parse(savedAuth);
+        setAuthState(parsed);
+      } catch (e) {
+        localStorage.removeItem(AUTH_STORAGE_KEY);
+      }
+    }
+  }, []);
+
+  // Handle login - called when login_tool returns a successful response
+  const handleLogin = (token: string, user: AuthUser) => {
+    const newAuthState = { token, user };
+    setAuthState(newAuthState);
+    localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(newAuthState));
+  };
+
+  // Handle logout
+  const handleLogout = () => {
+    setAuthState({ token: null, user: null });
+    localStorage.removeItem(AUTH_STORAGE_KEY);
+  };
+
+  return (
+    <>
+      <Head>
+        <title>MCP Tools</title>
+        <meta name="description" content="Explore and use MCP tools" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div className="h-screen flex flex-col overflow-hidden">
+        <main className="flex-1 overflow-auto">
+          <ApiTool
+            token={authState.token || ''}
+            user={authState.user}
+            onLogout={handleLogout}
+            onLogin={handleLogin}
+          />
+        </main>
+      </div>
+    </>
+  );
+}
+{% endraw %}

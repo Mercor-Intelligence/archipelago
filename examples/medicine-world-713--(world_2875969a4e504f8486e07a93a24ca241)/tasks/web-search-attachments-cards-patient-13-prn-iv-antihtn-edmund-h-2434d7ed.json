@@ -1,0 +1,307 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 13” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n----\n\nPatient 13 visits the emergency department for dysuria to an emergency department in Los Angeles, California. \n\nWhich additional IV antihypertensive medications are recommended for intermittent use to acutely reduce the blood pressure? The heart rate is 100 beats per minute.\nProvide an explanation.\n\nAnswers should be in line with the most recent clinical guidelines as of January 13, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient has a history of hypertension. (ver_44782830dbc348c79fe87ff65264cc83)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has a history of hypertension."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the patient's blood pressure is greater than 180/120 mmHg. (ver_4b893dc1e34948dbbc32d5d2860eb23e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient's blood pressure is greater than 180/120 mmHg."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the patient is being admitted for treatment of extended spectrum... (ver_9aecdfc25c0643bda0a01ced8d001883)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient is being admitted for treatment of extended spectrum beta-lactamase (ESBL) urinary tract infection (UTI)."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the patient is unlikely to have target-organ damage from high blood... (ver_d81a809228b447058ea2ab648b9ddaa7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient is unlikely to have target-organ damage from high blood pressure."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that the 2025 guidelines \"A Report of the American College of... (ver_b648f6001c6048f9a8cdfb12a89cd274)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that the 2025 guidelines \"A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines\" addresses management of severe hypertension in hospitalized patients."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that hospitalized patients with severe hypertension without target... (ver_8c8bcf2d9cb143daacf3ce111df29e1f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that hospitalized patients with severe hypertension without target organ damage should not receive acute blood pressure lowering therapy."
+        }
+      ]
+    },
+    {
+      "name": "Identifies increased in-hospital mortality as a risk associated with acute... (ver_b97c588939e7490290996f22945ff880)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies increased in-hospital mortality as a risk associated with acute blood pressure lowering."
+        }
+      ]
+    },
+    {
+      "name": "Identifies acute kidney injury as a risk associated with acute blood pressure... (ver_aacaf239464b41b1a8fa09839de5c43f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies acute kidney injury as a risk associated with acute blood pressure lowering."
+        }
+      ]
+    },
+    {
+      "name": "Identifies prolonged hospital stay as a risk associated with acute blood... (ver_276a387848ed4ed3bc6d6d149101013e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies prolonged hospital stay as a risk associated with acute blood pressure lowering."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that the patient requires close monitoring. (ver_9046b4a7c51f4784b531c356d91f3d87)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that the patient requires close monitoring."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that continuation of standing antihypertensive medications is... (ver_90cb1887a05e4d1cb9506c7822506626)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that continuation of standing antihypertensive medications is appropriate in this patient."
+        }
+      ]
+    },
+    {
+      "name": "Concludes no additional IV antihypertensive medications are recommended for... (ver_357b6202d88741a7904f254ff7135fda)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Concludes no additional IV antihypertensive medications are recommended for this patient."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-cards-patient-13-prn-iv-antihtn-edmund-h-2434d7ed"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_2434d7ed052347cd9dfd00f377540daa",
+    "task_name": "Web Search_Attachments_Cards_Patient 13 - Prn IV Antihtn - Edmund H",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_b6e6bbc017644048917d305620d2c6a5",
+        "golden_text_response": "The patient has a history of hypertension. The patient is admitted for intravenous antibiotics for an extended spectrum beta lactamase producing urinary tract infection that is only sensitive to ertapenem. The patient’s blood pressure is 240/140 mm Hg. The patient does not report dizziness, headache, chest pain, or abdominal pain. The comprehensive metabolic panel is normal, indicating no evidence of acute target organ damage.\n\nAccording to the 2025 AHA, ACC, AANP, AAPA, ABC, ACCP, ACPM, AGS, AMA, ASPC, NMA, PCNA, and SGIM Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults, adults with severe hypertension defined as systolic blood pressure greater than 180 mm Hg or diastolic blood pressure greater than 120 mm Hg who are hospitalized for noncardiac conditions without evidence of acute target organ damage should not receive initiation or intermittent use of additional intravenous or oral antihypertensive medications to acutely reduce blood pressure.\n\nThe initiation or intermittent use of additional intravenous or oral antihypertensive medications in patients hospitalized for noncardiac conditions is associated with an increased risk of in hospital mortality, acute kidney injury, and prolonged hospital stay. Asymptomatic patients with severe hypertension should be managed with careful and frequent monitoring, continuation of standing antihypertensive medications, and avoidance of as needed antihypertensive therapy.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

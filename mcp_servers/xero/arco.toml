@@ -1,0 +1,85 @@
+[arco]
+source = "foundry_app"
+name = "Xero"
+version = "1.0.0"
+
+[arco.env.host]
+REPO_URL = "https://github.com/Mercor-Intelligence/mercor-xero.git"
+
+[arco.env.build]
+XERO_DATABASE_URL = "sqlite+aiosqlite:////.apps_data/xero/data.db"
+STATE_LOCATION = "/.apps_data/xero"
+
+[arco.env.runtime]
+XERO_DATABASE_URL = "sqlite+aiosqlite:////.apps_data/xero/data.db"
+OAUTH_PKCE_MODULE_PATH = ""
+XERO_CLIENT_ID = ""
+XERO_OFFLINE_MODE = "true"
+MCP_TRANSPORT = "http"
+MCP_PORT = "5000"
+HAS_STATE = "true"
+APP_FS_ROOT = "/filesystem"
+STATE_LOCATION = "/.apps_data/xero"
+GUI_ENABLED = "true"
+SRC_DIR = ""
+DEST_DIR = ""
+ORCHESTRATOR_MODEL = ""
+TOOLS = ""
+XERO_CLIENT_SECRET = ""
+
+[arco.env.runtime.schema.GUI_ENABLED]
+type = "bool"
+label = "GUI mode"
+description = "Enable GUI mode to expose all individual tools instead of consolidated meta-tools"
+
+[arco.secrets.host]
+GITHUB_TOKEN = "RLS_GITHUB_READ_TOKEN"
+
+[arco.secrets.build]
+
+[arco.secrets.runtime]
+
+# Error injection scenarios for testing agent robustness
+[[arco.error_injection_scenarios]]
+name = "api_timeout"
+description = "Simulates Xero API timeout during accounting operations"
+error_rules = [
+    { error_type = "timeout", tool = "xero_entities", probability = 0.0, message = "Request timed out: The Xero API did not respond within the expected time. Please try again." },
+    { error_type = "timeout", tool = "xero_transactions", probability = 0.0, message = "Request timed out: The Xero API did not respond within the expected time. Please try again." },
+    { error_type = "timeout", tool = "xero_reports", probability = 0.0, message = "Request timed out: The Xero API did not respond within the expected time. Please try again." },
+]
+
+[[arco.error_injection_scenarios]]
+name = "rate_limit"
+description = "Simulates Xero API rate limiting when quota is exceeded"
+error_rules = [
+    { error_type = "rate_limit", tool = "xero_entities", probability = 0.0, message = "Rate limit exceeded: Too many requests to Xero API. Please wait before retrying." },
+    { error_type = "rate_limit", tool = "xero_transactions", probability = 0.0, message = "Rate limit exceeded: Too many requests to Xero API. Please wait before retrying." },
+    { error_type = "rate_limit", tool = "xero_data", probability = 0.0, message = "Rate limit exceeded: Too many requests to Xero API. Please wait before retrying." },
+]
+
+[[arco.error_injection_scenarios]]
+name = "permission_denied"
+description = "Simulates access denied errors when user lacks Xero organization permissions"
+error_rules = [
+    { error_type = "permission_denied", tool = "xero_entities", probability = 0.0, message = "Permission denied: You do not have access to this Xero organization. Request access from the administrator." },
+    { error_type = "permission_denied", tool = "xero_transactions", probability = 0.0, message = "Permission denied: You do not have permission to modify transactions. Request appropriate access from the administrator." },
+    { error_type = "permission_denied", tool = "xero_admin", probability = 0.0, message = "Permission denied: You do not have administrator access to perform this action." },
+]
+
+[[arco.error_injection_scenarios]]
+name = "server_error"
+description = "Simulates Xero API internal server errors"
+error_rules = [
+    { error_type = "server_error", tool = "xero_reports", probability = 0.0, message = "Internal server error: Xero API encountered an unexpected error while generating report. Please try again later." },
+    { error_type = "server_error", tool = "xero_assets", probability = 0.0, message = "Internal server error: Xero API encountered an unexpected error while processing assets. Please try again later." },
+    { error_type = "server_error", tool = "xero_files", probability = 0.0, message = "Internal server error: Xero API encountered an unexpected error while accessing files. Please try again later." },
+]
+
+[[arco.error_injection_scenarios]]
+name = "malformed_response"
+description = "Simulates corrupted or unexpected responses from Xero API"
+error_rules = [
+    { error_type = "malformed_response", tool = "xero_data", probability = 0.0, message = "Malformed response: The Xero API returned an unexpected data format. The accounting data may be corrupted." },
+    { error_type = "malformed_response", tool = "xero_schema", probability = 0.0, message = "Malformed response: The Xero API returned an unexpected schema format. Unable to parse metadata." },
+]

@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Calculate 2023 adjusted deferred tax variance and its percentage for Redwood Components on reported DTA, based on cumulative taxable income adjustments at statutory combined state tax rates. For this use the data from final tax exposure data and the following assumptions below:\n- State taxes are deductible for federal purposes\n- 80% of adjustments are temporary and 20% are permanent\n- Of the temporary adjustments, 60% reverse within three years and 40% (subject to a 25% valuation allowance) reverse after three years\n\nRound all the dollar answers to absolute dollar value with 0 decimal places. Round all the percentage values to absolute percentage values to 0.01%. Present all answers to the console"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States 2023 Absolute Deferred Tax Variance as $3,393,850 (acceptable range... (ver_2da73f3422924e1d92f64c3b3220cca5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2023 Absolute Deferred Tax Variance as $3,393,850 (acceptable range $3,359,912 to $3,427,788)."
+        }
+      ]
+    },
+    {
+      "name": "States 2023 Absolute Deferred Tax Variance % as 52.21% (acceptable range... (ver_d8e8373ec5b94162bb94a6c08374d95a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2023 Absolute Deferred Tax Variance % as 52.21% (acceptable range 51.69% to 52.73%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh accounting-world-801-ar1-b810abfe"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_b810abfec0584dcbb11c3d69763b976d",
+    "task_name": "Accounting World 801_AR1",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_e1c7b0f21a634308b69976f7cd41e859",
+        "golden_text_response": "The final adjusted absolute deferred tax variance for Redwood Components is $3,393,850, representing an absolute 52.21% variance relative to the reported DTA",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

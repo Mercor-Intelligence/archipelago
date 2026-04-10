@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Review SBP's analysis about the anomalies in the inspection log alongside with the metadata reports regarding Weld Certificates A and B and prepare a short analysis explaining whether the inspector should have identified the weld inconsistencies at that time. Reconcile your reasoning with Weld Certificate B's metadata date and explain whether the inspection report could have incorporated those findings."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that an inspector should have reasonably known that Certificate A did... (ver_65c869dc283a4760859bc0ff2e7c1738)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that an inspector should have reasonably known that Certificate A did not exist at the time of the inspection because Certificate A's metadata appears later than the documented weld completion date."
+        }
+      ]
+    },
+    {
+      "name": "States that Certificate B could have existed at the time of the inspection (ver_05f2547bb0d2408db664a25a2c92ed95)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Certificate B could have existed at the time of the inspection."
+        }
+      ]
+    },
+    {
+      "name": "States that the inspector's report could only incorporate information from... (ver_eee869cbea5f4c0b828c16c3d287d91c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the inspector's report could only incorporate information from Weld Certificate B that wasn't later altered."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-437-sg-01-99edf4dc"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_99edf4dce27d429d9661f38811b32200",
+    "task_name": "World 437_SG_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_2f3a8f37aebe4a75a8d4308e6b7b6aa2",
+        "golden_text_response": "Certificate A's metadata appears later than the documented weld completion date. This means that Certificate A was likely created after the fact, and the inspector should have noticed its absence (i.e. it could not have been properly logged). We cannot conclude that about Certificate B, which displayed out of sequence numbering but was not flagged as potentially backdated. This means it could have existed at the time of inspection, but could have been altered, even in a small way. The inspection report could only incorporate information from Weld Certificate B that wasn't later altered.\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Assume the MTSI closing share price as of 01/02/2026 and a 30% bid premium. Calculate the MTSI equity and enterprise values before and after the bid premium using the model. In addition, show the EV/Sales and EV/EBITDA multiples at bid premium. \n\nRound all numerical values except for share price to thousands with $ signs and no decimals, and multiples to one decimal. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States MTSI equity value is $12,944,591 (acceptable range $12,815,145 to... (ver_fd7a4e4de50c4e6cb0abf8bcb3e15ffa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States MTSI equity value is $12,944,591 (acceptable range $12,815,145 to $13,074,037)."
+        }
+      ]
+    },
+    {
+      "name": "States MTSI enterprise values is $13,370,039 (acceptable range $13,236,339 to... (ver_72bae23c05e1457fae4c8f5d4da37680)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States MTSI enterprise values is $13,370,039 (acceptable range $13,236,339 to $13,503,739)."
+        }
+      ]
+    },
+    {
+      "name": "States MTSI equity value at bid premium is $16,827,968 (acceptable range... (ver_8098aa73ffcb471881f5196b146d1fb4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States MTSI equity value at bid premium is $16,827,968 (acceptable range $16,659,688 to $16,996,248)."
+        }
+      ]
+    },
+    {
+      "name": "States MTSI enterprise values at bid premium is $17,253,416 (acceptable range... (ver_240448e107fc4019b71967d078bd2cb6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States MTSI enterprise values at bid premium is $17,253,416 (acceptable range $17,080,882 to $17,425,950)."
+        }
+      ]
+    },
+    {
+      "name": "States EV/Sales at bid premium is 17.8 (acceptable range 17.6 to 18.0) (ver_ab0ba13b86ab42aaa826d3f1c0b866bc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States EV/Sales at bid premium is 17.8 (acceptable range 17.6 to 18.0)."
+        }
+      ]
+    },
+    {
+      "name": "States EV/EBITDA multiples at bid premium is 74.1 (acceptable range 73.4 to... (ver_3c289e1e88804e5ea19584df64fe91f0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States EV/EBITDA multiples at bid premium is 74.1 (acceptable range 73.4 to 74.8)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world248-cgf-03-59c21ae2"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_59c21ae235ad4221a0778cc47b73faad",
+    "task_name": "World248_CGF_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_12e6ca09bd9e4505aba3f7cf7385d59e",
+        "golden_text_response": "MTSI equity value: $12,944,591\nMTSI enterprise values: $13,370,039\nMTSI equity value at bid premium: $16,827,968\nMTSI enterprise values at bid premium: $17,253,416\nEV/Sales at bid premium: 17.8\nEV/EBITDA multiples at bid premium: 74.1",
+        "golden_file_responses": "snap_08467ec7ac134987b217de58ccb6a7b3"
+      }
+    ]
+  }
+}

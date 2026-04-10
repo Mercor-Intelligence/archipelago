@@ -1,0 +1,203 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_9aa563b65bd64ad097a914899e24d36b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_48f4b5cde544435eab13140e5d3b734d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States overall improvement in 2-year CAGR across all competitor launches is 0.65% (acceptable range 0.64% to 0.66%)",
+        "negative_criteria": "States overall improvement in 2-year CAGR across all competitor launches is anything other than 0.65%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Please refer working file for detailed calculations",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_eed4f3ebdd8e4cb786f74d74467720eb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_48f4b5cde544435eab13140e5d3b734d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States Smart Home Setup as one of the top two ancillary offerings",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Please refer working file for detailed calculations",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_71e696782a3947068d13c50be5ad9459",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_48f4b5cde544435eab13140e5d3b734d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States Premium Delivery as one of the top two ancillary offerings",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Please refer working file for detailed calculations",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d2b7aaa8e4fd4d2bb1627e468690d39b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_48f4b5cde544435eab13140e5d3b734d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States Subscription Care Plan as one of the bottom two ancillary offerings",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Please refer working file for detailed calculations",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_97e942ccc06b4230b9522058acf79f46",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_48f4b5cde544435eab13140e5d3b734d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States Furniture Insurance as one of the bottom two ancillary offerings",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Please refer working file for detailed calculations",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8fab0f04375d4e27b75189b5947fb8c5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_48f4b5cde544435eab13140e5d3b734d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States difference in 2-year CAGR for Smart Home Setup is 0.96% (acceptable range 0.95% to 0.97%)",
+        "negative_criteria": "States difference in 2-year CAGR for Smart Home Setup is anything other than 0.96%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Please refer working file for detailed calculations",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2cbfcc88dded491a998cb264fb912fd0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_48f4b5cde544435eab13140e5d3b734d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States difference in 2-year CAGR for Premium Delivery is 0.77% (acceptable range 0.76% to 0.78%)",
+        "negative_criteria": "States difference in 2-year CAGR for Premium Delivery is anything other than 0.77%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Please refer working file for detailed calculations",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_77c4d3e434df4a1d8a8c4306ecfbe5ad",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_48f4b5cde544435eab13140e5d3b734d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States difference in 2-year CAGR for Subscription Care Plan is -0.13% (acceptable range -0.131% to -0.129%)",
+        "negative_criteria": "States difference in 2-year CAGR for Subscription Care Plan is anything other than -0.13%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Please refer working file for detailed calculations",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_da8f62e7f4c843308381c0e4cde50dea",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_48f4b5cde544435eab13140e5d3b734d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States difference in 2-year CAGR for Furniture Insurance is -0.06% (acceptable range -0.061% to -0.059%)",
+        "negative_criteria": "States difference in 2-year CAGR for Furniture Insurance is anything other than -0.06%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Please refer working file for detailed calculations",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

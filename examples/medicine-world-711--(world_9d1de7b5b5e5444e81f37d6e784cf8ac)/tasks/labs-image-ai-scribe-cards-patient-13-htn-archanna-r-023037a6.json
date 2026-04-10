@@ -1,0 +1,330 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 13” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nPatient 13 visits her clinic appointment on January 4th, 2026. She states she has elevated blood pressure and denies any other review of system symptoms. She says she is not on any medications for blood pressure and denies changes in anxiety levels. What is the best next step for treatment? Provide an explanation."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Mentions the patient's chief complaint is elevated blood pressure. (ver_493c7bd21a9f49c7ba2b84af4f30dedc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions the patient's chief complaint is elevated blood pressure."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the patient's blood pressure at the last visit was normal. (ver_78c3196e22284af790bdd3cb876ff833)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the patient's blood pressure at the last visit was normal."
+        }
+      ]
+    },
+    {
+      "name": "Identifies that the patient does not have a prior diagnosis of hypertension. (ver_d44c71b8e20b40aaac0fd6b5c670a981)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies that the patient does not have a prior diagnosis of hypertension."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient does not have symptoms associated with uncontrolled... (ver_d2bef6be27254097b8075826404fbfc3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient does not have symptoms associated with uncontrolled hypertension."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the diagnosis of primary hypertension requires accurate blood... (ver_143cad12c6a446c1aafdab8461438b32)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the diagnosis of primary hypertension requires accurate blood pressure measurement."
+        }
+      ]
+    },
+    {
+      "name": "Mentions it is necessary to verify that blood pressure is being measured... (ver_007e26e7a7d6431081351fb097e4eee4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions it is necessary to verify that blood pressure is being measured correctly."
+        }
+      ]
+    },
+    {
+      "name": "Mentions the patient's home blood pressure readings have only been taken in... (ver_9cde7ea2cec94b7595dce9aa69e9c5d6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions the patient's home blood pressure readings have only been taken in the morning hours."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the patient's elevated home blood pressure readings could be... (ver_84454772efcb4c12a6074606fbd899c1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient's elevated home blood pressure readings could be attributable to physiologic morning blood pressure surge."
+        }
+      ]
+    },
+    {
+      "name": "States that continuous ambulatory blood pressure monitoring outside the office... (ver_57706b0e43e74f9aa8dfdb7352d8a313)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that continuous ambulatory blood pressure monitoring outside the office setting can help confirm a diagnosis of hypertension."
+        }
+      ]
+    },
+    {
+      "name": "Mentions blood pressure readings should be taken at least twice on at least... (ver_653cbe3223ca4b2eae1692bec399a470)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions blood pressure readings should be taken at least twice on at least two separate occasions in office to confirm a diagnosis of hypertension."
+        }
+      ]
+    },
+    {
+      "name": "States the next best step is to withhold treatment for hypertension pending... (ver_59911ce4acd34ee082aded149d1b96ff)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the next best step is to withhold treatment for hypertension pending confirmation of the diagnosis."
+        }
+      ]
+    },
+    {
+      "name": "States that lifestyle modification should be first-line if blood pressure... (ver_965eeae05029400e8b0417281b445556)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that lifestyle modification should be first-line if blood pressure readings are consistent with a primary hypertension diagnosis."
+        }
+      ]
+    },
+    {
+      "name": "States that starting anti-hypertensive medication would be the second line if... (ver_53f4b1641bf04f02a5bbcd24ffb231f5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that starting anti-hypertensive medication would be the second line if there is failure of lifestyle modification."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-cards-patient-13-htn-archanna-r-023037a6"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_023037a694fe4ce7bcad769867675f67",
+    "task_name": "Labs_Image _AI Scribe_Cards Patient 13 - HTN -Archanna R",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_34b1d923c1244bf080b1ca6bc81983e6",
+        "golden_text_response": "The patient's chief complaint on this visit is elevated blood pressure. Additionally, the patient's last blood pressure reading at their doctor's visit on December 27, 2024, was normal. The patient also does not have a prior diagnosis of hypertension. The patient also states that she does not have symptoms associated with uncontrolled blood pressure. The best next step in management is to accurately verify that blood pressure is being measured correctly (appropriate cuff size, seated rest, at least two readings in at least two separate office visits). If elevated readings are confirmed with proper technique in the office, then it is necessary to check continuous ambulatory blood pressure readings, given that the patient has only been checking her blood pressure in the morning hours; these readings could be attributable to physiologic morning blood pressure surge. In turn, best next step in management should actually be to withhold treatment for hypertension unless a confirmation is made with the above techniques. If no reversible causes are identified, then initiate lifestyle modification and consider pharmacologic therapy based on confirmed blood pressure thresholds and overall cardiovascular risk.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

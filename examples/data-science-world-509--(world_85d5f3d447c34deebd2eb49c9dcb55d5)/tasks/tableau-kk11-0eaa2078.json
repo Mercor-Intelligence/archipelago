@@ -1,0 +1,192 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "You have a Tableau workbook, enriched_loan_updated.twbx, and I need your help to use it to create a chart based on, \"Concentration Risk Heatmap.png\", that was produced by the management of another team. You must first set this up in a Tableau workspace: deploy the workbook to a Tableau site, and once it’s published, download the underlying data.\n\nUse the average of Current Balance in the cells of the chart. For this analysis, please ignore the loans with current balance less than 1,000,000 or Fixed interest type. Please note the Sectors and Year stated in the Executive summary of \"1.11.2026 Habor Capital Final.pdf\" document. Filter only the loans with Sector and Month_Key Year of the noted in the document, for only Central, East, and West regions. The final table should be given as a png file. Round all values to the nearest whole number."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Computes the average Current Balance of Construction and Central as $2,610,996... (ver_f8f7c261632348989427ba0fbbf2b22b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes the average Current Balance of Construction and Central as $2,610,996 +/- $1."
+        }
+      ]
+    },
+    {
+      "name": "Computes the average Current Balance of Construction and East as $2,915,935... (ver_dd1948634ad341e2b10924f6c0bbb25b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes the average Current Balance of Construction and East as $2,915,935 +/- $1."
+        }
+      ]
+    },
+    {
+      "name": "Computes the average Current Balance of Construction and West as $2,597,483... (ver_3b00d670d4d64ac189328565b5de0cee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes the average Current Balance of Construction and West as $2,597,483 +/- $1."
+        }
+      ]
+    },
+    {
+      "name": "Computes the average Current Balance of Retail and Central as $2,671,609 +/- $1. (ver_18926b322bc84c39adbeca7e8ab7e230)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes the average Current Balance of Retail and Central as $2,671,609 +/- $1."
+        }
+      ]
+    },
+    {
+      "name": "Computes the average Current Balance of Retail and East as $2,684,038 +/- $1. (ver_9f3b963aea5748a8a19d39487f79c6d5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes the average Current Balance of Retail and East as $2,684,038 +/- $1."
+        }
+      ]
+    },
+    {
+      "name": "Computes the average Current Balance of Retail and West as $2,828,120 +/- $1. (ver_75d737ae11cf4641af03077eec568718)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes the average Current Balance of Retail and West as $2,828,120 +/- $1."
+        }
+      ]
+    },
+    {
+      "name": "Produces a png file of a heatmap (ver_e1dc0fbe57fb4352a43966e1e0aa1a46)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Produces a png file of a heatmap."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh tableau-kk11-0eaa2078"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_0eaa2078a96b4d36b7b67d99c3ec340d",
+    "task_name": "Tableau - KK11",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d315cda7c98a4413a74baba26c22491f",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_4e6c9256924348fdad4b9e35a8969fb1"
+      }
+    ]
+  }
+}

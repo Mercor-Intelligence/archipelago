@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Make the following changes to the RMBS vs MTSI analysis in the merger model\n1.\tUpdate the MTSI’s share price at acquisition to the daily volume weighted average price between January 2, 2025 and December, 31, 2025 (inclusive of start and end dates)\n2.\tUpdate the %SG&A Synergies to 40%\n3.\tRun a sensitivity analysis on the proforma leverage by varying the following assumptions and report the resulting percentage increase / (decrease) in leverage for each scenario:\na.\t% cash consideration = 0% and % bid premium = 10%\nb.\t% cash consideration = 0% and % bid premium = 30%\nc.\t% cash consideration = 40% and % bid premium = 10%\nd.\t% cash consideration = 40% and % bid premium = 30%\nNote: Leverage mentioned above refers to the Net Debt to equity ratio. And the base reference for growth is the standalone RMBS value compared to the pro forma value\n\nShow results in % and to 2 decimal places\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the Increase/(decrease) in leverage at 10% bid premium and 0% cash... (ver_8e7268a27bea47bd8265dbeeebef0a1c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Increase/(decrease) in leverage at 10% bid premium and 0% cash consideration is -147.44% (acceptable range -148.91% to -145.97%)."
+        }
+      ]
+    },
+    {
+      "name": "States the Increase/(decrease) in leverage at 10% bid premium and 40% cash... (ver_8689cdf844dc4064b95cb12c2fb6d6ce)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Increase/(decrease) in leverage at 10% bid premium and 40% cash consideration is -732.04% (acceptable range -739.36% to -724.72%)."
+        }
+      ]
+    },
+    {
+      "name": "States the Increase/(decrease) in leverage at 30% bid premium and 0% cash... (ver_02d57fc3a83c4d4bbac355ed4b3a7f94)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Increase/(decrease) in leverage at 30% bid premium and 0% cash consideration is -140.93% (acceptable range -142.34% to -139.52%)."
+        }
+      ]
+    },
+    {
+      "name": "States the Increase/(decrease) in leverage at 30% bid premium and 40% cash... (ver_f26afa570170495da1d0c42197e9b248)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Increase/(decrease) in leverage at 30% bid premium and 40% cash consideration is -735.29% (acceptable range -742.64% to -727.94%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world248-oa-task03-ef5d3427"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_ef5d3427617841a99c9a357b43638246",
+    "task_name": "World248_OA_Task03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_5b867ae17808401abe05b162df3e938f",
+        "golden_text_response": "The Increase/(decrease) in leverage at 10% bid premium and 0% cash consideration is -147.44%\nThe Increase/(decrease) in leverage at 10% bid premium and 40% cash consideration is -732.04%\nThe Increase/(decrease) in leverage at 30% bid premium and 0% cash consideration is -140.93%\nThe Increase/(decrease) in leverage at 30% bid premium and 40% cash consideration is -735.29%\n\n\n",
+        "golden_file_responses": "snap_151c2fa5295c4494a761290eb2d2f802"
+      }
+    ]
+  }
+}

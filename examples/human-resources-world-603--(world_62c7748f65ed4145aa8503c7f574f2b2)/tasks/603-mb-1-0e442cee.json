@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "We just started a program to integrate our supply chain. Please identify all active candidates in Greenhouse who mentioned having experience in supply chain integrations in their applications (attached) and assign Jordan to coordinate these recruitments. Please update Greenhouse accordingly and state how many candidates (integer) were moved in the console. After making those updates, please state in the console how many of the active candidates, that are still assigned to Sofia, we can expect to get hired, assuming the ratio of hired to rejected candidates remains constant to what we had in all past finalised recruitments (1 decimal place)."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of candidates with experience in supply chain to be... (ver_37a4221f7aff4c5dbaaf5223f4ca238e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of candidates with experience in supply chain to be assigned to Jordan is 5."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of candidates that are still assigned to Sofia that we... (ver_bab9f43528e44bedad74fbfef898c831)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of candidates that are still assigned to Sofia that we can expect to get hired, if the ratio of hired to rejected candidates remains constant to what we had in all the past finalised recruitments, is 25.3 (acceptable range 25.0 to 25.6)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh 603-mb-1-0e442cee"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_0e442cee65dc4f87aa948d94e0ec6f2b",
+    "task_name": "603 - MB_1",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f9f17a92fd834573aabc84a08c3615b5",
+        "golden_text_response": "The number of candidates with experience in supply chain to be assigned to Jordan is 5.\n\nThe number of candidates that are still assigned to Sofia that we can expect to get hired, assuming the ratio of hired to rejected candidates remains constant to what we had in all the past finalised recruitments is 25.3",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

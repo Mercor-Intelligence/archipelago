@@ -1,0 +1,307 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Identify the morphemes contained in each of the words on the provided Holocaust Vocab list. If a word contains a morpheme that is not on listed in master list then ignore.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Outputs the first morpheme for the word \"anti-Jewish\": \"anti-\" (ver_be1ade613a2943a9b2eb955d8b0629a3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs the first morpheme for the word \"anti-Jewish\": \"anti-\"."
+        }
+      ]
+    },
+    {
+      "name": "Outputs the second morpheme for the word \"anti-Jewish\": \"-ish\" (ver_8c39d462af204d7caa1015472b10c301)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs the second morpheme for the word \"anti-Jewish\": \"-ish\"."
+        }
+      ]
+    },
+    {
+      "name": "Outputs the first morpheme for anti-Semitism: \"anti-\" (ver_947bb1d41d2647dcb55de040f2eb8cc4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs the first morpheme for anti-Semitism: \"anti-\"."
+        }
+      ]
+    },
+    {
+      "name": "Outputs the second morpheme for the word \"anti-Semitism\": \"-ism\" (ver_38d3ede4b51741dcafc9a12e045e41f7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs the second morpheme for the word \"anti-Semitism\": \"-ism\"."
+        }
+      ]
+    },
+    {
+      "name": "Outputs the first morpheme for \"concentration\": \"con-\"  (con-,-ation)\" (ver_9275434a1ce54db8b6e2b1fd6a57f99d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs the first morpheme for \"concentration\": \"con-\"  (con-,-ation)\"."
+        }
+      ]
+    },
+    {
+      "name": "Outputs the second morpheme for \"concentration\": \"-ation\" (ver_ff2b061452ec49aa8947844faf205461)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs the second morpheme for \"concentration\": \"-ation\"."
+        }
+      ]
+    },
+    {
+      "name": "Outputs this morpheme for \"deicide\":  \"-cide\" (ver_4624d8a1bce8463095c865c8da0c2b3c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs this morpheme for \"deicide\":  \"-cide\"."
+        }
+      ]
+    },
+    {
+      "name": "Outputs the first morpheme for \"deportation\":  \"de-\" (ver_d192cf45e8e94c62973e0dfdeb08cb09)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs the first morpheme for \"deportation\":  \"de-\"."
+        }
+      ]
+    },
+    {
+      "name": "Outputs the second morpheme for \"deportation\":  \"-port\" (ver_85ec8935c4b045feafdff3ee910b26d2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs the second morpheme for \"deportation\":  \"-port\"."
+        }
+      ]
+    },
+    {
+      "name": "Outputs the third morpheme for \"deportation\":  \"-ation\" (ver_e3320a7e51fe40c19f3461d1b7152560)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs the third morpheme for \"deportation\":  \"-ation\"."
+        }
+      ]
+    },
+    {
+      "name": "Outputs this morpheme for the word \"genocide\": \"-cide\" (ver_60b508f94c144850a9e02bce939cfaae)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs this morpheme for the word \"genocide\": \"-cide\"."
+        }
+      ]
+    },
+    {
+      "name": "Outputs this morpheme for the word \"prejudice\": \"pre-\" (ver_3ca9d4605af74753a0816594d7b8ef84)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs this morpheme for the word \"prejudice\": \"pre-\"."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-evltcbc5-natural-prompt-5cb51750"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_bb2868929444403db49771012f030f29",
+    "world_name": "Teaching World 308",
+    "task_id": "task_5cb51750156e4c7b95c42e9110d4a68c",
+    "task_name": "Task evltcbc5 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_cf72a103727b45cdb84a379c6b851375",
+        "golden_text_response": "anti-Jewish laws (anti-, ish-)\nantisemitism, (anti-, -ism)\nconcentration  (con-,-ation)\ndeicide  (-cide)\ndeportation  (de-, -port, -ation)\ngenocide  (-cide)\nprejudice  (pre-)",
+        "golden_file_responses": "snap_ecf3cad184c94740b4e066bf38ac1ba9"
+      }
+    ]
+  }
+}

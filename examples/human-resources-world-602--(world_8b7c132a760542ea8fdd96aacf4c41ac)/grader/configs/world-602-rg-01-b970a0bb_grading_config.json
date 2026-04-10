@@ -1,0 +1,190 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_ebec35c89f584a4abd03bf7eb15145ca",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b970a0bb4c884d1bbf1056691138c509",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that one of the recruiters with applications rejected on or before 12 June 2025 is Rachel W",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_47ca4912890848249601db9178efdcc8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b970a0bb4c884d1bbf1056691138c509",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that one of the recruiters with applications rejected on or before 12 June 2025 is Maria Santos",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_df664c13334c4488b36250007662b126",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b970a0bb4c884d1bbf1056691138c509",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that one of the recruiters with applications rejected on or before 12 June 2025 is Michael Thompson",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_63ec33a083964242aee04eb7f1a68e83",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b970a0bb4c884d1bbf1056691138c509",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that one of the recruiters with applications rejected on or before 12 June 2025 is David Rodriguez",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e9be8313ac6646af87d29248f0a12e19",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b970a0bb4c884d1bbf1056691138c509",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the average AHT for Rachel W for applications that were rejected on or before 12 June 2025 is 822.29 hours (acceptable range 814.07 to 830.51)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f7a8f9ed11da459cabbfeb805dcbf8b9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b970a0bb4c884d1bbf1056691138c509",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the average AHT for Maria Santos for applications that were rejected on or before 12 June 2025 is 752.00 hours (acceptable range 744.48 to 759.52)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b84ed228f7104289946d716c5b195d31",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b970a0bb4c884d1bbf1056691138c509",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the average AHT for Michael Thompson for applications that were rejected on or before 12 June 2025 is 804.24 hours (acceptable range 796.20 to 812.28)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ed009d1eca9a4b758ad607c72f9605ee",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b970a0bb4c884d1bbf1056691138c509",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the average AHT for David Rodriguez for applications that were rejected on or before 12 June 2025 is 720.98 hours (acceptable range 713.77 to 728.19)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

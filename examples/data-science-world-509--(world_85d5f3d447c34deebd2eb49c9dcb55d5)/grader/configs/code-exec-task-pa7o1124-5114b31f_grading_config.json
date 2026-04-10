@@ -1,0 +1,148 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_4a3610acc60045ef85096b21dcb8b31c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5114b31f244b491090ddb2215053c574",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the total annualized interest revenue reduction as $7,638,227 +/- $10.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt asked to report total annualized reduced interest revenue",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5a627948e1af4c85824c4946fb7360f3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5114b31f244b491090ddb2215053c574",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the updated total expected loss for the Construction sector as $509,806,152 +/- $10.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt asks to report updated expected loss for the three sectors in descending order.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_221b2ff26b8441c588359f569a31c863",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5114b31f244b491090ddb2215053c574",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the updated total expected loss for the Retail sector as $487,241,270 +/- $10.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt asks to report updated expected loss for the three sectors in descending orders.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7dc1a648b8b243b09ef8e1ddfaac0aa7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5114b31f244b491090ddb2215053c574",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the updated total expected loss for the Hospitality sector as $129,669,678 +/- $10.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt asks to report updated expected loss for the three sectors in descending orders.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_44098d30ba824f44b99a071396272aa0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5114b31f244b491090ddb2215053c574",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the number of borrowers who see a reduction in expected loss (larger than $1) is 93 (exact value, no error tolerance).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "the prompt asks to count number of borrowers see reduction in expected loss with $1 being the threshold.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_136fd1f54acf48bab7ba9c3823dc48fc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5114b31f244b491090ddb2215053c574",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the total expected loss reduction amount from the 20 borrowers with the biggest reductions as $6,249,824 +/- $10.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt asks to report the total amount from the top 20 borrowers with biggest expected loss reductions.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "eval_config_name": "Output LLM",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "4658aec9-7eeb-4c9b-84c2-5464345e345f",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

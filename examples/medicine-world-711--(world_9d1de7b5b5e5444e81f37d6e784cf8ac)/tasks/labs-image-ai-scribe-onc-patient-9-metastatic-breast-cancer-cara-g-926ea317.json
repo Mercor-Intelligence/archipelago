@@ -1,0 +1,330 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 9” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nThe patient is a 60-year-old female with a past medical history of well-controlled hypertension, diabetes mellitus type 2 with recent hemoglobin A1C of 6.2, and breast cancer (in remission) who presents to her primary care physician with mid back pain. See attached script for details of history of present illness. Physical exam is normal except some mild generalized tenderness over her mid to low thoracic spinous processes and paraspinal muscles. X-ray is done in the office and results are attached. She is then sent for a PET scan and the results are attached.\n\nUsing the information provided, use the MD Calc Nomogram (by Dr. Nuhad K. Ibrahim) for Breast Cancer Brain Metastasis to calculate the patient's risk of brain metastases. Explain how you calculated the answer. Please disregard the rest of the patient's age in the chart."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that new onset back pain in a patient with a history of breast cancer... (ver_d0b9a8d26d3a4289a9c2045e37ea478e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that new onset back pain in a patient with a history of breast cancer can indicate spinal metastasis."
+        }
+      ]
+    },
+    {
+      "name": "States there are sclerotic lesions on the T8 and T10 vertebrae in the thoracic... (ver_736e7acd016b452a9d42f63f59419b32)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States there are sclerotic lesions on the T8 and T10 vertebrae in the thoracic spine X-ray."
+        }
+      ]
+    },
+    {
+      "name": "States that there is increased FDG uptake in the T8 and T10 vertebrae on the... (ver_05c50db36b274d05b394aaaedc35f6f7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that there is increased FDG uptake in the T8 and T10 vertebrae on the PET scan."
+        }
+      ]
+    },
+    {
+      "name": "States that the imaging results are suspicious for bony metastases from breast... (ver_a1ffbe2bc5e747d78ad6046bfbc84a60)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the imaging results are suspicious for bony metastases from breast cancer in the T8 and T10 vertebrae."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient likely has stage IV metastatic breast cancer. (ver_7ca87f6784844a79a17a3abcdfc671df)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient likely has stage IV metastatic breast cancer."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's current age is 60 (acceptable range 59 to 61). (ver_9b721052847141e7a9c5fa4a10201cfb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's current age is 60 (acceptable range 59 to 61)."
+        }
+      ]
+    },
+    {
+      "name": "States the histologic grade of the patient's breast cancer is 3 (acceptable... (ver_8de8faadd6d34ef28978fdf02a5dfdfe)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the histologic grade of the patient's breast cancer is 3 (acceptable range 2.97 to 3.03)."
+        }
+      ]
+    },
+    {
+      "name": "States the patient's breast cancer receptor status is HER2+. (ver_e45ae6d9c7c6438ebb7867c3a3c3ca5b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient's breast cancer receptor status is HER2+."
+        }
+      ]
+    },
+    {
+      "name": "States the patient's breast cancer diagnosis date is 12/31/20 (acceptable... (ver_4b77eb485e5f4af785af1c54d901956a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient's breast cancer diagnosis date is 12/31/20 (acceptable range 11.9 to 12.1)."
+        }
+      ]
+    },
+    {
+      "name": "States the patient's date of first breast cancer metastasis is 1/5/25... (ver_96688533e3104df7bc6f656bc68bfec9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient's date of first breast cancer metastasis is 1/5/25 (acceptable range 0.99 to 1.0)."
+        }
+      ]
+    },
+    {
+      "name": "States the delay between the patient's breast cancer diagnosis and first... (ver_982b999866f944f1b532373b6d184fd2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the delay between the patient's breast cancer diagnosis and first metastasis is 60 months (acceptable range 59 to 61)."
+        }
+      ]
+    },
+    {
+      "name": "States the number of non-brain metastatic sites is 1 (acceptable range 0.99 to... (ver_cb57771ee1cf427c80c0350262ae3720)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the number of non-brain metastatic sites is 1 (acceptable range 0.99 to 1.0)."
+        }
+      ]
+    },
+    {
+      "name": "States the probability of brain metastasis in this patient is 15% (acceptable... (ver_18004c02d18647d4b2ac6c9358256275)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the probability of brain metastasis in this patient is 15% (acceptable range 14.8% to 15.2%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-onc-patient-9-metastatic-breast-cancer-cara-g-926ea317"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_926ea317e698402795c649f8d4aea0b3",
+    "task_name": "Labs_Image_AI Scribe_Onc Patient 9 - Metastatic Breast Cancer - Cara G",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_237bd1cd3d684c94b2a7fdde563a6877",
+        "golden_text_response": "1. Based on this information, use the MD Calc Nomogram (by Dr. Nuhad K. Ibrahim) for Breast Cancer Brain Metastasis to calculate the patient's risk of brain metastases. Explain how you calculated the answer.\n\nThis patient has a history of previously treated breast cancer in remission and presents with back pain, which warrants further workup. The X-ray and PET scan results of the thoracic spine are suspicious for bony metastases in the T8 and T10 vertebrae (sclerosis on X-ray, increased FDG update on PET scan). This indicates likely metastatic (stage IV) breast cancer. The Nomogram for Breast Cancer Brain Metastasis by Dr. Nuhad K. Ibrahim on MD Calc predicts the risk of brain metastasis in patients with stage IV breast cancer. The inputs are as follows:\n\n1.\tAge (current) - 60\n\n2.\tHistological grade – 3\n\n3.\tReceptor status – HER2+\n\n4.\tDelay between diagnosis and first metastasis – 60 months\nDiagnosis date (date of biopsy) – 12/31/20\nDate of first metastasis – 1/5/25\n\n5.\tNumber of non-brain metastatic sites: 1\n\nResult: 15% probability of brain metastasis.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

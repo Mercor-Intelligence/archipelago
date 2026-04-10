@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the Components Tax model, and the assets document in Xero, calculate the Depreciation Adjustment for the years 2021, 2022 and 2023.\n\nAssumptions:\n- As your depreciation cost basis use registered values from the assets document only and group them by purchase year.\n- For the book SL method assume a fixed UL of 6 years to all assets in 2021, 5 years to all assets in 2022, and 7 years to all assets in 2023\n- For tax, use the recovery period mapped to each acquisition's year in the Components Tax model. Apply one class per year group and if multiple classes exist for a year, use the shorter recovery period.\n\nPresent output in $, rounded to two decimal places.\t"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States 2021 Depreciation Adjustment is $161,240.27 (acceptable ranges would be... (ver_e893b4972a514c8fa51ac196f21cb76f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2021 Depreciation Adjustment is $161,240.27 (acceptable ranges would be $161,241.27 and $161,239.27)."
+        }
+      ]
+    },
+    {
+      "name": "States 2022 Depreciation Adjustment is -$304,615.21 (acceptable ranges would... (ver_3d0963094cda471dad973f20c4f4e602)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2022 Depreciation Adjustment is -$304,615.21 (acceptable ranges would be -$304,616.21 and -$304,614.21 )."
+        }
+      ]
+    },
+    {
+      "name": "States 2023 Depreciation Adjustment is -$1,662,019.86 (acceptable ranges would... (ver_63271968716d4fd6a2c037bdd2df82c6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2023 Depreciation Adjustment is -$1,662,019.86 (acceptable ranges would be -$1,662,018.86 and -$1,662,020.86)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-801-sb-02-3193a04e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_3193a04e3d1f4beeae88b8381a93cbed",
+    "task_name": " World 801 SB_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_3441f5d1898b41ecadf26ce1c487c883",
+        "golden_text_response": "2021 Depreciation Adjustment: $161,240.27\n2022 Depreciation Adjustment: -$304,615.21\n2023 Depreciation Adjustment: -$1,662,019.86",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

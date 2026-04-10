@@ -1,0 +1,104 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_fae9cb654f1549d795d8ba802562d301",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a35728d615ad42df9b65316a5ccda32e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the average % medicare payments for IL is 21.07% (acceptable range 20.86% to 21.28%)",
+        "negative_criteria": "States that the average % medicare payments for IL is a value other than 21.07%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_440066beaa0745adad087072b7d0e45f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a35728d615ad42df9b65316a5ccda32e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the average % medicare payments for MI is 31.65% (acceptable range 31.33% to 31.97%)",
+        "negative_criteria": "States that the average % medicare payments for MI is a value other than 31.65%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c9f53c2de3ad4ef49dd76173ad791b1f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a35728d615ad42df9b65316a5ccda32e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the average % medicare payments for MN is 31.45% (acceptable range 31.14% to 31.76%)",
+        "negative_criteria": "States that the average % medicare payments for MN is a value other than 31.45%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f0a40adc037249baa7924a83c97b380d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a35728d615ad42df9b65316a5ccda32e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the average % medicare payments for OH is 23.21% (acceptable range 22.98% to 23.44%)",
+        "negative_criteria": "States that the average % medicare payments for OH is a value other than 23.21%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

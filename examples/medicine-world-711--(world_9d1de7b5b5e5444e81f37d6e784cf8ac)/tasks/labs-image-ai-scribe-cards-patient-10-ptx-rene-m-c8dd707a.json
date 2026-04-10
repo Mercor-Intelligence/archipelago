@@ -1,0 +1,353 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 10” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\n7 months after the most recent office visit, the patient presents to the emergency room with chest tightness.\n\nThe conversation between the doctor and the patient is available in “Doctor Dictation Cards Patient 10 script.pdf”. The chest X-ray is available in \"AI Scribe_Cards Patient 10-CXR .pdf”.\n\nVital signs are notable for an HR of 115, a temp of 98.9, an O2 saturation of 96%, and a BP of 70/58. What is the next best step in management, given the most likely etiology, and explain your reasoning?"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient’s unstable vital signs are concerning for tension... (ver_f6c542a125e041189d7a04d3c17041ac)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient’s unstable vital signs are concerning for tension physiology."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient’s right-sided chest tightness is a symptom of tension... (ver_e31e0c6b40a448d2a0e4a21c0c68ceb8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient’s right-sided chest tightness is a symptom of tension pneumothorax."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has a history of dysphagia. (ver_d25e782b0bc64de084b14525f0c95abf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has a history of dysphagia."
+        }
+      ]
+    },
+    {
+      "name": "States that dysphagia increases the risk for aspiration. (ver_759d1ad990db4bf1a16b60d40b70cfad)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that dysphagia increases the risk for aspiration."
+        }
+      ]
+    },
+    {
+      "name": "States that aspiration can trigger the Valsalva maneuver. (ver_33bf73c88e8043e5acca93b28d1b0ed9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that aspiration can trigger the Valsalva maneuver."
+        }
+      ]
+    },
+    {
+      "name": "States that the Valsalva maneuver is a risk factor for pneumothorax. (ver_24d20a59f04445b2b150176013ede3ae)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Valsalva maneuver is a risk factor for pneumothorax."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient is at high risk of developing pneumothorax. (ver_4acb9b91f9974a92aefb2dd906e1334b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient is at high risk of developing pneumothorax."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that decreased lung markings on the patient’s X-ray are indicative... (ver_d85243b6ecd744f484461c04cf21d12e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that decreased lung markings on the patient’s X-ray are indicative of pneumothorax."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that a depressed right diaphragm on the patient’s X-ray is an... (ver_e56d1752c03843698863b12cf9b1816e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that a depressed right diaphragm on the patient’s X-ray is an indication of a pneumothorax."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that hyperexpansion of the thorax on the patient’s X-ray is an... (ver_9ca128771fff4cd99b246bbd15c97a78)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that hyperexpansion of the thorax on the patient’s X-ray is an indication of tension pneumothorax."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that splayed ribs on the patient’s X-ray are an indication of... (ver_ee3a7072206441cfa290391f5c5f4073)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that splayed ribs on the patient’s X-ray are an indication of tension pneumothorax."
+        }
+      ]
+    },
+    {
+      "name": "Concludes that the most likely diagnosis for this patient is tension... (ver_5632af2ee3db4703b57693795dd2b71d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Concludes that the most likely diagnosis for this patient is tension pneumothorax."
+        }
+      ]
+    },
+    {
+      "name": "States that the next best step in management is immediate needle decompression. (ver_f0fb40edfef049e9aa4b25a2147fa4b9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the next best step in management is immediate needle decompression."
+        }
+      ]
+    },
+    {
+      "name": "States that a chest tube should be placed for definitive management following... (ver_de3e1f19291343eba23ef74267cd1987)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that a chest tube should be placed for definitive management following needle decompression."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-cards-patient-10-ptx-rene-m-c8dd707a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_c8dd707ae53a40c8ac890614430aca90",
+    "task_name": "Labs_Image_AI Scribe_Cards Patient 10- PTX - Rene M",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_46cd3bf60c6743b2bed72111759f8ff3",
+        "golden_text_response": "The patient’s unstable vital signs are concerning for a tension pneumothorax, especially given the right-sided chest tightness, a symptom of this condition. The patient has a history of dysphagia, which increases the risk of aspiration; aspiration can trigger the Valsalva maneuver, itself a risk factor for pneumothorax. Consequently, the patient is at high risk of developing a pneumothorax. Recognizing diagnostic signs, such as decreased lung markings and a depressed right diaphragm on X-ray, are indicative of a pneumothorax, while hyperexpansion of the thorax and splayed ribs suggest a tension pneumothorax. The most likely diagnosis is a tension pneumothorax, and the next best step in management is immediate needle decompression, followed by placement of a chest tube for definitive treatment.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

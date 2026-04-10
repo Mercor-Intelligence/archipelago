@@ -1,0 +1,97 @@
+[project]
+name = "mercor-mcp-shared"
+version = "0.1.0"
+description = "Shared framework for building MCP servers"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastmcp",
+    "loguru",
+    "asyncer",
+    "pydantic>=2.0",
+    "click>=8.0.0",
+    "jinja2>=3.0.0",
+    "pyyaml>=6.0",
+    "titlecase>=2.4",
+    "mcp-testing",
+    "mcp-auth",
+    "mcp-middleware",
+    "mcp-cache",
+    "mcp-schema",
+    "data-ingestion",
+    "ruamel-yaml>=0.19.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.6.0",
+    "basedpyright>=1.29.0",
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-httpx>=0.21.0",
+    "respx>=0.20.0",
+    "responses>=0.25.0",
+    "pre-commit>=3.0.0",
+]
+database = [
+    "sqlalchemy[asyncio]>=2.0",
+    "alembic>=1.13.0",
+    "aiosqlite>=0.19.0",
+    "greenlet>=3.0",
+    "pandas>=2.0.0",
+]
+rest = [
+    "fastapi>=0.121.2",
+    "uvicorn>=0.38.0",
+]
+migration = [
+    "ruamel.yaml>=0.18.0",
+]
+
+[project.scripts]
+mcp-ui-gen = "ui_generator.cli.main:cli"
+mcp-ui = "ui_generator.cli.run_ui:run_ui"
+shared-pull = "mcp_scripts.subtree_manager:pull"
+shared-push = "mcp_scripts.subtree_manager:push"
+shared-switch = "mcp_scripts.subtree_manager:switch"
+shared-refresh = "mcp_scripts.subtree_manager:refresh"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ui_generator*", "mcp_scripts*", "mcp_schema*"]
+
+[tool.setuptools.package-data]
+"ui_generator" = ["templates/**/*", "base-build-spec.yaml"]
+"mcp_scripts" = ["templates/**/*"]
+
+[tool.uv.sources]
+fastmcp = { git = "https://github.com/jlowin/fastmcp.git", rev = "bc2f601" }
+mcp-testing = { path = "packages/mcp_testing" }
+mcp-auth = { path = "packages/mcp_auth" }
+mcp-middleware = { path = "packages/mcp_middleware" }
+mcp-cache = { path = "packages/mcp_cache" }
+mcp-schema = { path = "packages/mcp_schema" }
+data-ingestion = { path = "packages/data_ingestion" }
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["templates"]
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I", "N", "UP"]
+fixable = ["ALL"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "packages/*/tests"]
+python_files = ["test_*.py", "*_test.py"]
+asyncio_mode = "auto"

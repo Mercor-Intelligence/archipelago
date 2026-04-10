@@ -1,0 +1,40 @@
+{
+  "mcpServers": {
+    "code_execution": {
+      "transport": "http",
+      "url": "http://localhost:8100/mcp/"
+    },
+    "excel": {
+      "transport": "http",
+      "url": "http://localhost:8101/mcp/"
+    },
+    "filesystem": {
+      "transport": "http",
+      "url": "http://localhost:8102/mcp/"
+    },
+    "looker": {
+      "transport": "http",
+      "url": "http://localhost:8103/mcp/"
+    },
+    "pdfs": {
+      "transport": "http",
+      "url": "http://localhost:8104/mcp/"
+    },
+    "powerpoint": {
+      "transport": "http",
+      "url": "http://localhost:8105/mcp/"
+    },
+    "sql_execution": {
+      "transport": "http",
+      "url": "http://localhost:8106/mcp/"
+    },
+    "tableau": {
+      "transport": "http",
+      "url": "http://localhost:8107/mcp/"
+    },
+    "word": {
+      "transport": "http",
+      "url": "http://localhost:8108/mcp/"
+    }
+  }
+}

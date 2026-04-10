@@ -1,0 +1,307 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Write a letter in the form of a document addressed to the student with the lowest final grade from the attached updated grade book stating they can re-do their lowest scoring assignment marked as an \"Assessment\" or \"Quiz\" from the trimester, including a statement of the relevant assignment and its domain, as well as one other assignment from the trimester in the same domain. (Domain examples would include Reading, Writing, Language, Vocab, Grammar, Oral Presentation, Essay). In case of a tie, include all assignments tied for the lowest score. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Identifies Mason Brown as the student with the lowest final grade (ver_24d9fe2f31c343fbb4f3698dc7d05f85)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Mason Brown as the student with the lowest final grade."
+        }
+      ]
+    },
+    {
+      "name": "Identifies a name other than Mason Brown as the student with the lowest final... (ver_24d9fe2f31c343fbb4f3698dc7d05f85)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies a name other than Mason Brown as the student with the lowest final grade."
+        }
+      ]
+    },
+    {
+      "name": "Identifies “Argument Writing Diagnostic” as Mason Brown’s lowest scoring... (ver_a09b674faace4f2a8d8a0ff6dfb5793b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies “Argument Writing Diagnostic” as Mason Brown’s lowest scoring assignment."
+        }
+      ]
+    },
+    {
+      "name": "Identifies “Figurative Language Quiz” as Mason Brown’s lowest scoring assignment (ver_085daedb572a42caab888b98a55e6a28)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies “Figurative Language Quiz” as Mason Brown’s lowest scoring assignment."
+        }
+      ]
+    },
+    {
+      "name": "Mentions in the letter that Mason Brown has the opportunity to re-do their... (ver_3b1829434af14bd2b64d22f289dad0a3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions in the letter that Mason Brown has the opportunity to re-do their lowest scoring assessment/quiz assignment from the trimester."
+        }
+      ]
+    },
+    {
+      "name": "Mentions “Argument Writing Diagnostic” as Mason Brown’s lowest assessment... (ver_e1727ef52d174f00b6e010c21dc662e5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions “Argument Writing Diagnostic” as Mason Brown’s lowest assessment grade in the letter."
+        }
+      ]
+    },
+    {
+      "name": "Mentions “Figurative Language Quiz” as Mason Brown’s lowest assessment grade... (ver_4c9872e8448b4fb484adcd8a95798f6a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions “Figurative Language Quiz” as Mason Brown’s lowest assessment grade in the letter."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that “Argument Writing Diagnostic” falls in the Writing domain in the... (ver_8360002144a44bbf8fa3010bb995dd91)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that “Argument Writing Diagnostic” falls in the Writing domain in the letter."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that “Argument Writing Diagnostic” falls in a domain other than... (ver_8360002144a44bbf8fa3010bb995dd91)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that “Argument Writing Diagnostic” falls in a domain other than Writing in the letter."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that “Figurative Language Quiz” falls in the Language domain in the... (ver_61b305980af345a784850f67bf7952c7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that “Figurative Language Quiz” falls in the Language domain in the letter."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that “Figurative Language Quiz” falls in a domain other than Language... (ver_61b305980af345a784850f67bf7952c7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that “Figurative Language Quiz” falls in a domain other than Language in the letter."
+        }
+      ]
+    },
+    {
+      "name": "Mentions in the letter that Mason Brown can choose to re-do one other... (ver_42473e65fc5145c5a6a976cc86d9fd6a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions in the letter that Mason Brown can choose to re-do one other assignment from the trimester in the domains of his lowest assessment grade."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world305-km-01-natural-prompt-c978f1eb"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_c978f1eb29104e78815f5d41e9f55346",
+    "task_name": "World305_KM_01 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f54e25f4c9104e85ad6fc3941324ce8f",
+        "golden_text_response": "The following student has the lowest final grade:\nMason Brown - 66.3%\n\nThe lowest scoring quiz/assessment for the above student is:\nFigurative Language Quiz - 59%\nArgument Writing Diagnostic - 59%\n\nThe learning domains for the above assignments are Language and Writing, respectively. ",
+        "golden_file_responses": "snap_d9c5f68461f840a7a2dd75c4875c0e9e"
+      }
+    ]
+  }
+}

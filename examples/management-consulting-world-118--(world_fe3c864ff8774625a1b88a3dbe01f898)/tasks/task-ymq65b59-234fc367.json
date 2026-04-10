@@ -1,0 +1,399 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "There are set of treatments known as \"Concept\" with a unique 'Concept Codes'; Further, the client has provided the bill details mapped to 'Concept Codes'. Also hospitals have internal 'concept IDs' mapped uniquely with codes. The codes are categorised into Code family, based on which they are taxed. The starting letter of the code determines the family as detailed in the table below: \nFamily Number | Concept Code Family| Tax %\nF1 | A to F| 10.00%\nF2 | G to L| 12.50%\nF3 | M to S| 13.00%\nF4 | T to Z| 13.50%\nTask -  For each of the Concept Code Family listed above, calculate and return the average billed amount (in USD) of the concept codes falling in that category. Also, return the count of times they were billed last month for each Concept Code Family.\nAssumptions-\n1. In each bill, account for a code once. Ignore any duplicate codes in the billing amount. \n2. Total amount in the bill sheet is post-tax.\n3. The ratio between the average base rates of F1 and F2 is 1:2 and F3 and F4 is 1:3\nReport all outcomes as a message in the console. Round the final average billed amount to the nearest 2 decimal places and count the number of times billed to the nearest whole number."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the count for family F1 is 7370 (ver_600c3381f19b4e8883bd0a0190b4c50f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the count for family F1 is 7370."
+        }
+      ]
+    },
+    {
+      "name": "States that the count for family F1 is a value other than 7370 (ver_600c3381f19b4e8883bd0a0190b4c50f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the count for family F1 is a value other than 7370."
+        }
+      ]
+    },
+    {
+      "name": "States that the count for family F2 is 11314 (ver_0da8a4e54f304800b2ece8c8b1127756)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the count for family F2 is 11314."
+        }
+      ]
+    },
+    {
+      "name": "States that the count for family F2 is a value other than 11314 (ver_0da8a4e54f304800b2ece8c8b1127756)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the count for family F2 is a value other than 11314."
+        }
+      ]
+    },
+    {
+      "name": "States that the count for family F3 is 3359 (ver_5524849921ba4728a7d42d60a4fad2f7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the count for family F3 is 3359."
+        }
+      ]
+    },
+    {
+      "name": "States that the count for family F3 is a value other than 3359 (ver_5524849921ba4728a7d42d60a4fad2f7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the count for family F3 is a value other than 3359."
+        }
+      ]
+    },
+    {
+      "name": "States that the count for family F4 is 851 (ver_944a146d4cba49b79bc215dee95e7978)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the count for family F4 is 851."
+        }
+      ]
+    },
+    {
+      "name": "States that the count for family F4 is a value other than 851 (ver_944a146d4cba49b79bc215dee95e7978)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the count for family F4 is a value other than 851."
+        }
+      ]
+    },
+    {
+      "name": "States that the Average Billed Rate for family F1 is $838.23 (acceptable range... (ver_3d81cd44f852411f95bd02d2ae59bff0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Average Billed Rate for family F1 is $838.23 (acceptable range $829.85 to $846.61)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Average Billed Rate for family F1 is a value other than $838.23 (ver_3d81cd44f852411f95bd02d2ae59bff0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Average Billed Rate for family F1 is a value other than $838.23."
+        }
+      ]
+    },
+    {
+      "name": "States that the Average Billed Rate for family F2 is $1714.56 (acceptable... (ver_294bc1409f874812bc57788c4508cb6e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Average Billed Rate for family F2 is $1714.56 (acceptable range $169 to $173)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Average Billed Rate for family F2 is a value other than $1714.56 (ver_294bc1409f874812bc57788c4508cb6e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Average Billed Rate for family F2 is a value other than $1714.56."
+        }
+      ]
+    },
+    {
+      "name": "States that the Average Billed Rate for family F3 is $2583.28 (acceptable... (ver_b6cdc8ebd4be45f29743f61641c9160a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Average Billed Rate for family F3 is $2583.28 (acceptable range $255 to $261)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Average Billed Rate for family F3 is a value other than $2583.28 (ver_b6cdc8ebd4be45f29743f61641c9160a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Average Billed Rate for family F3 is a value other than $2583.28."
+        }
+      ]
+    },
+    {
+      "name": "States that the Average Billed Rate for family F4 is $3459.61 (acceptable... (ver_337a4df4b244415abd62f1af927c77a0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Average Billed Rate for family F4 is $3459.61 (acceptable range $342 to $348)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Average Billed Rate for family F4 is a value other than $3459.61 (ver_337a4df4b244415abd62f1af927c77a0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Average Billed Rate for family F4 is a value other than $3459.61."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-ymq65b59-234fc367"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_234fc367efc84b0e955eb6bb7df63cb4",
+    "task_name": "Task ymq65b59",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_a9d8af6844a54bffbfc79e46fa05ad5a",
+        "golden_text_response": "Family Number | Average Billed Rate | Count\n\nF1 | $838.23 | 7370\nF2 | $1714.56 | 11314\nF3 | $2583.28 | 3359\nF4 | $3459.61 | 851",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

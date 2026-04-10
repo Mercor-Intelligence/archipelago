@@ -1,0 +1,230 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_f593ec5232a747868973c646ba155674",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5923f3162fb742a2857f5785dba33248",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that Total NPV (ARO) if the Credit-Adjusted Discount Rate changes to 8.80% is $4,144,948,208.88 (acceptable range $4,103,498,726.79 to $4,186,397,690.97)",
+        "negative_criteria": "States that Total NPV (ARO) if the Credit-Adjusted Discount Rate changes to 8.80% is a figure other than $4,144,948,208.88",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_89b96b21460b482f98ed38f4f110b0c6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5923f3162fb742a2857f5785dba33248",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that Total NPV (ARO) if Inflation Rate (Years 1-3) is one fifth higher than its current value is $4,800,168,195.63 (acceptable range $4,752,166,513.67 to $4,848,169,877.59)",
+        "negative_criteria": "States that Total NPV (ARO) if Inflation Rate (Years 1-3) is one fifth higher than its current value is a figure other than $4,800,168,195.63",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0d540daad65f466887a312f0b7998f21",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5923f3162fb742a2857f5785dba33248",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that Total NPV (ARO) if the quantity of Earthworks (Short Haul - Re-slope) is double its current amount is $4,700,266,639.14 (acceptable range $4,653,263,972.75 to $4,747,269,305.53)",
+        "negative_criteria": "States that Total NPV (ARO) if the quantity of Earthworks (Short Haul - Re-slope) is a figure other than $4,700,266,639.14",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c528c4df87e447399e15170b696177d5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5923f3162fb742a2857f5785dba33248",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that Total NPV (ARO) if the quantity of the Activity identified for the Facility Pits 2-6 (5 pits @ 50M m\u00b3) becomes 0 is $2,515,842,108.92 (acceptable range $2,490,683,687.83 to $2,541,000,530.01)",
+        "negative_criteria": "States that Total NPV (ARO) if the quantity of the Activity identified for the Facility Pits 2-6 (5 pits @ 50M m\u00b3) becomes 0 is a figure other than $2,515,842,108.92",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0cdf133d3a9447b98fe5b02032c016cd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5923f3162fb742a2857f5785dba33248",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that Total NPV (ARO) if the Unit Cost of Demolition (500k sq ft) increases to 3 times its current value is $4,631,838,882.77 (acceptable range $4,585,520,493.94 to $4,678,157,271.60)",
+        "negative_criteria": "States that Total NPV (ARO) if the Unit Cost of Demolition (500k sq ft) increases to 3 times its current value is a figure other than $4,631,838,882.77",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8f8a1a1884d84054ad2e099c89e525f3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5923f3162fb742a2857f5785dba33248",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that Total NPV (ARO) if the quantity of Demolition (100k sq ft) becomes the same as the quantity of Demolition (150k sq ft) is $4,621,837,902.99 (acceptable range $4,575,619,523.96 to $4,668,056,282.02)",
+        "negative_criteria": "States that Total NPV (ARO) if the quantity of Demolition (100k sq ft) becomes the same as the quantity of Demolition (150k sq ft) is a figure other than $4,621,837,902.99",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fa5e494fcf9c4194bef290e48497de67",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5923f3162fb742a2857f5785dba33248",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that Total NPV (ARO) if the Unit Cost of Monitoring (Annual, Yrs 11-30) increases by 100% is $4,626,394,797.88 (acceptable range $4,580,130,849.90 to $4,672,658,745.86)",
+        "negative_criteria": "States that Total NPV (ARO) if the Unit Cost of Monitoring (Annual, Yrs 11-30) increases by 100% is a figure other than $4,626,394,797.88",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0918f76bee584e298764d4d67a7f3944",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5923f3162fb742a2857f5785dba33248",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that Total NPV (ARO) if the \u201cPresent Value (PV)\u201d for every year becomes half of its current value is $2,310,655,767.82 (acceptable range $2,287,549,210.14 to $2,333,762,325.50)",
+        "negative_criteria": "States that Total NPV (ARO) if the \u201cPresent Value (PV)\u201d for every year becomes half of its current value is a figure other than $2,310,655,767.82",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_93d112921f3f4b569c3de823b4d5812a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5923f3162fb742a2857f5785dba33248",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the average Total NPV (ARO) across all assumptions scenarios is $4,043,994,063.00 (acceptable range $4,003,554,122.37 to $4,084,434,003.63)",
+        "negative_criteria": "States the average Total NPV (ARO) across all assumptions scenarios is a figure other than $4,043,994,063.00",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_904de89500d3484a9452dc8ae61e2878",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5923f3162fb742a2857f5785dba33248",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the median Total NPV (ARO) across all assumptions scenarios is $4,624,116,350.44 (acceptable range $4,577,875,186.94 to $4,670,357,513.94)",
+        "negative_criteria": "States the median Total NPV (ARO) across all assumptions scenarios is a figure other than $4,624,116,350.44",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_48a359ba5e4b45a19c4e2b50cbc8e4f0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5923f3162fb742a2857f5785dba33248",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the range of the Total NPV (ARO) values across all assumptions scenarios is $2,489,512,427.81 (acceptable range $2,464,617,303.53 to $2,514,407,552.09)",
+        "negative_criteria": "States the range of the Total NPV (ARO) values across all assumptions scenarios is a figure other than $2,489,512,427.81",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_4c5a8097778d411c869c93f7cf1dd678",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3b9ca5e663b74974a789a9fb8eb52b5a",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The Average Balance Recovery Adjusted metric in the month of Jan 2023 is exactly 48 (acceptable range 47.5 to 48.5).",
+        "autogen_source": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Finds the correct Average Balance Recovery Adjusted metric",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_717b2096efb04b07b8f21ab4d6b9d291",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3b9ca5e663b74974a789a9fb8eb52b5a",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The Average Balance Recovery Adjusted metric in the month of Feb 2023 is exactly 95 (acceptable range 94 to 96).",
+        "autogen_source": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Finds the correct Average Balance Recovery Adjusted metric",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d12c16a0eaa14a43b268e98abffc09ba",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3b9ca5e663b74974a789a9fb8eb52b5a",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The Average Balance Recovery Adjusted metric in the month of Mar 2023 is exactly 77 (acceptable range 76 to 78).",
+        "autogen_source": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Finds the correct Average Balance Recovery Adjusted metric",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c3ae934ae715409d9589d0afc6e4a11b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3b9ca5e663b74974a789a9fb8eb52b5a",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The Average Balance Recovery Adjusted metric in the month of Apr 2023 is exactly 33 (acceptable range 32.7 to 33.3).",
+        "autogen_source": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Finds the correct Average Balance Recovery Adjusted metric",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_56284b1664934f0795a3e28f77e0c882",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3b9ca5e663b74974a789a9fb8eb52b5a",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The Average Balance Recovery Adjusted metric in the month of May 2023 is exactly 65 (acceptable range 64 to 66).",
+        "autogen_source": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Finds the correct Average Balance Recovery Adjusted metric",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_aa4668691a4645aa90b6c68403e008c3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3b9ca5e663b74974a789a9fb8eb52b5a",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Style / formatting"
+        ],
+        "weight": 1,
+        "criteria": "Creates a bar chart that shows the average Balance Recovery Adjusted by completed migration month for the first 5 months of 2023 (acceptable range 200 to 204).",
+        "autogen_source": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Provides a bar chart that shows the average Balance Recovery Adjusted by completed migration month for the first 5 months of 2023.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

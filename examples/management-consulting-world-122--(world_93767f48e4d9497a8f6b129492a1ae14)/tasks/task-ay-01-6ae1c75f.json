@@ -1,0 +1,675 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "We need to prepare a summary of customer insights for Forma using the data obtained from the customer surve. Please provide the following insights in the console - \n\n1. What is the biggest reason for shopping? \n2. Which are the top two sources of awareness?\n3. What is the average customer confidence in shopping online?\n4a. Which is the most important factor for the customers. What % of the users rated this the highest?\n4b. Which is the second most important factor for the customers. What % of the users rated this the highest?\n5. What is the biggest challenge for the customers? \n6. What is the average score for each of these - product satisfaction, delivery satisfaction, purchase likelihood and recommendation NPS \n7. What is the correlation coefficient between product satisfaction and recommendation NPS? (round to 4 decimal places)\n\nRound all the numbers to two decimal places, except for the correlation coefficient. \n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States biggest reason for shopping is Moving (ver_548513a98fa241718cfc09edbdce693a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States biggest reason for shopping is Moving."
+        }
+      ]
+    },
+    {
+      "name": "States biggest reason for shopping is anything other than Moving (ver_548513a98fa241718cfc09edbdce693a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States biggest reason for shopping is anything other than Moving."
+        }
+      ]
+    },
+    {
+      "name": "States one of the top two sources of awareness as Friends (ver_59cb50c02d9f4461bc780bc1680b55e5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States one of the top two sources of awareness as Friends."
+        }
+      ]
+    },
+    {
+      "name": "State a source other than Tik Tok or Friends as one of the top two sources of... (ver_59cb50c02d9f4461bc780bc1680b55e5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State a source other than Tik Tok or Friends as one of the top two sources of awareness."
+        }
+      ]
+    },
+    {
+      "name": "States Tik Tok as one of the top two sources of awareness (ver_d3144cd5480046dfbbd3b629055b7e68)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Tik Tok as one of the top two sources of awareness."
+        }
+      ]
+    },
+    {
+      "name": "State a source other than Tik Tok or Friends as one of the top two sources of... (ver_d3144cd5480046dfbbd3b629055b7e68)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State a source other than Tik Tok or Friends as one of the top two sources of awareness."
+        }
+      ]
+    },
+    {
+      "name": "States average customer confidence in shopping online as 3.05 (acceptable... (ver_e69477d8bcfb495785528cf45fc4a940)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States average customer confidence in shopping online as 3.05 (acceptable range 3.02 to 3.08)."
+        }
+      ]
+    },
+    {
+      "name": "States average customer confidence in shopping online other than 3.05 (ver_e69477d8bcfb495785528cf45fc4a940)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States average customer confidence in shopping online other than 3.05."
+        }
+      ]
+    },
+    {
+      "name": "States most important factor as Style (ver_cfa64c185fbf4b9282580dbc553554f9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States most important factor as Style."
+        }
+      ]
+    },
+    {
+      "name": "States a factor other than Style as the most important factor (ver_cfa64c185fbf4b9282580dbc553554f9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States a factor other than Style as the most important factor."
+        }
+      ]
+    },
+    {
+      "name": "States the most important factor was picked by 19.80% of customers (acceptable... (ver_5380a1d752bc40d9ad081f13e68ffaad)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the most important factor was picked by 19.80% of customers (acceptable range 19.60% to 20.00%)."
+        }
+      ]
+    },
+    {
+      "name": "States the most important factor was picked by anything other than 19.80%... (ver_5380a1d752bc40d9ad081f13e68ffaad)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the most important factor was picked by anything other than 19.80% customers."
+        }
+      ]
+    },
+    {
+      "name": "States the second most important factor as Delivery (ver_a9bae79f85164f5eb8c7de742b00d88f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the second most important factor as Delivery."
+        }
+      ]
+    },
+    {
+      "name": "States a factor other than Delivery as the second most important factor (ver_a9bae79f85164f5eb8c7de742b00d88f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States a factor other than Delivery as the second most important factor."
+        }
+      ]
+    },
+    {
+      "name": "States that second most important factor was picked by 18.0% customers... (ver_bd72dae0ab07489ea305d032987fcb1a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that second most important factor was picked by 18.0% customers (acceptable range 17.8% to 18.2%)."
+        }
+      ]
+    },
+    {
+      "name": "States that second most important factor was picked by anything other than... (ver_bd72dae0ab07489ea305d032987fcb1a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that second most important factor was picked by anything other than 18.0% customers."
+        }
+      ]
+    },
+    {
+      "name": "States the biggest challenge for customers as Returns (ver_b125f566c0cf4b6985c2a20ee96a03e4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the biggest challenge for customers as Returns."
+        }
+      ]
+    },
+    {
+      "name": "States the biggest challenge for customers as anything other than Returns (ver_b125f566c0cf4b6985c2a20ee96a03e4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the biggest challenge for customers as anything other than Returns."
+        }
+      ]
+    },
+    {
+      "name": "States average score for delivery satisfaction is 2.95 (acceptable range 2.92... (ver_777e7c504ff6408ba03a1058c7dbca1b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States average score for delivery satisfaction is 2.95 (acceptable range 2.92 to 2.98)."
+        }
+      ]
+    },
+    {
+      "name": "States average score for delivery satisfaction as anything other than 2.95 (ver_777e7c504ff6408ba03a1058c7dbca1b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States average score for delivery satisfaction as anything other than 2.95."
+        }
+      ]
+    },
+    {
+      "name": "States average score for product satisfaction is 3.00 (acceptable range 2.97... (ver_a98cabf4b861447a82a8ab4b7e832772)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States average score for product satisfaction is 3.00 (acceptable range 2.97 to 3.03)."
+        }
+      ]
+    },
+    {
+      "name": "States average score for product satisfaction as anything other than 3.00 (ver_a98cabf4b861447a82a8ab4b7e832772)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States average score for product satisfaction as anything other than 3.00."
+        }
+      ]
+    },
+    {
+      "name": "States average score for Repurchase likelihood is 2.94 (acceptable range 2.91... (ver_a563eabb8baa45209a5b68afe0272a4d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States average score for Repurchase likelihood is 2.94 (acceptable range 2.91 to 2.97)."
+        }
+      ]
+    },
+    {
+      "name": "States average score for Repurchase likelihood as anything other than 2.94 (ver_a563eabb8baa45209a5b68afe0272a4d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States average score for Repurchase likelihood as anything other than 2.94."
+        }
+      ]
+    },
+    {
+      "name": "States average score for Recommendation NPS is 4.95 (acceptable range 4.90 to... (ver_5373708cded54f7b9ccbd19af2f32f35)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States average score for Recommendation NPS is 4.95 (acceptable range 4.90 to 5.00)."
+        }
+      ]
+    },
+    {
+      "name": "States average score for Recommendation NPS as anything other than 4.95 (ver_5373708cded54f7b9ccbd19af2f32f35)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States average score for Recommendation NPS as anything other than 4.95."
+        }
+      ]
+    },
+    {
+      "name": "States correlation coefficient between product satisfaction and recommendation... (ver_59dcb2b71c864166933aa067538c2196)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States correlation coefficient between product satisfaction and recommendation NPS is 0.0343 (acceptable range 0.0340 to 0.0346)."
+        }
+      ]
+    },
+    {
+      "name": "States correlation coefficient between product satisfaction and recommendation... (ver_59dcb2b71c864166933aa067538c2196)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States correlation coefficient between product satisfaction and recommendation NPS as anything other than 0.0343."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-ay-01-6ae1c75f"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_93767f48e4d9497a8f6b129492a1ae14",
+    "world_name": "Management Consulting World 122",
+    "task_id": "task_6ae1c75f8eee4b699e3b40e8877d61f0",
+    "task_name": "Task AY 01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_5f9867a230fa4ba1b2dfccd37a4dd8c2",
+        "golden_text_response": "Please find below customer insights for Forum obtained from the survey \n\n1) Biggest reason for shopping: Moving \n\n2) Top two sources of awareness\n- Friends\n- TikTok\n\n3) Average customer confidence in shopping online: 3.05\n\n4a) Most important factor: Style, picked by 19.80% customers\n\n4b) Second most important factor: Delivery, picked by 18.00% customers\n\n5) Biggest challenge for customers: Returns\n\n6) Average scores:\n- Delivery satisfaction: 2.95\n- Product satisfaction: 3.00\n- Repurchase likelihood: 2.94\n- Recommendation NPS: 4.95\n\n7) Correlation coefficient between product satisfaction and recommendation NPS is 0.0343",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

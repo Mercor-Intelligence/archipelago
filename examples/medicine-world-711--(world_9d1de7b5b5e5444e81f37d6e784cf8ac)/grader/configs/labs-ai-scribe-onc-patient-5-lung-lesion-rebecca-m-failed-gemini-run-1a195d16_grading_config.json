@@ -1,0 +1,350 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_d1f7d56369c140f5aa966350385eebc2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a195d16757643f48243f4329e4ba476",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient believes the tumor has grown into the kidneys.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from doctor_dictation.pdf \"I was told something about tumor growing into my kidneys which has caused nasty infections\".",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "doctor_dictation.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_0d469594d5c842239f8c0d4ef12c6ded"
+          }
+        ]
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8f4b773c15e441859054f8dbd47706a9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a195d16757643f48243f4329e4ba476",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that there is no evidence of renal involvement by tumor on imaging.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from OPENEMR \"Adrenals/Urinary Tract: Both adrenal glands appear normal. A right-sided percutaneous nephrostomy tube is again identified within the right renal pelvis. There is mild right-sided perinephric stranding present. There appears to be mild right-sided ureteral dilatation with inflammatory changes surrounding the ureter to the level of the UVJ. No surrounding perinephric or soft tissue fluid collections or hematoma seen along the nephrostomy tube tract. Again noted is chronic diffuse bladder wall thickening. The left kidney is unremarkable.\" \nSource: Tab - CLINICALNOTES, Note type - Discharge Summary, Column D, Row 317.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6caa0a49401f4f53ab91933cc0952175",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a195d16757643f48243f4329e4ba476",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that there is ureter damage as a side-effect of radiation therapy.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from OPENEMR \"right nephrostomy tube due to damage to his ureter from radiation therapy.\" \nSource: Tab - CLINICALNOTES, Note type - Discharge Summary, Column D, Row 317.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_31be5e7897a7499f89d3eb0f339d9303",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a195d16757643f48243f4329e4ba476",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Concludes that the patient should be informed about no tumor involvement in the kidneys. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "During the consultation, the patient mentioned that they were told something about a tumor growing into their kidneys. Recent clinical notes indicate that the patient has suffered ureteric damage as a side effect of radiation therapy. Imaging studies confirm there is no evidence of a tumor within the kidneys. The patient should be informed that there is no tumor involvement in their kidneys. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "doctor_dictation.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_0d469594d5c842239f8c0d4ef12c6ded"
+          }
+        ]
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_937aaabf67c348dba59f6a286bae5db9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a195d16757643f48243f4329e4ba476",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's lung biopsy shows a tumor composed of cells with finely granular chromatin.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from pathology_report.pdf - \"Tumor cells show finely granular chromatin\".",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "pathology_report.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_0d469594d5c842239f8c0d4ef12c6ded"
+          }
+        ]
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fd2c1425451040d0bd037ed1c7579d11",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a195d16757643f48243f4329e4ba476",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Explains that tumor cells with finely granular chromatin are a feature of lung neuroendocrine tumors (NETs).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"The tumor cells typically appear uniform, with finely granular nuclear chromatin, inconspicuous nucleoli, and moderate to abundant eosinophilic cytoplasm.\"\n Boualoy T, Menon G, Wallen JM. Thoracic Neuroendocrine Tumors. [Updated 2025 Sep 5]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2025 Jan-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK537080/",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_893f9473c7c049ef8b13bc5d077e08a9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a195d16757643f48243f4329e4ba476",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's lung tumor is positive for neuroendocrine markers.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from pathology_report.pdf - \"Immunostains were performed on the core biopsy and demonstrate that the tumor cells are positive for pan-cytokeratins, synaptophysin, and CD56.\"\n\nSynaptophysin or CD56 is a neuroendocrine marker.\nhttps://share.google/zWBhp7Sj5LJqpI6WQ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "pathology_report.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_0d469594d5c842239f8c0d4ef12c6ded"
+          }
+        ]
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6196eed638ad423790bd889b47f45d2b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a195d16757643f48243f4329e4ba476",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's lung tumor is positive for pan-cytokeratins.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from pathology_report.pdf - \"Immunostains were performed on the core biopsy and demonstrate that the tumor cells are positive for pan-cytokeratins, synaptophysin, and CD56.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "pathology_report.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_0d469594d5c842239f8c0d4ef12c6ded"
+          }
+        ]
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_911a7a54dbc6406b8bbcdd2b3fade67a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a195d16757643f48243f4329e4ba476",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Explains that a lung neuroendocrine tumor is associated with a positive stain for neuroendocrine markers.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Immunohistochemistry is crucial in diagnosing NETs, especially in small biopsy samples. A recommended antibody panel for immunostaining includes chromogranin A, synaptophysin, and CD56. Additionally, most NETs react to pan-cytokeratin antibodies, commonly used to identify epithelial cells.\"\n Boualoy T, Menon G, Wallen JM. Thoracic Neuroendocrine Tumors. [Updated 2025 Sep 5]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2025 Jan-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK537080/\n\nSynaptophysin or CD56 is a neuroendocrine marker. \nhttps://share.google/zWBhp7Sj5LJqpI6WQ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_41167cef40834be79b5f3b9132ef34de",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a195d16757643f48243f4329e4ba476",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Explains that a lung neuroendocrine tumor is associated with a positive stain for pan-cytokeratins. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Immunohistochemistry is crucial in diagnosing NETs, especially in small biopsy samples. A recommended antibody panel for immunostaining includes chromogranin A, synaptophysin, and CD56. Additionally, most NETs react to pan-cytokeratin antibodies, commonly used to identify epithelial cells.\"\n Boualoy T, Menon G, Wallen JM. Thoracic Neuroendocrine Tumors. [Updated 2025 Sep 5]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2025 Jan-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK537080/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4e9ad308ffe44d48a9932e373cc15ce5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a195d16757643f48243f4329e4ba476",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's lung tumor is consistent with a neuroendocrine tumor (NET).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient's lung biopsy shows a tumor composed of cells with finely granular chromatin with positive staining for pan-cytokeratins, synaptophysin, and CD56. These features are characteristic of pulmonary neuroendocrine tumors (NETs). \n\n\"Immunohistochemistry is crucial in diagnosing NETs, especially in small biopsy samples. A recommended antibody panel for immunostaining includes chromogranin A, synaptophysin, and CD56. Additionally, most NETs react to pan-cytokeratin antibodies, commonly used to identify epithelial cells.\"\n Boualoy T, Menon G, Wallen JM. Thoracic Neuroendocrine Tumors. [Updated 2025 Sep 5]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2025 Jan-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK537080/\n \n \"The tumor cells typically appear uniform, with finely granular nuclear chromatin, inconspicuous nucleoli, and moderate to abundant eosinophilic cytoplasm.\"\n Boualoy T, Menon G, Wallen JM. Thoracic Neuroendocrine Tumors. [Updated 2025 Sep 5]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2025 Jan-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK537080/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "pathology_report.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_0d469594d5c842239f8c0d4ef12c6ded"
+          }
+        ]
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c350b70749b047f292c5ce6ab041270d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a195d16757643f48243f4329e4ba476",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's rectal tumor is a rectal adenocarcinoma.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from OPENEMR \" Biopsy on September 11, 2020 confirmed adenocarcinoma. \" \nSource: Tab - CLINICALNOTES, Note type - Progress Notes, Column D, Row 283.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_802650fc9ce54be7999535502564b4c6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a195d16757643f48243f4329e4ba476",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Explains that the patient's lung tumor is a separate entity from the patient's rectal adenocarcinoma.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"NETs are uncommon malignancies that can affect the lungs. While they can occur at any age between 5 and 90, the mean age of presentation of typical carcinoids is 58.8. \"\n Boualoy T, Menon G, Wallen JM. Thoracic Neuroendocrine Tumors. [Updated 2025 Sep 5]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2025 Jan-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK537080/\n \n \"The majority of all Rca are adenocarcinomas (90%), and others not frequently seen are adenosquamous, spindle, squamous and undifferentiated. RCA adenocarcinoma can be further differentiated in cribriform comedo-type, medullary, micropapillary, serrated, mucinous, and signet-ring cell. Adenocarcinomas are categorized by the percentage of gland formation into well (greater than 95%), moderately (greater than 50%), and poorly (less than 49%) differentiated, but further divided into a 2-tier low grade (well-moderate)/high grade (poor) with prognostic significance.\"\n Lotfollahzadeh S, Kashyap S, Tsoris A, et al. Rectal Cancer. [Updated 2023 Jul 4]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2025 Jan-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK493202/",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c1314744db8a481b9ce413c419dc2c86",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a195d16757643f48243f4329e4ba476",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Explains that the patient's lung tumor does not alter the staging of the patient's rectal tumor.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"NETs are uncommon malignancies that can affect the lungs. While they can occur at any age between 5 and 90, the mean age of presentation of typical carcinoids is 58.8. \"\n Boualoy T, Menon G, Wallen JM. Thoracic Neuroendocrine Tumors. [Updated 2025 Sep 5]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2025 Jan-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK537080/\n \n \"The majority of all Rca are adenocarcinomas (90%), and others not frequently seen are adenosquamous, spindle, squamous and undifferentiated. RCA adenocarcinoma can be further differentiated in cribriform comedo-type, medullary, micropapillary, serrated, mucinous, and signet-ring cell. Adenocarcinomas are categorized by the percentage of gland formation into well (greater than 95%), moderately (greater than 50%), and poorly (less than 49%) differentiated, but further divided into a 2-tier low grade (well-moderate)/high grade (poor) with prognostic significance.\"\n Lotfollahzadeh S, Kashyap S, Tsoris A, et al. Rectal Cancer. [Updated 2023 Jul 4]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2025 Jan-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK493202/",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

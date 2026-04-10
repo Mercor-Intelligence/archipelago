@@ -37,9 +37,6 @@ class Settings(BaseSettings):
     # Scraping / web content (used by ACE link verification)
     ACE_FIRECRAWL_API_KEY: str | None = None
 
-    # Data Delivery API (document parsing with caching)
-    MERCOR_DELIVERY_API_KEY: str | None = None
-
 
 @cache
 def get_settings() -> Settings:

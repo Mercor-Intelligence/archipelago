@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Can you use the Greenhouse tool to extract the relevant data and determine the requisition_id of the Job with the lowest Pipeline Coverage Ratio? \n\nPipeline Coverage Ratio of a Job is Pipeline Count of the Job divided by Target Pipeline Count of the Job. Pipeline Count of the Job is the count of applications for that Job with a status other than rejected.\n\nRefer to the Job_Pipeline_Targets.csv in the filesystem for the target pipeline count. Use only open jobs for this analysis. In case of a tie, state the oldest job based on the opened_at.\n\nFor the job with the lowest pipeline coverage ratio, create a live internal only posting and share the details in the console. Please also provide a full report of your analysis in the console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the Job ID with the lowest Pipeline Coverage Ratio is Job ID 198. (ver_8e2151b7e13646fdb1cf76283de7d19c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Job ID with the lowest Pipeline Coverage Ratio is Job ID 198."
+        }
+      ]
+    },
+    {
+      "name": "States that the Job Id of the posting is 198. (ver_c4b4aab9965f48ba94f28db2cf882a1e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Job Id of the posting is 198."
+        }
+      ]
+    },
+    {
+      "name": "States that the Title of the posting is Junior Nurse Practitioner. (ver_3bd6d097656e482c8520f7174fc52b7c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Title of the posting is Junior Nurse Practitioner."
+        }
+      ]
+    },
+    {
+      "name": "States that the Location Name of the posting is Columbus OH. (ver_61964bf842e14b2ba994359da85df653)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Location Name of the posting is Columbus OH."
+        }
+      ]
+    },
+    {
+      "name": "States that the Live flag is True. (ver_a11159f8bc9f4598bb1179416dbe8a8a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Live flag is True."
+        }
+      ]
+    },
+    {
+      "name": "States that the Internal flag is True. (ver_f53a9c3c5d9640cfa6031c5b3d054ae0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Internal flag is True."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world602-tk-01-009fff93"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_009fff93ba06480295d1e809091a655a",
+    "task_name": "World602_TK_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_a7ca8e2fdc0340bc887bd8211ef76c62",
+        "golden_text_response": "The details of the posting are:\n\nJob Id: 198\nTitle: Junior Nurse Practitioner\nLocation Name: Columbus OH\nLive: True\nInternal: True",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Combine the L4 and L5 lesson plans into a single lesson plan that:\n\t•\tIntroduces both lessons at the end of the prior class period, including a brief overview of the main themes and key vocabulary.\n\t•\tAssigns the reading for the corresponding chapters as homework rather than in class.\n\t•\tMoves the in-class activities, including an optional L4 practice quiz, to homework.\n\t•\tAdds to the accommodations section that a take-home guide will be provided to support vocabulary and key ideas while reading; notes that sentence frames and guided reading options are available."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Includes introduction to Lessons 4 and 5 under Lesson Outline (ver_3f24a256bc984e2595d5d82e8fe6e25f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes introduction to Lessons 4 and 5 under Lesson Outline."
+        }
+      ]
+    },
+    {
+      "name": "Assigns chapters 4-6 as homework (ver_7c206547f6554a9caa170af43b0efcdc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns chapters 4-6 as homework."
+        }
+      ]
+    },
+    {
+      "name": "Includes explanation of major themes and vocabulary in lesson outline (ver_4dfb0b026c8842d98ee7080c71d0cb8c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes explanation of major themes and vocabulary in lesson outline."
+        }
+      ]
+    },
+    {
+      "name": "Lists chapter 5 activity from L4 Lesson Plan as homework (ver_b8ab948a8a3948bfaf94510c22380513)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists chapter 5 activity from L4 Lesson Plan as homework."
+        }
+      ]
+    },
+    {
+      "name": "Lists chapter 6 worksheet from L5 Lesson plan as homework (ver_a32b64fa93984688b2162c795345f2d6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists chapter 6 worksheet from L5 Lesson plan as homework."
+        }
+      ]
+    },
+    {
+      "name": "Lists lesson 4 optional quiz as homework (ver_d4bff4dcea7f4254a1150bb542b26229)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists lesson 4 optional quiz as homework."
+        }
+      ]
+    },
+    {
+      "name": "Lists lesson 4 Do Now activity as homework (ver_5524135ef0fe4256816b339265b71e18)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists lesson 4 Do Now activity as homework."
+        }
+      ]
+    },
+    {
+      "name": "Lists Lesson 5 exit ticket as homework (ver_37d1b084e6964342b2ba758bc07b2ac9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists Lesson 5 exit ticket as homework."
+        }
+      ]
+    },
+    {
+      "name": "Lists the take home guide as an accommodation (ver_a5c5f413bf8d4239a050737913fc6294)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists the take home guide as an accommodation."
+        }
+      ]
+    },
+    {
+      "name": "Keeps sentence frames as a provided accommodation (ver_878aac31a9654f1ea9639a39b4b099ad)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Keeps sentence frames as a provided accommodation."
+        }
+      ]
+    },
+    {
+      "name": "Keeps guided reading as a provided accommodation (ver_90e88e8e926743d39cf8b9f1e8624ce0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Keeps guided reading as a provided accommodation."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world305-ac-02-natural-prompt-d6169fe7"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_d6169fe745e441219465c34a9e86a517",
+    "task_name": "World305_AC_02 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_2bffbe20b8024d069c23e8ef24746f3e",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_0744176fb82c4c9eb54eb4e6ba8a2239"
+      },
+      {
+        "golden_response_id": "gold_945724827417479e9beb8059fdab6c24",
+        "golden_text_response": "Attached",
+        "golden_file_responses": "snap_0744176fb82c4c9eb54eb4e6ba8a2239"
+      }
+    ]
+  }
+}

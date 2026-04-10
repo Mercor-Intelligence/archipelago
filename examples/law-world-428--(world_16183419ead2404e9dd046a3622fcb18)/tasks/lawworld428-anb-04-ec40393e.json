@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Liverbird Development Co. has entered into version two of the DDA with the City of San Dimas, on November 1, 2025,  for a project expected to take three years to complete. The City conducted a site review on November 20, 2025. Since that date, Liverbird has not had any communications with the City. Does the City has the right to further inspections?"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the city has no right to further inspections based on the DDA (ver_57baeb6a2bed472887ae3839090418cc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the city has no right to further inspections based on the DDA."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh lawworld428-anb-04-ec40393e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_ec40393e7b874fb9849f10175f5e18a8",
+    "task_name": "LawWorld428_ANB_04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_7a5127deccf144089fb6144298c69f90",
+        "golden_text_response": "No, Liverbird should not expect any additional visits from City officials. Despite section 65865.1 requiring the City to include periodic reviews in the DDA, the City failed to to do so, and thus has no right to make said inspections pursuant to the DDA.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

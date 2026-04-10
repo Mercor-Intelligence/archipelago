@@ -26,6 +26,7 @@ from fastmcp.server.middleware.error_handling import (
     ErrorHandlingMiddleware,
     RetryMiddleware,
 )
+from mcp_middleware.injected_errors import setup_error_injection
 from mcp_schema import flatten_schema
 from middleware.logging import LoggingMiddleware
 from middleware.validation_error_sanitizer import ValidationErrorSanitizerMiddleware
@@ -38,6 +39,9 @@ mcp.add_middleware(ErrorHandlingMiddleware(include_traceback=True))
 mcp.add_middleware(RetryMiddleware())
 mcp.add_middleware(LoggingMiddleware())
 mcp.add_middleware(ValidationErrorSanitizerMiddleware())
+
+# Register error injection middleware (no-op if no config file present)
+setup_error_injection(mcp)
 
 # Mutually exclusive: USE_INDIVIDUAL_TOOLS gets individual tools, otherwise meta-tools
 if os.getenv("USE_INDIVIDUAL_TOOLS", "").lower() in ("true", "1", "yes"):
@@ -65,6 +69,8 @@ async def _flatten_tool_schemas():
     for tool in (await mcp.get_tools()).values():
         if getattr(tool, "parameters", None):
             tool.parameters = flatten_schema(tool.parameters)
+        if getattr(tool, "output_schema", None):
+            tool.output_schema = flatten_schema(tool.output_schema)
 
 
 _flatten_tool_schemas_task: asyncio.Task[None] | None = None

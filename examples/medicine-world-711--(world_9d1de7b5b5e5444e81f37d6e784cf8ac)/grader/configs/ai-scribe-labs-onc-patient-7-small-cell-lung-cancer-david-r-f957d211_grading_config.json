@@ -1,0 +1,363 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_f259337cb67949c1b9d4e3cc6f28b19f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f957d21126f84d41a5ba174427659566",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient was originally diagnosed with non-small cell lung cancer. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This can be found in the OpenEMR patient chart (Onc Patient 7), tab Clinical Notes, row 33, column E, which says, \"stage I non-small cell lung cancer.\" \n\nThis is also supported by the script. \"I\u2019m sorry the lung cancer you developed several years ago has returned.\" ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 7 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_06ff8d0e89bf42ceac55fc845a7bb880"
+          }
+        ]
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9375c7d2c9484defb79ef98ff3a64045",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f957d21126f84d41a5ba174427659566",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has now been diagnosed with small-cell lung cancer. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This requires synthesizing information from the attached script. \"When compared to the original diagnosis, it has undergone a transformation. We believe this was a response to the EGFR therapy you received during your initial treatment several years ago.\" \n\nNSCLC can transform into SCLC in some cases as a resistance mechanism. \"The histological transformation of NSCLC into SCLC has been reported as an important mechanism of EGFR-TKI-resistance.\" https://pmc.ncbi.nlm.nih.gov/articles/PMC10646212/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 7 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_06ff8d0e89bf42ceac55fc845a7bb880"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7a2c7eb4da744880802a8f23844700b3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f957d21126f84d41a5ba174427659566",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's cancer is metastatic.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This can be found in the attached patient script. \"You were diagnosed in the past with lung cancer in the right upper lobe. Now, that same cancer has spread to some lymph nodes and a small spot in the opposite lung. We believe there might be a few small spots in your abdomen as well.\" This indicates metastasis.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 7 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_06ff8d0e89bf42ceac55fc845a7bb880"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fdea1cfb2b324cd2ae3c2dade3b963a4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f957d21126f84d41a5ba174427659566",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has extensive-stage small-cell lung cancer.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Based on the degree of metastasis indicated in the script, this patient's disease is considered extensive stage. \n\n\"Extensive stage. This describes cancers that have spread widely throughout the lung, to the other lung, or to other parts of the body.\" https://www.cancer.org/cancer/types/lung-cancer/detection-diagnosis-staging/staging-sclc.html",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_41784a6fb541427bb5e8c5abff921bef",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f957d21126f84d41a5ba174427659566",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has received systemic therapy. ",
+        "autogen_source": null,
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This can be found in the attached script. \"We gave you platinum-based chemotherapy with etoposide and a PD-L1 inhibitor.\" \n\nChemotherapy qualifies as systemic therapy. \"Chemotherapy is usually systemic.\" \nhttps://my.clevelandclinic.org/health/treatments/16859-chemotherapy",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 7 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_06ff8d0e89bf42ceac55fc845a7bb880"
+          }
+        ]
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_df58f9e7299f4b318b546a9441e3bd8a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f957d21126f84d41a5ba174427659566",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's cancer lacks any targetable mutations. ",
+        "autogen_source": null,
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This can be found in the attached lab results, which show all negative results on genetic testing.\n\n\"ALK Rearrangement Negative Negative\nROS1 Rearrangement Negative Negative\nRET fusion Negative Negative\nEGFR Exon 20 Insertion Negative Negative\nNTRK fusion Negative Negative\nMET skipping mutation Negative Negative\nMET amplification Negative Negative\nBRAF V600E Negative Negative\nHER2 Negative Negative\nKRAS G12C Negative Negative\nCD74NRG1 Negative Negative\nEGFR Exon 19 del Negative Negative\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 7 Labs - Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_06ff8d0e89bf42ceac55fc845a7bb880"
+          }
+        ]
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_eb168dbeb28b4bd583f06030f3f9828e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f957d21126f84d41a5ba174427659566",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has preserved organ function.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is stated in the attached script and supported by the patient's lab results showing a normal set of labs. This indicates organ function is still normal.\n\n\"Fortunately, your organs are still functioning well, and we do not see any signs of interstitial lung disease just yet.\" ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 7 Labs - Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_06ff8d0e89bf42ceac55fc845a7bb880"
+          },
+          {
+            "name": "Onc Patient 7 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_06ff8d0e89bf42ceac55fc845a7bb880"
+          }
+        ]
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4c09c5a8f6ce479d9c5de75141b1a22e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f957d21126f84d41a5ba174427659566",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the most appropriate next treatment option is to start tarlatamab.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has extensive stage small cell lung cancer with disease progression after platinum-based chemotherapy, and with preserved organ function and no targetable mutations. The patient meets all indications to start tarlatamab. \n\n\"Tarlatamab is a bispecific delta-like ligand 3 (DLL3)-directed CD3 T-cell engager indicated for the treatment of adult patients with extensive stage small cell lung cancer (ES-SCLC) with disease progression on or after platinum-based chemotherapy.\" https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/761344s000lbl.pdf",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5b57ba3e3b984aa4bb61e84995ae0a34",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f957d21126f84d41a5ba174427659566",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that tarlatamab is dosed intravenously. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the route of administration of tarlatamab. \"for intravenous use.\" https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/761344s000lbl.pdf",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ff396ef1eb7042b0b8f1062ddefde9cb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f957d21126f84d41a5ba174427659566",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient should receive 1 mg of tarlatamab on day 1.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the dosing of tarlatamab. \"Day 1, Step-Up Dose, 1mg.\" https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/761344s000lbl.pdf",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5452f56fe6014b5981145bfa127d6c6d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f957d21126f84d41a5ba174427659566",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient should receive 10 mg of tarlatamab on day 8.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the dosing of tarlatamab. \"Day 8, Step-Up Dose, 10mg.\" https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/761344s000lbl.pdf",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2b61c1c5ef404243ada9909a6764a614",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f957d21126f84d41a5ba174427659566",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient should receive 10 mg of tarlatamab on day 15.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the dosing of tarlatamab. \"Day 15, Step-Up Dose, 10mg.\" https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/761344s000lbl.pdf",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e3bff385a126491e93805f996afd6848",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f957d21126f84d41a5ba174427659566",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient should receive 10 mg of tarlatamab biweekly after the third dose. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the dosing of tarlatamab. \"Cycle 2: Day 1 and 15, 10 mg.\" https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/761344s000lbl.pdf \n\nThis cycle continues for cycles 3 and 4.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_bc74fb0fcaf043228dbd0d698d511d75",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d997b23ceb4141f791d9116243a32231",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "State the total capacity of the doctors in Happy Hospital in 6 states (original 5 + Wisconsin) is 3600.00 patients (acceptable range 356 to 364)",
+        "negative_criteria": "State the total capacity of the doctors in Happy Hospital in 6 states (original 5 + Wisconsin) is any other number than 3600 patients ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Multiply 2400 (total capacity of the doctors in Happy Hospital in 5 states) by 150% (50% increase given in prompt)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5b7ed9140b83458ebcc5fa9fe652d8e1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d997b23ceb4141f791d9116243a32231",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "State that the annual room capacity in Wisconsin is 382.14 patients (acceptable range 378.32 to 385.96)",
+        "negative_criteria": "State that total room capacity in Wisconsin annually is any other number than 382.14 patients",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Open \"Ketamine_TRD_session_sample_3.xlsx\" file. Filter \"State\" column on \"Wisconsin\". Filter \"Session date\" column on dates in 2025. Calculate mean of the \"Session length in minutes\". The mean of the session length in min for Wisconsin for 2025 is 162.7900249 min (~2.71h) \nMultiply 1728 of total available unutilized number of hours per month in Wisconsin by 12 months to achieve 20736 hours annually. Then divide it by 20 sessions and by average time of each session (in hours)\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4f9b536a80b7411f9920c824e1d25625",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d997b23ceb4141f791d9116243a32231",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "State that the number of patients with TRD that we expect in Happy Hospital in 2026 in Wisconsin is 845.88 (acceptable range 837.42 to 854.34)",
+        "negative_criteria": "State that the number of patients with TRD that we expect in Happy Hospital in 2026 in Wisconsin is any other number than 845.88 \n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Calculated as 798 (the number of patients with TRD that we expect in Happy Hospital in 2025 in Wisconsin from previous step) * 1.06 (growth rate from previous step)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b4b24829c02e45448913fd3c9315f238",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d997b23ceb4141f791d9116243a32231",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "State that the number of patients with TRD that we expect in Happy Hospital in 2027 in Wisconsin is 896.63 (acceptable range 887.66 to 905.60)",
+        "negative_criteria": "State that the number of patients with TRD that we expect in Happy Hospital in 2027 in Wisconsin is a value other than 896.63",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Calculated as 845.88 (the number of patients with TRD that we expect in Happy Hospital in 2026 in Wisconsin from previous step) * 1.06 (growth rate from previous step)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3e905ec76bd64f3397609b1fad306633",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d997b23ceb4141f791d9116243a32231",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "State that the number of TRD patients that will be treated with ketamine in 2026 in Illinois is 537.60 (acceptable range 532.22 to 542.98)",
+        "negative_criteria": "State that the number of TRD patients that will be treated with ketamine in 2026 in Illinois is any other number than 537.60 \n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Takes minimum of the following 2 values for Illinois in 2026: 1,626.04 (the total remaining number of patients with TRD that we expect in Happy Hospital), 537.6 (total room capacity)\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_42e3af08c23943128a7174672e3ad4f8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d997b23ceb4141f791d9116243a32231",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "State that the number of TRD patients that will be treated with ketamine in 2027 in Illinois is 537.60 (acceptable range 532.22 to 542.98)",
+        "negative_criteria": "State that the number of TRD patients that will be treated with ketamine in 2027 in Illinois is any other number than 537.60",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Calculates that the total remaining number of patients with TRD that we expect in Happy Hospital in 2027 in Illinois is:  1,723.6024 -  537.6 =  1,186.0024 \n\nTakes minimum of the following 2 values for Illinois in 2027:  1,186.0024 (the total remaining number of patients with TRD that we expect in Happy Hospital), 537.6 (total room capacity)\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_315aa6363073458abf58403609ad87c0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d997b23ceb4141f791d9116243a32231",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the maximum number of TRD patients that can be treated with ketamine in 2026 is 2570.94 (acceptable range 254 to 260)",
+        "negative_criteria": "States that the maximum number of TRD patients that can be treated with ketamine in 2026 is any other number than 2570.94",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Sums the patients treated in 2026 from all 6 states:  537.60 +  456.96 +  295.68 +  380.16 +  518.40 +  382.14 = 2570.94\n\n\n\n\n\n\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_242125896fe4413fa3025d627c339a95",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d997b23ceb4141f791d9116243a32231",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the maximum number of TRD patients that can be treated with ketamine in 2027 is 2569.05 (acceptable range 253 to 259)",
+        "negative_criteria": "States that the maximum number of TRD patients that can be treated with ketamine in 2027 is any other number than 2569.05",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Sums the patients treated in 2027 from all 6 states:  537.60 +  456.96 +  295.68 +  378.27 +  518.40 +  382.14 = 2569.05",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

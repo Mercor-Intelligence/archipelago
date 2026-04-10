@@ -1,0 +1,15 @@
+id,name,parent_id,archived,created_at,updated_at
+1,Executive,,false,2023-08-25T10:00:00Z,2026-01-18T10:00:00Z
+2,Clinical Operations,,false,2023-08-28T10:00:00Z,2026-02-04T10:00:00Z
+3,Hospital Operations,2,false,2023-08-31T10:00:00Z,2026-02-07T10:00:00Z
+4,Outpatient & Clinics,2,false,2023-09-03T10:00:00Z,2026-01-15T10:00:00Z
+5,Specialty Care,2,false,2023-09-06T10:00:00Z,2026-01-30T10:00:00Z
+6,Nursing,3,false,2023-09-09T10:00:00Z,2026-01-31T10:00:00Z
+7,Physicians,3,false,2023-09-12T10:00:00Z,2026-01-31T10:00:00Z
+8,Revenue Cycle,,false,2023-09-15T10:00:00Z,2026-02-03T10:00:00Z
+9,IT & Digital,,false,2023-09-18T10:00:00Z,2026-01-15T10:00:00Z
+10,People & Culture,,false,2023-09-21T10:00:00Z,2026-02-04T10:00:00Z
+11,Finance,,false,2023-09-24T10:00:00Z,2026-01-17T10:00:00Z
+12,Compliance & Risk,,false,2023-09-27T10:00:00Z,2026-01-15T10:00:00Z
+13,Facilities,3,false,2023-09-30T10:00:00Z,2026-01-10T10:00:00Z
+14,Supply Chain,3,false,2023-10-03T10:00:00Z,2026-01-21T10:00:00Z

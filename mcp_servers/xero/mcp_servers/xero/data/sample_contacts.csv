@@ -1,0 +1,5 @@
+ContactID,Name,EmailAddress,ContactNumber,DefaultCurrency,ContactStatus,Addresses.0.AddressType,Addresses.0.City,Addresses.1.AddressType,Addresses.1.City,Phones.0.PhoneType,Phones.0.PhoneNumber,Phones.1.PhoneType,Phones.1.PhoneNumber,IsSupplier,IsCustomer
+csv-001,Acme Corporation,contact@acme.com,C-ACME,USD,ACTIVE,STREET,Los Angeles,POBOX,Los Angeles,DEFAULT,555-0001,DDI,555-0002,false,true
+csv-002,Beta Industries,info@beta.com,C-BETA,USD,ACTIVE,STREET,Chicago,POBOX,Chicago,DEFAULT,555-0101,DDI,555-0102,true,true
+csv-003,Gamma Services,hello@gamma.com,C-GAMMA,USD,ACTIVE,STREET,Seattle,,,,DEFAULT,555-0201,,,false,true
+

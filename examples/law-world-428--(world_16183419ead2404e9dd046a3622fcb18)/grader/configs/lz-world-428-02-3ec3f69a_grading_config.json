@@ -1,0 +1,154 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_69d57df6c6b54d30afae998cfd9e42f8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3ec3f69a4d6c46a8bd17a3033793ecc5",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that the release provisions in the DDA draft are sufficient to release known and unknown claims under CA law",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The Prompt calls for a determination of whether the release meets the requirements of CA law to release all known and unknown claims.  This waiver meets the requirements because it specifically cites the waiver of Section 1542",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_520070b4539b4f6c9f289c23d25ec98e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3ec3f69a4d6c46a8bd17a3033793ecc5",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that California Civil Code \u00a7 1542 prohibits general release provisions from releasing unknown claims",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "See Legislation at \"CA CC 1541 et seq.pdf\":\n\nA general release does not extend to claims that the creditor or releasing party does not know or suspect to\nexist in his or her favor at the time of executing the release and that, if known by him or her, would have materially\naffected his or her settlement with the debtor or released party.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1d080ead90144fe689cba330dea36eee",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3ec3f69a4d6c46a8bd17a3033793ecc5",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that parties may contractually waive the rights conferred by California Civil Code \u00a7 1542 if they knowingly assume the risks of such waiver",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Page 6 of Winet v. Price (1992).pdf:\n\nThe parties reiterated that (1) there was a risk they might suffer losses unknown or unanticipated at the time of the release; (2) they were represented by counsel, who advised them of the rights conferred by section 1542; and (3) with knowledge of the risks, and upon advice of counsel, the parties assumed the risks of unknown or unanticipated claims, and agreed \"... that this Mutual General Release Shall Apply to All Unknown or Unanticipated Results of the Transactions and Occurrences Described Above, as Well as Those Known and Anticipated. ...\"\n\nPage 11: \n\nWe deal in this case with a release that is about as complete, explicit and unambiguous as a general release can be. Our decision to uphold the release and enforce it in accord with its literal terms is in harmony, we believe, with a beneficial principle of contract law: that general releases can be so constructed as to be completely enforceable.\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fe8270f247ca40edaeeee5bd94756b3b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3ec3f69a4d6c46a8bd17a3033793ecc5",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the language of the release must clearly and expressly waive the rights conferred by California Civil Code \u00a7 1542",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the legal standard. The language must be \"explicit\" and \"unambiguous\" / \"clearly and expressly\" - both components must be true.\n\nPage 11 of Winet v. Price (1992).pdf: \nWe deal in this case with a release that is about as complete, explicit and unambiguous as a general release can be. Our decision to uphold the release and enforce it in accord with its literal terms is in harmony, we believe, with a beneficial principle of contract law: that general releases can be so constructed as to be completely enforceable.\n\nSee also Page 9 of Winet v. Price (1992).pdf: \n\nMost importantly, Casey is inapplicable because its holding rested principally upon the court's conclusion that the purpose behind section 1542 was to prevent inadvertent waivers of unknown claims by a \"... mere recital in the release to that effect ...\" (Casey v. Proctor, supra, 59 Cal.2d at p. 109, italics added), but that such waivers would be binding upon a showing the parties consciously understood and agreed such was the effect of their release. fn. 7 (59 Cal.2d at pp. 109-110.) Here, unlike Casey, Price does not merely seize upon an oblique reference to \"all known and unknown\" claims [4 Cal. App. 4th 1171] to show the parties intended the release to be comprehensive in derogation of section 1542.\n\nThe release shows Winet consciously understood the benefits conferred by section 1542 and the risks assumed by the release, and, after receiving counsel's advice, consciously waived such benefits and entered the agreement \"... voluntarily, with full knowledge of its significance, and with the express intention of effecting the legal consequences provided by [section 1541], i.e., the extinguishment of all obligations.\" In short, the concerns expressed in Casey are simply absent here.\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7097c7d6b90c4876808260a4f1f3d9b0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3ec3f69a4d6c46a8bd17a3033793ecc5",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the release provision in the DDA Draft clearly and expressly waives the rights conferred by California Civil Code \u00a7 1542",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "It expressly lists the waiver at page 6 of the redline document (\"Redline City Comments DDA Draft\"), which states:\n\nIn connection therewith, Developer and each of the entities constituting Developer, expressly agree to waive any and all rights which said party may have under Section 1542 of the California Civil Code which provides as follows:\n\u201cA general release does not extend to claims that the creditor or releasing party does not know or suspect to exist in his or her favor at the time of executing the release and that, if known by him or her, would have materially affected his or her settlement with the debtor or released party.\u201d \n\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_30d11bb243fb4adab2e2da7623e69121",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3ec3f69a4d6c46a8bd17a3033793ecc5",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that general release provisions are generally permissible under California law",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is based on the general freedom of contracting principles. See for e.g. Winet v. Price (1992).pdf at page 2:\n\nWe conclude it is possible for a general release to effectively accomplish its primary\npurpose: to enable parties to end their relationship and permanently terminate their\nmutual obligations. On the record before us, we conclude the present release accomplishes\nthat goal, and we therefore affirm",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

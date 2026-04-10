@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Identify the SingleSignal employees (bambooHR) whose managers were terminated in 2025 (we'll refer to them as the impacted employees). We'll need to assign each of these employees new managers in the Bamboo HRIS database. The criteria for choosing the new reporting manager for these employees are as follows:\n1) Same division as the employee\n2) Already a people manager (i.e. has other direct reports)\n3) Same organization layer as the employee's previous manager\n4) Least time zone difference to the employee (regardless of whether the employee is remote or office-based)\n\nIf there is more than one potential manager who meets all 4 criteria for an impacted employee, select the manager with the longest tenure.\n\nOutput as a message in the console the first and last name of each impacted employee and their new reporting managers based on these decision criteria. Then execute these updates in BambooHR."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that one of the impacted employees whose manager was terminated in 2025... (ver_2dd6a92afd5d455eae5fe87f45eb9b35)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the impacted employees whose manager was terminated in 2025 is Lucie Hamissou."
+        }
+      ]
+    },
+    {
+      "name": "States that the new reporting manager of Lucie Hamissou is Kyi Tokaiono. (ver_6f3c69bb6c4141c988cb4e1ca5c90198)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the new reporting manager of Lucie Hamissou is Kyi Tokaiono."
+        }
+      ]
+    },
+    {
+      "name": "States that one of the impacted employees whose manager was terminated in 2025... (ver_92d2f34ac34148ab8bed8c831f139e56)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the impacted employees whose manager was terminated in 2025 is Rongo Darsières."
+        }
+      ]
+    },
+    {
+      "name": "States that the new reporting manager of Rongo Darsières is Adama Purnomo. (ver_384aa0a6fe754b0391b4f80975920981)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the new reporting manager of Rongo Darsières is Adama Purnomo."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world601-bh-07-59007a68"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_59007a689fb74e108bcf3d5e15d6a46a",
+    "task_name": "World601_BH_07",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c946374733c54cd286ff27b48eccbad2",
+        "golden_text_response": "Impacted employees are Lucie Hamissou (ID 154) and Rongo Darsières (ID 180). New reporting manager of Lucie Hamissou is Kyi Tokaiono (ID 178), and new reporting manager of Rongo Darsières is Adama Purnomo (ID 214).",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

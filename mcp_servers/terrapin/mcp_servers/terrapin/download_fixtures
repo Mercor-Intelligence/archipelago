@@ -1,0 +1,1021 @@
+#!/usr/bin/env python3
+"""Download fixture data from Terrapin API into local DuckDB.
+
+This script fetches bond and municipal bond data from the Terrapin Finance API
+and stores it in a local DuckDB database for offline mode usage.
+
+Usage:
+    python download_fixtures.py --all
+    python download_fixtures.py --bonds --muni
+    python download_fixtures.py --pricing-days 30
+"""
+
+import json
+import random
+import sys
+import time
+from datetime import date, datetime, timedelta
+from pathlib import Path
+
+from loguru import logger
+
+logger.remove()
+logger.add(sys.stderr, format="ERROR: {message}", level="ERROR")
+
+sys.path.insert(0, str(Path(__file__).parent))
+
+import click
+import httpx
+
+from utils.db import get_connection, reset_database
+
+# Map country names to ISO 3166-1 alpha-2 codes
+COUNTRY_CODE_MAP = {
+    "United States": "US",
+    "United States of America": "US",
+    "USA": "US",
+    "Germany": "DE",
+    "United Kingdom": "GB",
+    "Great Britain": "GB",
+    "France": "FR",
+    "Japan": "JP",
+    "Canada": "CA",
+    "Australia": "AU",
+    "Italy": "IT",
+    "Spain": "ES",
+    "Netherlands": "NL",
+    "Switzerland": "CH",
+    "Sweden": "SE",
+    "Norway": "NO",
+    "Denmark": "DK",
+    "Austria": "AT",
+    "Belgium": "BE",
+    "Finland": "FI",
+    "Ireland": "IE",
+    "Portugal": "PT",
+    "Greece": "GR",
+    "Poland": "PL",
+    "Czech Republic": "CZ",
+    "Hungary": "HU",
+    "Turkey": "TR",
+    "Mexico": "MX",
+    "Brazil": "BR",
+    "Argentina": "AR",
+    "Chile": "CL",
+    "Colombia": "CO",
+    "Peru": "PE",
+    "South Africa": "ZA",
+    "India": "IN",
+    "China": "CN",
+    "South Korea": "KR",
+    "Korea": "KR",
+    "Taiwan": "TW",
+    "Singapore": "SG",
+    "Hong Kong": "HK",
+    "Malaysia": "MY",
+    "Thailand": "TH",
+    "Indonesia": "ID",
+    "Philippines": "PH",
+    "Vietnam": "VN",
+    "New Zealand": "NZ",
+    "Israel": "IL",
+    "Saudi Arabia": "SA",
+    "United Arab Emirates": "AE",
+    "UAE": "AE",
+    "Qatar": "QA",
+    "Kuwait": "KW",
+    "Russia": "RU",
+    "Ukraine": "UA",
+    "Luxembourg": "LU",
+}
+
+
+def _normalize_country_code(country: str) -> str:
+    """Convert country name to 2-letter ISO code."""
+    if len(country) == 2 and country.isupper():
+        return country
+    return COUNTRY_CODE_MAP.get(country, country)
+
+
+def get_api_client(api_key: str, base_url: str) -> httpx.Client:
+    """Create an authenticated HTTP client."""
+    return httpx.Client(
+        base_url=base_url,
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+        },
+        timeout=60.0,
+    )
+
+
+def _request_with_retry(
+    client: httpx.Client,
+    method: str,
+    endpoint: str,
+    max_retries: int = 5,
+    base_delay: float = 1.0,
+    max_delay: float = 60.0,
+    **kwargs,
+) -> httpx.Response:
+    """Make HTTP request with exponential backoff on rate limits.
+
+    Args:
+        client: HTTP client
+        method: HTTP method (get, post, etc.)
+        endpoint: API endpoint
+        max_retries: Maximum number of retry attempts
+        base_delay: Initial delay in seconds
+        max_delay: Maximum delay in seconds
+        **kwargs: Additional arguments passed to client request
+
+    Returns:
+        HTTP response
+
+    Raises:
+        httpx.HTTPStatusError: If request fails after all retries
+    """
+    last_exception = None
+
+    for attempt in range(max_retries + 1):
+        try:
+            response = getattr(client, method)(endpoint, **kwargs)
+
+            if response.status_code == 429:
+                if attempt == max_retries:
+                    response.raise_for_status()
+
+                # Use retry-after header if available
+                retry_after = response.headers.get("retry-after")
+                if retry_after:
+                    delay = float(retry_after)
+                else:
+                    # Exponential backoff with jitter
+                    delay = min(base_delay * (2**attempt) + random.uniform(0, 1), max_delay)
+
+                logger.warning(f"Rate limited, waiting {delay:.1f}s (attempt {attempt + 1}/{max_retries + 1})")
+                time.sleep(delay)
+                continue
+
+            response.raise_for_status()
+            return response
+
+        except httpx.HTTPStatusError as e:
+            if e.response.status_code != 429:
+                raise
+            last_exception = e
+
+    if last_exception:
+        raise last_exception
+    raise httpx.HTTPStatusError("Max retries exceeded", request=None, response=None)
+
+
+def _extract_list(data: dict | list, key: str) -> list[dict]:
+    """Extract list from API response, handling various response formats."""
+    logger.debug(f"_extract_list input: {type(data)}, key={key}")
+    logger.debug(f"_extract_list data: {data}")
+
+    if isinstance(data, list):
+        return data
+
+    if not isinstance(data, dict):
+        return []
+
+    extracted = data.get(key)
+    if extracted is None:
+        extracted = data.get("data")
+    if extracted is None:
+        return []
+    logger.debug(f"_extract_list extracted: {type(extracted)}")
+
+    if isinstance(extracted, list):
+        return extracted
+
+    if isinstance(extracted, dict):
+        return list(extracted.values())
+
+    return []
+
+
+def _extract_response(data: dict) -> tuple[list[dict], int | None]:
+    """Extract data list and total count from API response.
+
+    Returns:
+        Tuple of (data list, total count or None if not present)
+    """
+    if not isinstance(data, dict):
+        return [], None
+
+    items = data.get("data", [])
+    if not isinstance(items, list):
+        items = []
+
+    total = data.get("total")
+    if total is not None:
+        try:
+            total = int(total)
+        except (ValueError, TypeError):
+            total = None
+
+    return items, total
+
+
+def _get_date_range(days: int) -> tuple[str, str]:
+    """Get start and end date strings for a given number of days back."""
+    end_date = datetime.now().strftime("%Y-%m-%d")
+    start_date = (datetime.now() - timedelta(days=days)).strftime("%Y-%m-%d")
+    return start_date, end_date
+
+
+def download_bonds(
+    client: httpx.Client, limit: int | None = None, batch_size: int = 10000
+) -> list[dict]:
+    """Download bond reference data with pagination.
+
+    Uses incremental JSON calls with limit/offset pagination as recommended
+    by Terrapin Finance API (batch_size=10000 for network resilience).
+
+    Args:
+        client: HTTP client
+        limit: Maximum bonds to download, or None for all available
+        batch_size: Number of bonds per API request (default 10000)
+    """
+    all_bonds = []
+    offset = 0
+    total = None
+
+    logger.info(f"Downloading bonds (limit={limit or 'all'})...")
+
+    while True:
+        try:
+            # Calculate batch limit
+            if limit is not None:
+                remaining = limit - len(all_bonds)
+                if remaining <= 0:
+                    break
+                current_batch = min(batch_size, remaining)
+            else:
+                current_batch = batch_size
+
+            response = _request_with_retry(
+                client, "post", "/bond_search", json={"limit": current_batch, "offset": offset}
+            )
+
+            bonds, total = _extract_response(response.json())
+
+            if not bonds:
+                break
+
+            all_bonds.extend(bonds)
+            offset += len(bonds)
+
+            if total is not None:
+                logger.info(f"Downloaded {len(all_bonds)}/{total} bonds")
+            else:
+                logger.info(f"Downloaded {len(all_bonds)} bonds")
+
+            # Stop if we got fewer than requested (no more data)
+            if len(bonds) < current_batch:
+                break
+
+            # Stop if we've reached total
+            if total is not None and offset >= total:
+                break
+
+        except httpx.HTTPStatusError as e:
+            logger.error(f"HTTP error downloading bonds: {e.response.status_code}")
+            break
+        except Exception as e:
+            logger.error(f"Error downloading bonds: {e}")
+            break
+
+    logger.info(f"Downloaded {len(all_bonds)} bonds total")
+    return all_bonds
+
+
+def download_muni_bonds(
+    client: httpx.Client, limit: int | None = None, batch_size: int = 10000
+) -> list[dict]:
+    """Download municipal bond reference data with pagination.
+
+    Uses incremental JSON calls with limit/offset pagination as recommended
+    by Terrapin Finance API (batch_size=10000 for network resilience).
+
+    Args:
+        client: HTTP client
+        limit: Maximum bonds to download, or None for all available
+        batch_size: Number of bonds per API request (default 10000)
+    """
+    all_bonds = []
+    offset = 0
+    total = None
+
+    logger.info(f"Downloading municipal bonds (limit={limit or 'all'})...")
+
+    while True:
+        try:
+            # Calculate batch limit
+            if limit is not None:
+                remaining = limit - len(all_bonds)
+                if remaining <= 0:
+                    break
+                current_batch = min(batch_size, remaining)
+            else:
+                current_batch = batch_size
+
+            response = _request_with_retry(
+                client, "post", "/muni_bond_search", json={"limit": current_batch, "offset": offset}
+            )
+
+            bonds, total = _extract_response(response.json())
+
+            if not bonds:
+                break
+
+            all_bonds.extend(bonds)
+            offset += len(bonds)
+
+            if total is not None:
+                logger.info(f"Downloaded {len(all_bonds)}/{total} municipal bonds")
+            else:
+                logger.info(f"Downloaded {len(all_bonds)} municipal bonds")
+
+            # Stop if we got fewer than requested (no more data)
+            if len(bonds) < current_batch:
+                break
+
+            # Stop if we've reached total
+            if total is not None and offset >= total:
+                break
+
+        except httpx.HTTPStatusError as e:
+            logger.error(f"HTTP error downloading muni bonds: {e.response.status_code}")
+            break
+        except Exception as e:
+            logger.error(f"Error downloading muni bonds: {e}")
+            break
+
+    logger.info(f"Downloaded {len(all_bonds)} municipal bonds total")
+    return all_bonds
+
+
+def _download_in_batches(
+    client: httpx.Client,
+    endpoint: str,
+    isins: list[str],
+    extra_params: dict,
+    result_key: str,
+    batch_size: int = 50,
+) -> list[dict]:
+    """Download data for ISINs in batches to avoid request limits."""
+    all_results = []
+
+    for i in range(0, len(isins), batch_size):
+        batch = isins[i : i + batch_size]
+        try:
+            payload = {"isins": batch, **extra_params}
+            response = _request_with_retry(client, "post", endpoint, json=payload)
+            results = _extract_list(response.json(), result_key)
+            all_results.extend(results)
+
+        except httpx.HTTPStatusError as e:
+            logger.warning(f"HTTP error for batch {i // batch_size}: {e.response.status_code}")
+        except Exception as e:
+            logger.warning(f"Error for batch {i // batch_size}: {e}")
+
+    return all_results
+
+
+def download_bond_pricing(
+    client: httpx.Client, isins: list[str], days: int = 30
+) -> list[dict]:
+    """Download bond pricing history."""
+    if not isins:
+        return []
+
+    logger.info(f"Downloading pricing for {len(isins)} bonds, last {days} days...")
+    start_date, end_date = _get_date_range(days)
+
+    pricing = _download_in_batches(
+        client,
+        "/bond_pricing_history",
+        isins,
+        {"start_date": start_date, "end_date": end_date},
+        "pricing",
+    )
+
+    logger.info(f"Downloaded {len(pricing)} pricing records")
+    return pricing
+
+
+def download_muni_pricing(
+    client: httpx.Client, isins: list[str], days: int = 30
+) -> list[dict]:
+    """Download municipal bond pricing history."""
+    if not isins:
+        return []
+
+    logger.info(f"Downloading muni pricing for {len(isins)} bonds, last {days} days...")
+    start_date, end_date = _get_date_range(days)
+
+    pricing = _download_in_batches(
+        client,
+        "/muni_pricing_history",
+        isins,
+        {"start_date": start_date, "end_date": end_date},
+        "pricing",
+    )
+
+    logger.info(f"Downloaded {len(pricing)} muni pricing records")
+    return pricing
+
+
+def download_muni_reference(client: httpx.Client, isins: list[str]) -> list[dict]:
+    """Download municipal bond reference data (call info, etc.)."""
+    if not isins:
+        return []
+
+    logger.info(f"Downloading muni reference for {len(isins)} bonds...")
+
+    reference = _download_in_batches(
+        client, "/muni_reference_data", isins, {}, "reference", batch_size=100
+    )
+
+    logger.info(f"Downloaded {len(reference)} muni reference records")
+    return reference
+
+
+def download_bond_reference(client: httpx.Client, isins: list[str]) -> list[dict]:
+    """Download bond reference data."""
+    if not isins:
+        return []
+
+    logger.info(f"Downloading bond reference for {len(isins)} bonds...")
+
+    reference = _download_in_batches(
+        client, "/bond_reference", isins, {}, "reference", batch_size=100
+    )
+
+    logger.info(f"Downloaded {len(reference)} bond reference records")
+    return reference
+
+
+def download_bond_cashflows(client: httpx.Client, isins: list[str]) -> list[dict]:
+    """Download bond cashflow schedules."""
+    if not isins:
+        return []
+
+    logger.info(f"Downloading cashflows for {len(isins)} bonds...")
+
+    cashflows = _download_in_batches(
+        client, "/bond_cashflows", isins, {}, "cashflows", batch_size=100
+    )
+
+    logger.info(f"Downloaded {len(cashflows)} bond cashflow records")
+    return cashflows
+
+
+def download_muni_cashflows(client: httpx.Client, isins: list[str]) -> list[dict]:
+    """Download municipal bond cashflow schedules."""
+    if not isins:
+        return []
+
+    logger.info(f"Downloading cashflows for {len(isins)} muni bonds...")
+
+    cashflows = _download_in_batches(
+        client, "/muni_cashflows", isins, {}, "cashflows", batch_size=100
+    )
+
+    logger.info(f"Downloaded {len(cashflows)} muni cashflow records")
+    return cashflows
+
+
+def download_inflation_factors(
+    client: httpx.Client, countries: list[str], days: int = 365
+) -> list[dict]:
+    """Download inflation factors for specified countries."""
+    if not countries:
+        return []
+
+    logger.info(f"Downloading inflation factors for {len(countries)} countries...")
+    start_date, end_date = _get_date_range(days)
+
+    all_factors = []
+    for country in countries:
+        try:
+            response = _request_with_retry(
+                client,
+                "post",
+                "/inflation_factors",
+                json={"country": country, "start_date": start_date, "end_date": end_date},
+            )
+            factors = _extract_list(response.json(), "factors")
+            all_factors.extend(factors)
+        except httpx.HTTPStatusError as e:
+            logger.warning(f"HTTP error for {country}: {e.response.status_code}")
+        except Exception as e:
+            logger.warning(f"Error for {country}: {e}")
+
+    logger.info(f"Downloaded {len(all_factors)} inflation factor records")
+    return all_factors
+
+
+def insert_bonds(conn, bonds: list[dict]) -> int:
+    """Insert bonds into DuckDB."""
+    for bond in bonds:
+        try:
+            conn.execute(
+                """
+                INSERT OR REPLACE INTO bonds
+                (isin, issuer_name, ticker, coupon, coupon_frequency, interest_type,
+                 maturity_date, issue_date, currency, country, issue_rating,
+                 issue_rating_group, issuer_rating, asset_class, sector)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                [
+                    bond.get("isin"),
+                    bond.get("issuer_name"),
+                    bond.get("ticker"),
+                    bond.get("coupon"),
+                    bond.get("coupon_frequency"),
+                    bond.get("interest_type"),
+                    bond.get("maturity_date"),
+                    bond.get("issue_date"),
+                    bond.get("currency"),
+                    bond.get("country"),
+                    bond.get("issue_rating"),
+                    bond.get("issue_rating_group"),
+                    bond.get("issuer_rating"),
+                    bond.get("asset_class"),
+                    bond.get("sector"),
+                ],
+            )
+        except Exception as e:
+            logger.error(f"Failed to insert bond: {e}")
+            sys.exit(1)
+
+    return len(bonds)
+
+
+def insert_bond_pricing(conn, pricing: list[dict]) -> int:
+    """Insert bond pricing into DuckDB."""
+    for record in pricing:
+        try:
+            conn.execute(
+                """
+                INSERT OR REPLACE INTO bond_pricing
+                (isin, pricing_date, price, yield_to_maturity, duration,
+                 modified_duration, convexity, estimated_volume)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                [
+                    record.get("isin"),
+                    record.get("pricing_date"),
+                    record.get("price"),
+                    record.get("yield_to_maturity"),
+                    record.get("duration"),
+                    record.get("modified_duration"),
+                    record.get("convexity"),
+                    record.get("estimated_volume"),
+                ],
+            )
+        except Exception as e:
+            logger.error(f"Failed to insert bond pricing: {e}")
+            sys.exit(1)
+
+    return len(pricing)
+
+
+def insert_muni_bonds(conn, bonds: list[dict]) -> int:
+    """Insert municipal bonds into DuckDB."""
+    for bond in bonds:
+        try:
+            conn.execute(
+                """
+                INSERT OR REPLACE INTO muni_bonds
+                (isin, issuer_name, coupon, maturity_date, state, sector,
+                 source_of_repayment, is_insured)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                [
+                    bond.get("isin"),
+                    bond.get("issuer_name"),
+                    bond.get("coupon"),
+                    bond.get("maturity_date"),
+                    bond.get("state"),
+                    bond.get("sector"),
+                    bond.get("source_of_repayment"),
+                    bond.get("is_insured"),
+                ],
+            )
+        except Exception as e:
+            logger.error(f"Failed to insert muni bond: {e}")
+            sys.exit(1)
+
+    return len(bonds)
+
+
+def insert_muni_reference(conn, reference: list[dict]) -> int:
+    """Insert municipal bond reference data into DuckDB."""
+    for record in reference:
+        try:
+            conn.execute(
+                """
+                INSERT OR REPLACE INTO muni_reference
+                (isin, issuer_name, coupon, coupon_type, coupon_frequency,
+                 maturity_date, issue_date, dated_date, first_coupon_date,
+                 state, sector, purpose, source_of_repayment, is_insured,
+                 insurer, credit_enhancement, tax_status, callable, call_date,
+                 call_price, underwriters)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                [
+                    record.get("isin"),
+                    record.get("issuer_name"),
+                    record.get("coupon"),
+                    record.get("coupon_type"),
+                    record.get("coupon_frequency"),
+                    record.get("maturity_date"),
+                    record.get("issue_date"),
+                    record.get("dated_date"),
+                    record.get("first_coupon_date"),
+                    record.get("state"),
+                    record.get("sector"),
+                    record.get("purpose"),
+                    record.get("source_of_repayment"),
+                    record.get("is_insured"),
+                    record.get("insurer"),
+                    record.get("credit_enhancement"),
+                    record.get("tax_status"),
+                    record.get("callable"),
+                    record.get("call_date"),
+                    record.get("call_price"),
+                    record.get("underwriters"),
+                ],
+            )
+        except Exception as e:
+            logger.error(f"Failed to insert muni reference: {e}")
+            sys.exit(1)
+
+    return len(reference)
+
+
+def insert_muni_pricing(conn, pricing: list[dict]) -> int:
+    """Insert municipal bond pricing into DuckDB."""
+    for record in pricing:
+        try:
+            conn.execute(
+                """
+                INSERT OR REPLACE INTO muni_pricing
+                (isin, trade_date, price, yield_to_maturity, yield_to_call,
+                 trade_amount, trade_type, settlement_date)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                [
+                    record.get("isin"),
+                    record.get("trade_date"),
+                    record.get("price"),
+                    record.get("yield_to_maturity"),
+                    record.get("yield_to_call"),
+                    record.get("trade_amount"),
+                    record.get("trade_type"),
+                    record.get("settlement_date"),
+                ],
+            )
+        except Exception as e:
+            logger.error(f"Failed to insert muni pricing: {e}")
+            sys.exit(1)
+
+    return len(pricing)
+
+
+def insert_bond_reference(conn, reference: list[dict]) -> int:
+    """Insert bond reference data into DuckDB."""
+    for record in reference:
+        try:
+            conn.execute(
+                """
+                INSERT OR REPLACE INTO bond_reference
+                (isin, issuer_name, ticker, coupon, coupon_frequency, interest_type,
+                 maturity_date, issue_date, currency, country, issue_rating,
+                 issue_rating_group, issuer_rating, asset_class, sector,
+                 issuer_lei, issuer_country)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                [
+                    record.get("isin"),
+                    record.get("issuer_name"),
+                    record.get("ticker"),
+                    record.get("coupon"),
+                    record.get("coupon_frequency"),
+                    record.get("interest_type"),
+                    record.get("maturity_date"),
+                    record.get("issue_date"),
+                    record.get("currency"),
+                    record.get("country"),
+                    record.get("issue_rating"),
+                    record.get("issue_rating_group"),
+                    record.get("issuer_rating"),
+                    record.get("asset_class"),
+                    record.get("sector"),
+                    record.get("issuer_lei"),
+                    record.get("issuer_country"),
+                ],
+            )
+        except Exception as e:
+            logger.error(f"Failed to insert bond reference: {e}")
+            sys.exit(1)
+
+    return len(reference)
+
+
+def insert_bond_cashflows(conn, cashflows: list[dict]) -> int:
+    """Insert bond cashflows into DuckDB."""
+    for record in cashflows:
+        try:
+            conn.execute(
+                """
+                INSERT OR REPLACE INTO bond_cashflows
+                (isin, payment_date, payment_amount, payment_type)
+                VALUES (?, ?, ?, ?)
+                """,
+                [
+                    record.get("isin"),
+                    record.get("payment_date"),
+                    record.get("payment_amount"),
+                    record.get("payment_type"),
+                ],
+            )
+        except Exception as e:
+            logger.error(f"Failed to insert bond cashflow: {e}")
+            sys.exit(1)
+
+    return len(cashflows)
+
+
+def insert_muni_cashflows(conn, cashflows: list[dict]) -> int:
+    """Insert municipal bond cashflows into DuckDB."""
+    for record in cashflows:
+        try:
+            conn.execute(
+                """
+                INSERT OR REPLACE INTO muni_cashflows
+                (isin, payment_date, payment_amount, payment_type)
+                VALUES (?, ?, ?, ?)
+                """,
+                [
+                    record.get("isin"),
+                    record.get("payment_date"),
+                    record.get("payment_amount"),
+                    record.get("payment_type"),
+                ],
+            )
+        except Exception as e:
+            logger.error(f"Failed to insert muni cashflow: {e}")
+            sys.exit(1)
+
+    return len(cashflows)
+
+
+def insert_inflation_factors(conn, factors: list[dict]) -> int:
+    """Insert inflation factors into DuckDB."""
+    inserted = 0
+    for record in factors:
+        try:
+            country = record.get("country_code")
+            if country is None:
+                country = record.get("country")
+            if not country:
+                logger.warning(f"Skipping inflation factor with no country: {record}")
+                continue
+            country = _normalize_country_code(country)
+            conn.execute(
+                """
+                INSERT OR REPLACE INTO inflation_factors
+                (country_code, factor_date, inflation_factor)
+                VALUES (?, ?, ?)
+                """,
+                [
+                    country,
+                    record.get("factor_date") if record.get("factor_date") is not None else record.get("date"),
+                    record.get("inflation_factor") if record.get("inflation_factor") is not None else record.get("factor"),
+                ],
+            )
+            inserted += 1
+        except Exception as e:
+            logger.error(f"Failed to insert inflation factor: {e}")
+            sys.exit(1)
+
+    return inserted
+
+
+def print_summary(conn) -> None:
+    """Print database summary statistics."""
+    tables = [
+        ("bonds", "Bonds"),
+        ("bond_reference", "Bond reference"),
+        ("bond_pricing", "Bond pricing"),
+        ("bond_cashflows", "Bond cashflows"),
+        ("muni_bonds", "Muni bonds"),
+        ("muni_reference", "Muni reference"),
+        ("muni_pricing", "Muni pricing"),
+        ("muni_cashflows", "Muni cashflows"),
+        ("inflation_factors", "Inflation factors"),
+    ]
+    for table, label in tables:
+        result = conn.execute(f"SELECT COUNT(*) FROM {table}").fetchone()
+        if result[0] > 0:
+            logger.info(f"{label}: {result[0]}")
+
+
+def _serialize_for_json(value):
+    """Convert Python objects to JSON-serializable values."""
+    if isinstance(value, datetime):
+        return value.isoformat()
+    if isinstance(value, date):
+        return value.strftime("%Y-%m-%d")
+    if isinstance(value, list):
+        return [_serialize_for_json(v) for v in value]
+    if isinstance(value, dict):
+        return {k: _serialize_for_json(v) for k, v in value.items()}
+    return value
+
+
+def export_to_json(conn, output_dir: Path) -> None:
+    """Export DuckDB tables to JSON files for offline mode."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    table_mappings = [
+        ("bonds", "sample_bonds.json"),
+        ("bond_reference", "sample_bond_reference.json"),
+        ("bond_pricing", "sample_bond_pricing.json"),
+        ("bond_cashflows", "sample_bond_cashflows.json"),
+        ("muni_bonds", "sample_muni_bonds.json"),
+        ("muni_reference", "sample_muni_reference.json"),
+        ("muni_pricing", "sample_muni_pricing.json"),
+        ("muni_cashflows", "sample_muni_cashflows.json"),
+        ("inflation_factors", "sample_inflation_factors.json"),
+    ]
+
+    for table, filename in table_mappings:
+        result = conn.execute(f"SELECT COUNT(*) FROM {table}").fetchone()
+        if result[0] == 0:
+            continue
+
+        cursor = conn.execute(f"SELECT * FROM {table}")
+        columns = [desc[0] for desc in cursor.description]
+        rows = cursor.fetchall()
+
+        records = []
+        for row in rows:
+            record = {}
+            for col, val in zip(columns, row):
+                record[col] = _serialize_for_json(val)
+            records.append(record)
+
+        filepath = output_dir / filename
+        with open(filepath, "w") as f:
+            json.dump(records, f, indent=2)
+
+        logger.info(f"Exported {len(records)} records to {filename}")
+
+
+class QuietCommand(click.Command):
+    """Command that doesn't print usage on error."""
+
+    def main(self, *args, **kwargs):
+        try:
+            return super().main(*args, standalone_mode=False, **kwargs)
+        except click.UsageError as e:
+            msg = e.format_message()
+            sep = "; " if msg.endswith(")") else " ("
+            logger.error(msg.removesuffix(")") + sep + "--help for usage)")
+            sys.exit(2)
+
+
+@click.command(cls=QuietCommand)
+@click.option("--api-key", envvar="TERRAPIN_API_KEY", help="Terrapin API key")
+@click.option(
+    "--base-url",
+    envvar="TERRAPIN_API_BASE_URL",
+    default="https://terrapinfinance.com/api/v1",
+    help="Terrapin API base URL",
+)
+@click.option("--all", "download_all", is_flag=True, help="Download all data types")
+@click.option("--bonds", is_flag=True, help="Download corporate/government bonds")
+@click.option("--muni", is_flag=True, help="Download municipal bonds")
+@click.option("--pricing", is_flag=True, help="Download pricing data")
+@click.option("--pricing-days", default=30, help="Days of pricing history to download")
+@click.option("--limit", default=1000, help="Maximum bonds per category (0 for unlimited)")
+@click.option("--reset", is_flag=True, help="Reset database before downloading")
+@click.option("--export-json", is_flag=True, help="Export DuckDB tables to data/*.json files")
+@click.option("--verbose", "-v", count=True, help="Verbose output (-v for INFO, -vv for DEBUG)")
+def main(
+    api_key: str,
+    base_url: str,
+    download_all: bool,
+    bonds: bool,
+    muni: bool,
+    pricing: bool,
+    pricing_days: int,
+    limit: int,
+    reset: bool,
+    export_json: bool,
+    verbose: int,
+):
+    """Download Terrapin fixture data into local DuckDB."""
+    logger.remove()
+    logger.add(sys.stderr, format="ERROR: {message}", level="ERROR")
+    match verbose:
+        case 1:
+            logger.add(sys.stderr, format="{message}", level="INFO", filter=lambda r: r["level"].no < 40)
+        case 2:
+            logger.add(sys.stderr, level="DEBUG", filter=lambda r: r["level"].no < 40)
+
+    if not api_key:
+        logger.error("TERRAPIN_API_KEY not set.  Provide via --api-key or environment variable.")
+        sys.exit(1)
+
+    if download_all:
+        bonds = muni = pricing = True
+
+    # Convert limit=0 to None (unlimited)
+    if limit == 0:
+        limit = None
+
+    if not any([bonds, muni, pricing]):
+        logger.error("Specify --all or at least one of --bonds, --muni, --pricing")
+        sys.exit(1)
+
+    if reset:
+        logger.info("Resetting database...")
+        reset_database()
+
+    conn = get_connection()
+    client = get_api_client(api_key, base_url)
+
+    bond_isins = []
+    muni_isins = []
+
+    try:
+        if bonds:
+            bond_data = download_bonds(client, limit)
+            insert_bonds(conn, bond_data)
+            bond_isins = [b.get("isin") for b in bond_data if b.get("isin")]
+
+            bond_ref = download_bond_reference(client, bond_isins)
+            insert_bond_reference(conn, bond_ref)
+
+            bond_cf = download_bond_cashflows(client, bond_isins)
+            insert_bond_cashflows(conn, bond_cf)
+
+            countries = list({
+                _normalize_country_code(b.get("country"))
+                for b in bond_data if b.get("country")
+            })
+            inflation = download_inflation_factors(client, countries, days=pricing_days)
+            insert_inflation_factors(conn, inflation)
+
+        if muni:
+            muni_data = download_muni_bonds(client, limit)
+            insert_muni_bonds(conn, muni_data)
+            muni_isins = [b.get("isin") for b in muni_data if b.get("isin")]
+
+            muni_ref = download_muni_reference(client, muni_isins)
+            insert_muni_reference(conn, muni_ref)
+
+            muni_cf = download_muni_cashflows(client, muni_isins)
+            insert_muni_cashflows(conn, muni_cf)
+
+        if pricing:
+            if not bond_isins:
+                bond_isins = [r[0] for r in conn.execute("SELECT isin FROM bonds").fetchall()]
+            if not muni_isins:
+                muni_isins = [r[0] for r in conn.execute("SELECT isin FROM muni_bonds").fetchall()]
+
+            if not bond_isins and not muni_isins:
+                logger.error("No bonds in database.  Run with --bonds or --muni first.")
+                sys.exit(1)
+
+            if bond_isins:
+                bond_pricing = download_bond_pricing(client, bond_isins, pricing_days)
+                insert_bond_pricing(conn, bond_pricing)
+
+            if muni_isins:
+                muni_pricing_data = download_muni_pricing(client, muni_isins, pricing_days)
+                insert_muni_pricing(conn, muni_pricing_data)
+
+        logger.info("Download complete!")
+        print_summary(conn)
+
+        if export_json:
+            data_dir = Path(__file__).parent / "data"
+            logger.info(f"Exporting to {data_dir}...")
+            export_to_json(conn, data_dir)
+
+    finally:
+        client.close()
+
+
+if __name__ == "__main__":
+    main()

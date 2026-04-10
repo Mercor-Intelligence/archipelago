@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "You have access to the table customer_service_interactions. For interactions on phone only, I'd like to see the average duration (in hours) for these interactions, broken down by resolution status. I only want to include the interactions that are resolved or escalated. Round the reported values to 3 decimal places. Please use only SQLite queries to complete this entire analysis throughout all of its steps. Include your full SQLite query used for analysis as well as the requested results in the final output.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Computes average duration for escalated interactions as 0.392 (+/- 0.001). (ver_768c54e4380d45c2adb2996eb12cfa54)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes average duration for escalated interactions as 0.392 (+/- 0.001)."
+        }
+      ]
+    },
+    {
+      "name": "Computes average duration for resolved interactions as 0.394 (+/- 0.001). (ver_3df62dd77c244bed9c6727ac0b1ff348)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes average duration for resolved interactions as 0.394 (+/- 0.001)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sql-task-kk13-b28dca37"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_b28dca370aed4cf9aa6f2e5b630332ee",
+    "task_name": "SQL - Task KK13",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_99934e3d848f47c1bcc817e7266cd377",
+        "golden_text_response": "The average duration in hours for escalated interactions is 0.392.\nThe average duration in hours for resolved interactions is 0.394.\n\nThe SQL ouput is as follows:\n'''\nSELECT \n    lower(resolution_status), \n    ROUND(AVG(duration_minutes) / 60.0, 3) AS average_duration_hours \nFROM customer_service_interactions \nWHERE channel = 'phone' \n  AND lower(resolution_status) IN ('resolved', 'escalated') \nGROUP BY lower(resolution_status);\n'''",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

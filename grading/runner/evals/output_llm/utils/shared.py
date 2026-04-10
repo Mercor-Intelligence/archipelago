@@ -60,26 +60,52 @@ def estimate_artifact_tokens(artifact: Any, model: str) -> int:
 
 def extract_task_prompt(input: EvalImplInput) -> str | None:
     """
-    Extract the task prompt from trajectory messages.
+    Extract conversation context for the grader.
 
-    The task prompt is the first user message in the trajectory,
-    which represents what the agent was asked to do.
+    For single-turn (one user message): returns the first user message.
+    For multi-turn (multiple user messages): returns the FULL conversation
+    (user + assistant turns) so the grader can see what the agent was
+    responding to at each stage.
+
+    Without full conversation context, multi-turn jailbreaks can be
+    misgraded: the grader only sees the initial prompt and final response,
+    missing intermediate escalation (e.g., user requesting harmful content
+    in later turns). The model's correct refusal then appears to be
+    "hallucinating" a request that wasn't there.
 
     Args:
         input: The eval implementation input containing trajectory
 
     Returns:
-        The task prompt string, or None if not found
+        The task/conversation context string, or None if not found
     """
     if not input.trajectory or not input.trajectory.messages:
         return None
 
-    for msg in input.trajectory.messages:
-        if msg.get("role") == "user" and msg.get("content"):
-            content = msg.get("content")
-            return str(content) if content else None
+    # Count user messages to detect multi-turn
+    user_messages = [
+        msg
+        for msg in input.trajectory.messages
+        if msg.get("role") == "user" and msg.get("content")
+    ]
 
-    return None
+    if not user_messages:
+        return None
+
+    # Single-turn: just the first user message (backwards compatible)
+    if len(user_messages) == 1:
+        return str(user_messages[0].get("content", ""))
+
+    # Multi-turn: include full conversation so grader sees full context
+    parts: list[str] = []
+    for msg in input.trajectory.messages:
+        role = msg.get("role")
+        content = msg.get("content")
+        if role in ("user", "assistant") and content:
+            label = "User" if role == "user" else "Assistant"
+            parts.append(f"{label}: {str(content)}")
+
+    return "\n\n".join(parts) if parts else None
 
 
 def filter_artifacts_programmatically(

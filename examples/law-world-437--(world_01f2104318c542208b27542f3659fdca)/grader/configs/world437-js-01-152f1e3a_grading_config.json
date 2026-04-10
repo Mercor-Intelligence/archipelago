@@ -1,0 +1,66 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_4f390d13c4714138a636b180c050cb2b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_152f1e3aba6143e6b8609e2dc82b5bd8",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that SteelTreeSolutions did not allege that it was a licensed contractor",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt indicates that STS alleged all of the elements required for a breach of contract claim but not anything else.  Under these facts the demurrer should be granted because STS failed to allege that it was a licensed contractor. \"Phoenix v. Spacex.pdf\" is dispositive. \"Phoenix v. Spacex.pdf\" interprets Business and Professions Code section 7031(a) which provides:\n\n\"[N]o person engaged in the business or acting in the capacity of a contractor, may bring or maintain any action, or recover in law or equity in any action, in any court of this state for the collection of compensation for the performance of any act or contract where a license is required by this chapter without alleging that he or she was a duly licensed contractor at all times during the performance of that act or contract regardless of the merits of the cause of action brought by the person.\u201d\n\nFor the purposes of 703 1(a) a \"person\" includes a corporation. (Phoenix v. Spacex.pdf\" at page 6).  Section 7031(a) \"applies despite injustice to the unlicensed contractor.  Id. It even applies in situations where a contractor knows that a subcontractor is unlicensed. Id. Under \"Phoenix v. Spacex.pdf\" a demurrer should be granted because STS did not allege it was licensed and therefore it cannot recover for its breach of contract claim for work that required a contractor's license.  Id. at 8. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_82aa89ee6a57415285673c61e55985ee",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_152f1e3aba6143e6b8609e2dc82b5bd8",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that Sweetmarch Build Partners' demurrer should be granted",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt indicates that STS alleged all of the elements required for a breach of contract claim but not anything else.  Under these facts the demurrer should be granted because STS failed to allege that it was a licensed contractor. \"Phoenix v. Spacex.pdf\" is dispositive. \"Phoenix v. Spacex.pdf\" interprets Business and Professions Code section 7031(a) which provides:\n\n\"[N]o person engaged in the business or acting in the capacity of a contractor, may bring or maintain any action, or recover in law or equity in any action, in any court of this state for the collection of compensation for the performance of any act or contract where a license is required by this chapter without alleging that he or she was a duly licensed contractor at all times during the performance of that act or contract regardless of the merits of the cause of action brought by the person.\u201d\n\nFor the purposes of 703 1(a) a \"person\" includes a corporation. (Phoenix v. Spacex.pdf\" at page 6).  Section 7031(a) \"applies despite injustice to the unlicensed contractor.  Id. It even applies in situations where a contractor knows that a subcontractor is unlicensed. Id. Under \"Phoenix v. Spacex.pdf\" a demurrer should be granted because STS did not allege it was licensed and therefore it cannot recover for its breach of contract claim for work that required a contractor's license.  Id. at 8. \n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "To support urgent business requirements, leadership has directed an accelerated review and prioritization of applications within Greenhouse.\n\nIdentify applications where candidates have at least nine years of experience in their most recent employment, assuming 1-Feb-2026 as end date where end date is missing. Using the Advance Stage tool, move these applications forward by one stage. \n\nNext, identify applications in the “CEO Deep Dive” stage with New York as the candidate address (defaulting to New York where address is missing) and >=11 years of experience in their most recent employment, and advance them directly to the “Executive Panel” stage, and tag the candidates as 'Fast-Track Candidate'. \n\nCreate a new job posting for the role \"SVP, Supply Chain\", with 1 opening based out of New York. Create applications for all fast-track candidates for this job using the create application tool, and advance all fast-track candidates with a MS in Supply Chain Management degree directly to the \"Executive Panel\" stage for this job, and tag them as 'Final shortlist for SVP Supply Chain'.\n\nHire the candidate with the highest tenure in their most recent role from the 'fast track candidate' pool into Job Post ID 1 – SVP, Growth & Omnichannel Integration (Confidential), and hire the candidate with the highest tenure in their most recent role from the 'Final shortlist for SVP Supply Chain' pool into 'SVP, Supply Chain' job post. The same candidate cannot be hired in more than 1 position. In case of a tie, prioritize SVP supply chain, and select the next best candidate for the SVP, Growth & Omnichannel Integration (Confidential) job. \n\nRound final values to nearest integer. Share the following in the console:\n1. Name of the candidate hired for Job Post ID 1 – SVP, Growth & Omnichannel Integration (Confidential) \n2. Name of the candidate hired for SVP, Supply Chain\n3. Final number of candidates in the Fast-track candidate pool, excluding the new hires"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the candidate hired for Job Post ID 1 – SVP, Growth & Omnichannel... (ver_750976d911b74f3e91703803e392d631)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the candidate hired for Job Post ID 1 – SVP, Growth & Omnichannel Integration (Confidential) is James Sharma."
+        }
+      ]
+    },
+    {
+      "name": "States that the candidate hired for SVP, Supply Chain is Isla Bennett. (ver_be273dce3af440448335234658801616)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the candidate hired for SVP, Supply Chain is Isla Bennett."
+        }
+      ]
+    },
+    {
+      "name": "States that the final number of candidates in the Fast-track candidate pool,... (ver_33e13b74db3d4e849a94a1e2079360e2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the final number of candidates in the Fast-track candidate pool, excluding the new hires, is 4."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-603-pm-task-02-a90c3731"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_a90c3731441347ecabda2acbdc81716b",
+    "task_name": "World 603_PM_Task 02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_07baf35b1b0543e6b2855b014a0c6bac",
+        "golden_text_response": "1. Candidate hired for Job Post ID 1 – SVP, Growth & Omnichannel Integration (Confidential) is James Sharma.\n2. Candidate hired for SVP, Supply Chain is Isla Bennett.\n3. Final number of candidates in the Fast-track candidate pool, excluding the new hires, is 4. ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

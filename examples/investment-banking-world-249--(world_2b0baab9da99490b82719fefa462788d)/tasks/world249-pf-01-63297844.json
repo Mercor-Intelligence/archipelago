@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Based on the DCF model, assume (i) the S&P Mobility beta is equal to SPGI's existing beta as of 01/06/2026, (ii) the RemainCo beta is equal to FDS's existing beta as of 01/06/2026, (iii) the S&P Mobility cost of debt is equal to 3-month treasury rates as of 01/05/2026 + 225 bps, and (iv) RemainCo annual revenue growth for 2027-2030 for each segment (Market Intelligence, Ratings, Commodity Insights, and Indices) is equal to the average revenue growth rate of 2024 and 2023 for each respective segment.\n\nBased on these changes, report the following outputs:\n1) Post Spin Off RemainCo EV.\n2) Post Spin Off S&P Mobility EV.\n3) Shareholder Equity Value Creation - $.\n4) Shareholder Equity Value Creation - %.\n\nFormatting: Quote dollar figures to the nearest million and one decimal place (e.g., $X.XM) and percentages to two decimal places (e.g., 0.00%)."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States Post Spin Off RemainCo EV is $220,985.0M (acceptable range $218,775.2... (ver_8c6d0a33a836491c8061ec057a34c633)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Post Spin Off RemainCo EV is $220,985.0M (acceptable range $218,775.2 to $223,194.8)."
+        }
+      ]
+    },
+    {
+      "name": "States Post Spin Off S&P Mobility EV is $11,809.8M (acceptable range $11,691.7... (ver_cb60359c873248c9bc9b4aed8aec1a0a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Post Spin Off S&P Mobility EV is $11,809.8M (acceptable range $11,691.7 to $11,927.9)."
+        }
+      ]
+    },
+    {
+      "name": "States Shareholder Equity Value Creation is $97,304.3M (acceptable range... (ver_8e9ea4f96a9045929a5d57b82515dbda)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Shareholder Equity Value Creation is $97,304.3M (acceptable range $96,331.3 to $98,277.3)."
+        }
+      ]
+    },
+    {
+      "name": "States Shareholder Equity Value Creation is 77.36% (acceptable range 76.59% to... (ver_deda219b3c8b423a913244defe95a5df)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Shareholder Equity Value Creation is 77.36% (acceptable range 76.59% to 78.13%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world249-pf-01-63297844"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_63297844a46f4d0ca0fa3dc29f2e3fa8",
+    "task_name": "World249-PF-01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_22d96ed066f744bcbffd257db557693f",
+        "golden_text_response": "1) Post Spin Off RemainCo EV. is $220,985.0M\n2) Post Spin Off S&P Mobility EV. is $11,809.8M\n3) Shareholder Equity Value Creation - $. is $97,304.3M\n4) Shareholder Equity Value Creation - %. is 77.36%",
+        "golden_file_responses": "snap_2ddb3b283f9047f788600f590c7c535e"
+      }
+    ]
+  }
+}

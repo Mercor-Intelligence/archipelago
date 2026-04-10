@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "You have access to the SQL tables subscribers, device_purchases and invoices. Perform some data manipulations and analysis. Enrich the subscribers table with device purchase history from the device_purchases table. Each subscriber made no more than one purchase in device_purchases. Only consider records with full_price > 0 as actual purchases. Group subscribers into three sub cohorts: Cohort 1 - subscribers who made an actual device purchase with an installment_plan before (<) the time of last_updated. Cohort 2 - subscribers who made an actual purchase outright before the time of last_updated. Cohort 3 - subscribers who did not make an actual purchase before the time of last_updated. last_updated is the last modification timestamp from the subscribers table. Identify subscribers who had at least one overdue or disputed payment_status at any time point from the invoices table, namely subgroup X. For each of the three cohorts, report what percentage of subscribers are in subgroup X and what percentage of subgroup X subscribers also have at least one invoice of pending payment status at any point in time. The percentages should be in % values and rounded to one decimal point. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports Cohort 1 has 11.2% +/- 0.5% of subscribers with overdue or disputed... (ver_e1abce15f7e94add9a4446e1f6073f10)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Cohort 1 has 11.2% +/- 0.5% of subscribers with overdue or disputed payments (subgroup X)."
+        }
+      ]
+    },
+    {
+      "name": "Reports Cohort 2 has 10.5% +/- 0.5% of subscribers with overdue or disputed... (ver_c484ca37b6844803a669c4e0de263887)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Cohort 2 has 10.5% +/- 0.5% of subscribers with overdue or disputed payments (subgroup X)."
+        }
+      ]
+    },
+    {
+      "name": "Reports Cohort 3 has 11.0% +/- 0.5% of subscribers with overdue or disputed... (ver_468ee6ec622a4e6b9bbf915d3352921a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Cohort 3 has 11.0% +/- 0.5% of subscribers with overdue or disputed payments (subgroup X)."
+        }
+      ]
+    },
+    {
+      "name": "Reports 18.0% +/- 0.5% of subgroup X in Cohort 1 also have at least one... (ver_699de875b5594b4b8aabedf26d089b9e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports 18.0% +/- 0.5% of subgroup X in Cohort 1 also have at least one invoice of pending payment status."
+        }
+      ]
+    },
+    {
+      "name": "Reports 22.7% +/- 0.5% of subgroup X in Cohort 2 also have at least one... (ver_49b26b1faf0646e29ba90932f3cc9696)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports 22.7% +/- 0.5% of subgroup X in Cohort 2 also have at least one invoice of pending payment status."
+        }
+      ]
+    },
+    {
+      "name": "Reports 24.5% +/- 0.5% of subgroup X in Cohort 3 also have at least one... (ver_82d78ea288b94f21bd479db05b686bc8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports 24.5% +/- 0.5% of subgroup X in Cohort 3 also have at least one invoice of pending payment status."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sql-task-2coe3c17-c0c0e58f"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_c0c0e58f32a14b8388d4c75065b831f2",
+    "task_name": "SQL - Task 2coe3c17",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d1f63ae0e6124559bb9fb4b839a70781",
+        "golden_text_response": "cohort pct_subgroupX pct_subgroupX_wtPending\nCohort 1 11.2% 18.0%\nCohort 2 10.5% 22.7%\nCohort 3 11.0% 24.5%\n\n```\nwith SubscriberCohort as (\n    select s.subscriber_id,\n        case \n            -- Cohort 1: Actual purchase (Price > 0), installment plan, Before Last Updated\n            when dp.full_price > 0 \n                 and dp.purchase_type = 'installment_plan' \n                 and dp.purchase_date < s.last_updated \n            then 'Cohort 1'\n            \n            -- Cohort 2: Actual purchase (Price > 0), outright, Before Last Updated\n            when dp.full_price > 0 \n                 and dp.purchase_type = 'outright' \n                 and dp.purchase_date < s.last_updated \n            then 'Cohort 2'\n            \n            -- Cohort 3: Everyone else (No purchase, Price 0, or Purchase after update)\n            else 'Cohort 3'\n        end as cohort\n    from subscribers as s\n    left join device_purchases as dp \n    on s.subscriber_id = dp.subscriber_id\n),\n\nInvoicePayment as (\n    select subscriber_id,\n        -- Identify subgroup X with overdue or disputed payment, need to factorise in case variants \n        sum(lower(payment_status) in ('overdue', 'disputed'))>0 as is_subgroup_x,\n        -- Determine if user has pending invoices\n        sum(lower(payment_status) = 'pending')>0 as has_pending\n    from invoices\n    group by subscriber_id\n),\n\nCohortGroupInvoicePayment as (\n    select s.*, \n        coalesce(i.is_subgroup_x, 0) as is_subgroup_x,\n        coalesce(i.has_pending, 0) as has_pending\n    from SubscriberCohort as s\n    left join InvoicePayment as i\n    on s.subscriber_id=i.subscriber_id\n)\n\nselect cohort, \n    printf('%.1f%%', 100.0*avg(is_subgroup_x)) as pct_subgroupX, \n    printf('%.1f%%', 100.0*sum(has_pending*is_subgroup_x)/sum(is_subgroup_x)) as pct_subgroupX_wtPending\nfrom CohortGroupInvoicePayment\ngroup by cohort\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

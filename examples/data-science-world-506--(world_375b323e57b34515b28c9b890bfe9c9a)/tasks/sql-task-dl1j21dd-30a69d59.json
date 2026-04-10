@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "I'm analyzing payment patterns for our collections team to identify subscribers with consistent payment behavior who might qualify for credit limit increases. We're using invoice data from 2024 and 2025.\n\nFor subscribers on postpaid plans who have had at least 5 invoices during this period (based on invoice due dates falling in 2024-2025), calculate the following metrics across all their invoices:\n\n-Total amount invoiced to these subscribers\n-Total amount actually paid by these subscribers\n-Overall payment rate as a percentage (total paid / total invoiced)\n-Average payment coverage ratio per qualifying subscriber (calculated as total paid divided by total invoiced for each subscriber, then averaged)\n-Count of distinct subscribers meeting the 5-invoice minimum\n\nFocus on understanding payment completeness to help us assess creditworthiness. The coverage ratio metric helps us identify if subscribers are consistently paying their full balances. Use the tables subscriber_plans, subscription_plans, invoices, and payment_transactions (join invoices to payments on invoice_id). Round monetary values to 2 decimal places, percentages and ratios to 1 decimal place. Provide your full SQLite query and the final results.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports total amount invoiced as 122578 (strict threshold) (ver_f5049f3842e841f89c29c72962f648ca)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports total amount invoiced as 122578 (strict threshold)."
+        }
+      ]
+    },
+    {
+      "name": "Reports total amount paid as 102704.05 (+/- 0.05) (ver_1685b3ed78a044ed835a3695a263b08e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports total amount paid as 102704.05 (+/- 0.05)."
+        }
+      ]
+    },
+    {
+      "name": "Reports overall payment rate as 83.8 (+/- 0.05) (ver_e3ff4dc275884c7ca3e9421e2215c56e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports overall payment rate as 83.8 (+/- 0.05)."
+        }
+      ]
+    },
+    {
+      "name": "Reports average payment coverage ratio as 0.8 (+/- 0.05) (ver_b483e7a977f4487ebef52b996782d9b5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports average payment coverage ratio as 0.8 (+/- 0.05)."
+        }
+      ]
+    },
+    {
+      "name": "Reports count of distinct qualifying subscribers as 312 (strict threshold)... (ver_8f622eadd0434d13b97331933680fb69)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports count of distinct qualifying subscribers as 312 (strict threshold) (acceptable range 309 to 315)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sql-task-dl1j21dd-30a69d59"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_30a69d599965476887ccb65b28a0fcea",
+    "task_name": "SQL - Task dl1j21dd",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f63c72f5fd8d416890ffdaec7073e039",
+        "golden_text_response": "total_invoiced\n122578\n\ntotal_paid\n102704.05\n\npayment_rate_pct\n83.8\n\navg_coverage_ratio\n0.8\n\nqualifying_subscriber_count\n312\n\n``` sql \n\nWITH PostpaidSubscribers AS (\n    -- Identify subscribers on postpaid plans with at least 5 invoices in 2024-2025\n    SELECT i.subscriber_id\n    FROM invoices i\n    JOIN subscriber_plans sp ON i.subscriber_id = sp.subscriber_id\n    JOIN subscription_plans p ON sp.plan_id = p.plan_id\n    WHERE p.plan_type = 'postpaid'\n      AND i.due_date BETWEEN '2024-01-01' AND '2025-12-31'\n    GROUP BY i.subscriber_id\n    HAVING COUNT(i.invoice_id) >= 5\n),\nInvoiceLevelPayments AS (\n    -- Aggregate payments at invoice level to handle multiple payments per invoice\n    SELECT\n        i.invoice_id,\n        i.subscriber_id,\n        i.total_amount AS invoice_amount,\n        SUM(CASE WHEN pt.transaction_status = 'success' THEN pt.amount ELSE 0 END) AS total_paid\n    FROM invoices i\n    JOIN PostpaidSubscribers ps ON i.subscriber_id = ps.subscriber_id\n    LEFT JOIN payment_transactions pt ON i.invoice_id = pt.invoice_id\n    WHERE i.due_date BETWEEN '2024-01-01' AND '2025-12-31'\n    GROUP BY i.invoice_id, i.subscriber_id, i.total_amount\n),\nSubscriberPaymentRatios AS (\n    -- Calculate per-subscriber coverage ratio\n    SELECT\n        subscriber_id,\n        SUM(total_paid) / SUM(invoice_amount) AS coverage_ratio\n    FROM InvoiceLevelPayments\n    GROUP BY subscriber_id\n)\nSELECT\n    ROUND(SUM(ilp.invoice_amount), 2) AS total_invoiced,\n    ROUND(SUM(ilp.total_paid), 2) AS total_paid,\n    ROUND(SUM(ilp.total_paid) * 100.0 / SUM(ilp.invoice_amount), 1) AS payment_rate_pct,\n    ROUND(AVG(spr.coverage_ratio), 1) AS avg_coverage_ratio,\n    COUNT(DISTINCT ilp.subscriber_id) AS qualifying_subscriber_count\nFROM InvoiceLevelPayments ilp\nJOIN SubscriberPaymentRatios spr ON ilp.subscriber_id = spr.subscriber_id;\n\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,588 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Create a new spreadsheet dedicated to differentiator criteria and switching likelihood based on respondent interest in the former mine. \n\nIn the spreadsheet, create a table that reports the average switching likelihood (rounded to two decimal places) and the total respondent count (as whole numbers) for each of the five key differentiators: Lowest cost/pricing, High server connection/reliability, Robust cybersecurity, Best customer services, and Strongest public sector expertise. Use the latest survey data. Filter the data for those who are very interested or somewhat interested in a new mine, and present the data values for each of the two segments."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the average of switching likelihood for somewhat interested respondents... (ver_6446752a02cc47bf8555676d216c2b5e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average of switching likelihood for somewhat interested respondents is 4.00 (acceptable range 3.96 to 4.04)."
+        }
+      ]
+    },
+    {
+      "name": "States the average of switching likelihood for somewhat interested is any... (ver_6446752a02cc47bf8555676d216c2b5e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average of switching likelihood for somewhat interested is any other number than 4.00."
+        }
+      ]
+    },
+    {
+      "name": "States the average of switching likelihood for very interested respondents is... (ver_cd34fe0904e34f4a9cdafda7f4d44740)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average of switching likelihood for very interested respondents is 2.83 (acceptable range 2.80 to 2.86)."
+        }
+      ]
+    },
+    {
+      "name": "States the average of switching likelihood for very interested is any other... (ver_cd34fe0904e34f4a9cdafda7f4d44740)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average of switching likelihood for very interested is any other number than 2.83."
+        }
+      ]
+    },
+    {
+      "name": "States the count for Lowest cost/pricing for the Somewhat interested... (ver_dfca8e84eb514524a78db29107304239)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for Lowest cost/pricing for the Somewhat interested respondents is 5."
+        }
+      ]
+    },
+    {
+      "name": "States the count for Lowest cost/pricing for the Somewhat interested row is... (ver_dfca8e84eb514524a78db29107304239)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for Lowest cost/pricing for the Somewhat interested row is any other value than 5."
+        }
+      ]
+    },
+    {
+      "name": "States the count for Lowest cost/pricing for the Very interested respondents... (ver_159a44f98be44a0f8be426ac73f10259)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for Lowest cost/pricing for the Very interested respondents is 4."
+        }
+      ]
+    },
+    {
+      "name": "States the count for Lowest cost/pricing for the Very interested row is any... (ver_159a44f98be44a0f8be426ac73f10259)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for Lowest cost/pricing for the Very interested row is any other value than 4."
+        }
+      ]
+    },
+    {
+      "name": "States the count for High server connection/reliability for the Somewhat... (ver_8dcb1569d7944b38981bcc5286cab08d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for High server connection/reliability for the Somewhat interested respondents is 3."
+        }
+      ]
+    },
+    {
+      "name": "States the count for High server connection/reliability for the Somewhat... (ver_8dcb1569d7944b38981bcc5286cab08d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for High server connection/reliability for the Somewhat interested respondents is any other value than 3."
+        }
+      ]
+    },
+    {
+      "name": "States the count for High server connection/reliability for the Very... (ver_1f296b9540d54a549a7dfa2729cd1b40)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for High server connection/reliability for the Very interested respondents is 1."
+        }
+      ]
+    },
+    {
+      "name": "States the count for High server connection/reliability for the Very... (ver_1f296b9540d54a549a7dfa2729cd1b40)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for High server connection/reliability for the Very interested row is any other value than 1."
+        }
+      ]
+    },
+    {
+      "name": "States the count for Robust cybersecurity for the Somewhat interested... (ver_b9251a0d9b844b4a81fcaa1456999672)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for Robust cybersecurity for the Somewhat interested respondents is 1."
+        }
+      ]
+    },
+    {
+      "name": "States the count for Robust cybersecurity for the Somewhat interested row is... (ver_b9251a0d9b844b4a81fcaa1456999672)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for Robust cybersecurity for the Somewhat interested row is any other value than 1."
+        }
+      ]
+    },
+    {
+      "name": "States the count for Robust cybersecurity for the Very interested respondents... (ver_26d1dd8d80ea4c97969617622562046f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for Robust cybersecurity for the Very interested respondents is 3."
+        }
+      ]
+    },
+    {
+      "name": "States the count for Robust cybersecurity for the Very interested row is any... (ver_26d1dd8d80ea4c97969617622562046f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for Robust cybersecurity for the Very interested row is any other value than 3."
+        }
+      ]
+    },
+    {
+      "name": "States the count for Best customer service for the Somewhat interested... (ver_3371297077ae45e69ff62080480c1c4e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for Best customer service for the Somewhat interested respondents is 3."
+        }
+      ]
+    },
+    {
+      "name": "States the count for Best customer service for the Somewhat interested row is... (ver_3371297077ae45e69ff62080480c1c4e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for Best customer service for the Somewhat interested row is any other value than 3."
+        }
+      ]
+    },
+    {
+      "name": "States the count for Best customer service for the Very interested respondents... (ver_056606a290ea413bb7696e5505a64a48)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for Best customer service for the Very interested respondents is 4."
+        }
+      ]
+    },
+    {
+      "name": "States the count for Best customer service for the Very interested row is any... (ver_056606a290ea413bb7696e5505a64a48)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for Best customer service for the Very interested row is any other value than 4."
+        }
+      ]
+    },
+    {
+      "name": "States the count for Strongest public sector expertise for the Somewhat... (ver_1318d77e2d5e4ba8afb92c26aa3855d4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for Strongest public sector expertise for the Somewhat interested respondents is 2."
+        }
+      ]
+    },
+    {
+      "name": "States the count for Strongest public sector expertise for the Somewhat... (ver_1318d77e2d5e4ba8afb92c26aa3855d4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for Strongest public sector expertise for the Somewhat interested row is any other value than 2."
+        }
+      ]
+    },
+    {
+      "name": "States the count for Strongest public sector expertise for the Very interested... (ver_c61e9bfc07d849dd8655999a31dfeffd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for Strongest public sector expertise for the Very interested respondents is 0."
+        }
+      ]
+    },
+    {
+      "name": "States the count for Strongest public sector expertise for the Very interested... (ver_c61e9bfc07d849dd8655999a31dfeffd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the count for Strongest public sector expertise for the Very interested row is any other value than 0."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-115-hlv-task-01-4f1ff514"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_4f1ff514a53a4eefb7c3501e76829a99",
+    "task_name": "World 115_HLV_Task 01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_ff1bdd42780d4441a8861921e884cc89",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_0e233a8f21494110920a3e5a149c7f3c"
+      },
+      {
+        "golden_response_id": "gold_f9d1c99371be40f78002a76b5ec898ea",
+        "golden_text_response": "No response text.",
+        "golden_file_responses": "snap_0e233a8f21494110920a3e5a149c7f3c"
+      }
+    ]
+  }
+}

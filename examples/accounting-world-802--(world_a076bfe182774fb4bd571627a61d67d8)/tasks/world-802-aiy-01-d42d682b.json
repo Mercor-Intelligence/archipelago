@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Process the journal entries against the 2024 trial balance and output the following revised numbers:\n1.\tNet income\n2.\tTotal Assets\n3.\tTotal Liabilities \nRound all values to the nearest whole number\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States 2024 Net income is -$91,359,461 (acceptable range $-92,273,056 to... (ver_0d11feeba10349ada69c40bbea4da9e3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2024 Net income is -$91,359,461 (acceptable range $-92,273,056 to $-90,445,866)."
+        }
+      ]
+    },
+    {
+      "name": "States 2024 Total assets are $291,671,202 (acceptable range $288,754,490 to... (ver_1f182f7877784ce69e60e5d489ba2d8f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2024 Total assets are $291,671,202 (acceptable range $288,754,490 to $294,587,914)."
+        }
+      ]
+    },
+    {
+      "name": "States 2024 Total Liabilities are $324,183,370 (acceptable range $320,941,536... (ver_3a3ed98849494946a19df4faefc453f3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2024 Total Liabilities are $324,183,370 (acceptable range $320,941,536 to $327,425,204)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-802-aiy-01-d42d682b"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_a076bfe182774fb4bd571627a61d67d8",
+    "world_name": "Accounting World 802",
+    "task_id": "task_d42d682bc2454bd5bb472fb365eee99e",
+    "task_name": "World-802-AIY-01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_ddc5b39e32684f0b9d1e406582b636a4",
+        "golden_text_response": "2024 Net income is -$91,359,461\n2024 Total assets are $291,671,202\n2024 Total Liabilities are $324,183,370\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

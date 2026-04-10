@@ -1,0 +1,514 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "You are a reading specialist working with a group of 11th grade students who are struggling in social studies. Their teacher is concerned that they cannot adequately read the assigned text.  To address this issue, you are going to analyze the text to make revisions that will make it easier for the students to read.  \n\n1. Based on the students' scores reported on the 50 Common Morpheme quiz, identify the student with the lowest score. List the student’s name followed by the percentage score. \n2. Students will be reading the text, LB The Civil Rights Movement.  Analyze the first page and find every word that has one of the morphemes missed by the student you identified.\n3. Using the words identified, omit every word that has the morphemes -y, -er, -ible, and -al. List the remaining words. \n\nMake these revisions as message in console.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Lists Alan Romero as an answer to task 1 (ver_77fca023db264486ab509775375eaeba)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists Alan Romero as an answer to task 1."
+        }
+      ]
+    },
+    {
+      "name": "Lists a name other than Alan Romero as an answer to task 1. (ver_77fca023db264486ab509775375eaeba)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists a name other than Alan Romero as an answer to task 1."
+        }
+      ]
+    },
+    {
+      "name": "States that Alan Romero's score is 58% (acceptable range 57% to 59%) (ver_b6bbac7af8594377b9f0c1fa86f32974)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Alan Romero's score is 58% (acceptable range 57% to 59%)."
+        }
+      ]
+    },
+    {
+      "name": "Lists Alan Romero's score as a value other than 58%. (ver_b6bbac7af8594377b9f0c1fa86f32974)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists Alan Romero's score as a value other than 58%."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"contrasted\" as an answer to task 3 (ver_84a02749871b41419715bffce69f5f8a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"contrasted\" as an answer to task 3."
+        }
+      ]
+    },
+    {
+      "name": "Lists a word other than contrasted, depression, division, sub-division,... (ver_84a02749871b41419715bffce69f5f8a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists a word other than contrasted, depression, division, sub-division, decision, movement, advancement, abolitionist, optimists, transformed, peaceful, unlikely, sharply, fully, fairly, shortly, or hopefully under task 3."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"depression\" as an answer to task 3 (ver_e472e825812a4d72bcb215372f4e77bf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"depression\" as an answer to task 3."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"sub-division\" as an answer to task 3 (ver_bb8e3d36cc3b42c091dac3b5185b15d1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"sub-division\" as an answer to task 3."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"decision\" as an answer to task 3 (ver_9234cd04ccba4c3fb8ff5e52250127f1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"decision\" as an answer to task 3."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"movement\" as an answer to Task 3 (ver_3de57c7e8691491d9116301b861c03b3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"movement\" as an answer to Task 3."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"advancement\" as an answer to task 3 (ver_5e7f13eb097f460bb706af507cac0f2e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"advancement\" as an answer to task 3."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"abolitionist\" as an answer to task 3 (ver_99e152cc4c5b4e04b33cf4f8e43c6994)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"abolitionist\" as an answer to task 3."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"optimists\" as an answer to task 3 (ver_9e8f56dee6e948e19e5e2869a80bd994)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"optimists\" as an answer to task 3."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"transformed\" as an answer to Task 3 (ver_9e1ea9e56d274b27affd5f471b04ec4c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"transformed\" as an answer to Task 3."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"peaceful\" as an answer to Task 3 (ver_831977e4b8b84eb982a47513b86ff017)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"peaceful\" as an answer to Task 3."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"unlikely\" as an answer to task 3 (ver_8498c4d156df4a13a6614d51be1e477f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"unlikely\" as an answer to task 3."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"sharply\" as an answer to Task 3 (ver_8233bf859cf54fcaab2e9db17386cfb3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"sharply\" as an answer to Task 3."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"fully\" as an answer to Task 3 (ver_a532cef096f14aa9902e0b8a3ff1fe21)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"fully\" as an answer to Task 3."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"fairly\" as an answer to Task 3 (ver_ddfccf27366144efb7bc082350fbae22)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"fairly\" as an answer to Task 3."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"shortly\" as an answer to Task 3 (ver_7fe14d591cb84a298be7a5f6c6995844)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"shortly\" as an answer to Task 3."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"hopefully\" as an answer to task 3 (ver_63448f8a9c5446c1aedb81e5e716b45f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"hopefully\" as an answer to task 3."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-yuy21af7-natural-prompt-7cc5507e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_bb2868929444403db49771012f030f29",
+    "world_name": "Teaching World 308",
+    "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+    "task_name": "Task yuy21af7 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_42757db21ccd4ed8b942f0b87e73a9b5",
+        "golden_text_response": "Task 1:  Alan Romero 58%\n\nTask 2:  [no output requested]\n\nTask 3:  contrasted, depression, sub-division, decision, movement, advancement, abolitionist, optimists, transformed, peaceful, unlikely, sharply, fully, fairly, shortly, hopefully",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

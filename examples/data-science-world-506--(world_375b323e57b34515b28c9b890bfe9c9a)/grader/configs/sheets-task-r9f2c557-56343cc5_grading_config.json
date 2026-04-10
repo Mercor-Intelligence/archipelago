@@ -1,0 +1,250 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_d767d6051dc24232a8e5c8347e936d83",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56343cc59aba406e8a0ddfea9765ed2e",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the minimum promotion duration for promotions in the percentage promotion type as 11.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested that the minimum promotion duration for promotions in the percentage promotion type be calculated.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4fde6a0dc4dd439b88c8232d1107c0ed",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56343cc59aba406e8a0ddfea9765ed2e",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the maximum promotion duration for promotions in the percentage promotion type as 82.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested that the maximum promotion duration for promotions in the percentage promotion type be calculated.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fb4eabefe80e45dbb72b48c7cf0c43d1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56343cc59aba406e8a0ddfea9765ed2e",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the minimum promotion duration for promotions in the free months promotion type as 14.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested that the minimum promotion duration for promotions in the free months promotion type be calculated.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_29b6f01c417340178ee3d296d4aec65e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56343cc59aba406e8a0ddfea9765ed2e",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the maximum promotion duration for promotions in the free months promotion type as 84.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested that the maximum promotion duration for promotions in the free months promotion type be calculated.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_84f94ceeb3b340d7a9aeb5b30ac3c5b6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56343cc59aba406e8a0ddfea9765ed2e",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the minimum promotion duration for promotions in the fixed amount promotion type as 12.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested that the minimum promotion duration for promotions in the fixed amount promotion type be calculated.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_16d9160a6b124f29951cab040bc03efb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56343cc59aba406e8a0ddfea9765ed2e",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the maximum promotion duration for promotions in the fixed amount promotion type as 84.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested that the maximum promotion duration for promotions in the fixed amount promotion type be calculated.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4f78d5862f4e4a828b884aa524f8b219",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56343cc59aba406e8a0ddfea9765ed2e",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the minimum of the absolute value of the difference between target redemptions and actual redemptions for promotions in the percentage promotion type as 47.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested that the minimum of the absolute value of the difference between target redemptions and actual redemptions for promotions in the percentage promotion type be calculated.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e4224c6c98a04dda8dd8f002303279d2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56343cc59aba406e8a0ddfea9765ed2e",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the maximum of the absolute value of the difference between target redemptions and actual redemptions for promotions in the percentage promotion type as 3434.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested that the maximum of the absolute value of the difference between target redemptions and actual redemptions for promotions in the percentage promotion type be calculated.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_932e516d3b8047199cf79de9b259f002",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56343cc59aba406e8a0ddfea9765ed2e",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the minimum of the absolute value of the difference between target redemptions and actual redemptions for promotions in the free months promotion type as 4.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested that the minimum of the absolute value of the difference between target redemptions and actual redemptions for promotions in the free months promotion type be calculated.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5a95950e66f14491af7c4625fd8051ca",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56343cc59aba406e8a0ddfea9765ed2e",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the maximum of the absolute value of the difference between target redemptions and actual redemptions for promotions in the free months promotion type as 3943.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested that the maximum of the absolute value of the difference between target redemptions and actual redemptions for promotions in the free months promotion type be calculated.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4ba4cda6e747405792ab7ea6b25464fa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56343cc59aba406e8a0ddfea9765ed2e",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the minimum of the absolute value of the difference between target redemptions and actual redemptions for promotions in the fixed amount promotion type as 505.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested that the minimum of the absolute value of the difference between target redemptions and actual redemptions for promotions in the fixed amount promotion type be calculated.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_34c5c0a7e2dc42ccb36ab937015c44d7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56343cc59aba406e8a0ddfea9765ed2e",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the maximum of the absolute value of the difference between target redemptions and actual redemptions for promotions in the fixed amount promotion type as 3273.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt requested that the maximum of the absolute value of the difference between target redemptions and actual redemptions for promotions in the fixed amount promotion type be calculated.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

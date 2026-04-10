@@ -66,6 +66,7 @@ async def evaluate_verifier(
     trajectory: AgentTrajectoryOutput,
     grading_settings: GradingSettings,
     helper_results: dict[HelperIds, Any],
+    golden_snapshots: list[io.BytesIO] | None = None,
 ) -> VerifierResult:
     """
     Evaluate a single verifier and return its result.
@@ -116,6 +117,7 @@ async def evaluate_verifier(
             EvalImplInput(
                 initial_snapshot_bytes=initial_snapshot_bytes,
                 final_snapshot_bytes=final_snapshot_bytes,
+                golden_snapshots=golden_snapshots or [],
                 trajectory=trajectory,
                 grading_settings=grading_settings,
                 verifier=verifier,
@@ -163,6 +165,7 @@ async def main(
     verifiers: list[Verifier],
     eval_configs: list[EvalConfig],
     scoring_config: ScoringConfig,
+    golden_snapshots: list[io.BytesIO] | None = None,
 ):
     # Set grading_run_id in context for all downstream LLM calls
     with grading_context(grading_run_id):
@@ -177,16 +180,72 @@ async def main(
                     helper_defn = HELPER_REGISTRY[helper_id]
                     helpers[helper_id] = helper_defn
 
+            eval_defn_id_by_config_id = {
+                ec.eval_config_id: str(ec.eval_defn_id) for ec in eval_configs
+            }
+
+            # Collect eval-config-specific kwargs for helpers that need them.
+            # ARTIFACT_STATE needs parser_config from eval_config_values to know
+            # which parser and file glob to use when extracting artifact state.
+            # Multiple eval configs may contribute table_mappings — we merge them.
+            # If they disagree on parser type or file_glob, raise immediately.
+            helper_kwargs: dict[HelperIds, dict[str, Any]] = {}
+            merged_parser_config: dict[str, Any] | None = None
+            for eval_config in eval_configs:
+                if eval_config.eval_config_id not in used_eval_config_ids:
+                    continue
+                eval_defn = EVAL_REGISTRY[eval_config.eval_defn_id]
+                if HelperIds.ARTIFACT_STATE in eval_defn.helper_dependencies:
+                    parser_config = eval_config.eval_config_values.get("parser_config")
+                    if not parser_config:
+                        continue
+                    if merged_parser_config is None:
+                        merged_parser_config = dict(parser_config)
+                        merged_parser_config["table_mappings"] = list(
+                            parser_config.get("table_mappings", [])
+                        )
+                    else:
+                        if merged_parser_config.get("parser") != parser_config.get(
+                            "parser"
+                        ) or merged_parser_config.get("file_glob") != parser_config.get(
+                            "file_glob"
+                        ):
+                            raise ValueError(
+                                f"Conflicting parser_config for ARTIFACT_STATE helper: eval config {eval_config.eval_config_id} uses parser={parser_config.get('parser')!r} file_glob={parser_config.get('file_glob')!r} but a previous eval config uses parser={merged_parser_config.get('parser')!r} file_glob={merged_parser_config.get('file_glob')!r}"
+                            )
+                        merged_parser_config["table_mappings"].extend(
+                            parser_config.get("table_mappings", [])
+                        )
+            if merged_parser_config is not None:
+                helper_kwargs[HelperIds.ARTIFACT_STATE] = {
+                    "parser_config": merged_parser_config
+                }
+
             helper_results = {}
             for helper in helpers:
                 helper_defn = helpers[helper]
-                if helper_defn.helper_impl is None:
-                    raise ValueError(f"Helper {helper} has no implementation")
 
                 try:
-                    helper_results[helper] = await helper_defn.helper_impl(
-                        initial_snapshot_bytes, final_snapshot_bytes, trajectory
-                    )
+                    if helper_defn.helper_impl_with_context is not None:
+                        helper_results[
+                            helper
+                        ] = await helper_defn.helper_impl_with_context(
+                            initial_snapshot_bytes,
+                            final_snapshot_bytes,
+                            trajectory,
+                            verifiers,
+                            eval_defn_id_by_config_id,
+                            grading_settings,
+                        )
+                    elif helper_defn.helper_impl is not None:
+                        helper_results[helper] = await helper_defn.helper_impl(
+                            initial_snapshot_bytes,
+                            final_snapshot_bytes,
+                            trajectory,
+                            **helper_kwargs.get(helper, {}),
+                        )
+                    else:
+                        raise ValueError(f"Helper {helper} has no implementation")
                 except Exception as e:
                     logger.error(
                         f"[GRADING][HELPER] Error evaluating helper {helper}: {repr(e)}"
@@ -215,6 +274,7 @@ async def main(
                         trajectory=trajectory,
                         grading_settings=grading_settings,
                         helper_results=helper_results,
+                        golden_snapshots=golden_snapshots,
                     )
                     for verifier in level_verifiers
                 ]
@@ -306,6 +366,13 @@ if __name__ == "__main__":
     parser.add_argument("--verifiers", type=str, required=True)
     parser.add_argument("--eval-configs", type=str, required=True)
     parser.add_argument("--scoring-config", type=str, required=True)
+    parser.add_argument(
+        "--golden-snapshot",
+        type=str,
+        action="append",
+        dest="golden_snapshots",
+        help="Path to golden response snapshot zip (optional, can be repeated for multiple golden states)",
+    )
     parser.add_argument("--output", type=str, help="Path to save the output JSON")
 
     args = parser.parse_args()
@@ -315,6 +382,13 @@ if __name__ == "__main__":
 
     with open(args.final_snapshot, "rb") as f:
         final_snapshot_bytes = io.BytesIO(f.read())
+
+    # Load golden snapshots (supports multiple for tasks with multiple valid end states)
+    golden_snapshots: list[io.BytesIO] = []
+    if args.golden_snapshots:
+        for path in args.golden_snapshots:
+            with open(path, "rb") as f:
+                golden_snapshots.append(io.BytesIO(f.read()))
 
     with open(args.trajectory) as f:
         # Use model_validate(json.loads(...)) instead of model_validate_json(...)
@@ -346,6 +420,7 @@ if __name__ == "__main__":
             verifiers=verifiers,
             eval_configs=eval_configs,
             scoring_config=scoring_config,
+            golden_snapshots=golden_snapshots,
         )
     )
 

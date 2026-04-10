@@ -1,0 +1,130 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_3ac39630062145bf909228ccea48f0df",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5f900faf506441bead1c188eab3896b4",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "States the definition of Open Source Software from Exhibit A of \"Synopsys Ansys merger.pdf\".",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "This definition is required because it is used in the language required to be inserted from the precedent.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Synopsys Ansys merger.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_48af7dfa99c548d0a03927ac192a20db"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9a80352835124018ba2c9d171ec5fefa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5f900faf506441bead1c188eab3896b4",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "States the definition of Software from Exhibit A of \"Synopsys Ansys merger.pdf\".",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "This definition is required because it is nested in the definition of Open Source Software.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Synopsys Ansys merger.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_48af7dfa99c548d0a03927ac192a20db"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_91e01f0262ff458993c302f225e5c3e6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5f900faf506441bead1c188eab3896b4",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file - make no unrequested changes"
+        ],
+        "weight": 1,
+        "criteria": "States agreement date of December 1, 2025.",
+        "autogen_source": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The prompt directs the LLM to use the December 1, 2025 draft, and doesn't direct any updates to the date. The LLM went with a different version that is dated January 1, 2026.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_14672a07e51244cab810558aa097f624",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5f900faf506441bead1c188eab3896b4",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "States the text from Section 2.8(h) of \"Synopsys Ansys merger.pdf\" with all of the following modifications: (1) deletes the text \"on the Company\"; (2) replaces the term \"Acquired Company\" with a reference to the Seller; (3) replaces the term Company Product, Company Software, or Company Material with a reference to the Purchased Assets; and (4) replaces the term \"Intellectual Property Rights\" with \"Intellectual Property\".",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "These changes are required to conform the defined terms to those used in the agreement. ",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Synopsys Ansys merger.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_48af7dfa99c548d0a03927ac192a20db"
+          }
+        ]
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "d75f8557-805e-4b99-b3f6-eb71cb7e8385",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

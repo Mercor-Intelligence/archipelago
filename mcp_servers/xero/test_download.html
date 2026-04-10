@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test CSV Download</title>
+</head>
+<body>
+    <h1>CSV Download Test</h1>
+    <button id="downloadBtn" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+        📥 Download CSV
+    </button>
+    
+    <div id="log" style="margin-top: 20px; padding: 10px; background: #f0f0f0; font-family: monospace; white-space: pre-wrap;">
+    </div>
+
+    <script>
+        const csvContent = `AccountID,AddToWatchlist,BankAccountNumber,BankAccountType,Class,Code,CurrencyCode,EnablePaymentsToAccount,HasAttachments,Name,ReportingCode,ReportingCodeName,ShowInExpenseClaims,Status,TaxType,Type,UpdatedDateUTC
+562555f2-8cde-4ce9-8203-0363922537a4,false,0908007006543,BANK,ASSET,090,USD,false,false,Business Bank Account,ASS,Asset,false,ACTIVE,NONE,BANK,/Date(1761970958490+0000)/
+72f1dcfe-5d7d-4239-bf9d-e12469309716,false,,,REVENUE,200,,false,false,Sales,INC,Income,false,ACTIVE,OUTPUT,REVENUE,/Date(1761970958490+0000)/
+csv-acc-001,,,,ASSET,100,USD,,,Cash on Hand,ASS,Asset,,ACTIVE,NONE,BANK,`;
+
+        const logDiv = document.getElementById('log');
+        
+        function log(msg) {
+            console.log(msg);
+            logDiv.textContent += msg + '\n';
+        }
+
+        document.getElementById('downloadBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            log('Download button clicked');
+            log('CSV content length: ' + csvContent.length);
+            
+            try {
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                log('Blob created, size: ' + blob.size);
+                
+                const url = URL.createObjectURL(blob);
+                log('Object URL created: ' + url);
+                
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'Accounts.csv';
+                a.style.display = 'none';
+                document.body.appendChild(a);
+                log('Link element created and appended');
+                
+                a.click();
+                log('Link clicked');
+                
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    log('Cleanup completed');
+                }, 100);
+                
+                log('SUCCESS! File should download.');
+            } catch (error) {
+                log('ERROR: ' + error);
+                alert('Download failed: ' + error);
+            }
+        });
+        
+        log('Page loaded. Click the button to test download.');
+        log('CSV has ' + csvContent.split('\n').length + ' lines');
+    </script>
+</body>
+</html>
+

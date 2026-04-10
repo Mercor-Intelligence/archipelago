@@ -1,0 +1,82 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_ab61512e43014be4b83556102e47ae2e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5774379355fa440eaa9a7cd721b5768c",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the provided termination notice was not valid under the ENA",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "While the City is authorized to exercise the right to terminate the ENA if it \u201dreasonably determines that a successful consummation of the negotiations is not likely\u201d.  It can exercise this right by giving 20 days written notice citing this reason.  Here, the notice was sent by e-mail, which is not one of the authorized means of sending legal notices under the agreement.  Therefore, the notice was not valid. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Deliverable Drafts/LOI/FINAL Exclusive Negotiating Agreement San D and Liv Dev Co.pdf",
+            "index": null,
+            "source": "world",
+            "snapshotId": "snap_a2994eccf63e45f395bb16b9aa44d54a"
+          }
+        ]
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e5d74082f8454b5db4c3bf2754918f1f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5774379355fa440eaa9a7cd721b5768c",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that City is not entitled to keep entire $50,000 deposit at issue",
+        "autogen_source": null,
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Under Section 3.1, the City is entitled to retain \"Negotiation Expenses\", consisting of public outreach, negotiating and preparing the agreement, reviewing documents relating to the project, and negotiating/drafting the Development Agreement.  Several of the claimed expenses are outside of the scope of Negotiating Expenses, including Holiday Decorations Near Subject Property ($2,500), Lost Opportunity Costs ($6,600), and Interest Paid on Property Loans ($3,400).  Therefore, once a properly issued notice is issued, the properly claimed Negotiation Expenses should be no greater than $37,500. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Deliverable Drafts/LOI/FINAL Exclusive Negotiating Agreement San D and Liv Dev Co.pdf",
+            "index": null,
+            "source": "world",
+            "snapshotId": "snap_a2994eccf63e45f395bb16b9aa44d54a"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

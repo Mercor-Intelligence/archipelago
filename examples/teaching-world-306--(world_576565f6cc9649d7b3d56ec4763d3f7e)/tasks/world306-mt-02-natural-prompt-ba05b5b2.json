@@ -1,0 +1,312 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use the Comparison of Student Groups and Science Class Attendance Rate documents. Create a doc with a table with full name, average grade, and attendance rate of the IEP students with a <70 grade average. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Identifies Jensen, McKay as one of the IEP students with a grade average lower... (ver_5f4ba226da714a3196dafe3291e140b3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Jensen, McKay as one of the IEP students with a grade average lower than 70."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Thomas, Makenna as one of the IEP students with a grade average... (ver_dd13607ab75a4c4d869f9d8d3930c2a1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Thomas, Makenna as one of the IEP students with a grade average lower than 70."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Robinson, Halle as one of the IEP students with a grade average... (ver_c76f44ca1a0c49f9a8800759d77dbd73)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Robinson, Halle as one of the IEP students with a grade average lower than 70."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Taylor, Avery as one of the IEP students with a grade average lower... (ver_e67a15f7524d46a0937365fc546b2a36)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Taylor, Avery as one of the IEP students with a grade average lower than 70."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Fox, Everleigh as one of the IEP students with a grade average... (ver_f4f40a51c167437093edc5fbafc31640)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Fox, Everleigh as one of the IEP students with a grade average lower than 70."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Taylor, Noah as one of the IEP students with a grade average lower... (ver_262ccc0c0ce942f6911b2e436a4446ac)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Taylor, Noah as one of the IEP students with a grade average lower than 70."
+        }
+      ]
+    },
+    {
+      "name": "States the attendance rate of Jensen, McKay as 80% (acceptable range 79% to 81%) (ver_dd860cf688f94fa2b26ffce0585cefde)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the attendance rate of Jensen, McKay as 80% (acceptable range 79% to 81%)."
+        }
+      ]
+    },
+    {
+      "name": "States the attendance rate of Thomas, Makenna as 95.6% (acceptable range 94.6%... (ver_dd61e921fbf74ddf8ff229037a2059b8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the attendance rate of Thomas, Makenna as 95.6% (acceptable range 94.6% to 96.6%)."
+        }
+      ]
+    },
+    {
+      "name": "States the attendance rate of Robinson, Halle as 94.4% (acceptable range 93.5%... (ver_572e919fe9d443669d3b1d3dc1512f77)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the attendance rate of Robinson, Halle as 94.4% (acceptable range 93.5% to 95.3%)."
+        }
+      ]
+    },
+    {
+      "name": "States the attendance rate of Taylor, Avery as 95.6% (acceptable range 94.6%... (ver_9826a08e0f3a4b34b931be4cc2c6edb2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the attendance rate of Taylor, Avery as 95.6% (acceptable range 94.6% to 96.6%)."
+        }
+      ]
+    },
+    {
+      "name": "States the attendance rate of Fox, Everleigh as 96.7% (acceptable range 95.7%... (ver_12baa17c48de4d75b95c9fc793d357fe)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the attendance rate of Fox, Everleigh as 96.7% (acceptable range 95.7% to 97.7%)."
+        }
+      ]
+    },
+    {
+      "name": "States the attendance rate of Taylor, Noah as 98.9% (acceptable range 97.9% to... (ver_869b44a6c6294fa98ae9a1c427fa5751)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the attendance rate of Taylor, Noah as 98.9% (acceptable range 97.9% to 99.9%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world306-mt-02-natural-prompt-ba05b5b2"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_576565f6cc9649d7b3d56ec4763d3f7e",
+    "world_name": "Teaching World 306",
+    "task_id": "task_ba05b5b20ca14d73a874367703ab6e88",
+    "task_name": "World306_mt_02 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_7f932e3a99ec45639f208fe08eb0e6bb",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_7c04425ebb3443d39c3b13a05b304fb5"
+      },
+      {
+        "golden_response_id": "gold_84e177f599324caeb9252794447c7c90",
+        "golden_text_response": "See the attached file. ",
+        "golden_file_responses": "snap_7c04425ebb3443d39c3b13a05b304fb5"
+      }
+    ]
+  }
+}

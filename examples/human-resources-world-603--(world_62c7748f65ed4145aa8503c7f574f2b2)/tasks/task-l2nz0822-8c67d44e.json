@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Our CHRO wants to ensure the latest data on candidates is in Greenhouse, including some notes she took on some of the candidates. \n\nCreate candidates for those included in Executive_Candidate_Comparison_Matrix.xlsx. Then, use the attached notes data from various interviews with candidates and put into the notes section of the relevant candidate profiles in Greenhouse. Get the full Greenhouse profiles of the candidates from Footlocker.\n\nFor final outputs, state the number of candidates you created in Greenhouse and then return the unique number of note entries that are in Greenhouse for all Footlocker profiles combined. \n\nPlease provide your response as a message in the console. Give me a full report."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of candidates created in GreenhouseATS is 78. (ver_e5771107d6504463a6d9928f5c86dd9c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of candidates created in GreenhouseATS is 78."
+        }
+      ]
+    },
+    {
+      "name": "States that the total number of unique notes entries for Footlocker profile... (ver_808ab5b6cbc34e27837fe75f445a1528)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of unique notes entries for Footlocker profile candidates in GreenhouseATS is 14."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-l2nz0822-8c67d44e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_8c67d44e8c2448c0ae356b538ee9afa3",
+    "task_name": "Task l2nz0822",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_eafe22e0dfc9487c8a68e229e849e3cb",
+        "golden_text_response": "The number of candidates created in GreenhouseATS is 78.\n\nThe total number of unique notes entries for Footlocker profile candidates in GreenhouseATS is 14.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

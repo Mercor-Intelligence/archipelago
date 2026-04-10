@@ -1,0 +1,192 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 9” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nPrompt: \nThe patient presents to her oncologist for follow-up. Reference files \"Onc_Patient 9\" and \"Onc_Patient 9 script.pdf\" and \"Path.pdf\". What is this patient's Neo-Bioscore for her breast cancer? Based on her score, what is this patient's 5-year Disease-Specific Survival (DSS)? Provide clinical reasoning."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Assigns 1 point to the patient's clinical stage in the Neo-Bioscore. (ver_4a7346a7a49640ebbb5ddfbdf82d4cc1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 1 point to the patient's clinical stage in the Neo-Bioscore."
+        }
+      ]
+    },
+    {
+      "name": "Assigns 0 points to the patient's pathological stage in the Neo-Bioscore. (ver_329b5c9d874640fcb6fbe6f445a22277)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 0 points to the patient's pathological stage in the Neo-Bioscore."
+        }
+      ]
+    },
+    {
+      "name": "Assigns 1 point to the patient's ER-negative tumor marker in the Neo-Bioscore. (ver_c4e72a0d74d44030a3aeaff18a58c5fa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 1 point to the patient's ER-negative tumor marker in the Neo-Bioscore."
+        }
+      ]
+    },
+    {
+      "name": "Assigns 1 point to the patient's grade 3 tumor in the Neo-Bioscore. (ver_1f04294bf24b4ff8baaab638fcec674c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 1 point to the patient's grade 3 tumor in the Neo-Bioscore."
+        }
+      ]
+    },
+    {
+      "name": "Assigns 0 points to the patient's HER2-positive (ERBB2-positive) tumor marker... (ver_6e6816971bdb4e1f874e306aed55fbad)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 0 points to the patient's HER2-positive (ERBB2-positive) tumor marker in the Neo-Bioscore."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has a total Neo-Bioscore of 3 (acceptable range 2.97... (ver_6e71907093934b73b1906b86253e23d9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has a total Neo-Bioscore of 3 (acceptable range 2.97 to 3.03)."
+        }
+      ]
+    },
+    {
+      "name": "Concludes that the patient has a 93% 5-year disease free survival. (ver_bda1fa3a0d7b4d129f0ea8ba292ef5c6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Concludes that the patient has a 93% 5-year disease free survival."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-onc-patient-9-neo-bioscore-eliane-d2249c6d"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_d2249c6d441b4d6ab39bff67f1787dca",
+    "task_name": "Labs_Image_AI Scribe_Onc Patient 9 - Neo-Bioscore - Eliane",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d3f4eeaefb4c4825b41e7155dcc99ca7",
+        "golden_text_response": "1. What is this patient's Neo-Bioscore for her breast cancer? \n\nClinical Stage IIIA - 1 point\nPathological Stage - 0 points\nER status: Tumor Marker - ER negative - 1 point\nGrade 3 - 1 point \nHER2 positive - 0 points\n\nTotal Neo-Bioscore = 1 + 0 + 1 +1 + 0 = 3\n\n\n2. Based on her score, what is this patient's 5-year Disease-Specific Survival (DSS)? Provide clinical reasoning.\n\nConcludes that the patient has a 93% 5-year disease free survival. \n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

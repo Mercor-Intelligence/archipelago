@@ -1,0 +1,206 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_a22bc590d1934a449058704dbc26fd67",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b72db05513b40d39be6d04d2159cc8c",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has complicated cystitis.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has dysuria and flank pain and flank pain is a symptom beyond the bladder. From the prompt. \"She reports dysuria and flank pain.\" \"Box 1: Complicated UTI classifications for guidelines purposes (intended to guide treatment, not diagnosis)\n\u2022\tClinical presentation:\no\tComplicated urinary tract infection is accompanied by symptoms that suggest an infection extending beyond the bladder, including:\n\uf0a7\tFever\n\uf0a7\tOther signs or symptoms of systemic illness, including chills, rigors, or hemodynamic instability\n\uf0a7\tFlank pain\n\uf0a7\tCostovertebral angle tenderness\n\n\" https://www.idsociety.org/practice-guideline/complicated-urinary-tract-infections/",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_58fe65fc888d4e43a143f5cf026c8c67",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b72db05513b40d39be6d04d2159cc8c",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "criteria": "Recognizes the patient has a history of recurrent urinary tract infections (UTI).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the chart. \"ASSESSMENT AND PLAN Ms. Balam is a 60 y.o. with:  1. Recurrent urinary tract infection\" Tab-ClinicalNotes, Progress notes, Column D, Row 193, Section-Assessment and Plan.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_93a1833118094330b22b47e2feb746a8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b72db05513b40d39be6d04d2159cc8c",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "Recognizes that is the patient's risk factor for their complicated cystitis is recurrent UTI.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is logical that the main risk factor for a uti presentation is a history of prior recurrent UTI.\n\n\"Recurrent UTI risk factors include:\nHistory of 5 or more UTIs\"\n\nhttps://www.ncbi.nlm.nih.gov/sites/books/NBK557479/#:~:text=Risk%20Factors%20for%20Recurrent%20Infections,%5D%5B14%5D%5B15%5D",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2a0b5f344636466db33eddadb86542d2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b72db05513b40d39be6d04d2159cc8c",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "criteria": "States that the patient's complicated cystitis is due to an extended-spectrum beta-lactamase producing Escherichia coli.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Noted from the test result \"Cards_Patient 13 Test.pdf\" \"Result 1: Escherichia coli (ESBL-producing) Greater than 100,000 colony forming units per mL\"\r\nThe sensitivities are to Trimethoprim/Sulfamethoxazole, Nitrofurantoin and Imipenem.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_200d635872474b998acce5483ee090de",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b72db05513b40d39be6d04d2159cc8c",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "criteria": "States that the patient has not been treated for the complicated cystitis.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from the script \"Cards_Patient 13 Script.pdf\" which is important so patient can start treatment and has not already failed an antibiotic.\r\n\"Physician: Oh yes the nurse did mention you received a urine culture from an outside facility\r\nthat I was not sent over.\r\nPatient: Yes we were traveling and then I had some discomfort with peeing so I went to an\r\nurgent care and they checked my urine and got the urine culture. They recommended antibiotics\r\nbut I said I wanted to wait till I talked it over with you.\"",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cc77745107984016bd5975f905b8f10f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b72db05513b40d39be6d04d2159cc8c",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States trimethoprim-sulfamethoxazole is first-line for complicated UTI caused by extended-spectrum beta-lactamase producing organisms.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Question 1.2: What are preferred antibiotics for the treatment of pyelonephritis or cUTI caused by ESBL-E?\nSuggested approach: TMP-SMX, ciprofloxacin, or levofloxacin are preferred treatment options for pyelonephritis or cUTIs caused by ESBL-E. Ertapenem, meropenem, and imipenem-cilastatin are preferred agents when resistance or toxicities preclude the use of TMP-SMX or fluoroquinolones.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dd6a87cddc47414fabad4af611297409",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b72db05513b40d39be6d04d2159cc8c",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States TMP-SMX is the next best step for treatment in this patient.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient's ESBL E coli complicated cystitis sensitivties are Bactrim, nitrofurantoin and imipenem. Since Bactrim is the first-line, that was the best option. Macrobid was never an option for complicated UTI but is an option for uncomplicated UTI. Imipenem would be an option if Bactrim was not available or resistant to. \r\n\r\n\"Question 1.1: What are preferred antibiotics for the treatment of uncomplicated cystitis caused by ESBL-E?\r\nSuggested approach: Nitrofurantoin and TMP-SMX are preferred treatment options for uncomplicated cystitis caused by ESBL-E. \" https://www.idsociety.org/practice-guideline/amr-guidance/",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6f30a7506584482aa4b640c208690505",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b72db05513b40d39be6d04d2159cc8c",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "Recognizes that clinical improvement guides antibiotic duration for complicated UTIs.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"I. In patients presenting with complicated UTI (including acute pyelonephritis) and who are improving clinically on effective therapy, we suggest treating with a shorter course of antimicrobials, using either 5-7 days of a fluoroquinolone (conditional recommendation, moderate certainty of evidence) or 7 days of a non-fluoroquinolone antibiotic (conditional recommendation, very low certainty of evidence), rather than a longer course (10-14 days).\" https://www.idsociety.org/practice-guideline/complicated-urinary-tract-infections/",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_00f494773c484edead464e5a75de27e1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b72db05513b40d39be6d04d2159cc8c",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "Identifies a 7-day antibiotic course of TMP-SMX as appropriate for this patient if there is clinical improvement with therapy.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"I. In patients presenting with complicated UTI (including acute pyelonephritis) and who are improving clinically on effective therapy, we suggest treating with a shorter course of antimicrobials, using either 5-7 days of a fluoroquinolone (conditional recommendation, moderate certainty of evidence) or 7 days of a non-fluoroquinolone antibiotic (conditional recommendation, very low certainty of evidence), rather than a longer course (10-14 days).\" https://www.idsociety.org/practice-guideline/complicated-urinary-tract-infections/",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_aef85546ed714c03b19e666c16c2c7a1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b72db05513b40d39be6d04d2159cc8c",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "Identifies a 10 to 14-day antibiotic course of TMP-SMX as an option during inadequate response.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"I. In patients presenting with complicated UTI (including acute pyelonephritis) and who are improving clinically on effective therapy, we suggest treating with a shorter course of antimicrobials, using either 5-7 days of a fluoroquinolone (conditional recommendation, moderate certainty of evidence) or 7 days of a non-fluoroquinolone antibiotic (conditional recommendation, very low certainty of evidence), rather than a longer course (10-14 days).\" https://www.idsociety.org/practice-guideline/complicated-urinary-tract-infections/",
+        "is_primary_objective": true
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

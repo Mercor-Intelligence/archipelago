@@ -1,0 +1,55 @@
+[env]
+STATE_LOCATION = "{% if env.STATE_LOCATION is defined %}{{env.STATE_LOCATION}}{% else %}{{config_root}}/.apps_data/tableau{% endif %}"
+DATABASE_URL = "{% if env.DATABASE_URL is defined %}{{env.DATABASE_URL}}{% else %}sqlite+aiosqlite:///{{config_root}}/.apps_data/tableau/data.db{% endif %}"
+
+[env._.python.venv]
+path = ".venv"
+create = true
+
+[tools]
+uv = "0.6.10"
+python = "3.13"
+
+[tasks.start]
+run = "uv run --no-sync python mcp_servers/tableau/main.py"
+description = "Start the MCP server"
+depends = ["populate"]
+
+[tasks.format]
+run = "ruff format ."
+description = "Format code"
+
+[tasks.test]
+run = "pytest"
+description = "Run tests"
+
+[tasks.lint]
+run = "ruff check ."
+description = "Run linter"
+
+[tasks.typecheck]
+run = "echo 'No typecheck configured'"
+description = "Run type checker"
+
+[tasks.install]
+run = "uv sync --all-extras"
+description = "Install dependencies"
+
+[tasks.build]
+# Create state directory and run database migrations only.
+run = "mkdir -p ${STATE_LOCATION} && cd ./mcp_servers/tableau && (uv run --no-sync alembic -c alembic.ini upgrade head || echo 'Alembic migration skipped')"
+description = "Run database migrations"
+depends = ["install"]
+
+[tasks.populate]
+# Import CSV data from STATE_LOCATION after snapshot extraction.
+run = """
+if [ -d "${STATE_LOCATION}" ] && [ "$(ls -A "${STATE_LOCATION}" 2>/dev/null)" ]; then
+  echo "Importing CSV files from ${STATE_LOCATION}..."
+  cd ./mcp_servers/tableau && uv run --no-sync python ../../scripts/import_csv.py --dir "${STATE_LOCATION}"
+else
+  echo "No CSV files to import"
+fi
+"""
+description = "Import CSV data into database"
+depends = ["build"]

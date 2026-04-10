@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the Audited Redwood Components model in the filesystem and the files Invoices and BankTransactions docs in Xero, calculate the revised Total Cumulative Exposure for Redwood taking the following further developments after the analysis:\n1) Draft invoices for overseas clients (other than US) were not actual realized contracts but recorded as incomes in respective years. \n2) Monies received from overseas clients without any corresponding invoices are advances for larger future contracts, but the dollar value corresponds to the dollar value of products already shipped to these clients. \n\nAssume the following as well:\n1) Figures mentioned in all these files are already in US denomination.\n2) invoices list is exhaustive and no additional invoices exist outside the Xero file\n\nRound all final outputs to two decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the revised Total Cumulative Exposure for Redwood for tax years... (ver_69e91ccafd514b17887a3e7cc4fbd732)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the revised Total Cumulative Exposure for Redwood for tax years 2021-2023 is $5,372,537.80."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh accounting-world-801-xero-task-1-886bd965"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_886bd965ab8e4fb9b12a1a2f134af875",
+    "task_name": "Accounting World 801_Xero Task_1",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_58128b79d5bd410faaf1792750f18b65",
+        "golden_text_response": "The revised Total Cumulative Exposure for Redwood for tax years 2021-2023 is $5,372,537.80.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

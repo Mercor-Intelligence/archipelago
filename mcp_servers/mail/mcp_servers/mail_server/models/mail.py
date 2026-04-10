@@ -2,12 +2,12 @@ import re
 from re import Pattern
 from typing import ClassVar, Literal
 
-from mcp_schema import FlatBaseModel, OutputBaseModel
-from pydantic import ConfigDict, Field, field_validator
+from mcp_schema import GeminiBaseModel
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 from utils.config import MAX_SUBJECT_LENGTH
 
 
-class SendMailInput(FlatBaseModel):
+class SendMailInput(GeminiBaseModel):
     """Input model for sending an email."""
 
     model_config = ConfigDict(extra="forbid")
@@ -144,7 +144,7 @@ class SendMailInput(FlatBaseModel):
         return value
 
 
-class MailResponse(OutputBaseModel):
+class MailResponse(BaseModel):
     """Response model for mail sending operation."""
 
     model_config = ConfigDict(extra="forbid")
@@ -178,7 +178,7 @@ class MailResponse(OutputBaseModel):
         return f"Mail sent successfully! Mail ID: {self.mail_id}, Recipients: {self.recipients_count}"
 
 
-class MailData(OutputBaseModel):
+class MailData(BaseModel):
     """Model for the mail data stored in JSON files."""
 
     model_config = ConfigDict(extra="ignore")
@@ -273,7 +273,7 @@ class MailData(OutputBaseModel):
         return "\n".join(lines)
 
 
-class MailSummary(OutputBaseModel):
+class MailSummary(BaseModel):
     """Summary model for listing emails."""
 
     model_config = ConfigDict(extra="ignore")
@@ -318,7 +318,7 @@ class MailSummary(OutputBaseModel):
         return "\n".join(lines)
 
 
-class MailListResponse(OutputBaseModel):
+class MailListResponse(BaseModel):
     """Response model for listing emails."""
 
     model_config = ConfigDict(extra="forbid")
@@ -349,7 +349,7 @@ class MailListResponse(OutputBaseModel):
         return "\n".join(lines).strip()
 
 
-class ForwardMailInput(FlatBaseModel):
+class ForwardMailInput(GeminiBaseModel):
     """Input model for forwarding an email."""
 
     model_config = ConfigDict(extra="forbid")
@@ -384,7 +384,7 @@ class ForwardMailInput(FlatBaseModel):
     )
 
 
-class ReplyMailInput(FlatBaseModel):
+class ReplyMailInput(GeminiBaseModel):
     """Input model for replying to an email (single or reply-all)."""
 
     model_config = ConfigDict(extra="forbid")
@@ -407,7 +407,7 @@ class ReplyMailInput(FlatBaseModel):
     )
 
 
-class SearchMailInput(FlatBaseModel):
+class SearchMailInput(GeminiBaseModel):
     """Input model for searching emails."""
 
     model_config = ConfigDict(extra="forbid")

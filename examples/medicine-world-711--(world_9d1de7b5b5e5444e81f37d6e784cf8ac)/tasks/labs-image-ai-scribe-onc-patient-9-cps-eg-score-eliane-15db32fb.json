@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 9” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nThe patient presents to her oncologist for follow-up.\nReference files \"Onc_Patient 9\",\"Onc_Patient 9 script.pdf\", and \"Path.pdf\".\n\nWhat is this patient's MD Anderson Neoadjuvant Therapy Outcomes (CPS+EG) Score? What is this patient's 5-year Distant Metastasis Free Survival incorporating estrogen receptor status and nuclear grade? Provide clinical reasoning."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Assigns 1 point for clinical stage IIIA in the MD Anderson Neoadjuvant Therapy... (ver_586a373ca9ad4669809e0c35accf5dbf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 1 point for clinical stage IIIA in the MD Anderson Neoadjuvant Therapy Outcomes Score (CPS+EG Score)."
+        }
+      ]
+    },
+    {
+      "name": "Assigns 0 points for pathological stage 0 in the MD Anderson Neoadjuvant... (ver_74049657d05e4d68a11f616721c5b63e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 0 points for pathological stage 0 in the MD Anderson Neoadjuvant Therapy Outcomes Score (CPS+EG Score)."
+        }
+      ]
+    },
+    {
+      "name": "Assigns 1 point for ER negative tumor marker in the MD Anderson Neoadjuvant... (ver_b8fc8b65b17b4638b909f376c05fdda3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 1 point for ER negative tumor marker in the MD Anderson Neoadjuvant Therapy Outcomes Score (CPS+EG Score)."
+        }
+      ]
+    },
+    {
+      "name": "Assigns 1 point for nuclear Grade 3 tumor in the MD Anderson Neoadjuvant... (ver_15f52c8d7ab246bfbd317d571cb29179)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 1 point for nuclear Grade 3 tumor in the MD Anderson Neoadjuvant Therapy Outcomes Score (CPS+EG Score)."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has a total MD Anderson Neoadjuvant Therapy Outcomes... (ver_d9de6234461d40119f15a41f19d23956)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has a total MD Anderson Neoadjuvant Therapy Outcomes Score (CPS+EG Score) of 3 (acceptable range 2.97 to 3.03)."
+        }
+      ]
+    },
+    {
+      "name": "Concludes that the patient has an 87% 5-year distant metastasis disease free... (ver_a1dd72afd2614f199a1831e0491c79e6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Concludes that the patient has an 87% 5-year distant metastasis disease free survival."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-onc-patient-9-cps-eg-score-eliane-15db32fb"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_15db32fbfd8049eeaa065b051a83b73a",
+    "task_name": "Labs_Image_AI Scribe_Onc Patient 9 - CPS+EG Score - Eliane",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_4d849fb303a84c1aa173fa84c6128055",
+        "golden_text_response": "1. What is this patient's MD Anderson Neoadjuvant Therapy Outcomes (CPS+EG) Score? \nClinical Stage IIIA - 1 point\nPathological Stage - 0 point\nER status: Tumor Marker - ER negative - 1 point\nGrade 3 - 1 point \n\nTotal Score  = 1 + 0 + 1 + 1  = 3\n\n2. What is this patient's 5-year Distant Metastasis Free Survival incorporating estrogen receptor status and nuclear grade?\nConcludes that the patient has an 87% 5-year distant metastasis disease free survival. \n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

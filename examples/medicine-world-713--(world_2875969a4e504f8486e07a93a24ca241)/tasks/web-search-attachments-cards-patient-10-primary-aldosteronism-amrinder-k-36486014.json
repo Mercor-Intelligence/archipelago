@@ -1,0 +1,238 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 10” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nPatient 10 presents to the clinic for a visit with their primary care doctor. \n\nBased on the recent conversation, which new diagnosis should be ruled out for this patient? Which medication should be changed, if any? In addition, which additional tests should the patient undergo to rule out this new diagnosis?\nAnswers should align with the most current clinical guidelines as of January 10, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Utilizes the 2025 American College of Cardiology/American Heart Association... (ver_f0ca86b5434347db8b887d53cd4f5150)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Utilizes the 2025 American College of Cardiology/American Heart Association joint committee clinical practice guidelines on hypertension."
+        }
+      ]
+    },
+    {
+      "name": "States that spontaneous hypokalemia is present in only 20% to 50% of patients... (ver_69030e67c861436784741343d6cd35e0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that spontaneous hypokalemia is present in only 20% to 50% of patients with primary aldosteronism."
+        }
+      ]
+    },
+    {
+      "name": "States that primary aldosteronism should be ruled out if patients with primary... (ver_4641b27e04554455b03b40ec915db40b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that primary aldosteronism should be ruled out if patients with primary hypertension present with muscle cramps."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has a diagnosis of primary hypertension. (ver_279d11e56c3e4b27a294a87f88c4c484)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has a diagnosis of primary hypertension."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient presents with muscle cramps. (ver_6a0ff846f07a4a668a37bc3bd4ee4777)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient presents with muscle cramps."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient’s laboratory results show normal electrolyte levels. (ver_63f8ab336c7f4475a133c0087afc5f1d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient’s laboratory results show normal electrolyte levels."
+        }
+      ]
+    },
+    {
+      "name": "States that primary aldosteronism is a new diagnosis to be ruled out for this... (ver_404b0a8d01e54d63bbb5aff4e27607c8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that primary aldosteronism is a new diagnosis to be ruled out for this patient."
+        }
+      ]
+    },
+    {
+      "name": "States that there is no indication of a medication change for this patient. (ver_04a3af277ffb4f90bf1b4b9887fe33c8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that there is no indication of a medication change for this patient."
+        }
+      ]
+    },
+    {
+      "name": "States that plasma aldosterone/renin activity ratio should be ordered. (ver_e949ed65e4444cc7a0f339216804f0c7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that plasma aldosterone/renin activity ratio should be ordered."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-cards-patient-10-primary-aldosteronism-amrinder-k-36486014"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_36486014e8a1419d9a5031a7a6f027b4",
+    "task_name": "Web Search_Attachments_Cards Patient 10 - Primary Aldosteronism - Amrinder K",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f3e6b2f975814b16a32bc8904ec9ca1f",
+        "golden_text_response": "Based on the recent conversation, which new diagnosis should be ruled out for this patient? Which medication should be changed? In addition, which additional tests should the patient undergo to rule out this new diagnosis? \n\nThe clinician adheres to the 2025 American College of Cardiology and American Heart Association joint clinical practice guidelines for hypertension. They state that the patient has a diagnosis of primary hypertension and presents with muscle cramps. Laboratory results show normal electrolyte levels. Spontaneous hypokalemia occurs in only 20% to 50% of patients with primary aldosteronism. Therefore, primary aldosteronism should be ruled out in patients with primary hypertension who present with muscle cramps. In this case, primary aldosteronism is a new diagnosis to be considered and ruled out. There is no indication that a medication change is necessary at this time. Additionally, the clinician recommends that the plasma aldosterone/renin activity ratio be ordered.\n\n3.2.3. Secondary Forms of Hypertension section on Page e 133 and 134.\nhttps://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the Audited Redwood Components Tax model, the quotes document and the payments document in Xero, project 2024 EBIT. \n\nAssumptions:\n- From the quotes document, assume all quotes with year date 2024 and status Accepted are part of 2024 revenue. To avoid any date confusion, use only the Date column.\n- From the payments document, assume all cash collected in 2024 is part of 2024 revenue\n- Assume 2024 EBIT margin is 175 bps higher than the 2021, 2022 and 2023 trial balance average EBIT margin\n- For intermediate calculations use USD, convert other currencies if needed.\n\nPresent output in $, rounded to two decimal places.\t"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the Projected 2024 EBIT is $1,679,810.96 (acceptable range... (ver_6aea8fea7689484ab0ff59c410426051)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Projected 2024 EBIT is $1,679,810.96 (acceptable range $1,663,012.85 to $1,696,609.07)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-801-sb-03-98df0b1c"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_98df0b1c471d413badba49fb486ed40c",
+    "task_name": "World 801 SB_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f78b778d9c0941d1b3d28cab2a0d6314",
+        "golden_text_response": "Projected 2024 EBIT:  $1,679,810.96 \n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

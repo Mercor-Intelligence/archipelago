@@ -1,0 +1,42 @@
+[arco]
+source = "foundry_app"
+name = "BambooHR"
+display_name = "BambooHR"
+description = "BambooHR Human Resources Information System - HR management simulation with employee records, time-off tracking, benefits administration, performance reviews, and organizational hierarchy. Supports employee lifecycle management, PTO requests, and HR reporting."
+version = "1.0.0"
+
+[arco.env.host]
+REPO_URL = "https://github.com/Mercor-Intelligence/mercor-bamboohr.git"
+
+[arco.env.build]
+STATE_LOCATION = "/.apps_data/bamboohr"
+# Use /tmp for database to avoid read-only issues with /.apps_data volume
+BAMBOOHR_DB_PATH = "/.apps_data/bamboohr/data.db"
+
+[arco.env.runtime]
+MCP_TRANSPORT = "http"
+MCP_PORT = "5000"
+HAS_STATE = "true"
+APP_FS_ROOT = "/filesystem"
+STATE_LOCATION = "/.apps_data/bamboohr"
+# Use /tmp for database to avoid read-only issues with /.apps_data volume
+BAMBOOHR_DB_PATH = "/.apps_data/bamboohr/data.db"
+INTERNET_ENABLED = "false"
+GUI_ENABLED = "true"
+
+[arco.env.runtime.schema.INTERNET_ENABLED]
+type = "bool"
+label = "Internet access"
+description = "Allow the MCP server to make outbound network requests"
+
+[arco.env.runtime.schema.GUI_ENABLED]
+type = "bool"
+label = "GUI mode"
+description = "Enable GUI mode to expose all individual tools instead of consolidated meta-tools"
+
+[arco.secrets.host]
+GITHUB_TOKEN = "RLS_GITHUB_READ_TOKEN"
+
+[arco.secrets.build]
+
+[arco.secrets.runtime]

@@ -1,0 +1,231 @@
+version: "1.0"
+
+servers:
+  - name: bamboohr
+    display_name: "BambooHR"
+    description: "BambooHR HRIS - Manage employees, time-off, and HR data"
+    tools_module: "mcp_servers.bamboohr.tools"
+    base_url: "http://localhost:8000"
+    requires_auth: true
+    auth_type: "bearer"
+
+categories:
+  - name: "Employees"
+    description: "Search, view, and manage employee records"
+    servers: [bamboohr]
+
+  - name: "Directory"
+    description: "Employee directory and organizational structure"
+    servers: [bamboohr]
+
+  - name: "Time Off"
+    description: "Time-off requests, balances, and policies"
+    servers: [bamboohr]
+
+  - name: "Reports"
+    description: "Company and custom reports"
+    servers: [bamboohr]
+
+  - name: "Datasets"
+    description: "Dataset queries and aggregations"
+    servers: [bamboohr]
+
+  - name: "Metadata"
+    description: "Countries, states, fields, and list options"
+    servers: [bamboohr]
+
+  - name: "Search"
+    description: "Search employees, time-off, and metadata"
+    servers: [bamboohr]
+
+  - name: "Admin"
+    description: "Administrative and system tools"
+    servers: [bamboohr]
+
+  - name: "Database"
+    description: "Database management (CSV import/export, table operations)"
+    servers: [bamboohr]
+
+tool_overrides:
+  # Employees
+  - tool: "bamboohr.bamboo_employees_create"
+    category: "Employees"
+    display_name: "Create Employee"
+
+  - tool: "bamboohr.bamboo_employees_get"
+    category: "Employees"
+    display_name: "Get Employee"
+
+  - tool: "bamboohr.bamboo_employees_update"
+    category: "Employees"
+    display_name: "Update Employee"
+
+  - tool: "bamboohr.bamboo_employees_get_company_info"
+    category: "Employees"
+    display_name: "Get Company Info"
+
+  # Directory
+  - tool: "bamboohr.bamboo_employees_get_directory"
+    category: "Directory"
+    display_name: "Get Directory"
+
+  # Time Off - Types and Policies
+  - tool: "bamboohr.bamboo_time_off_get_types"
+    category: "Time Off"
+    display_name: "Get Time-Off Types"
+
+  - tool: "bamboohr.bamboo_time_off_get_policies"
+    category: "Time Off"
+    display_name: "Get Policies"
+
+  - tool: "bamboohr.bamboo_time_off_get_employee_policies"
+    category: "Time Off"
+    display_name: "Get Employee Policies"
+
+  - tool: "bamboohr.bamboo_time_off_assign_policy"
+    category: "Time Off"
+    display_name: "Assign Policy"
+
+  - tool: "bamboohr.bamboo_time_off_create_type"
+    category: "Time Off"
+    display_name: "Create Type"
+
+  - tool: "bamboohr.bamboo_time_off_create_policy"
+    category: "Time Off"
+    display_name: "Create Policy"
+
+  # Time Off - Balances
+  - tool: "bamboohr.bamboo_time_off_get_balances"
+    category: "Time Off"
+    display_name: "Get Balances"
+
+  - tool: "bamboohr.bamboo_time_off_update_balance"
+    category: "Time Off"
+    display_name: "Update Balance"
+
+  - tool: "bamboohr.bamboo_time_off_estimate_future_balances"
+    category: "Time Off"
+    display_name: "Estimate Future Balances"
+
+  - tool: "bamboohr.bamboo_time_off_get_whos_out"
+    category: "Time Off"
+    display_name: "Who's Out"
+
+  # Time Off - Requests
+  - tool: "bamboohr.bamboo_time_off_get_requests"
+    category: "Time Off"
+    display_name: "Get Requests"
+
+  - tool: "bamboohr.bamboo_time_off_create_request"
+    category: "Time Off"
+    display_name: "Create Request"
+
+  - tool: "bamboohr.bamboo_time_off_update_request_status"
+    category: "Time Off"
+    display_name: "Update Request Status"
+
+  # Reports
+  - tool: "bamboohr.bamboo_reports_run_company_report"
+    category: "Reports"
+    display_name: "Run Company Report"
+
+  - tool: "bamboohr.bamboo_reports_get_custom_reports"
+    category: "Reports"
+    display_name: "List Custom Reports"
+
+  - tool: "bamboohr.bamboo_reports_get_custom_report"
+    category: "Reports"
+    display_name: "Get Custom Report"
+
+  - tool: "bamboohr.bamboo_reports_run_custom_report"
+    category: "Reports"
+    display_name: "Run Custom Report"
+
+  # Datasets
+  - tool: "bamboohr.bamboo_datasets_list"
+    category: "Datasets"
+    display_name: "List Datasets"
+
+  - tool: "bamboohr.bamboo_datasets_get_fields"
+    category: "Datasets"
+    display_name: "Get Dataset Fields"
+
+  - tool: "bamboohr.bamboo_datasets_get_field_options"
+    category: "Datasets"
+    display_name: "Get Field Options"
+
+  - tool: "bamboohr.bamboo_datasets_query"
+    category: "Datasets"
+    display_name: "Query Dataset"
+
+  # Metadata
+  - tool: "bamboohr.bamboo_meta_get_countries"
+    category: "Metadata"
+    display_name: "Get Countries"
+
+  - tool: "bamboohr.bamboo_meta_get_states"
+    category: "Metadata"
+    display_name: "Get States"
+
+  - tool: "bamboohr.bamboo_meta_get_list_fields"
+    category: "Metadata"
+    display_name: "Get List Fields"
+
+  - tool: "bamboohr.bamboo_meta_get_fields"
+    category: "Metadata"
+    display_name: "Get Fields"
+
+  - tool: "bamboohr.bamboo_meta_get_users"
+    category: "Metadata"
+    display_name: "Get Users"
+
+  - tool: "bamboohr.bamboo_meta_get_field_options"
+    category: "Metadata"
+    display_name: "Get Field Options"
+
+  - tool: "bamboohr.bamboo_meta_update_field_options"
+    category: "Metadata"
+    display_name: "Update Field Options"
+
+  # Search
+  - tool: "bamboohr.bamboo_search_employees"
+    category: "Search"
+    display_name: "Search Employees"
+
+  - tool: "bamboohr.bamboo_search_time_off"
+    category: "Search"
+    display_name: "Search Time Off"
+
+  - tool: "bamboohr.bamboo_search_metadata"
+    category: "Search"
+    display_name: "Search Metadata"
+
+  # Admin
+  - tool: "bamboohr.bamboo_reset_state"
+    category: "Admin"
+    display_name: "Reset Database"
+
+  - tool: "bamboohr.login_tool"
+    category: "Admin"
+    display_name: "Login"
+
+  - tool: "bamboohr.list_users"
+    category: "Admin"
+    display_name: "List Users"
+
+  # Database
+  - tool: "bamboohr.import_csv"
+    category: "Database"
+    display_name: "Import CSV"
+
+  - tool: "bamboohr.export_csv"
+    category: "Database"
+    display_name: "Export CSV"
+
+  - tool: "bamboohr.list_tables"
+    category: "Database"
+    display_name: "List Tables"
+
+  - tool: "bamboohr.clear_database"
+    category: "Database"
+    display_name: "Clear Database"

@@ -1,0 +1,136 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_824fe99f3c1d4edebbd20989104ac2d8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2ccbf9d0ec3d422b93cd0e7037898c1a",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the correlation coefficient at a shift of -2 as -0.192 +/- 0.005 (acceptable range -2.02 to -1.98).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the requested correlation coefficient between MoM % change in expected retail loan loss and US retail sales after shifting the US retail sales data.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a27e566a643c4163bcf6cf4d634dbdd9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2ccbf9d0ec3d422b93cd0e7037898c1a",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the correlation coefficient at a shift of -1 as -0.295 +/- 0.005 (acceptable range -1.0 to -0.99).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the requested correlation coefficient between MoM % change in expected retail loan loss and US retail sales after shifting the US retail sales data.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_10b9fd69339446dda5591b421d139d52",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2ccbf9d0ec3d422b93cd0e7037898c1a",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the correlation coefficient at a shift of 0 as 0.052 +/- 0.005.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the requested correlation coefficient between MoM % change in expected retail loan loss and US retail sales after shifting the US retail sales data.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7863a57b45d947bfb9fdcbd80dbe27b2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2ccbf9d0ec3d422b93cd0e7037898c1a",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the correlation coefficient at a shift of 1 as -0.306 +/- 0.005 (acceptable range 0.99 to 1.0).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the requested correlation coefficient between MoM % change in expected retail loan loss and US retail sales after shifting the US retail sales data.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a1334c95df574fffbd28533203786f7e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2ccbf9d0ec3d422b93cd0e7037898c1a",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the correlation coefficient at a shift of 2 as 0.204 +/- 0.005 (acceptable range 1.98 to 2.02).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the requested correlation coefficient between MoM % change in expected retail loan loss and US retail sales after shifting the US retail sales data.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cd12833d807e4a57bf1f6b49413b986d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2ccbf9d0ec3d422b93cd0e7037898c1a",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that there is a weak correlating relationship between the expected retail loan loss and US retail sales at a shift of 1 month (acceptable range 0.99 to 1.0).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the interpretation of the correlation coefficient at this lag using the thresholds in prompt. Since at a shift of 1 month, the correlation coefficient is -0.306, this falls under weakly negative correlation.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "eval_config_name": "Output LLM",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "4658aec9-7eeb-4c9b-84c2-5464345e345f",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

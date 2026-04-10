@@ -1,0 +1,376 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Grace King's exam for chapters 1–14 has been graded. Incorrect answers are marked red and correct answers are unmarked. The answer key document should have all the correct answers. Chec for errors in grading—focus on multiple choice and matching questions only for now. Create a list of questions that were graded incorrectly. \n\nEach answer is worth 1 point. Calculate Grace's original total score based on this? Then, the new score—add a point for any question that was marked incorrect but is actually correct, and deduct a point for any question that was marked correct but is actually incorrect. Please note these with the corresponding question number.\n\nWhen multiple answers are required for one multiple choice question, consider a complete answer as correct, and an incomplete answer as incorrect. In any instance where the answer key options differ from the student options, prioritize the content of the answer, so that the answer option with the correct content is correct. Output as a message in console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Lists question 3 as incorrect (ver_f7c7bb5804564169b3ce6bc612373fe7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists question 3 as incorrect."
+        }
+      ]
+    },
+    {
+      "name": "Lists B as the correct answer for question 3 (ver_d0e581dd5d524249a532c23251b714ec)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists B as the correct answer for question 3."
+        }
+      ]
+    },
+    {
+      "name": "Lists any other answer than B as correct for question 3. (ver_d0e581dd5d524249a532c23251b714ec)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists any other answer than B as correct for question 3."
+        }
+      ]
+    },
+    {
+      "name": "States one point is deducted from the score for question 3 (ver_545e777d94ac461eb5449cfbeecc221d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States one point is deducted from the score for question 3."
+        }
+      ]
+    },
+    {
+      "name": "Lists question 12 as incorrect (ver_b86c3da1ca514f31ace0d1474d1e35d8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists question 12 as incorrect."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"Burris Ewell\" as the correct answer for question 12 (ver_7b85fed79830448c9157a700d9c31b3f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"Burris Ewell\" as the correct answer for question 12."
+        }
+      ]
+    },
+    {
+      "name": "Lists any answer other than A \"Burris Ewell\" as correct for question 12. (ver_7b85fed79830448c9157a700d9c31b3f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists any answer other than A \"Burris Ewell\" as correct for question 12."
+        }
+      ]
+    },
+    {
+      "name": "States one point is deducted from the score for question 12 (ver_463b1d1cd58c4a47aefc831d8d358c4d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States one point is deducted from the score for question 12."
+        }
+      ]
+    },
+    {
+      "name": "Lists question 25 as incorrect (ver_bc6d439cac6e4bcfab8fc851479f9de8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists question 25 as incorrect."
+        }
+      ]
+    },
+    {
+      "name": "Lists D for item 2 and B for item 3 as the correct answer for question 25 (ver_7592d1f9be974ea888eebaed90da9a84)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists D for item 2 and B for item 3 as the correct answer for question 25."
+        }
+      ]
+    },
+    {
+      "name": "States two points are deducted for question 25 (ver_4838e6b2b06446439b34f2b27c5b882d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States two points are deducted for question 25."
+        }
+      ]
+    },
+    {
+      "name": "States the original score is 52/54 (acceptable range 51 to 53) (ver_aa9c59a2dce54ff4981c390bfbad6017)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the original score is 52/54 (acceptable range 51 to 53)."
+        }
+      ]
+    },
+    {
+      "name": "Does not state the original score is 52/54. (ver_aa9c59a2dce54ff4981c390bfbad6017)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Does not state the original score is 52/54."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the new score to be 50/54 (ver_a846fe47a2434939ad472bdc94404100)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the new score to be 50/54."
+        }
+      ]
+    },
+    {
+      "name": "The score is anything other than 50/54. (ver_a846fe47a2434939ad472bdc94404100)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The score is anything other than 50/54."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world305-kc-01-natural-prompt-63216af0"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_63216af00d5a431ba3baf8e7449e2f74",
+    "task_name": "World305_kc_01 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c378d4cb67bc4230bbf18408c26c5030",
+        "golden_text_response": "Here is a list of the incorrect questions from Grace King's exam:\n\nQuestion 3: The student's answer was C, but the correct answer is B. This question was marked as correct, but it is incorrect.\n\nQuestion 12: There is a discrepancy identified in answer options between the answer key and student assessment. I will prioritize the content of the answer. The student's answer was A \"Heck Tate\", but the correct answer is A \"Burris Ewell\". This question was marked as correct, but it is incorrect. \n\nQuestion 25: The student's answer was B on item 2 and D on item 3. The answers for item 2 and item 3 were marked as incorrect in the original grading. \n\nOriginal Score: 52/54\n2 points were deducted from score on question 25 in original grading. \n\nBased on the number of incorrect responses, here is the calculated score:\n-1 point for Question 3\n-1 point for Question 12\n-2 points for Question 25\n\nTotal Deduction: 4 points\nNew Score: 50/54\n",
+        "golden_file_responses": "snap_3728aa224b104f40a2cfa44f7806167a"
+      }
+    ]
+  }
+}

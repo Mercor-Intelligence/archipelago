@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Can you import all the attached employee data, along with balance_adjustments, custom field values, custom reports, departments, emergency contacts, employee policies, time off requests, time off types, time off policies, and time off balances in the BambooHR?\n\nThe client has realized that all hires for the current FY haven't been updated in the BambooHR platform. For all employees hired in the current FY, assume no time-off requests were submitted after their hire date. All of them would have the same standard vacation (non-exempt) time-off policies as other employees, effective as of their hire date. Using the \"Create New Employees \" tool, import all new hires from Greenhouse ATS for the current FY into BambooHR and update their leave balance. Assume 8 working hours a day. The bi-weekly accrual assumes a 14-day period from the hire date. \n\nAfter the transfer, due to some internal construction work in the hospital, we are asking all the employees to take standard leave from 16th Feb to 20th Feb 2026 (both dates inclusive) except the employees in Executive department. Please create new leave requests for all relevant employees for that period.\n\nNow using the Estimate future balance tool, can you retrieve and report the total standard balance (in days) for all employees as of 1st March 2026? Today is 15th Feb 2026.\n\nPlease report the answer directly in the console. The financial year would be from 1st April 2025 to 31st March 2026. Both dates are inclusive. Assume the BambooHR balance for 2026 shows the leave balance for the current FY. Round all final answers to 4 decimal places. The balance for all existing employees only includes the leave accrued as of today and today is the end of a bi-weekly period."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the total standard balance (in days) for all employees as of 1st... (ver_e744cdd755bd46ed80ddb259825a568a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total standard balance (in days) for all employees as of 1st March 2026 is 654.0800 days (acceptable range 0.99 to 1.0)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world602-rg-07-db24ab93"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_db24ab9307024daabf8d2947e13bf1f8",
+    "task_name": "World602_RG_07",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_29056d504a0f43f2aefbcae1153c8d75",
+        "golden_text_response": "The total standard balance (in days) for all employees as of 1st March 2026 is 654.0800 days\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

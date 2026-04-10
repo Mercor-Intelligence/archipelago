@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Calculate the absolute variance between the Book Revenue Realization (Receipts as a % of revenue) and the Tax Revenue Realization for the 2021 and 2022 fiscal years using Trial Balance data and Revenue Timing Adjustments in the filesystem and Bank Transactions data from Xero\n\nAssumptions:\nConsider all RECEIVE type transactions with only AUTHORISED status for the respective year.\n\nPresent the final absolute variance for each year in %, rounded to two decimal places to the console"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the absolute value difference in Book Revenue Realization and the... (ver_ea4166cd89e6494999d61fa93c584b0c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the absolute value difference in Book Revenue Realization and the Tax Revenue Realization for the year 2021 is 0.10% (acceptable range 0.099% to 0.10%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the absolute value difference in Book Revenue Realization and the... (ver_08cb0950a84b4ee2a48eb161d6e175ec)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the absolute value difference in Book Revenue Realization and the Tax Revenue Realization for the year 2022 is 0.08% (acceptable range 0.079% to 0.081%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-801-sp-03-3752618a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_3752618afbee4f5f9395d5ed129aefe0",
+    "task_name": "World 801 SP_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_34721771e5d7444b8bdd4a4ce5752de7",
+        "golden_text_response": "The absolute variance in revenue realization between book and tax bases was 0.10% for FY2021 and 0.08% for FY2022.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

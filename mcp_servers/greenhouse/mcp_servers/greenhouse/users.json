@@ -1,0 +1,87 @@
+{
+  "recruiter": {
+    "userId": "user_recruiter",
+    "employeeId": 1,
+    "password": "recruiter_secret",
+    "roles": ["recruiter"],
+    "scopes": [
+      "candidate:read",
+      "candidate:create",
+      "candidate:update",
+      "candidate:add_note",
+      "candidate:add_tag",
+      "application:read",
+      "application:create",
+      "application:advance",
+      "application:move",
+      "application:reject",
+      "application:hire",
+      "job:read",
+      "job:create",
+      "job:update",
+      "feedback:read",
+      "feedback:submit",
+      "user:read",
+      "user:create",
+      "activity:read",
+      "reset:state",
+      "admin:export"
+    ],
+    "description": "Full CRUD on candidates/applications/users, all jobs visible"
+  },
+  "coordinator": {
+    "userId": "user_coordinator",
+    "employeeId": 2,
+    "password": "coordinator_secret",
+    "roles": ["coordinator"],
+    "scopes": [
+      "candidate:read",
+      "candidate:update",
+      "candidate:add_note",
+      "candidate:add_tag",
+      "application:read",
+      "application:advance",
+      "application:move",
+      "application:reject",
+      "job:read",
+      "feedback:read",
+      "feedback:submit",
+      "user:read",
+      "activity:read"
+    ],
+    "description": "Advance/reject applications, add notes, view assigned jobs"
+  },
+  "hiring_manager": {
+    "userId": "user_hiring_manager",
+    "employeeId": 3,
+    "password": "hiring_manager_secret",
+    "roles": ["hiring_manager"],
+    "scopes": [
+      "candidate:read",
+      "candidate:add_note",
+      "application:read",
+      "job:read",
+      "feedback:read",
+      "feedback:submit",
+      "user:read",
+      "activity:read"
+    ],
+    "description": "View owned jobs, submit feedback, read-only on applications"
+  },
+  "hr_analyst": {
+    "userId": "user_hr_analyst",
+    "employeeId": 4,
+    "password": "hr_analyst_secret",
+    "roles": ["hr_analyst"],
+    "scopes": [
+      "candidate:read",
+      "application:read",
+      "job:read",
+      "feedback:read",
+      "user:read",
+      "activity:read",
+      "audit:read"
+    ],
+    "description": "Read-only access to all data, audit activity logs"
+  }
+}

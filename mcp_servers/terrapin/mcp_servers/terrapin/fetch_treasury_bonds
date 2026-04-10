@@ -1,0 +1,279 @@
+#!/usr/bin/env python3
+"""
+Fetch US Treasury bond data from TreasuryDirect API and convert to Terrapin format.
+
+Usage:
+    uv run ./fetch_treasury_bonds --output data/sample_bonds.json
+    uv run ./fetch_treasury_bonds --types Bond,Note,Bill --limit 500
+"""
+
+import json
+import sys
+from datetime import datetime
+from pathlib import Path
+
+import click
+import httpx
+
+# TreasuryDirect API base URL
+TREASURY_API = "https://www.treasurydirect.gov/TA_WS/securities"
+
+# CUSIP to ISIN conversion for US securities
+# US Treasury ISINs are: US + CUSIP + check digit
+def cusip_to_isin(cusip: str) -> str:
+    """Convert CUSIP to ISIN format for US securities."""
+    if not cusip or len(cusip) != 9:
+        return cusip
+
+    # Add US prefix
+    base = "US" + cusip
+
+    # Calculate check digit using Luhn algorithm variant
+    # Convert letters to numbers (A=10, B=11, ..., Z=35)
+    def char_value(c):
+        if c.isdigit():
+            return int(c)
+        return ord(c.upper()) - ord('A') + 10
+
+    # Expand to digits
+    digits = ""
+    for c in base:
+        val = char_value(c)
+        if val >= 10:
+            digits += str(val)
+        else:
+            digits += str(val)
+
+    # Luhn algorithm
+    total = 0
+    for i, d in enumerate(reversed(digits)):
+        n = int(d)
+        if i % 2 == 1:
+            n *= 2
+            if n > 9:
+                n -= 9
+        total += n
+
+    check_digit = (10 - (total % 10)) % 10
+    return base + str(check_digit)
+
+
+def parse_date(date_str: str) -> str | None:
+    """Parse TreasuryDirect date format to ISO date."""
+    if not date_str:
+        return None
+    try:
+        # Format: 2025-12-15T00:00:00
+        dt = datetime.fromisoformat(date_str.replace("T00:00:00", ""))
+        return dt.strftime("%Y-%m-%d")
+    except ValueError:
+        return None
+
+
+def convert_to_terrapin(treasury_bond: dict) -> dict:
+    """Convert TreasuryDirect bond to Terrapin format."""
+    cusip = treasury_bond.get("cusip", "")
+    interest_rate = treasury_bond.get("interestRate", "")
+
+    # Parse coupon rate
+    coupon = None
+    if interest_rate:
+        try:
+            coupon = float(interest_rate)
+        except (ValueError, TypeError):
+            pass
+
+    # Determine asset class based on security type
+    sec_type = treasury_bond.get("securityType", "")
+    if sec_type in ("Bond", "Note"):
+        asset_class = "government"
+    elif sec_type == "Bill":
+        asset_class = "government"  # T-Bills are zero coupon
+    elif sec_type == "TIPS":
+        asset_class = "inflation_linked"
+    else:
+        asset_class = "government"
+
+    # Build issuer name from series or type
+    series = treasury_bond.get("series", "")
+    if series:
+        issuer_name = f"US TREASURY {series}"
+    else:
+        issuer_name = f"US TREASURY {sec_type.upper()}"
+
+    # Build ticker from security term and maturity
+    term = treasury_bond.get("term", treasury_bond.get("securityTerm", ""))
+    maturity = parse_date(treasury_bond.get("maturityDate"))
+    ticker = f"UST {coupon or 0:.3f} {maturity or ''}"
+
+    return {
+        "isin": cusip_to_isin(cusip),
+        "issuer_name": issuer_name,
+        "ticker": ticker,
+        "coupon": coupon,
+        "coupon_frequency": "Semi-Annual" if sec_type in ("Bond", "Note") else None,
+        "interest_type": "fixed" if coupon and coupon > 0 else "zero_coupon",
+        "maturity_date": maturity,
+        "issue_date": parse_date(treasury_bond.get("issueDate")),
+        "currency": "USD",
+        "country": "United States",
+        "country_code": "US",
+        "issue_rating": "AAA",
+        "issue_rating_group": "investment_grade",
+        "issuer_rating": "AAA",
+        "issuer_rating_group": "investment_grade",
+        "asset_class": asset_class,
+        "sector": "Government",
+    }
+
+
+def fetch_treasury_securities(
+    security_types: list[str] | None = None, limit: int | None = None, use_search: bool = True
+) -> list[dict]:
+    """Fetch securities from TreasuryDirect API.
+
+    Args:
+        security_types: List of types to fetch (Bond, Note, Bill, TIPS, FRN)
+        limit: Maximum number of bonds to return
+        use_search: If True, use search endpoint (returns more data)
+    """
+    all_bonds = []
+
+    with httpx.Client(timeout=60.0) as client:
+        if use_search:
+            # Search endpoint returns all historical data (~10k+ records)
+            try:
+                url = f"{TREASURY_API}/search?format=json"
+                print(f"Fetching all securities via search endpoint...")
+                response = client.get(url)
+                response.raise_for_status()
+                bonds = response.json()
+                print(f"Fetched {len(bonds)} total securities from TreasuryDirect")
+                all_bonds.extend(bonds)
+            except httpx.HTTPStatusError as e:
+                print(f"Error fetching via search: {e.response.status_code}")
+            except Exception as e:
+                print(f"Error fetching via search: {e}")
+        else:
+            # Use type-specific endpoints (limited to ~250 each)
+            for sec_type in security_types or ["Bond", "Note", "Bill", "TIPS", "FRN"]:
+                try:
+                    url = f"{TREASURY_API}/auctioned?format=json&type={sec_type}"
+                    response = client.get(url)
+                    response.raise_for_status()
+
+                    bonds = response.json()
+                    print(f"Fetched {len(bonds)} {sec_type}s from TreasuryDirect")
+                    all_bonds.extend(bonds)
+
+                except httpx.HTTPStatusError as e:
+                    print(f"Error fetching {sec_type}: {e.response.status_code}")
+                except Exception as e:
+                    print(f"Error fetching {sec_type}: {e}")
+
+            # Also fetch announced securities for upcoming bonds
+            try:
+                url = f"{TREASURY_API}/announced?format=json"
+                response = client.get(url)
+                response.raise_for_status()
+                announced = response.json()
+                print(f"Fetched {len(announced)} announced securities")
+                all_bonds.extend(announced)
+            except Exception as e:
+                print(f"Error fetching announced: {e}")
+
+    # Deduplicate by CUSIP
+    seen_cusips = set()
+    unique_bonds = []
+    for bond in all_bonds:
+        cusip = bond.get("cusip")
+        if cusip and cusip not in seen_cusips:
+            seen_cusips.add(cusip)
+            unique_bonds.append(bond)
+
+    print(f"Total unique securities: {len(unique_bonds)}")
+
+    if limit:
+        unique_bonds = unique_bonds[:limit]
+
+    return unique_bonds
+
+
+@click.command()
+@click.option(
+    "--output", "-o",
+    default="data/sample_bonds.json",
+    help="Output file path"
+)
+@click.option(
+    "--types", "-t",
+    default="Bond,Note,Bill,TIPS,FRN",
+    help="Comma-separated security types to fetch (ignored with --all)"
+)
+@click.option(
+    "--limit", "-l",
+    type=int,
+    default=None,
+    help="Maximum number of bonds to fetch"
+)
+@click.option(
+    "--all", "fetch_all",
+    is_flag=True,
+    help="Fetch all historical securities (~10k+)"
+)
+@click.option(
+    "--merge/--no-merge",
+    default=True,
+    help="Merge with existing data file"
+)
+def main(output: str, types: str, limit: int | None, fetch_all: bool, merge: bool):
+    """Fetch US Treasury bonds and convert to Terrapin format."""
+    security_types = [t.strip() for t in types.split(",")]
+
+    if fetch_all:
+        print("Fetching ALL Treasury securities (historical data)...")
+    else:
+        print(f"Fetching Treasury securities: {security_types}")
+
+    treasury_bonds = fetch_treasury_securities(
+        security_types=security_types,
+        limit=limit,
+        use_search=fetch_all
+    )
+
+    print("Converting to Terrapin format...")
+    terrapin_bonds = [convert_to_terrapin(b) for b in treasury_bonds]
+
+    # Filter out bonds without valid ISIN
+    terrapin_bonds = [b for b in terrapin_bonds if b.get("isin")]
+    print(f"Converted {len(terrapin_bonds)} bonds")
+
+    output_path = Path(output)
+
+    # Optionally merge with existing data
+    if merge and output_path.exists():
+        try:
+            existing = json.loads(output_path.read_text())
+            existing_isins = {b.get("isin") for b in existing}
+
+            # Add new bonds that don't exist
+            new_bonds = [b for b in terrapin_bonds if b.get("isin") not in existing_isins]
+            print(f"Adding {len(new_bonds)} new bonds to existing {len(existing)}")
+
+            terrapin_bonds = existing + new_bonds
+        except Exception as e:
+            print(f"Could not merge with existing file: {e}")
+
+    # Sort by maturity date
+    terrapin_bonds.sort(
+        key=lambda b: b.get("maturity_date") or "9999-99-99"
+    )
+
+    # Write output
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(json.dumps(terrapin_bonds, indent=2))
+    print(f"Wrote {len(terrapin_bonds)} bonds to {output}")
+
+
+if __name__ == "__main__":
+    main()

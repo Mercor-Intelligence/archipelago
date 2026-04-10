@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "In the DCF model, please make the following changes:\n\n•\tUpdate the risk-free rate for S&P Global, S&P Mobility, and RemainCo to be the 10 year treasury rate on Jan 2, 2026.\n•\tChange the Allocation % for S&P Mobility and RemainCo to be on the basis of Segment operating profit. Return the updated values for each as percents.\n•\tChange the 2030 Ratings Revenue % Growth so that the model achieves an average 2025-2030 Total Revenue CAGR of 8.0% for RemainCo. Return the 2030 % growth as a percent to two decimal places.\n\nProvide the updated Shareholder Equity Value Creation - $ in millions, rounded to zero decimals."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "The Shareholder Equity Value Creation - $ is 11,060 million (acceptable range... (ver_7b10c67329b446069ba5f7d1650debe6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The Shareholder Equity Value Creation - $ is 11,060 million (acceptable range 10,949 to 11,171)."
+        }
+      ]
+    },
+    {
+      "name": "States the 2030 Ratings Revenue % Growth is 11.52% (acceptable range 11.40% to... (ver_f911b06d53a8442e99e94baa08d3211c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the 2030 Ratings Revenue % Growth is 11.52% (acceptable range 11.40% to 11.64%)."
+        }
+      ]
+    },
+    {
+      "name": "States the allocation % for S&P Mobility is 94% (acceptable range 93% to 95%) (ver_6dac15d4dc7740a781d31e24fb7390ee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the allocation % for S&P Mobility is 94% (acceptable range 93% to 95%)."
+        }
+      ]
+    },
+    {
+      "name": "States the allocation % for RemainCo is 6% (acceptable range 5.9% to 6.1%) (ver_1905839638e346418ccd0ca5cf6b3378)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the allocation % for RemainCo is 6% (acceptable range 5.9% to 6.1%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-249-jl02-d90ef4be"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_d90ef4bef3864b9b8cfdd2349da88125",
+    "task_name": "World 249_JL02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_6dc404a7e18f40b2906fd9903045e2d4",
+        "golden_text_response": "The Shareholder Equity Value Creation - $ is 11,060 million.\nThe 2030 Ratings Revenue % Growth is 11.52%\nThe allocation % for S&P Mobility is 94%\nThe allocation % for RemainCo is 6%",
+        "golden_file_responses": "snap_b7271baccb4f425b9ba4b13a3102a8b8"
+      }
+    ]
+  }
+}

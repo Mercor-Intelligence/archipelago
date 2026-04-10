@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "From the FY23 annual reports of Arhaus and Restoration Hardware, calculate each company's cash conversion cycle. As a final output, provide the cash conversion cycle for both companies. Only round final answers to two decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the FY23 cash conversion cycle for Arhaus is 114.73 days... (ver_336914d3d69249feb12d4e67a3124d90)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the FY23 cash conversion cycle for Arhaus is 114.73 days (acceptable range 113.58 to 115.88)."
+        }
+      ]
+    },
+    {
+      "name": "States that the FY23 cash conversion cycle for Arhaus is any value other than... (ver_336914d3d69249feb12d4e67a3124d90)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the FY23 cash conversion cycle for Arhaus is any value other than 114.73 days."
+        }
+      ]
+    },
+    {
+      "name": "States that the FY23 cash conversion cycle for Restoration Hardware is 158.46... (ver_ded732519ab043369b97b8595c4bf094)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the FY23 cash conversion cycle for Restoration Hardware is 158.46 days (acceptable range 156.88 to 160.04)."
+        }
+      ]
+    },
+    {
+      "name": "States that the FY23 cash conversion cycle for Restoration Hardware is any... (ver_ded732519ab043369b97b8595c4bf094)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the FY23 cash conversion cycle for Restoration Hardware is any value other than 158.46 days."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-122-rg-02-1b009ce5"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_93767f48e4d9497a8f6b129492a1ae14",
+    "world_name": "Management Consulting World 122",
+    "task_id": "task_1b009ce5e78045889937cfc0db8b91d5",
+    "task_name": "Task 122_RG_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_bf8f26e9632d471eb07f3f741f320dcf",
+        "golden_text_response": "1. FY23 Cash conversion cycle for Arhaus is 114.73 days\n2. FY23 Cash conversion cycle for Restoration Hardware is 158.46 days",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

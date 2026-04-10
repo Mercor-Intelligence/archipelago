@@ -1,0 +1,46 @@
+assetId,assetName,assetNumber,purchaseDate,purchasePrice,assetStatus,serialNumber,description,assetTypeId
+asset-001,Forklift - Electric,FA-00001,2023-04-19,1667406.53,Registered,SN-6B74D97B78,Capital asset (Forklifts & Material Handling) acquired for Redwood manufacturing operations.,atype-003
+asset-002,Laser Cutter,FA-00002,2024-10-29,86043.42,Registered,SN-31EC8603F3,Capital asset (Machinery & Production Equipment) acquired for Redwood manufacturing operations.,atype-001
+asset-003,CNC Lathe,FA-00003,2021-01-21,922253.02,Registered,SN-FA789F7980,Capital asset (Forklifts & Material Handling) acquired for Redwood manufacturing operations.,atype-003
+asset-004,Packaging Line,FA-00004,2021-06-23,723831.24,Registered,SN-7379C20652,Capital asset (Forklifts & Material Handling) acquired for Redwood manufacturing operations.,atype-003
+asset-005,CNC Milling Center,FA-00005,2021-12-03,709451.65,Registered,SN-3F69912973,Capital asset (Machinery & Production Equipment) acquired for Redwood manufacturing operations.,atype-001
+asset-006,Forklift - Propane,FA-00006,2024-09-14,9321.22,Registered,SN-846F1765F4,Capital asset (IT Hardware & Network Equipment) acquired for Redwood manufacturing operations.,atype-002
+asset-007,Packaging Line,FA-00007,2021-04-29,53926.53,Registered,SN-2B84802B02,Capital asset (IT Hardware & Network Equipment) acquired for Redwood manufacturing operations.,atype-002
+asset-008,Industrial Router,FA-00008,2024-09-14,53529.17,Registered,SN-2FDF80B2D5,Capital asset (IT Hardware & Network Equipment) acquired for Redwood manufacturing operations.,atype-002
+asset-009,Air Compressor,FA-00009,2023-04-04,1236855.53,Registered,SN-54290CAA96,Capital asset (Machinery & Production Equipment) acquired for Redwood manufacturing operations.,atype-001
+asset-010,Server Rack,FA-00010,2022-09-16,572987.33,Registered,SN-51AC7EA1DD,Capital asset (Forklifts & Material Handling) acquired for Redwood manufacturing operations.,atype-003
+asset-011,Forklift - Propane,FA-00011,2021-01-17,49631.22,Registered,SN-F1009BC382,Capital asset (IT Hardware & Network Equipment) acquired for Redwood manufacturing operations.,atype-002
+asset-012,Robotic Welding Cell,FA-00012,2021-10-28,800214.22,Registered,SN-44F8A7D52C,Capital asset (Forklifts & Material Handling) acquired for Redwood manufacturing operations.,atype-003
+asset-013,Engineering Workstation,FA-00013,2024-01-20,1095191.50,Registered,SN-5C8D1A5ABA,Capital asset (Machinery & Production Equipment) acquired for Redwood manufacturing operations.,atype-001
+asset-014,Quality Inspection CMM,FA-00014,2024-11-29,1427290.30,Registered,SN-620115D4CF,Capital asset (Forklifts & Material Handling) acquired for Redwood manufacturing operations.,atype-003
+asset-015,CNC Lathe,FA-00015,2023-04-09,1545871.58,Registered,SN-23D063B555,Capital asset (Forklifts & Material Handling) acquired for Redwood manufacturing operations.,atype-003
+asset-016,Hydraulic Press,FA-00016,2021-03-17,703838.92,Registered,SN-8EB8FC9E5D,Capital asset (Machinery & Production Equipment) acquired for Redwood manufacturing operations.,atype-001
+asset-017,Robotic Welding Cell,FA-00017,2021-09-16,962455.24,Registered,SN-0D1BC1A0CD,Capital asset (Forklifts & Material Handling) acquired for Redwood manufacturing operations.,atype-003
+asset-018,Server Rack,FA-00018,2021-07-10,570512.89,Registered,SN-34F4D57619,Capital asset (Machinery & Production Equipment) acquired for Redwood manufacturing operations.,atype-001
+asset-019,Packaging Line,FA-00019,2024-07-25,82833.45,Draft,SN-69EE19266D,Capital asset (Forklifts & Material Handling) acquired for Redwood manufacturing operations.,atype-003
+asset-020,Packaging Line,FA-00020,2024-01-11,14184.08,Registered,SN-C2243EBA71,Capital asset (IT Hardware & Network Equipment) acquired for Redwood manufacturing operations.,atype-002
+asset-021,CNC Lathe,FA-00021,2022-09-15,1727627.31,Registered,SN-3E8694B0D1,Capital asset (Machinery & Production Equipment) acquired for Redwood manufacturing operations.,atype-001
+asset-022,Forklift - Electric,FA-00022,2021-05-03,480482.33,Registered,SN-AF929702B5,Capital asset (Machinery & Production Equipment) acquired for Redwood manufacturing operations.,atype-001
+asset-023,CNC Lathe,FA-00023,2022-12-27,1332500.30,Draft,SN-F3E68561A9,Capital asset (Machinery & Production Equipment) acquired for Redwood manufacturing operations.,atype-001
+asset-024,Engineering Workstation,FA-00024,2023-07-09,40843.00,Registered,SN-C1954B6B42,Capital asset (IT Hardware & Network Equipment) acquired for Redwood manufacturing operations.,atype-002
+asset-025,Forklift - Propane,FA-00025,2022-11-26,1416239.67,Registered,SN-9D5A223957,Capital asset (Machinery & Production Equipment) acquired for Redwood manufacturing operations.,atype-001
+asset-026,Quality Inspection CMM,FA-00026,2024-03-04,51639.62,Registered,SN-EFFB4D7CFF,Capital asset (IT Hardware & Network Equipment) acquired for Redwood manufacturing operations.,atype-002
+asset-027,Assembly Line Conveyor,FA-00027,2023-12-29,436031.99,Registered,SN-F1D8CCADF9,Capital asset (Forklifts & Material Handling) acquired for Redwood manufacturing operations.,atype-003
+asset-028,Forklift - Propane,FA-00028,2022-08-06,1432860.88,Registered,SN-2711D1D06B,Capital asset (Machinery & Production Equipment) acquired for Redwood manufacturing operations.,atype-001
+asset-029,Hydraulic Press,FA-00029,2024-10-09,682696.72,Draft,SN-FE5407376C,Capital asset (Forklifts & Material Handling) acquired for Redwood manufacturing operations.,atype-003
+asset-030,Robotic Welding Cell,FA-00030,2022-05-23,920714.88,Draft,SN-675D3EC0FA,Capital asset (Forklifts & Material Handling) acquired for Redwood manufacturing operations.,atype-003
+asset-031,Industrial Router,FA-00031,2023-01-10,9084.57,Registered,SN-E9725642B5,Capital asset (IT Hardware & Network Equipment) acquired for Redwood manufacturing operations.,atype-002
+asset-032,Dust Collection System,FA-00032,2023-04-24,4546.02,Draft,SN-44DB2C3B85,Capital asset (IT Hardware & Network Equipment) acquired for Redwood manufacturing operations.,atype-002
+asset-033,Server Rack,FA-00033,2021-09-24,800171.41,Registered,SN-4B01F9E737,Capital asset (Forklifts & Material Handling) acquired for Redwood manufacturing operations.,atype-003
+asset-034,Forklift - Electric,FA-00034,2024-10-18,32847.28,Registered,SN-34C82E920F,Capital asset (IT Hardware & Network Equipment) acquired for Redwood manufacturing operations.,atype-002
+asset-035,Quality Inspection CMM,FA-00035,2023-03-20,1037080.98,Registered,SN-928CFB84AC,Capital asset (Forklifts & Material Handling) acquired for Redwood manufacturing operations.,atype-003
+asset-036,Engineering Workstation,FA-00036,2023-05-18,1216665.63,Registered,SN-7D5A0D07CD,Capital asset (Machinery & Production Equipment) acquired for Redwood manufacturing operations.,atype-001
+asset-037,Laser Cutter,FA-00037,2023-05-04,282553.70,Registered,SN-2C3ACB3D99,Capital asset (Forklifts & Material Handling) acquired for Redwood manufacturing operations.,atype-003
+asset-038,Hydraulic Press,FA-00038,2023-09-20,256895.60,Registered,SN-EC8D5C2022,Capital asset (Machinery & Production Equipment) acquired for Redwood manufacturing operations.,atype-001
+asset-039,Robotic Welding Cell,FA-00039,2023-11-18,237469.74,Registered,SN-CCB4522713,Capital asset (Forklifts & Material Handling) acquired for Redwood manufacturing operations.,atype-003
+asset-040,Forklift - Electric,FA-00040,2023-07-22,1315241.16,Registered,SN-AFA7C31B4A,Capital asset (Forklifts & Material Handling) acquired for Redwood manufacturing operations.,atype-003
+asset-041,Air Compressor,FA-00041,2023-01-27,7589.61,Registered,SN-F3A1F8D5FE,Capital asset (IT Hardware & Network Equipment) acquired for Redwood manufacturing operations.,atype-002
+asset-042,Assembly Line Conveyor,FA-00042,2023-04-17,21083.72,Draft,SN-8BBA0E8767,Capital asset (IT Hardware & Network Equipment) acquired for Redwood manufacturing operations.,atype-002
+asset-043,Assembly Line Conveyor,FA-00043,2021-03-24,7534.53,Registered,SN-6E0E16B056,Capital asset (IT Hardware & Network Equipment) acquired for Redwood manufacturing operations.,atype-002
+asset-044,Packaging Line,FA-00044,2023-02-06,27342.79,Registered,SN-43C3C7CB46,Capital asset (IT Hardware & Network Equipment) acquired for Redwood manufacturing operations.,atype-002
+asset-045,CNC Milling Center,FA-00045,2021-10-20,1046205.58,Draft,SN-58E2DD6AF5,Capital asset (Forklifts & Material Handling) acquired for Redwood manufacturing operations.,atype-003

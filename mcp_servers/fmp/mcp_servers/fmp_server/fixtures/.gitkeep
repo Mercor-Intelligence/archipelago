@@ -1,0 +1,13 @@
+# Bundled fixtures directory
+
+This directory contains pre-compiled fixture data for offline mode.
+
+Structure:
+- SYMBOL/endpoint.json.gz - Per-symbol fixture data
+- static/endpoint.json.gz - Non-symbol (market) data
+
+To populate:
+1. With API key: `uv run python -m scripts.download_fixtures`
+2. Without API key: Use bundled fixtures from a distribution
+
+Fixture files are gzip-compressed JSON.

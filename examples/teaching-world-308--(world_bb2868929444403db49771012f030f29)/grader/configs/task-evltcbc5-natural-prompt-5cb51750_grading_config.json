@@ -1,0 +1,320 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_be1ade613a2943a9b2eb955d8b0629a3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5cb51750156e4c7b95c42e9110d4a68c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Outputs the first morpheme for the word \"anti-Jewish\": \"anti-\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Literacy Intervention Information /SR_Master list of morphemes.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8c39d462af204d7caa1015472b10c301",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5cb51750156e4c7b95c42e9110d4a68c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Outputs the second morpheme for the word \"anti-Jewish\": \"-ish\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_947bb1d41d2647dcb55de040f2eb8cc4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5cb51750156e4c7b95c42e9110d4a68c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Outputs the first morpheme for anti-Semitism: \"anti-\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Literacy Intervention Information /SR_Master list of morphemes.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_38d3ede4b51741dcafc9a12e045e41f7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5cb51750156e4c7b95c42e9110d4a68c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Outputs the second morpheme for the word \"anti-Semitism\": \"-ism\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9275434a1ce54db8b6e2b1fd6a57f99d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5cb51750156e4c7b95c42e9110d4a68c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Outputs the first morpheme for \"concentration\": \"con-\"  (con-,-ation)\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Literacy Intervention Information /SR_Master list of morphemes.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ff2b061452ec49aa8947844faf205461",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5cb51750156e4c7b95c42e9110d4a68c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Outputs the second morpheme for \"concentration\": \"-ation\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4624d8a1bce8463095c865c8da0c2b3c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5cb51750156e4c7b95c42e9110d4a68c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Outputs this morpheme for \"deicide\":  \"-cide\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Literacy Intervention Information /SR_Master list of morphemes.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d192cf45e8e94c62973e0dfdeb08cb09",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5cb51750156e4c7b95c42e9110d4a68c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Outputs the first morpheme for \"deportation\":  \"de-\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Literacy Intervention Information /SR_Master list of morphemes.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_85ec8935c4b045feafdff3ee910b26d2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5cb51750156e4c7b95c42e9110d4a68c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Outputs the second morpheme for \"deportation\":  \"-port\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e3320a7e51fe40c19f3461d1b7152560",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5cb51750156e4c7b95c42e9110d4a68c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Outputs the third morpheme for \"deportation\":  \"-ation\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_60b508f94c144850a9e02bce939cfaae",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5cb51750156e4c7b95c42e9110d4a68c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Outputs this morpheme for the word \"genocide\": \"-cide\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Literacy Intervention Information /SR_Master list of morphemes.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3ca9d4605af74753a0816594d7b8ef84",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5cb51750156e4c7b95c42e9110d4a68c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Outputs this morpheme for the word \"prejudice\": \"pre-\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Literacy Intervention Information /SR_Master list of morphemes.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    },
+    {
+      "eval_config_id": "72d7d96a-9d94-4a38-bbe3-96c08ded727c",
+      "eval_config_name": "Content Length Check Verifier",
+      "eval_defn_id": "content_length_check",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

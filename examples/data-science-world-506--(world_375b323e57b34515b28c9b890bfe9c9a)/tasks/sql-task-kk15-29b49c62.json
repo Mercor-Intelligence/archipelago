@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "You have access to the invoices and subscriber_plans table. I want you to perform an analysis for invoices with billing period date starting in 2024 and for subscribers who applied the family, welcome, or upgrade promo codes. Then, find the medians of the total amount of paid and disputed invoices. Output the absolute difference between the two medians. Round the reported value to three decimal places. Please use only SQLite queries to complete this analysis. Include the full SQLite query used for the analysis as well as the requested results in the final output."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Computes the absolute difference between the medians of the total amount of... (ver_5846233c7e8a406bb034cc8130efb3e4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes the absolute difference between the medians of the total amount of paid and disputed invoices as 76.190 (+/- 0.01)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sql-task-kk15-29b49c62"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_29b49c62a72f4ecba206bddce5d4b4f7",
+    "task_name": "SQL - Task KK15",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_60b80c9c8c9e4a77b61d0cd212b592da",
+        "golden_text_response": "The absolute difference between the medians of the total amount of paid and disputed invoices is 76.190.\n\nThe SQL code for the analysis is as follows:\n'''\nWITH qualifying_subs AS (\n  SELECT DISTINCT subscriber_id\n  FROM subscriber_plans\n  WHERE promo_code_applied IS NOT NULL\n    AND (\n      lower(promo_code_applied) LIKE 'family%'\n      OR lower(promo_code_applied) LIKE 'welcome%'\n      OR lower(promo_code_applied) LIKE 'upgrade%'\n    )\n),\nqualified_invoices AS (\n  SELECT\n    i.invoice_id,\n    i.total_amount,\n    lower(i.payment_status) AS status\n  FROM invoices i\n  JOIN qualifying_subs qs\n    ON qs.subscriber_id = i.subscriber_id\n  WHERE strftime('%Y', date(i.billing_period_start)) = '2024'\n    AND lower(i.payment_status) IN ('paid', 'disputed')\n),\nranked AS (\n  SELECT\n    status,\n    total_amount,\n    ROW_NUMBER() OVER (PARTITION BY status ORDER BY total_amount) AS rn,\n    COUNT(*) OVER (PARTITION BY status) AS cnt\n  FROM qualified_invoices\n),\nmedians AS (\n  SELECT\n    status,\n    AVG(total_amount) AS median_amount\n  FROM ranked\n  WHERE rn IN ( (cnt + 1) / 2, (cnt + 2) / 2 )\n  GROUP BY status\n),\npivot AS (\n  SELECT\n    MAX(CASE WHEN status = 'paid' THEN median_amount END)     AS median_paid,\n    MAX(CASE WHEN status = 'disputed' THEN median_amount END) AS median_disputed\n  FROM medians\n)\nSELECT\n  ROUND(ABS(median_paid - median_disputed), 3) AS abs_diff_medians\nFROM pivot;\n'''",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Review the data in the filesystem. Use the Candidate Pipeline Stage Tracker.xlsx file and the Executive_Candidate_Comparison_Matrix.xlsx file. \n\nOur CHRO needs to give an update to the CEO and Board on how the external candidates that we passed fared in their job search post-rejection from the Horizon process. \n\nUse the attached data on external candidates job updates that uses a data scraper our HR developed to check updates on LinkedIn every few days. Assume this data set is holistic on all job updates, and that the 'date updated' field is the date of any change. If no change has occurred, this date refers to the last time that the date was checked by the scraping tool. \n\nFor final outputs, calculate the number of candidates who are in a new role (level and/or title and/or company) relative to all external candidates that were considered for the Horizon search, as a percentage to two decimal places. \n\nPlease provide your response as a message in the console. For those in a new role, include only candidates who are in a new role within 50 days or less of starting their job search process. Assume that candidates started their job search process on the day they were logged as being in stage 1 for the Horizon process. Exclude any from the entire analysis who do not appear in the updated dataset. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the percentage of relevant external candidates considered for the... (ver_95acc3bbbd94471691e8fa84226e33cb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentage of relevant external candidates considered for the Horizon search who secured a new role within 50 days of starting their job search process is 15.71% (acceptable range 15.55% to 15.87%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-eiwpa884-d9fe722d"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_d9fe722d5e0d4d04beb0179359f90e54",
+    "task_name": "Task eiwpa884",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_fcaf510a1d614824b1675eb5032a2e04",
+        "golden_text_response": "The percentage of relevant external candidates considered for the Horizon search who secured a new role within 50 days of starting their job search process is 15.71%.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

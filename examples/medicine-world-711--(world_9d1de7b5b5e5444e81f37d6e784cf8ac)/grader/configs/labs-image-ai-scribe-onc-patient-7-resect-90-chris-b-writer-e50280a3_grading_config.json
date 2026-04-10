@@ -1,0 +1,280 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_259bf8506e4d4d49a69ead7400977479",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e50280a3051343b0b1faba85befd88e8",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient is 96 years old (acceptable range 95 to 97).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This criterion describes the patients age, a parameter needed for calculating the RESECT-90 score for 90 day mortality risk.\n\n\"She is seen in clinic several weeks later with her partner, on the 5th January 2026\" from the PROMPT.\n\n\"PATIENT DOB: 01/01/1930\" from CT_Report.pdf\n\n\"RESECT-90 criteria formula: probability of 90-day mortality, % = [1/(1 + e-x)]*100, where x = -6.036 + 0.041*age + 0.493*male + 0.183*(ECOG Performance Status) \u2013 0.029*(% predicted DLCO) \u2013 0.056*BMI + 0.005*(creatinine, \u03bcmol/L) + 0.242*anemia + 0.608*arrhythmia + 0.379*(right-sided resection) + 0.179*(number of resected bronchopulmonary segments) + 0.634*thoracotomy + 0.769*malignant\" https://pubmed.ncbi.nlm.nih.gov/34324664/\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d90d295e9e73411bb9ce3483eef92159",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e50280a3051343b0b1faba85befd88e8",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "criteria": "States that the patient is female.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This criterion recognises that the patient is female, a parameter in the calculation for the RESECT-90 score. \n\n\"female patient presents to the clinic\" CLINICALNOTES>CONSULT NOTE> ROW31 > COLUMN D \n\n\"RESECT-90 criteria formula: probability of 90-day mortality, % = [1/(1 + e-x)]*100, where x = -6.036 + 0.041*age + 0.493*male + 0.183*(ECOG Performance Status) \u2013 0.029*(% predicted DLCO) \u2013 0.056*BMI + 0.005*(creatinine, \u03bcmol/L) + 0.242*anemia + 0.608*arrhythmia + 0.379*(right-sided resection) + 0.179*(number of resected bronchopulmonary segments) + 0.634*thoracotomy + 0.769*malignant\" https://pubmed.ncbi.nlm.nih.gov/34324664/\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b0c1358e4bec426faebc94f7da571d5e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e50280a3051343b0b1faba85befd88e8",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States that the patient has an ECOG performance score of 2 (acceptable range 1.98 to 2.02).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This criterion describes the ECOG score, a clinical parameter needed for calculating the RESECT-90 score.\n\n\"Oncologist:  \nAgreed. She\u2019s mobile but unable to work and significantly fatigued.\" from AI_SCRIPT_ONC_7.pdf\n\n\"2 Ambulatory and capable of all selfcare but unable to carry out any work activities. Up and about more than 50% of waking hours\" \nhttps://www.training.seer.cancer.gov/followup/dataset/ecog-performance-status.html\n\n\"RESECT-90 criteria formula: probability of 90-day mortality, % = [1/(1 + e-x)]*100, where x = -6.036 + 0.041*age + 0.493*male + 0.183*(ECOG Performance Status) \u2013 0.029*(% predicted DLCO) \u2013 0.056*BMI + 0.005*(creatinine, \u03bcmol/L) + 0.242*anemia + 0.608*arrhythmia + 0.379*(right-sided resection) + 0.179*(number of resected bronchopulmonary segments) + 0.634*thoracotomy + 0.769*malignant\" https://pubmed.ncbi.nlm.nih.gov/34324664/\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d887dc76d0f3423d91d44e45469528f3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e50280a3051343b0b1faba85befd88e8",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "criteria": "States the patient has a predicted diffusion capacity of the lungs for carbon monoxide (DLCO) percentage of 45% (acceptable range 44.6% to 45.4%).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This criterion describes the patients predicted DLCO, a clinical parameter needed for calculating the RESECT-90 score for 90 day mortality risk. \n\n\"And with a DLCO of 45%, that significantly limits what she\u2019s likely to tolerate in future.\" AI_SCRIPT_ONC_7.pdf\n\n\"\"RESECT-90 criteria formula: probability of 90-day mortality, % = [1/(1 + e-x)]*100, where x = -6.036 + 0.041*age + 0.493*male + 0.183*(ECOG Performance Status) \u2013 0.029*(% predicted DLCO) \u2013 0.056*BMI + 0.005*(creatinine, \u03bcmol/L) + 0.242*anemia + 0.608*arrhythmia + 0.379*(right-sided resection) + 0.179*(number of resected bronchopulmonary segments) + 0.634*thoracotomy + 0.769*malignant\" https://pubmed.ncbi.nlm.nih.gov/34324664/\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d781f893f23b4bdf8aae876b2ea908a9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e50280a3051343b0b1faba85befd88e8",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)",
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the patient has a body mass index (BMI) of 22.6 (acceptable range 22.4 to 22.8).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This criterion calculates the patients body mass index, which is needed for calculating the RESECT-90 score for 90 day mortality risk. \n\n\"Her height and weight are unchanged from the EMR records from June 2021, which is a surprise.\" AI_SCRIPT_ONC_7.pdf.   \n\n\"VITALS> ROW9> COLUMNF HEIGHTININCHES 59.0 >COLUMNL WEIGHTINOUNCES 1792 2021-06-07\" from PATIENT7 EMR\n\n\"RESECT-90 criteria formula: probability of 90-day mortality, % = [1/(1 + e-x)]*100, where x = -6.036 + 0.041*age + 0.493*male + 0.183*(ECOG Performance Status) \u2013 0.029*(% predicted DLCO) \u2013 0.056*BMI + 0.005*(creatinine, \u03bcmol/L) + 0.242*anemia + 0.608*arrhythmia + 0.379*(right-sided resection) + 0.179*(number of resected bronchopulmonary segments) + 0.634*thoracotomy + 0.769*malignant\" https://pubmed.ncbi.nlm.nih.gov/34324664/\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f5bd3ee6419645348db36a729821e0aa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e50280a3051343b0b1faba85befd88e8",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "criteria": "States the patient has a creatinine of 141 \u03bcmol/L (acceptable range 140 to 142).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This criterion describes the patients creatinine, a clinical parameter needed for calculating the RESECT-90 score.\n\n\"Creatinine \t141 \t\u00b5mol/L \tRange: 64\u2013104\" from LABS.pdf. \n\n\"\"RESECT-90 criteria formula: probability of 90-day mortality, % = [1/(1 + e-x)]*100, where x = -6.036 + 0.041*age + 0.493*male + 0.183*(ECOG Performance Status) \u2013 0.029*(% predicted DLCO) \u2013 0.056*BMI + 0.005*(creatinine, \u03bcmol/L) + 0.242*anemia + 0.608*arrhythmia + 0.379*(right-sided resection) + 0.179*(number of resected bronchopulmonary segments) + 0.634*thoracotomy + 0.769*malignant\" https://pubmed.ncbi.nlm.nih.gov/34324664/\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_65a9532d4af64234a57d2be25fa3c6e5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e50280a3051343b0b1faba85befd88e8",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States the patient has anemia.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This criterion recognises that the patient has low haemoglobin, a clinical parameter needed for calculating the RESECT-90 score for 90 day mortality risk. \n\n\"Haemoglobin \t109 \tg/L \tRange 130\u2013180\" from LABS.pdf. \n\n\"The World Health Organisation (WHO) defines anaemia as a haemoglobin (Hb) level two standard deviations below the normal for age and sex.\" https://cks.nice.org.uk/topics/anaemia-iron-deficiency/background-information/definition/\n\n\"RESECT-90 criteria formula: probability of 90-day mortality, % = [1/(1 + e-x)]*100, where x = -6.036 + 0.041*age + 0.493*male + 0.183*(ECOG Performance Status) \u2013 0.029*(% predicted DLCO) \u2013 0.056*BMI + 0.005*(creatinine, \u03bcmol/L) + 0.242*anemia + 0.608*arrhythmia + 0.379*(right-sided resection) + 0.179*(number of resected bronchopulmonary segments) + 0.634*thoracotomy + 0.769*malignant\" https://pubmed.ncbi.nlm.nih.gov/34324664/\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3f7d1e0e78db4070976aac5dd63326a4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e50280a3051343b0b1faba85befd88e8",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States the patient has an arrhythmia.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This criterion recognises a that the patient has AF, classified as an arrhythmia, and a clinical parameter used in calculating the RESECT-90 score for 90 day mortality risk. \n\n\"atrial fibrillation\" >CLINICALNOTES >ROW182 >COLUMND >CONSULTNOTE  from the EMR,\n\n\"Atrial fibrillation is a common abnormal heart rhythm that causes your heart to beat irregularly and often too fast.\" https://www.bhf.org.uk/informationsupport/conditions/atrial-fibrillation.\n\n\"RESECT-90 criteria formula: probability of 90-day mortality, % = [1/(1 + e-x)]*100, where x = -6.036 + 0.041*age + 0.493*male + 0.183*(ECOG Performance Status) \u2013 0.029*(% predicted DLCO) \u2013 0.056*BMI + 0.005*(creatinine, \u03bcmol/L) + 0.242*anemia + 0.608*arrhythmia + 0.379*(right-sided resection) + 0.179*(number of resected bronchopulmonary segments) + 0.634*thoracotomy + 0.769*malignant\" https://pubmed.ncbi.nlm.nih.gov/34324664/\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9f4dd0920f0b454e8fc5015969c6dc63",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e50280a3051343b0b1faba85befd88e8",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States the patient has had a right-sided resection.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This criterion describes that the patient has had a right-side lung resection, a clinical parameter needed for calculating the RESECT-90 score for 90 day mortality risk. \n\n\"There is recurrent malignant disease involving all three bronchopulmonary segments of the right upper lobe, arising in a background of prior radiotherapy-related change.\" from CT_Report.pdf\n\n\"From the surgical side, the procedure went as planned. We were able to remove all the areas that were identified as involved on imaging.\" from AI_SCRIPT_ONC_7.pdf \n\n\"RESECT-90 criteria formula: probability of 90-day mortality, % = [1/(1 + e-x)]*100, where x = -6.036 + 0.041*age + 0.493*male + 0.183*(ECOG Performance Status) \u2013 0.029*(% predicted DLCO) \u2013 0.056*BMI + 0.005*(creatinine, \u03bcmol/L) + 0.242*anemia + 0.608*arrhythmia + 0.379*(right-sided resection) + 0.179*(number of resected bronchopulmonary segments) + 0.634*thoracotomy + 0.769*malignant\" https://pubmed.ncbi.nlm.nih.gov/34324664/\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4a543ee27bd949348b32ab14a3fba506",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e50280a3051343b0b1faba85befd88e8",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States that the patient has had 3 bronchopulmonary segments resected.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This criterion recognises the number of lung segments that the patient had removed during her surgery - a clinical parameter needed for calculating the RESECT-90 score for 90 day mortality risk. \n\n\"Radiological evidence of local tumour recurrence confined to the right upper lobe, involving all three bronchopulmonary segments (S1\u2013S3), arising on a background of post-radiotherapy fibrosis\" \"Right middle and lower lobes    Appear clear with no focal consolidation, mass, or nodularity. \" from CT_Report.pdf . \n   \nAppear clear with no focal consolidation, mass, or nodularity.   \n\n\"From the surgical side, the procedure went as planned. We were able to remove all the areas that were identified as involved on imaging.\" from AI_SCRIPT_ONC_7.pdf. \n\n\"RESECT-90 criteria formula: probability of 90-day mortality, % = [1/(1 + e-x)]*100, where x = -6.036 + 0.041*age + 0.493*male + 0.183*(ECOG Performance Status) \u2013 0.029*(% predicted DLCO) \u2013 0.056*BMI + 0.005*(creatinine, \u03bcmol/L) + 0.242*anemia + 0.608*arrhythmia + 0.379*(right-sided resection) + 0.179*(number of resected bronchopulmonary segments) + 0.634*thoracotomy + 0.769*malignant\" https://pubmed.ncbi.nlm.nih.gov/34324664/\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_681e52cd42fb4a958feb5657c4190c9c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e50280a3051343b0b1faba85befd88e8",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States that the patient did not have a thoracotomy.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This criterion recognises that the patient had thorascopic surgery, not a thoracotomy, a clinical parameter involved in calculating the RESECT-90 score for 90 day mortality risk.\n\n\"Appear clear with no focal consolidation, mass, or nodularity\" from AI_SCRIPT_ONC_7.pdf  \n\n\"RESECT-90 criteria formula: probability of 90-day mortality, % = [1/(1 + e-x)]*100, where x = -6.036 + 0.041*age + 0.493*male + 0.183*(ECOG Performance Status) \u2013 0.029*(% predicted DLCO) \u2013 0.056*BMI + 0.005*(creatinine, \u03bcmol/L) + 0.242*anemia + 0.608*arrhythmia + 0.379*(right-sided resection) + 0.179*(number of resected bronchopulmonary segments) + 0.634*thoracotomy + 0.769*malignant\" https://pubmed.ncbi.nlm.nih.gov/34324664/\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_65c91e62475a4050affc3ec3cab11613",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e50280a3051343b0b1faba85befd88e8",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States that the patient has a malignancy.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This criterion recognises that the patient has radiological and histological evidence that that resected mass is malignant, determining a clinical parameter involved in calculating the RESECT-90 score. \n\n\"Radiological evidence of local tumour recurrence confined to the right upper lobe\" from CT_Report.pdf.\n\n\"Immunohistochemistry demonstrates cytokeratin positivity, with an elevated Ki-67 proliferative index. PD-L1 expression is present, though the sample is insufficient to support reliable subtyping or grading.\" from AI_SCRIPT_ONC_7.pdf.\n\n\" the expression of Ki-67 is strongly associated with cancer proliferation\" https://pmc.ncbi.nlm.nih.gov/articles/PMC8430879/. \n\n\"RESECT-90 criteria formula: probability of 90-day mortality, % = [1/(1 + e-x)]*100, where x = -6.036 + 0.041*age + 0.493*male + 0.183*(ECOG Performance Status) \u2013 0.029*(% predicted DLCO) \u2013 0.056*BMI + 0.005*(creatinine, \u03bcmol/L) + 0.242*anemia + 0.608*arrhythmia + 0.379*(right-sided resection) + 0.179*(number of resected bronchopulmonary segments) + 0.634*thoracotomy + 0.769*malignant\" https://pubmed.ncbi.nlm.nih.gov/34324664/\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f0822b166762460cb59a002ffc3d6f42",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e50280a3051343b0b1faba85befd88e8",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the patient has a 90-day mortality risk between 25.2% and 26.2% per the RESECT-90 Score.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This criterion calculates the RESECT-90 score for 90 day mortality risk for the patient using the formula, as 25.6%, and gives the range for the LLM with 2 degrees of freedom.\n\nhttps://www.mdcalc.com/calc/10502/resect-90\n\n\"RESECT-90 criteria formula: probability of 90-day mortality, % = [1/(1 + e-x)]*100, where x = -6.036 + 0.041*age + 0.493*male + 0.183*(ECOG Performance Status) \u2013 0.029*(% predicted DLCO) \u2013 0.056*BMI + 0.005*(creatinine, \u03bcmol/L) + 0.242*anemia + 0.608*arrhythmia + 0.379*(right-sided resection) + 0.179*(number of resected bronchopulmonary segments) + 0.634*thoracotomy + 0.769*malignant\" https://pubmed.ncbi.nlm.nih.gov/34324664/",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

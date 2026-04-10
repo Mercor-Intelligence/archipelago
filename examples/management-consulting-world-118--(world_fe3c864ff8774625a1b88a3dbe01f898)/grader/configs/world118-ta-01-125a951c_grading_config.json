@@ -1,0 +1,157 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_6bff758bea324f6e8b0d33b73084c83d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_125a951c3cf3416f918a948720fd6055",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the current readiness score gap is 19.6 (acceptable range 19.4 to 19.8)",
+        "negative_criteria": "States that the current readiness score gap is a value other than 19.6",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_18a66d2a6a164c3aafd1aedfa9df9ec0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_125a951c3cf3416f918a948720fd6055",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the number of facilities that need to increase their score to 5.0 is 11",
+        "negative_criteria": "States that the number of facilities that need to increase their score to 5.0 is a value other than 11",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1b1507c88ba94ca988aed41e82daf905",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_125a951c3cf3416f918a948720fd6055",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the new overall average readiness score across the remaining states is 3.6 (acceptable range 3.56 to 3.64)",
+        "negative_criteria": "States that the new overall average readiness score across the remaining states is a value other than 3.6",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_40bb7df5b1fe40df969a5a97d756fe6f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_125a951c3cf3416f918a948720fd6055",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the first priority state for upgrade is Missouri",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7a053fd429664b709dcb9c03df989664",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_125a951c3cf3416f918a948720fd6055",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the number of facilities to be prioritized for upgrade in Missouri is 14",
+        "negative_criteria": "States that the number of facilities to be prioritized for upgrade in Missouri is a value other than 14",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e8e51189cbe249e29cf2e24595c7cc52",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_125a951c3cf3416f918a948720fd6055",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that gain in readiness score per facility for Missouri is 1.8 (acceptable range 1.78 to 1.82)",
+        "negative_criteria": "States that gain in readiness score per facility for Missouri is a value other than 1.8",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7d6af4d37fd540e98bfe4b3e14026e23",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_125a951c3cf3416f918a948720fd6055",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the gain in the total readiness score in Missouri is 19.8 (acceptable range 19.6 to 20.0)",
+        "negative_criteria": "States that the gain in the total readiness score in Missouri is a value other 19.8",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

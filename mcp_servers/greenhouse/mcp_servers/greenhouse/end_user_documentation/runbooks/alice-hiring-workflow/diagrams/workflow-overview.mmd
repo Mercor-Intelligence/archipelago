@@ -1,0 +1,28 @@
+flowchart TD
+    subgraph "Act 1: White Rabbit (Recruiter)"
+        A[Login as Recruiter] --> B[Create Candidate: Alice Liddell]
+        B --> C[Create Job: Chief Explorer]
+        C --> D[Create Application]
+    end
+
+    subgraph "Act 2: Caterpillar (Coordinator)"
+        D --> E[Login as Coordinator]
+        E --> F[Add Interview Notes]
+    end
+
+    subgraph "Act 3: Queen of Hearts (Hiring Manager)"
+        F --> G[Login as Hiring Manager]
+        G --> H[Submit Feedback: Strong Yes]
+    end
+
+    subgraph "Act 4: White Rabbit Returns"
+        H --> I[Login as Recruiter]
+        I --> J[Advance through Pipeline]
+        J --> K[Hire Alice!]
+    end
+
+    style A fill:#e8f5e9
+    style E fill:#fff3e0
+    style G fill:#fce4ec
+    style I fill:#e8f5e9
+    style K fill:#c8e6c9

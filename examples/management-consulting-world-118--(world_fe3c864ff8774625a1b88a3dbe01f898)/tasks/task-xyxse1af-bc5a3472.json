@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "From the provider summary for top 100 DRGs data, the focus for HappyHospital is on 7 states only: IL, IN, MI, MN, MO, OH, and WI. \n\nStrain & Co has also decided to focus on only these 3 DRGs: \n057 - DEGENERATIVE NERVOUS SYSTEM DISORDERS W/O MCC, \n064 - INTRACRANIAL HEMORRHAGE OR CEREBRAL INFARCTION W MCC, and \n065 - INTRACRANIAL HEMORRHAGE OR CEREBRAL INFARCTION W CC. \n\nUse the information in these focus areas to answer the following questions:\n1.  Which of the 7 focus states has the lowest average “Total Discharges”  in \"065 - INTRACRANIAL HEMORRHAGE OR CEREBRAL INFARCTION W CC\" DRG alone?\n2. What is the Provider Name with the highest “Average Total Payments” for the 3 DRGs of focus in the 7 states?\n3. Assuming the engagement manager at Strain & Co. decides to focus on only 6 states (IL, IN, MI, MN, MO, and OH) and takes out the first 57 lowest \" Average Total Payments\"  for the 3 DRGs in focus, what would be the average of the remaining \"Average Total Payments\" across the 6 states only? Round to two decimal places in dollar value.\n\nRespond in the message console. Round all values to two decimal places\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the state with the lowest average Total Discharges  in \"065 -... (ver_a0588f6554cf4c6aa97c0a52be73b3cf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the state with the lowest average Total Discharges  in \"065 - INTRACRANIAL HEMORRHAGE OR CEREBRAL INFARCTION W CC\" DRG is Wisconsin."
+        }
+      ]
+    },
+    {
+      "name": "States that the Provider Name with the highest Average Total Payments is... (ver_02756837ff7c46f09307166371aea7c2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Provider Name with the highest Average Total Payments is UNIVERSITY OF ILLINOIS HOSPITAL."
+        }
+      ]
+    },
+    {
+      "name": "States that the average of the remaining Average Total Payments for the 6... (ver_f0801d7395c845bbaa0b7ec11ac8e4aa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average of the remaining Average Total Payments for the 6 states is $8,956.37 (acceptable range $8,866.81 to $9,045.93)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average of the remaining Average Total Payments for the 6... (ver_f0801d7395c845bbaa0b7ec11ac8e4aa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average of the remaining Average Total Payments for the 6 states is a value other than $8,956.37."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-xyxse1af-bc5a3472"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_bc5a347254974e7bbdb6b28540c6efe7",
+    "task_name": "Task xyxse1af",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_4d629419efd14d61be1b3d60cb8f3016",
+        "golden_text_response": "1. State with the lowest average Total Discharges  in \"065 - INTRACRANIAL HEMORRHAGE OR CEREBRAL INFARCTION W CC\" DRG is Wisconsin.\n\n2. Provider name with the highest Average Total Payments is UNIVERSITY OF ILLINOIS HOSPITAL\n\n3.  Average of the remaining Average Total Payments for the 6 states is $8,956.37",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

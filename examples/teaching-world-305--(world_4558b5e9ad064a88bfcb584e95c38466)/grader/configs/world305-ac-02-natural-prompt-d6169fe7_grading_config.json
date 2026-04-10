@@ -1,0 +1,242 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_3f24a256bc984e2595d5d82e8fe6e25f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d6169fe745e441219465c34a9e86a517",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes introduction to Lessons 4 and 5 under Lesson Outline",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7c206547f6554a9caa170af43b0efcdc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d6169fe745e441219465c34a9e86a517",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Assigns chapters 4-6 as homework",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4dfb0b026c8842d98ee7080c71d0cb8c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d6169fe745e441219465c34a9e86a517",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes explanation of major themes and vocabulary in lesson outline",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b8ab948a8a3948bfaf94510c22380513",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d6169fe745e441219465c34a9e86a517",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Lists chapter 5 activity from L4 Lesson Plan as homework",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a32b64fa93984688b2162c795345f2d6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d6169fe745e441219465c34a9e86a517",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Lists chapter 6 worksheet from L5 Lesson plan as homework",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d4bff4dcea7f4254a1150bb542b26229",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d6169fe745e441219465c34a9e86a517",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Lists lesson 4 optional quiz as homework",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5524135ef0fe4256816b339265b71e18",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d6169fe745e441219465c34a9e86a517",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Lists lesson 4 Do Now activity as homework",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_37d1b084e6964342b2ba758bc07b2ac9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d6169fe745e441219465c34a9e86a517",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Lists Lesson 5 exit ticket as homework",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a5c5f413bf8d4239a050737913fc6294",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d6169fe745e441219465c34a9e86a517",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Lists the take home guide as an accommodation",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_878aac31a9654f1ea9639a39b4b099ad",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d6169fe745e441219465c34a9e86a517",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Keeps sentence frames as a provided accommodation",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_90e88e8e926743d39cf8b9f1e8624ce0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d6169fe745e441219465c34a9e86a517",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Keeps guided reading as a provided accommodation",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Please update the next batch of offer outcome data in Greenhouse. Refer to Offer_Decisions.csv in the filesystem for the applications and the outcome.\n\nIn the console, please state the change in offer decline rate (in % two decimal places) from before and after this batch update, for the offers we have an outcome. Please provide a full report of your \nactions and analysis in the console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "State that the change in offer decline rate from before and after the batch... (ver_ab82ad0747064222bc6e45e117f63e56)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the change in offer decline rate from before and after the batch update, for the offers we have an outcome is 11.41% (acceptable range 11.30% to 11.52%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world602-tk-06-f15c2f3d"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_f15c2f3d81cd4e8bac0ea33688a6da0a",
+    "task_name": "World602_TK_06",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_a58b52f45bd74645a449384c05e4a6ef",
+        "golden_text_response": "The change in offer decline rate from before and after the batch update, for the offers we have an outcome is 11.41%.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

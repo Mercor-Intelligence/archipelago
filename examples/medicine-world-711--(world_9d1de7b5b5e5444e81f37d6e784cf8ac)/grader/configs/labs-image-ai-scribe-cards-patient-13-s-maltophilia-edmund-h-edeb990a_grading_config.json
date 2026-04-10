@@ -1,0 +1,162 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_b87ee9cdd57d42f3af199d266a4d6481",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_edeb990a2f334b96b3ae952e6cbef890",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the patient has a history of recurrent urinary tract infections (UTI). ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the chart. \"ASSESSMENT AND PLAN Ms. Balam is a 60 y.o. with:  1. Recurrent urinary tract infection\" Tab-ClinicalNotes, Progress notes, Column D, Row 193, Section-Assessment and Plan.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5d5b346cc3344e738e1bce0b8b53c6be",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_edeb990a2f334b96b3ae952e6cbef890",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient's recent UTI has not been treated.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from the script \"Cards_Patient 13 Script.pdf\" the patient has not started treatment. \n\n\"Patient: Yes. I wanted to go over my recent culture result.\nPhysician: Oh yes the nurse did mention you received a urine culture from an outside facility\nthat I was not sent over.\nPatient: Yes we were traveling and then I had some discomfort with peeing so I went to an\nurgent care and they checked my urine and got the urine culture. They recommended antibiotics\nbut I said I wanted to wait till I talked it over with you.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4268280d11dd4d4094621d49e0ca2073",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_edeb990a2f334b96b3ae952e6cbef890",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the patient needs a repeat urine culture for her current presentation.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has a history of recurrent UTIs and has dysuria and fever. It is important to consider a UTI and a urine culture is indicated. \"Clinical symptoms may be integrated with UA findings, but authors caution clinicians to not rely solely on the UA alone. Urine cultures are reasonable for complicated cases and/or recurrent UTIs, particularly in suspected pyelonephritis, to guide targeted therapy.\"\n\nAlthough her recent culture can guide therapy, her present episode still needs a repeat culture.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a33f879e4d7a46dca595fefa13725526",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_edeb990a2f334b96b3ae952e6cbef890",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that her recent urine culture can guide empirical treatment for her current presentation. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\" Empiric antibiotic therapy, often prescribed without knowledge of the causative pathogen, faces challenges from rising antibiotic resistance. This study explores the potential of prior positive culture results to guide empiric antibiotic therapy.\" \"This study underscores the potential of prior positive culture results in guiding empiric antibiotic therapy, enhancing accuracy and identity agreement.\" https://www.sciencedirect.com/science/article/pii/S2052297523001014",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cc825c3cf8634345a518fe6767523e0a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_edeb990a2f334b96b3ae952e6cbef890",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the recent urine culture grew Stenotrophomonas maltophilia.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from the attachment \"Cards_Patient 13 Test SM.pdf\". \"Urine Culture, Comprehensive\n Final Report\nOrdered by Dr. Disneyland\nPatient name: deidentified\nCollection date: 12/25/2025\nResult date: 1/2/2026\nResult 1: S. maltophilia\n Greater than 100,000 colony forming units per mL\n Abnormal\nAntimicrobial Susceptibility\n S = Susceptible, I = Intermediate, R = Resistant\n MICs expressed in micrograms per mL\n ESBL = Extended-Spectrum Beta-Lactamase\nAntibiotic\nInterpretation\nAmoxicillin/Clavulanic Acid\nR\nAmpicillin\nR\nCefazolin\nR\nCefepime\nR\nCeftriaxone\nR\nCefuroxime\nR\nCephalothin\nR\nCiprofloxacin\nR\nErtapenem\nR\nGentamicin\nR\nImipenem\nS\nLevofloxacin\nR\nNitrofurantoin\nS\nPiperacillin\nR\nTetracycline\nR\nTobramycin\nR\nTrimethoprim/Sulfamethoxazole\nS\"\n\nThis shows susceptibility to nitrofurantoin, imipenem and trimethoprim sulfamethoxazole (TMP SMX).",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b66be7bd3cdc4dd8a99cca95cc618075",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_edeb990a2f334b96b3ae952e6cbef890",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States combination therapy with two agents is recommended for Stenotrophomonas maltophilia.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"One option is combination therapy with at least two active agents (i.e., cefiderocol, minocycline, TMP-SMX, or levofloxacin) \u2013 listed in order of preference - at least until clinical improvement is observed, primarily because of the limited supportive data for any individual agent (Questions 6.2, 6.4 to 6.6). Alternatively, the combination of ceftazidime-avibactam and aztreonam can be administered, with the acknowledgement that limited clinical data are available supporting this combination\"\n\nhttps://www.idsociety.org/practice-guideline/amr-guidance/",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cb6c7c26037b4cad96b3b3e99d80ac1d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_edeb990a2f334b96b3ae952e6cbef890",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the next best step in treatment is starting the patient on cefiderocol and minocycline.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The order of preference is cefiderocol, minocycline, TMP-SMX, or levofloxacin therefore the best treatment for the patient is the combination of cefiderocol and minocycline even if patient is sensitive to other medications or has resistance to other medications. \n\n\"One option is combination therapy with at least two active agents (i.e., cefiderocol, minocycline, TMP-SMX, or levofloxacin) \u2013 listed in order of preference - at least until clinical improvement is observed, primarily because of the limited supportive data for any individual agent (Questions 6.2, 6.4 to 6.6). Alternatively, the combination of ceftazidime-avibactam and aztreonam can be administered, with the acknowledgement that limited clinical data are available supporting this combination\"\n\nhttps://www.idsociety.org/practice-guideline/amr-guidance/",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

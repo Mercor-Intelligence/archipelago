@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Assess Redwood Components' tax exposure model to recalculate Book/Tax & Financial Statement. Assuming state tax is deducted federally, state apportionment factor of 85% and valuation allowance of 20% (assume 21% federal tax, 6.5% state tax), please re-calculate the following:\n- Lost future tax $ benefit (cumulative)\n- The effective Tax Rate % impact on 2023 income (Overstatement of DTA / 2023 Taxable Income)\n- Net $ DTA sensitivity to +5pp change in valuation allowance and apportionment factor\n\nRound all $ answers to absolute $ value with 0 decimal places. Round all the percentage values to 0.01%."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the lost future tax benefit (cumulative) is $1,189,855 (acceptable... (ver_ff70d105fb8a4e239f5a00b040ea6800)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the lost future tax benefit (cumulative) is $1,189,855 (acceptable range $1,189,854 to $1,189,856)."
+        }
+      ]
+    },
+    {
+      "name": "States that the effective tax rate impact on 2023 income is (10.83%)... (ver_a81baf10e8a2441b8183bc8e9de41474)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the effective tax rate impact on 2023 income is (10.83%) (acceptable range 10.82% to 10.84%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the net DTA sensitivity to +5pp change in valuation allowance and... (ver_0cf5b5178a46445da33f64ad8d72c7cc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the net DTA sensitivity to +5pp change in valuation allowance and apportionment factor is $175,442 (acceptable range $175,441 to $175,443)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh accounting-world-801-ar2-0e25cd35"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_0e25cd3518f44089b0dad710a0436776",
+    "task_name": "Accounting World 801_AR2",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_17bcdbebd69c4375b0ef01a482fc330a",
+        "golden_text_response": "Lost future tax benefit (cumulative) = $1,189,855\n\nEffective Tax Rate impact on 2023 income = (10.83%)\n\nNet DTA sensitivity to +5pp change in valuation allowance and apportionment factor = $175,442",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

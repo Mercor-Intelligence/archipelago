@@ -1,0 +1,194 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_d728914fb4ea47fd967786a0ff3324a0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0b11a83a2cc4277b53c60ff9868746d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the patient has new onset mucosal bleeding.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the attached script \u201cPhysician: Hi, I am Dr. Doctor, What brings you in today?\nPatient: For the past three weeks my gums have been bleeding whenever i brush my teeth, and\nI have also been getting new bruises on my arms.\u201d",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_14041b71b26c44d28b25d1cc8daf68e6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0b11a83a2cc4277b53c60ff9868746d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that mucocutaneous bleeding is a feature of acquired hemophilia A.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Mucocutaneous bleeding can also be caused by acquired hemophilia A.\n\n\u201cMucocutaneous bleeding is the most common presentation. \u201c https://ashpublications.org/thehematologist/article/doi/10.1182/hem.V19.2.2022214/484175/Autoimmune-Acquired-Hemophilia-Updates-in",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8c4d99279db3434fadb5b71f64744665",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0b11a83a2cc4277b53c60ff9868746d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the patient\u2019s soft tissue swelling could be from acquired hemophilia A.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Acquired hemophilia A characteristically causes deep soft tissue bleeding that can manifest as tender swelling or firm masses, making this finding highly supportive.\n\n\u201cClinical manifestations include spontaneous hemorrhages into the skin, muscles or soft tissues or excessive bleeding during surgery.\u201d https://www.sciencedirect.com/science/article/abs/pii/S1568997210002582",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3b5917d2277a49d6bde216d2a31de123",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0b11a83a2cc4277b53c60ff9868746d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Stats the patient has prolonged activated partial prothrombin time (aPTT).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the attached lab results file \u201c aPTT 44, prolonged\u201d",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5df0c6c8d08d4fc0a9c4cf44f1a66244",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0b11a83a2cc4277b53c60ff9868746d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that prolonged aPTT is seen in acquired hemophilia A.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "In acquired hemophilia A, factor VIII is inhibited, which prolongs the aPTT.\n\n\u201cScreening hemostatic assays shows a normal prothrombin time (PT) and thrombin time (TT), as well as a prolonged activated partial thromboplastin time (APTT; Figure 1). \u201c https://ashpublications.org/thehematologist/article/doi/10.1182/hem.V19.2.2022214/484175/Autoimmune-Acquired-Hemophilia-Updates-in",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_958d6336cf9046cc8e355b50d01e7b5f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0b11a83a2cc4277b53c60ff9868746d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the patient has breast cancer.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the chart \u201c DIAGNOSIS: Cancer Staging Malignant neoplasm of upper-outer quadrant of right breast in female, estrogen receptor negative (Hoople)\u201d \nTab - Clinical Notes, Note - Progress Notes, Column - D, Row - 203",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4c8106ff37ec4a62ae94e8c83ce32405",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0b11a83a2cc4277b53c60ff9868746d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States that breast cancer is associated with acquired hemophilia A.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Acquired hemophilia A can be paraneoplastic and can be seen with solid tumors, therefore breast cancer can be seen as a mechanism for acquired hemophilia A. \n\n\u201cAHA may be associated with pregnancy, autoimmune diseases, malignancy, infections or medication and occurs most commonly in the elderly. \u201c https://www.sciencedirect.com/science/article/abs/pii/S1568997210002582\n\n\u201cPrevious studies show that about a quarter of patients with AHA and malignancy had a lung tumour and one-fifth to a quarter had prostate cancer or a gastro-intestinal malignancy.1,4,5 In total, there are four known cases of patients with haemophilia A and breast cancer. \u201c https://www.njmonline.nl/article_ft.php?a=2111&d=1383&i=225",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_36633eb870aa4fa1927791f13c128aa1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0b11a83a2cc4277b53c60ff9868746d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the most likely underlying cause of her bleeding tendency is acquired hemophilia A.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Acquired hemophilia A best unifies the presentation of new, unexplained bleeding with mucocutaneous bleeding and soft tissue bleeding, espeically in the setting of malignancy, making it the most likely cause.\n\n\u201cAcquired hemophilia A is a disorder of rare entity, resulting in spontaneous bleeding in individuals with no history of bleeding disorders. It is believed to be caused by spontaneous inhibition of clotting factor VIII by autoantibodies, and is usually associated with other autoimmune conditions. The hallmark of this condition is mucocutaneous bleeding leading to ecchymosis, melena, hematoma or hematuria. \u201c https://pubmed.ncbi.nlm.nih.gov/31632887/\n\n\u201cClinical manifestations include spontaneous hemorrhages into the skin, muscles or soft tissues or excessive bleeding during surgery.\u201d https://www.sciencedirect.com/science/article/abs/pii/S1568997210002582\n\n\u201cAHA may be associated with pregnancy, autoimmune diseases, malignancy, infections or medication and occurs most commonly in the elderly. \u201c https://www.sciencedirect.com/science/article/abs/pii/S1568997210002582\n\n\u201cPrevious studies show that about a quarter of patients with AHA and malignancy had a lung tumour and one-fifth to a quarter had prostate cancer or a gastro-intestinal malignancy.1,4,5 In total, there are four known cases of patients with haemophilia A and breast cancer. \u201c https://www.njmonline.nl/article_ft.php?a=2111&d=1383&i=225",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_363752dfb7d34f1685bf866c1976b7e3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0b11a83a2cc4277b53c60ff9868746d",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States the confirmatory test to support this diagnosis is factor VIII inhibitor assay.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\u201cThe quantitative assays of factor activity and measurement of factor inhibitor levels should be performed and are considered diagnostic.[16][17][18] \u201c https://www.ncbi.nlm.nih.gov/books/NBK560494/",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

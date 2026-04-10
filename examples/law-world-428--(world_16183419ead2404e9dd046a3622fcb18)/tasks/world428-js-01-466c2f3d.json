@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Liver Bird Development has entered into a Development Agreement (the \"Agreement\") with the City of San Dimas for the development of 344 West Bonita Avenue (the \"Zone\"). The Agreement was approved by the Los Angeles City Council planning and land use management (PLUM) committee on November 30, 2025. On April 25, 2026, The Watchers, Inc., (The \"Plaintiff\") a citizens' watchdog group filed a lawsuit against City of Los Angeles (the \"Defendant\") under the Political Reform Act of 1974 (PRA) alleging that several PLUM committee members who approved the Agreement were bribed. The Plaintiff is asking the Court to void the Agreement. The Defendant has filed a demurrer arguing that the claim is barred by the statute of limitations. Should the Court grant the Defendant's demurrer? Provide an explanation of your answer."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the Plaintiff brought the claim outside of the 90-day statute of... (ver_820fc3f883244d41affac51971a5d2ef)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Plaintiff brought the claim outside of the 90-day statute of limitations period."
+        }
+      ]
+    },
+    {
+      "name": "States that the Defendant's demurrer should be granted (ver_55bf411166be453786a0546ef5b44b4f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Defendant's demurrer should be granted."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world428-js-01-466c2f3d"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_466c2f3dd17a445d9c5d921735409312",
+    "task_name": "World428_JS_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_80c59e4dc96342198af2ce6330c2556c",
+        "golden_text_response": "The Defendant's demurrer should be granted because the Plaintiff brought the claim outside of the 90-day statute of limitations period set forth in California Government Code section 65009(c)(1)(D).",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

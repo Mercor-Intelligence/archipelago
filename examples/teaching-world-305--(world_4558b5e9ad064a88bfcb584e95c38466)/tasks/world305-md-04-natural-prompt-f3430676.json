@@ -1,0 +1,248 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Update the L4 lesson plan to add the Grade 8 state literature standards that the lesson addresses, including both the exact standard citation (Pennsylvania) and its description. Do not make any other modifications to the plan. Output the updated lesson plan as a new document called \"RevisedL4plan.docx\"."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that a state standard in the updated lesson plan document... (ver_6e7ba1c9eb4b4880bed915c296bddc41)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that a state standard in the updated lesson plan document (\"RevisedL4plan.docx\") is: CC.1.3.8.A \"Determine a theme or central idea of a text and analyze its development over the course of the text, including its relationship to the characters, setting, and plot; provide an objective summary of the text\"."
+        }
+      ]
+    },
+    {
+      "name": "Adds standards other than CC.1.3.8.A, CC.1.3.8.B, CC.1.3.8.C, CC.1.3.8.D,... (ver_6e7ba1c9eb4b4880bed915c296bddc41)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Adds standards other than CC.1.3.8.A, CC.1.3.8.B, CC.1.3.8.C, CC.1.3.8.D, CC.1.3.8.F, CC.1.3.8.J, CC.1.3.8.K to the State Standards box."
+        }
+      ]
+    },
+    {
+      "name": "States that a state standard in the updated lesson plan document... (ver_0980b0e4d00044369d4ca41e9c946c16)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that a state standard in the updated lesson plan document (\"RevisedL4plan.docx\") is: CC.1.3.8.B \"Cite the textual evidence that most strongly supports an analysis of what the text says explicitly, as well as inferences, conclusions, and/or generalizations drawn from the text\"."
+        }
+      ]
+    },
+    {
+      "name": "States that a state standard in the updated lesson plan document... (ver_544d1044b88c41d7b16b19387a1f24aa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that a state standard in the updated lesson plan document (\"RevisedL4plan.docx\") is: CC.1.3.8.C \"Analyze how particular lines of dialogue or incidents in a story or drama propel the action, reveal aspects of a character, or provoke a decision\"."
+        }
+      ]
+    },
+    {
+      "name": "States that a state standard in the updated lesson plan document... (ver_42f0d75fc4c4478da4454047f51eddaa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that a state standard in the updated lesson plan document (\"RevisedL4plan.docx\") is: CC.1.3.8.D \"Analyze how differences in the points of view of the characters and the audience or reader (e.g., created through the use of dramatic irony) create such effects as suspense or humor\"."
+        }
+      ]
+    },
+    {
+      "name": "States that a state standard in the updated lesson plan document... (ver_b0e73908ee6844d099c7449e9df94da4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that a state standard in the updated lesson plan document (\"RevisedL4plan.docx\") is: CC.1.3.8.F \"Analyze the influence of the words and phrases in a text including figurative and connotative meanings and how they shape meaning and tone\"."
+        }
+      ]
+    },
+    {
+      "name": "States that a state standard in the updated lesson plan document... (ver_872f443393bb475c92a4eac0eb8bfbae)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that a state standard in the updated lesson plan document (\"RevisedL4plan.docx\") is: CC.1.3.8.J \"Acquire and use accurately grade-appropriate general academic and domain-specific  words and phrases; gather vocabulary knowledge when considering a word or phrase important to comprehension or expression\"."
+        }
+      ]
+    },
+    {
+      "name": "States that a state standard in the updated lesson plan document... (ver_41e366e7ce8f461a92f7232f6ecf3cc1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that a state standard in the updated lesson plan document (\"RevisedL4plan.docx\") is: CC.1.3.8.K \"Read and comprehend literary fiction on grade level, reading independently and proficiently\"."
+        }
+      ]
+    },
+    {
+      "name": "Creates a new document named \"RevisedL4plan.docx\" which is identical to the L4... (ver_86f722b1474948f3babb540e2582897b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a new document named \"RevisedL4plan.docx\" which is identical to the L4 lesson plan document (\"L4 Lesson plan.docx\") except for the contents of the box titled \"State standards:\"."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world305-md-04-natural-prompt-f3430676"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_f343067635ed4117b32389080ffee343",
+    "task_name": "World305_MD_04 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_aef766091a054f8b9a657b6bc175cd7d",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_9ea629aefe98435cb4190d8d24143d3c"
+      },
+      {
+        "golden_response_id": "gold_9201f9f3f771432083bfc24b40115041",
+        "golden_text_response": "file",
+        "golden_file_responses": "snap_9ea629aefe98435cb4190d8d24143d3c"
+      },
+      {
+        "golden_response_id": "gold_8370c7d116a544f98612e90f750d865c",
+        "golden_text_response": "Golden response is a copy of an existing document with new content added. The copy is uploaded here under Response Files.",
+        "golden_file_responses": "snap_0cc82063d8c444a2b22f5ecb03ddd0fd"
+      }
+    ]
+  }
+}

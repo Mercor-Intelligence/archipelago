@@ -1,0 +1,253 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_1029eb871d804a2697808796b583908a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0559a711f05b4a069ef59912f86319df",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the high-sensitivity troponin value of 65 ng/L is a continuous variable used to calculate the T-MACS score (acceptable range 64 to 66).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Used to evaluate the patient\u2019s T-MACS score for having elevated high-sensitivity troponin. Troponin 65 ng/dL as per the lab report pdf which is above the normal value of 22 ng/dL.\nThe T-MACS score is calculated using the following formula: probability of ACS = 1/(1+e^-(1.713E + 0.847A + 0.607R + 1.417V + 2.058S + 1.208H + 0.089T - 4.766)).\n\"The T-MACS score was shown to be more accurate than the HEART score in predicting low risk (very low risk for the T-MACS score), high risk, and anticipated one-month risk for MACE in patients coming to the emergency department with chest pain.\" Akman G, H\u00f6kenek NM, Yusufo\u011flu K, et al. T-MACS score vs HEART score identification of major adverse cardiac events in the emergency department. Am J Emerg Med. 2023;64:21-25. doi:10.1016/j.ajem.2022.11.015",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a12c96ffac3f4fbd82c2a4c70096a722",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0559a711f05b4a069ef59912f86319df",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Assigns 0 points to the patient\u2019s T-MACS score for not having EKG ischemia.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the script the read for the EKG is given \"Looks like your EKG shows normal sinus rhythm with a first degree AV block and\npoor R wave progression. Sorry for all the jargon but I will explain the results to you\". \n0 points are assigned to the patient\u2019s T-MACS score for not having EKG ischemia.\n\"The ECG changes that occur in association with acute ischemia and infarction include peaking of the T waves, referred to as hyperacute T-wave changes, ST-segment elevation and/or depression, changes in the QRS complex, and inverted T waves.\" Wagner GS, Macfarlane P, Wellens H, et al. AHA/ACCF/HRS recommendations for the standardization and interpretation of the electrocardiogram: part VI: acute ischemia/infarction: a scientific statement from the American Heart Association Electrocardiography and Arrhythmias Committee, Council on Clinical Cardiology; the American College of Cardiology Foundation; and the Heart Rhythm Society. Endorsed by the International Society for Computerized Electrocardiology. J Am Coll Cardiol. 2009;53(11):1003-1011. doi:10.1016/j.jacc.2008.12.016",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_af846513ce3440d1bea3448623a7979e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0559a711f05b4a069ef59912f86319df",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Assigns 0 points to the patient\u2019s T-MACS score for not having worsening or crescendo angina.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the script \"Patient: That\u2019s the weird part\u2014it sometimes comes on when I\u2019m just sitting around, but other times it happens when I\u2019m active.\" The patient is not having worsening of crescendo chest pain as worsening or crescendo implies an increase in frequency, duration, or severity. The script does not describe such a progression. The T-MACS score uses worsening or crescendo chest pain as one of the criteria.\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b6cbef07f4fe439e92b3196f5df92caf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0559a711f05b4a069ef59912f86319df",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Assigns 0 points to the patient's T-MACS score for not having pain that radiates to the right arm or shoulder.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the script, the patient's chest pain is not radiating, \"Patient: It\u2019s right in the middle of my chest, about a 6 out of 10, and it doesn\u2019t spread anywhere.\" No points should be assigned to the T-MACS score as the patient is not having chest pain that radiates. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_836dbb9823444c0daad4af3ffc6b47ea",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0559a711f05b4a069ef59912f86319df",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Assigns 0 points to the patient's T-MACS score for not having pain that is associated with vomiting.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the script, the patient is not having nausea or vomiting, \"Physician: Do you have any other symptoms\u2014shortness of breath, nausea, sweating, dizziness, or palpitations? Patient: No, none of that. I do get anxious sometimes though, and I drink a lot of energy drinks, so maybe it\u2019s just stress.\" \nNo points should be assigned in the T-MACS score as the patient is not having nausea or vomiting.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a3d6270a09cd4f34b98ede3d21fa8251",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0559a711f05b4a069ef59912f86319df",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Assigns 0 points to the patient's T-MACS score for no sweating observed by the physician.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the script, the patient does not have sweating, \"Physician: Do you have any other symptoms\u2014shortness of breath, nausea, sweating, dizziness, or palpitations? Patient: No, none of that. I do get anxious sometimes though, and I drink a lot of energy drinks, so maybe it\u2019s just stress. Physician: Alright, let me examine you. (Exam performed) Your vital signs are stable, heart and lung sounds are normal, and everything looks okay. I do not notice any sweating. When I press on your chest, does that cause the pain?\"\nThe physician does not notice any sweating on the patient os no points are assigned in the T-MACS score.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_16cc9b9d50394dca8d1db6fd0b341270",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0559a711f05b4a069ef59912f86319df",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Assigns 0 points to the patient's T-MACS score for not having hypotension.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the patient chart, the patient is not hypotensive. As per the prompt \"Assume the vital signs are unchanged from the patient's last visit on record.\" The last recorded blood pressure is 117/77 which is found in the quote \"Objective:    BP 117/77 \" in the CLINICALNOTES tab, Progress Notes, column D, row 343. No points are assigned for this criteria in the T-MACS score. The T-MACS score defines hypotension as a systolic blood pressure less than 100 mmHg. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_087e2a151d7747989438dc50a94690b4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0559a711f05b4a069ef59912f86319df",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the T-MACS score is 73.5 +/- 0.5% (acceptable range 72.8 to 74.2).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The T-MACS score for this patient is calculated by assigning 0 points to all variables due to \"No\" answers and then inputting 65 ng/dL as the value for the high-sensitivity troponin.\n\nThe T-MACS score is calculated using the following formula: probability of ACS = 1/(1+e^-(1.713E + 0.847A + 0.607R + 1.417V + 2.058S + 1.208H + 0.089T - 4.766)).\n\nE: EKG ischemia\nA: Worsening or crescendo angina\nR: Pain radiation to the right arm or shoulder\nV: Pain associated with vomiting\nS: Sweating observed\nH: Hypotension\nT: hs-cTnT concentration on arrival\n\nThe calculation yields an answer of approximately 0.735.  The T-MACS score is expressed as a percentage, 73.5%.\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3a8d7dd1c96843518b6998ffb23ce4ee",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0559a711f05b4a069ef59912f86319df",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient is at moderate risk for acute coronary syndrome (ACS) or major adverse cardiovascular event (MACE) in the next 30 days.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The final T-MACS assessment calculation indicates that the patient has a moderate risk for ACS or MACE in 30 days which equates to a 73% chance as per the calculator. \n\n\"The original derivation of the T-MACS Decision Aid was a prospective study by Body et al in the United Kingdom. The goal was to compare ability of T-MACS to the original MACS, the latter of which included both hs-cTnT and H-FABP (heart-type fatty acid binding protein) in predicting ACS or MACE.\"\n\n\"Probability \u22650.05 and <0.95 \nRisk Moderate \nInterpretation Serial troponin in general ward and consider stress testing and/or CT coronary angiography thereafter.\"\nhttps://www.mdcalc.com/calc/3942/troponin-manchester-acute-coronary-syndromes-t-macs-decision-aid#evidence",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_084f6084203449d3b09f4cc1e8ead9a6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0559a711f05b4a069ef59912f86319df",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Mentions that the T-MACS decision aid should not replace clinical judgement.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is a critical safety point to include in the response.\n\nIn the T-MACS calculator on Mdcalc.com under the \"Next Steps\" section and under \"Critical Actions\" it states that the \u201cT-MACS is a decision aid and not a definitive test. It is designed to assist in the workup of a patient\u2019s chest pain. Clinical judgment should always be used.\u201d\nhttps://www.mdcalc.com/calc/3942/troponin-manchester-acute-coronary-syndromes-t-macs-decision-aid#evidence",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

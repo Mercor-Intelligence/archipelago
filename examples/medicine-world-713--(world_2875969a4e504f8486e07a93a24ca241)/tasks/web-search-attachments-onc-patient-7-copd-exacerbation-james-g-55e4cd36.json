@@ -1,0 +1,215 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 7” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nPrompt: \n\nPatient 7 has been assessed at an emergency department in the United States of America for an exacerbation of Chronic Obstructive Pulmonary Disease (COPD).\n\nHer heart rate is 100 bpm, respiratory rate is 24 breaths/min, and she is mildly febrile. She states that she feels short of breath and she is talking in short sentences. \n\nWhat severity classification is the patient's COPD exacerbation? What is the role of antibiotics in the management of this exacerbation? Briefly explain your reasoning. \n\nAssume that the patient's correct age is 75. Check if any previous COPD exacerbations needed sputum cultures. If so, then assume the cultures were positive.\n\nAnswers should be in line with the most recent international clinical guidelines and their interpretation of the Rome classification system for COPD exacerbations, as of January 10, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Utilizes the 'Global Strategy For Prevention, Diagnosis and Management of... (ver_b60f0963b8644a8286bc0a5043ba063d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Utilizes the 'Global Strategy For Prevention, Diagnosis and Management of COPD: 2026 Report' international clinical guideline for chronic obstructive pulmonary disease (COPD)."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's C-reactive protein is ≥ 10 milligrams/Liter. (ver_10b7958e111243ab9dbff31c440c0cce)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's C-reactive protein is ≥ 10 milligrams/Liter."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's PaO2 is ≤ 60 mmHg. (ver_7c1ad56297b3482d833b4f2cb80773f4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's PaO2 is ≤ 60 mmHg."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's COPD exacerbation is classed as a severe exacerbation. (ver_9a24f36914bd4adb80f3eb624d2d28bd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's COPD exacerbation is classed as a severe exacerbation."
+        }
+      ]
+    },
+    {
+      "name": "States the patient does not have purulent sputum. (ver_f6c2b5c480374374b41e76ac81046b91)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient does not have purulent sputum."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient needed a sputum culture during a previous exacerbation... (ver_a286cc0821a046cc9a0340cfee1a49fc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient needed a sputum culture during a previous exacerbation of Chronic Obstructive Pulmonary disease (COPD)."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has had a positive sputum culture during a prior... (ver_4434cf126dfb4c6aa7d9a8137231209d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has had a positive sputum culture during a prior exacerbation of Chronic Obstructive Pulmonary Disease (COPD)."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient should be treated with antibiotics. (ver_136cb15b6d83459bb1057c77cda64f9f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient should be treated with antibiotics."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-onc-patient-7-copd-exacerbation-james-g-55e4cd36"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_55e4cd362d4843f1858840a1768aec98",
+    "task_name": "Web Search_Attachments_Onc Patient 7 - COPD Exacerbation - James G",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_37fb2fbbaefb47e8b330a71d576e84c7",
+        "golden_text_response": "Background\nThe latest international clinical guideline for chronic obstructive pulmonary disease (COPD) is the 'Global Strategy For Prevention, Diagnosis and Management of COPD: 2026 Report'. All the following quotes are pulled from this guideline.\n\nQuestion 1:\nWhat severity classification is the patient's COPD exacerbation?\n\nAnswer 1:\nThe guidelines define classifications for COPD exacerbations based on clinical parameters. A moderate and severe exacerbations area defined by:\n\n\"Moderate (meets at least three of five*)\n• Dyspnea VAS (visual analog scale) ≥ 5\n• Respiratory rate ≥ 24 breaths/min\n• Heart rate ≥ 95 bpm\n• Resting SaO2 < 92% breathing ambient air (or patient's usual oxygen prescription) AND/OR\nchange > 3% (when known)\n• CRP ≥ 10 mg/L (if available)\n*If obtained, ABG may show hypoxemia (PaO2 70-80 mmHg)\nSevere\n• Dyspnea, respiratory rate, heart rate, SaO2, and CRP same as moderate\n• If obtained, ABG may show hypoxemia (PaO2 ≤ 60 mmHg) and/or hypercapnia and acidosis\n(PaCO2 > 45 mmHg and pH < 7.35\"\n\nThe transcribed discussion with the doctor reveals that the patient has a heart rate of 100 beats per minute and a respiratory rate of 26 breaths per minute. The blood tests show that the patient's CRP is 12 mg/dL and her PaO2 is ≤ 60 mmHg. Based on these parameters, the patient's exacerbation is classified as a severe exacerbation.\n\nQuestion 2:\nWhat is the role of antibiotics in the management of this exacerbation?\n\nAnswer 2:\n\"In summary, during an exacerbation, antibiotics should be given to patients with COPD who:\n► Have at least two of these symptoms: increase in dyspnea, fever, sputum volume, and sputum\npurulence, if increased purulence of sputum is one of these symptoms\n► Prior positive sputum culture during prior exacerbation\n► Require mechanical ventilation (invasive or noninvasive).\"\n\nFrom the patient's previous history, there was a plan to have a sputum culture as part of a previous COPD exacerbation. As per the prompt, we can assume this culture was performed and was positive. So, this patient should be treated with antibiotics, even though the AI scribe document reports that they don't have purulent sputum.\n\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

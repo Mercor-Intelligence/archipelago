@@ -1,0 +1,17 @@
+[project]
+name = "mcp-middleware"
+version = "0.1.0"
+description = "Shared middleware for MCP servers"
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp",
+    "loguru",
+    "mcp",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["mcp_middleware*"]

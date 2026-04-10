@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "I want to perform a simple market basket analysis on device trade‑ins to uncover brand‑and‑model co‑occurrence patterns: specifically, which trade‑in device patterns most often correspond to particular purchased brand/models, focusing this analysis on identifiable brands/models within the data.\nUse the tables device_purchases and devices. Join on device_id for the purchased device, and enrich trade_in_device with manufacturer by fuzzy matching against devices.model_name (case‑insensitive substring match). If a match is found, prepend the manufacturer to the original trade‑in text using a single space; if no match is found, keep the trade‑in text unchanged. Treat the enriched trade_in_device as the antecedent and the purchased device (manufacturer || ' ' || model_name) as the consequent. Compute pair counts, support, confidence, lift, and leverage. For rules where the consequent is “Apple iPhone 15 Plus,” return the highest‑lift rule; break ties by higher support, then higher confidence. Report the the antecedent, pair counts, support, confidence, lift, and leverage for this rule. Round support, confidence, lift, and leverage to four decimals. Perform the analysis using SQLite. Provide the SQL script and results."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports \"Apple iPhone 12\" as the antecedent for the highest‑lift rule where... (ver_9ce5ba16a0664342b550db6f32f30344)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports \"Apple iPhone 12\" as the antecedent for the highest‑lift rule where the consequent is \"Apple iPhone 15 Plus\"."
+        }
+      ]
+    },
+    {
+      "name": "Reports the pair count for the highest‑lift rule where the consequent is... (ver_257158a1ce5c4a708447eae7e125704e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the pair count for the highest‑lift rule where the consequent is \"Apple iPhone 15 Plus\" as exactly 4 (acceptable range 3.96 to 4.04)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the confidence for the highest‑lift rule where the consequent is... (ver_de0ecc3a3ddc486ca6b9a0ff20d4328a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the confidence for the highest‑lift rule where the consequent is \"Apple iPhone 15 Plus\" as 0.0261 (+/- 0.0010)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the support for the highest‑lift rule where the consequent is \"Apple... (ver_5a91b834920a4ccd9fc9e0b24ff91532)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the support for the highest‑lift rule where the consequent is \"Apple iPhone 15 Plus\" as 0.0049 (+/- 0.0010)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the lift for the highest‑lift rule where the consequent is \"Apple... (ver_3c220a3cc7fa4d9da0db9ee837c0dae2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the lift for the highest‑lift rule where the consequent is \"Apple iPhone 15 Plus\" as 1.4292 (+/- 0.0100)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the leverage for the highest‑lift rule where the consequent is \"Apple... (ver_06b6a6f4fb4c460eb78c16c2a5e714dc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the leverage for the highest‑lift rule where the consequent is \"Apple iPhone 15 Plus\" as 0.0015 (+/- 0.0010)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sql-task-szs0eab0-ee1fe8e7"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_ee1fe8e7b7ef4d90acce9d8702cea253",
+    "task_name": "SQL - Task szs0eab0",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_1f5162ed2d554e139c5f9f9d79dd4dad",
+        "golden_text_response": "trade_in_device               purchased_device       pair_cnt         confidence_trade_to_purchased     support          lift           leverage\nApple iPhone 12              Apple iPhone 15 Plus         4                         0.0261                                       0.0049       1.4292        0.0015\n\n```\n-- Market basket analysis: trade-in device -> purchased device\nWITH trade_in_raw AS (\n  -- 1) Collect distinct, non-generic trade-in strings\n  SELECT DISTINCT TRIM(trade_in_device) AS trade_in_device\n  FROM device_purchases\n  WHERE trade_in_device IS NOT NULL\n    AND TRIM(trade_in_device) <> ''\n    AND TRIM(trade_in_device) <> 'Old device'\n),\ntrade_in_candidates AS (\n  -- 2) Fuzzy match trade-ins to device models (first word) and rank by longest model name\n  SELECT\n    r.trade_in_device,\n    d.manufacturer,\n    d.model_name,\n    ROW_NUMBER() OVER (\n      PARTITION BY r.trade_in_device\n      ORDER BY LENGTH(d.model_name) DESC\n    ) AS rn\n  FROM trade_in_raw r\n  JOIN devices d\n    ON instr(\n         LOWER(r.trade_in_device),\n         LOWER(\n           CASE\n             WHEN instr(d.model_name, ' ') > 0\n               THEN substr(d.model_name, 1, instr(d.model_name, ' ') - 1)\n             ELSE d.model_name\n           END\n         )\n       ) > 0\n),\ntrade_in_match AS (\n  -- 3) Keep the best match per trade-in string\n  SELECT trade_in_device, manufacturer, model_name\n  FROM trade_in_candidates\n  WHERE rn = 1\n),\nbase AS (\n  -- 4) Build enriched trade-in (prepend manufacturer) and purchased device label\n  SELECT\n    p.purchase_id,\n    CASE\n      WHEN m.manufacturer IS NOT NULL\n        THEN m.manufacturer || ' ' || TRIM(p.trade_in_device)\n      ELSE TRIM(p.trade_in_device)\n    END AS trade_in_device,\n    d.manufacturer || ' ' || d.model_name AS purchased_device\n  FROM device_purchases p\n  JOIN devices d ON d.device_id = p.device_id\n  LEFT JOIN trade_in_match m\n    ON m.trade_in_device = TRIM(p.trade_in_device)\n  WHERE p.trade_in_device IS NOT NULL\n    AND TRIM(p.trade_in_device) <> ''\n    AND TRIM(p.trade_in_device) <> 'Old device'\n),\ncounts AS (\n  -- 5) Count trade-in -> purchased device pairs\n  SELECT trade_in_device, purchased_device, COUNT(*) AS pair_cnt\n  FROM base\n  GROUP BY trade_in_device, purchased_device\n),\ntrade_totals AS (\n  -- 6) Count total occurrences per trade-in (antecedent)\n  SELECT trade_in_device, COUNT(*) AS trade_cnt\n  FROM base\n  GROUP BY trade_in_device\n),\npurch_totals AS (\n  -- 7) Count total occurrences per purchased device (consequent)\n  SELECT purchased_device, COUNT(*) AS purch_cnt\n  FROM base\n  GROUP BY purchased_device\n),\nall_totals AS (\n  -- 8) Count total transactions for support calculations\n  SELECT COUNT(*) AS total_cnt FROM base\n)\nSELECT\n  c.trade_in_device,\n  c.purchased_device,\n  c.pair_cnt,\n  ROUND(1.0 * c.pair_cnt / t.trade_cnt, 4) AS confidence_trade_to_purchased,\n  ROUND(1.0 * c.pair_cnt / a.total_cnt, 4) AS support,\n  ROUND((1.0 * c.pair_cnt / t.trade_cnt) / (1.0 * p.purch_cnt / a.total_cnt), 4) AS lift,\n  ROUND(\n    (1.0 * c.pair_cnt / a.total_cnt) -\n    ((1.0 * t.trade_cnt / a.total_cnt) * (1.0 * p.purch_cnt / a.total_cnt)),\n    4\n  ) AS leverage\nFROM counts c\nJOIN trade_totals t ON t.trade_in_device = c.trade_in_device\nJOIN purch_totals p ON p.purchased_device = c.purchased_device\nJOIN all_totals a\nWHERE c.purchased_device = 'Apple iPhone 15 Plus'\nORDER BY lift DESC, support DESC, confidence_trade_to_purchased DESC\nLIMIT 1;\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

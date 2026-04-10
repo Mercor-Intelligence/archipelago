@@ -1,0 +1,316 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_03d1973b173f41a48aefca2d5a508367",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e9ddf63dc7cb44c0a4dcd9700b4c6401",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the average median benchmark ARR per employee is $235,926 (acceptable range $233,567 to $238,285).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_556d7612360843b6ab487d538fd467ba",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e9ddf63dc7cb44c0a4dcd9700b4c6401",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of benchmark sources for ARR per employee is 3.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2c745809f4c6484d8c5e003359bc8b9d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e9ddf63dc7cb44c0a4dcd9700b4c6401",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the average median benchmark for S&M spend as a percentage of ARR is 34% (acceptable range 33.7% to 34.3%).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f334905aa0894b9b9a4a3bdc39c09548",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e9ddf63dc7cb44c0a4dcd9700b4c6401",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of benchmark sources for S&M spend as a percentage of ARR is 4.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8998d35ef4854836ba9a99b6f16eb020",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e9ddf63dc7cb44c0a4dcd9700b4c6401",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the average median benchmark for R&D spend as a percentage of ARR is 32% (acceptable range 31.7% to 32.3%).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_56cbfc21d562485e8ca990ebce5dc001",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e9ddf63dc7cb44c0a4dcd9700b4c6401",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of benchmark sources for R&D spend as a percentage of ARR is 4.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5d596bb7b1bb4106962f7fad6b3f50a4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e9ddf63dc7cb44c0a4dcd9700b4c6401",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the average median benchmark for G&A spend as a percentage of ARR is 22% (acceptable range 21.8% to 22.2%).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0df31c4dd9664116be171491ff4bfb0d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e9ddf63dc7cb44c0a4dcd9700b4c6401",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of benchmark sources for G&A spend as a percentage of ARR is 3.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8c6828d1c10745eeb2952e107efa7c8e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e9ddf63dc7cb44c0a4dcd9700b4c6401",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the average median benchmark for S&M employees as a percentage of total employees is 46% (acceptable range 45.5% to 46.5%).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_36d6aee41d7243a0a11592ec8deed103",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e9ddf63dc7cb44c0a4dcd9700b4c6401",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of benchmark sources for S&M employees as a percentage of total employees is 2.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8c21bfc5891a4841b44fcfde0a6f9621",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e9ddf63dc7cb44c0a4dcd9700b4c6401",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the average median benchmark for R&D employees as a percentage of total employees is 39% (acceptable range 38.6% to 39.4%).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9f1565b504114383b741ef135a0066b2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e9ddf63dc7cb44c0a4dcd9700b4c6401",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of benchmark sources for R&D employees as a percentage of total employees is 2.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2fcc5160ab96449d813e5623b8b0a8f3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e9ddf63dc7cb44c0a4dcd9700b4c6401",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the average median benchmark for G&A employees as a percentage of total employees is 17% (acceptable range 16.8% to 17.2%).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_507a8b06afed4a24be0ac6cf01bd3af0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e9ddf63dc7cb44c0a4dcd9700b4c6401",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of benchmark sources for G&A employees as a percentage of total employees is 2.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

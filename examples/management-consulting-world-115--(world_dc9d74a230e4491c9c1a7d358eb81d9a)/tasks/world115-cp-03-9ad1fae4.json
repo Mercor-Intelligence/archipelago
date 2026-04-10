@@ -1,0 +1,496 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Update the mine closure model to include existing positive cash flows and return all results in two new scenarios in a new spreadsheet.\n\nScenario 1: Use the 30-year cost schedule from the Scenario A costing model with WACC = 8% and no values in Year 0. Set Year 1 cash inflow to 150% of the Pre-Contingency Subtotal. Reduce the multiplier by 2% annually through Year 14, then by 5% annually from Year 15 to Year 30. Subtract Total Nominal Spend (CF) each year to compute free cash flow. Report free cash flow for Years 13, 20, and 30, plus NPV and IRR (%) over 30 years.\n\nScenario 2: Increase the Contingency factor in the Scenario A costing model to 40% (from 25%) and keep all other assumptions from Scenario 1. Report free cash flow for Years 11, 18, and 26, plus NPV and IRR (%) over 30 years.\n\nRound FCF and NPV outputs to the nearest $0.01, and IRR percentages to the nearest 0.01%."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the Scenario 1 Year 13 Free Cash Flow value is $2,341.53... (ver_61fd5a2304b045c8a24ce8c56828bd28)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Scenario 1 Year 13 Free Cash Flow value is $2,341.53 (acceptable range $2,318.11 to $2,364.95)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 25% Contingency model Year 13 Free Cash Flow value is any... (ver_61fd5a2304b045c8a24ce8c56828bd28)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 25% Contingency model Year 13 Free Cash Flow value is any number other than $2,342."
+        }
+      ]
+    },
+    {
+      "name": "States that the Scenario 1 Year 20 Free Cash Flow value is -$72,587.43... (ver_e63508a314f64c699efcd03419f2bc31)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Scenario 1 Year 20 Free Cash Flow value is -$72,587.43 (acceptable range $-73,313.30 to $-71,861.56)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 25% Contingency model Year 20 Free Cash Flow value is any... (ver_e63508a314f64c699efcd03419f2bc31)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 25% Contingency model Year 20 Free Cash Flow value is any number other than -$72,587."
+        }
+      ]
+    },
+    {
+      "name": "States that the Scenario 1 Year 30 Free Cash Flow value is -$189,663.93... (ver_0c09d77f02f84e219f5f9775fe8d8ef6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Scenario 1 Year 30 Free Cash Flow value is -$189,663.93 (acceptable range $-191,560.57 to $-187,767.29)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 25% Contingency model Year 30 Free Cash Flow value is any... (ver_0c09d77f02f84e219f5f9775fe8d8ef6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 25% Contingency model Year 30 Free Cash Flow value is any number other than -$189,664."
+        }
+      ]
+    },
+    {
+      "name": "States that the Scenario 1 NPV value is $564,484,825.47 (acceptable range... (ver_a0cf164923c04e908c23f52414d0c099)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Scenario 1 NPV value is $564,484,825.47 (acceptable range $558,839,977.22 to $570,129,673.72)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 25% Contingency model NPV value is any number other than... (ver_a0cf164923c04e908c23f52414d0c099)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 25% Contingency model NPV value is any number other than $564,484,825.47."
+        }
+      ]
+    },
+    {
+      "name": "States that the Scenario 1 IRR value is -23.75% (acceptable range -23.99% to... (ver_3cc87150658f42a4b433f0dcd582838d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Scenario 1 IRR value is -23.75% (acceptable range -23.99% to -23.51%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 25% Contingency model IRR value is any number other than... (ver_3cc87150658f42a4b433f0dcd582838d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 25% Contingency model IRR value is any number other than -23.75%."
+        }
+      ]
+    },
+    {
+      "name": "States that the Scenario 2 Year 11 Free Cash Flow value is -$23,415.30... (ver_4fca646211c54fbbbb3ed0ba0e56dd97)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Scenario 2 Year 11 Free Cash Flow value is -$23,415.30 (acceptable range $-23,649.45 to $-23,181.15)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 40% Contingency model Year 11 Free Cash Flow value is any... (ver_4fca646211c54fbbbb3ed0ba0e56dd97)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 40% Contingency model Year 11 Free Cash Flow value is any number other than -$23,415."
+        }
+      ]
+    },
+    {
+      "name": "States that the Scenario 2 Year 18 Free Cash Flow value is -$84,295.08... (ver_89f15218294448e89db8b17bec7e1d87)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Scenario 2 Year 18 Free Cash Flow value is -$84,295.08 (acceptable range $-85,138.03 to $-83,452.13)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 40% Contingency model Year 18 Free Cash Flow value is any... (ver_89f15218294448e89db8b17bec7e1d87)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 40% Contingency model Year 18 Free Cash Flow value is any number other than -$84,295."
+        }
+      ]
+    },
+    {
+      "name": "States that the Scenario 2 Year 26 Free Cash Flow value is -$177,956.28... (ver_4ebb816d772d420495a8a01dbbd8ca57)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Scenario 2 Year 26 Free Cash Flow value is -$177,956.28 (acceptable range $-179,735.84 to $-176,176.72)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 40% Contingency model Year 26 Free Cash Flow value is any... (ver_4ebb816d772d420495a8a01dbbd8ca57)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 40% Contingency model Year 26 Free Cash Flow value is any number other than -$177,956."
+        }
+      ]
+    },
+    {
+      "name": "States that the Scenario 2 NPV value is $137,602,403.45 (acceptable range... (ver_eda7248f9b874bf2bd74a82f857f33c0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Scenario 2 NPV value is $137,602,403.45 (acceptable range $136,226,379.42 to $138,978,427.48)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 40% Contingency model NPV value is any number other than... (ver_eda7248f9b874bf2bd74a82f857f33c0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 40% Contingency model NPV value is any number other than $137,602,403.45."
+        }
+      ]
+    },
+    {
+      "name": "States that the Scenario 2 IRR value is -14.94% (acceptable range -15.09% to... (ver_c582fec3240447298748a70c1fdc4810)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Scenario 2 IRR value is -14.94% (acceptable range -15.09% to -14.79%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 40% Contingency model IRR value is any number other than -14.94% (ver_c582fec3240447298748a70c1fdc4810)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 40% Contingency model IRR value is any number other than -14.94%."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world115-cp-03-9ad1fae4"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_9ad1fae42e6c4f749e111f62ebc7e930",
+    "task_name": "world115_cp_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_b4d477eb16ac4c498cafb9b359cb7b83",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_668becae52c2493ca82694dd84f9a728"
+      },
+      {
+        "golden_response_id": "gold_09b65cb629cc49fd99b1e17bb7fac16c",
+        "golden_text_response": "See file",
+        "golden_file_responses": "snap_668becae52c2493ca82694dd84f9a728"
+      }
+    ]
+  }
+}

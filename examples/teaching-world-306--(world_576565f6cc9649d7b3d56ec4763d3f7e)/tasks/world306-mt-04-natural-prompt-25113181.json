@@ -1,0 +1,588 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Utilizing the 9th-grade - biology grades. Make a document that lists the assignment names and the total number of “NHI”s for each assignment category.\n\nAssignment categories:\n*”Case Study” if an assignment includes the phrase “case study”\n* “Lab” if an assignment includes the phrase “experiment and/or lab”\n* Historical Rat Study and the Rat Modeling Investigations are both “Bellwork”.\n* Exploring Juncos and the Letter from Lamarck are both “Homework”.\n* “Quiz” if an assignment has the phrase “quiz”.\n*”Exam” if an assignment has the phrase “exam”\n\nAvoid Quiz & Exam assignment from the analysis. Round the number of NHIs to the nearest whole number"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Identifies \"Case Study: Hawksbeard\" as a case study assignment (ver_19d62b9ae169488cb43b51b937f9daac)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \"Case Study: Hawksbeard\" as a case study assignment."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \"Case Study: Hawksbeard\"an category other than case study assignment. (ver_19d62b9ae169488cb43b51b937f9daac)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \"Case Study: Hawksbeard\"an category other than case study assignment."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \"Case Study: Rats\" as a case study assignment (ver_41e1fae1dd2a4be3b5e21f4695ffc81a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \"Case Study: Rats\" as a case study assignment."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \"Case Study: Rats\" any category other than case study assignment. (ver_41e1fae1dd2a4be3b5e21f4695ffc81a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \"Case Study: Rats\" any category other than case study assignment."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \"Hawksbeard Garden Experiment\" as a lab assignment (ver_8373311dde004f9f86539268c21e4b24)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \"Hawksbeard Garden Experiment\" as a lab assignment."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \"Hawksbeard Garden Experiment\" as any category other than lab. (ver_8373311dde004f9f86539268c21e4b24)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \"Hawksbeard Garden Experiment\" as any category other than lab."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \"Evolving Creatures Lb\" as a lab assignment (ver_f866a3893c094ec282eac0db577bb1be)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \"Evolving Creatures Lb\" as a lab assignment."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \"Evolving Creatures Lb\" as any category other than lab. (ver_f866a3893c094ec282eac0db577bb1be)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \"Evolving Creatures Lb\" as any category other than lab."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \"Historical Rat Study\" as a bellwork assignment (ver_d1c84e263ce04034af94c749847bd2f9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \"Historical Rat Study\" as a bellwork assignment."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \"Historical Rat Study\" as any category other than bellwork. (ver_d1c84e263ce04034af94c749847bd2f9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \"Historical Rat Study\" as any category other than bellwork."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \"Rat Modeling Investigations \" as a bellwork assignment (ver_8adaf3bcdcfe4ce69814d32cfe2661ed)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \"Rat Modeling Investigations \" as a bellwork assignment."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \"Rat Modeling Investigations \" as any category other than bellwork. (ver_8adaf3bcdcfe4ce69814d32cfe2661ed)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \"Rat Modeling Investigations \" as any category other than bellwork."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \" Exploring Juncos’ Environment \" as a homework assignment (ver_3261b17930a7432a99651df4939a4e0d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \" Exploring Juncos’ Environment \" as a homework assignment."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \" Exploring Juncos’ Environment \" as any category other than... (ver_3261b17930a7432a99651df4939a4e0d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \" Exploring Juncos’ Environment \" as any category other than homework."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \" Letter from Lamarck \" as a homework assignment (ver_9cc643bbd36c49dc9823bac127c5932f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \" Letter from Lamarck \" as a homework assignment."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \" Letter from Lamarck \" as any category other than homework. (ver_9cc643bbd36c49dc9823bac127c5932f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \" Letter from Lamarck \" as any category other than homework."
+        }
+      ]
+    },
+    {
+      "name": "Outputs the total number of NHI's for case study category as 3 (acceptable... (ver_3619905a989d4c4e8842ec111420b5a5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs the total number of NHI's for case study category as 3 (acceptable range 2.97 to 3.03)."
+        }
+      ]
+    },
+    {
+      "name": "Outputs the total number of NHI's for case study category other than 3. (ver_3619905a989d4c4e8842ec111420b5a5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs the total number of NHI's for case study category other than 3."
+        }
+      ]
+    },
+    {
+      "name": "Outputs the total number of NHI's for lab category as 5 (ver_3e627f6f4d824c6395a816fe36abd581)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs the total number of NHI's for lab category as 5."
+        }
+      ]
+    },
+    {
+      "name": "Outputs the total number of NHI's for lab category other than 5. (ver_3e627f6f4d824c6395a816fe36abd581)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs the total number of NHI's for lab category other than 5."
+        }
+      ]
+    },
+    {
+      "name": "Outputs the total number of NHI's for homework category as 7 (ver_5ddf8bf8bc5f4482b1f9ba9cf0cf1c4c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs the total number of NHI's for homework category as 7."
+        }
+      ]
+    },
+    {
+      "name": "Outputs the total number of NHI's for homework category other than 7. (ver_5ddf8bf8bc5f4482b1f9ba9cf0cf1c4c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs the total number of NHI's for homework category other than 7."
+        }
+      ]
+    },
+    {
+      "name": "Outputs the total number of NHI's for bellwork category as 8 (ver_8cf9eb176d65491cb3cd1b1a5a2e5122)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs the total number of NHI's for bellwork category as 8."
+        }
+      ]
+    },
+    {
+      "name": "Outputs the total number of NHI's for bellwork category other than 8. (ver_8cf9eb176d65491cb3cd1b1a5a2e5122)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs the total number of NHI's for bellwork category other than 8."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world306-mt-04-natural-prompt-25113181"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_576565f6cc9649d7b3d56ec4763d3f7e",
+    "world_name": "Teaching World 306",
+    "task_id": "task_251131818a694c90bc593486dc8a2331",
+    "task_name": "World306_mt_04 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_98f213beb4e34283a8d49a9e9e0cb826",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_40e2c2f5012146fcbcf9978958d8af47"
+      },
+      {
+        "golden_response_id": "gold_1b9cc809d93646379384700a7c34654b",
+        "golden_text_response": "See the attached file. ",
+        "golden_file_responses": "snap_40e2c2f5012146fcbcf9978958d8af47"
+      }
+    ]
+  }
+}

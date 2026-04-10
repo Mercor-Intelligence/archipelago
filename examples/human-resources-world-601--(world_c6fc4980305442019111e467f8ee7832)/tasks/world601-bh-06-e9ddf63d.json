@@ -1,0 +1,353 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "I need you to collect SaaS industry benchmarks for the following headcount and spend efficiency metrics: \n1. Annual Recurring Revenue (ARR) per employee (in dollars)\n2. Sales and Marketing spend (S&M) as a percentage of ARR (in percent)\n3. R&D spend as a percentage of ARR (in percent)\n4. G&A spend as a percentage of ARR (in percent)\n5. S&M employees as a percentage of total employees (in percent)\n6. R&D employees as a percentage of total employees (in percent)\n7. G&A employees as a percentage of total employees (in percent)\n\nUse 2025 SaaS Benchmarks Report.pdf, ICONIQ Analytics + Insights - Building R&D Teams.pdf, rule-of-40-lessons-from-the-top-performers-in-software.pdf, and 2025 SaaS Performance Presentation_5_30_25 (v7).pdf.\n\nAcross those documents, you want to identify, for each of metrics 1-7, all the benchmarks relevant to SingleSignal. Where the metric is benchmarked in those documents, pick the benchmark (use the median) most relevant to SingleSignal, a $60M ARR private company with 240 employees. Count the number of available benchmark sources (i.e., docs) for each metric and calculate the simple average of the relevant benchmarks you picked for each metric. For ARR per employee, round the average to the nearest dollar. For the other six metrics, round the average to the nearest whole percent. Output your final answers as a table in console in the following format: [Metric name, Average of median benchmarks, Number of benchmark sources]. Do not round intermediate calculations. \n\nFor our purposes, when calculating:\n- Ignore any benchmarks prior to 2024.\n- Aggregate Sales, Marketing, and Customer Success and Support into S&M\n- Aggregate Engineering, Product & Design into R&D\n- Aggregate Professional Services into G&A\n- Assume revenue = ARR"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the average median benchmark ARR per employee is $235,926... (ver_03d1973b173f41a48aefca2d5a508367)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average median benchmark ARR per employee is $235,926 (acceptable range $233,567 to $238,285)."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of benchmark sources for ARR per employee is 3. (ver_556d7612360843b6ab487d538fd467ba)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of benchmark sources for ARR per employee is 3."
+        }
+      ]
+    },
+    {
+      "name": "States that the average median benchmark for S&M spend as a percentage of ARR... (ver_2c745809f4c6484d8c5e003359bc8b9d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average median benchmark for S&M spend as a percentage of ARR is 34% (acceptable range 33.7% to 34.3%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of benchmark sources for S&M spend as a percentage of... (ver_f334905aa0894b9b9a4a3bdc39c09548)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of benchmark sources for S&M spend as a percentage of ARR is 4."
+        }
+      ]
+    },
+    {
+      "name": "States that the average median benchmark for R&D spend as a percentage of ARR... (ver_8998d35ef4854836ba9a99b6f16eb020)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average median benchmark for R&D spend as a percentage of ARR is 32% (acceptable range 31.7% to 32.3%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of benchmark sources for R&D spend as a percentage of... (ver_56cbfc21d562485e8ca990ebce5dc001)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of benchmark sources for R&D spend as a percentage of ARR is 4."
+        }
+      ]
+    },
+    {
+      "name": "States that the average median benchmark for G&A spend as a percentage of ARR... (ver_5d596bb7b1bb4106962f7fad6b3f50a4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average median benchmark for G&A spend as a percentage of ARR is 22% (acceptable range 21.8% to 22.2%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of benchmark sources for G&A spend as a percentage of... (ver_0df31c4dd9664116be171491ff4bfb0d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of benchmark sources for G&A spend as a percentage of ARR is 3."
+        }
+      ]
+    },
+    {
+      "name": "States that the average median benchmark for S&M employees as a percentage of... (ver_8c6828d1c10745eeb2952e107efa7c8e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average median benchmark for S&M employees as a percentage of total employees is 46% (acceptable range 45.5% to 46.5%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of benchmark sources for S&M employees as a percentage... (ver_36d6aee41d7243a0a11592ec8deed103)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of benchmark sources for S&M employees as a percentage of total employees is 2."
+        }
+      ]
+    },
+    {
+      "name": "States that the average median benchmark for R&D employees as a percentage of... (ver_8c21bfc5891a4841b44fcfde0a6f9621)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average median benchmark for R&D employees as a percentage of total employees is 39% (acceptable range 38.6% to 39.4%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of benchmark sources for R&D employees as a percentage... (ver_9f1565b504114383b741ef135a0066b2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of benchmark sources for R&D employees as a percentage of total employees is 2."
+        }
+      ]
+    },
+    {
+      "name": "States that the average median benchmark for G&A employees as a percentage of... (ver_2fcc5160ab96449d813e5623b8b0a8f3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average median benchmark for G&A employees as a percentage of total employees is 17% (acceptable range 16.8% to 17.2%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of benchmark sources for G&A employees as a percentage... (ver_507a8b06afed4a24be0ac6cf01bd3af0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of benchmark sources for G&A employees as a percentage of total employees is 2."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world601-bh-06-e9ddf63d"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_e9ddf63dc7cb44c0a4dcd9700b4c6401",
+    "task_name": "World601_BH_06",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_0c133fe419f2485996025af62a9ddd0c",
+        "golden_text_response": "[Metric name, Average of median benchmarks, Number of benchmark sources]\n[ARR per Employee, $235,926, 3]\n[S&M spend as a percentage of ARR, 34%, 4]\n[R&D spend as a percentage of ARR, 32%, 4]\n[G&A spend as a percentage of ARR, 22%, 3]\n[S&M employees as a percentage of total employees, 46%, 2]\n[R&D employees as a percentage of total employees, 39%, 2]\n[G&A employees as a percentage of total employees, 17%, 2]",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

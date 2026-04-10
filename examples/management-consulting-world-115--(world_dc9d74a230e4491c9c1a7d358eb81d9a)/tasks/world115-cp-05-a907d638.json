@@ -1,0 +1,261 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Determine the average and median for both EBITDA Margin (%) and Net Profit Margin (%) across all companies listed in the latest comparable company analysis spreadsheet (excluding Vale but including ResourceCo).\n\nThen, recalculate the market cap values for each company listed in the comparable company analysis spreadsheet by multiplying Shares Outstanding (in M) by Current Share Price, and determine the average and median market cap. Include Vale and ResourceCo in this update. Use the listed value for ResourceCo Market Capitalization rather than recalculating it.\n\nReturn the average and median for EBITDA Margin, Net Profit Margin, and Market Cap across the specified company subsets in a console message. Report output dollar values in $M (rounded to the nearest $M) and output percentages rounded to the nearest 0.1%."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the average EBITDA Margin across companies is 40.2% (acceptable range... (ver_2209eb8a628a430e97b90da0eed58671)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average EBITDA Margin across companies is 40.2% (acceptable range 39.8% to 40.6%)."
+        }
+      ]
+    },
+    {
+      "name": "States the average EBITDA Margin across companies is any other value other... (ver_2209eb8a628a430e97b90da0eed58671)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average EBITDA Margin across companies is any other value other than 40.2%."
+        }
+      ]
+    },
+    {
+      "name": "States the median EBITDA Margin across companies is 36.3% (acceptable range... (ver_2beac57efdf748b2a7f91b5b38d1c3ec)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the median EBITDA Margin across companies is 36.3% (acceptable range 35.9% to 36.7%)."
+        }
+      ]
+    },
+    {
+      "name": "States the median EBITDA Margin across companies is any value other than 36.3% (ver_2beac57efdf748b2a7f91b5b38d1c3ec)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the median EBITDA Margin across companies is any value other than 36.3%."
+        }
+      ]
+    },
+    {
+      "name": "States the average Net Profit Margin across companies is 12.8% (acceptable... (ver_92f93f310bc9449388b8057a73d5b97a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average Net Profit Margin across companies is 12.8% (acceptable range 12.7% to 12.9%)."
+        }
+      ]
+    },
+    {
+      "name": "States the average Net Profit Margin across companies is any other value other... (ver_92f93f310bc9449388b8057a73d5b97a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average Net Profit Margin across companies is any other value other than 12.8%."
+        }
+      ]
+    },
+    {
+      "name": "States the median Net Profit Margin across companies is 7.6% (acceptable range... (ver_d6c65e7b058347a395040b2e3b77f746)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the median Net Profit Margin across companies is 7.6% (acceptable range 7.5% to 7.7%)."
+        }
+      ]
+    },
+    {
+      "name": "States the median Net Profit Margin across companies is any other value other... (ver_d6c65e7b058347a395040b2e3b77f746)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the median Net Profit Margin across companies is any other value other than 7.6%."
+        }
+      ]
+    },
+    {
+      "name": "States that the average market cap across companies is $32,259M (acceptable... (ver_c3f8caca5d0f4f23a55b78910aa2a8f8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average market cap across companies is $32,259M (acceptable range $31,936 to $32,582)."
+        }
+      ]
+    },
+    {
+      "name": "States that the median market cap across companies is $14,557M (acceptable... (ver_20bc238b37b3480b837a6376851dd99b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the median market cap across companies is $14,557M (acceptable range $14,411 to $14,703)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world115-cp-05-a907d638"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_a907d6387f3f4557b2a5867f1defb892",
+    "task_name": "world115_cp_05",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_da5ae2cb226c4713ad119871b86d3278",
+        "golden_text_response": "Competitive Set EBITDA Margin (excluding Vale, including ResourceCo):\n- Average: 40.2%\n- Median: 36.3%\n\nCompetitive Set Net Profit Margin (excluding Vale, including ResourceCo):\n- Average: 12.8%\n- Median: 7.6%\n\nCompetitive Set Market Cap (including ResourceCo):\n- Average: $32,259M\n- Median: $14,557M",
+        "golden_file_responses": "snap_9243434bc7cd41d9859f1e085da18bed"
+      }
+    ]
+  }
+}

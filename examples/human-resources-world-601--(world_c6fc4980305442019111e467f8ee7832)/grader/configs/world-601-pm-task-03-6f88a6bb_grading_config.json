@@ -1,0 +1,148 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_72f6eb8d5e9a4a6f87dc2c30b5164812",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6f88a6bbfd99403ebc0ae278f707f37d",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that revised salary payout post merit increase for IC1 is $5,627,276.5 (acceptable range $5,571,003.7 to $5,683,549.3)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_667bd83b723048c79bb54e6b5b70c7ce",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6f88a6bbfd99403ebc0ae278f707f37d",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that revised salary payout post merit increase for IC2 is $9,033,714.8 (acceptable range $8,943,377.7 to $9,124,051.9)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ad68f6c427b544159ea82dbe2e754fc6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6f88a6bbfd99403ebc0ae278f707f37d",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that revised salary payout post merit increase for IC3 is $6,921,330.9 (acceptable range $6,852,117.6 to $6,990,544.2)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_65ab99e9c3624e76b7557c7e5e8a5909",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6f88a6bbfd99403ebc0ae278f707f37d",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that revised salary payout post merit increase for Lead is $3,873,588.1 (acceptable range $3,834,852.2 to $3,912,324.0)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2a4816a6a86049b788c41b54d80642d5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6f88a6bbfd99403ebc0ae278f707f37d",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that revised salary payout post merit increase for Manager is $2,670,660.9 (acceptable range $2,643,954.3 to $2,697,367.5)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dcf96edba14b49f29f9021366153b07b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6f88a6bbfd99403ebc0ae278f707f37d",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that revised salary payout post merit increase for Senior is $7,817,448.9 (acceptable range $7,739,274.4 to $7,895,623.4)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

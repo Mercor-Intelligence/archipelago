@@ -1,0 +1,907 @@
+- mnemonic: PX_LAST
+  description: Last closing price (adjusted/unadjusted based on adjustment parameters)
+  data_type: float
+  request_types: [HistoricalDataRequest]
+  service: refdata
+  openbb_mapping: close
+
+- mnemonic: PX_LAST
+  description: Last closing price
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: last_price
+
+- mnemonic: PX_OPEN
+  description: Opening price
+  data_type: float
+  request_types: [ReferenceDataRequest, HistoricalDataRequest]
+  service: refdata
+  openbb_mapping: open
+
+- mnemonic: PX_HIGH
+  description: High price
+  data_type: float
+  request_types: [ReferenceDataRequest, HistoricalDataRequest]
+  service: refdata
+  openbb_mapping: high
+
+- mnemonic: PX_LOW
+  description: Low price
+  data_type: float
+  request_types: [ReferenceDataRequest, HistoricalDataRequest]
+  service: refdata
+  openbb_mapping: low
+
+- mnemonic: PX_VOLUME
+  description: Trading volume
+  data_type: float
+  request_types: [ReferenceDataRequest, HistoricalDataRequest]
+  service: refdata
+
+- mnemonic: VOLUME
+  description: The total volume traded for the day
+  data_type: float
+  request_types: [ReferenceDataRequest, HistoricalDataRequest]
+  service: refdata
+  openbb_mapping: volume
+
+- mnemonic: EQY_SH_OUT
+  description: The shares outstanding at the end of the period
+  data_type: float
+  request_types: [HistoricalDataRequest]
+  service: refdata
+
+- mnemonic: PX_CLOSE
+  description: Closing price
+  data_type: float
+  request_types: [ReferenceDataRequest, HistoricalDataRequest]
+  service: refdata
+
+- mnemonic: TURNOVER
+  description: The total value traded for the day. Calculated field - calculated automatically from volume * close.
+  data_type: float
+  request_types: [HistoricalDataRequest]
+  service: refdata
+
+- mnemonic: PX_BID
+  description: Best bid price
+  data_type: float
+  request_types: [ReferenceDataRequest, IntradayBarRequest]
+  service: refdata
+  openbb_mapping: bid
+
+- mnemonic: PX_ASK
+  description: Best ask price
+  data_type: float
+  request_types: [ReferenceDataRequest, IntradayBarRequest]
+  service: refdata
+
+- mnemonic: PX_MID
+  description: Mid price
+  data_type: float
+  request_types: [ReferenceDataRequest, IntradayBarRequest]
+  service: refdata
+
+- mnemonic: PX_CHANGE
+  description: Price change
+  data_type: float
+  request_types: [ReferenceDataRequest, HistoricalDataRequest]
+  service: refdata
+
+- mnemonic: PX_CHANGE_PERCENT
+  description: Percentage price change
+  data_type: float
+  request_types: [ReferenceDataRequest, HistoricalDataRequest]
+  service: refdata
+
+- mnemonic: VWAP
+  description: Volume-weighted average price. Calculated field - calculated automatically from OHLCV data.
+  data_type: float
+  request_types: [ReferenceDataRequest, IntradayBarRequest]
+  service: mkdata
+
+- mnemonic: VWAP_START_TIME
+  description: VWAP calculation start time
+  data_type: string
+  request_types: [ReferenceDataRequest, IntradayBarRequest]
+  service: mkdata
+
+- mnemonic: VWAP_END_TIME
+  description: VWAP calculation end time
+  data_type: string
+  request_types: [ReferenceDataRequest, IntradayBarRequest]
+  service: mkdata
+
+# --- Fundamental / Balance Sheet fields ---
+
+- mnemonic: NET_DEBT
+  description: Net debt (total debt minus cash and equivalents)
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__netDebt
+
+- mnemonic: LEASE_LIABILITIES
+  description: Total capital lease obligations
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__capitalLeaseObligations
+
+- mnemonic: MINORITY_NON_CONTROLLING_INTEREST
+  description: Minority / non-controlling interest
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__minorityInterest
+
+- mnemonic: INVEST_IN_ASSOC_AND_JV
+  description: Investments in associates and joint ventures
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__longTermInvestments
+
+- mnemonic: OTHER_INVESTMENTS
+  description: Total investments
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__totalInvestments
+
+- mnemonic: TOT_DEBT
+  description: Total debt
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__totalDebt
+
+- mnemonic: TOTAL_EQUITY
+  description: Total equity including minority interest
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__totalEquity
+
+- mnemonic: TOT_ASSET
+  description: Total assets
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__totalAssets
+
+- mnemonic: BS_TOT_LIAB2
+  description: Total liabilities
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__totalLiabilities
+
+- mnemonic: BS_CUR_ASSET_REPORT
+  description: Total current assets
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__totalCurrentAssets
+
+- mnemonic: BS_CUR_LIAB
+  description: Total current liabilities
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__totalCurrentLiabilities
+
+- mnemonic: BS_CASH_NEAR_CASH_ITEM
+  description: Cash and cash equivalents
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__cashAndCashEquivalents
+
+- mnemonic: BS_INVENTORIES
+  description: Inventory
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__inventory
+
+- mnemonic: BS_ACCT_NOTE_RCV
+  description: Accounts receivable
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__netReceivables
+
+- mnemonic: BS_GOODWILL
+  description: Goodwill
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__goodwill
+
+- mnemonic: BS_INTANG_FIXED_ASSETS
+  description: Intangible assets
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__intangibleAssets
+
+- mnemonic: BS_LT_BORROW
+  description: Long-term debt
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__longTermDebt
+
+- mnemonic: SHORT_TERM_BORROWINGS
+  description: Short-term debt
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__shortTermDebt
+
+- mnemonic: BOOK_VAL_PER_SH
+  description: Book value per share
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__bookValuePerShare
+
+# --- Income Statement fields ---
+
+- mnemonic: BS_SH_OUT_DILUTED
+  description: Diluted shares outstanding
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__weightedAverageShsOutDil
+
+- mnemonic: BS_SH_OUT
+  description: Basic shares outstanding
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__weightedAverageShsOut
+
+- mnemonic: EBITDA
+  description: Earnings before interest, taxes, depreciation and amortization
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__ebitda
+
+- mnemonic: EBIT
+  description: Earnings before interest and taxes
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__ebit
+
+- mnemonic: IS_EPS
+  description: Basic earnings per share
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__eps
+
+- mnemonic: BEST_EPS
+  description: Diluted earnings per share
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__epsDiluted
+
+- mnemonic: NET_INCOME
+  description: Net income
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__netIncome
+
+- mnemonic: SALES_REV_TURN
+  description: Revenue
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__revenue
+
+- mnemonic: IS_OPER_INC
+  description: Operating income
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__operatingIncome
+
+- mnemonic: GROSS_PROFIT
+  description: Gross profit
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__grossProfit
+
+- mnemonic: IS_INT_EXPENSE
+  description: Interest expense
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__interestExpense
+
+- mnemonic: IS_INC_TAX_EXP
+  description: Income tax expense
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__incomeTaxExpense
+
+- mnemonic: COST_OF_REVENUE
+  description: Cost of revenue
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__costOfRevenue
+
+# --- Profile fields ---
+
+- mnemonic: CURRENCY_CODE
+  description: Reporting currency code
+  data_type: string
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_profile__currency
+
+- mnemonic: CUR_MKT_CAP
+  description: Current market capitalization
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_profile__marketCap
+
+- mnemonic: LONG_COMP_NAME
+  description: Company name
+  data_type: string
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_profile__companyName
+
+- mnemonic: INDUSTRY_SECTOR
+  description: Industry sector
+  data_type: string
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_profile__sector
+
+- mnemonic: INDUSTRY_GROUP
+  description: Industry group
+  data_type: string
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_profile__industry
+
+- mnemonic: COUNTRY_ISO
+  description: Country code
+  data_type: string
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_profile__country
+
+- mnemonic: NAME
+  description: Company name (short form)
+  data_type: string
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_profile__companyName
+
+- mnemonic: TICKER
+  description: Stock ticker symbol
+  data_type: string
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_profile__symbol
+
+- mnemonic: EXCH_CODE
+  description: Exchange code
+  data_type: string
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_profile__exchangeShortName
+
+- mnemonic: COUNTRY
+  description: Country of domicile
+  data_type: string
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_profile__country
+
+# --- Cash Flow fields ---
+
+- mnemonic: CF_FREE_CASH_FLOW
+  description: Free cash flow
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_cash_flow__freeCashFlow
+
+- mnemonic: CF_CASH_FROM_OPER
+  description: Cash from operations
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_cash_flow__operatingCashFlow
+
+- mnemonic: CF_CAP_EXPEND_PRPTY_ADD
+  description: Capital expenditures
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_cash_flow__capitalExpenditure
+
+- mnemonic: CF_DVD_PAID
+  description: Dividends paid
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_cash_flow__commonDividendsPaid
+
+- mnemonic: CF_BUY_BACK
+  description: Common stock repurchased
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_cash_flow__commonStockRepurchased
+
+- mnemonic: CF_NET_CASH_FROM_INV
+  description: Net cash from investing activities
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_cash_flow__netCashProvidedByInvestingActivities
+
+- mnemonic: CF_NET_CASH_FIN_ACT
+  description: Net cash from financing activities
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_cash_flow__netCashProvidedByFinancingActivities
+
+- mnemonic: CF_DEPR_AMORT
+  description: Depreciation and amortization (cash flow)
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_cash_flow__depreciationAndAmortization
+
+- mnemonic: CF_CHG_IN_WK_CAP
+  description: Change in working capital
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_cash_flow__changeInWorkingCapital
+
+- mnemonic: CF_STOCK_BASED_COMP
+  description: Stock-based compensation
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_cash_flow__stockBasedCompensation
+
+# --- Additional Income Statement fields ---
+
+- mnemonic: IS_RD_EXPEND
+  description: Research and development expenses
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__researchAndDevelopmentExpenses
+
+- mnemonic: IS_SGA_EXPEND
+  description: Selling, general and administrative expenses
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__sellingGeneralAndAdministrativeExpenses
+
+- mnemonic: PRETAX_INC
+  description: Income before tax
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__incomeBeforeTax
+
+- mnemonic: IS_OPER_EXPN
+  description: Total operating expenses
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__operatingExpenses
+
+- mnemonic: IS_DEPR_EXP
+  description: Depreciation and amortization (income statement)
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__depreciationAndAmortization
+
+# --- Additional Balance Sheet fields ---
+
+- mnemonic: BS_TOT_STOCKHOLDERS_EQY
+  description: Total stockholders equity
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__totalStockholdersEquity
+
+- mnemonic: BS_RETAIN_EARN
+  description: Retained earnings
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__retainedEarnings
+
+- mnemonic: BS_ACCT_PAYABLE
+  description: Accounts payable
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__accountPayables
+
+- mnemonic: BS_PPNE_NET
+  description: Property, plant and equipment (net)
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__propertyPlantEquipmentNet
+
+# --- Ratios fields ---
+
+- mnemonic: PE_RATIO
+  description: Price-to-earnings ratio
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__priceToEarningsRatio
+
+- mnemonic: PX_TO_BOOK_RATIO
+  description: Price-to-book ratio
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__priceToBookRatio
+
+- mnemonic: PX_TO_SALES_RATIO
+  description: Price-to-sales ratio
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__priceToSalesRatio
+
+- mnemonic: PX_TO_FREE_CASH_FLOW
+  description: Price-to-free-cash-flow ratio
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__priceToFreeCashFlowRatio
+
+- mnemonic: DVD_PAYOUT_RATIO
+  description: Dividend payout ratio
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__dividendPayoutRatio
+
+- mnemonic: DVD_SH_LAST
+  description: Dividend per share
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__dividendPerShare
+
+- mnemonic: EQY_DVD_YLD_IND
+  description: Indicated dividend yield (%)
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__dividendYieldPercentage
+
+- mnemonic: PROF_MARGIN
+  description: Net profit margin
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__netProfitMargin
+
+- mnemonic: GROSS_MARGIN
+  description: Gross profit margin
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__grossProfitMargin
+
+- mnemonic: OPER_MARGIN
+  description: Operating profit margin
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__operatingProfitMargin
+
+- mnemonic: EBITDA_MARGIN
+  description: EBITDA margin
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__ebitdaMargin
+
+- mnemonic: CUR_RATIO
+  description: Current ratio
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__currentRatio
+
+- mnemonic: QUICK_RATIO
+  description: Quick ratio
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__quickRatio
+
+- mnemonic: TOT_DEBT_TO_TOT_EQY
+  description: Debt-to-equity ratio
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__debtToEquityRatio
+
+- mnemonic: TOT_DEBT_TO_TOT_ASSET
+  description: Debt-to-assets ratio
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__debtToAssetsRatio
+
+- mnemonic: ASSET_TURNOVER
+  description: Asset turnover
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__assetTurnover
+
+- mnemonic: INVENT_TURN
+  description: Inventory turnover
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__inventoryTurnover
+
+- mnemonic: ACCT_RCV_TURN
+  description: Receivables turnover
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__receivablesTurnover
+
+- mnemonic: FREE_CASH_FLOW_PER_SH
+  description: Free cash flow per share
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__freeCashFlowPerShare
+
+- mnemonic: CASH_FLOW_PER_SH
+  description: Operating cash flow per share
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__operatingCashFlowPerShare
+
+- mnemonic: CASH_PER_SH
+  description: Cash per share
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__cashPerShare
+
+- mnemonic: EV_TO_T12M_EBITDA
+  description: Enterprise value to EBITDA
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__enterpriseValueMultiple
+
+- mnemonic: INT_CVG_RATIO
+  description: Interest coverage ratio
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__interestCoverageRatio
+
+# --- Key Metrics fields ---
+
+- mnemonic: RETURN_COM_EQY
+  description: Return on equity
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_key_metrics__returnOnEquity
+
+- mnemonic: RETURN_ON_ASSET
+  description: Return on assets
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_key_metrics__returnOnAssets
+
+- mnemonic: RETURN_ON_INV_CAPITAL
+  description: Return on invested capital
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_key_metrics__returnOnInvestedCapital
+
+- mnemonic: RETURN_ON_CAP
+  description: Return on capital employed
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_key_metrics__returnOnCapitalEmployed
+
+- mnemonic: EARN_YLD
+  description: Earnings yield
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_key_metrics__earningsYield
+
+- mnemonic: FREE_CASH_FLOW_YIELD
+  description: Free cash flow yield
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_key_metrics__freeCashFlowYield
+
+- mnemonic: NET_DEBT_TO_EBITDA
+  description: Net debt to EBITDA
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_key_metrics__netDebtToEBITDA
+
+- mnemonic: WORKING_CAPITAL
+  description: Working capital
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_key_metrics__workingCapital
+
+- mnemonic: INVESTED_CAPITAL
+  description: Invested capital
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_key_metrics__investedCapital
+
+- mnemonic: TANG_BOOK_VAL_PER_SH
+  description: Tangible book value per share
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__tangibleBookValuePerShare
+
+- mnemonic: ENTERPRISE_VALUE
+  description: Enterprise value
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_key_metrics__enterpriseValue
+
+- mnemonic: EV_TO_T12M_SALES
+  description: Enterprise value to sales
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_key_metrics__evToSales
+
+- mnemonic: CURRENCY
+  description: Trading currency
+  data_type: string
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_profile__currency
+
+- mnemonic: ID_IPO_DATE
+  description: IPO date
+  data_type: string
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_profile__ipoDate
+
+- mnemonic: CUR_AVG_DAILY_VOL_TRD_90D
+  description: 90-day average daily trading volume
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_profile__averageVolume
+
+- mnemonic: BETA_RAW_OVERRIDABLE
+  description: Raw beta
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_profile__beta
+
+- mnemonic: BS_TOT_DEBT
+  description: Total debt
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__totalDebt
+
+- mnemonic: TOTAL_DEBT
+  description: Total debt (alias)
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__totalDebt
+
+- mnemonic: CASH_AND_CASH_EQUIVALENTS
+  description: Cash and cash equivalents
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_balance_sheet__cashAndCashEquivalents
+
+- mnemonic: EV_TO_T12M_REV
+  description: Enterprise value to trailing 12-month revenue
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_key_metrics__evToSales
+
+- mnemonic: EQY_SH_OUT
+  description: Shares outstanding
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__weightedAverageShsOut
+
+- mnemonic: EQY_SH_OUT_REAL
+  description: Real-time shares outstanding
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_income_statement__weightedAverageShsOut
+
+- mnemonic: DVD_PAYOUT_LAST_12M
+  description: Dividend per share (last 12 months)
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__dividendPerShare
+
+- mnemonic: DVD_PAYOUT_RATIO_12M_CUR_ANN_DVD_EXT
+  description: Dividend payout ratio (trailing 12 months)
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__dividendPayoutRatio
+
+- mnemonic: EQY_DVD_YLD_IND_12M_CUR_ANN_DVD_EXT
+  description: Indicated dividend yield (trailing 12 months)
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_ratios__dividendYieldPercentage
+
+- mnemonic: BEST_TARGET_PRICE
+  description: Consensus analyst price target
+  data_type: float
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_price_target_consensus__targetConsensus
+
+- mnemonic: EX_DIV_DT_MOST_RECENT
+  description: Most recent ex-dividend date
+  data_type: string
+  request_types: [ReferenceDataRequest]
+  service: refdata
+  openbb_mapping: fmp_dividends_calendar__date

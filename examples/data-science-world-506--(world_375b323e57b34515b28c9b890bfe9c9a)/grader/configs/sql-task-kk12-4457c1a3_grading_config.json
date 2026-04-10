@@ -1,0 +1,212 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_571fca01a2f64f728699d8f05d4351e5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4457c1a36d214bda94bd772a21641ba9",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States Cohort 1 - Year 2025 as the cohort with the highest median of % down payment.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically mentions to compute the median of % down payment by cohort name, ranked by median of % down payment in descending order. Cohort 1 - Year 2025 is correctly identified as the cohort with highest median of % down payment.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6a657679c2f4402fbf48c3ea18a541f5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4457c1a36d214bda94bd772a21641ba9",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States Cohort 4 - Year 2025 as the cohort with the second highest median of % down payment.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically mentions to compute the median of % down payment by cohort name, ranked by median of % down payment in descending order. Cohort 4 - Year 2025 is correctly identified as the cohort with second highest median of % down payment.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ccf5100a1f0f458089d86a636bae9cad",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4457c1a36d214bda94bd772a21641ba9",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States Cohort 4 - Year 2023 as the cohort with the third highest median of % down payment.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically mentions to compute the median of % down payment by cohort name, ranked by median of % down payment in descending order. Cohort 4 - Year 2023 is correctly identified as the cohort with third highest median of % down payment.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ae9400b0e45e4e569ea69ae0511a1546",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4457c1a36d214bda94bd772a21641ba9",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States Cohort 2 - Year 2024 as the cohort with the fourth highest median of % down payment.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically mentions to compute the median of % down payment by cohort name, ranked by median of % down payment in descending order. Cohort 2 - Year 2024 is correctly identified as the cohort with fourth highest median of % down payment.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fe2d708a72674b6182bc30ea61a7e94b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4457c1a36d214bda94bd772a21641ba9",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States Cohort 3 - Year 2025 as the cohort with the fifth highest median of % down payment.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically mentions to compute the median of % down payment by cohort name, ranked by median of % down payment in descending order. Cohort 3 - Year 2025 is correctly identified as the cohort with fifth highest median of % down payment.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_60c1fce057b54d2b8f11431f9452e2ee",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4457c1a36d214bda94bd772a21641ba9",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Computes median of % down payment for Cohort 1 - Year 2025 as 100.00 (+/- 0.02).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically mentions to compute the median of % down payment by cohort name, ranked by median of % down payment in descending order. 100.00 is the correct median of % down payment for Cohort 1 - Year 2025",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8127743907e644739657c92cf13aea5b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4457c1a36d214bda94bd772a21641ba9",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Computes median of % down payment for Cohort 4 - Year 2025 as 100.00 (+/- 0.02).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically mentions to compute the median of % down payment by cohort name, ranked by median of % down payment in descending order. 100.00 is the correct median of % down payment for Cohort 4 - Year 2025",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2f9e7a65914c4640b01656618b4bb75f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4457c1a36d214bda94bd772a21641ba9",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Computes median of % down payment for Cohort 4 - Year 2023 as 24.12 (+/- 0.02).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically mentions to compute the median of % down payment by cohort name, ranked by median of % down payment in descending order. 24.12 is the correct median of % down payment for Cohort 4 - Year 2023",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_66167b4019aa45b0aa73ed017f5051df",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4457c1a36d214bda94bd772a21641ba9",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Computes median of % down payment for Cohort 2 - Year 2024 as 18.85 (+/- 0.02).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically mentions to compute the median of % down payment by cohort name, ranked by median of % down payment in descending order. 18.85 is the correct median of % down payment for Cohort 2 - Year 2024",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3390050325e74ebaa6861971162dcc29",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4457c1a36d214bda94bd772a21641ba9",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Computes median of % down payment for Cohort 3 - Year 2025 as 17.30 (+/- 0.02).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt specifically mentions to compute the median of % down payment by cohort name, ranked by median of % down payment in descending order. 17.30 is the correct median of % down payment for Cohort 3 - Year 2025",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

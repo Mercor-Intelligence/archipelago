@@ -1,0 +1,26 @@
+{
+  "name": "Create & Update Employee",
+  "pdf_page": 1,
+  "steps": [
+    {
+      "step": 1,
+      "action": "Navigate to New Employee form"
+    },
+    {
+      "step": 2,
+      "action": "Click Allow Access to BambooHR"
+    },
+    {
+      "step": 3,
+      "action": "Save button = bamboo_employees_create"
+    },
+    {
+      "step": 4,
+      "action": "Navigate to employee profile Personal tab"
+    },
+    {
+      "step": 6,
+      "action": "Save changes button = bamboo_employees_update"
+    }
+  ]
+}

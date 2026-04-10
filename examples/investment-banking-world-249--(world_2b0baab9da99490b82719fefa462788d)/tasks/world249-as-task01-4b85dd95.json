@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "In the DCF model, please update the following:\n\n- For RemainCo, replace the 2027 - 2030 revenue growth rate for the Market Intelligence division with the 2020 - 2023 revenue CAGR (rounded to single decimal) of the company from the comparable list that had the highest EBITDA margin in 2024.\n- Update the risk free rate for RemainCo to be the 10 year treasury rate on Oct 27, 2025.\n- Update the risk free rate for S&P Global to be 75% of the new RemainCo figure and the risk free rate for S&P Mobility to be 90% of the new RemainCo figure\n\nOutput the updated Shareholder Equity value creation in millions, rounded to zero decimals. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States Shareholder Equity Value Creation is -$29,305 (acceptable range... (ver_9d1fa65c1dcf436f9de843b6550dd52f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Shareholder Equity Value Creation is -$29,305 (acceptable range $-29,598 to $-29,012)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world249-as-task01-4b85dd95"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_4b85dd95865c495cb761631f10287e14",
+    "task_name": "World249_AS_Task01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_077dd6c9d2d04878b1c4e0b1def971c6",
+        "golden_text_response": "Shareholder Equity Value Creation is -$29,305",
+        "golden_file_responses": "snap_d2ffb7c7b89e4cc19c6428afab93480b"
+      }
+    ]
+  }
+}

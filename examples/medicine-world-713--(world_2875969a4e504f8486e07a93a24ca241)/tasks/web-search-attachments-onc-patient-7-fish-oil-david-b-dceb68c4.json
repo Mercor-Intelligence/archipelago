@@ -1,0 +1,261 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 7” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-------\n\nPatient 7 presents to their nephrology appointment for an initial new patient visit to discuss their most recent hospitalization for shortness of breath. The hospitalization required emergent dialysis due to severe pulmonary edema that would not respond to diuretics. They were found to have a new baseline eGFR 7.2 (5.7) mL/min/1.73 m(2) and are scheduled for AV fistula creation in the next month. They recently saw their cardiologist, who increased their statin dosage, added metoprolol and a GLP1 agonist, and discontinued metformin. What additional supplement is now recommended for this patient to decrease their risk of serious cardiovascular events based on their clinical history and imaging findings? Justify your reasoning. \n\nAnswers should be in line with the most recent clinical research as of January 11, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Identifies that the patient has a history of Chronic Kidney Disease (CKD). (ver_f9b2a24a1c634408a97e08836641b175)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies that the patient has a history of Chronic Kidney Disease (CKD)."
+        }
+      ]
+    },
+    {
+      "name": "Identifies that the patient has a persistently depressed eGFR of 6-8... (ver_6b3afb3a5c8e41f29e941ee91b2817ad)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies that the patient has a persistently depressed eGFR of 6-8 ml/min/1.73m2."
+        }
+      ]
+    },
+    {
+      "name": "Identifies that the patient has an elevated creatinine of 5.2 mg/dl... (ver_bd6c5e418e7a4d37852fd5331f7f1f12)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies that the patient has an elevated creatinine of 5.2 mg/dl (acceptable range 5.1 to 5.3)."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient meets criteria for ongoing renal replacement therapy. (ver_ce6b0d86f27c4ad88bc66dac0f389693)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient meets criteria for ongoing renal replacement therapy."
+        }
+      ]
+    },
+    {
+      "name": "Identifies that the patient has a history of peripheral vascular disease. (ver_4d63b2c9950c4b7c8eed66b5e96d0e31)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies that the patient has a history of peripheral vascular disease."
+        }
+      ]
+    },
+    {
+      "name": "Identifies that the patient has evidence of moderate multivessel coronary... (ver_1a0518ea19234c4aac1cad73d17f7803)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies that the patient has evidence of moderate multivessel coronary artery calcification."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has multiple high-risk cardiovascular features. (ver_86e8ec6071fd4af0bd276d8d5283f39d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has multiple high-risk cardiovascular features."
+        }
+      ]
+    },
+    {
+      "name": "States that the additional medication now recommended is omega-3 fatty acid... (ver_8205ad5c42a64604996a5d48442703e5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the additional medication now recommended is omega-3 fatty acid (fish oil)."
+        }
+      ]
+    },
+    {
+      "name": "Identifies that omega-3 fatty acid is indicated for patients receiving... (ver_1c3338bb18014af8b162169b144bf110)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies that omega-3 fatty acid is indicated for patients receiving maintenance dialysis."
+        }
+      ]
+    },
+    {
+      "name": "Identifies that omega-3 fatty acid is indicated for dialysis-dependent... (ver_4092a4aed2974709801f1d6fa70c943c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies that omega-3 fatty acid is indicated for dialysis-dependent patients with significant atherosclerotic burden."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-onc-patient-7-fish-oil-david-b-dceb68c4"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_dceb68c44df84a0780589ae659217b63",
+    "task_name": "Web Search_Attachments_Onc Patient 7 - Fish Oil - David B",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_706ae818eaa846a6b4aac0aba8b9472e",
+        "golden_text_response": "The patient's recent hospitalization provides a transition point from the patient's documented advanced CKD to maintenance dialysis-dependent end-stage kidney disease. The patient presented with refractory pulmonary edema requiring emergent dialysis despite maximum diuretic therapy, and now has a persistently depressed GFR of ~7 ml/min/1.73m2. with plans for AV fistula creation. The patient has an elevated creatinine of 5.2 mg/dl. This patient meets criteria for ongoing renal replacement therapy rather than episodic rescue dialysis. From a cardiovascular standpoint, the patient has multiple high-risk features, including a history of peripheral vascular disease and evidence of moderate multivessel coronary artery calcification on cardiac CT angiography. The additional medication now recommended is omega-3 fatty acid (fish oil) for patients receiving maintenance dialysis with established cardiovascular disease and significant atherosclerotic burden. Omega-3 fatty acids are recommended specifically for maintenance dialysis patients and are not recommended as primary prevention in CKD. ",
+        "golden_file_responses": "snap_0dc72d4bd5d243f3bba93c0eea92d55b"
+      }
+    ]
+  }
+}

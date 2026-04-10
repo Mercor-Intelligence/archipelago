@@ -1,0 +1,260 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_312c23e4bb6a4417883386a8f2fd0f78",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6d24bb63c15c43b8ac3037128dbe24e5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides step 1 for each word as \"Show pupils a picture of the word.\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Teaching Strategies /NS- PWIM Model.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c344496fa7184c1c9661e1a5d0c37ec0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6d24bb63c15c43b8ac3037128dbe24e5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides step 2 for each word as \"Shake out: ask students what objects or actions they see in the image.\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a3861a84001348b3a19443baafb6efb4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6d24bb63c15c43b8ac3037128dbe24e5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides step 3 for each word as \"For each object or action they name, draw a line from the image to the word; read the word out loud and spell the word.\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_09d59ef204a6427ebb6f69e030d69e25",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6d24bb63c15c43b8ac3037128dbe24e5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies \"Prohibition\" as one of the vocabulary words",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Content Documents (text chapters, etc.)/ESL Material/NS- ESL article v.1.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_915071559eef4a3cbae662d8ccf91fdd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6d24bb63c15c43b8ac3037128dbe24e5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies \"Law\" as one of the vocabulary words",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Content Documents (text chapters, etc.)/ESL Material/NS- ESL article v.1.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b6afa7cd42ea473da52a90845e3d8ef1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6d24bb63c15c43b8ac3037128dbe24e5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies \"Alcohol\" as the one of the vocabulary words",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Content Documents (text chapters, etc.)/ESL Material/NS- ESL article v.1.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8ff5d2b04de14c90992197abf5021a8c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6d24bb63c15c43b8ac3037128dbe24e5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies \"Government\" as one of the vocabulary words",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Content Documents (text chapters, etc.)/ESL Material/NS- ESL article v.1.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_40d2c19283d3438f974e958e7ab9ac31",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6d24bb63c15c43b8ac3037128dbe24e5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies \"Movement\" as one of the vocabulary words",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Content Documents (text chapters, etc.)/ESL Material/NS- ESL article v.1.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_db54ce234cba42d3b538d9d29836a033",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6d24bb63c15c43b8ac3037128dbe24e5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies \"Amendment\" as one of the vocabulary words",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Content Documents (text chapters, etc.)/ESL Material/NS- ESL article v.1.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 20,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    },
+    {
+      "eval_config_id": "72d7d96a-9d94-4a38-bbe3-96c08ded727c",
+      "eval_config_name": "Content Length Check Verifier",
+      "eval_defn_id": "content_length_check",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

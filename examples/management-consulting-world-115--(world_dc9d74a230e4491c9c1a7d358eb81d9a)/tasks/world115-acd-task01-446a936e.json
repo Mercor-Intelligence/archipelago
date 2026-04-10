@@ -1,0 +1,491 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Combine the insights from the five Data Center expert interviews (Richardson, Torres, Hasting, Sarah Chen, and Thomas Chen) around typical CAPEX vs OPEX. State the midpoint in the range of total CAPEX and annual OPEX per MW reported by each interviewee. Format your output as a table with the columns: Interviewee, Midpoint CAPEX ($M/MW), and Midpoint Annual OPEX ($M/MW). Then, calculate a grand total average CAPEX per MW and a grand total average OPEX per MW based on averaging all the midpoint values from each respondent. Return the outputs in a console message, rounding dollar amounts to the nearest $0.1M. \n\nExclude responses without numeric figures from the analysis. If a respondent provides CAPEX or OPEX estimates for multiple data center types, use the estimates for a standard data center only."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the midpoint CAPEX for David Richardson is $13.0M per MW (acceptable... (ver_ea7936abd3ed4003a5015b744845f298)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the midpoint CAPEX for David Richardson is $13.0M per MW (acceptable range $12.9 to $13.1)."
+        }
+      ]
+    },
+    {
+      "name": "States the midpoint CAPEX for David Richardson is a value different than... (ver_ea7936abd3ed4003a5015b744845f298)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the midpoint CAPEX for David Richardson is a value different than $13.0M per MW."
+        }
+      ]
+    },
+    {
+      "name": "States the midpoint OPEX for David Richardson is $1.0M per MW (acceptable... (ver_3b0d5a81551249598e6948ac92e27407)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the midpoint OPEX for David Richardson is $1.0M per MW (acceptable range $0.99 to $1.0)."
+        }
+      ]
+    },
+    {
+      "name": "States the midpoint OPEX for David Richardson is a value different than $1.0M... (ver_3b0d5a81551249598e6948ac92e27407)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the midpoint OPEX for David Richardson is a value different than $1.0M per MW."
+        }
+      ]
+    },
+    {
+      "name": "States the midpoint CAPEX for Michael Torres is $11.3M per MW (acceptable... (ver_d861059ba71d410a8193c7f3b58ea681)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the midpoint CAPEX for Michael Torres is $11.3M per MW (acceptable range $11.2 to $11.4)."
+        }
+      ]
+    },
+    {
+      "name": "States the midpoint CAPEX for Michael Torres is a value different than $11.3M... (ver_d861059ba71d410a8193c7f3b58ea681)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the midpoint CAPEX for Michael Torres is a value different than $11.3M per MW."
+        }
+      ]
+    },
+    {
+      "name": "States the midpoint OPEX for Michael Torres is $1.0M per MW (acceptable range... (ver_201e2befd545489b88a22ebc5ea4e24d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the midpoint OPEX for Michael Torres is $1.0M per MW (acceptable range $0.99 to $1.0)."
+        }
+      ]
+    },
+    {
+      "name": "States the midpoint OPEX for Michael Torres is a value different than $1.0M... (ver_201e2befd545489b88a22ebc5ea4e24d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the midpoint OPEX for Michael Torres is a value different than $1.0M per MW."
+        }
+      ]
+    },
+    {
+      "name": "States the midpoint CAPEX for Rob Hastings is $13.6M per MW (acceptable range... (ver_8ec0b359b7534249b041087bfae7ba3e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the midpoint CAPEX for Rob Hastings is $13.6M per MW (acceptable range $13.5 to $13.7)."
+        }
+      ]
+    },
+    {
+      "name": "States the midpoint CAPEX for Rob Hastings is a value different than $13.6M... (ver_8ec0b359b7534249b041087bfae7ba3e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the midpoint CAPEX for Rob Hastings is a value different than $13.6M per MW."
+        }
+      ]
+    },
+    {
+      "name": "States the midpoint OPEX for Rob Hastings is $0.8M per MW (acceptable range... (ver_fd955f6aa2a045a7b36297304dfc3693)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the midpoint OPEX for Rob Hastings is $0.8M per MW (acceptable range $0.79 to $0.81)."
+        }
+      ]
+    },
+    {
+      "name": "States the midpoint OPEX for Rob Hastings is a value different than $0.8M per... (ver_fd955f6aa2a045a7b36297304dfc3693)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the midpoint OPEX for Rob Hastings is a value different than $0.8M per MW."
+        }
+      ]
+    },
+    {
+      "name": "States the midpoint CAPEX for Thomas Chen is $14.0M per MW (acceptable range... (ver_615fd74bbca94a89b625c09eeb26b75a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the midpoint CAPEX for Thomas Chen is $14.0M per MW (acceptable range $13.9 to $14.1)."
+        }
+      ]
+    },
+    {
+      "name": "States the midpoint CAPEX for Thomas Chen is a value different than $14.0M per... (ver_615fd74bbca94a89b625c09eeb26b75a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the midpoint CAPEX for Thomas Chen is a value different than $14.0M per MW."
+        }
+      ]
+    },
+    {
+      "name": "States the midpoint OPEX for Thomas Chen is $0.9M per MW (acceptable range... (ver_63ca45f0e04a4149975199d1313070fd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the midpoint OPEX for Thomas Chen is $0.9M per MW (acceptable range $0.89 to $0.91)."
+        }
+      ]
+    },
+    {
+      "name": "States the midpoint OPEX for Thomas Chen is a value different than $0.9M per MW (ver_63ca45f0e04a4149975199d1313070fd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the midpoint OPEX for Thomas Chen is a value different than $0.9M per MW."
+        }
+      ]
+    },
+    {
+      "name": "States the Grand Total Average CAPEX is $13.0M per MW (acceptable range $12.9... (ver_7713fbfa232248a79048d89185e0bdc5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Grand Total Average CAPEX is $13.0M per MW (acceptable range $12.9 to $13.1)."
+        }
+      ]
+    },
+    {
+      "name": "States the Grand Total Average CAPEX is a value different than $13.0M per MW (ver_7713fbfa232248a79048d89185e0bdc5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Grand Total Average CAPEX is a value different than $13.0M per MW."
+        }
+      ]
+    },
+    {
+      "name": "States the Grand Total Average OPEX is $0.9M per MW (acceptable range $0.89 to... (ver_fca3ae9430524755a71a2ffecfb23d47)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Grand Total Average OPEX is $0.9M per MW (acceptable range $0.89 to $0.91)."
+        }
+      ]
+    },
+    {
+      "name": "States the Grand Total Average OPEX is a value different than $0.9M per MW (ver_fca3ae9430524755a71a2ffecfb23d47)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Grand Total Average OPEX is a value different than $0.9M per MW."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world115-acd-task01-446a936e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_446a936ead7149c6a1bca53d14994a25",
+    "task_name": "World115_acd_task01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_b50d0d1aea0c4f84aa1c488486f3a6da",
+        "golden_text_response": "Midpoint CAPEX and OPEX per MW by Interviewee:\nInterviewee\tMidpoint CAPEX ($M/MW)\tMidpoint Annual OPEX ($M/MW)\nDavid Richardson / Jennifer Park (CoreSite)\t13.0 \t1.0 \nMichael Torres (Digital Realty)\t11.3\t1.0\nRob Hastings (SecureVault)\t13.6\t0.8\nThomas Chen (CyrusOne)\t14.0\t0.9\n\nGrand Total Averages (Midpoint-Based):\nCAPEX: $13.0M per MW\nOPEX: $0.9M per MW",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Please run a new scenario in the financial model with the following adjustments:\n\n1. Replace the RMBS Enterprise Value and Number of Shares Outstanding with 2025 enterpriseValue and dilutedSharesOutstanding respectively and update the RMBS share price at acquisition based on those values.\n2. Replace the Stand-Alone MTSI Enterprise Value and Number of Shares Outstanding with 2025 enterpriseValue and dilutedSharesOutstanding respectively and update the stand-alone MTSI share price at acquisition based on those values.\n\nPlease return the updated Revised Equity Value of Target. Ensure All monetary results must be displayed in USD millions, rounded to two decimal places.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States Revised Equity Value of Target is $3,501.48M (acceptable range... (ver_3952ce73bb3347328e0e3772f21dd28d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Revised Equity Value of Target is $3,501.48M (acceptable range $3,466.47 to $3,536.49)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world248-hs-02-5bc723b0"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_5bc723b0e2fd4547a3afb1db0a463c2a",
+    "task_name": "World248-HS-02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_bf07c7b092ed4889bc076a6c89611187",
+        "golden_text_response": "Revised Equity Value of Target is $3,501.48M",
+        "golden_file_responses": "snap_55715f74d3784fb5bc85a874dd9c6c8b"
+      }
+    ]
+  }
+}

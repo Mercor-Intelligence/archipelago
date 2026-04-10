@@ -1,0 +1,657 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The freshman biology teacher for Team 1 needs to provide some data to her team lead by the end of the day. He wants to know the weighted average grade for her top five students, based on the Chapter 4 Exam grade and how these students compare to the student with the highest test score from the same level class that has the highest average for the exam.\nUsing the grade data and designations found in the gradebook, 9th Grade Biology Grades, calculate the weighted average grade for these five students and bold the comparison student. Refer to the class syllabus, Syllabus 9th grade Biology, for the weight for each category. In some of the assignments, the category is apparent. For other assignments, categorize them as follows:\n\n* Case Studies = Notebook grades\n* Experiment and Lab both = labs\n* Historical Rat Study and the Rat Modeling Investigations = Bellwork grades\n* Exploring Juncos and the Letter from Lamarck = Homework grades\n* Quizzes = Classwork grades\n\nInclude the Student name, Student ID, and Weighted Average grade, ordered from highest to lowest and the top 5 students for the Chapter 4 exam. Round each final weighted grade average to two decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Identifies Ellie Jackson as one of the top 5 Team 1 students for the Chapter 4... (ver_c2fc592746c64e88ba8b669810e85e1c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Ellie Jackson as one of the top 5 Team 1 students for the Chapter 4 exam."
+        }
+      ]
+    },
+    {
+      "name": "Identifies any student in team 1 class other than the top 5 for grades on the... (ver_c2fc592746c64e88ba8b669810e85e1c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies any student in team 1 class other than the top 5 for grades on the chapter 4 exam."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Carter Robinson as one of the top 5 Team 1 students for the Chapter... (ver_43f298949037465d85bb59b1981f6766)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Carter Robinson as one of the top 5 Team 1 students for the Chapter 4 exam."
+        }
+      ]
+    },
+    {
+      "name": "Identifies any student in team 1 class other than the top 5 for grades on the... (ver_43f298949037465d85bb59b1981f6766)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies any student in team 1 class other than the top 5 for grades on the chapter 4 exam."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Noah Taylor as one of the top 5 Team 1 students for the Chapter 4... (ver_05f1fbb665f04f29b5e7c34b2118d22e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Noah Taylor as one of the top 5 Team 1 students for the Chapter 4 exam."
+        }
+      ]
+    },
+    {
+      "name": "Identifies any student in team 1 class other than the top 5 for grades on the... (ver_05f1fbb665f04f29b5e7c34b2118d22e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies any student in team 1 class other than the top 5 for grades on the chapter 4 exam."
+        }
+      ]
+    },
+    {
+      "name": "Identifies McKenna Rodgers as one of the top 5 Team 1 students for the Chapter... (ver_a44a0b3b478b4fcb82010469e10b857d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies McKenna Rodgers as one of the top 5 Team 1 students for the Chapter 4 exam."
+        }
+      ]
+    },
+    {
+      "name": "Identifies any student in team 1 class other than the top 5 for grades on the... (ver_a44a0b3b478b4fcb82010469e10b857d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies any student in team 1 class other than the top 5 for grades on the chapter 4 exam."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Emma Anderson as one of the top 5 Team 1 students for the Chapter 4... (ver_1e69ed1c9fb045ba810920a17513511f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Emma Anderson as one of the top 5 Team 1 students for the Chapter 4 exam."
+        }
+      ]
+    },
+    {
+      "name": "Identifies any student in team 1 class other than the top 5 for grades on the... (ver_1e69ed1c9fb045ba810920a17513511f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies any student in team 1 class other than the top 5 for grades on the chapter 4 exam."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the weighted average grade for Emma Anderson to be 87.32 +/- 0.01 (ver_85afe80249024d4ab419b9ab4692af84)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the weighted average grade for Emma Anderson to be 87.32 +/- 0.01."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the weighted average grade for Emma Anderson to be anything other... (ver_85afe80249024d4ab419b9ab4692af84)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the weighted average grade for Emma Anderson to be anything other than 87.31."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the weighted average grade for Ellie Jackson to be 72.15 +/- 0.01 (ver_f63d2e11ce194e2cb5c5142e93c839bc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the weighted average grade for Ellie Jackson to be 72.15 +/- 0.01."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the weighted average grade for Ellie Jackson to be anything other... (ver_f63d2e11ce194e2cb5c5142e93c839bc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the weighted average grade for Ellie Jackson to be anything other than 72.15."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the weighted average grade for Carter Robinson to be 77.84 +/- 0.01 (ver_509df5adceca43e2916f856553cacac6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the weighted average grade for Carter Robinson to be 77.84 +/- 0.01."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the weighted average grade for Carter Robinson to be anything other... (ver_509df5adceca43e2916f856553cacac6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the weighted average grade for Carter Robinson to be anything other than 77.84."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the weighted average grade for Noah Taylor to be 75.88 +/- 0.01 (ver_92585b8657a5468fafacb0b57f7ab684)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the weighted average grade for Noah Taylor to be 75.88 +/- 0.01."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the weighted average for Noah Taylor to be anything other than 75.88. (ver_92585b8657a5468fafacb0b57f7ab684)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the weighted average for Noah Taylor to be anything other than 75.88."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the weighted average grade for McKenna Rodgers to be 86.82 +/- 0.01 (ver_1bec132d6d7e478daf4289082c462d17)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the weighted average grade for McKenna Rodgers to be 86.82 +/- 0.01."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the weighted average grade to be anything but 86.81. (ver_1bec132d6d7e478daf4289082c462d17)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the weighted average grade to be anything but 86.81."
+        }
+      ]
+    },
+    {
+      "name": "Bolds Easton Jackson (ver_cae87b24ddcf4edb9ccf81e54b62dd31)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Bolds Easton Jackson."
+        }
+      ]
+    },
+    {
+      "name": "Identifies any student from team 2, 4, or 5. (ver_cae87b24ddcf4edb9ccf81e54b62dd31)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies any student from team 2, 4, or 5."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the weighted average grade for Easton Jackson as 75.23 +/- 0.01 (ver_9a673370cac742ef8b680e9078897c51)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the weighted average grade for Easton Jackson as 75.23 +/- 0.01."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the weighted average grade for Easton Jackson as anything other... (ver_9a673370cac742ef8b680e9078897c51)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the weighted average grade for Easton Jackson as anything other than 75.23."
+        }
+      ]
+    },
+    {
+      "name": "Organizes the students using the weighted average grade from highest to... (ver_38d0d74a59da4c27a0a8dd9426f2e540)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Organizes the students using the weighted average grade from highest to lowest: Emma Anderson, McKenna Rodgers, Carter Robinson, Noah Taylor, Easton Jackson, Ellie Jackson."
+        }
+      ]
+    },
+    {
+      "name": "Organizes the students using any other order than weighted average grade from... (ver_38d0d74a59da4c27a0a8dd9426f2e540)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Organizes the students using any other order than weighted average grade from highest to lowest."
+        }
+      ]
+    },
+    {
+      "name": "Includes the student ID for each student (ver_c046cb5301f844bca2d3b3b1732b9a58)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes the student ID for each student."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world306-sc-01-natural-prompt-4a4187af"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_576565f6cc9649d7b3d56ec4763d3f7e",
+    "world_name": "Teaching World 306",
+    "task_id": "task_4a4187af9cb64d3eb3ec6f3529cd3edf",
+    "task_name": "World306_SC_01 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_02d214abed9d4b1da9cbd1344087a4d3",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_b823158bf77e44ef9c8342c7bafa38a9"
+      },
+      {
+        "golden_response_id": "gold_4125f007d341412ab0db45141bfd8300",
+        "golden_text_response": "See attached file.",
+        "golden_file_responses": "snap_97e4217632dd4ecba20f5ae22a9e66a4"
+      }
+    ]
+  }
+}

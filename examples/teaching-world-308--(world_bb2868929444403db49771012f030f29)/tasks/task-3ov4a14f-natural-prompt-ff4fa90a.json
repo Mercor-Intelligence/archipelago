@@ -1,0 +1,353 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Complete these tasks: \n1. State the level of complexity that most fits the “structure” section of the CCSS Qualitative Analysis Tool that would apply to the the text Federalism and the Arizona Constitution\n2. Identify which of the statements in the “Opportunities” portion of the “Structure” section on the CCSS Qualitative Analysis Tool apply to the text Federalism and the Arizona Constitution, or if none, state none apply\n3. Identify whether the statement in the “Cautions” portion of the “Structure” section of the CCSS Qualitative Analysis Tool applies to the text Federalism and the Arizona Constitution, or if it doesn't apply, state none apply\n4. List the conventionality and clarity statements that best apply in the “Language” section of the CCSS Qualitative Analysis Tool to most accurately assesses the complexity of the text Federalism and the Arizona Constitution\n5. Based on your choices for number 4 above, identify the overall level of language complexity - “High Complexity,” “Middle High,” “Middle Low,” or “Low Complexity” \n6. List the “subject matter knowledge” statement and the “intertextuality” statement that most closely reflect the levels in the “Knowledge” section of the CCSS Qualitative Analysis Tool to most accurately assesses the complexity of the text Federalism and the Arizona Constitution\n7. Based on your choices for Task 6, identify the overall level of knowledge needed to comprehend text Federalism and the Arizona Constitution: “High Complexity,” “Middle High,” “Middle Low,” or “Low Complexity” \n8. Determine whether each of the students who have IEPs would likely be unsuccessful reading and learning from text Federalism and the Arizona Constitution, stating “inappropriate” for each such student."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "For task 1, identifies the complexity of the text structure as “Middle High.\" (ver_62f25a744db14cdc9fcec1192f5f5da6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "For task 1, identifies the complexity of the text structure as “Middle High.\"."
+        }
+      ]
+    },
+    {
+      "name": "For task 2, outputs “None Apply.” (ver_a924d7e35717494dbf18d2b0eb149ecd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "For task 2, outputs “None Apply.”."
+        }
+      ]
+    },
+    {
+      "name": "For task 3, outputs \"None Apply.\" (ver_a941125f3845461394a78a86c72f6bb6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "For task 3, outputs \"None Apply.\"."
+        }
+      ]
+    },
+    {
+      "name": "For task 4, outputs Conventionality:  “occasionally contains abstract and/or... (ver_b976f9a4041e4dc19fbe85d876141f2b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "For task 4, outputs Conventionality:  “occasionally contains abstract and/or figurative language”."
+        }
+      ]
+    },
+    {
+      "name": "For task 4, outputs Clarity:  “somewhat complex language that is occasionally... (ver_fa50ac66718a4fb09967218144baf564)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "For task 4, outputs Clarity:  “somewhat complex language that is occasionally unfamiliar, archaic, discipline-specific, or overly academic”."
+        }
+      ]
+    },
+    {
+      "name": "For task 5, outputs Middle High (ver_395c6db05eeb4941bfbaef1845762b69)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "For task 5, outputs Middle High."
+        }
+      ]
+    },
+    {
+      "name": "For task 6, outputs for Subject Matter Knowledge:  \"requires moderate levels... (ver_14a7efaea8ab4a1aa992a4afff031df7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "For task 6, outputs for Subject Matter Knowledge:  \"requires moderate levels of discipline-specific content knowledge; some theoretical knowledge may enhance understanding.”."
+        }
+      ]
+    },
+    {
+      "name": "For task 6, outputs for Intertextuality:  “some references to/citations of... (ver_9ac72cda4f044b76844934163ff5e082)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "For task 6, outputs for Intertextuality:  “some references to/citations of other texts or outside ideas, theories, etc.”."
+        }
+      ]
+    },
+    {
+      "name": "For task 7, outputs Middle High (ver_c870035a2b194b61a97bae3bab7f9c2a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "For task 7, outputs Middle High."
+        }
+      ]
+    },
+    {
+      "name": "For task 8, lists Liam Martinez, inappropriate (ver_385453c095ba4bd388358bd7d8719157)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "For task 8, lists Liam Martinez, inappropriate."
+        }
+      ]
+    },
+    {
+      "name": "For task 8, lists Miles_Anderson, inappropriate (ver_a17e9fa4fe7b477aa288ae35e758c389)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "For task 8, lists Miles_Anderson, inappropriate."
+        }
+      ]
+    },
+    {
+      "name": "For task 8, outputs Naomi Flores, inappropriate (ver_646360cc76794c0b9acee374ad2e6e75)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "For task 8, outputs Naomi Flores, inappropriate."
+        }
+      ]
+    },
+    {
+      "name": "For task 8, outputs Sophia Hernandez, inappropriate (ver_bee564a2fdf14fbb8cf90d339ac2943e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "For task 8, outputs Sophia Hernandez, inappropriate."
+        }
+      ]
+    },
+    {
+      "name": "For task 8, outputs Matteo Rivera, inappropriate (ver_0791a3d72a0c45efa3431b1250c71e40)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "For task 8, outputs Matteo Rivera, inappropriate."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-3ov4a14f-natural-prompt-ff4fa90a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_bb2868929444403db49771012f030f29",
+    "world_name": "Teaching World 308",
+    "task_id": "task_ff4fa90a30174c91980de5b7839ea86a",
+    "task_name": "Task 3ov4a14f [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_e9ccb38abacc4b6689e29e3349ce9ca9",
+        "golden_text_response": "Task 1: \nMiddle High\n\nTask 2: \nNone Apply\n\nTask 3:  \nNone Apply \n\nTask 4\nConventionality:  “occasionally contains abstract and/or figurative language” \nClarity:  “somewhat complex language that is occasionally unfamiliar, archaic, discipline-specific, or overly academic”\n\nTask 5: Middle High\n\nTask 6: \nSubject Matter Knowledge:  \"requires moderate levels of discipline-specific content knowledge; some theoretical knowledge may enhance understanding.” \nIntertextuality:  “some references to/citations of other texts or outside ideas, theories, etc.”\n\nTask 7: \nMiddle High\n\nTask 8:  \nLiam Martinez, inappropriate\nMiles Anderson, inappropriate \nNaomi Flores, inappropriate \nSophia Hernandez, inappropriate\nMatteo Rivera, inappropriate \n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

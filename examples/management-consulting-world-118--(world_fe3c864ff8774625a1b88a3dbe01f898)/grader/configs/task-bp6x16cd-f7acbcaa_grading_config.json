@@ -1,0 +1,171 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_8e4e8dcdbcd043f5843e31e039e7e4e7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f7acbcaad185454bbc2a35e57ef9d619",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of patients in Michigan in 2024 who experienced either headache or nausea during or after the ketamine session is 20 (acceptable range 19.8 to 20.2)",
+        "negative_criteria": "States that the number of patients in Michigan in 2024 who experienced either headache or nausea during or after the ketamine session is any other value than 20",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_aaa107496cd645d2902690b9a54fb98b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f7acbcaad185454bbc2a35e57ef9d619",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of patients in Michigan in 2025 who experienced either headache or nausea during or after the ketamine session is 600 (acceptable range 594 to 606)",
+        "negative_criteria": "States that the number of patients in Michigan in 2025 who experienced either headache or nausea during or after the ketamine session is any other value than 600",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a976c013cf6d49bd84913f614613abe9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f7acbcaad185454bbc2a35e57ef9d619",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the difference in mean dosage in mg between patients in Michigan in 2024 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is 5.7 (acceptable range 5.6 to 5.8)",
+        "negative_criteria": "States that the difference in mean dosage in mg between patients in Michigan in 2024 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is any other value than 5.7",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_df0104e0c63f4ac4bd3c2c2c0923c9ef",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f7acbcaad185454bbc2a35e57ef9d619",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the difference in mean dosage in mg between patients in Michigan in 2025 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is 25.0 (acceptable range 24.8 to 25.2)",
+        "negative_criteria": "States that the difference in mean dosage in mg between patients in Michigan in 2025 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is any other value than 25.0",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0fcb5220f8a64a87aa0dfad277669349",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f7acbcaad185454bbc2a35e57ef9d619",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the difference in mean session length in minutes and seconds between patients in Michigan in 2024 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is -21:17 (acceptable range -21.2 to -20.8)",
+        "negative_criteria": "States that the difference in mean session length in minutes and seconds between patients in Michigan in 2024 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is any other value than -21:17",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b8ac425e9f394b1fb09dd085907b43b8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f7acbcaad185454bbc2a35e57ef9d619",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the difference in mean session length in minutes and seconds between patients in Michigan in 2025 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is 47:01 (acceptable range 46.5 to 47.5)",
+        "negative_criteria": "States that the difference in mean session length in minutes and seconds between patients in Michigan in 2025 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is any other value than 47:01",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9696f6e77271498590723234fe0ed892",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f7acbcaad185454bbc2a35e57ef9d619",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the updated cost per session in Michigan in 2026 is $383.58 (acceptable range $379.74 to $387.42)",
+        "negative_criteria": "States that the updated cost per session in Michigan in 2026 is any other value than $383.58\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. Decision will be made to reduce the dosage, given that the patients with symptoms had 25mg higher average dosage in 2025 to those without the symptoms\n2. The new dosage will be 49.4*90%= 44.48 \n3. Dosage decrease is  44.48 /  62.80 -1 = -29.2%\n4. New Drug + pharmacy handling cost per session is 28 * (1-29.2%) - 19.83\n5. Cost per session is 383.58\n\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

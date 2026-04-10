@@ -1,0 +1,652 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Identify the top five morphemes that students missed on the quiz. Create a slide deck to review these.  On the first slide, I want a list of the three morphemes that were missed by students the most and the numbers of students that missed them. Then, on the next slides, put one of the missed words with the definition of the morpheme and an example of a word using that morpheme."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Lists \"-ous\" as one of the morphemes on the slide of morphemes most commonly... (ver_92f6dd020fd644e6a4ed94545e141501)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"-ous\" as one of the morphemes on the slide of morphemes most commonly missed by students."
+        }
+      ]
+    },
+    {
+      "name": "Lists something other than \"-ous\", \"-ion\", \"-ment\", \"-ity\", or \"-ness\" as one... (ver_92f6dd020fd644e6a4ed94545e141501)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists something other than \"-ous\", \"-ion\", \"-ment\", \"-ity\", or \"-ness\" as one of the morphemes on the slide of morphemes most commonly missed by students."
+        }
+      ]
+    },
+    {
+      "name": "Calculates that the morpheme \"-ous\" was missed by 40 students (ver_dc3ad6dad6c943a481c678038edb0259)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates that the morpheme \"-ous\" was missed by 40 students."
+        }
+      ]
+    },
+    {
+      "name": "Calculates that the morpheme \"-ous\" was missed by something other than 40... (ver_dc3ad6dad6c943a481c678038edb0259)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates that the morpheme \"-ous\" was missed by something other than 40 students."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"-ion\" as one of the morphemes on the slide of morphemes most commonly... (ver_dcaa571e17084e7daf931846b9beece3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"-ion\" as one of the morphemes on the slide of morphemes most commonly missed by students."
+        }
+      ]
+    },
+    {
+      "name": "Lists something other than \"-ous\", \"-ion\", \"-ment\", \"-ity\", or \"-ness\" as one... (ver_dcaa571e17084e7daf931846b9beece3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists something other than \"-ous\", \"-ion\", \"-ment\", \"-ity\", or \"-ness\" as one of the morphemes on the slide of morphemes most commonly missed by students."
+        }
+      ]
+    },
+    {
+      "name": "Calculates that the morpheme \"-ion\" was missed by 39 students (ver_c9ff04c8a0b9484da37b3e58000c51b2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates that the morpheme \"-ion\" was missed by 39 students."
+        }
+      ]
+    },
+    {
+      "name": "Calculates that the morpheme \"-ion\" was missed by something other than 39... (ver_c9ff04c8a0b9484da37b3e58000c51b2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates that the morpheme \"-ion\" was missed by something other than 39 students."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"-ment\" as one of the morphemes on the slide of morphemes most commonly... (ver_256fb218f907443389c12698c2aefa71)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"-ment\" as one of the morphemes on the slide of morphemes most commonly missed by students."
+        }
+      ]
+    },
+    {
+      "name": "Lists something other than \"-ous\", \"-ion\", \"-ment\", \"-ity\", or \"-ness\" as one... (ver_256fb218f907443389c12698c2aefa71)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists something other than \"-ous\", \"-ion\", \"-ment\", \"-ity\", or \"-ness\" as one of the morphemes on the slide of morphemes most commonly missed by students."
+        }
+      ]
+    },
+    {
+      "name": "Calculates that the morpheme \"-ment\" was missed by 38 students (ver_746e260d757149e993ecd29b574c10e5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates that the morpheme \"-ment\" was missed by 38 students."
+        }
+      ]
+    },
+    {
+      "name": "Calculates that the morpheme \"-ment\" was missed by something other than 38... (ver_746e260d757149e993ecd29b574c10e5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates that the morpheme \"-ment\" was missed by something other than 38 students."
+        }
+      ]
+    },
+    {
+      "name": "Creates a slide for the morpheme \"-ous\" (ver_f85272af4fcd4fee8dc1baa8084e0e82)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a slide for the morpheme \"-ous\"."
+        }
+      ]
+    },
+    {
+      "name": "Defines \"-ous\" as \"full of\" on the slide for the morpheme \"-ous\" (ver_57c41f3f70b64ae8a6462518de917a85)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Defines \"-ous\" as \"full of\" on the slide for the morpheme \"-ous\"."
+        }
+      ]
+    },
+    {
+      "name": "Defines \"-ous\" as something other than \"full of\" on the slide for the morpheme... (ver_57c41f3f70b64ae8a6462518de917a85)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Defines \"-ous\" as something other than \"full of\" on the slide for the morpheme \"-ous\"."
+        }
+      ]
+    },
+    {
+      "name": "Includes an example of a word containing the morpheme \"-ous\" on the slide for... (ver_5505c6fb2783416b9cad8ae3e09159c1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes an example of a word containing the morpheme \"-ous\" on the slide for the morpheme \"-ous\", such as \"dangerous\" or \"joyous\"."
+        }
+      ]
+    },
+    {
+      "name": "Includes examples of words containing a morpheme other than \"-ous\" on the... (ver_5505c6fb2783416b9cad8ae3e09159c1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes examples of words containing a morpheme other than \"-ous\" on the slide for the morpheme \"-ous\"."
+        }
+      ]
+    },
+    {
+      "name": "Creates a slide for the morpheme \"-ion\" (ver_cb7e416881f041c29163d49ebd63c989)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a slide for the morpheme \"-ion\"."
+        }
+      ]
+    },
+    {
+      "name": "Defines \"-ion\" as \"process of\" on the slide for the morpheme \"-ion\" (ver_9eb36bf18c2e41fa8ab96ec2dad0390e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Defines \"-ion\" as \"process of\" on the slide for the morpheme \"-ion\"."
+        }
+      ]
+    },
+    {
+      "name": "Defines \"-ion\" as something other than \"process of\" on the slide for the... (ver_9eb36bf18c2e41fa8ab96ec2dad0390e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Defines \"-ion\" as something other than \"process of\" on the slide for the morpheme \"-ion\"."
+        }
+      ]
+    },
+    {
+      "name": "Includes an example of a word containing the morpheme \"-ion\" on the slide for... (ver_58f8ff3db88d4e64a52558d63df7cb40)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes an example of a word containing the morpheme \"-ion\" on the slide for the morpheme \"-ion\", such as \"celebration\" or \"creation\"."
+        }
+      ]
+    },
+    {
+      "name": "Includes an example of a word containing a morpheme other than \"-ion\" on the... (ver_58f8ff3db88d4e64a52558d63df7cb40)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes an example of a word containing a morpheme other than \"-ion\" on the slide for the morpheme \"-ion\"."
+        }
+      ]
+    },
+    {
+      "name": "Creates a slide for the morpheme \"-ment\" (ver_b26dabb1c1a04f03824ac824ef9585c1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a slide for the morpheme \"-ment\"."
+        }
+      ]
+    },
+    {
+      "name": "Defines \"-ment\" as \"state of\" or \"result of\" on the slide for the morpheme... (ver_5e108549470d4807be850a15e0464b6c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Defines \"-ment\" as \"state of\" or \"result of\" on the slide for the morpheme \"-ment\"."
+        }
+      ]
+    },
+    {
+      "name": "Defines \"-ment\" as something other than \"state of\" or \"result of\" on the slide... (ver_5e108549470d4807be850a15e0464b6c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Defines \"-ment\" as something other than \"state of\" or \"result of\" on the slide for the morpheme \"-ment\"."
+        }
+      ]
+    },
+    {
+      "name": "Includes an example of a word containing the morpheme \"-ment\" on the slide for... (ver_6e94ec73f09f467fbd1d661335266939)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes an example of a word containing the morpheme \"-ment\" on the slide for the morpheme \"-ment\", such as \"development\" or \"movement\"."
+        }
+      ]
+    },
+    {
+      "name": "Includes an example of a word containing a morpheme other than \"-ment\" on the... (ver_6e94ec73f09f467fbd1d661335266939)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes an example of a word containing a morpheme other than \"-ment\" on the slide for the morpheme \"-ment\"."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-308-je-2-natural-prompt-f0fdf21b"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_bb2868929444403db49771012f030f29",
+    "world_name": "Teaching World 308",
+    "task_id": "task_f0fdf21bbc02416fa9827bf0c5b50dd5",
+    "task_name": "World_308_JE_2 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_5a515f9198bb430d8c25c55785aafd1c",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_bcfa1afaf41e4f69902c66745d0ffc5d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,449 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_37a3b3271583443ea20955ebafb78f61",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6068b7b20b204ec1ac0cbda8b17989dc",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that the patient has pain in the anatomical distribution of the pudendal nerve.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient is having pelvic pain, which is an anatomic region of innervation by the pudendal nerve.  Pain from pudendal neuralgia can also present in the buttock.  The description of electric shock pain in particular sounds neuropathic in nature.  The patient meets one of the Nantes criteria of pain in the anatomical distribution of the pudendal nerve.\n\nCards_Patient 13 Script 3: \"My pelvic pain feels worse than usual. I\u2019ve had it on-and-off for years, but I can\u2019t seem to shake it this time. It\u2019s a deep ache I\u2019ve been having. And I have an electric shock sensation in my left buttock sometimes too.\"\n\n\"The pudendal nerve arises from the ventral rami of the S2, S3, and S4 roots of the sacral plexus. This nerve carries sensory, motor, and autonomic fibers. Injury to the pudendal nerve primarily produces sensory deficits.[3] The nerve initially courses between the piriformis and coccygeus muscles, exiting the pelvic cavity through the greater sciatic foramen, ventral to the sacrotuberous ligament. This neural structure then passes medial to and beneath the sacrospinous ligament at the level of the ischial spine before reentering the pelvic cavity through the greater sciatic foramen.\"\nhttps://www.ncbi.nlm.nih.gov/books/NBK544272/\n\n\"Pudendal neuralgia is nerve pain in the genitals, bottom, anus or pelvis.\"\nhttps://www.nhs.uk/conditions/pudendal-neuralgia/\n\nDiagnostic criteria for pudendal neuralgia by pudendal nerve entrapment (Nantes criteria): \"The five essentials diagnostic criteria are: (1) Pain in the anatomical territory of the pudendal nerve. (2) Worsened by sitting. (3) The patient is not woken at night by the pain. (4) No objective sensory loss on clinical examination. (5) Positive anesthetic pudendal nerve block.\"\nhttps://pubmed.ncbi.nlm.nih.gov/17828787/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Script 3.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_062ca7fde66445aa9748c9486de46755"
+          }
+        ]
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5473d302b6984dc481a80294fc3a3ab3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6068b7b20b204ec1ac0cbda8b17989dc",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that the patient has worsened pain with sitting.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient is having pain that is worsened by sitting. This is one of the Nantes criteria.\n\nCards_Patient 13 Script 3: \"Sorry, I need to stand.\"  \"I can\u2019t do Peloton anymore because it hurts too bad.\"\n\nDiagnostic criteria for pudendal neuralgia by pudendal nerve entrapment (Nantes criteria): \"The five essentials diagnostic criteria are: (1) Pain in the anatomical territory of the pudendal nerve. (2) Worsened by sitting. (3) The patient is not woken at night by the pain. (4) No objective sensory loss on clinical examination. (5) Positive anesthetic pudendal nerve block.\"\nhttps://pubmed.ncbi.nlm.nih.gov/17828787/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Script 3.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_062ca7fde66445aa9748c9486de46755"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_611747ce86d0446ca81c23f8c9490df8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6068b7b20b204ec1ac0cbda8b17989dc",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that the patient is not woken at night by the pain.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is one of the Nantes criteria.\n\nCards_Patient 13 Script 3: \"Yeah, and it\u2019s really affecting my sleep. Once I can fall asleep, I\u2019m good. Getting to sleep is the issue.\"\n\nDiagnostic criteria for pudendal neuralgia by pudendal nerve entrapment (Nantes criteria): \"The five essentials diagnostic criteria are: (1) Pain in the anatomical territory of the pudendal nerve. (2) Worsened by sitting. (3) The patient is not woken at night by the pain. (4) No objective sensory loss on clinical examination. (5) Positive anesthetic pudendal nerve block.\"\nhttps://pubmed.ncbi.nlm.nih.gov/17828787/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Script 3.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_062ca7fde66445aa9748c9486de46755"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f3acf8ac4fe54509894161aad8517246",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6068b7b20b204ec1ac0cbda8b17989dc",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that the patient has no objective sensory loss on clinical examination.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is one of the Nantes criteria.\n\nPrompt: \"Assume a normal neurologic exam.\"  It can therefore be reasoned, there is no sensory loss.\n\nDiagnostic criteria for pudendal neuralgia by pudendal nerve entrapment (Nantes criteria): \"The five essentials diagnostic criteria are: (1) Pain in the anatomical territory of the pudendal nerve. (2) Worsened by sitting. (3) The patient is not woken at night by the pain. (4) No objective sensory loss on clinical examination. (5) Positive anesthetic pudendal nerve block.\"\nhttps://pubmed.ncbi.nlm.nih.gov/17828787/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ea900fc2a5224c7eb0d3f8f40785142b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6068b7b20b204ec1ac0cbda8b17989dc",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient meets 4 of the 5 Nantes criteria for diagnosis of pudendal neuralgia.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient currently meets 4 of the 5 Nantes criteria, a widely used diagnostic framework for pudendal neuralgia.\n\nI. Pain in the anatomical territory of the pudendal nerve (pelvic pain)\nII. Pain worsened by sitting (\"Sorry, I need to stand.\", \"I can\u2019t do Peloton anymore because it hurts too bad.\")\nIII. The patient is not woken at night by the pain. (\"Yeah, and it\u2019s really affecting my sleep. Once I can fall asleep, I\u2019m good. Getting to sleep is the issue\")\nIV. No objective sensory loss on clinical examination (\"Assume a normal neurologic exam.\")\n\n\"Diagnosis of pudendal neuralgia (PN) is primarily clinical, with the Nantes criteria serving as the gold standard...\"\nhttps://link.springer.com/article/10.1007/s40122-025-00803-w\n\n\"The diagnosis of pudendal neuralgia by pudendal nerve entrapment syndrome is essentially clinical. There are no pathognomonic criteria, but various clinical features can be suggestive of the diagnosis...The five essentials diagnostic criteria are: (1) Pain in the anatomical territory of the pudendal nerve. (2) Worsened by sitting. (3) The patient is not woken at night by the pain. (4) No objective sensory loss on clinical examination. (5) Positive anesthetic pudendal nerve block.\"\nhttps://pubmed.ncbi.nlm.nih.gov/17828787/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Script 3.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_062ca7fde66445aa9748c9486de46755"
+          }
+        ]
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e8c451d48308400fa87ea68503c6cac6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6068b7b20b204ec1ac0cbda8b17989dc",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the patient has a history of sacrospinous ligament fixation.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This historical procedure is important to note as pudendal neuralgia is a possible complication.\n\n\"Review of records significant for: Has a history of LAVH, BSO, with anterior and posterior repair, sacrospinous fixation...\"\n\nCLINICALNOTES - Progress Notes - Column D - Row 193",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_21d6a716760d403983e320abacad671a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6068b7b20b204ec1ac0cbda8b17989dc",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Explains that a pudendal neuralgia is a complication of sacrospinous ligament fixation.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Repetitive activities, including prolonged sitting and cycling, are the primary contributors. However, compression may also arise congenitally or develop from scarring following pelvic surgical procedures.\"\nhttps://www.ncbi.nlm.nih.gov/books/NBK544272/\n\n\"Sacrospinous ligament fixation (SSLF), first described by Sederl in 1958, is a frequently used surgical technique to correct uterine and vaginal vault prolapse via extraperitoneal suspension of the cervix or vaginal apex to the sacrospinous ligament (SSL). Although it has a high success rate, entrapment of the pudendal nerve is a complication that may occur... Typically, this injury is self-limiting and completely resolves within 6\u2009weeks\u20136\u2009months postoperatively. However, in the case of severe and/or persistent pain, this may indicate entrapment or trauma of a nerve from the sacral nerve plexus (in most cases the pudendal nerve) by the sutures that fix the cervix or vault to the SSL.\"\nhttps://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17145\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ab16a0acf8054ab79bbf45cbaa0bb7cb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6068b7b20b204ec1ac0cbda8b17989dc",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes at least one of the patient symptoms consistent with pudendal neuralgia: urinary incontinence, fecal incontinence, dyspareunia.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient is noted to have developed a number of symptoms following surgery, including urinary incontinence, fecal incontinence, and dyspareunia.  While the etiology of these symptoms is likely multifactorial in the setting of major pelvic reconstructive surgery, it is important to note that pudendal nerve entrapment could be a contributing factor.\n\n\"Urinary Symptoms: Leaks urine with with a full bladder Leaks 3 time(s) per day,\"\n\"Patient Admits to accidental bowel leakage / fecal incontinence \"\n\"Pain with sex: at the vaginal opening\"\nCLINICALNOTES - Progress Notes - Column D - Row 193\n\n\"The classic symptom of pudendal nerve entrapment is perineal pain, exacerbated by sitting and relieved by standing or sitting on a toilet. The condition produces pain, numbness, and dysfunction within the pudendal nerve distribution, including the genitalia, perineum, rectum, and lower urinary tract. Urinary manifestations include urgency and frequency in both sexes, with painful ejaculation occurring in male patients. Sexual dysfunction may present as persistent arousal dysfunction, dyspareunia, vulvodynia, or male erectile disorders. Sphincteric dysfunction can manifest as constipation, dysuria, fecal incontinence, and urinary hesitancy.\"\nhttps://www.ncbi.nlm.nih.gov/books/NBK544272/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_62278c9811eb48888f50234e9b7a1e19",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6068b7b20b204ec1ac0cbda8b17989dc",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that the patient\u2019s MRI findings are consistent with degenerative disc disease.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the MRI report: \n\"Vertebral Bodies:\nNormal lumbar lordosis is maintained. Vertebral body heights are preserved without evidence of acute\nfracture or compression deformity. Mild multilevel degenerative endplate changes are present, most\npronounced at L4\u2013L5 and L5\u2013S1.\nIntervertebral Discs:\nThere is multilevel disc desiccation, most notable at L4\u2013L5 and L5\u2013S1, with mild loss of disc height at\nL5\u2013S1. No focal disc extrusion.\" These MRI findings are consistent with degenerative disc disease. \n\n\"Males were more commonly affected in Degenerative Spinal Disease & most of the patients show loss of lumbar lordosis. Decreased disc height was common at L5-S1 level. More than one disc involvement was seen per person. L4 \u2013 L5 disc was the most commonly involved. Annular disc tear, disc herniation, disc extrusion, narrowing of spinal canal, narrowing of lateral recess, compression of neural foramen, ligamentum flavum thickening and facetal arthropathy was common at the L4 \u2013L5 disc level. Disc buldge was common at L3 \u2013 L4 & L4 \u2013 L5 disc level. Posterior osteophytes are common at L3 - L4 & L5 \u2013S1 disc level. L1- L2 disc involvement and spondylolisthesis are less common.\"\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC4437133/\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 MRI.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_062ca7fde66445aa9748c9486de46755"
+          }
+        ]
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_827912f6a8364306b559c4d7e3770816",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6068b7b20b204ec1ac0cbda8b17989dc",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that the patient\u2019s MRI findings make compressive spinal pathology less likely as a cause of the patient's symptoms.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Cards_Patient 13 MRI.pdf: \"There is multilevel disc desiccation, most notable at L4\u2013L5 and L5\u2013S1, with mild loss of disc height at L5\u2013S1. No focal disc extrusion.\"   \"The conus medullaris terminates at the L1 level and appears normal. The cauda equina nerve roots are unremarkable without compression.\"\n\nThese findings suggest degenerative disc disease.  There is no evidence to suggest a compressive spinal cord pathology.\n\n\"Males were more commonly affected in Degenerative Spinal Disease & most of the patients show loss of lumbar lordosis. Decreased disc height was common at L5-S1 level. More than one disc involvement was seen per person. L4 \u2013 L5 disc was the most commonly involved. Annular disc tear, disc herniation, disc extrusion, narrowing of spinal canal, narrowing of lateral recess, compression of neural foramen, ligamentum flavum thickening and facetal arthropathy was common at the L4 \u2013L5 disc level. Disc buldge was common at L3 \u2013 L4 & L4 \u2013 L5 disc level. Posterior osteophytes are common at L3 - L4 & L5 \u2013S1 disc level. L1- L2 disc involvement and spondylolisthesis are less common.\"\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC4437133/\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 MRI.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_062ca7fde66445aa9748c9486de46755"
+          }
+        ]
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_292f83eeae8f49c693d5043591f884e5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6068b7b20b204ec1ac0cbda8b17989dc",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that the patient\u2019s normal pelvic CT scan makes malignancy less likely as a cause of the patient's symptoms.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has a noted history of breast cancer.  Metastatic lesions are essential to consider as a potential cause of worsening, unexplained pain.  However, a normal CT scan of the pelvis makes malignancy a less likely etiology of her symptoms.\n\n\"Diagnosis Date   Anxiety    Back pain    Breast cancer (HCC) 05/04/2011   right breast   Cardiac dysrhythmia, unspecified    Ventricular ectopy by Holter monitor 2005   Chest pain, unspecified    Atypical with negative nuclear stress imaging study in 2005   Constipation    Dysrhythmia    tachycardia   Family history of adverse reaction to anesthesia    nausea   Family history of breast cancer    GERD (gastroesophageal reflux disease)    Mass    on left side of torso   Mitral valve prolapse     no significant mitral regurgitation   Personal history of chemotherapy    2011   Personal history of radiation therapy    2011 right breast   Trouble swallowing\"\n\nCLINICALNOTES - Progress Notes - Column D - Row 193\n\nCards_Patient 13 Script 3: \"I had a CT scan of my pelvis done by my gynecologist, but they told me nothing was abnormal on it.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Script 3.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_062ca7fde66445aa9748c9486de46755"
+          }
+        ]
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3cebe8ea774c4c5eae02a60be4db2f2d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6068b7b20b204ec1ac0cbda8b17989dc",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the underlying diagnosis is likely pudendal neuralgia.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient meets 4 of the 5 Nantes criteria for pudendal neuralgia, has a risk factor of prior pelvic surgery predisposing her to pudendal neuralgia, has symptoms consistent with pudendal neuralgia and has imaging making other pertinent diagnoses less likely.\n\nThe patient currently meets 4 of the 5 Nantes criteria, a widely used diagnostic framework for pudendal neuralgia.\n\nI. Pain in the anatomical territory of the pudendal nerve (pelvic pain)\nII. Pain worsened by sitting (\"Sorry, I need to stand.\", \"I can\u2019t do Peloton anymore because it hurts too bad.\")\nIII. The patient is not woken at night by the pain. (\"Yeah, and it\u2019s really affecting my sleep. Once I can fall asleep, I\u2019m good. Getting to sleep is the issue\")\nIV. No objective sensory loss on clinical examination (\"Assume a normal neurologic exam.\")\n\nThe patient has a history of sacrospinous fixation, a procedure that can cause pudendal neuralgia. Pudendal neuralgia can present with urinary incontinence, fecal incontinence, or dyspareunia, all of which the patient developed following surgery. The MRI is consistent with degenerative disc disease and makes compressive spinal pathology an unlikely cause of these acute-on-chronic symptoms. The patient's history of breast cancer makes metastatic malignancy an important consideration, but the normal CT pelvis makes this less likely. \n\nhttps://link.springer.com/article/10.1007/s40122-025-00803-w\nhttps://pubmed.ncbi.nlm.nih.gov/17828787/\nhttps://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17145\nhttps://www.ncbi.nlm.nih.gov/books/NBK544272/\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC4437133/\nCLINICALNOTES - Progress Notes - Column D - Row 193",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 MRI.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_062ca7fde66445aa9748c9486de46755"
+          },
+          {
+            "name": "Cards_Patient 13 Script 3.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_062ca7fde66445aa9748c9486de46755"
+          }
+        ]
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a0e5016bc5af4294b67088d1e38da4f3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6068b7b20b204ec1ac0cbda8b17989dc",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Concludes that the best next step is an image-guided pudendal nerve block.\n",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Successful therapeutic effect of a pudendal nerve block is the 5th Nantes criteria, providing both diagnostic utility and effective therapeutic effect in cases of true pudendal neuralgia.  Imaging-guidance increases the chance of success.\n\n\"The diagnosis of pudendal neuralgia by pudendal nerve entrapment syndrome is essentially clinical. There are no pathognomonic criteria, but various clinical features can be suggestive of the diagnosis...The five essentials diagnostic criteria are: (1) Pain in the anatomical territory of the pudendal nerve. (2) Worsened by sitting. (3) The patient is not woken at night by the pain. (4) No objective sensory loss on clinical examination. (5) Positive anesthetic pudendal nerve block.\"\nhttps://pubmed.ncbi.nlm.nih.gov/17828787/\n\n\"The Nantes criteria assist diagnostic accuracy, and the pudendal nerve block response provides additional confirmation.\"\n\n\"Image guidance using fluoroscopy, ultrasound, or computed tomography (CT) significantly increases the reliability of pudendal nerve blocks.  Pudendal nerve block injections with local anesthetic, particularly when administered directly into the Alcock canal under image guidance, are recommended to confirm the diagnosis and identify patients most likely to benefit from decompressive surgery.\"\nhttps://www.ncbi.nlm.nih.gov/books/NBK544272/\n\n\"Pudendal nerve blocks are both diagnostic and therapeutic, with response rates up to 94%.\"\nhttps://link.springer.com/article/10.1007/s40122-025-00803-w",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ac46984a6770480f8c1cbcc8b6bdb2b8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6068b7b20b204ec1ac0cbda8b17989dc",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that an image-guided pudendal nerve block is both diagnostic and therapeutic.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The dual purpose of the pudendal nerve block is important to note in the ideal response.\n\n\"Pudendal nerve blocks are both diagnostic and therapeutic, with response rates up to 94%.\"\nhttps://link.springer.com/article/10.1007/s40122-025-00803-w\n\n\"The diagnosis of pudendal neuralgia by pudendal nerve entrapment syndrome is essentially clinical. There are no pathognomonic criteria, but various clinical features can be suggestive of the diagnosis...The five essentials diagnostic criteria are: (1) Pain in the anatomical territory of the pudendal nerve. (2) Worsened by sitting. (3) The patient is not woken at night by the pain. (4) No objective sensory loss on clinical examination. (5) Positive anesthetic pudendal nerve block.\"\nhttps://pubmed.ncbi.nlm.nih.gov/17828787/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ea79a52582e64a95aaf2adb05a706305",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6068b7b20b204ec1ac0cbda8b17989dc",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the CPT code for the image-guided pudendal nerve block is 64430 (acceptable range 638 to 650).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Per CMS.gov: \"64430\tINJECTION(S), ANESTHETIC AGENT(S) AND/OR STEROID; PUDENDAL NERVE\"\nhttps://www.cms.gov/medicare-coverage-database/view/article.aspx?articleid=57452",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_548448ed9ce64dd2a8bad714b5fa2d53",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6068b7b20b204ec1ac0cbda8b17989dc",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the ICD-10 code for the pudendal neuralgia is G58.8.",
+        "autogen_source": null,
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Per CMS.gov: \"G58.8\tOther specified mononeuropathies\"\nhttps://www.cms.gov/medicare-coverage-database/view/article.aspx?articleid=57452",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

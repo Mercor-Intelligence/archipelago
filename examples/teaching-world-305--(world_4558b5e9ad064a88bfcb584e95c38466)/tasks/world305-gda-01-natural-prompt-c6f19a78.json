@@ -1,0 +1,473 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Create a Unit 2 Overview document for the 'To Kill a Mockingbird' course. The unit begins the day after the 'Unit 1, Chapter 1-14 Assessment' and ends on the last day of the 1st Trimester, as listed in the 2025-26 Calendar_Dallastown.pdf. Half days still count as full instructional days. The second-to-last day of the unit is reserved for the 'Unit 2 Review Chapters 15-31', and the final day is for the 'Final Unit 2 TKAM Assessment'. The overview should include the unit title, course name, start date, end date, total instructional days, total number of lessons, a unit summary, and the unit's essential questions. Compose the unit summary based on the themes, standards, and essential questions in the curriculum guide and the writing style used in the Unit 1 summary the curriculum guide does not contain a pre-written summary. Pull the essential questions from the curriculum guide."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Includes \"To Kill a Mockingbird Part 2\" in the unit title field (ver_62609c3c7068446fa4ac9a45fa1c2a40)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes \"To Kill a Mockingbird Part 2\" in the unit title field."
+        }
+      ]
+    },
+    {
+      "name": "Includes text other than \"To Kill a Mockingbird Part 2\" in the unit title field. (ver_62609c3c7068446fa4ac9a45fa1c2a40)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes text other than \"To Kill a Mockingbird Part 2\" in the unit title field."
+        }
+      ]
+    },
+    {
+      "name": "Includes \"ELA (8th grade)\" in the course field (ver_6003a1ea72be4771be6936270d2fa614)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes \"ELA (8th grade)\" in the course field."
+        }
+      ]
+    },
+    {
+      "name": "Includes text other than \"ELA (8th grade)\" in the course field. (ver_6003a1ea72be4771be6936270d2fa614)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes text other than \"ELA (8th grade)\" in the course field."
+        }
+      ]
+    },
+    {
+      "name": "Includes \"10/27/2025\" in the unit start date field (ver_08ab8c2381b14643a491dcd4ce7442d9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes \"10/27/2025\" in the unit start date field."
+        }
+      ]
+    },
+    {
+      "name": "Includes a date other than \"10/27/2025\" in the unit start date field. (ver_08ab8c2381b14643a491dcd4ce7442d9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a date other than \"10/27/2025\" in the unit start date field."
+        }
+      ]
+    },
+    {
+      "name": "Includes \"11/14/2025\" in the unit end date field (ver_4ded90625e154315bdca23ecff208b66)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes \"11/14/2025\" in the unit end date field."
+        }
+      ]
+    },
+    {
+      "name": "Includes a date other than \"11/14/2025\" in the unit end date field. (ver_4ded90625e154315bdca23ecff208b66)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a date other than \"11/14/2025\" in the unit end date field."
+        }
+      ]
+    },
+    {
+      "name": "Calculates total instructional days as 14 (acceptable range 13.9 to 14.1) (ver_78e553dd01ee430fb42d718099b555e9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates total instructional days as 14 (acceptable range 13.9 to 14.1)."
+        }
+      ]
+    },
+    {
+      "name": "Calculates total instructional days as a number of other than 14. (ver_78e553dd01ee430fb42d718099b555e9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates total instructional days as a number of other than 14."
+        }
+      ]
+    },
+    {
+      "name": "Includes 13 content in the total number of lessons field (ver_5d5c1811b1464c02a22a8ffaf977ae2d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes 13 content in the total number of lessons field."
+        }
+      ]
+    },
+    {
+      "name": "Includes a number other than 13 for content in the total number of lessons... (ver_5d5c1811b1464c02a22a8ffaf977ae2d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a number other than 13 for content in the total number of lessons field."
+        }
+      ]
+    },
+    {
+      "name": "Includes 1 review in the total number of lessons field (ver_dc0505fd1ec1418ab2b2d556ef393191)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes 1 review in the total number of lessons field."
+        }
+      ]
+    },
+    {
+      "name": "Includes a number other than 1 for review in the total number of lessons field. (ver_dc0505fd1ec1418ab2b2d556ef393191)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a number other than 1 for review in the total number of lessons field."
+        }
+      ]
+    },
+    {
+      "name": "Includes 1 exam in the total number of lessons field (ver_83612e85a5814707af681d6bde430296)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes 1 exam in the total number of lessons field."
+        }
+      ]
+    },
+    {
+      "name": "Includes a number other than 1 for exam in the total number of lessons field. (ver_83612e85a5814707af681d6bde430296)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a number other than 1 for exam in the total number of lessons field."
+        }
+      ]
+    },
+    {
+      "name": "Includes the summary of unit 2 from The To Kill A Mockingbird Curriculum Guide... (ver_14e97cab48eb407185762ba4735af4a9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes the summary of unit 2 from The To Kill A Mockingbird Curriculum Guide in the summary of unit field."
+        }
+      ]
+    },
+    {
+      "name": "Includes the summary of a unit other than unit 2 from The To Kill A... (ver_14e97cab48eb407185762ba4735af4a9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes the summary of a unit other than unit 2 from The To Kill A Mockingbird Curriculum Guide in the summary of unit field."
+        }
+      ]
+    },
+    {
+      "name": "Includes To Kill A Mockingbird essential questions from the curriculum guide... (ver_f07010ff42c34f7a9412f0e21f7eb93e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes To Kill A Mockingbird essential questions from the curriculum guide in the essential questions field."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world305-gda-01-natural-prompt-c6f19a78"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_c6f19a78fc9c4190a728cc4966f723c2",
+    "task_name": "World305_GDA_01 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_977d8daf5f99474d8e8cb45c496901be",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_f3d7c701553e4525b84e1cef4765a835"
+      },
+      {
+        "golden_response_id": "gold_38bc2c8e102c4bdc9fd7f679796c1b2b",
+        "golden_text_response": ".",
+        "golden_file_responses": "snap_f3d7c701553e4525b84e1cef4765a835"
+      }
+    ]
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_2a646b22f7764c6c96bfb9b371aa8a56",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d72da9d6b90b4da19f3b71ec3b85a930",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "One of the axes of the 2D scatter plot is the duration of each network outage.",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "The prompt requested that one of the axes of the 2D scatter plot be the duration of each network outage in hours.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fbf5dc85b89b461291a7272a65272031",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d72da9d6b90b4da19f3b71ec3b85a930",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "One of the axes of the 2D scatter plot is the number of subscribers affected by each network outage.",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "The prompt requested that one of the axes of the 2D scatter plot be the number of customers affected by each network outage.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3cbb4980da61477aa318848e7ac021cd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d72da9d6b90b4da19f3b71ec3b85a930",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "The 2D scatter plot includes exactly 10 colors.",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "The prompt requested that points representing each unique combination of outage cause and severity on the 2D scatter plot are assigned a different color.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a389687089da43d790d88eb96b0c724f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d72da9d6b90b4da19f3b71ec3b85a930",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The number of network outages caused by equipment failure where the severity is medium is labelled on the 2D scatter plot\u2019s legend as 15.",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "The prompt requested that the number of network outages caused by equipment failure where the severity is medium be labelled on the 2D scatter plot\u2019s legend.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_be56eb81bbb74860a7b3d4761afd831a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d72da9d6b90b4da19f3b71ec3b85a930",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The number of network outages caused by maintenance where the severity is medium is labelled on the 2D scatter plot\u2019s legend as 21.",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "The prompt requested that the number of network outages caused by maintenance where the severity is medium be labelled on the 2D scatter plot\u2019s legend.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c7f83bc39060485f8f09983cf4d45917",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d72da9d6b90b4da19f3b71ec3b85a930",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The number of network outages caused by power outages where the severity is medium is labelled on the 2D scatter plot\u2019s legend as 26.",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "The prompt requested that the number of network outages caused by power outages where the severity is medium be labelled on the 2D scatter plot\u2019s legend.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2315d3828eb045368dff50bcb31a482a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d72da9d6b90b4da19f3b71ec3b85a930",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The number of network outages with other causes where the severity is medium is labelled on the 2D scatter plot\u2019s legend as 29.",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "The prompt requested that the number of network outages with other causes where the severity is medium be labelled on the 2D scatter plot\u2019s legend.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ff3e310e4eb44160befcf6099cbcadfd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d72da9d6b90b4da19f3b71ec3b85a930",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The number of network outages caused by the weather where the severity is medium is labelled on the 2D scatter plot\u2019s legend as 22.",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "The prompt requested that the number of network outages caused by the weather where the severity is medium be labelled on the 2D scatter plot\u2019s legend.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_15e11a961c8a43dfa4437908c0f77fa3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d72da9d6b90b4da19f3b71ec3b85a930",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The number of network outages caused by equipment failure where the severity is high is labelled on the 2D scatter plot\u2019s legend as 21.",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "The prompt requested that the number of network outages caused by equipment failure where the severity is high be labelled on the 2D scatter plot\u2019s legend.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_86cb1d58c71349b5af42057ab2013565",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d72da9d6b90b4da19f3b71ec3b85a930",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The number of network outages caused by maintenance where the severity is high is labelled on the 2D scatter plot\u2019s legend as 33.",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "The prompt requested that the number of network outages caused by maintenance where the severity is high be labelled on the 2D scatter plot\u2019s legend.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_63e7b1c38ed84bf586df2bdd9a54459f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d72da9d6b90b4da19f3b71ec3b85a930",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The number of network outages caused by power outages where the severity is high is labelled on the 2D scatter plot\u2019s legend as 26.",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "The prompt requested that the number of network outages caused by power outages where the severity is high be labelled on the 2D scatter plot\u2019s legend.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_215be7d3652c4c8086020f3ec773df45",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d72da9d6b90b4da19f3b71ec3b85a930",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The number of network outages with other causes where the severity is high is labelled on the 2D scatter plot\u2019s legend as 22.",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "The prompt requested that the number of network outages with other causes where the severity is high be labelled on the 2D scatter plot\u2019s legend.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8ee38c0a152546fc9fd6906484e10dd3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d72da9d6b90b4da19f3b71ec3b85a930",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The number of network outages caused by the weather where the severity is high is labelled on the 2D scatter plot\u2019s legend as 14.",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "The prompt requested that the number of network outages caused by the weather where the severity is high be labelled on the 2D scatter plot\u2019s legend.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

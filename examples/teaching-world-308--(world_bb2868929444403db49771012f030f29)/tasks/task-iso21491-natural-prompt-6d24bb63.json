@@ -1,0 +1,238 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Can you list the vocab words from the NS- ESL article that I should teach. Also give first 3 steps of the PWIM strategy verbatim for each vocab word.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Provides step 1 for each word as \"Show pupils a picture of the word.\" (ver_312c23e4bb6a4417883386a8f2fd0f78)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides step 1 for each word as \"Show pupils a picture of the word.\"."
+        }
+      ]
+    },
+    {
+      "name": "Provides step 2 for each word as \"Shake out: ask students what objects or... (ver_c344496fa7184c1c9661e1a5d0c37ec0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides step 2 for each word as \"Shake out: ask students what objects or actions they see in the image.\"."
+        }
+      ]
+    },
+    {
+      "name": "Provides step 3 for each word as \"For each object or action they name, draw a... (ver_a3861a84001348b3a19443baafb6efb4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides step 3 for each word as \"For each object or action they name, draw a line from the image to the word; read the word out loud and spell the word.\"."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \"Prohibition\" as one of the vocabulary words (ver_09d59ef204a6427ebb6f69e030d69e25)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \"Prohibition\" as one of the vocabulary words."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \"Law\" as one of the vocabulary words (ver_915071559eef4a3cbae662d8ccf91fdd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \"Law\" as one of the vocabulary words."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \"Alcohol\" as the one of the vocabulary words (ver_b6afa7cd42ea473da52a90845e3d8ef1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \"Alcohol\" as the one of the vocabulary words."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \"Government\" as one of the vocabulary words (ver_8ff5d2b04de14c90992197abf5021a8c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \"Government\" as one of the vocabulary words."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \"Movement\" as one of the vocabulary words (ver_40d2c19283d3438f974e958e7ab9ac31)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \"Movement\" as one of the vocabulary words."
+        }
+      ]
+    },
+    {
+      "name": "Identifies \"Amendment\" as one of the vocabulary words (ver_db54ce234cba42d3b538d9d29836a033)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies \"Amendment\" as one of the vocabulary words."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-iso21491-natural-prompt-6d24bb63"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_bb2868929444403db49771012f030f29",
+    "world_name": "Teaching World 308",
+    "task_id": "task_6d24bb63c15c43b8ac3037128dbe24e5",
+    "task_name": "Task iso21491 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_58d9bfcaa97644acb6a23d60c3d30c73",
+        "golden_text_response": "Prohibition\n- Show students an image\n- Shake out: ask students what objects or actions they see in the image.\n-For each object or action they name, draw a line from the image to the word; read the word out loud and spell the word. \n\nLaw\n- Show students an image \n- Shake out: ask students what objects or actions they see in the image.\n-For each object or action they name, draw a line from the image to the word; read the word out loud and spell the word. \n\nAlcohol\n- Show students an image\n- Shake out: ask students what objects or actions they see in the image.\n-For each object or action they name, draw a line from the image to the word; read the word out loud and spell the word. \n\nGovernment \n- Show students an image\n- Shake out: ask students what objects or actions they see in the image.\n-For each object or action they name, draw a line from the image to the word; read the word out loud and spell the word. \n\nMovement\n- Show students an image\n- Shake out: ask students what objects or actions they see in the image.\n-For each object or action they name, draw a line from the image to the word; read the word out loud and spell the word. \n\nAmendment\n- Show students an image \n- Shake out: ask students what objects or actions they see in the image.\n-For each object or action they name, draw a line from the image to the word; read the word out loud and spell the word. ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

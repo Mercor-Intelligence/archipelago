@@ -1,0 +1,215 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "A mid-sized global streaming platform wants to analyze payment failure patterns for specific user groups using `failed_payments.csv` and `subscribers.csv`. Please clean the `failed_payments` dataset by converting spelled-out number words to digits in the `amount` column, ensuring the payment method is standardized to \"credit card\" for all values except \"card\", and confirming the currency is in US dollars. Keep only digits for the `failure_code`. Join the two datasets, keeping only matching rows.\n\nFind the active users from the United States who use a credit card to pay in USD, prefer English for transactions, have a verified email, and have at least three failed payment retries total in 2024. Provide the percentages of only female and male users from this filtered population, and list the top three users with largest total amounts spent on those attempts.\n\nProvide your analysis in a Python script along with the results, keeping all numeric outputs to two decimal points."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports the percentage of female users from the filtered population as 54.05%... (ver_133d22bfde3941fe9052d315d05548d6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the percentage of female users from the filtered population as 54.05% +/- 0.1%."
+        }
+      ]
+    },
+    {
+      "name": "Reports the percentage of male users from the filtered population as 45.95%... (ver_e584f6725fe54e3e9027b9222f6a4a71)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the percentage of male users from the filtered population as 45.95% +/- 0.1%."
+        }
+      ]
+    },
+    {
+      "name": "Reports the user with the largest total amount spent as 1414. (ver_1f1a0d7dede741149f5a6d7f0122df75)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the user with the largest total amount spent as 1414."
+        }
+      ]
+    },
+    {
+      "name": "Reports that user 1414 spent $72.94 +/- 0.05 (ver_cc196240ec704e96aba9ebed866fa725)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that user 1414 spent $72.94 +/- 0.05."
+        }
+      ]
+    },
+    {
+      "name": "Reports the user with the second largest total amount spent as 4817. (ver_9dcb3e4c9e554502a67db1fe9247600d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the user with the second largest total amount spent as 4817."
+        }
+      ]
+    },
+    {
+      "name": "Reports that user 4817 spent $67.95 +/- 0.05. (ver_054d334dadc34c2d8a2d422bfacfabd7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that user 4817 spent $67.95 +/- 0.05."
+        }
+      ]
+    },
+    {
+      "name": "Reports the user with the third largest total amount spent as 3861. (ver_08b1e0fc71754bb78aa833e7392ebce9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the user with the third largest total amount spent as 3861."
+        }
+      ]
+    },
+    {
+      "name": "Reports that user 3861 spent $62.95 +/- 0.05. (ver_b485479f68cd4dc89c76d45367b4d170)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that user 3861 spent $62.95 +/- 0.05."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh code-exec-task-c6c19394-b7130a67"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_54587ee0cf7d4941ba747027c4d5aa31",
+    "world_name": "Data Science World 507",
+    "task_id": "task_b7130a6702144691a0204ae7172051b0",
+    "task_name": "Code Exec - Task c6c19394",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_cff5b50ff465404288d9f1c438ca7cc8",
+        "golden_text_response": "Gender distribution:\nFemale: 54.05%\nMale: 45.95%\n\nTOP 3 users with largest total amount spent:\nUser 1414 (M): $72.94\nUser 4817 (M): $67.95\nUser 3861 (F): $62.95\n\n```\nimport pandas as pd\nimport numpy as np\nimport re\n\nfailed_payments = pd.read_csv('failed_payments.csv')\nsubscribers = pd.read_csv('subscribers.csv')\n\ndf = failed_payments.copy()\n\ndf['attempt_date'] = pd.to_datetime(df['attempt_date'], errors='coerce')\n\n# Convert spelled-out number words to digits\ndef word_to_num(word):\n    word_dict = {\n        'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4,\n        'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9,\n        'ten': 10, 'eleven': 11, 'twelve': 12, 'thirteen': 13,\n        'fourteen': 14, 'fifteen': 15, 'sixteen': 16, 'seventeen': 17,\n        'eighteen': 18, 'nineteen': 19, 'twenty': 20, 'thirty': 30,\n        'forty': 40, 'fifty': 50, 'sixty': 60, 'seventy': 70,\n        'eighty': 80, 'ninety': 90\n    }\n    return word_dict.get(word.lower(), None)\n\n \ndef clean_amount(value):\n    if pd.isna(value):\n        return np.nan\n\n    value_str = str(value).strip().lower()\n\n    if value_str.startswith('$'):\n        try:\n            return float(value_str.replace('$', '').replace(',', ''))\n        except:\n            pass\n\n    try:\n        return float(value_str)\n    except:\n        pass\n\n    #spelled-out amounts like \"fifteen ninety nine\"\n    words = value_str.split()\n\n    # E.g. \"fifteen ninety nine\" to 15.99\n    if len(words) >= 2:\n        dollar_word = words[0]\n        dollar_value = word_to_num(dollar_word)\n\n        if dollar_value is not None:\n            cent_value = 0\n\n            cent_text = ' '.join(words[1:]).lower()\n\n            if 'ninety nine' in cent_text:\n                cent_value = 99\n            elif 'ninety' in cent_text and 'nine' in cent_text:\n                cent_value = 99\n            elif 'ninety' in cent_text:\n                cent_value = 90\n                for word in words[2:]:\n                    if word in ['one', 'two', 'three', 'four', 'five',\n                                'six', 'seven', 'eight', 'nine']:\n                        cent_value += word_to_num(word)\n\n            return float(f\"{dollar_value}.{cent_value:02d}\")\n \n    return np.nan\n\n\ndf['amount'] = df['amount'].apply(clean_amount)\n\n \ndf['currency'] = df['currency'].astype(str).str.upper().str.strip()\n\n# Standardize\ncurrency_mapping = {\n    'Us Dollar': 'USD',\n    'usd': 'USD',\n    'USD': 'USD',\n    'US ': 'USD'\n}\n\n\ndef standardize_currency(curr):\n    curr_upper = str(curr).upper()\n    for key, value in currency_mapping.items():\n        if key in curr_upper:\n            return value\n    return curr_upper[:3]\n\ndf['currency'] = df['currency'].apply(standardize_currency)\n\ndf['payment_method'] = df['payment_method'].astype(str).str.lower().str.strip()\n\npayment_mapping = {\n    'Credit Card': 'credit card',\n    'CC': 'credit card',\n    'cc': 'credit card',\n    'credit_card': 'credit card'\n}\n\ndef standardize_payment(method):\n    method_clean = method.lower().strip()\n    \n    if method_clean in payment_mapping:\n        return payment_mapping[method_clean]\n\n    for key, value in payment_mapping.items():\n        if key in method_clean:\n            return value\n    \n   \n    return method_clean\n\ndf['payment_method'] = df['payment_method'].apply(standardize_payment)\n\n# failure_code - extract only digits\ndef extract_digits_from_code(code):\n    if pd.isna(code):\n        return np.nan\n\n    code_str = str(code).strip()\n    digits = re.findall(r'\\d+', code_str)\n\n    if digits:\n        return digits[0]\n    return np.nan\n\ndf['failure_code'] = df['failure_code'].apply(extract_digits_from_code)\n\n\ncombined_df = subscribers.merge(df, on='user_id', how='inner')\n\nfiltered = combined_df[\n    (combined_df['preferred_language'] == 'en') &\n    (combined_df['payment_method'] == 'credit card') &\n    (combined_df['country'] == 'US') &\n    (combined_df['currency'] == 'USD') &\n    (combined_df['account_status'] == 'active') &\n    (combined_df['is_email_verified'] == 1) &\n    (combined_df['gender'].isin(['F', 'M']))\n]\n\n# Filter for 2024 attempts only\nattempts_2024 = filtered[filtered['attempt_date'].dt.year == 2024]\n\n# Calculate total retry_count per user for 2024\nuser_retries = attempts_2024.groupby('user_id')['retry_count'].sum().reset_index()\n\n# Get users with >= 3 retries\nqualified_user_ids = user_retries[user_retries['retry_count'] >= 3]['user_id']\n\nfinal_data = attempts_2024[attempts_2024['user_id'].isin(qualified_user_ids)] \n \n\n# outputs\nif not final_data.empty:\n    unique_users = final_data.drop_duplicates('user_id')\n    gender_dist = unique_users['gender'].value_counts(normalize=True) * 100\n    \n    print(\"Gender distribution:\")\n    print(f\"Female: {gender_dist.get('F', 0):.2f}%\")\n    print(f\"Male: {gender_dist.get('M', 0):.2f}%\")\n    \n    user_totals = final_data.groupby('user_id')['amount'].sum()\n    top_3 = user_totals.nlargest(3)\n    \n    print(\"\\nTOP 3 users with largest total amount spent:\")\n    for user_id, total in top_3.items():\n        gender = unique_users[unique_users['user_id'] == user_id]['gender'].iloc[0]\n        print(f\"User {user_id}: ${total:.2f}\")\nelse:\n    print(\"No users match all criteria\")\n\n```\n",
+        "golden_file_responses": "snap_721758eb8c7c43b7995876fa15aff5cb"
+      }
+    ]
+  }
+}

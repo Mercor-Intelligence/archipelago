@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "I want to identify whether customers on smaller plans are consistently approaching their monthly plan limits, indicating upsell opportunity. Using the data_usage_daily table, calculate the percentage of active usage user-months where the total data_consumed_mb exceeded 80% of the plan allowance for users on plans with <=10GB data limit. Note that the monthly usage cycle starts on the billing_cycle_day each month. Perform the calculation for all months where the billing cycle started in 2024. To account for boundary months due to offsets between activation_date/contract_end_date and billing_cycle_day, exclude any billing month that starts in the same calendar month as the activation_date or contract_end_date. Join data_usage_daily to subscribers, then to subscriber_plans, then to subscription_plans to get plan details. Only include usage records that fall within the activation_date to contract_end_date range (inclusive). Report the total number of user-months in the sample, the number of user-months where the total data_consumed_mb exceeded 80% of their plan's allowance, and the percent which this figure represents to 2 decimals. Use a 1024MB/GB conversion. Return the SQLite code used for the analysis as well as the final calculated results."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports the number of user-months in the sample to be 639 +/- 1. (ver_a36c4aa1f899454d8ce3d527e5750501)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the number of user-months in the sample to be 639 +/- 1."
+        }
+      ]
+    },
+    {
+      "name": "Reports the number of user-months where the total data consumed exceeded 80%... (ver_d4109c4e4bff447588a538431b7ad2c3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the number of user-months where the total data consumed exceeded 80% of the plan's allowance to be 230 +/- 1."
+        }
+      ]
+    },
+    {
+      "name": "Reports that the percent of user-months where the user consumed over 80% of... (ver_e0896148d3ea451dad55fe2c1f26303f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that the percent of user-months where the user consumed over 80% of their data allowance to be 35.99% +/- 0.05%."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sql-task-ptnne5f5-a912a4ae"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_a912a4ae8a994de8b414dda7ce16f13e",
+    "task_name": "SQL - Task ptnne5f5",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d2e73e75230c4f679f9f623e05443d4f",
+        "golden_text_response": "number_of_user_months  number_of_exceeded_user_months  percent_exceeded_user_months\n                   639                           230.0                         35.99\n\n```sql\nWITH daily AS (\n  SELECT\n    d.subscriber_id,\n    d.usage_date,\n    d.data_consumed_mb,\n    sp.activation_date,\n    sp.contract_end_date,\n    sp.billing_cycle_day,\n    p.data_allowance_gb,\n  \n    CASE -- figure out billing cycle start date\n      WHEN CAST(strftime('%d', d.usage_date) AS INTEGER) >= sp.billing_cycle_day\n        THEN DATE(d.usage_date, 'start of month', '+' || (sp.billing_cycle_day - 1) || ' days')\n      ELSE DATE(d.usage_date, 'start of month', '-1 month', '+' || (sp.billing_cycle_day - 1) || ' days')\n    END AS current_billing_month,\n  \n    -- calc months for filtering later on\n    DATE(sp.activation_date, 'start of month') AS activation_month,\n    DATE(sp.contract_end_date, 'start of month') AS contract_end_month\n  \n  FROM data_usage_daily d\n  JOIN subscribers s ON s.subscriber_id = d.subscriber_id\n  JOIN subscriber_plans sp ON sp.subscriber_id = d.subscriber_id\n  JOIN subscription_plans p ON p.plan_id = sp.plan_id\n  ),\nfiltered AS (\n  SELECT\n    subscriber_id,\n    current_billing_month,\n    data_consumed_mb,\n    data_allowance_gb\n  FROM daily\n  WHERE\n    current_billing_month BETWEEN '2024-01-01' AND '2024-12-31'\n    AND usage_date >= activation_date -- edge case filter\n    AND (usage_date <= contract_end_date OR contract_end_date IS NULL) -- edge case filter\n    AND strftime('%Y-%m', current_billing_month) > strftime('%Y-%m', activation_date) -- exclude boundary months\n    AND (contract_end_date IS NULL OR strftime('%Y-%m', current_billing_month) < strftime('%Y-%m', contract_end_date)) -- exclude boundary months\n    AND data_allowance_gb != 'unlimited'\n    AND CAST(data_allowance_gb AS REAL) <= 10\n  ),\n--Now we can groupby user-month on filtered table\ngrouped AS (\n  SELECT\n    subscriber_id,\n    current_billing_month,\n    CASE\n      -- data_allowance_gb is guaranteed to be same value - max is fine as agg func here\n      WHEN SUM(data_consumed_mb)/1024.0/CAST(MAX(data_allowance_gb) AS REAL) > 0.8 THEN 1.0\n      ELSE 0.0\n    END AS exceeded\n  FROM filtered\n  GROUP BY subscriber_id, current_billing_month\n  )\nSELECT\n  COUNT(*) AS number_of_user_months,\n  SUM(exceeded) AS number_of_exceeded_user_months,\n  ROUND(100*SUM(exceeded)/COUNT(*), 2) AS percent_exceeded_user_months\n  FROM grouped;\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

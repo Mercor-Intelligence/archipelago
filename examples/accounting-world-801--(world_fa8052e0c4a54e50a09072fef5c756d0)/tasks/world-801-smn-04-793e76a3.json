@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Referencing the PurchaseOrders document on Xero, output the total amount that is expected to be added to the total fixed assets in 2025 for those authorised purchases with delivery dates in 2025. \n\nAssuming that a full year of depreciation would be charged on any additions during the year in 2025, output the incremental depreciation on the additional assets added given that the rate of depreciation is 5%. \n\nUsing the Fixed Assets (Net) in 2023 in the model, output the Fixed Assets (Net) in 2025 assuming no other additions & disposals in 2024 and 2025. For simplicity assume $4 million depreciation in 2024 and 2025. Note this $4 million depreciation in 2025 does not include the incremental depreciation. \n\nPresent monetary values in $ terms. Round all values to two decimals."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the total amount that is expected to be added to the total fixed... (ver_6b0443347d05430281f57fd0cd69aa84)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total amount that is expected to be added to the total fixed assets in 2025 for those authorised purchases with delivery dates in 2025 is $228,671.55 (acceptable range $226,384.83 to $230,958.27)."
+        }
+      ]
+    },
+    {
+      "name": "States that the incremental depreciation on the 2025 additional assets is... (ver_50b3e0f492db42aea778b1e370b48c09)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the incremental depreciation on the 2025 additional assets is $11,433.58 (acceptable range $11,319.24 to $11,547.92)."
+        }
+      ]
+    },
+    {
+      "name": "3. States that the Fixed Assets (Net) in 2025 is $56,888,666.54 (acceptable... (ver_60ae4702a8a54bbc98d6037a04d0dd59)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "3. States that the Fixed Assets (Net) in 2025 is $56,888,666.54 (acceptable range $56,319,779.87 to $57,457,553.21)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-801-smn-04-793e76a3"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_793e76a356af4da18b684e6990dd38dc",
+    "task_name": "World 801_SMN_04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_98fb1ed4427a4743b7de73bbc9e80593",
+        "golden_text_response": "1. States that the total amount that is expected to be added to the total fixed assets in 2025 for those authorised purchases with delivery dates in 2025 is $228,671.55.\n2. States that the incremental depreciation on the 2025 additional assets is $11,433.58. \n3. States that the Fixed Assets (Net) in 2025 is $56,888,666.54. ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

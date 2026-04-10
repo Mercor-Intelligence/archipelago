@@ -1,0 +1,232 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_c878efa2870f4a32ad1d128b0cd4810b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_aa360902e5ef46f696bde9220385dbbc",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that 2.8% of the total budget is dedicated to professional development at West Elm (acceptable range 2.77% to 2.83%).",
+        "modality": "Free text",
+        "negative_criteria": "Inputs a number other than 2.8% in place of [West Elm PD] in the speech.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_30cbbb97c5f54faca61a8b514edf91cc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_aa360902e5ef46f696bde9220385dbbc",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that 2.3% of the total budget is dedicated to professional development at Lake Park (acceptable range 2.28% to 2.32%).",
+        "modality": "Free text",
+        "negative_criteria": "Inputs a number other than 2.3% in place of [Lake Park PD] in the speech.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fd1701a3805643358767bde326d512bd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_aa360902e5ef46f696bde9220385dbbc",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that Lake Park spends 18% more on administrative costs than West Elm (acceptable range 17.8% to 18.2%).",
+        "modality": "Free text",
+        "negative_criteria": "Sets Administrative Costs to 18% in the speech.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_32d02c89bc3f4a63a43b5f88fb5f5ca3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_aa360902e5ef46f696bde9220385dbbc",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that Lake Park spends 10% more on facilities than West Elm (acceptable range 9.9% to 10%).",
+        "modality": "Free text",
+        "negative_criteria": "Inputs a number other than 10% in place of [Facilities Costs] in the speech.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_538c3b1e0bd44615822bf56f8bc88c74",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_aa360902e5ef46f696bde9220385dbbc",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that West Elm spends $180,000 less on administration and facilities combined than Lake Park.",
+        "modality": "Free text",
+        "negative_criteria": "Inputs a number other than $180,000 in place of [Facilities & Administration Spending] in the speech.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8af66ad3161940ada4841eab279e8b86",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_aa360902e5ef46f696bde9220385dbbc",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the break-even enrollment at West Elm is 564 (acceptable range 558 to 570).",
+        "modality": "Free text",
+        "negative_criteria": "Inputs a number other than 564 in place of [West Elm Enrollment] in the speech.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_727c162e564249808bb496ed830ed66a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_aa360902e5ef46f696bde9220385dbbc",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the break-even enrollment at Lake Park is 554 (acceptable range 548 to 560).",
+        "modality": "Free text",
+        "negative_criteria": "Inputs a number other than 554 in place of [Lake Park Enrollment] in the speech.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_114c19eb9aa54822af016600e44340fa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_aa360902e5ef46f696bde9220385dbbc",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that last year's 7th graders (of Mrs. A's class) achieved an average score of 1284 (acceptable range 127 to 129).",
+        "modality": "Free text",
+        "negative_criteria": "Inputs a number other than 1284 in place of [EOY Average] in the speech.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8c3173d9ab45450a84909ae8c060bf4e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_aa360902e5ef46f696bde9220385dbbc",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the current 8th graders (of Mrs. A's class) hold a class average of 86.5%after Trimester 1 (acceptable range 85.6% to 87.4%).",
+        "modality": "Free text",
+        "negative_criteria": "Inputs a number other than 86.5% in place of [Class Average] in the speech.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_517ea2d649af4c2386d267caa2a5153a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_aa360902e5ef46f696bde9220385dbbc",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that the student speaker is Grace King.",
+        "modality": "Free text",
+        "negative_criteria": "Inputs something other than Grace King in place of [Student Name] in the speech.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

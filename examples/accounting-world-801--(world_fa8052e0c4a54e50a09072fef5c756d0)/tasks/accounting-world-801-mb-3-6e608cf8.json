@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "One R&D project has been erroneously fully expensed vs. partially capitalized among the R&D projects of Redwood Components Inc in 2021 - 2023 (data in IT development business case, monetary figures in HUF millions). \n\nAssume:\n- Convert HUF to USD using the PLN FX rate sheets for each year, using the average USDHUF cross rate. If no FX rate is available for a particular day use the most recent past day's rate\n- Amortization of capitalized costs should span over 5 years for tax purposes. \n- Count 50% of the capitalized costs while calculating amortization for the year they occurred. \n\nPlease use the Deliverable 1_Audited Redwood Components Tax Exposure.xlsx for information about Redwood Components. Please use PLN FX excel files (e.g. PLN FX 2023.xlsx) for FX rates\n\nOutput the updated taxable income for 2023 in USD given the above (use taxable income with all adjustments including permanent differences in the tax exposure analysis)? State the answer in $ and rounded to 2 decimal places. Do not round intermediate calculations."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that Redwood Components' the taxable income in 2023 given the change is... (ver_1bca3c4fa66c459db0db4732ff9441eb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Redwood Components' the taxable income in 2023 given the change is $28,146,708.15 (acceptable range $28,146,708.14 to $28,146,708.16)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh accounting-world-801-mb-3-6e608cf8"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_6e608cf8f5d24edc911c7d84e2e71d8b",
+    "task_name": "Accounting World 801 - MB_3",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_90d4c36f247341caa3d66536dd059f67",
+        "golden_text_response": "Redwood Components' the taxable income in 2023 given the change is $28,146,708.15 \n\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

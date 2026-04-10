@@ -1,0 +1,299 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_fb3c68e50d0c481b914b8ffae5870aa5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_61cbfefc9f0d42788ff4acfa661cf13e",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has a dirty wound.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Patient: I was taking down Christmas decorations and I cut my finger on a nail in the roof. \"   Cards Patient 14 Scribe.pdf\nIt is considered as a dirty wound.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4caff86df4e141579719f180f8f6c308",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_61cbfefc9f0d42788ff4acfa661cf13e",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's last vaccination was more than 5 years ago. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Doctor: When was your last tetanus shot?\nPatient: Doc, besides my childhood shots, I think the last shot I had was in my 40s when my daughter was born. It was some kind of shot for a cough that they told me I needed.\nDoctor: Ok, we\u2019ll get you caught up. \nPatient: Just go ahead and give me any vaccines that I truly need while I\u2019m here. My wife has been telling me I need to get caught up on my shots. Except for covid and hepatitis, though. I\u2019ve heard some stuff on the news about them and I don\u2019t want anything to do with those. \"   Cards Patient 14 Scribe.pdf",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c54b7c2fa5a14891938b1cde815c49eb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_61cbfefc9f0d42788ff4acfa661cf13e",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the Tdap vaccine should be administered to the patient at this time. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Doctor: When was your last tetanus shot?\nPatient: Doc, besides my childhood shots, I think the last shot I had was in my 40s when my daughter was born. It was some kind of shot for a cough that they told me I needed.\"   Cards Patient 14 Scribe.\n\n\"A tetanus toxoid\u2013containing vaccine is indicated for wound management when >5 years have passed since the last tetanus toxoid\u2013containing vaccine dose.\" https://www.cdc.gov/mmwr/volumes/69/wr/mm6903a5.htm\n\nThe exact date of the patient's last tetanus shot is unknown. The patient states that he received his childhood vaccines. Since we do not have the specific date of the last tetanus shot and the patient presents with a minor wound, tetanus immunization is indicated and should be administered at this time.\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fc0ba368bf2e458784511f00945cc781",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_61cbfefc9f0d42788ff4acfa661cf13e",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has a severe acute illness.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Bilateral multilobar infiltrates concerning for multilobar pneumonia.\"   Cards Patient 14 CXR.pdf\n\n\" His temperature is 35.9 \u00b0C.\"  Prompt\n\n\"Leukocyte count (WBC): * 3500 /mm3      reference range 4500 - 11000 /mm3\"   Cards Patient 14 Labs.pdf\n\n\"The guidelines also recommend ICU care for patients with at least three of the following minor IDSA/ATS severity criteria:\n\u25cfAltered mental status\n\u25cfHypotension requiring fluid support\n\u25cfTemperature <36\u00b0C (96.8\u00b0F)\n\u25cfRespiratory rate \u226530 breaths/minute\n\u25cfPaO2/FiO2 ratio \u2264250\n\u25cfBlood urea nitrogen \u226520 mg/dL (blood urea 7 mmol/L)\n\u25cfLeukocyte count <4000 cells/microL\n\u25cfPlatelet count <100,000/mL\n\u25cfMultilobar infiltrates\"\nhttps://www.uptodate.com/contents/community-acquired-pneumonia-in-adults-assessing-severity-and-determining-the-appropriate-site-of-care\n\nThe patient has three of the minor criteria (multilobar pneumonia, temperature <36\u00b0C and leukocyte count <4000 cells/microL).  ICU care is recommended for patient's who meet the criteria. ICU care is for patient who have a severe acute illness.\n\n\"An intensive care unit (ICU) is a special area in a hospital or healthcare facility for people who have a life-threatening illness or injury. Being in the ICU is serious. People in an ICU require specialized healthcare providers to constantly monitor their health and provide treatment.\"   https://my.clevelandclinic.org/health/articles/icu-intensive-care-unit",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_af149b1bddb8499c984299ede48a2c12",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_61cbfefc9f0d42788ff4acfa661cf13e",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that routine vaccinations should be deferred until the acute illness has improved. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\u201cVaccination should be deferred for persons with a moderate or severe acute illness. This precaution avoids causing diagnostic confusion between manifestations of the underlying illness and possible adverse effects of vaccination or superimposing adverse effects of the vaccine on the underlying illness. After they are screened for contraindications, persons with moderate or severe acute illness should be vaccinated as soon as the acute illness has improved.\u201d   https://www.cdc.gov/vaccines/hcp/imz-best-practices/contraindications-precautions.html",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dd6737c00d614f26a438c60f58367f78",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_61cbfefc9f0d42788ff4acfa661cf13e",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that an influenza vaccine is indicated in this patient.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Age 19 years or older: 1 dose any influenza vaccine appropriate for age and health status annually.\"  https://www.cdc.gov/vaccines/hcp/imz-schedules/adult-notes.html#note-flu\n\n\"A 55 year old man presents to the emergency room.\"  Prompt\n\nThe patient is 55 years old. He has not had a vaccine in the past 5 years. An influenza vaccine is indicated. ",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dd9b9a1f21734012a95b4103a983a817",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_61cbfefc9f0d42788ff4acfa661cf13e",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the influenza vaccine should be deferred until the patient\u2019s severe acute illness has improved.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Table 3: Influenza Vaccine Contraindications and Precautions\nPrecautions:\nModerate or severe acute illness with or without fever\n\n\"When a precaution is present, vaccination should generally be deferred...\"\nhttps://www.cdc.gov/flu/hcp/acip/index.html",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_331a40921ecb4aa28d195911f4ca54cb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_61cbfefc9f0d42788ff4acfa661cf13e",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient is at increased risk for severe RSV.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"The following conditions increase the risk of severe RSV:*\u202f\n-Chronic cardiovascular disease (e.g., heart failure, coronary artery disease, or congenital heart disease [excluding isolated hypertension])\n-Chronic lung or respiratory disease (e.g., chronic obstructive pulmonary disease, emphysema, asthma, interstitial lung disease, or cystic fibrosis)\n-End-stage renal disease or dependence on hemodialysis or other renal replacement therapy\n-Diabetes mellitus complicated by chronic kidney disease, neuropathy, retinopathy, or other end-organ damage, or requiring treatment with insulin or sodium-glucose cotransporter-2 (SGLT2) inhibitor\"   https://www.cdc.gov/rsv/hcp/vaccine-clinical-guidance/adults.html\n\n\"Past Medical History:  Diagnosis Date   Allergy    Arthritis    Atrial fibrillation (HCC)    Coronary artery disease    Diabetes mellitus without complication (HCC)    Headache    Hyperlipidemia    Hypertension    Spinal headache  pt states it felt like a migraine (cluster) headache that was pulsating when he woke up from anesthesia\"   Clinical Notes - Progress Notes - Column D - Row 165\n\nThe patient has coronary artery disease and diabetes. Both of these conditions put him at increased for severe RSV.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6a722d24fc6243c68c33660d34425908",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_61cbfefc9f0d42788ff4acfa661cf13e",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the RSV vaccine is indicated in this patient.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"CDC recommends a single dose of any FDA-licensed RSV vaccine for all adults ages 75 and older and adults ages 50\u201374 at increased risk of severe RSV.\" https://www.cdc.gov/rsv/hcp/vaccine-clinical-guidance/adults.html\n\n\"The following conditions increase the risk of severe RSV:*\u202f\n-Chronic cardiovascular disease (e.g., heart failure, coronary artery disease, or congenital heart disease [excluding isolated hypertension])\n-Chronic lung or respiratory disease (e.g., chronic obstructive pulmonary disease, emphysema, asthma, interstitial lung disease, or cystic fibrosis)\n-End-stage renal disease or dependence on hemodialysis or other renal replacement therapy\n-Diabetes mellitus complicated by chronic kidney disease, neuropathy, retinopathy, or other end-organ damage, or requiring treatment with insulin or sodium-glucose cotransporter-2 (SGLT2) inhibitor\"\nhttps://www.cdc.gov/rsv/hcp/vaccine-clinical-guidance/adults.html\n\n\"A 55 year old man presents to the emergency room.\"  Prompt\n \nThe patient is 55 years old and has chronic cardiovascular disease (CAD) and diabetes which both increase the risk of severe RSV. The RSV vaccine is indicated in this patient.\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b6a768b3ceff4fd2b83326d0b7811d9f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_61cbfefc9f0d42788ff4acfa661cf13e",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the RSV vaccine should be deferred until the patient\u2019s severe acute illness has improved.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Respiratory syncytial virus vaccine (RSV)\t\nContraindications or Not Recommended: Severe allergic reaction (e.g., anaphylaxis) to a vaccine component\nPrecautions: Moderate or severe acute illness with or without fever\"\n\nhttps://www.cdc.gov/vaccines/hcp/imz-schedules/adult-appendix.html#appendix-rsv",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cb1695cbdd0d45c9bfed2c8cb421fb3e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_61cbfefc9f0d42788ff4acfa661cf13e",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the zoster vaccine is indicated in this patient.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Age 50 years or older*: 2\u2013dose series recombinant zoster vaccine (RZV, Shingrix) 2\u20136 months apart (minimum interval: 4 weeks; repeat dose if administered too soon), regardless of previous herpes zoster or history of zoster vaccine live (ZVL, Zostavax) vaccination.\"   https://www.cdc.gov/vaccines/hcp/imz-schedules/adult-notes.html#note-zoster\n\n\"A 55 year old man presents to the emergency room.\"  Prompt\n\nThe patient is 55 years old. He has not received a vaccination in more than 5 years.  The zoster vaccine is indicated in all patient age 50 or older. Hence, the zoster vaccine is indicated in this patient.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8aaf009c4096451fb8c3e12a11997a40",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_61cbfefc9f0d42788ff4acfa661cf13e",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the zoster vaccine should be deferred until the patient\u2019s severe acute illness has improved.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Zoster recombinant vaccine (RZV)\t\nContraindicated or Not Recommended: Severe allergic reaction (e.g., anaphylaxis) after a previous dose or to a vaccine component\nPrecautions: Moderate or severe acute illness with or without fever, Current episode of herpes zoster\"  https://www.cdc.gov/vaccines/hcp/imz-schedules/adult-appendix.html#appendix-zoster",
+        "is_primary_objective": true
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ad2baccdb5364467ba1b90bf185530f7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_61cbfefc9f0d42788ff4acfa661cf13e",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the pneumococcal vaccine is indicated in this patient.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Age 50 years or older who have:\nNot previously received a dose of PCV13, PCV15, PCV20, or PCV21 or whose previous vaccination history is unknown: 1 dose PCV15 or 1 dose PCV20 or 1 dose PCV21.\"   https://www.cdc.gov/vaccines/hcp/imz-schedules/adult-notes.html#note-pneumo\n\n\"A 55 year old man presents to the emergency room.\"  Prompt\n\nThe patient's last pneumococcal vaccine is unknown. The patient is 55 years old. A pneumococcal vaccine is indicated in this patient.\n\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_76d08e16d9724c2ba22461f56b9a954c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_61cbfefc9f0d42788ff4acfa661cf13e",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the pneumococcal vaccine should be deferred until the patient\u2019s severe acute illness has improved.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Pneumococcal polysaccharide (PPSV23)\t\nContraindications or Not Recommended: Severe allergic reaction (e.g., anaphylaxis) after a previous dose or to a vaccine component\nPrecautions: Moderate or severe acute illness with or without fever\"  https://www.cdc.gov/vaccines/hcp/imz-schedules/adult-appendix.html#appendix-PCV",
+        "is_primary_objective": true
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

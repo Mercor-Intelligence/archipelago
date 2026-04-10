@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Calculate in the model S&P Global cost of debt using the company’s to Q3 2025 financial statements and the TTM interest expenses as of September 2025 instead of the summary of debt outstanding.\n\nUpdate the Diluted Shares O/S as of Q3 2025 as well, and use the share price from December 31, 2025.\n\nAssume the market risk premium is 4.33% and risk-free rate is 4.19%.\n\nApply a midyear adjustment and increase the EBITDA multiple by 26%.\n\nWhat is the Implied Equity Value per share and the Premium / (Discount) to current share price using the Exit EBITDA multiple method? \n\nOutput your results rounded to 2 decimal places, in $ and in percentage, respectively."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the Implied Equity Value per Share is $513.10 (acceptable range... (ver_7a4c7f23661d484d99573c2ec01ec82b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Implied Equity Value per Share is $513.10 (acceptable range $507.97 to $518.23)."
+        }
+      ]
+    },
+    {
+      "name": "States the premium / (discount) to current share price is -1.82% (acceptable... (ver_7ba0ca210fab4c6eadf8a17c73b483ba)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the premium / (discount) to current share price is -1.82% (acceptable range -1.84% to -1.80%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world249-tr-02-d498d138"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_d498d138f7f64972a12c682964de719f",
+    "task_name": "World249_TR_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c21ae78dcedf4985b01353006d71d6a5",
+        "golden_text_response": "The Implied Equity value per share is $513.10\n\nThe Premium / (Discount) to current share price is -1.82%",
+        "golden_file_responses": "snap_f8b835f5be30469eb59635f845e7c620"
+      }
+    ]
+  }
+}

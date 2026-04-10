@@ -1,0 +1,261 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Create a 55 min lesson plan for Mrs. Jackson an 11th grade history teacher with 15 visual learning and 7 auditory learners. Day 1 and Day 2 - Pro-slavery & anti-slavery documents written by white authors. Day 3 -Anti-slavery documents written by Black authors. Day 4 - Legal Documents & Advertisements Day 5 -Letters from former slaves to their enslavers. Each module must include at least a five-minute introduction. Modules must include a 10-minute student break. Modules must state all of the lesson objectives determined by Mrs. Jackson. All auditory learners must give a 5-minute presentation in at least one of the modules.  Module activities must ensure that the students actively engage with the content. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Assigns specific readings by title (as listed in LB Reader - Slaver Primary... (ver_7be96c77783f4a29b7f76e2f00674fa4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns specific readings by title (as listed in LB Reader - Slaver Primary Sources.pdf) for each day of the module. Category-level references (e.g., \"anti-slavery documents by Black authors\") without naming specific document titles do not satisfy this criterion."
+        }
+      ]
+    },
+    {
+      "name": "Lesson plan includes a 5 minute introduction (ver_60d68de9da0b497fa415749787677ff3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lesson plan includes a 5 minute introduction."
+        }
+      ]
+    },
+    {
+      "name": "Identifies that each of the auditory learners must give a 5 minute... (ver_0852152eb7ff4e18803c40cc4e16ceaf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies that each of the auditory learners must give a 5 minute presentation in at least one of the modules."
+        }
+      ]
+    },
+    {
+      "name": "Identifies a Demonstration activity (one where something is demonstrated to... (ver_501afcb50f604a81b47fd06eaa5b518b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies a Demonstration activity (one where something is demonstrated to students), in line with sc Merrill's Principles Of Instruction_ The Definitive Guide.pdf."
+        }
+      ]
+    },
+    {
+      "name": "Identifies an Application activity (in the form of interactive problem-solving... (ver_ef06a14c5c7346958ee5506a66d4dc93)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies an Application activity (in the form of interactive problem-solving and task performance), in line with sc Merrill's Principles Of Instruction_ The Definitive Guide.pdf."
+        }
+      ]
+    },
+    {
+      "name": "Identifies an Activation activity in which students are explicitly prompted to... (ver_080aad1812524e3a9986098e3650823e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies an Activation activity in which students are explicitly prompted to recall, describe, or apply their own relevant prior knowledge or experience as a foundation for new content, in line with Merrill's Principles of Instruction."
+        }
+      ]
+    },
+    {
+      "name": "Identifies an Integration activity (integrate their newfound skills or... (ver_8c2e6e367b1844218d25706875c29b0f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies an Integration activity (integrate their newfound skills or knowledge into their daily lives), in line with sc Merrill's Principles Of Instruction_ The Definitive Guide.pdf."
+        }
+      ]
+    },
+    {
+      "name": "Identifies an Engagement activity (use everything they've learned to solve the... (ver_0273fca4aab344abade4d312c787885b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies an Engagement activity (use everything they've learned to solve the problem and connect it to real-world applications), in line with sc Merrill's Principles Of Instruction_ The Definitive Guide.pdf."
+        }
+      ]
+    },
+    {
+      "name": "Lesson plan includes a 10 minute student break (ver_157b070cd076420b8ea8bbeb02f23aed)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lesson plan includes a 10 minute student break."
+        }
+      ]
+    },
+    {
+      "name": "Lesson plan is 55 minutes long in total (ver_26e95986e69b4684a31d1e83700464b9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lesson plan is 55 minutes long in total."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-7cm06d03-natural-prompt-e1ecadf7"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_bb2868929444403db49771012f030f29",
+    "world_name": "Teaching World 308",
+    "task_id": "task_e1ecadf71c3045d68a9101b9d9cb6836",
+    "task_name": "Task 7cm06d03 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f6c80bb3cfc04a90b3a27cfce97222c2",
+        "golden_text_response": "SAMPLE MODULE PLAN \nCOURSE \n11th Grade History, Arizona Virtual Gifted Academy\n\nTEACHER\nMrs. Jackson\n\nTITLE \nRaising Voices of Resilience, A Review of Anti-Slavery Documents Written by Black Authors \n\nMODULE OVERVIEW\nIn this lesson student will examine anti-slave documents and narratives written by Black authors.  Through the analysis of the readings students will understand how individuals have reshaped social, economic and political equality in United States.\n \nLESSON OBJECTIVES\nAfter completing this lesson students will be able to:\n1.  Actively engage in task-centered or problem-solving activities that foster their critical thinking and problem-solving skills. \n2.  Connect new information to their existing knowledge by presenting real-world examples based on the reader.\n3.  Actively apply what they have learned from the document.\n4.  Connect what they learned to real-world contexts.\n5.  Apply what they learned in meaningful ways in their daily life. \n\nREADING ASSIGNMENTS\nLB Reader - Slavery Primary Sources, Section 2: \"Anti-slavery documents written by Black authors\"\n\nMODULE SCHEDULE\nINTRODUCTION (5 minutes)\nMrs. Jackson will begin by briefly recapping the lesson from Monday and Tuesday referencing the Pro-slavery & anti-slavery documents written by white authors.  Mrs. Jackson will briefly outline the day's activities, emphasizing the online tools for collaboration and content creation.  Mrs. Jackson will explain that they will have a two graded assignments as apart of their class participation for today. Mrs. Jackson will lead with, \"Why was it imperative for slave narratives to capture their daily life and arguments against slavery? What was their connection between slavery and self-identity?\" \n\nACTIVITY-DEMONSTRATON (5 Minutes)\nDESCRIPTION AND LESSON OBJECTIVES\nStudents will be able to articulate the impact of slavery from primary and secondary source documents through synchronous group discussions and presentations.  This activity represents Merrill's Principle of demonstration and supports visual learners and auditory learners through online class discussion and content imagery. Students will be able to articulate the impact of slavery from primary and secondary source documents through synchronous group discussions and presentations.\nACTIVITY TIMELINE\n    1. Teacher will ask students to consider the statement by David Walker, \"Are we MEN! ! -- I ask you, 0 my brethren I are we MEN? Did our    \n        Creator make us to be slaves to dust and ashes like ourselves?.\"\n    2. Teacher will lead the group discussion by asking question the question: What do you believe David Walker was trying to convey by using the \n        imagery in his statement? Slave narratives, have sometimes been criticized as not very representative of life under slavery. Why  might this \n         be the case?\n    3. Students will actively participate in answering the questions. \n    4. Teacher will encourage students to respond to each other. \n\nACTIVITY-APPLICATION (10 Minutes)\nDESCRIPTION AND LESSON OBJECTIVES\nStudents will explain the arguments and examine reasons and results used by Black authors in their fight against slavery. This activity represents Merrill's Principle of application and applying what they learned by working together to answer a shared google document. This collaboration caters to visual learners and auditory learners.\nACTIVITY TIMELINE\n    1.  Students will be pre-assigned to one of four collaboration groups.\n    2.  Each group is assigned a different document from Section 2 of the reader that coincides with the shared google document .\n    3.  Students will work together within their assigned groups to complete a set of questions on a shared google document.\n        What is the writer's main reasonings against slavery?\n        How does the writer's personal experience, or lack thereof, impact the writings?\n        What do written narratives and documents teach us about Pro-Slavery and Anti-Slavery advocates?\n   \nACTIVITY-ACTIVIATON (5 Minutes)\nDESCRIPTION AND LESSON OBJECTIVES\nStudents will connect their knowledge of freedom and equality to the application of the primary and secondary sources and share findings by allowing auditory learners to process and present key findings on the readings. This activity represents Merrill's Principle of activation by building on their current knowledge base and allowing visual learners to read the summaries and respond to the discussion board post by the auditory learner. \nACTIVITY TIMELINE\n    1.  One of the seven auditory learners will present for their group. \n    2.  One presenter will deliver a 5-minute summary of their group's findings, explaining the authors reasoning against slavery.\n    3.  During the presentation, other students are encouraged to listen and respond.\n    4.  The presenter will be asked to post their group answer in the class discussion board and all students will be asked to respond to the  \n         post for homework.\n\nSTUDENT BREAK (10 minutes)\nStudents will take a brief break to relax, follow up on assignments, or ask the teacher any questions.\n\nACTIVITY-INTERGRATION (10 Minutes)\nDESCRIPTION AND LESSON OBJECTIVES\nCompare the reasonings of Black authors to those of the white authors studied previously to the students' real-world experiences and foster critical thinking. This activity represents Merrill's Principle of integration by applying their learning in an innovative way. This caters to visual learners and auditory learners. \nACTIVITY TIMELINE\n    1.  Mrs. Jackson will led an online discussion, asking students to reflect on resistance and self-identify.\n    2.  Students are asked to compare the reasonings and results of the writings of Black authors to those of the white authors studied previously. \n         If these authors were alive today, what modern injustice might they write about, and what social media platform would they use to post  \n         their message?\n    \nACTIVITY-APPLICATION (10 Minutes)\nDESCRIPTION AND LESSON OBJECTIVES\nStudents will reflect on the role of voice and identity in shaping historical narratives. This activity represents Merrill's Principle of engagement by applying their learning in an innovative way. This activity supports visual learners and auditory learners. \nACTIVITY TIMELINE\n    1.  Mrs. Jackson will ask the whole-class to post their response from the previous activity on the open forum. The post must include the  \n         identified social media platform and describe an image that would accompany the post.  on the open forum for a graded assignment. \n         discussion, asking students to reflect on the theme of resistance or self-identity.\n    2. Mrs. Jackson will explain the simulation assignment that students are to pretend that they are one of the authors. Use the forum and identify \n       a social media platform. Include the name of the  platform and then write about a modern injustice in no more than 250 words. Afterwards \n       describe an image that would accompany the post in less than 150 words. \n   -------------",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

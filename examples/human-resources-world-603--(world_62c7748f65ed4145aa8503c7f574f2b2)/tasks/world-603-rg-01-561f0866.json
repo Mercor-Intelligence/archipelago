@@ -1,0 +1,215 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The client has realized that hires from the current FY that were recruited through Greenhouse ATS haven't been updated in the Workday platform. Using the Get Application tool in GreenhouseATS, please retrieve all the hires from the current FY.\n\nThen, in the Workday application, create the new cost center named CC0021 and the job_profile_id named JP0050, with the title \"Generalist\", job family \"Administration\", and job level \"L3\". \n\nUsing the new-hire tool, please hire all current FY hires recruited through Greenhouse ATS for CC0021, ORG0005, and job profile ID JP0050. \n\nThen, using the List Job Profiles tool, report the 3 job profile IDs with the highest total FTE and their associated FTE totals.\n\nPlease report the answer directly in console. The financial year would be from 1st April 2025 to 31st March 2026. Both dates are inclusive."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of hires in the current FY, as retrieved from... (ver_5ca894a6a8554e2d8963e3f94a9e44af)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of hires in the current FY, as retrieved from Greenhouse ATS, is 2."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of hires retrieved through Greenhouse ATS and imported... (ver_1fd310e6848543199cdaf99c2c83f881)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of hires retrieved through Greenhouse ATS and imported using CC0021, ORG0005, and job profile ID JP0050 in the Workday application is 2 (acceptable range 1.98 to 2.02)."
+        }
+      ]
+    },
+    {
+      "name": "States that one of the top 3 job profile IDs with the highest number of linked... (ver_92bf92cbc42446ebb41920f58ed36559)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the top 3 job profile IDs with the highest number of linked FTEs is JP0023."
+        }
+      ]
+    },
+    {
+      "name": "States that one of the top 3 job profile IDs with the highest number of linked... (ver_b6c9c4a36e6847958aa25137ade8effc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the top 3 job profile IDs with the highest number of linked FTEs is JP0024."
+        }
+      ]
+    },
+    {
+      "name": "States that one of the top 3 job profile IDs with the highest number of linked... (ver_f2c609c504ca4afcb7f2749ece232e48)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the top 3 job profile IDs with the highest number of linked FTEs is JP0020."
+        }
+      ]
+    },
+    {
+      "name": "States the number of linked FTEs to the job profile JP0023 is 11.2 (acceptable... (ver_8008c134992d4439b597e24537d2b77a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the number of linked FTEs to the job profile JP0023 is 11.2 (acceptable range 11.1 to 11.3)."
+        }
+      ]
+    },
+    {
+      "name": "States the number of linked FTEs to the job profile JP0024 is 6.5 (acceptable... (ver_660fa76afb4b4e61a7613c3e7e17d97f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the number of linked FTEs to the job profile JP0024 is 6.5 (acceptable range 6.4 to 6.6)."
+        }
+      ]
+    },
+    {
+      "name": "States the number of linked FTEs to the job profile JP0020 is 5.2 (acceptable... (ver_9d04e4e0085a4a92b1bd5b4d3b320a08)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the number of linked FTEs to the job profile JP0020 is 5.2 (acceptable range 5.1 to 5.3)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-603-rg-01-561f0866"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_561f08666f7844b480abbfdbc649f876",
+    "task_name": "World 603_RG_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c2c499f44086412991d21475decf4034",
+        "golden_text_response": "Retrieves 2 new hires from the Greenhouse ATS application.\n\nCreates a new cost centre titled CC0021 in the Workday application.\n\nCreates a new job_id named JP0050, with the title \"Generalist\", job family \"Administration\", and job level \"L3\" in the Workday application.\n\nHires all 2 new hires retrieved through Greenhouse ATS in CC0021, ORG0005, and job profile ID JP0050 in the Workday application.\n\nThe 3 job profile IDs with the highest number of linked FTEs and associated FTE numbers are as follows:\nJP0023\t11.2\nJP0024\t6.5\nJP0020\t5.2",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,284 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 14” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nPatient 14 presents to their primary care physician for follow-up.\nThe attached \"Cards_Patient 14.pdf\" contains the conversation between the patient and the physician. The attached file \"Cards_Patient 14 ultrasound.pdf\" contains a recent abdominal ultrasound report. \nWhat is the single most likely diagnosis for the patient's presentation? Explain your reasoning."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient has right upper-quadrant abdominal pain. (ver_1f50b8062c3742d28dfdbadbcfd687b7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has right upper-quadrant abdominal pain."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient experiences nausea after eating. (ver_35913ea32d0942bd934dd592b492bb8f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient experiences nausea after eating."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient’s symptoms are consistent with biliary colic. (ver_4c5625f57a5b42288e743384e9078df6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient’s symptoms are consistent with biliary colic."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient had a prior cholecystectomy. (ver_41f3219d83634498bb6db0b13b04e349)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient had a prior cholecystectomy."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that the patient likely has post-cholecystectomy syndrome (PCS). (ver_ac2b1328b88443a885a73e979820cb44)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that the patient likely has post-cholecystectomy syndrome (PCS)."
+        }
+      ]
+    },
+    {
+      "name": "States that the common bile duct (CBD) measures 10 mm on the patient’s... (ver_775eb6a608d04d119073eb3ac88df966)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the common bile duct (CBD) measures 10 mm on the patient’s ultrasound."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that the 10 mm CBD is within normal range after cholecystectomy. (ver_e5dd6a0be75449c1a8c24b18a85acdab)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that the 10 mm CBD is within normal range after cholecystectomy."
+        }
+      ]
+    },
+    {
+      "name": "States that no CBD stones are visualized on ultrasound. (ver_bbcbf2b3091846c29666374cd3f7ee50)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that no CBD stones are visualized on ultrasound."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient is more likely to have a functional cause of PCS. (ver_b6b48fce2e544f31a3e4637a60c075e5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient is more likely to have a functional cause of PCS."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that sphincter of Oddi dysfunction is a common functional cause of... (ver_b11a69fdc9224ae2b699175cbef0be54)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that sphincter of Oddi dysfunction is a common functional cause of PCS."
+        }
+      ]
+    },
+    {
+      "name": "Concludes sphincter of Oddi dysfunction as the single most likely diagnosis... (ver_627da8deaff84def9a4665d164bf8216)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Concludes sphincter of Oddi dysfunction as the single most likely diagnosis for the patient’s presentation."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-cards-patient-14-post-cholecystectomy-syndrome-ahmad-g-870ab8b2"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_870ab8b227b34f1aaf5a308a126ca1a1",
+    "task_name": "Labs_Image_AI Scribe_Cards Patient 14 - Post-cholecystectomy syndrome - Ahmad G",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_34c85aa1d6c245e2b11afa13a343f598",
+        "golden_text_response": "The patient’s intermittent right upper quadrant (RUQ) abdominal pain with associated nausea and vomiting, especially after eating, is consistent with biliary colic. Review of the medical history confirms that the patient has previously undergone a cholecystectomy, which suggests post-cholecystectomy syndrome (PCS). Ultrasound of the abdomen shows a common bile duct (CBD) measuring 10 mm, which is within the normal range after cholecystectomy. No CBD stones are visualized on imaging. In the absence of structural causes, the presentation is most consistent with a functional cause of PCS. Sphincter of Oddi dysfunction is a common cause of PCS and is consistent with the patient's presentation. Therefore, the single most likely diagnosis is sphincter of Oddi dysfunction.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

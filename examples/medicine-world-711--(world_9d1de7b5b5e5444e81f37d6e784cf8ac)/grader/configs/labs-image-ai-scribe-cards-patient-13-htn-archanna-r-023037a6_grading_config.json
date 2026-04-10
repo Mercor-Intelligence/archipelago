@@ -1,0 +1,315 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_493c7bd21a9f49c7ba2b84af4f30dedc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_023037a694fe4ce7bcad769867675f67",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Mentions the patient's chief complaint is elevated blood pressure. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Prompt: \"She states she has elevated blood pressure and denies any other review of system symptoms.\"\n\nAs per the chief complaint described in the prompt, the patient comes in with elevated blood pressure, and her blood pressure log (attached) shows that for the last couple of days, she has had elevated blood pressure. ",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_78c3196e22284af790bdd3cb876ff833",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_023037a694fe4ce7bcad769867675f67",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Mentions that the patient's blood pressure at the last visit was normal. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "According to ACC/AHA guideline, normal is less than 120/80. \"Blood pressure is classified by the following framework: normal blood pressure is defined as <120 mm Hg systolic and <80 mm Hg diastolic\"\n https://www.ahajournals.org/doi/epub/10.1161/CIR.0000000000001356\n\nClinical Notes-Progress Notes-Column D-Row 193 shows the last blood pressure reading for this patient was normal at \"109/69\".",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d44c71b8e20b40aaac0fd6b5c670a981",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_023037a694fe4ce7bcad769867675f67",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies that the patient does not have a prior diagnosis of hypertension.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Per last cardiology note: \"Past Medical History:  Diagnosis Date  . Anxiety   . Back pain   . Breast cancer (Mount Eagle) 05/04/2011   right breast  . Cardiac dysrhythmia, unspecified    Ventricular ectopy by Holter monitor 2005  . Chest pain, unspecified    Atypical with negative nuclear stress imaging study in 2005  . Constipation   . Dysrhythmia    tachycardia  . Family history of adverse reaction to anesthesia    nausea  . Family history of breast cancer   . GERD (gastroesophageal reflux disease)   . Mass    on left side of torso  . Mitral valve prolapse     no significant mitral regurgitation  . Personal history of chemotherapy    2011  . Personal history of radiation therapy    2011 right breast  . Trouble swallowing \"\n\nClinical notes-Progress Notes-Column D- Row 183",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d2bef6be27254097b8075826404fbfc3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_023037a694fe4ce7bcad769867675f67",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient does not have symptoms associated with uncontrolled hypertension.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Per the prompt and dictation file, the patient denies symptoms related to blood pressure. \n\n\"*symptoms: chest pain, shortness of breath, back pain, numbness, weakness, change in vision or difficulty speaking\"\nhttps://www.heart.org/en/health-topics/high-blood-pressure/know-your-risk-factors-for-high-blood-pressure/what-are-the-symptoms-of-high-blood-pressure\n\nPrompt: \"She states she has elevated blood pressure and denies any other review of system symptoms.\"\n\nDoctor dictation.pdf: \"Physician: Any headaches, visual problems, dizziness, fatigue, nausea, vomiting, diarrhea,\nabdominal pain?\nPatient: No. \"",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_143cad12c6a446c1aafdab8461438b32",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_023037a694fe4ce7bcad769867675f67",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Mentions that the diagnosis of primary hypertension requires accurate blood pressure measurement. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Accurate measurement of BP is essential to diagnose high BP, ascertain BP-related CVD risk, and assess response to therapy. Many errors in BP measurement, which have been examined in 2 systematic reviews, can be avoided by following a standardized protocol that has been a mainstay of clinical trials that include BP measurement\". \nAccording to Figure 3 (Checklist for Accurate Office Blood Pressure Measurement), an accurate office blood pressure measurement first needs to be taken in order to see if this corresponds with at-home readings. https://www.ahajournals.org/doi/epub/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_007e26e7a7d6431081351fb097e4eee4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_023037a694fe4ce7bcad769867675f67",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Mentions it is necessary to verify that blood pressure is being measured correctly. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"A standardized protocol, provided in Figure 3, includes proper patient preparation, standardized measurement technique and approach, documentation of BP, analysis of the readings, and providing the readings to the patient. The use of a BP device validated against a reference standard with an appropriately sized cuff is paramount for accurate BP measurement (see https://www.validatebp.org for a carefully vetted list of validated devices available in the United States). Further, because individual BP measurements may vary in an unpredictable or random manner, a single reading is inadequate for clinical decision-making. Office BP should be based on the average of available readings, and an average of \u22652 BP measurements obtained on \u22652 separate occasions may minimize error and provide a more accurate estimation of office BP.\"\n\nFigure 3, ACC/AHA guidelines for Blood pressure management \nhttps://www.ahajournals.org/doi/epub/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9cde7ea2cec94b7595dce9aa69e9c5d6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_023037a694fe4ce7bcad769867675f67",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Mentions the patient's home blood pressure readings have only been taken in the morning hours.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "It is important to recognize that the patient only takes her blood pressure in the morning hours. Identifying the early morning BP surge pattern could allow providers to refrain from starting medications given hormonal patterns. \n\nPer Patient Images.pdf: \n\"Date  Time (a.m.)\n01/01/2026 8:15 \n01/02/2026 8:20\n01/03/2026 8:30\n01/04/2026 8:00\"\n\n\"Hypertension screening and management, including the use of BP targets, have primarily relied on BP measured in the office setting. Out-of-office measurement of BP using ABPM or HBPM, which is also known as self-measurement of BP at home, can provide valuable information beyond office BP for the confirmation and management of hypertension. Both ABPM and HBPM provide BP estimates that are based on a greater number of BP measurements than are obtained in the office setting, enhancing the accuracy and precision for detecting a patient\u2019s true and usual BP levels. ABPM typically involves wearing a fully automated device, usually over a period of 24 hours, with out-of-office BP readings obtained at relatively frequent intervals during the daytime (ie, 15-30 minutes) and less frequent intervals at nighttime (ie, 30-60 minutes). ABPM can: 1) provide estimates of mean BP over the entire monitoring period, and separately during daytime and nighttime; 2) determine the daytime-to-nighttime BP ratio to identify the extent of nocturnal \u201cdipping\u201d; 3) identify the early-morning BP surge pattern; 4) estimate BP variability; and 5) allow for recognition of hypotension. HBPM involves the patient measuring their BP at home using an oscillometric device over days to weeks, which can provide estimates of mean BP over the entire monitoring period and separately during daytime and evening, and determine daytime-to-evening BP variability or BP variability across days.\"\n\nhttps://www.ahajournals.org/doi/epub/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_84454772efcb4c12a6074606fbd899c1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_023037a694fe4ce7bcad769867675f67",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient's elevated home blood pressure readings could be attributable to physiologic morning blood pressure surge.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Blood pressure (BP) also exhibits a similar diurnal variation, with a decrease during sleep and a surge in the morning.\"\nhttps://www.ahajournals.org/doi/10.1161/hypertensionaha.110.157149\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_57706b0e43e74f9aa8dfdb7352d8a313",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_023037a694fe4ce7bcad769867675f67",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that continuous ambulatory blood pressure monitoring outside the office setting can help confirm a diagnosis of hypertension. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Out-of-office measurement of BP using ambulatory blood pressure monitoring can provide valuable information beyond office BP for the confirmation and management of hypertension\".  This is a class 1 indication to confirm diagnosis. https://www.ahajournals.org/doi/epub/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_653cbe3223ca4b2eae1692bec399a470",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_023037a694fe4ce7bcad769867675f67",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Mentions blood pressure readings should be taken at least twice on at least two separate occasions in office to confirm a diagnosis of hypertension.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"A standardized protocol, provided in Figure 3, includes proper patient preparation, standardized measurement technique and approach, documentation of BP, analysis of the readings, and providing the readings to the patient. The use of a BP device validated against a reference standard with an appropriately sized cuff is paramount for accurate BP measurement (see https://www.validatebp.org for a carefully vetted list of validated devices available in the United States). Further, because individual BP measurements may vary in an unpredictable or random manner, a single reading is inadequate for clinical decision-making. Office BP should be based on the average of available readings, and an average of \u22652 BP measurements obtained on \u22652 separate occasions may minimize error and provide a more accurate estimation of office BP.\"\n\nFigure 3, ACC/AHA guidelines for Blood pressure management \nhttps://www.ahajournals.org/doi/epub/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_59911ce4acd34ee082aded149d1b96ff",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_023037a694fe4ce7bcad769867675f67",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the next best step is to withhold treatment for hypertension pending confirmation of the diagnosis.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Out-of-office measurement of BP using ambulatory blood pressure monitoring can provide valuable information beyond office BP for the confirmation and management of hypertension\".  This is a class 1 indication to confirm diagnosis. https://www.ahajournals.org/doi/epub/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_965eeae05029400e8b0417281b445556",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_023037a694fe4ce7bcad769867675f67",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that lifestyle modification should be first-line if blood pressure readings are consistent with a primary hypertension diagnosis. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"In adults without clinical CVD who are at lower 10-year predicted CVD risk, there are limited data about the net benefit of initiation of antihypertensive therapy at a lower threshold with an average SBP \u2265130 mm Hg. Therefore, lifestyle interventions should be encouraged first to lower BP.\" \nhttps://www.ahajournals.org/doi/epub/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_53f4b1641bf04f02a5bbcd24ffb231f5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_023037a694fe4ce7bcad769867675f67",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that starting anti-hypertensive medication would be the second line if there is failure of lifestyle modification. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"However, lifestyle interventions may not be successful at lowering SBP, and even when successful initially, it can be difficult to sustain optimal SBP levels. Therefore, if average SBP is \u2265130 mm Hg after a 3- to 6-month trial, initiation of antihypertensive therapy is advised as an adjunct to lifestyle interventions.\" \nhttps://www.ahajournals.org/doi/epub/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

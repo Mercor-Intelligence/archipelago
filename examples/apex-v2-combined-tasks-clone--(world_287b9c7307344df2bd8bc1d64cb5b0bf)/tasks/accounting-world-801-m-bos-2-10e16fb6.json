@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Redwoods has some concerns that their FY2021, FY2022, and FY2023 trial balances are misstated based on the invoices in Xero.  Referencing the invoice data file in Xero, calculate how far off their trial balance gross revenue is in the Audited Tax file from total invoices for FY2021, FY2022, and FY2023. Use authorised, paid and draft transactions in the Xero invoice data file. Present values in absolute $ terms. Round all values to two decimals places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the difference between the trial balance and invoice data for FY2021 is... (ver_2c36ac6518c041c1ada42b3bdd750208)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the difference between the trial balance and invoice data for FY2021 is $239,573,513.49 (acceptable range $237,177,778.36 to $241,969,248.62)."
+        }
+      ]
+    },
+    {
+      "name": "States the difference between the trial balance and invoice data for FY2022 is... (ver_076e939d82ab438e9a4f498ad2f1fa86)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the difference between the trial balance and invoice data for FY2022 is $259,803,346.37 (acceptable range $257,205,312.91 to $262,401,379.83)."
+        }
+      ]
+    },
+    {
+      "name": "States the difference between the trial balance and invoice data for FY2023 is... (ver_c1cfa0297a1645238cf7cd2aeaff6aef)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the difference between the trial balance and invoice data for FY2023 is $276,895,449.96 (acceptable range $274,126,495.46 to $279,664,404.46)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh accounting-world-801-m-bos-2-10e16fb6"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_287b9c7307344df2bd8bc1d64cb5b0bf",
+    "world_name": "Apex v2 - Combined Tasks Clone",
+    "task_id": "task_10e16fb6071e4225b57fbdd7922479f6",
+    "task_name": "Accounting World 801 - M Bos - 2",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_e61368e5b28c40a184654f94a7305842",
+        "golden_text_response": "States the difference between the trial balance and invoice data for FY2021 is $239,573,513.49 \nStates the difference between the trial balance and invoice data for FY2022 is $259,803,346.37 \nStates the difference between the trial balance and invoice data for FY2023 is $276,895,449.96 ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

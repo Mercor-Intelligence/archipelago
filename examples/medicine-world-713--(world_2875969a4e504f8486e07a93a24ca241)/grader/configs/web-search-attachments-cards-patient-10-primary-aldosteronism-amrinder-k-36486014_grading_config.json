@@ -1,0 +1,237 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_f0ca86b5434347db8b887d53cd4f5150",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_36486014e8a1419d9a5031a7a6f027b4",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Utilizes the 2025 American College of Cardiology/American Heart Association joint committee clinical practice guidelines on hypertension.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"2025 AHA/ACC/AANP/AAPA/ABC/ACCP/ACPM/AGS/AMA/ASPC/NMA/PCNA/SGIM Guideline for the Prevention, Detection, Evaluation and Management of High Blood Pressure in Adults: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines\u201d\n\nhttps://www.ahajournals.org/doi/10.1161/CIR.0000000000001356",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_69030e67c861436784741343d6cd35e0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_36486014e8a1419d9a5031a7a6f027b4",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that spontaneous hypokalemia is present in only 20% to 50% of patients with primary aldosteronism.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\u201cSpontaneous hypokalemia is present only in 20% to 50% of patients with primary aldosteronism,1,2 and therefore, the decision to perform primary aldosteronism screening should not rely on a history of hypokalemia alone. \u201c Page e 135, point 2.\nhttps://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4641b27e04554455b03b40ec915db40b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_36486014e8a1419d9a5031a7a6f027b4",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that primary aldosteronism should be ruled out if patients with primary hypertension present with muscle cramps.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\u201cPrimary aldosteronism1\u20133,9,19 5%-25% Resistant hypertension; hypertension with hypokalemia (spontaneous or diuretic induced); hypertension and muscle cramps or weakness; hypertension and incidentally discovered adrenal mass; hypertension and obstructive sleep apnea; hypertension and family history of early-onset hypertension or stroke.\u201d Table 10 Page e134\n\n\u201c1. In adults with hypertension, screening for specific forms of secondary hypertension is recommended when clinical suspicion is present (Table 10, Figure 5) to increase rates of detection, diagnosis, and specific targeted therapy.\u201d Section 3.2.3. Secondary Forms of Hypertension, Page e 133\nhttps://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_279d11e56c3e4b27a294a87f88c4c484",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_36486014e8a1419d9a5031a7a6f027b4",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has a diagnosis of primary hypertension.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the chart \u201cPast Medical History  Diagnosis Date  . Hypertension\u201c \nTab - CLINICALNOTES - Progress Notes - Column D - Row 336",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6a0ff846f07a4a668a37bc3bd4ee4777",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_36486014e8a1419d9a5031a7a6f027b4",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient presents with muscle cramps.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the attached script \u201c Physician: What brings you in today?\nPatient: I have been getting calf cramps off and on. They are better when I take magnesium supplements, but I am worried it could be a vitamin deficiency, like Vitamin B12 or something.\u201d",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "13th Task Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_50ce6f9cef774a4991fa8b95233f2977"
+          }
+        ]
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_63f8ab336c7f4475a133c0087afc5f1d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_36486014e8a1419d9a5031a7a6f027b4",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient\u2019s laboratory results show normal electrolyte levels.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the attached labs. All labs are within the normal range.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "13th Task Lab Results.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_50ce6f9cef774a4991fa8b95233f2977"
+          }
+        ]
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_404b0a8d01e54d63bbb5aff4e27607c8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_36486014e8a1419d9a5031a7a6f027b4",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that primary aldosteronism is a new diagnosis to be ruled out for this patient.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The clinician adheres to the 2025 American College of Cardiology and American Heart Association joint clinical practice guidelines for hypertension. They state that the patient has a diagnosis of primary hypertension and presents with muscle cramps. Laboratory results show normal electrolyte levels. Spontaneous hypokalemia occurs in only 20% to 50% of patients with primary aldosteronism. Therefore, primary aldosteronism should be ruled out in patients with primary hypertension who present with muscle cramps. In this case, primary aldosteronism is a new diagnosis to be considered and ruled out. \n\n\u201cPrimary aldosteronism1\u20133,9,19 5%-25% Resistant hypertension; hypertension with hypokalemia (spontaneous or diuretic induced); hypertension and muscle cramps or weakness; hypertension and incidentally discovered adrenal mass; hypertension and obstructive sleep apnea; hypertension and family history of early-onset hypertension or stroke.\u201d Table 10 Page e134\n\u201c1. In adults with hypertension, screening for specific forms of secondary hypertension is recommended when clinical suspicion is present (Table 10, Figure 5) to increase rates of detection, diagnosis, and specific targeted therapy.\u201d Section 3.2.3. Secondary Forms of Hypertension, Page e 133\nhttps://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "13th Task Lab Results.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_50ce6f9cef774a4991fa8b95233f2977"
+          },
+          {
+            "name": "13th Task Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_50ce6f9cef774a4991fa8b95233f2977"
+          }
+        ]
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_04a3af277ffb4f90bf1b4b9887fe33c8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_36486014e8a1419d9a5031a7a6f027b4",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that there is no indication of a medication change for this patient.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "At this point, all electrolytes are in the normal range and there seems to be no indication to change any of the current medications.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "13th Task Lab Results.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_50ce6f9cef774a4991fa8b95233f2977"
+          }
+        ]
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e949ed65e4444cc7a0f339216804f0c7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_36486014e8a1419d9a5031a7a6f027b4",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that plasma aldosterone/renin activity ratio should be ordered.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\u201cIn adults with an indication for screening for primary aldosteronism, use of plasma aldosterone, renin activity, and the plasma aldosterone to renin activity ratio is recommended for initial screening to assess if there is biochemical evidence of primary aldosteronism.\u201d Section 3.2.3.1 Page e136 https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

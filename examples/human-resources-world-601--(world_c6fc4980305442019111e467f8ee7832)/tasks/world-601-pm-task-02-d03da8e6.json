@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The team found a discrepancy in the employee data (Employee Roster_Enhanced.xlsx). Salary mentioned for employees with Semi-monthly pay schedule is actually half-yearly, and for bi-weekly pay schedule is actually quarterly. Bonus as % of annual salary for different job roles is as follows: IC1: 11%, IC2: 14%, IC3: 17%, Lead: 19%, Manager: 21%, Senior: 24%. Due to major breakthroughs in R&D recently, R&D employees will get a bonus increase of 5 percentage points over and above these ranges. \n\nShare the total annual bonus payout for the active employees in each department of the organization in console. Do not round intermediate values, and round final values to 1 decimal place. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that based on the corrected pay schedules, the updated annual bonus... (ver_17d9782d80c942e6999d0a43a0f7ded4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on the corrected pay schedules, the updated annual bonus payout for active employees in Customer Success is $660,890.0."
+        }
+      ]
+    },
+    {
+      "name": "States that based on the corrected pay schedules, the updated annual bonus... (ver_f08ced36d38342bfafeb504c6bde8d98)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on the corrected pay schedules, the updated annual bonus payout for active employees in G&A is $1,819,520.0 (acceptable range $1,801,324.8 to $1,837,715.2)."
+        }
+      ]
+    },
+    {
+      "name": "States that based on the corrected pay schedules, the updated annual bonus... (ver_314559e668d34d6ba75137a2f2a4fe82)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on the corrected pay schedules, the updated annual bonus payout for active employees in Sales is $1,575,140.0 (acceptable range $1,559,388.6 to $1,590,891.4)."
+        }
+      ]
+    },
+    {
+      "name": "States that based on the corrected pay schedules, the updated annual bonus... (ver_c5904150d70d43bc94441919c1551da3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on the corrected pay schedules, the updated annual bonus payout for active employees in R&D is $4,491,070.0 (acceptable range $4,446,159.3 to $4,535,980.7)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-601-pm-task-02-d03da8e6"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_d03da8e64267462ebf78cf7b3a952611",
+    "task_name": "World 601_PM_Task 02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_2f86b52e960e4134a5e6f4592d87f7d1",
+        "golden_text_response": "Based on the corrected pay schedules, the updated annual bonus payouts for active employees are as follows:\n\n1. Annual bonus payout for active employees in Customer Success is $660,890.0\n2. Annual bonus payout for active employees in G&A is $1,819,520.0\n3. Annual bonus payout for active employees in Sales is $1,575,140.0\n4. Annual bonus payout for active employees in R&D is $4,491,070.0",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

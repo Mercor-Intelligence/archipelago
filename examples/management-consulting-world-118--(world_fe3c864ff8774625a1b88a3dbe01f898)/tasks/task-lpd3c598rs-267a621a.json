@@ -1,0 +1,583 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Client wants a detailed analysis on past insurance claims data shared by client. Client has shared the list of acceptable HCPCS codes for Mental health related insurance claims- 90791, 90792, 90832, 90834, 90837, 90839, 90840. For these codes, answer the following questions-\n\n1. When was the first time allowed [services, charges] and/or payment was made on code 90834?\n\n2. For entries with valid \"allowed service\"  value, calculate the total payment for the following years individually: 2015, 2016, 2017, 2018, and 2019\n\n3. Again for entries with valid allowed service value, assume that 50% of claim payments flow through to the hospital as costs. Of that assume that the client consistently holds a 10% share of total claims over the next 10 years. Using the last 5-year (2018 to 2022) CAGR of total claim payments to project forward, what will the client’s insurance cost be in 2030? Report the CAGR (3 decimals), total payments, and the client's insurance cost in 2030.\n\n4. What is the payment-to-claim ratio for codes 90837, 90839, 90840 (calculated across all years)?\n\nReport values as message in console. Unless specified, round off all dollar values to nearest integer & all percentages to nearest 2 decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the first time code 90834 was utilised to file a claim is 2013... (ver_190687b4ab8843aba3a75ef50f1a1b8c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the first time code 90834 was utilised to file a claim is 2013 (acceptable range 199 to 203)."
+        }
+      ]
+    },
+    {
+      "name": "States that the first time code 90834 was utilised to file a claim is a value... (ver_190687b4ab8843aba3a75ef50f1a1b8c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the first time code 90834 was utilised to file a claim is a value other than 2013."
+        }
+      ]
+    },
+    {
+      "name": "States that the total payment in year 2015 is $935,010,479 (acceptable range... (ver_b1411e4f829c40d0a032ea093d379a15)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total payment in year 2015 is $935,010,479 (acceptable range $925,660,374 to $944,360,584)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total payment in year 2015 is a value other than $935,010,479 (ver_b1411e4f829c40d0a032ea093d379a15)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total payment in year 2015 is a value other than $935,010,479."
+        }
+      ]
+    },
+    {
+      "name": "States that the total payment in year 2016 is $980,593,580 (acceptable range... (ver_8a5f9aff8e9041cf9e78c2addd1eb7fc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total payment in year 2016 is $980,593,580 (acceptable range $970,787,644 to $990,399,516)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total payment in year 2016 is a value other than $980,593,580 (ver_8a5f9aff8e9041cf9e78c2addd1eb7fc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total payment in year 2016 is a value other than $980,593,580."
+        }
+      ]
+    },
+    {
+      "name": "States that the total payment in year 2017 is $1,000,561,842 (acceptable range... (ver_f33c5b4ebe7841d98fbbb20936b49c47)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total payment in year 2017 is $1,000,561,842 (acceptable range $990,556,223.6 to $1,010,567,460)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total payment in year 2017 is a value other than $1,000,561,842 (ver_f33c5b4ebe7841d98fbbb20936b49c47)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total payment in year 2017 is a value other than $1,000,561,842."
+        }
+      ]
+    },
+    {
+      "name": "States that the total payment in year 2018 is $1,046,570,493 (acceptable range... (ver_93fce560ff604a66988d190e87efbe60)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total payment in year 2018 is $1,046,570,493 (acceptable range $1,036,104,788 to $1,057,036,198)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total payment in year 2018 is a value other than $1,046,570,493 (ver_93fce560ff604a66988d190e87efbe60)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total payment in year 2018 is a value other than $1,046,570,493."
+        }
+      ]
+    },
+    {
+      "name": "States that the total payment in year 2019 is $1,084,136,130 (acceptable range... (ver_64f07e06cc264a6a80c7a72daae03317)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total payment in year 2019 is $1,084,136,130 (acceptable range $1,073,294,769 to $1,094,977,491)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total payment in year 2019 is a value other than $1,084,136,130 (ver_64f07e06cc264a6a80c7a72daae03317)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total payment in year 2019 is a value other than $1,084,136,130."
+        }
+      ]
+    },
+    {
+      "name": "States that the CAGR of total payments between 2018-2022 is 0.99% (acceptable... (ver_105d4a2a12ab42349e293a9f06108739)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the CAGR of total payments between 2018-2022 is 0.99% (acceptable range 0.98% to 1.0%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the CAGR of total payments between 2018-2022 is a value other than... (ver_105d4a2a12ab42349e293a9f06108739)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the CAGR of total payments between 2018-2022 is a value other than 0.99%."
+        }
+      ]
+    },
+    {
+      "name": "States that the total payment value in 2030 is $1,178,472,451 (acceptable... (ver_bc8cb5c8a4a948eca0296171bba0e39a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total payment value in 2030 is $1,178,472,451 (acceptable range $1,166,687,726 to $1,190,257,176)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total payment value in 2030 is a value other than $1,178,472,451 (ver_bc8cb5c8a4a948eca0296171bba0e39a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total payment value in 2030 is a value other than $1,178,472,451."
+        }
+      ]
+    },
+    {
+      "name": "States that the cost of insurance for the client in 2030 is $58,923,624... (ver_601c628dc1d948aca1a71ebc6af5521e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the cost of insurance for the client in 2030 is $58,923,624 (acceptable range $58,334,388 to $59,512,860)."
+        }
+      ]
+    },
+    {
+      "name": "States that the cost of insurance for the client in 2030 is a value other than... (ver_601c628dc1d948aca1a71ebc6af5521e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the cost of insurance for the client in 2030 is a value other than $58,923,624."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentage ratio of claim to payment for code 90837 is 75.19%... (ver_fa9e6603641147598ad732edc01b6f9f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentage ratio of claim to payment for code 90837 is 75.19% (acceptable range 74.44% to 75.94%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentage ratio of claim to payment for code 90837 is a value... (ver_fa9e6603641147598ad732edc01b6f9f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentage ratio of claim to payment for code 90837 is a value other than 75.19%."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentage ratio of claim to payment for code 90839 is 75.40%... (ver_7cd6b581d1854e31969a07d11e03ed3c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentage ratio of claim to payment for code 90839 is 75.40% (acceptable range 74.65% to 76.15%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentage ratio of claim to payment for code 90839 is a value... (ver_7cd6b581d1854e31969a07d11e03ed3c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentage ratio of claim to payment for code 90839 is a value other than 75.40%."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentage ratio of claim to payment for code 90840 is 77.61%... (ver_8675ca46fb6646038a822de262f7daf4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentage ratio of claim to payment for code 90840 is 77.61% (acceptable range 76.83% to 78.39%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentage ratio of claim to payment for code 90840 is a value... (ver_8675ca46fb6646038a822de262f7daf4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentage ratio of claim to payment for code 90840 is a value other than 77.61%."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-lpd3c598rs-267a621a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_267a621a58bc44688c1351886459d8c7",
+    "task_name": "Task lpd3c598rs",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_eb7ae46116f34183a11a50d86966a3dd",
+        "golden_text_response": "1. The code \"90834\" was first used for claim in year 2013.\n\n2. The total value of payments per year is as follows-\n\n2015\t $935,010,479 \n2016\t $980,593,580 \n2017\t $1,000,561,842 \n2018\t $1,046,570,493 \n2019\t $1,084,136,130 \n\n3. CAGR for 2028 - 2022 is 0.99%. Total Payment value in 2030 - 1178,472,451Estimated cost of insurance in 2030 is $58,923,623.53 \n\n4. Percentage ratio of payment to claim is as follows for every code-\n\nCode\t| Payment to Claim Ratio percentage\n90837\t| 75.19%\n90839\t| 75.40%\n90840\t| 77.61%",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

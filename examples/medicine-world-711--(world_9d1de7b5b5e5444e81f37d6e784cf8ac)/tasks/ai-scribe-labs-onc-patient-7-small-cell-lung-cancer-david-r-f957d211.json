@@ -1,0 +1,330 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 7” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nOnc Patient 7 comes to the oncology clinic for a follow-up visit with the oncologist. Please review the patient's chart, labs, and conversation with the physician. What is the most appropriate next treatment option? What are the dosing and frequency? Explain your reasoning."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient was originally diagnosed with non-small cell lung... (ver_f259337cb67949c1b9d4e3cc6f28b19f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient was originally diagnosed with non-small cell lung cancer."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has now been diagnosed with small-cell lung cancer. (ver_9375c7d2c9484defb79ef98ff3a64045)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has now been diagnosed with small-cell lung cancer."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's cancer is metastatic. (ver_7a2c7eb4da744880802a8f23844700b3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's cancer is metastatic."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has extensive-stage small-cell lung cancer. (ver_fdea1cfb2b324cd2ae3c2dade3b963a4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has extensive-stage small-cell lung cancer."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has received systemic therapy. (ver_41784a6fb541427bb5e8c5abff921bef)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has received systemic therapy."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's cancer lacks any targetable mutations. (ver_df58f9e7299f4b318b546a9441e3bd8a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's cancer lacks any targetable mutations."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has preserved organ function. (ver_eb168dbeb28b4bd583f06030f3f9828e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has preserved organ function."
+        }
+      ]
+    },
+    {
+      "name": "States that the most appropriate next treatment option is to start tarlatamab. (ver_4c09c5a8f6ce479d9c5de75141b1a22e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the most appropriate next treatment option is to start tarlatamab."
+        }
+      ]
+    },
+    {
+      "name": "States that tarlatamab is dosed intravenously. (ver_5b57ba3e3b984aa4bb61e84995ae0a34)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that tarlatamab is dosed intravenously."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient should receive 1 mg of tarlatamab on day 1. (ver_ff396ef1eb7042b0b8f1062ddefde9cb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient should receive 1 mg of tarlatamab on day 1."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient should receive 10 mg of tarlatamab on day 8. (ver_5452f56fe6014b5981145bfa127d6c6d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient should receive 10 mg of tarlatamab on day 8."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient should receive 10 mg of tarlatamab on day 15. (ver_2b61c1c5ef404243ada9909a6764a614)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient should receive 10 mg of tarlatamab on day 15."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient should receive 10 mg of tarlatamab biweekly after the... (ver_e3bff385a126491e93805f996afd6848)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient should receive 10 mg of tarlatamab biweekly after the third dose."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh ai-scribe-labs-onc-patient-7-small-cell-lung-cancer-david-r-f957d211"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_f957d21126f84d41a5ba174427659566",
+    "task_name": "AI Scribe/Labs - Onc Patient 7 - Small Cell Lung Cancer - David R",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_ee47baf13a9b4c2c904ce18eca7467a3",
+        "golden_text_response": "The patient was originally diagnosed with non-small cell lung cancer (NSCLC), but the conversation indicates the patient's cancer has undergone a genetic transformation after treatment with EGFR agents for NSCLC, meaning the patient has now been diagnosed with small-cell lung cancer. The conversation further indicates the patient's cancer has metastasized elsewhere in the body, qualifying the patient's disease as extensive stage. The patient has already failed platinum-based chemotherapy with etoposide and a PD-L1 inhibitor. The patient's labs show no targetable mutations on genetic testing, yet organ function is preserved. Therefore, the next best treatment option for this patient is treatment with tarlatamab. Tarlatamab is a bispecific delta-like ligand 3 (DLL3)-directed CD3 T-cell engager indicated for the treatment of adult patients with extensive stage small cell lung cancer (ES-SCLC) with disease progression on or after platinum-based chemotherapy. Tarlatamab is administered as an intravenous infusion over 1 hour. Cycles on tarlatamab are 28 days. The schedule is as follows:\nCycle 1: 1 mg on day 1, 10 mg on day 8, 10 mg on day 15\nCycles 2 and beyond: 10 mg on day 1, 10 mg on day 15 (So, 10 mg every 2 weeks for cycle 2 and beyond).",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

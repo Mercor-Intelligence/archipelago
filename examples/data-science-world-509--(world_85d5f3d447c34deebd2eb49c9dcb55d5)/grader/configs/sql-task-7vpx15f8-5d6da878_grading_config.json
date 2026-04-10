@@ -1,0 +1,142 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_14fbe48f821c4c2d97967d6d6ef4d471",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5d6da878422b4c3c88f609dad5034044",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that first most recent change to the Federal Funds Target Rate was an increase of 0.25% +/-0.02.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the first most recent change in the series DFEDTARL in the fred_database table before the identified date.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fad4987b1ce74203b9ab0dc3df8b72c5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5d6da878422b4c3c88f609dad5034044",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that second most recent change to the Federal Funds Target Rate was an increase of 0.25% +/-0.02.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the second most recent change in the series DFEDTARL in the fred_database table before the identified date.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3cf205b6c2324025b0029a6fec3eb539",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5d6da878422b4c3c88f609dad5034044",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that the Federal Funds Target Rate at the first most recent change was 5.25% +/-0.05.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the value of the series DFEDTARL in the fred_database table after its most recent change prior to the identified date.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_faf180e05105414895ddaefad7823981",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5d6da878422b4c3c88f609dad5034044",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that the Federal Funds Target Rate at the second most recent change was 5.00% +/-0.05.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the value of the series DFEDTARL in the fred_database table after its second most recent change prior to the identified date.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f569cb0fa0024dfdaaf4987c3cde828c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5d6da878422b4c3c88f609dad5034044",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that the first most recent change to the Federal Funds target rate was 13 months ago.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the number of days between the identified date and the first most recent change in the series DFEDTARL divided by 30 and rounded.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_52aa41ad11984e938eee37372f16e508",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5d6da878422b4c3c88f609dad5034044",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that the second most recent change to the Federal Funds target rate was 16 months ago.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the number of days between the identified date and the second most recent change in the series DFEDTARL divided by 30 and rounded.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "eval_config_name": "Output LLM",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "4658aec9-7eeb-4c9b-84c2-5464345e345f",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

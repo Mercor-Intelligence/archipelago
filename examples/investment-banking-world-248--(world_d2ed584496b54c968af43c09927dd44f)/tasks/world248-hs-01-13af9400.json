@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Please run a new scenario in the financial model using the following adjustments:\n\n1.  Update the RMBS annual revenue growth rate for the 2025–2028 projection period using the analysts' low estimate for RMBS revenue growth over that same period.\n2.  Use a revenue growth rate of 10% for RMBS revenue in 2029.\n3.  Update the ONTO annual revenue growth rate for the 2025–2029 projection period using the analysts' low estimate for ONTO revenue growth over that same period.\n4.  Update the current operating margins for the projection period for both RMBS and ONTO with the analysts’ forecasted ones.\n\nPlease output the updated EPS Accretion over the projected period (2025–2029). Ensure all percentages are rounded to two decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States EPS Accretion in 2025 is 17.79% (acceptable range 17.61% to 17.97%) (ver_7f2680cfe5e74eb2b4f31ae5d084b8cd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States EPS Accretion in 2025 is 17.79% (acceptable range 17.61% to 17.97%)."
+        }
+      ]
+    },
+    {
+      "name": "States EPS Accretion in 2026 is 20.90% (acceptable range 20.69% to 21.11%) (ver_9eb29a2171e941f898898627a79e553a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States EPS Accretion in 2026 is 20.90% (acceptable range 20.69% to 21.11%)."
+        }
+      ]
+    },
+    {
+      "name": "States EPS Accretion in 2027 is 24.01% (acceptable range 23.77% to 24.25%) (ver_45dbe9ed76e6424283205661d50ec563)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States EPS Accretion in 2027 is 24.01% (acceptable range 23.77% to 24.25%)."
+        }
+      ]
+    },
+    {
+      "name": "States EPS Accretion in 2028 is 22.08% (acceptable range 21.86% to 22.30%) (ver_50230756e37d4921a0619c6320035492)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States EPS Accretion in 2028 is 22.08% (acceptable range 21.86% to 22.30%)."
+        }
+      ]
+    },
+    {
+      "name": "States EPS Accretion in 2029 is 22.49% (acceptable range 22.27% to 22.71%) (ver_9e2d63ad94de4568a9cf8924f2b89619)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States EPS Accretion in 2029 is 22.49% (acceptable range 22.27% to 22.71%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world248-hs-01-13af9400"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_13af9400b829489383c40a6d8bb68b1b",
+    "task_name": "World248-HS-01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_53e3d8e1f98742ecaa4a5b90b9ae9513",
+        "golden_text_response": "EPS Accretion in 2025 is 17.79%\nEPS Accretion in 2026 is 20.90%\nEPS Accretion in 2027 is 24.01%\nEPS Accretion in 2028 is 22.08%\nEPS Accretion in 2029 is 22.49%",
+        "golden_file_responses": "snap_cfde53fbb6f7470d98eb7743c73ba5c5"
+      }
+    ]
+  }
+}

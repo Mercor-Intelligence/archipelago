@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Update the revenue, EBITDA, and EBIT from 2025 to 2030 based on the following instructions:\n\nRevenue is assumed to grow at a constant rate of 7.4% yoy from 2025 to 2027. After 2027, the growth rate decreases gradually by the same amount each year, reaching 5% in 2030.\n\nSet 2025 EBITDA to 7,480. EBITDA for the forecasts should be calculated so as to maintain the same EBITDA margin as in 2025. Include a line item titled “plug” to offset the difference in EBITDA. Include a line item titled “EBITDA plug” to offset the difference in EBITDA due to EBITDA margin update.\n\nIn 2025, the EBIT margin is 13% lower than the EBITDA’s. From 2026 to 2028, the EBIT margin increases by 2% every year, then remains constant for the rest of the forecast period.\n\nSet the Share Price and Market Cap as of December 31, 2025. The long-term growth rate should be 2.5 times smaller than the WACC. Decrease the EBITDA multiple by 15%. \n\nApply the midyear adjustment to the valuation.\n\nWhat is S&P Global Enterprise value, Equity value per share, and Premium / (Discount) to the share price close as of dec 31, 2025 (i) using the growth in perpetuity method and (ii) using the EBITDA multiple?"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the Implied Enterprise Value using the growth in perpetuity method is... (ver_867ebc59fb5142d5b28244d77b544eea)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Implied Enterprise Value using the growth in perpetuity method is $161,267 (acceptable range $159,654 to $162,880)."
+        }
+      ]
+    },
+    {
+      "name": "States the Implied Equity Value per share using the growth in perpetuity... (ver_dd5c10db930a4226a89fc9059839d36c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Implied Equity Value per share using the growth in perpetuity method is $495.11 (acceptable range $490.16 to $500.06)."
+        }
+      ]
+    },
+    {
+      "name": "States the Implied Enterprise Value using the EBITDA multiple method is... (ver_094d2baacad9404a847b68e6d8ab6a68)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Implied Enterprise Value using the EBITDA multiple method is $140,185 (acceptable range $138,783 to $141,587)."
+        }
+      ]
+    },
+    {
+      "name": "States the Implied Equity Value per share using the EBITDA multiple method is... (ver_fa55767ffdb647eea923118b7d5c76db)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Implied Equity Value per share using the EBITDA multiple method is $426.24 (acceptable range $421.98 to $430.50)."
+        }
+      ]
+    },
+    {
+      "name": "States the Premium / (Discount) to share price as of dec 31, 2025 using the... (ver_c4b4ccc123f1492e8f6cebec0fa4edf9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Premium / (Discount) to share price as of dec 31, 2025 using the growth in perpetuity approach is -5.3% (acceptable range -5.4% to -5.2%)."
+        }
+      ]
+    },
+    {
+      "name": "States the Premium / (Discount) to share price as of dec 31, 2025 using the... (ver_97b65875b1ff41afb682eacbd2749094)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Premium / (Discount) to share price as of dec 31, 2025 using the EBITDA multiple approach is -18.4% (acceptable range -18.6% to -18.2%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world249-tr-05-e3cdc022"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_e3cdc02246f44260b64f4768c76e84aa",
+    "task_name": "World249_TR_05",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_a78cf08b99ed4ff5a5f8baef8b1ff839",
+        "golden_text_response": "The Implied Enterprise Value using the growth in perpetuity method is $161,267\nThe Implied Equity Value per share using the growth in perpetuity method is $495.11\nThe premium / (Discount) to share price as of dec 31, 2025 using the growth in perpetuity approach is -5.3%\n\nThe Implied Enterprise Value using the EBITDA multiple method is $140,185\nThe Implied Equity Value per share using the EBITDA multiple method is $426.24\nThe premium / (Discount) to share price as of dec 31, 2025 using the EBITDA multiple approach is -18.4%",
+        "golden_file_responses": "snap_2d8189b1a8ff4e29a76b7591093dd327"
+      }
+    ]
+  }
+}

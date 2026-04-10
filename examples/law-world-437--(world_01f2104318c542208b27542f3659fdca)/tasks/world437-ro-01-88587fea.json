@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Based on the independent damages report, how much would Sweetmarch Build Partners (\"SBP\") be able to recover from their insurance company for SBP's fraudulent invoicing damages? Provide me with an explanation of how you calculated this number."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that Sweetmarch Build Partners can recover up to $216,340 from their... (ver_639e518bf4ac47c997116996008be8af)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Sweetmarch Build Partners can recover up to $216,340 from their insurance company for the fraudulent invoicing damages."
+        }
+      ]
+    },
+    {
+      "name": "States that Western Contractors Risk & Indemnity Co. agreed to indemnify... (ver_c18fb35be81b4c5fa1455630e7301c54)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Western Contractors Risk & Indemnity Co. agreed to indemnify Sweetmarch Build Partners from financial losses arising out of fraudulent invoicing."
+        }
+      ]
+    },
+    {
+      "name": "States that Western Contractors Risk & Indemnity Co.'s indemnification for... (ver_6594bfa1f8184ad198719be560b76d67)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Western Contractors Risk & Indemnity Co.'s indemnification for Sweetmarch Build Partners' financial losses arising from fraudulent invoices are subject to a $25,000 deductible."
+        }
+      ]
+    },
+    {
+      "name": "States that Sweetmarch Build Partners' fraudulent invoicing damages amount to... (ver_c794e29e80b04db5a93f10847dcb7f4f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Sweetmarch Build Partners' fraudulent invoicing damages amount to $241,340 (acceptable range $238,927 to $243,753)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world437-ro-01-88587fea"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_88587fea74ed4ea496dd3540cdf81bb0",
+    "task_name": "World437_RO_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_eaaeb9acf42b4224a68466970773dd51",
+        "golden_text_response": "The fraudulent invoicing damages sustained by Sweetmarch Build Partners (\"SBP\") are covered under Section III.A. of their Subcontractor Performance, Integrity, and Misconduct Protection Policy with Western Contractors Risk & Indemnity Co. (\"WCRI\"). Under this policy, WCRI agreed to indemnify SBP from financial losses arising from \"[f]alse or inflated invoicing including billing for materials not delivered or labor not performed\" subject to a $25,000 deductible (see page 2 of \"Insurance Policy - Western Contractors Risk & Indemnity Co .docx\"). The fraudulent invoicing damages total to $241,340 (See \"Independent Damages Report - Hired Expert.docx\" at page 5).\n\nTherefore, SBP would be able to recover up to $216,340 (the total damages minus the deductible) from WCRI for these damages.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

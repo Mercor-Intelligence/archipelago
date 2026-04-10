@@ -1,0 +1,30 @@
+[arco]
+source = "foundry_app"
+name = "Chat"
+version = "1.0.0"
+
+[arco.env.host]
+REPO_URL = "https://github.com/Mercor-Intelligence/mercor-rls-chat.git"
+
+[arco.env.build]
+
+[arco.env.runtime]
+MCP_TRANSPORT = "http"
+MCP_PORT = "5000"
+HAS_STATE = "true"
+APP_FS_ROOT = "/filesystem"
+APP_APPS_DATA_ROOT = "/.apps_data"
+STATE_LOCATION = "/.apps_data/chat"
+USE_INDIVIDUAL_TOOLS = "true"
+
+[arco.env.runtime.schema.USE_INDIVIDUAL_TOOLS]
+type = "bool"
+label = "Use individual tools"
+description = "Enable individual tools for UI instead of consolidated meta-tools for LLMs"
+
+[arco.secrets.host]
+GITHUB_TOKEN = "RLS_GITHUB_READ_TOKEN"
+
+[arco.secrets.build]
+
+[arco.secrets.runtime]

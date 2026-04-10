@@ -1,0 +1,220 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_637d3e43afb64f23a9eb55c6b2a6d588",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dd38f61514bb42a79fb5567bed410f7a",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "Produces a bar chart in excel file.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt specifically requests to produce a bar chart showing the Average Total Revenue for each sector.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_41072f71e2ef4cadab20f83022716d73",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dd38f61514bb42a79fb5567bed410f7a",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "Produces exactly 5 bars in the bar chart.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt explicity requires the model to create a bar chart with 5 sectors. ",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b54b04a45c7d4e4d901298f228032e24",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dd38f61514bb42a79fb5567bed410f7a",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Style / formatting"
+        ],
+        "weight": 1,
+        "criteria": "Places Sector on the x-axis of the chart.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt explicity requires the model to use Sector in the x-axis.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e10288ab3ae248428e473d08ca676274",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dd38f61514bb42a79fb5567bed410f7a",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Style / formatting"
+        ],
+        "weight": 1,
+        "criteria": "Places Average Total Revenue on the y-axis of the chart.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt explicity requires the model to use Average Total Revenue in the y-axis.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_29c336bbeefd41b481a191d2d1d496db",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dd38f61514bb42a79fb5567bed410f7a",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Labels the Average Total Revenue of Construction as 299,245,291 +/- 100.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt specifically requests to create a bar chart that shows Average Total Revenue for five sectors, Construction, Healthcare, Hospitality, Logistics and Manufacturing. 299,245,291 is the correct Average Total Revenue for Construction.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_35f3606392e44c2ca4aabe1c8880a8cb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dd38f61514bb42a79fb5567bed410f7a",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Labels the Average Total Revenue of Healthcare as 329,226,483 +/- 100.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt specifically requests to create a bar chart that shows Average Total Revenue for five sectors, Construction, Healthcare, Hospitality, Logistics and Manufacturing. 329,226,483 is the correct Average Total Revenue for Healthcare.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a8b0ba9b056b446cbc6f7150dcaa3265",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dd38f61514bb42a79fb5567bed410f7a",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Labels the Average Total Revenue of Hospitality as 316,864,726 +/- 100 (acceptable range 313,696,079 to 320,033,373).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt specifically requests to create a bar chart that shows Average Total Revenue for five sectors, Construction, Healthcare, Hospitality, Logistics and Manufacturing. 316,864,726 is the correct Average Total Revenue for Hospitality.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_84b11ed455674a0ca048e3e887c79432",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dd38f61514bb42a79fb5567bed410f7a",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Labels the Average Total Revenue of Logistics as 327,563,991 +/- 100.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt specifically requests to create a bar chart that shows Average Total Revenue for five sectors, Construction, Healthcare, Hospitality, Logistics and Manufacturing. 327,563,991 is the correct Average Total Revenue for Logistics.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f4093fa7ab7c408fbc4ddba6f30cac8f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dd38f61514bb42a79fb5567bed410f7a",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Labels the Average Total Revenue of Manufacturing as 325,518,370 +/- 100.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt specifically requests to create a bar chart that shows Average Total Revenue for five sectors, Construction, Healthcare, Hospitality, Logistics and Manufacturing. 325,518,370 is the correct Average Total Revenue for Manufacturing.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "eval_config_name": "Output LLM",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "4658aec9-7eeb-4c9b-84c2-5464345e345f",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

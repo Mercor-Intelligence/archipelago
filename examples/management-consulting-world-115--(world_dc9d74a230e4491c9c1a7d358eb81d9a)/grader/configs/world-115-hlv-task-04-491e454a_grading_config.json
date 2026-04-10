@@ -1,0 +1,176 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_575451f36cf04531a6e790bef3ce8ec5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_491e454aed2a4ae88d7894212eebdf58",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States TEV/Revenue for Vale is 1.6x (acceptable range 1.58 to 1.62)",
+        "modality": "Free text",
+        "negative_criteria": "States TEV/Revenue for Vale is a different multiple than 1.6x.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8b42b2e4519544fcab819e0619ae7650",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_491e454aed2a4ae88d7894212eebdf58",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States TEV/EBITDA for Vale is 4.4x (acceptable range 4.36 to 4.44)",
+        "modality": "Free text",
+        "negative_criteria": "States TEV/EBITDA for Vale is a different multiple than 4.4x.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0a1da58a1d91449a971940eed7d70dde",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_491e454aed2a4ae88d7894212eebdf58",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States TEV/EBIT for Vale is 5.7x (acceptable range 5.6 to 5.8)",
+        "modality": "Free text",
+        "negative_criteria": "States TEV/EBIT for Vale is a different multiple than 5.7x.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a2c9c59c17d24a97a70e9cd127f036f3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_491e454aed2a4ae88d7894212eebdf58",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States P/E for Vale is 7.6x (acceptable range 7.5 to 7.7)",
+        "modality": "Free text",
+        "negative_criteria": "States P/E for Vale is a different multiple than 7.6x.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a4421bbb8e824760b29ffdc1c6d04ff0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_491e454aed2a4ae88d7894212eebdf58",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States Debt/EBITDA for Vale is 1.1x (acceptable range 1.09 to 1.11)",
+        "modality": "Free text",
+        "negative_criteria": "States Debt/EBITDA for Vale is a different multiple than 1.1x.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_91037652eb6842c3ad4873f10e863633",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_491e454aed2a4ae88d7894212eebdf58",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States 75th percentile TEV/EBITDA across all companies is 10.8x (acceptable range 10.7 to 10.9)",
+        "negative_criteria": "States 75th percentile TEV/EBITDA across all companies is a different multiple than 10.8x.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7ee6c39d5f244472b395a520ef7b8e15",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_491e454aed2a4ae88d7894212eebdf58",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States 75th percentile TEV/EBIT across all companies is 17.6x (acceptable range 17.4 to 17.8)",
+        "modality": "Free text",
+        "negative_criteria": "States 75th percentile TEV/EBIT across all companies is a different multiple than 17.6x.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

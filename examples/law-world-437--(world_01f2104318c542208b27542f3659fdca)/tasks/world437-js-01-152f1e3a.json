@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "SteelTreeSolutions (STS) has filed a claim against Sweetmarch Build Partners (SBP) for breach of contract. STS is alleging that SBP has failed to pay $500,000 for work it performed as a subcontractor. In its complaint, STS alleges all of the essential elements required for a breach of contract complaint.  It does not allege anything else. SBP files a demurrer. Should it be granted? Assume that jurisdiction and venue have been properly alleged. Provide an explanation.  "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that SteelTreeSolutions did not allege that it was a licensed contractor (ver_4f390d13c4714138a636b180c050cb2b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that SteelTreeSolutions did not allege that it was a licensed contractor."
+        }
+      ]
+    },
+    {
+      "name": "States that Sweetmarch Build Partners' demurrer should be granted (ver_82aa89ee6a57415285673c61e55985ee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Sweetmarch Build Partners' demurrer should be granted."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world437-js-01-152f1e3a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_152f1e3aba6143e6b8609e2dc82b5bd8",
+    "task_name": "World437_JS_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c49ffa2e1be64920ad23065c150c9f3b",
+        "golden_text_response": "Sweetmarch Build Partners' demurrer should be granted because SteelTreeSolutions did not allege that it was a licensed contractor. ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

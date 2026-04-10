@@ -1,0 +1,151 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Greg, a student who has an Individualized Education Program (IEP), has an upcoming history test and will need a modified study guide in keeping with his IEP. Create a study guide in a new document that rewrites Learning Objective prompts A-G from the Unit 1 APUSH Key Concepts based on Greg's IEP. If the IEP says an accommodation is needed \"when possible,\" interpret this to mean in all instances, for this student. Write the modifications and accommodations that were applied at the bottom of the document."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Replaces all words of more than three syllables in learning objectives A-G... (ver_a67d01c846114afdbf173206e242aa95)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Replaces all words of more than three syllables in learning objectives A-G with words of three syllables or less."
+        }
+      ]
+    },
+    {
+      "name": "Does not make any changes to the wording of learning objectives A-G outside of... (ver_e89f4b50a4cf4c28943a32293e84edce)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Does not make any changes to the wording of learning objectives A-G outside of replacement of words with more than three syllables."
+        }
+      ]
+    },
+    {
+      "name": "States all text in size 14 or larger font throughout (ver_854d6129379e4561bf1633dd0aacc9b1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States all text in size 14 or larger font throughout."
+        }
+      ]
+    },
+    {
+      "name": "States that the learning objectives have been adapted to include only words of... (ver_7842dd0ec1734d2d9587b80b4a3f65b8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the learning objectives have been adapted to include only words of up to three syllables or fewer when possible."
+        }
+      ]
+    },
+    {
+      "name": "States that the learning objectives have been presented in size 14 or larger... (ver_86793b02053041fdb758f487c919eb01)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the learning objectives have been presented in size 14 or larger font."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-1ei747a8-natural-prompt-06953f1c"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_bb2868929444403db49771012f030f29",
+    "world_name": "Teaching World 308",
+    "task_id": "task_06953f1c8ad7439ba5c4e35e564aa0bb",
+    "task_name": "Task 1ei747a8 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_419381118fbc4cbd843288be954d4040",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_88b4103eddf34fd080a561e69e262718"
+      },
+      {
+        "golden_response_id": "gold_e538a3ba5fb14cb58ae70b1916159beb",
+        "golden_text_response": "File uploaded",
+        "golden_file_responses": "snap_88b4103eddf34fd080a561e69e262718"
+      }
+    ]
+  }
+}

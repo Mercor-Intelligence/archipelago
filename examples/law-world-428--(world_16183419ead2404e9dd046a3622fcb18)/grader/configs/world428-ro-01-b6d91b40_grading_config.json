@@ -1,0 +1,44 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_584e2298bac74d73b4281f43c1569566",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b6d91b4092a142298691d69fe95e42c3",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the amount of the good faith deposit the city has to return to Liverbird is $8,200 (acceptable range $8,118 to $8,282)",
+        "autogen_source": null,
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Pursuant to Section 3.1 of the FINAL Exclusive Negotiating Agreement San D and Liv Dev Co.pdf on page 5, the good faith deposit was $50,000. It shall be used for \"expenses incurred by the City and its staff, agents, or consultants in performing public outreach (including public meetings), negotiating and preparing this agreement, reviewing any documents related to the Proposed Project, and negotiating and drafting the Development Agreement and any other agreements.\" Therefore, the first 5 expenses in the spreadsheet are covered by the deposit.\n\nPursuant to Section 3.3, the City has to return any portion of the deposit that is not needed to pay such expenses. Therefore, you subtract those covered expenses from the $50,000 deposit and you are left with $8,200 that must be returned to Liverbird. See the Supporting Calculations box above for a spreadsheet that shows the calculations.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

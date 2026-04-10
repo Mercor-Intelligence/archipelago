@@ -1,0 +1,133 @@
+# HR Reporting and Analytics
+# Demonstrates: Reset DB -> Setup employees -> Search -> Reports -> Datasets
+#
+# Tools exercised:
+# - Login (Admin)
+# - Reset Database (Admin)
+# - Create Employee (Employees) [setup x2]
+# - Search Employees (Search)
+# - Run Company Report (Reports)
+# - List Datasets (Datasets)
+# - Get Dataset Fields (Datasets)
+
+url: http://localhost:3000
+
+output: screenshots
+
+defaults:
+  server: bamboohr
+
+steps:
+  # Step 1: Initial view
+  - TakeScreenshot
+
+  # Step 2: Login as HR Admin
+  - Login:
+      persona: hr_admin
+      screenshot_params:
+        element: *tool_panel
+        max_height: 600
+
+  # Step 3: Reset database to clean state
+  - SelectTool:
+      tool: bamboo_reset_state
+      category: Admin
+  - Wait: 500
+  - FillToolParam:
+      params:
+        confirm: true
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 400
+
+  # Setup: Create two employees for reporting (no screenshots)
+  - SelectTool:
+      tool: bamboo_employees_create
+      category: Employees
+  - Wait: 500
+  - FillToolParam:
+      params:
+        firstName: Sarah
+        lastName: Johnson
+        workEmail: sarah.johnson@acme.com
+        department: Engineering
+        jobTitle: Software Engineer
+        hireDate: "2024-01-15"
+  - ExecuteTool
+  - Wait: 1000
+
+  - SelectTool:
+      tool: bamboo_employees_create
+      category: Employees
+  - Wait: 500
+  - FillToolParam:
+      params:
+        firstName: Michael
+        lastName: Chen
+        workEmail: michael.chen@acme.com
+        department: Engineering
+        jobTitle: Engineering Manager
+        hireDate: "2023-06-01"
+  - ExecuteTool
+  - Wait: 1000
+
+  # Step 4: Search for employees
+  - SelectTool:
+      tool: bamboo_search_employees
+      category: Search
+  - Wait: 500
+  - FillToolParam:
+      params:
+        query: "eng"
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 700
+
+  # Step 5: View search results
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 6: Run company report
+  - SelectTool:
+      tool: bamboo_reports_run_company_report
+      category: Reports
+  - Wait: 500
+  - FillToolParam:
+      params:
+        report_id: "1"
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 7: List available datasets
+  - SelectTool:
+      tool: bamboo_datasets_list
+      category: Datasets
+  - Wait: 500
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 700
+
+  # Step 8: Get dataset fields for employees
+  - SelectTool:
+      tool: bamboo_datasets_get_fields
+      category: Datasets
+  - Wait: 500
+  - FillToolParam:
+      params:
+        dataset_name: employees
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800

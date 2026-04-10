@@ -1,0 +1,5 @@
+purchase_order_id,purchase_order_number,status,date,delivery_date,contact,line_items,sub_total,total_tax,total,currency_code
+po-001,PO-0001,AUTHORISED,2025-02-01,2025-02-15,"{""ContactID"":""cont-002"",""Name"":""TechSupply Inc""}","[{""Description"":""Laptop Computers"",""Quantity"":5,""UnitAmount"":1200.00,""LineAmount"":6000.00,""AccountCode"":""800""}]",6000.00,600.00,6600.00,USD
+po-002,PO-0002,DRAFT,2025-02-05,2025-02-20,"{""ContactID"":""cont-004"",""Name"":""OfficeGoods Co""}","[{""Description"":""Office Chairs"",""Quantity"":10,""UnitAmount"":250.00,""LineAmount"":2500.00,""AccountCode"":""800""}]",2500.00,250.00,2750.00,USD
+po-003,PO-0003,SUBMITTED,2025-02-10,2025-02-25,"{""ContactID"":""cont-002"",""Name"":""TechSupply Inc""}","[{""Description"":""Monitors"",""Quantity"":5,""UnitAmount"":400.00,""LineAmount"":2000.00,""AccountCode"":""800""}]",2000.00,200.00,2200.00,USD
+

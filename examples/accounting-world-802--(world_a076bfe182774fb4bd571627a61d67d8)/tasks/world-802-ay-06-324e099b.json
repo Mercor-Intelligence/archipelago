@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The team has shared the attached data in the following files (First_Time_Subscriber_List1.xlsx, First_Time_Subscriber_List2.xlsx, First_Time_Subscriber_List3.xlsx, First_Time_Subscriber_List4.xlsx) for first-time subscribers added during the quarter (Oct 24 – Dec 24). \n\nBased on Ironclad’s deferred revenue from the billing system (Ironclad Billing System Deferred Revenue 123124.xlsx), what percentage of deferred revenue from USD subscribers can be attributed to these first-time subscribers, assuming revenue is recognized on a daily basis? \n\nReport final answer as a message in console, rounded to two decimal places. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the percentage of deferred revenue from USD subscribers that can be... (ver_dfad7db657fe44909e2bea40c6eeee0b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percentage of deferred revenue from USD subscribers that can be attributed to first time subscribers during the quarter (Oct 24 – Dec 24) is 11.61% (acceptable range 11.49% to 11.73%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-802-ay-06-324e099b"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_a076bfe182774fb4bd571627a61d67d8",
+    "world_name": "Accounting World 802",
+    "task_id": "task_324e099b2a1c44e1abf1de47215d91cd",
+    "task_name": "World_802_AY_06",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_1876bc44cd4143fb904098f1a7ba97ed",
+        "golden_text_response": "The percentage of deferred revenue from USD subscribers that can be attributed to first time subscribers during the quarter (Oct 24 – Dec 24) is 11.61%",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

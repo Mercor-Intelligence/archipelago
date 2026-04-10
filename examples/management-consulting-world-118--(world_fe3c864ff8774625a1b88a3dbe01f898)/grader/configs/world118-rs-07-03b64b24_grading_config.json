@@ -1,0 +1,161 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_42ddd38b6421434998ab27da8f2d27d4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_03b64b24f4df443fa6fb51bc0b1c8e0a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States that \"Medisoft\" is the EHR Provider with less coverage",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_20e9ce1313ad4fffb19215c888e0d87f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_03b64b24f4df443fa6fb51bc0b1c8e0a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States MO is one of the states with coverage greater than 15% for Medisoft",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3e970c9343ba4d1dac4325202ba634e4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_03b64b24f4df443fa6fb51bc0b1c8e0a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States MN is one of the states with coverage greater than 15% for Medisoft",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_eb4b6cdc09104d2cb17c4903a213ddde",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_03b64b24f4df443fa6fb51bc0b1c8e0a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States WI is one of the states with coverage greater than 15% for Medisoft",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fe68d7de29a742a5b0321a271d90c0e8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_03b64b24f4df443fa6fb51bc0b1c8e0a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the average TAT for WI for Medisoft is 9.68 days (acceptable range 9.58 to 9.78)",
+        "modality": "Free text",
+        "negative_criteria": "States the average TAT for WI for Medisoft is a value other than 9.68 days",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3720271ef375490aa0323dea74d6a3dd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_03b64b24f4df443fa6fb51bc0b1c8e0a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the average TAT for MN for Medisoft is 10.38 days (acceptable range 10.28 to 10.48)",
+        "modality": "Free text",
+        "negative_criteria": "States the average TAT for MN for Medisoft is a value other than 10.38 days",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_38d84359535e40328d1220fb79903103",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_03b64b24f4df443fa6fb51bc0b1c8e0a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the average TAT for MO for Medisoft is 10.01 days (acceptable range 9.910 to 10.11)",
+        "modality": "Free text",
+        "negative_criteria": "States the average TAT for MO for Medisoft is a value other than 10.01 days",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

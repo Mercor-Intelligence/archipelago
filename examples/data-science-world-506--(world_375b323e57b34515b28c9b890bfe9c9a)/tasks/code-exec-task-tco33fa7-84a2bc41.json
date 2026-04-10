@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "You have access to the 'competitor_benchmark_data.csv' dataset. The marketing team needs to analyze competitor pricing to understand market positioning and pricing strategies.\n\nI need you to analyze the price information in this dataset and provide several key distribution metrics. Start by identifying the total number of price records available. Calculate the interquartile range, which measures the spread of the middle 50% of prices and helps identify pricing consistency. Determine the 25th percentile price, which represents the lower quartile of competitor pricing. Count how many prices fall between $60 and $80 inclusive, as this range represents mid-market pricing in our competitive landscape. Finally, calculate the coefficient of variation, which is the sample standard deviation (using n-1) divided by the mean, to understand relative price variability across competitors.\n\nRound values to 2 decimal places when applicable. Round the coefficient of variation to 4 decimal places. Include your full Python code used for analysis as well as the requested results in the final output."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports Total Price Records as 31 (+/-1). (ver_7510f5707a714cbabcbf10d554b00524)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Total Price Records as 31 (+/-1)."
+        }
+      ]
+    },
+    {
+      "name": "Reports IQR as 27.50 (+/-0.05) (ver_cf71429884fd4b24bbbb77aa8ade214c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports IQR as 27.50 (+/-0.05)."
+        }
+      ]
+    },
+    {
+      "name": "Reports 25th Percentile Price as 60.00 (+/-0.05). (ver_183931ce9ce54f4f8ca1ebbc4b59b046)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports 25th Percentile Price as 60.00 (+/-0.05)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the number of prices fall between $60 and $80 (inclusive) as 13 (+/-1). (ver_82f090970cf448a6ba7ba39582df383b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the number of prices fall between $60 and $80 (inclusive) as 13 (+/-1)."
+        }
+      ]
+    },
+    {
+      "name": "Reports Price Coefficient of Variation as 0.2185 (+/-0.0005). (ver_386575f38c9f4b409fe47146fd43f722)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Price Coefficient of Variation as 0.2185 (+/-0.0005)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh code-exec-task-tco33fa7-84a2bc41"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_84a2bc4138e74718afed0c52d3574fea",
+    "task_name": "Code Exec - Task tco33fa7",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_ec2c124b8c954000b0cb2cddfd1e10ee",
+        "golden_text_response": "Total Number of Price Records: 31\nIQR: 27.50\n25th Percentile: 60.00\nPrices $60-$80: 13\nCoefficient of Variation: 0.2185\n\n```python\nimport pandas as pd\nimport re\n\ndf = pd.read_csv('competitor_benchmark_data.csv')\nprice_df = df[df['metric'] == 'price'].copy()\n\ndef extract_price(val):\n    if pd.isna(val):\n        return None\n    val_str = str(val)\n    # Extract first number, removing $, /, and text\n    cleaned = re.sub(r'[^\\d.]', '', val_str.split()[0] if ' ' in val_str else val_str)\n    try:\n        return float(cleaned) if cleaned else None\n    except:\n        return None\n\nprice_df['price_numeric'] = price_df['value'].apply(extract_price)\nprices = price_df['price_numeric'].dropna()\n\ntotal_price_records = len(price_df)\niqr = round(prices.quantile(0.75) - prices.quantile(0.25), 2)\npercentile_25 = round(prices.quantile(0.25), 2)\nprices_60_to_80 = ((prices >= 60) & (prices <= 80)).sum()\ncoefficient_of_variation = round(prices.std(ddof=1) / prices.mean(), 4)\n\nprint(f\"Total Number of Price Records: {total_price_records}\")\nprint(f\"IQR: {iqr:.2f}\")\nprint(f\"25th Percentile: {percentile_25:.2f}\")\nprint(f\"Prices $60-$80: {prices_60_to_80}\")\nprint(f\"Coefficient of Variation: {coefficient_of_variation}\")\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

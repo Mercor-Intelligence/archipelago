@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "After a few months of negotiations with the City of San Dimas, Annalise Keating has decided that Liverbird needs to terminate the redevelopment negotiating agreement. Can Annalise unilaterally terminate the agreement on behalf of Liverbird?"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that yes, Annalise can unilaterally terminate the exclusive negotiating... (ver_4fbbfe4a1f38400182bdb5f077ad9457)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that yes, Annalise can unilaterally terminate the exclusive negotiating agreement on behalf of Liverbird."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world428-ro-02-d089743e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_d089743edfca4118b65c9fd316b94966",
+    "task_name": "World428_RO_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d66c4339a13f4ea9a8dde73217ec4634",
+        "golden_text_response": "Yes, Annalise can unilaterally terminate the exclusive negotiating agreement on behalf of Liverbird.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

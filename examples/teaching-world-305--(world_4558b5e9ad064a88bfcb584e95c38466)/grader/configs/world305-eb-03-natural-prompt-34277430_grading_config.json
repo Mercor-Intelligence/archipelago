@@ -1,0 +1,289 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_9d932c29ffb54daaac6dad6e7fbfc1ce",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_34277430e3f34a6ca4b91e9ba7e3cf27",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Adds the date 10/21/2025",
+        "modality": "Free text",
+        "negative_criteria": "Adds a date other than 10/21/2025 to \u201cC9_Lesson Plan.docx\u201d.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The prompt states that this lesson will come after lesson 6. Referring to the unit overview, Lesson 6 was taught on 10/18/2025 (a Friday). Therefore, the Chapter 9 lesson should be taught on Monday 10/21/2025.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5235691b466e424d854a0ab887fff3ee",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_34277430e3f34a6ca4b91e9ba7e3cf27",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Copies the 'Do Now', 'Guided Instruction', and 'Independent Practice' sections from \u201cC9_Outline.docx\u201d into \"C9_Lesson Plan.docx\"",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Lesson outline:\n\nDo Now\nThink Pair Share: Discuss social expectations around gender with your partner.\nHow are boys and girls supposed to behave? How do children learn about gender? How does society react to young people who don\u2019t fulfill gender roles?\n\nGuided Instruction\nRead chapter 9 aloud.\n\nIndependent Practice\nJournal Prompt\nOn page 100, Atticus says to his brother Jack, \u201cI hope and pray I can get Scout and Jem through it without bitterness, and most of all, without catching Maycomb\u2019s usual disease.\u201d a. What does Atticus most likely mean by this metaphor? b. What are the connotations of the word \u201cdisease\u201d?  c. What does Atticus\u2019s word choice reveal about his character?",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "C9_Outline.docx",
+            "source": "task",
+            "snapshotId": "snap_1a34885813254abda13cfa4675227f29"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_49d4dd451cea4427b5be95fcbe22e586",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_34277430e3f34a6ca4b91e9ba7e3cf27",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Homework question 1 includes a metaphor extracted from the last 8 pages of chapter 9 (pages 84-91) of \"TKMFullText.pdf\"",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Lessons/Resources/TKMFullText.pdf",
+            "source": "world",
+            "snapshotId": "snap_bebca1298bd04ba3a95356e6da5a6fc6"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_df99a282ddbb4b038b46b5675c94be8e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_34277430e3f34a6ca4b91e9ba7e3cf27",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Homework question 1 states the page number of the extracted quote",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0968ad927b794270a827d88f64f4b7d1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_34277430e3f34a6ca4b91e9ba7e3cf27",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Homework question 1 asks for the meaning of the text excerpt",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "request from Lesson Outline as detailed in the \u201cC9_Outline.docx\u201d",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_01c9350d4b834afd86247903416bf71c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_34277430e3f34a6ca4b91e9ba7e3cf27",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Homework question 1 asks for the connotations of the word or phrase in the text excerpt",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "request from Lesson Outline as detailed in the \u201cC9_Outline.docx\u201d",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5e8c512083ee481894438579bd82728a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_34277430e3f34a6ca4b91e9ba7e3cf27",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Homework question 1 asks how the word choice in the text excerpt reveals something about a character",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "request from Lesson Outline as detailed in the \u201cC9_Outline.docx\u201d",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d07249569b294ae59f5e550ca647ddda",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_34277430e3f34a6ca4b91e9ba7e3cf27",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Homework question 2 includes a metaphor extracted from the last 8 pages of chapter 9 (pages 84-91) of \"TKMFullText.pdf\"",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Lessons/Resources/TKMFullText.pdf",
+            "source": "world",
+            "snapshotId": "snap_bebca1298bd04ba3a95356e6da5a6fc6"
+          }
+        ]
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e9d176ba0f2a4fa7926b75853c63d696",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_34277430e3f34a6ca4b91e9ba7e3cf27",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Homework question 2 states the page number of the extracted quote",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1c16d75227de44e99d0f08f87611c93d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_34277430e3f34a6ca4b91e9ba7e3cf27",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Homework question 2 asks for the meaning of the text excerpt",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "request from Lesson Outline as detailed in the \u201cC9_Outline.docx\u201d",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5283f08d3dec4f3aa572670041a5a97a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_34277430e3f34a6ca4b91e9ba7e3cf27",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Homework question 2 asks for the connotations of the word or phrase in the text excerpt",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "request from Lesson Outline as detailed in the \u201cC9_Outline.docx\u201d",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a4147d46680a42d286ca2c4047356ae2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_34277430e3f34a6ca4b91e9ba7e3cf27",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Homework question 2 asks how the word choice in the text excerpt reveals something about a character",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "request from Lesson Outline as detailed in the \u201cC9_Outline.docx\u201d",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

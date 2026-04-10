@@ -1,0 +1,261 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Calculate the annual mine closure costs under these conditions:\n- Closure costs span 10 years (Y1–Y10).\n- Pits, industrial zones, and overburden waste dump unit costs are in the closing costs document. Their counts and areas are in the areas for closure file.\n- Tailings pond closure costs come from the James Martinez interview. His range corresponds to 0.25 km² (low) and 1.25 km² (high), with costs scaling linearly by area.\n- Annual water treatment costs apply each year. Use the average of the min and max from the James Martinez interview.\n- A data center may offset costs. Use expert interview #2 to compute the minimum and maximum offset percentages from the gold mine example, take their average, and apply it to our mine’s total closure costs. Assume we achieve the following percentage of the total offset opportunity by year: 0% in Y1 and Y2, 5% in each of Y3–Y6, 10% in each of Y7–Y10. Ignore any remaining percentage.\n\nReturn a console message with net closure cost by year (Y1–Y10), rounded to the nearest whole dollar."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the Y1 net closing cost is $19,700,000 (acceptable range... (ver_97de2daeca7c45fd8aad037731fe35bc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Y1 net closing cost is $19,700,000 (acceptable range $19,503,000 to $19,897,000)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Y2 net closing cost is $19,700,000 (acceptable range... (ver_793b9426b82b4d5c86c0d3cca7782c56)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Y2 net closing cost is $19,700,000 (acceptable range $19,503,000 to $19,897,000)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Y3 net closing cost is $15,390,625 (acceptable range... (ver_a50ad137c181408bab8d102390e060e2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Y3 net closing cost is $15,390,625 (acceptable range $15,236,719 to $15,544,531)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Y4 net closing cost is $15,390,625 (acceptable range... (ver_f392811f930e4d5798500c5360a99bbc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Y4 net closing cost is $15,390,625 (acceptable range $15,236,719 to $15,544,531)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Y5 net closing cost is $15,390,625 (acceptable range... (ver_745b8dd5b4564518b9108b1e3f502077)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Y5 net closing cost is $15,390,625 (acceptable range $15,236,719 to $15,544,531)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Y6 net closing cost is $15,390,625 (acceptable range... (ver_96df326304ae43d29c9b5dcc51b830a0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Y6 net closing cost is $15,390,625 (acceptable range $15,236,719 to $15,544,531)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Y7 net closing cost is $11,081,250 (acceptable range... (ver_d88b47031c8541daa02480ceda9123ee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Y7 net closing cost is $11,081,250 (acceptable range $10,970,438 to $11,192,062)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Y8 net closing cost is $11,081,250 (acceptable range... (ver_3c2445bf1e6c4fcbba4cb52521aca4a7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Y8 net closing cost is $11,081,250 (acceptable range $10,970,438 to $11,192,062)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Y9 net closing cost is $11,081,250 (acceptable range... (ver_87e734a101c24129871b9b8191a5a644)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Y9 net closing cost is $11,081,250 (acceptable range $10,970,438 to $11,192,062)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Y10 net closing cost is $11,081,250 (acceptable range... (ver_6fbaddf387e64e8a811097659e6ae172)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Y10 net closing cost is $11,081,250 (acceptable range $10,970,438 to $11,192,062)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh w115-ah-task-2-e3751029"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_e375102920964f8790a99fb822f30d2d",
+    "task_name": "W115_AH_Task 2",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_a26c186397724c8bbeb41007f544decf",
+        "golden_text_response": "The net closing costs by year are:\nY1: $19,700,000 \nY2: $19,700,000\nY3: $15,390,625\nY4: $15,390,625\nY5: $15,390,625\nY6: $15,390,625\nY7: $11,081,250\nY8: $11,081,250\nY9: $11,081,250\nY10: $11,081,250",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

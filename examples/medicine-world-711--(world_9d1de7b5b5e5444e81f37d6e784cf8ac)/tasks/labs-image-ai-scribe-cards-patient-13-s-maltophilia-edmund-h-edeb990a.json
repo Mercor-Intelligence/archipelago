@@ -1,0 +1,192 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 13” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n----\n\nPatient 13 visits her clinic appointment on 3rd January 2026. She reports dysuria and fever. What are the best antimicrobials to start?  Provide an explanation."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the patient has a history of recurrent urinary tract infections (UTI). (ver_b87ee9cdd57d42f3af199d266a4d6481)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient has a history of recurrent urinary tract infections (UTI)."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the patient's recent UTI has not been treated. (ver_5d5b346cc3344e738e1bce0b8b53c6be)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient's recent UTI has not been treated."
+        }
+      ]
+    },
+    {
+      "name": "States the patient needs a repeat urine culture for her current presentation. (ver_4268280d11dd4d4094621d49e0ca2073)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient needs a repeat urine culture for her current presentation."
+        }
+      ]
+    },
+    {
+      "name": "States that her recent urine culture can guide empirical treatment for her... (ver_a33f879e4d7a46dca595fefa13725526)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that her recent urine culture can guide empirical treatment for her current presentation."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the recent urine culture grew Stenotrophomonas maltophilia. (ver_cc825c3cf8634345a518fe6767523e0a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the recent urine culture grew Stenotrophomonas maltophilia."
+        }
+      ]
+    },
+    {
+      "name": "States combination therapy with two agents is recommended for Stenotrophomonas... (ver_b66be7bd3cdc4dd8a99cca95cc618075)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States combination therapy with two agents is recommended for Stenotrophomonas maltophilia."
+        }
+      ]
+    },
+    {
+      "name": "States the next best step in treatment is starting the patient on cefiderocol... (ver_cb6c7c26037b4cad96b3b3e99d80ac1d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the next best step in treatment is starting the patient on cefiderocol and minocycline."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-cards-patient-13-s-maltophilia-edmund-h-edeb990a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_edeb990a2f334b96b3ae952e6cbef890",
+    "task_name": "Labs_Image_AI Scribe_Cards_Patient 13 -S. maltophilia- Edmund H",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_464f5b69cdbf48e7831c54cbf7fb4ca5",
+        "golden_text_response": "The patient has a history of recurrent urinary tract infections, and a urine culture is indicated. The patient has a recent urine culture. It is important to guide treatment with a prior urine culture. The urine culture grows *Stenotrophomonas maltophilia* and demonstrates susceptibility to nitrofurantoin, trimethoprim sulfamethoxazole (TMP SMX), and imipenem. The patient has not yet received antimicrobial therapy, so this current UTI has not yet been treated. One treatment option is combination therapy with at least two active agents, such as cefiderocol, minocycline, TMP SMX, or levofloxacin, listed in order of preference, at least until clinical improvement is observed, given the limited supportive data for any single agent. Alternatively, the combination of ceftazidime avibactam and aztreonam may be used, although clinical data supporting this regimen are limited. The urine culture demonstrates resistance to levofloxacin. Therefore, the combination of cefiderocol and minocycline represents the next best step in treatment.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

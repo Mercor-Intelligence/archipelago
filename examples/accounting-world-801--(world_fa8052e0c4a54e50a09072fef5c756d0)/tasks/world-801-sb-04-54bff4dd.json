@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the Audited Redwood Components Tax model and the payments document in Xero, Calculate the 2023 Cash Realization Ratio.\n\nAssumptions:\n- Cash realization ratio formula is Cash Revenue divided by Accrual Revenue\n- For intermediate calculations use USD, convert other currencies if needed.\n\nPresent output in %, rounded to two decimal places in the console. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the 2023 Cash Realization Ratio is 1.70% (acceptable range 1.68%... (ver_ca1aab0119b24d0db2958a22332f8f8a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 2023 Cash Realization Ratio is 1.70% (acceptable range 1.68% to 1.72%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-801-sb-04-54bff4dd"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_54bff4dd8668485bb452bfa4124a0376",
+    "task_name": "World 801 SB_04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_a1df861cf40c4d868d4de56f98f63aaa",
+        "golden_text_response": "2023 Cash Realization Ratio: 1.70%",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

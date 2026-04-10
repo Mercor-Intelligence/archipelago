@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Model the interest payment impact following interest rate reduction and risk changes following due date extensions using python. Identify from 1.11.2026 Habor Capital Final.pdf: the three most risk concentrated sectors (slide 3) and the month with the biggest loss increase (slide 6). There are typos in some of the documents with \"Harbor\" sometimes misspelled as \"Habor\". Filter from enriched_loan_data.csv for that month and the three high risk sectors. Perform modelling with the filtered dataset. If needed, additional definitions are documented in Executive Documentation - Harbor Capital Risk Dashboard.docx, and formulas for calculating fields in the dataset can be found in 02_Risk_Calculation_Logic_v2_final.py. For this analysis, \"PD_Probability\" and \"PD\" reference to the same term. Identify borrowers who has current loan balance less than 20% of annual revenue, namely borrower group X. Cap these borrowers' interest rate to be no higher than 3% above the Prime Rate. All interest rates in this analysis are annualized rates. Assume nothing else changes, report total annualized interest revenue reduction for Habor Capital. For any loan overdue less or equal to 90 days from group X, extend the due date by up to 60 days. Recalculate the expected loss. Report the updated total expected loss for the three impacted sectors, respectively. Report number of borrowers with expected loss reduction (>$1). Report the total expected loss reduction amount from the 20 borrowers with biggest reductions. Round all values to the nearest integer when reporting. Provide python codes along with the results."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Report the total annualized interest revenue reduction as $7,638,227 +/- $10. (ver_4a3610acc60045ef85096b21dcb8b31c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report the total annualized interest revenue reduction as $7,638,227 +/- $10."
+        }
+      ]
+    },
+    {
+      "name": "Report the updated total expected loss for the Construction sector as... (ver_5a627948e1af4c85824c4946fb7360f3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report the updated total expected loss for the Construction sector as $509,806,152 +/- $10."
+        }
+      ]
+    },
+    {
+      "name": "Report the updated total expected loss for the Retail sector as $487,241,270... (ver_221b2ff26b8441c588359f569a31c863)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report the updated total expected loss for the Retail sector as $487,241,270 +/- $10."
+        }
+      ]
+    },
+    {
+      "name": "Report the updated total expected loss for the Hospitality sector as... (ver_7dc1a648b8b243b09ef8e1ddfaac0aa7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report the updated total expected loss for the Hospitality sector as $129,669,678 +/- $10."
+        }
+      ]
+    },
+    {
+      "name": "Report the number of borrowers who see a reduction in expected loss (larger... (ver_44098d30ba824f44b99a071396272aa0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report the number of borrowers who see a reduction in expected loss (larger than $1) is 93 (exact value, no error tolerance)."
+        }
+      ]
+    },
+    {
+      "name": "Report the total expected loss reduction amount from the 20 borrowers with the... (ver_136fd1f54acf48bab7ba9c3823dc48fc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report the total expected loss reduction amount from the 20 borrowers with the biggest reductions as $6,249,824 +/- $10."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh code-exec-task-pa7o1124-5114b31f"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_5114b31f244b491090ddb2215053c574",
+    "task_name": "Code Exec - Task pa7o1124",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f841a20bed3a4faa9e279b6d6b0ce345",
+        "golden_text_response": "total annualised reduced interest revenue for Habor Capital: $7,638,227\nupdated total expected loss for the Construction sector is: $509,806,152\nupdated total expected loss for the Retail sector is: $487,241,270\nupdated total expected loss for the Hospitality sector is: $129,669,678\nnumber of borrowers see reduction in expected loss (larger than $1): 93\ntotal expected loss reduction amount from the 20 borrowers with biggest reductions: $6,249,824\n\n\n```\nimport pandas as pd\nimport numpy as np\nimport time\n\n# identify the top 3 high risk sectors from PDF as 'Construction','Retail','Hospitality'\nHighRiskSector=['Construction','Retail','Hospitality']\nReportMth='2024-06'\n\n# read the enriched_loan_data.csv data and filter based on Report_Date and only the top 3 high risk sectors\ndf = pd.read_csv(\n    \"3.Analysis/Preprocessed datasets/enriched_loan_data.csv\",\n)\ndf['Report_Date'] = pd.to_datetime(df['Report_Date'])\ndf=df.loc[(df.Report_Date.dt.to_period('M') == ReportMth)&(df.NAICS_Sector.isin(['Construction','Retail','Hospitality']))]\n\n\n# calculate the current balance to annual revenue ratio\ndf['Debt2Revnue']=df.Current_Balance/df.Annual_Revenue\n\n\n# filter down to group X (balance less than 20% of revenue) which are subject to interest cap\ndf_groupX=df.loc[df.Debt2Revnue<0.2]\n\n\n# calcualte the new interest rate after the cap and gap between the old and new interest\ncappedRates=df_groupX['Prime_Rate']+3\ndf_groupX['Interest_Rate_New']=np.minimum(cappedRates, df_groupX['Interest_Rate'])\ndf_groupX['Interest_Rate_Delta']=df_groupX['Interest_Rate']-df_groupX['Interest_Rate_New']\n\n\n# calcualte and output the reduced interest revenue\nttlInterestReducton=(df_groupX['Interest_Rate_Delta']*df_groupX['Current_Balance']/100).sum()\nprint(f'total annualised reduced interest revenue for Habor Capital: ${ttlInterestReducton:,.0f}')\n\n# update the expected loss for the three sectors based on proposed due date extension based on definition and formula in Executive Documentation - Harbor Capital Risk Dashboard.docx.\n# because PD_Probability was previously capped. It needs to be recalculated from scratch using parameters from 02_Risk_Calculation_Logic_v2_final.py\nMODEL_PARAMS = {\n    'intercept': 12.5,         \n    'coeff_score': -0.022,      \n    'coeff_unemp': 0.10,       \n    'sector_risk_map': {\n        'Construction': 0.6, 'Retail': 0.4, 'Hospitality': 0.3,\n        'Manufacturing': 0.0, 'Logistics': 0.1, 'Technology': 0.2,\n        'Healthcare': -0.6     \n    }\n}\n\ndef log(msg):\n    print(f\"[RISK MODEL] {time.strftime('%H:%M:%S')} - {msg}\")\n\ndef sigmoid(x):\n    return 1 / (1 + np.exp(-x))\n\ndf['Days_Past_Due_new']=df['Days_Past_Due']\ndf.loc[df.Debt2Revnue<0.2,'Days_Past_Due_new']=df.loc[df.Debt2Revnue<0.2,'Days_Past_Due'].apply(lambda x: np.maximum(x-60,0) if x<=90 else x)\n\ndf['Sector_Risk_Factor'] = df['NAICS_Sector'].map(MODEL_PARAMS['sector_risk_map']).fillna(0)\ndf['Log_Odds'] = (\n    MODEL_PARAMS['intercept'] + \n    (df['Origination_Credit_Score'] * MODEL_PARAMS['coeff_score']) + \n    (df['Unemployment_Rate'] * MODEL_PARAMS['coeff_unemp']) + \n    (df['Sector_Risk_Factor'])\n)\ndf['PD_Probability_New'] = sigmoid(df['Log_Odds'])\n\nmask_variable = (df['Interest_Type'] == 'Variable')\nmask_2023_late = (df['Report_Date'] >= '2023-10-01')\nmask_2024_mid = (df['Report_Date'] >= '2024-06-01')\n\ndf['Macro_Shock'] = 0.0\ndf.loc[mask_variable & mask_2023_late, 'Macro_Shock'] += 0.15\ndf.loc[mask_variable & mask_2024_mid, 'Macro_Shock'] += 0.25 \n\nmask_construction = (df['NAICS_Sector'] == 'Construction')\nmask_2024_start = (df['Report_Date'] >= '2024-01-01')\ndf.loc[mask_construction & mask_2024_start, 'Macro_Shock'] += 0.20\n\ndf['PD_Probability_New'] = df['PD_Probability_New'] + df['Macro_Shock']\n\ncondition_dpd = [\n    (df['Days_Past_Due_new'] > 90),\n    (df['Days_Past_Due_new'] > 60),\n    (df['Days_Past_Due_new'] > 30),\n    (df['Days_Past_Due_new'] > 0)\n]\npenalties = [0.90, 0.50, 0.25, 0.10]\ndf['Delinq_Penalty'] = np.select(condition_dpd, penalties, default=0.0)\ndf['PD_Probability_New'] = df['PD_Probability_New'] + df['Delinq_Penalty']\ndf['PD_Probability_New'] = df['PD_Probability_New'].clip(upper=1.0)\n\ndf['Expected_Loss_Amount_new'] = df['Current_Balance'] * df['PD_Probability_New'] * df['LGD_Factor']\n\n\ndf_updatedLoss=df.groupby('NAICS_Sector').agg({'Expected_Loss_Amount_new':'sum'}).sort_values('Expected_Loss_Amount_new',ascending=False)\n\n\ndf_updatedLoss\n\n\nprint(f'updated total expected loss for the {df_updatedLoss.index[0]} sector is: ${df_updatedLoss['Expected_Loss_Amount_new'].iloc[0]:,.0f}' )\nprint(f'updated total expected loss for the {df_updatedLoss.index[1]} sector is: ${df_updatedLoss['Expected_Loss_Amount_new'].iloc[1]:,.0f}' )\nprint(f'updated total expected loss for the {df_updatedLoss.index[2]} sector is: ${df_updatedLoss['Expected_Loss_Amount_new'].iloc[2]:,.0f}' )\n\n\ndf['Expected_Loss_Reduction']=df[\"Expected_Loss_Amount\"]-df[\"Expected_Loss_Amount_new\"]\n\n\nprint(\n    f\"number of borrowers see reduction in expected loss (larger than $1):\",\n    (df['Expected_Loss_Reduction']>1).sum(),\n)\n\n\n# sort based on the reduction in expected loss, descending order\ndf=df.sort_values('Expected_Loss_Reduction',ascending=False)\n\nprint(\n    f\"total expected loss reduction amount from the 20 borrowers with biggest reductions: ${df['Expected_Loss_Reduction'].iloc[:20].sum():,.0f}\"\n)\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

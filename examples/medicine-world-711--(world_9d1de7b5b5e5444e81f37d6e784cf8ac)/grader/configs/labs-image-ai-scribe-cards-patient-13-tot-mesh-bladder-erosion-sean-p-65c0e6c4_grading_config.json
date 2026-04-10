@@ -1,0 +1,343 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_b4b18369c78e4de6997d7b7d361c281b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_65c0e6c4108f4639b24edd7f56a69368",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient's ultrasound findings are consistent with a bladder calculus.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Cards_Patient 13 US Imaging.pdf: \"1 cm echogenic structure on anterior bladder wall with posterior shadowing. Associated local bladder wall thickening.\"\n\n\"Sonographically [bladder calculi] are mobile, echogenic, and shadow posteriorly. They may be associated with bladder wall thickening due to inflammation.\"\nhttps://radiopaedia.org/articles/bladder-calculus-1?lang=us",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 US Imaging.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_87f736a646dc4d42af9eff7f1f1c6562"
+          }
+        ]
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2fb2b64a39f44091a14d1e8899d03d34",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_65c0e6c4108f4639b24edd7f56a69368",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient's hematuria on urinalysis is consistent with a bladder calculus.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Cards_Patient 13 UA.pdf: \"RBC 5-10/hpf\"  \"Reference Interval 0-2\"\n\n\"Regardless of the type of stone, patients present with a similar array of symptoms, ranging from asymptomatic to critically ill. The presentation includes sudden to gradual onset, unilateral colicky abdominal/flank pain that often waxes/wanes, hematuria (90% microscopic on UA), nausea, vomiting, and fever.\"\nhttps://www.ncbi.nlm.nih.gov/books/NBK559101/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 UA.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_87f736a646dc4d42af9eff7f1f1c6562"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_84e2a86c62b341eca2d2cb5037d324b4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_65c0e6c4108f4639b24edd7f56a69368",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient's urinalysis results make an infectious process unlikely.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This criterion is important to state because an infected bladder calculus would require a different treatment approach.  The combination of negative nitrites and leukocyte esterase has a high negative predictive value for UTI.\n\nCards_Patient 13 UA.pdf: \"WBC esterase Negative\", \"Nitrite, Urine Negative\"\n\n\"Combined positive LE and nitrites had a high PPV (85%) and combined negative LE and nitrites had a high NPV (92%), while positive LE combined with negative nitrites had a low PPV (47%) and a low NPV (53%).\"\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC6754830/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 UA.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_87f736a646dc4d42af9eff7f1f1c6562"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c6624ee69ece40548c1e6b26eaaaf41e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_65c0e6c4108f4639b24edd7f56a69368",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the patient has a history of transobturator tape (TOT) sling placement.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This procedure, used to treat stress urinary incontinence, is important to note because the bladder calculus likely represents a potential complication of the procedure.\n\n\"Has a history of LAVH, BSO, with anterior and posterior repair, sacrospinous fixation and TOT sling in 2019 (with Dr Arelia Sneddon).\"\nTab - CLINICALNOTES\nNote Type - Progress Note\nColumn - D\nRow - 193",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e8b4f2233c914e7793400b49da71e75a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_65c0e6c4108f4639b24edd7f56a69368",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States a potential late complication of TOT sling placement is mesh erosion into the bladder wall or urethra.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Erosion is the extrusion of synthetic mesh to the lumen of the bladder or urethra, which occurs in the late postoperative period.\"\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC5678512/#f4a",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d0cc2092795741b2b108e1cafae74877",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_65c0e6c4108f4639b24edd7f56a69368",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient's symptoms are consistent with mesh erosion into the bladder.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Cards_Patient 13 Script 2.pdf: \n\"Patient: I\u2019m having an uncomfortable pressure sensation when I urinate.\"\n\"Patient: No, none of those things. I am having a bit more pelvic pain than usual, but I also\nhaven\u2019t been applying my cream like I\u2019m supposed to. I otherwise feel okay.\"\n\n\"Typically, patients with bladder or urethral erosion present filling lower urinary tract symptoms such as urgency and urinary frequency, pelvic pain, dyspareunia, recurrent urinary tract infections, voiding symptoms and microscopic hematuria.\"\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC5678512/#f4a",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Script 2.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_87f736a646dc4d42af9eff7f1f1c6562"
+          }
+        ]
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3f9c4cb90fee42ebae7b4c58b7e6dea0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_65c0e6c4108f4639b24edd7f56a69368",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes mesh erosion into the bladder can initially present as a bladder calculus.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"The eroded mesh may be calcified and present as a fixed bladder stone (Figure-4a).\"\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC5678512/#f4a\n\n\"In the event of mesh erosion into the bladder or urethra, referral to a specialist familiar with reconstructive techniques is warranted. Intravesical mesh erosion can be associated with adherent calculi, making extraction of the mesh through minimally invasive approaches difficult.\"\nhttps://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2017/04/management-of-mesh-and-graft-complications-in-gynecologic-surgery\n\n\"Computerized tomography (CT) showed a bladder stone fixed to left bladder wall (Figure 1). The patient underwent cystoscopy, which demonstrated a stone over the eroded polypropylene mesh material within the bladder wall.\"\n\"A transabdominal ultrasound showed a bladder stone fixed to the right bladder wall. It is not known whether a cystoscopy was done or not at the time of the TVT procedure. Sonography confirmed a post-void residual urine volume of 150 to 200 mL. The patient underwent urodynamic testing. This revealed a bladder capacity of 450 cc, post-void residual volume was 150 cc, and there was no evidence of stress incontinence. The patient underwent cystoscopy, which demonstrated a stone over the eroded polypropylene mesh material within the bladder wall.\"\nhttps://www.urotoday.com/volume-6-2013/vol-6-issue-3/61306-late-bladder-erosion-complications-and-vesical-stone-formations-of-synthetic-graft-materials-used-in-mid-urethral-sling-procedures.html",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7adf9215968d4f95ab1129c8e58b4c62",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_65c0e6c4108f4639b24edd7f56a69368",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient's likely underlying diagnosis is mesh erosion with bladder stone formation on a nidus of mesh.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has a history of TOT sling placement and now presents with worsening pelvic pain, dysuria, hematuria on UA, and an US finding of bladder calculus in the absence of prior history of urolithiasis.  A late complication of TOT sling placement is erosion of the sling mesh through the bladder.  The mesh is a nidus for calculus formation, so the diagnosis classically presents on initial workup with discovery of a bladder calculus.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d1ca03b7b09a48d6aedcba74661cea93",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_65c0e6c4108f4639b24edd7f56a69368",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the definitive diagnosis of mesh erosion should be confirmed by urethrocystoscopy.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"The diagnosis of urethral or bladder erosion is confirmed by urethrocystoscopy (Figure-4b).\"\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC5678512/#f4a\n\nThis information is important to include in the ideal answer.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0c9c71bb6c5844fa82ff41e974264729",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_65c0e6c4108f4639b24edd7f56a69368",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the definitive treatment for the patient's likely diagnosis involves mesh removal.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Management of Mesh and Graft Complications in Gynecologic Surgery, ACOG: \"Intravesical mesh erosion can be associated with adherent calculi, making extraction of the mesh through minimally invasive approaches difficult. The specialist may consider the following techniques: combined laparoscopic and cystoscopic excision of the portion of eroded mesh in the bladder 17; combined vaginal and laparoscopic approaches 18; or using assistance from ear, nose, and throat instruments to avoid the need for urethrotomy 19.\"\nhttps://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2017/04/management-of-mesh-and-graft-complications-in-gynecologic-surgery\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b0cf4e7e9edc4c8dbcdfc0c60706135f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_65c0e6c4108f4639b24edd7f56a69368",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States mesh removal may be performed via at least one of the following techniques: combined laparoscopic and cystoscopic excision, combined vaginal and laparoscopic approaches, or using assistance from ear, nose, and throat instruments.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Management of Mesh and Graft Complications in Gynecologic Surgery, ACOG: \"Intravesical mesh erosion can be associated with adherent calculi, making extraction of the mesh through minimally invasive approaches difficult. The specialist may consider the following techniques: combined laparoscopic and cystoscopic excision of the portion of eroded mesh in the bladder 17; combined vaginal and laparoscopic approaches 18; or using assistance from ear, nose, and throat instruments to avoid the need for urethrotomy 19.\"\nhttps://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2017/04/management-of-mesh-and-graft-complications-in-gynecologic-surgery\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_131d0ed5a12c4c3aa3c18fa556922796",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_65c0e6c4108f4639b24edd7f56a69368",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States bladder calculus fragmentation may be needed to facilitate removal.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"A 52-year-old female patient with a history of vaginal POP surgery with mesh was referred for severe pelvic and perineal pain, dyspareunia, and dysuria. She was found to have a bladder calculus on a mesh extrusion. The calculus was removed by endoscopic lithotripsy before vaginal mesh excision was performed.\"\nhttps://link.springer.com/article/10.1007/s00192-015-2934-z",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_08952eb595c64129b74ff5daa2de1e66",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_65c0e6c4108f4639b24edd7f56a69368",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the ICD-10 code is T83.7.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "ICD-10 code is T83.7, \"Complications due to implanted mesh and other prosthetic materials\".  The patient experienced the implanted mesh complication of erosion into the bladder, which led to the formation of a bladder calculus.\nhttps://www.unboundmedicine.com/icd/view/ICD-10-CM/904968/all/T83_7___Complications_due_to_implanted_mesh_and_other_prosthetic_materials?q=-+complications+devices%2C+genitourinary+grafts+implants+prosthetic+t83",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

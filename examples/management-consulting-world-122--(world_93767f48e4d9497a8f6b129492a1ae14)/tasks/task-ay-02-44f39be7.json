@@ -1,0 +1,514 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Our client, Forma, requires deeper customer insights regarding their brand preference. Please use the brand preference final data to provide the following insights in the console:\n\n1) For each of the 10 purchase drivers, identify which brand is preferred by the highest number of users. In case of a tie, pick the brand alphabetically.\n\n2) How many users have very high loyalty towards Forma? Any user who selects a brand as the most preferred across three or more purchase drivers is considered to have very high brand loyalty. While this is rare, a user may theoretically have very high brand loyalty toward more than one brand.\n\n3) Which brands have a higher number of very high–loyal users compared to Forma? How many very high loyal users does each of these brands have?\n\n4) Across customer selections for style and pricing, which brand pair occurs most frequently? How many times is the pair selected? Report multiple pairs in case of a tie. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States Article is the most preferred brand for Price (ver_a4b8e9e0f5384fb0a54b08477dde8443)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Article is the most preferred brand for Price."
+        }
+      ]
+    },
+    {
+      "name": "States Apt2B is the most preferred brand for Style (ver_d941cc5ff67047b1a9e9de898e98ca53)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Apt2B is the most preferred brand for Style."
+        }
+      ]
+    },
+    {
+      "name": "States Interior Define is the most preferred brand for Quality (ver_50ccd205e31845fdb5fc5d10f9f8ad8d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Interior Define is the most preferred brand for Quality."
+        }
+      ]
+    },
+    {
+      "name": "States Forma is the most preferred brand for Delivery Speed (ver_773cb9dd1d4a470691eeec47b0fe5e13)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Forma is the most preferred brand for Delivery Speed."
+        }
+      ]
+    },
+    {
+      "name": "States Forma is the most preferred brand for delivery cost (ver_61f4f2b98c314b1ea5f36cedb03b50a5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Forma is the most preferred brand for delivery cost."
+        }
+      ]
+    },
+    {
+      "name": "States Arhaus is the most preferred brand for reviews (ver_e7dcbcd3a3f6458db0b5b35164408ad6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Arhaus is the most preferred brand for reviews."
+        }
+      ]
+    },
+    {
+      "name": "States The inside is the most preferred brand for returns (ver_cd08a04d46874cd68434b7c07f919dfa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States The inside is the most preferred brand for returns."
+        }
+      ]
+    },
+    {
+      "name": "States Poly & Bark is the most preferred brand for assembly service (ver_d609febe8d5e4284b91e3a5eff0545ed)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Poly & Bark is the most preferred brand for assembly service."
+        }
+      ]
+    },
+    {
+      "name": "States BenchMade Mordern is the most preferred brand for warranty (ver_ff087f65abe8467aba0082dbbf3de8df)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States BenchMade Mordern is the most preferred brand for warranty."
+        }
+      ]
+    },
+    {
+      "name": "States The Inside is the most preferred brand for Brand Reputation (ver_dbf9584a623740bbbbb3e859e513d3ad)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States The Inside is the most preferred brand for Brand Reputation."
+        }
+      ]
+    },
+    {
+      "name": "States the number of users having very loyalty towards Forma is 41 (acceptable... (ver_ab5220eda22f44f4a7aa37eba6f61e96)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the number of users having very loyalty towards Forma is 41 (acceptable range 40.6 to 41.4)."
+        }
+      ]
+    },
+    {
+      "name": "States the number of users having very loyalty towards Forma is a value other... (ver_ab5220eda22f44f4a7aa37eba6f61e96)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the number of users having very loyalty towards Forma is a value other than 41."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Arhaus as one of the brands with more very high loyalty users... (ver_a6301b3266924489bf5a6a602c560d5e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Arhaus as one of the brands with more very high loyalty users compared to Forma."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Apt2B as one of the brands with more very high loyalty users... (ver_b69c9bd7627040dba62f0e79d69463be)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Apt2B as one of the brands with more very high loyalty users compared to Forma."
+        }
+      ]
+    },
+    {
+      "name": "States the number of users having very loyalty towards Arhaus is 44 (ver_85e3b687fc4d4381b04f5969eebd4fc0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the number of users having very loyalty towards Arhaus is 44."
+        }
+      ]
+    },
+    {
+      "name": "States the number of users having very loyalty towards Arhaus is a value other... (ver_85e3b687fc4d4381b04f5969eebd4fc0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the number of users having very loyalty towards Arhaus is a value other than 44."
+        }
+      ]
+    },
+    {
+      "name": "States the number of users having very loyalty towards Apt2B is 42 (ver_a24c93a511f145c0a32da0d8aaf8d79c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the number of users having very loyalty towards Apt2B is 42."
+        }
+      ]
+    },
+    {
+      "name": "States the number of users having very loyalty towards Apt2B is a value other... (ver_a24c93a511f145c0a32da0d8aaf8d79c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the number of users having very loyalty towards Apt2B is a value other than 42."
+        }
+      ]
+    },
+    {
+      "name": "States across customer selections for style and pricing, the brand pair that... (ver_0700936f6ebd473fb28edbe8ecf99e20)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States across customer selections for style and pricing, the brand pair that occurs most frequently is \"BenchMade Modern and Havenly\"."
+        }
+      ]
+    },
+    {
+      "name": "States the brand pair that occurs most frequently across customer selections... (ver_3f5dcd5b1653421888e7a4fe4ae2243b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the brand pair that occurs most frequently across customer selections for style and pricing appears 24 times."
+        }
+      ]
+    },
+    {
+      "name": "States the brand pair that occurs most frequently across customer selections... (ver_3f5dcd5b1653421888e7a4fe4ae2243b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the brand pair that occurs most frequently across customer selections for style and pricing appears anything other than 24 times."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-ay-02-44f39be7"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_93767f48e4d9497a8f6b129492a1ae14",
+    "world_name": "Management Consulting World 122",
+    "task_id": "task_44f39be7d3904e10ae3b94257935e951",
+    "task_name": "Task AY 02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_594639a0ef8c4b2f829405b8cc57477f",
+        "golden_text_response": "\nHere are the insights from brand preference data:\n\n1) Most preferred brand across purchase drivers \n- Price: Article\n- Style: Apt2B\n- Quality: Interior Define\n- Delivery speed: Forma\n- Delivery cost: Forma \n- Reviews: Arhaus\n- Returns: The Inside\n- Assembly service: Poly & Bark\n- Warranty: BenchMade Modern\n- Brand reputation: The Inside\n\n2) 41 Users have very high loyalty towards Forma\n\n3) Following brands have more very high loyal users as compared to Forma\n- Arhaus : 44 users \n- Apt2B: 42 users\n\n4) Across customer selections for style and pricing, the brand pair that occurs most frequently is BenchMade Modern and Havenly. This pair is selected 24 times.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

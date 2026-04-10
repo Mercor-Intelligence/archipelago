@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Recalculate S&P Global’s fair equity value per share using the DCF valuation methodology by adjusting the following parameters and assumptions in the model:\n1.\tChange to a 3-stage valuation method. Stage 1 accounts for the first five fiscal years of cash flow (i.e., 2026-2030). Stage 2 accounts for the next ten fiscal years (i.e., 2031-2040). Stage 3 is the perpetuity stage.\n2.\tStage 2 unlevered free cash flows grow at a constant rate that is equal to the CAGR in annual dividends per share paid by S&P Global in the ten years between 2015 and 2025.\nCompute equity value per share using the perpetuity growth method in dollars, rounded to two decimals."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States fair value of equity per share is $713.66 (acceptable range $706.52 to... (ver_fa82f0bedbe24fff882d1b34451afb70)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States fair value of equity per share is $713.66 (acceptable range $706.52 to $720.80)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-249-dm-task03-eb2edd72"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_eb2edd72abba448e9c67ed5b811eacf4",
+    "task_name": "World 249_DM_Task03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_eea174f4f85243db8fc72cfd141bcc24",
+        "golden_text_response": "Fair value of equity per share is $713.66",
+        "golden_file_responses": "snap_7781eed557df4773a79bb29ebf728b90"
+      }
+    ]
+  }
+}

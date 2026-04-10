@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "In the RMBS/SLAB merger analysis, what % cash consideration results in % accretion/dilution to SLAB shareholders equal to that of SLAB's share price growth from the close of the first trading day in 2025 to the last? Round to one decimal point."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States cash consideration is 52.1% (acceptable range 51.6% to 52.6%) (ver_987225d7ddb04ba386317b70eb938bd8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States cash consideration is 52.1% (acceptable range 51.6% to 52.6%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-248-ay02-6b5f4dfb"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_6b5f4dfb7b3943dc94c47d24cfe33b6e",
+    "task_name": "World 248_AY02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_b44429bfbb614168b6dc5c2c20df5519",
+        "golden_text_response": "cash consideration is 52.1%",
+        "golden_file_responses": "snap_9655a030ca59460094113a4a74cfda34"
+      }
+    ]
+  }
+}

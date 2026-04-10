@@ -1,0 +1,355 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_29371cb52e2748ebb4f9fe2753ce045d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b23ccaf217af49969729df7d19d053b1",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Mentions that the patient is admitted with the primary diagnosis of decompensated heart failure.",
+        "autogen_source": null,
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the attached cardiology progress note, the patient was \u201cadmitted for new-onset acute CHF exacerbation\u201d",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_da6d1199be7248ecb754f7f1aafa292d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b23ccaf217af49969729df7d19d053b1",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Mentions that the patient is hospitalized at Jersey Shore University Medical Center.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the attached cardiology progress note, the patient is admitted to \u201cJersey Shore University Medical Center on 1/1/2026\u201d",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_21398e484e86440cb372535507743b25",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b23ccaf217af49969729df7d19d053b1",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Mentions that the patient is on intravenous Lasix 80 mg twice daily.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the attached inpatient medication list, the patient is being treated with \u201cIV Lasix 80 mg BID\u201d",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0ac20a52c61a44ce902dc68c2e70a786",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b23ccaf217af49969729df7d19d053b1",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Mentions that the patient has been on maximum tolerated dose of diuretic therapy for multiple days.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the attached cardiology progress note, the patient is \u201cstill volume overloaded with aggressive diuresis for past 3 days but unable to uptitrate due to hypotension/renal function\u201d",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6e9d7a654d3d44d1954adbd7e646cd6b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b23ccaf217af49969729df7d19d053b1",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Mentions that the patient\u2019s urine output over the last 12 hours was 1,200 mL.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the attached cardiology progress note, the patient\u2019s urine output is \u201c1,200 mL over past 12 hours\u201d",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5adb6c760879476eaf3ebeebb8ae72f0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b23ccaf217af49969729df7d19d053b1",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Mentions that the patient has jugular vein distension on physical exam.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the attached cardiology progress note, the patient has \u201cJVD up to jaw-line.\u201d",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_db9c4f3102114ddcb16046ee12c2314a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b23ccaf217af49969729df7d19d053b1",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Mentions that the patient has 2+ pitting edema on physical exam.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the attached cardiology progress note, the patient has \u201c2+ pitting edema present.\u201d",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d0fe00bdf80c4bf6a712c68138875d74",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b23ccaf217af49969729df7d19d053b1",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Mentions that the patient's chest X-ray read demonstrates congestion.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the interpretation of the attached chest X-ray, the patient has a \"congested X-ray\"",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_52fec269867247f5a65551c736fd2ab8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b23ccaf217af49969729df7d19d053b1",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Mentions that the patient has signs of congestion.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Jugular vein distention and 2+ pitting edema are signs of congestion. \u201cSigns of congestion (jugular venous distention, edema, rales, and third heart sound)\u201d\nhttps://www.ahajournals.org/doi/10.1161/circulationaha.119.039920",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0c01fdd1c93e444a85be4731e36e2c05",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b23ccaf217af49969729df7d19d053b1",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Mentions that the patient has signs of congestion despite treatment with intravenous diuretics.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has signs of congestion despite a maximally tolerated dose of intravenous diuretic. Jugular vein distention and 2+ pitting edema are signs of congestion. \u201cSigns of congestion (jugular venous distention, edema, rales, and third heart sound)\u201d\nhttps://www.ahajournals.org/doi/10.1161/circulationaha.119.039920",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5a542d2b4b0b4e2296c37bc1f47259d2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b23ccaf217af49969729df7d19d053b1",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Mentions that the patient is over the age of 21 years old (acceptable range 20.8 to 21.2).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the patient\u2019s chart, the patient was born in 1947. \u201cBirth: 11/01/47\u201d\nSource: Tab - Clinical Notes, Note type - Progress notes, Column - D, Row - 159.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7c9753f657694ef58ac057615ba80900",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b23ccaf217af49969729df7d19d053b1",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Mentions that the patient can provide written informed consent.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the prompt, the patient can \u201cprovide written informed consent\u201d",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_88e7592bcd11433fbb7cb26ad839cc6a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b23ccaf217af49969729df7d19d053b1",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient meets the criteria to be included in the Diuretics Alone vs. Aortix Endovascular Device for Acute Heart Failure (DRAIN-HF) trial. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient meets the criteria to be included in the DRAIN-HF given inclusion of all the following criteria: currently admitted to the hospital with a primary diagnosis of decompensated heart failure, diuresis with intravenous lasix 80 mg twice daily, maximally tolerated diuretic therapy, urine output of <1,500 mL over the past 12-hour period, signs of congestion despite intravenous diuretics, age >21 years old, and ability to provide written informed consent.\n\n\"Inclusion Criteria (Randomized Study): Currently admitted to the hospital with a primary diagnosis of decompensated heart failure, irrespective of ejection fraction (EF); patients should be on maximally tolerated diuretic therapy and not diuresing sufficiently before being enrolled in DRAIN-HF. After being up-titrated on diuretics, patients should be followed for at least 24 hours on the higher of: i) furosemide 80 mg IV bid or equivalent or ii) IV furosemide or equivalent IV loop diuretic at a dose 2.5 x total daily home dose of furosemide equivalents in 2 divided doses, as tolerated, patient must have: Urine Output <1,500mL in a 12-hour period OR a Net Fluid Loss \u2264375mL in a 12-hour period, Persistent signs and/or symptoms of congestion as evidenced by at least 2+ pitting edema, elevated jugular venous pressure >12 cm water or ascites after treatment with IV diuretics per inclusion criterion 2; Age >21 years and able to provide written informed consent; Negative pregnancy test if patient is of child-bearing potential.\u201d\nhttps://clinicaltrials.gov/study/NCT05677100#participation-criteria ",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b8a2165cd9a347ea941bc5b6b6b39d05",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b23ccaf217af49969729df7d19d053b1",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the DRAIN-HF clinical trial is actively recruiting patients at Jersey Shore University Medical Center.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The DRAIN-HF clinical trial actively recruiting patients at \u201cJersey Shore University Medical Center\u201d\nhttps://clinicaltrials.gov/study/NCT05677100#contacts-and-locations ",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cd5c9b7c385645e3a59c17a964258d30",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b23ccaf217af49969729df7d19d053b1",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient could be considered for the DRAIN-HF clinical trial.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient meets the inclusion criteria and DRAIN-HF clinical trial is actively recruiting patients at \u201cJersey Shore University Medical Center\u201d\nhttps://clinicaltrials.gov/study/NCT05677100#contacts-and-locations \n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

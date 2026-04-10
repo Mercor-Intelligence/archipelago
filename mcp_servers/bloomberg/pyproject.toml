@@ -1,0 +1,163 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-servers"
+version = "0.1.0"
+description = "FastAPI wrapped in FastMCP servers with shared utilities"
+requires-python = ">=3.13"
+dependencies = [
+  "mcp-schema",
+  "mcp-middleware",
+  "fastmcp",
+  "httpx",
+  "pydantic",
+  "pydantic-settings",
+  "black",
+  "isort",
+  "pandas",
+  "fastapi",
+  "uvicorn",
+  "websockets",
+  "langchain",
+  "asyncer",
+  "loguru",
+  "basedpyright",
+  # openBB dependencies
+  "yfinance",
+  "openbb",
+  "openbb-fmp",
+  "openbb-finviz",
+  "openbb-yfinance>=1.5.0",
+  "openbb-sec",
+  "curl-cffi",
+  "python-dotenv>=1.2.1",
+  "duckdb>=1.0.0",
+  "sqlalchemy>=2.0.0",
+  "duckdb-engine>=0.13.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+  "src/blpapi_mcp",
+  "src/shared",
+  "src/openbb_app",
+  "src/fastapi_app",
+  "src/db",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "mcp_servers/bloomberg"]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = [
+  "unit: Unit tests that don't require external services",
+  "integration: Integration tests that may require external services",
+  "slow: Tests that take longer to execute",
+  "mock: Tests using mock data instead of live APIs",
+]
+
+[tool.coverage.run]
+source = ["src/blpapi_mcp", "src/fastapi_app", "src/openbb_app"]
+omit = [
+  "*/tests/*",
+  "*/test_*.py",
+  "*/__pycache__/*",
+  "*/conftest.py",
+  "*/main.py",
+  # New features from main without tests yet
+  "*/handlers/historical_data_handler.py",
+  "*/routes/historical_data.py",
+  "*/routes/fields.py",
+  "*/services/mock_adapter.py",
+  "*/services/stream_consumer.py",
+  "*/tools/historical_data.py",
+  "*/tools/fields.py",
+  "*/middleware/error_handler.py",
+  "*/dependencies.py",
+]
+branch = true
+
+[tool.coverage.report]
+precision = 2
+show_missing = true
+skip_covered = false
+exclude_lines = [
+  "pragma: no cover",
+  "def __repr__",
+  "raise AssertionError",
+  "raise NotImplementedError",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+  "class .*\\bProtocol\\):",
+  "@(abc\\.)?abstractmethod",
+]
+
+[tool.coverage.html]
+directory = "htmlcov"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+  "E",  # pycodestyle errors
+  "W",  # pycodestyle warnings
+  "F",  # pyflakes
+  "I",  # isort
+  "B",  # flake8-bugbear
+  "C4", # flake8-comprehensions
+  "UP", # pyupgrade
+]
+ignore = [
+  "E501", # line too long (handled by formatter)
+  "B008", # Disables "Do not perform function call Depends in argument defaults"
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py313"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 100
+src_paths = ["src", "tests"]
+
+[tool.mypy]
+python_version = "3.13"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+
+[tool.basedpyright]
+pythonVersion = "3.13"
+include = ["src", "mcp_servers", "tests"]
+extraPaths = ["src", "mcp_servers", "."]
+typeCheckingMode = "standard"
+
+[tool.uv.sources]
+fastmcp = { git = "https://github.com/jlowin/fastmcp.git", rev = "bc2f601" }
+mcp-schema = { path = "packages/mcp_schema" }
+mcp-middleware = { path = "packages/mcp_middleware" }
+[dependency-groups]
+dev = [
+  "pytest>=8.4.2",
+  "pytest-asyncio>=1.2.0",
+  "pytest-mock>=3.14.0",
+  "pytest-cov>=7.0.0",
+  "pytest-xdist>=3.6.1",
+  "black>=24.0.0",
+  "mypy>=1.13.0",
+  "ruff>=0.8.0",
+  "pre-commit>=4.0.0",
+  "fredapi>=0.5.2",
+]

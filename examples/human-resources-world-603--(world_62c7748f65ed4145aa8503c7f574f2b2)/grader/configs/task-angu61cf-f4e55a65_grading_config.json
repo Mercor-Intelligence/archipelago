@@ -1,0 +1,106 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_8f1ab79bf90d4e70a560172ce06dd238",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f4e55a65c58c49a3a90f7c4fc0940ec1",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the name of one of the two closest benchmarks is SVP, E-Commerce & Digital 75th Percentile",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5687a68bfec24d26a2cf4de05d16b94e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f4e55a65c58c49a3a90f7c4fc0940ec1",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the percent changes between expected 2028 all-in compensation and the SVP, E-Commerce & Digital 75th Percentile benchmark is 1.50% (acceptable range 1.48% to 1.52%)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_865d514ad7714eb2869baa0300340027",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f4e55a65c58c49a3a90f7c4fc0940ec1",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the name of one of the two closest benchmarks is SVP, Omni-Channel Strategy 75th Percentile",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8df80d1d4cc249a388b4714bccc02f8d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f4e55a65c58c49a3a90f7c4fc0940ec1",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the percent changes between expected 2028 all-in compensation and the SVP, Omni-Channel Strategy 75th Percentile benchmark is 2.58% (acceptable range 2.55% to 2.61%)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "To improve interviewer calibration and decision quality in Greenhouse, the recruiting team is implementing an Interviewer Consistency Audit across scorecard recommendations and final hiring outcomes.\n\nA scorecard interviewer will receive 1 penalty each time either of the following occurs:\n(i) The interviewer gave an overall scorecard recommendation of “strong_yes” or “yes”, but the candidate was ultimately rejected for a reason other than compensation.\n(ii) The interviewer gave an overall scorecard recommendation of “definitely_not” or “no”, but the candidate was ultimately hired.\n\nInterviewers who accumulate 2 or more penalties will be designated as “Defaulted Interviewers” and removed from the interview process.\n\nFor all active applications associated with defaulted interviewers: \n(i) move the application back by one stage. If the resulting stage post this movement becomes 0, reject the application. \n(ii) Update the defaulted interviewer’s overall scorecard recommendation on all active applications to “no_decision.”\n\nDo not round intermediate calculations. Round final values to the nearest integer. Share in console:\n1. Final number of active applications with overall recommendation “no_decision”, post all movements\n2. Final total number of active applications, post all movements\n3. Final number of active applications in stage 3, post all movements"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that final number of active applications with overall recommendation... (ver_7585d5ce58ed41ef95100ab580b88d67)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that final number of active applications with overall recommendation “no_decision”, post all movements is 28."
+        }
+      ]
+    },
+    {
+      "name": "States that final total number of active applications, post all movements is 83. (ver_b4e8f315bc05465f947c596477a2d7f7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that final total number of active applications, post all movements is 83."
+        }
+      ]
+    },
+    {
+      "name": "States that final number of active applications in stage 3, post all movements... (ver_1be34971f57e4510a531859ba4cdc6fd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that final number of active applications in stage 3, post all movements is 17."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-603-pm-task-05-5eee69a7"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_5eee69a7ac94463e96b0c3b9eddc0576",
+    "task_name": "World 603_PM_Task 05",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_133b6ea085b648c49802184d4dd8c076",
+        "golden_text_response": "1. States that final number of active applications with overall recommendation “no_decision”, post all movements is 28.\n2. States that final total number of active applications, post all movements is 83. \n3. States that final number of active applications in stage 3, post all movements is 17.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

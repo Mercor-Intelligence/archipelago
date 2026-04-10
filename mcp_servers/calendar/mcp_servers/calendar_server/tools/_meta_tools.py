@@ -4,8 +4,8 @@ from typing import Any, Literal
 
 # Import sync implementations for delegation (these return Pydantic models)
 import asyncer
-from mcp_schema import FlatBaseModel, OutputBaseModel
-from pydantic import ConfigDict, Field
+from mcp_schema import GeminiBaseModel
+from pydantic import BaseModel, ConfigDict, Field
 from tools.create_event import CreateEventRequest, create_event_sync
 from tools.delete_event import DeleteEventRequest, delete_event_sync
 from tools.list_events import ListEventsRequest, list_events_sync
@@ -15,7 +15,7 @@ from utils.config import DEFAULT_LIST_LIMIT
 
 
 # ============ Help Response ============
-class ActionInfo(OutputBaseModel):
+class ActionInfo(BaseModel):
     """Information about an action."""
 
     model_config = ConfigDict(extra="forbid")
@@ -24,7 +24,7 @@ class ActionInfo(OutputBaseModel):
     optional_params: list[str]
 
 
-class HelpResponse(OutputBaseModel):
+class HelpResponse(BaseModel):
     """Help response listing available actions."""
 
     model_config = ConfigDict(extra="forbid")
@@ -34,7 +34,7 @@ class HelpResponse(OutputBaseModel):
 
 
 # ============ Result Models ============
-class EventResult(OutputBaseModel):
+class EventResult(BaseModel):
     """Result from create/update/delete event."""
 
     model_config = ConfigDict(extra="forbid")
@@ -55,7 +55,7 @@ class EventResult(OutputBaseModel):
     )
 
 
-class EventDetailsResult(OutputBaseModel):
+class EventDetailsResult(BaseModel):
     """Result from reading an event."""
 
     model_config = ConfigDict(extra="forbid")
@@ -65,7 +65,7 @@ class EventDetailsResult(OutputBaseModel):
     )
 
 
-class EventListResult(OutputBaseModel):
+class EventListResult(BaseModel):
     """Result from listing events."""
 
     model_config = ConfigDict(extra="forbid")
@@ -88,7 +88,7 @@ class EventListResult(OutputBaseModel):
 
 
 # ============ Input Model ============
-class CalendarInput(FlatBaseModel):
+class CalendarInput(GeminiBaseModel):
     """Input for calendar meta-tool."""
 
     model_config = ConfigDict(extra="forbid")
@@ -165,7 +165,7 @@ class CalendarInput(FlatBaseModel):
 
 
 # ============ Output Model ============
-class CalendarOutput(OutputBaseModel):
+class CalendarOutput(BaseModel):
     """Output for calendar meta-tool."""
 
     model_config = ConfigDict(extra="forbid")
@@ -490,7 +490,7 @@ async def calendar(request: CalendarInput) -> str:
 
 
 # ============ Schema Tool ============
-class SchemaInput(FlatBaseModel):
+class SchemaInput(GeminiBaseModel):
     """Input for schema introspection."""
 
     model_config = ConfigDict(extra="forbid")
@@ -500,7 +500,7 @@ class SchemaInput(FlatBaseModel):
     )
 
 
-class SchemaOutput(OutputBaseModel):
+class SchemaOutput(BaseModel):
     """Output for schema introspection."""
 
     model_config = ConfigDict(extra="forbid")
@@ -513,7 +513,7 @@ class SchemaOutput(OutputBaseModel):
     )
 
 
-SCHEMAS: dict[str, type[FlatBaseModel | OutputBaseModel]] = {
+SCHEMAS: dict[str, type[GeminiBaseModel | BaseModel]] = {
     "input": CalendarInput,
     "output": CalendarOutput,
     "EventResult": EventResult,

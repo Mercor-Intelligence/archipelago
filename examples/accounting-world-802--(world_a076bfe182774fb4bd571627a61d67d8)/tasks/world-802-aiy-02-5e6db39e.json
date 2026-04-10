@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Process the journal entries against the 2024 trial balance and output the following:\n1. Output the following metrics of the adjusted and unadjusted trial balance\na. EBITDA margins\nb. Deferred revenue as a % of total revenue \nc. Debt to equity ratios\nRound all values to one decimal place"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States unadjusted trial balance EBITDA margin is -96.9% (acceptable range... (ver_9a05a5b9e26f47ffbd9decc29642fc43)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States unadjusted trial balance EBITDA margin is -96.9% (acceptable range -97.9% to -95.9%)."
+        }
+      ]
+    },
+    {
+      "name": "States unadjusted trial balance Deferred revenue as a % of total revenue is... (ver_41bae7116a0b4b369093198dec9b3ed2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States unadjusted trial balance Deferred revenue as a % of total revenue is 30.1% (acceptable range 29.8% to 30.4%)."
+        }
+      ]
+    },
+    {
+      "name": "States unadjusted trial balance Debt to equity ratio is 2.1 (acceptable range... (ver_024f8453c3b64f419570653589779eaa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States unadjusted trial balance Debt to equity ratio is 2.1 (acceptable range 2.08 to 2.12)."
+        }
+      ]
+    },
+    {
+      "name": "States adjusted trial balance EBITDA margin is -101.8% (acceptable range... (ver_2746badd718b4b9c94181cef938f8fd4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States adjusted trial balance EBITDA margin is -101.8% (acceptable range -102.8% to -100.8%)."
+        }
+      ]
+    },
+    {
+      "name": "States adjusted trial balance Deferred revenue as a % of total revenue is... (ver_5542ede81d60417c84032bd4cda2710d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States adjusted trial balance Deferred revenue as a % of total revenue is 31.4% (acceptable range 31.1% to 31.7%)."
+        }
+      ]
+    },
+    {
+      "name": "States adjusted trial balance Debt to equity ratio is 2.1 (acceptable range... (ver_f85d591ff3fa438fa945aebc29463f62)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States adjusted trial balance Debt to equity ratio is 2.1 (acceptable range 2.08 to 2.12)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-802-aiy-02-5e6db39e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_a076bfe182774fb4bd571627a61d67d8",
+    "world_name": "Accounting World 802",
+    "task_id": "task_5e6db39e0420413da725856a9d3bb76f",
+    "task_name": "World-802-AIY-02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_8a6bb3e04bb945b9b546b5d5f0ab2e0b",
+        "golden_text_response": "States unadjusted trial balance EBITDA margin is -96.9%\nStates unadjusted trial balance Deferred revenue as a % of total revenue  is 30.1%\nStates unadjusted trial balance Debt to equity ratio is 2.1\n\nStates adjusted trial balance EBITDA margin is -101.8%\nStates adjusted trial balance Deferred revenue as a % of total revenue  is 31.4%\nStates adjusted trial balance Debt to equity ratio is 2.1\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

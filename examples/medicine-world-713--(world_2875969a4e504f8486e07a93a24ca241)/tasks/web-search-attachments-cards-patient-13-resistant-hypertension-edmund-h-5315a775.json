@@ -1,0 +1,376 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 13” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n----\n\nPatient 13 presents for a routine clinic appointment on January 10, 2026, in Los Angeles, California.\n\nList all antihypertensive medications that should be considered as add-on therapy in this patient, based on the most recent clinical guidelines for hypertension as of January 11, 2026.\n\nProvide an explanation."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient has a history of hypertension. (ver_63de0d24b10d4f669e7836181463fcd8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has a history of hypertension."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the patient's blood pressure is uncontrolled despite medications. (ver_efe5436e340a4f9da4c5b270136eadce)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient's blood pressure is uncontrolled despite medications."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's renal function is above the cutoff for... (ver_10a891f302084cbfa4a95af069dab759)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's renal function is above the cutoff for antihypertensives."
+        }
+      ]
+    },
+    {
+      "name": "Utilizes the 2025 American College of Cardiology/American Heart Association... (ver_7ebc451fc8c7478fa0f2929fe5546325)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Utilizes the 2025 American College of Cardiology/American Heart Association joint committee clinical practice guidelines on hypertension."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that mineralocorticoid receptor antagonist (MRA) therapy is... (ver_5772580c1399482d8ad5e5c11461fa57)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that mineralocorticoid receptor antagonist (MRA) therapy is recommended where first-line antihypertensive therapy has failed."
+        }
+      ]
+    },
+    {
+      "name": "States the patient does not tolerate MRA. (ver_4734bfdd950c4679a371886964ef855b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient does not tolerate MRA."
+        }
+      ]
+    },
+    {
+      "name": "States amiloride is an option when MRA is not tolerated. (ver_96b3820005484feab35cdf5dd908560b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States amiloride is an option when MRA is not tolerated."
+        }
+      ]
+    },
+    {
+      "name": "States the patient does not tolerate amiloride. (ver_99386dcc713341b691f22197ac9b0bf2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient does not tolerate amiloride."
+        }
+      ]
+    },
+    {
+      "name": "States beta blockers are an option when MRA is not tolerated. (ver_6c062b708814480090fe21d22939bbf5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States beta blockers are an option when MRA is not tolerated."
+        }
+      ]
+    },
+    {
+      "name": "States alpha blockers are an option when MRA is not tolerated. (ver_fd8a118e3e534dadaaea1a86727fe2de)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States alpha blockers are an option when MRA is not tolerated."
+        }
+      ]
+    },
+    {
+      "name": "States central sympatholytic drugs are an option when MRA is not tolerated. (ver_a8f1a3b13c334e26ac7ac034c8b8786d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States central sympatholytic drugs are an option when MRA is not tolerated."
+        }
+      ]
+    },
+    {
+      "name": "States dual endothelin receptor antagonists are an option when MRA is not... (ver_eb0738bf2efe4cbebf97213c45eb87a4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States dual endothelin receptor antagonists are an option when MRA is not tolerated."
+        }
+      ]
+    },
+    {
+      "name": "States direct vasodilators are an option when MRA is not tolerated. (ver_e7a9670d2f2d4b79b6932bdeec20f43b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States direct vasodilators are an option when MRA is not tolerated."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the patient is taking a beta blocker. (ver_0524398df1ca47118996bb3d2fba66b7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient is taking a beta blocker."
+        }
+      ]
+    },
+    {
+      "name": "States the patient can be offered either of the following:alpha blockers,... (ver_5fcb802196434fc18ef571c645a2e124)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient can be offered either of the following:alpha blockers, central sympatholytic drugs, dual endothelin receptor antagonists, or direct vasodilators."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-cards-patient-13-resistant-hypertension-edmund-h-5315a775"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_5315a775a5a64e1fb1974b0474b528db",
+    "task_name": "Web Search_Attachments_Cards_Patient 13 - Resistant Hypertension - Edmund H",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_6aa3776a94434048b22825bbaeffbfd0",
+        "golden_text_response": "From the patient’s chart, the patient has a history of hypertension. The blood pressure today is 150/80 mm Hg per the script. The patient has failed first-line antihypertensive therapy, defined as a combination of an angiotensin-converting enzyme inhibitor (ACEi) or angiotensin receptor blocker (ARB) plus a calcium channel blocker (CCB) and a thiazide-like diuretic (chlorthalidone or indapamide). Spironolactone, amiloride, and eplerenone are not tolerated.\n\nAccording to the 2025 American Heart Association, American College of Cardiology, and affiliated societies guideline for the prevention, detection, evaluation, and management of high blood pressure in adults, a blood pressure of 150/80 mm Hg is classified as Stage 2 hypertension, defined as a systolic blood pressure ≥140 mm Hg or a diastolic blood pressure ≥90 mm Hg. Thiazide-type diuretics, long-acting dihydropyridine calcium channel blockers, and angiotensin-converting enzyme inhibitors or angiotensin receptor blockers are recommended as first-line therapy.\n\nIn adults with uncontrolled resistant hypertension despite optimal treatment with first-line antihypertensive therapy (ie, a combination of an ACEi or ARB plus a CCB and a thiazide-like diuretic [chlorthalidone or indapamide]) and with an estimated glomerular filtration rate (eGFR) ≥45 mL/min/1.73 m², the addition of a mineralocorticoid receptor antagonist (MRA) is recommended to improve blood pressure control (Class 2a, Level of Evidence B-NR). The patient’s eGFR is 59 mL/min/1.73 m²; therefore, an MRA would be indicated. The patient's renal function is above the cutoff for antihypertensives. However, MRAs are not tolerated by this patient.\n\nIn adults with uncontrolled resistant hypertension who cannot tolerate or have contraindications to MRAs, the addition of one of the following agents or classes is reasonable to control blood pressure: amiloride, beta blockers, alpha blockers, central sympatholytic agents, dual endothelin receptor antagonists, or direct vasodilators. The patient is currently taking metoprolol which is a beta blocker. Therefore, several reasonable medication options are available for potential addition, including alpha blockers, central sympatholytic agents, dual endothelin receptor antagonists, or direct vasodilators.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_8d1a7cda570c44209f9ef3943994c0b2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ab9d3d7e59184effbb126f7c42ac9e48",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the impact on Accounts Payable for 2023 from reversing 2022 draft invoices per the AR/AP recognition policy is decreased. ",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2429390566174fc7b6f5646ef0d7ae56",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ab9d3d7e59184effbb126f7c42ac9e48",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the Accounts Payable decrease for 2023 from reversing 2022 draft invoices is $126,893.92 (acceptable range $125,624.98 to $128,162.86).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "All 2022 invoices continuing in draft status as on Dec 31, 2023 are to be reversed in books. ",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_209fbd54a13143a78edf46748c45ad40",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ab9d3d7e59184effbb126f7c42ac9e48",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the impact on Accounts Receivable for 2023 from reversing 2022 draft invoices per the AR/AP recognition policy is decreased. ",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f600a0b9c1fe41389b0903bb54ef558d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ab9d3d7e59184effbb126f7c42ac9e48",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the Accounts Receivable decrease for 2023 from reversing 2022 draft invoices is $1,387,987.25 (acceptable range $1,374,107.38 to $1,401,867.12).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "All 2022 invoices continuing in draft status as on Dec 31, 2023 are to be reversed in books. ",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1fdc40b3b7984a4c8b0f6a4a0cfc6b6e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_ab9d3d7e59184effbb126f7c42ac9e48",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the restated Pre-tax book income for 2023, after applying the draft invoice reversals, is $27,824,620.96 (acceptable range $27,546,374.75 to $28,102,867.17)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Pre-tax book income is calculated as $29,085,714.29 (base figure) - $1,387,987.25 (A/R decrease) + $126,893.92 (A/P increase) = $27,824,620.96.\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    },
+    {
+      "eval_config_id": "73ae82d0-3202-469d-8df5-46f747dce15f",
+      "eval_config_name": "Multi Rep",
+      "eval_defn_id": "output_llm_multi_representation",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

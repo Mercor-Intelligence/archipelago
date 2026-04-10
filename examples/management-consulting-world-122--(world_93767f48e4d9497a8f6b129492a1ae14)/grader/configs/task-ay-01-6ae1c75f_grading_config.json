@@ -1,0 +1,301 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_548513a98fa241718cfc09edbdce693a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6ae1c75f8eee4b699e3b40e8877d61f0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States biggest reason for shopping is Moving",
+        "negative_criteria": "States biggest reason for shopping is anything other than Moving",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Apply pivot and find biggest reason for shopping. Moving is mentioned 113/500 customers",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_59cb50c02d9f4461bc780bc1680b55e5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6ae1c75f8eee4b699e3b40e8877d61f0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States one of the top two sources of awareness as Friends\n\n",
+        "negative_criteria": "State a source other than Tik Tok or Friends as one of the top two sources of awareness\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Top two sources of awareness \nFriends 96/500\ntik tok 88/500",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d3144cd5480046dfbbd3b629055b7e68",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6ae1c75f8eee4b699e3b40e8877d61f0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States Tik Tok as one of the top two sources of awareness",
+        "negative_criteria": "State a source other than Tik Tok or Friends as one of the top two sources of awareness",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Top two sources\nFriends (96/500)\nTik Tok (88/500)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e69477d8bcfb495785528cf45fc4a940",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6ae1c75f8eee4b699e3b40e8877d61f0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States average customer confidence in shopping online as 3.05 (acceptable range 3.02 to 3.08)",
+        "negative_criteria": "States average customer confidence in shopping online other than 3.05",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Average across all users",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cfa64c185fbf4b9282580dbc553554f9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6ae1c75f8eee4b699e3b40e8877d61f0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States most important factor as Style",
+        "negative_criteria": "States a factor other than Style as the most important factor",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5380a1d752bc40d9ad081f13e68ffaad",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6ae1c75f8eee4b699e3b40e8877d61f0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the most important factor was picked by 19.80% of customers (acceptable range 19.60% to 20.00%)",
+        "negative_criteria": "States the most important factor was picked by anything other than 19.80% customers",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a9bae79f85164f5eb8c7de742b00d88f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6ae1c75f8eee4b699e3b40e8877d61f0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the second most important factor as Delivery",
+        "negative_criteria": "States a factor other than Delivery as the second most important factor",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bd72dae0ab07489ea305d032987fcb1a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6ae1c75f8eee4b699e3b40e8877d61f0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that second most important factor was picked by 18.0% customers (acceptable range 17.8% to 18.2%)",
+        "negative_criteria": "States that second most important factor was picked by anything other than 18.0% customers",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b125f566c0cf4b6985c2a20ee96a03e4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6ae1c75f8eee4b699e3b40e8877d61f0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the biggest challenge for customers as Returns",
+        "negative_criteria": "States the biggest challenge for customers as anything other than Returns",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_777e7c504ff6408ba03a1058c7dbca1b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6ae1c75f8eee4b699e3b40e8877d61f0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States average score for delivery satisfaction is 2.95 (acceptable range 2.92 to 2.98)",
+        "negative_criteria": "States average score for delivery satisfaction as anything other than 2.95",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a98cabf4b861447a82a8ab4b7e832772",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6ae1c75f8eee4b699e3b40e8877d61f0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States average score for product satisfaction is 3.00 (acceptable range 2.97 to 3.03)",
+        "negative_criteria": "States average score for product satisfaction as anything other than 3.00",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a563eabb8baa45209a5b68afe0272a4d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6ae1c75f8eee4b699e3b40e8877d61f0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States average score for Repurchase likelihood is 2.94 (acceptable range 2.91 to 2.97)",
+        "negative_criteria": "States average score for Repurchase likelihood as anything other than 2.94",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5373708cded54f7b9ccbd19af2f32f35",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6ae1c75f8eee4b699e3b40e8877d61f0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States average score for Recommendation NPS is 4.95 (acceptable range 4.90 to 5.00)",
+        "negative_criteria": "States average score for Recommendation NPS as anything other than 4.95",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_59dcb2b71c864166933aa067538c2196",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6ae1c75f8eee4b699e3b40e8877d61f0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States correlation coefficient between product satisfaction and recommendation NPS is 0.0343 (acceptable range 0.0340 to 0.0346)",
+        "negative_criteria": "States correlation coefficient between product satisfaction and recommendation NPS as anything other than 0.0343",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_62c25472cb34461a81b40b4e42adce38",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c43af5506d30478f9d2bfb1af4b0c398",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States Pro Forma Combined Equity Value at 100% of 2016 net debt and the bid premium on top of the updated EV/EBITDA multiple is $12,643,355 thousand (acceptable range 199 to 203)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8a10fd806ddc41ce9b6289cef8061999",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c43af5506d30478f9d2bfb1af4b0c398",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States Pro Forma Combined Equity Value at 100% of 2016 net debt and double the bid premium on top of the updated EV/EBITDA multiple is $14,973,649 thousand (acceptable range 199 to 203)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2e7a78c5208a4d5f9203f53c3db8d37d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c43af5506d30478f9d2bfb1af4b0c398",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States Pro Forma Combined Equity Value at 200% of 2016 net debt and the bid premium on top of the updated EV/EBITDA multiple is $12,712,647 thousand (acceptable range 199 to 203)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ec9591122c3a4e25ab1a62340058b9da",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c43af5506d30478f9d2bfb1af4b0c398",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States Pro Forma Combined Equity Value at 200% of 2016 net debt and double the bid premium on top of the updated EV/EBITDA multiple is $15,042,941 thousand (acceptable range 199 to 203)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

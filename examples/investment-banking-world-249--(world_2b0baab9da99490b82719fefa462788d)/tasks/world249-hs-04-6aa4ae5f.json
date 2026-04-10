@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Please update the model using the data as follows:\n\n1. Use the 10-Year Treasury rate as the risk-free rate as at 2026-01-02.\n2. Use the GDP growth rate from 2025-04-01 to 2025-07-01 as the long-term growth rate.\n\nPlease return the updated Pre-Spin off Enterprise Value of S&P Global and the Post Spin Off Enterprise Values of RemainCo and S&P Mobility. All monetary results must be displayed in USD millions, rounded to two decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States Pre-Spin off Enterprise Value of S&P Global is $107,667.68M (acceptable... (ver_c1f52094854e462d8c1d5e6dd3225471)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Pre-Spin off Enterprise Value of S&P Global is $107,667.68M (acceptable range $106,591.00 to $108,744.36)."
+        }
+      ]
+    },
+    {
+      "name": "States Post Spin Off Enterprise Value of RemainCo is $102,472.94M (acceptable... (ver_949cc9f09fb2427d9e900aca6f7239e0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Post Spin Off Enterprise Value of RemainCo is $102,472.94M (acceptable range $101,448.21 to $103,497.67)."
+        }
+      ]
+    },
+    {
+      "name": "States Post Spin Off Enterprise Value of S&P Mobility is $11,317.85M... (ver_b7185a3b1e83422f9086ba3508913333)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Post Spin Off Enterprise Value of S&P Mobility is $11,317.85M (acceptable range $11,204.67 to $11,431.03)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world249-hs-04-6aa4ae5f"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_6aa4ae5f11864f349eb131c7d230702a",
+    "task_name": "World249-HS-04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_b875d5c26e24487eae5aff9bf7405f07",
+        "golden_text_response": "Pre-Spin off Enterprise Value of S&P Global is $107,667.68M\nPost Spin Off Enterprise Value of RemainCo is $102,472.94M\nPost Spin Off Enterprise Value of S&P Mobility is $11,317.85M\n",
+        "golden_file_responses": "snap_5eada63774a840fab31789d6782ac034"
+      }
+    ]
+  }
+}

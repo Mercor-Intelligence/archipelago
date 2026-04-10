@@ -1,0 +1,44 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_58473403c0204d02ab9cbc6a65f9f030",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f0066250c3cf4bf39416fd25ed66b500",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that yes, the information typically required in SBP safety reports conflicts with OSHA's recommended practices for safety and health programs",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "In section 5 of SBP's employee handbook, \"Reporter's name\" is listed under \"Information Typically Required\" in safety reports. This conflicts with OSHA's recommendation to allow for anonymous reporting (OSHA's Recommended Practices for Safety and Health Programs states, \"Include an option for anonymous reporting to reduce fear of reprisal.\u201d).",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

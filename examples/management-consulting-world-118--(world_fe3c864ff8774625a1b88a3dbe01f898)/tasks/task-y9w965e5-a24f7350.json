@@ -1,0 +1,192 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The Engagement manager conducted a follow-up review of the initial Facility Requirements Checklist (v0.1) assessment across all 100 facilities, and confirmed that readiness metrics had improved. Therefore, investigate the following:\n\n1. Assuming that the review resulted in a +0.3 increase in readiness scores only for facilities meeting readiness in each state. What is the new national weighted average readiness score? Assume that the review and increase in readiness score only applies to states where more than 71% of facilities currently meet readiness. Use facility counts for weighting.\n\n2. Which state has the highest gain in overall average readiness score as a result of the boost in Question 1? What is the gain in score?\n\n3. What is the sum of readiness scores across facilities in all states after the boost in Question 1? \n\nRound final answer to one decimal place. Report answer directly in console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the National Weighted Average is 3.7 (acceptable range 3.66 to 3.74) (ver_aad074bed31940c5947ba22c30cb231c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the National Weighted Average is 3.7 (acceptable range 3.66 to 3.74)."
+        }
+      ]
+    },
+    {
+      "name": "States that the National Weighted Average is a value other than 3.7 (ver_aad074bed31940c5947ba22c30cb231c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the National Weighted Average is a value other than 3.7."
+        }
+      ]
+    },
+    {
+      "name": "States that the state with the highest overall gain in average readiness score... (ver_7b5fb189743c45d8bc66173ffa06eed5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the state with the highest overall gain in average readiness score is Minnesota."
+        }
+      ]
+    },
+    {
+      "name": "States that overall gain in average readiness score for Minnesota is 0.3... (ver_776256c8c3f543ef9d2beffa7104ffeb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that overall gain in average readiness score for Minnesota is 0.3 (acceptable range 0.297 to 0.303)."
+        }
+      ]
+    },
+    {
+      "name": "States that overall gain in average readiness score for Minnesota is a value... (ver_776256c8c3f543ef9d2beffa7104ffeb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that overall gain in average readiness score for Minnesota is a value other than 0.3."
+        }
+      ]
+    },
+    {
+      "name": "States that the total adjusted weighted readiness score across all states is... (ver_d11139d37aa344c5bee3fb751f61137e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total adjusted weighted readiness score across all states is 368.1 (acceptable range 364.4 to 371.8)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total adjusted weighted readiness score across all states is a... (ver_d11139d37aa344c5bee3fb751f61137e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total adjusted weighted readiness score across all states is a value other than 368.1."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-y9w965e5-a24f7350"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_a24f7350ef2e4b49b449d05f85a6c8e5",
+    "task_name": "Task y9w965e5",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_6231507fa01c44a397f5abdf53210295",
+        "golden_text_response": "1. National Weighted Average Score is 3.7\n\n2. State with the highest overall gain in average readiness score is Minnesota - 0.3\n\n3. Total adjusted weighted readiness across all states is 368.1",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

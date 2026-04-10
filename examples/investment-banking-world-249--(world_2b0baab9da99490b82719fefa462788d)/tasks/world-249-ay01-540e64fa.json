@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Revise the S&P Global (Consolidated Entity) DCF as follows: \n1.\tChange period to mid-year adjustment\n2.\tUnder Cost of Capital Assumptions change the following:\na.\tUpdate risk free rate to 10 year treasury rate at close on 01/07/2026\nb.\tChange tax rate to 23%\nc.\tUpdate share price to closing price on 01/07/2026\n\nCalculate and output the revised Shareholder Equity Value Creation - $ and Shareholder Equity Value Creation - %.\nRound $ values to millions in 0 decimal places and % values to 1 decimal place.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the revised Shareholder Equity Value Creation - $ is $2,281 million... (ver_e4621ec704be4264aa472f60fa2c06d2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the revised Shareholder Equity Value Creation - $ is $2,281 million (acceptable range $2,258 to $2,304)."
+        }
+      ]
+    },
+    {
+      "name": "States the revised Shareholder Equity Value Creation - % is 1.7% (acceptable... (ver_ef413710889545809cacb1311defc9cc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the revised Shareholder Equity Value Creation - % is 1.7% (acceptable range 1.68% to 1.72%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-249-ay01-540e64fa"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_540e64fa02e84fcf8f284be678bef900",
+    "task_name": "World 249_AY01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_2d007395a3134753817dde35716679e0",
+        "golden_text_response": "1.\tThe revised Shareholder Equity Value Creation - $ is $2,281 million\n2.\tThe revised Shareholder Equity Value Creation - % is 1.7%\n",
+        "golden_file_responses": "snap_7aee1f5ad16643b692a0476359b44a53"
+      }
+    ]
+  }
+}

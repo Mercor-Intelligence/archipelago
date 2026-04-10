@@ -1,0 +1,175 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_f8f7c261632348989427ba0fbbf2b22b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0eaa2078a96b4d36b7b67d99c3ec340d",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Computes the average Current Balance of Construction and Central as $2,610,996 +/- $1.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt specifically asks to compute the average Current Balance for Construction and Retail sectors, and Central, East, and West Regions. $2,610,996 is the correct average Current Balance of Construction and Central.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dd1948634ad341e2b10924f6c0bbb25b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0eaa2078a96b4d36b7b67d99c3ec340d",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Computes the average Current Balance of Construction and East as $2,915,935 +/- $1.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt specifically asks to compute the average Current Balance for Construction and Retail sectors, and Central, East, and West Regions. $2,915,935 is the correct average Current Balance of Construction and East.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3b00d670d4d64ac189328565b5de0cee",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0eaa2078a96b4d36b7b67d99c3ec340d",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Computes the average Current Balance of Construction and West as $2,597,483 +/- $1.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt specifically asks to compute the average Current Balance for Construction and Retail sectors, and Central, East, and West Regions. $2,597,483 is the correct average Current Balance of Construction and West.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_18926b322bc84c39adbeca7e8ab7e230",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0eaa2078a96b4d36b7b67d99c3ec340d",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Computes the average Current Balance of Retail and Central as $2,671,609 +/- $1.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt specifically asks to compute the average Current Balance for Construction and Retail sectors, and Central, East, and West Regions. $2,671,609 is the correct average Current Balance of Retail and Central.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9f3b963aea5748a8a19d39487f79c6d5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0eaa2078a96b4d36b7b67d99c3ec340d",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Computes the average Current Balance of Retail and East as $2,684,038 +/- $1.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt specifically asks to compute the average Current Balance for Construction and Retail sectors, and Central, East, and West Regions. $2,684,038 is the correct average Current Balance of Retail and East.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_75d737ae11cf4641af03077eec568718",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0eaa2078a96b4d36b7b67d99c3ec340d",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Computes the average Current Balance of Retail and West as $2,828,120 +/- $1.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt specifically asks to compute the average Current Balance for Construction and Retail sectors, and Central, East, and West Regions. $2,828,120 is the correct average Current Balance of Retail and West.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e1dc0fbe57fb4352a43966e1e0aa1a46",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0eaa2078a96b4d36b7b67d99c3ec340d",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "Produces a png file of a heatmap",
+        "autogen_source": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "This is the requested file output for the chart.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "eval_config_name": "Output LLM",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "4658aec9-7eeb-4c9b-84c2-5464345e345f",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

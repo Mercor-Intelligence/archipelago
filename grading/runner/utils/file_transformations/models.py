@@ -11,6 +11,7 @@ from ..file_extraction.types import ImageMetadata
 class TransformationOutput(BaseModel):
     text: str | None = None
     images: list[ImageMetadata] = Field(default_factory=list)
+    pdf_bytes: bytes | None = None
 
 
 TransformationImpl = Callable[[bytes, str], Awaitable[TransformationOutput]]
@@ -20,6 +21,8 @@ TransformationImpl = Callable[[bytes, str], Awaitable[TransformationOutput]]
 class OutputRepresentation(StrEnum):
     TO_TEXT = "to_text"
     TO_IMAGES = "to_images"
+    TO_PDF = "to_pdf"
+    TO_TEXT_FORMULAS = "to_text_formulas"
     NATIVE = "native"
 
 
@@ -46,6 +49,16 @@ OUTPUT_REPRESENTATION_DEFNS: dict[OutputRepresentation, OutputRepresentationDefn
         representation_id=OutputRepresentation.TO_IMAGES,
         label="Rendered Images",
         description="Renders each page, slide, or sheet as a visual image. Best for criteria evaluating formatting, layout, charts, or visual appearance.",
+    ),
+    OutputRepresentation.TO_PDF: OutputRepresentationDefn(
+        representation_id=OutputRepresentation.TO_PDF,
+        label="Converted PDF",
+        description="Converts Office documents to PDF via LibreOffice with format-specific export filters for maximum fidelity. Best for VLM-native ingestion of DOCX/PPTX/XLSX files.",
+    ),
+    OutputRepresentation.TO_TEXT_FORMULAS: OutputRepresentationDefn(
+        representation_id=OutputRepresentation.TO_TEXT_FORMULAS,
+        label="Extracted Text (Formulas)",
+        description="Extracts spreadsheet content as Markdown/CSV preserving raw cell formulas instead of computed values. Best for criteria evaluating formula logic.",
     ),
     OutputRepresentation.NATIVE: OutputRepresentationDefn(
         representation_id=OutputRepresentation.NATIVE,
@@ -86,12 +99,16 @@ class ArtifactTransformationId(StrEnum):
     PDF_NATIVE = "pdf_native"
     DOCX_TO_TEXT = "docx_to_text"
     DOCX_TO_IMAGES = "docx_to_images"
+    DOCX_TO_PDF = "docx_to_pdf"
     DOCX_NATIVE = "docx_native"
     PPTX_TO_TEXT = "pptx_to_text"
     PPTX_TO_IMAGES = "pptx_to_images"
+    PPTX_TO_PDF = "pptx_to_pdf"
     PPTX_NATIVE = "pptx_native"
     SPREADSHEET_TO_TEXT = "spreadsheet_to_text"
     SPREADSHEET_TO_IMAGES = "spreadsheet_to_images"
+    SPREADSHEET_TO_PDF = "spreadsheet_to_pdf"
+    SPREADSHEET_TO_TEXT_FORMULAS = "spreadsheet_to_text_formulas"
     SPREADSHEET_NATIVE = "spreadsheet_native"
 
 

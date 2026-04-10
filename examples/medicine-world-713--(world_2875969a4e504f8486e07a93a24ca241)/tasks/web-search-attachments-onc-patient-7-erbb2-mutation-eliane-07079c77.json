@@ -1,0 +1,353 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 7” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nThe patient presents to her oncologist to re-establish care after a few years. Refer to the reference files \"Onc_Patient 7\", \"Onc_Patient 7 script.pdf\", and “Labs.pdf”. Assume the patient is 90 years old; please ignore the patient's other age in the patient’s chart. \n\nWhat is the next best systemic treatment option for this patient? Please provide the clinical rationale. Answers should align with the most current clinical guidelines as of January 10, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient has a history of stage I non-small cell lung cancer... (ver_251fb9ee94fd455598eb614e1edd359a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has a history of stage I non-small cell lung cancer (NSCLC)."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient previously received pembrolizumab. (ver_1c863ba0e94c4793831c8e2f5e3bcfe7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient previously received pembrolizumab."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient previously received carboplatin/pemetrexed or cisplatin. (ver_99545f68824045aaa665292991bffe67)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient previously received carboplatin/pemetrexed or cisplatin."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient now has evidence of brain metastases. (ver_9ed6f7a50aaa4e3ca74fac2324ccd046)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient now has evidence of brain metastases."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's lymph node biopsy shows a recurrence of NSCLC. (ver_bafdac1837dd45f2af9bb3b4cfd509ef)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's lymph node biopsy shows a recurrence of NSCLC."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's lymph node biopsy shows A775_G776insYVMA/HER2... (ver_12c81a6136e74753844999fd022267ee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's lymph node biopsy shows A775_G776insYVMA/HER2 mutation on exon 20."
+        }
+      ]
+    },
+    {
+      "name": "States that fam-trastuzumab deruxtecan-nxki is one of the options for the next... (ver_6c930bab0e0a4a93929511180c0c3edd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that fam-trastuzumab deruxtecan-nxki is one of the options for the next line of systemic therapy for this patient."
+        }
+      ]
+    },
+    {
+      "name": "States that zongertinib is one of the options for the next line of systemic... (ver_cfb7cc5e91ba4285a26d955acbcfe578)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that zongertinib is one of the options for the next line of systemic therapy for this patient."
+        }
+      ]
+    },
+    {
+      "name": "States that sevabertinib is one of the options for the next line of systemic... (ver_8c2a7d0f852e4c6d98923cb405fcedec)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that sevabertinib is one of the options for the next line of systemic therapy for this patient."
+        }
+      ]
+    },
+    {
+      "name": "States that zongertinib selectively targets the A775_G776insYVMA mutation. (ver_79caef4fc06e40e3878417ea3a0c0674)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that zongertinib selectively targets the A775_G776insYVMA mutation."
+        }
+      ]
+    },
+    {
+      "name": "States that zongertinib demonstrates significant activity against brain... (ver_b2eea190010049819243704e467b0ac2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that zongertinib demonstrates significant activity against brain metastases among the three treatments."
+        }
+      ]
+    },
+    {
+      "name": "States that zongertinib has the lowest risk of drug-induced pneumonitis among... (ver_cc3b41a51bdd4e66b8a5f5a7c8e691a8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that zongertinib has the lowest risk of drug-induced pneumonitis among the three treatments."
+        }
+      ]
+    },
+    {
+      "name": "States that zongertinib has no contraindication in patients with autoimmune... (ver_a6831746cc1c4e4ea6d668a35ee31788)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that zongertinib has no contraindication in patients with autoimmune disease among the three treatments."
+        }
+      ]
+    },
+    {
+      "name": "Concludes that zongertinib should be the next best systemic treatment option... (ver_eec5b6884a814a53a1e5ec7a35bc3f6a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Concludes that zongertinib should be the next best systemic treatment option for this patient."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-onc-patient-7-erbb2-mutation-eliane-07079c77"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_07079c777b3942c79e5f513f266ac469",
+    "task_name": "Web Search_Attachments_Onc Patient 7 - ERBB2 mutation - Eliane",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d3845b7ba37f4653a34ec903e5ee5547",
+        "golden_text_response": "The patient has a history of stage I non-small cell lung cancer (NSCLC). Previously, they received pembrolizumab and chemotherapy with carboplatin/pemetrexed or cisplatin. Currently, there is evidence of brain metastases, and a lymph node biopsy indicates recurrent NSCLC with an A775_G776insYVMA (HER2) mutation on exon 20.\n\nFor the next line of systemic therapy, options include fam-trastuzumab deruxtecan-nxki, zongertinib, and sevabertinib. Zongertinib specifically targets the A775_G776insYVMA mutation and shows notable efficacy against brain metastases. It also carries the lowest risk of drug-induced pneumonitis and does not contraindicate use in patients with autoimmune diseases.\n\nTherefore, zongertinib is recommended as the most suitable next systemic treatment for this patient.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

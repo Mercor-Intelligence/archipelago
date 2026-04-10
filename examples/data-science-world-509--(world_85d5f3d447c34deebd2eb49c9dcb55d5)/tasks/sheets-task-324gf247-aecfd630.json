@@ -1,0 +1,215 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "When performing the following analysis, round all numerical outputs I request to five decimal places.\n\nTake the rows from the CSV file “enriched_loan_data.csv” and create an Excel file from it named “enriched_loan_data.xlsx”. In “enriched_loan_data.xlsx”, create a new sheet named “Default Probability”. Then, split the entire year into chronological groups of three months, starting in January. For each of those four groups, reference the rows sourced from “enriched_loan_data.csv” to determine, for loans with report dates falling under one of those three months in 2024, the loan with the smallest value in the “PD_Probability” column, excluding null or missing “PD_Probability” values. In “Default Probability”, report the identifier of the loan with the smallest “PD_Probability” value for each group of months along with the relevant “PD_Probability” value. If two loans are tied for the smallest “PD_Probability” value in a given period of three months, choose the loan with the lower row index in the Excel file when reporting the loan identifier of the loan in that period with the smallest “PD_Probability” value. Report all results in “Default Probability” using dynamic Excel formulas. Return the Excel file containing the analysis I requested in your response."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "The smallest PD_Probability value from loans included in reports in the months... (ver_5314742ad78142fb9741ae2ff033c9c5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The smallest PD_Probability value from loans included in reports in the months of January, February, and March 2024 is calculated as 0.00486 +/- 0.0001."
+        }
+      ]
+    },
+    {
+      "name": "The smallest PD_Probability value from loans included in reports in the months... (ver_66153e7d2bdf46f28bb5e131c14ea164)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The smallest PD_Probability value from loans included in reports in the months of April, May, and June 2024 is calculated as 0.00499 +/- 0.0001."
+        }
+      ]
+    },
+    {
+      "name": "The smallest PD_Probability value from loans included in reports in the months... (ver_ce7d09e29d7245a1843ed96b58d2dfc4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The smallest PD_Probability value from loans included in reports in the months of July, August, and September 2024 is calculated as 0.00508 +/- 0.0001."
+        }
+      ]
+    },
+    {
+      "name": "The smallest PD_Probability value from loans included in reports in the months... (ver_5e0a55062e2844f9b5abc4a754d71779)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The smallest PD_Probability value from loans included in reports in the months of October, November and December 2024 is calculated as 0.00521 +/- 0.0001."
+        }
+      ]
+    },
+    {
+      "name": "The loan with smallest PD_Probability value from loans included in reports in... (ver_75aed13438e74fa5aaaa5d52353195c2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The loan with smallest PD_Probability value from loans included in reports in the months of January, February, and March 2024 is named LN-B-13782-01."
+        }
+      ]
+    },
+    {
+      "name": "The loan with smallest PD_Probability value from loans included in reports in... (ver_e979aae5d2f94f979f40ccfc2bb57eac)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The loan with smallest PD_Probability value from loans included in reports in the months of April, May, and June 2024 is named as LN-B-13782-01."
+        }
+      ]
+    },
+    {
+      "name": "The loan with smallest PD_Probability value from loans included in reports in... (ver_52f491db1aec4921bf4239e18e2fe779)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The loan with smallest PD_Probability value from loans included in reports in the months of July, August, and September 2024 is named as LN-B-13782-01."
+        }
+      ]
+    },
+    {
+      "name": "The loan with smallest PD_Probability value from loans included in reports in... (ver_76fa7acdfbcb4dd8b284fc07ef9cc457)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The loan with smallest PD_Probability value from loans included in reports in the months of October, November, and December 2024 is named as LN-B-13782-01."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sheets-task-324gf247-aecfd630"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_aecfd6306d1b460b993be78305733783",
+    "task_name": "Sheets - Task 324gf247",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_feb0281f1cf84f5fac943a26f80bed60",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_4fd83c1fe0934238b7a81e6009dc0947"
+      }
+    ]
+  }
+}

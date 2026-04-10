@@ -1,0 +1,278 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_a8532c83534d49da9bba3eb2069a68ad",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7025264a7d448fba6cc2dd41c5808b",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the difference in portfolio share between variable and fixed rate distressed loans for 2023Q1 to be 0.62% +/- 0.05%",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "After calculating the portfolio share for each risk grade by loan type in this quarter, this is the difference bewtween the loan types for distressed loans.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8b59c243ce224385b391e5c9f9cf1ba1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7025264a7d448fba6cc2dd41c5808b",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the difference in portfolio share between variable and fixed rate distressed loans for 2023Q2 to be 1.17% +/- 0.05%",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "After calculating the portfolio share for each risk grade by loan type in this quarter, this is the difference bewtween the loan types for distressed loans.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_39287e56c5ee4b11bf0e5e752ee3e6dc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7025264a7d448fba6cc2dd41c5808b",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the difference in portfolio share between variable and fixed rate distressed loans for 2023Q3 to be 0.65% +/- 0.05%",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "After calculating the portfolio share for each risk grade by loan type in this quarter, this is the difference bewtween the loan types for distressed loans.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cfef9c08ee8e438baa784a9dbad85bd0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7025264a7d448fba6cc2dd41c5808b",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the difference in portfolio share between variable and fixed rate distressed loans for 2023Q4 to be 21.77% +/- 0.05%",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "After calculating the portfolio share for each risk grade by loan type in this quarter, this is the difference bewtween the loan types for distressed loans.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0d9eda7c46474b279e4fdce02f8a17fb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7025264a7d448fba6cc2dd41c5808b",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the difference in portfolio share between variable and fixed rate distressed loans for 2024Q1 to be 14.97% +/- 0.05%",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "After calculating the portfolio share for each risk grade by loan type in this quarter, this is the difference bewtween the loan types for distressed loans.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7e010d5368e94b15be3fa68202a357d3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7025264a7d448fba6cc2dd41c5808b",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the difference in portfolio share between variable and fixed rate distressed loans for 2024Q2 to be 50.57% +/- 0.05%",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "After calculating the portfolio share for each risk grade by loan type in this quarter, this is the difference bewtween the loan types for distressed loans.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_70ee42972d7645afb28286c27c38c84f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7025264a7d448fba6cc2dd41c5808b",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the difference in portfolio share between variable and fixed rate distressed loans for 2024Q3 to be 51.88% +/- 0.05%",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "After calculating the portfolio share for each risk grade by loan type in this quarter, this is the difference bewtween the loan types for distressed loans.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9cfcf3ff830049ec83e7558b78bcc115",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7025264a7d448fba6cc2dd41c5808b",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the difference in portfolio share between variable and fixed rate distressed loans for 2024Q4 to be 48.89% +/- 0.05%",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "After calculating the portfolio share for each risk grade by loan type in this quarter, this is the difference bewtween the loan types for distressed loans.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_87babb3546e44d76b7fc2fc6c10d72bb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7025264a7d448fba6cc2dd41c5808b",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Outputs a two-row plot.",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "This is the requested plot to visualize the risk grade migration over time.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8ed801971c194f44ab9ae00fa143df7b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7025264a7d448fba6cc2dd41c5808b",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "The plot shows the share of risk grades over time for Fixed-rate loans on the first row.",
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "This is the requested plot for the upper row.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f39a999aff1c4239b62e16a97257ba0f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7025264a7d448fba6cc2dd41c5808b",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "The plot shows the share of risk grades over time for Variable-rate loans on the second row.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "This is the requested plot for the lower row.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_22b09b5095be472a840a4f70ad241d3f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7025264a7d448fba6cc2dd41c5808b",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "The subplot on the first row is a stacked bar chart.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "The first row of the original Grade Migration (Portfolio Share).png is a stacked bar chart.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1b68101df1b243a18b2221e5f30904d1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cc7025264a7d448fba6cc2dd41c5808b",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "The subplot on the second row is a stacked bar chart.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Images (.png, .jpg, .jpeg)",
+        "criteria_explanation": "The second row of the original Grade Migration (Portfolio Share).png is a stacked bar chart.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "eval_config_name": "Output LLM",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "4658aec9-7eeb-4c9b-84c2-5464345e345f",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

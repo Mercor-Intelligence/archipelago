@@ -1,0 +1,67 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_bcb5b9e14704498d99573e6081eba2bc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_be29342b63014ef387beda442d00fe4b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the state with the highest Average Total Discharges per provider for DRG 065 is Michigan",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_026b34940bf64d1488acc21fa3cf59e6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_be29342b63014ef387beda442d00fe4b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that Michigan's Average Total Discharges per provider for DRG 065 is 55 (acceptable range 54 to 56).",
+        "negative_criteria": "States that Michigan's Average Total Discharge is a value other than 55",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

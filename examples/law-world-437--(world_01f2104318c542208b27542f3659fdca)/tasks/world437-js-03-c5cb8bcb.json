@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Sweetmarch Build Partners (SBP) entered into its standard contractor agreement with SteelTreeSolutions (STS). STS has filed a complaint against SBP for breach of contract in violation of public policy. STS is alleging in its complaint that it brought several safety concerns to SBP's attention and SBP specifically told STS to ignore them. STS is further alleging that it's contract with SBP was terminated because STS ultimately filed a claim with OSHA alleging numerous worksite safety violations. Assume that all of these allegations are true. Does STS have a valid claim against SBP for breach of contract in violation of public policy? Provide an explanation with your response. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that SteelTreeSolutions does not have an employee/employer relationship... (ver_234de133c0bb42e1a1bd4b2ba7c2a255)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that SteelTreeSolutions does not have an employee/employer relationship with Sweetmarch Building Partners."
+        }
+      ]
+    },
+    {
+      "name": "States that SteelTreeSolutions does not have a valid claim for breach of... (ver_b3cc3545edbb494d90d7ef6dfc2617dd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that SteelTreeSolutions does not have a valid claim for breach of contract in violation of public policy."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world437-js-03-c5cb8bcb"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_c5cb8bcb4edd4b9b9c78969ef8e7e10c",
+    "task_name": "World437_JS_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_1a962196e4684341806f06de249beda3",
+        "golden_text_response": "SteelTreeSolutions (STS) does not have a valid claim for breach of contract in violation of public policy because SteelTreeSolutions does not have an employee/employer relationship with Sweetmarch Building Partners. ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

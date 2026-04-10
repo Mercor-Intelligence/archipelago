@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Calculate the Amortization Horizon (the number of months required to recover the tax asset) for the Audit-Identified Deferred Tax Asset (DTA) by analyzing the velocity of manual revenue timing adjustments recorded in the 2023 fiscal year in Xero.\n\nAssumptions:\nUse the Correct Net DTA from the Deferred Tax Rollforward as the target amount to be recovered.\nFor the journals, get only manual journals in the 2023 fiscal year that contain the keywords \"ASC 606\", \"OEM\", or \"Deferral\" in their reference.\nUse the Combined Statutory Tax Rate from Federal and State to determine the monthly tax benefit.\n\nRequirement:\nPresent the final Amortization Horizon in months, rounded to one decimal place in the console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the time (in months) required for the monthly tax benefits to... (ver_eb9b825a904747639927e70d78a04edf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the time (in months) required for the monthly tax benefits to fully offset the target DTA balance in 2023 is 61.1 months (acceptable range 60.5 to 61.7)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-801-sp-06-1ad332a0"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_1ad332a0dde9471fa6dcc87b28b573aa",
+    "task_name": "World 801_SP_06",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_5164bd7d7f0240708c302dd7797d52bd",
+        "golden_text_response": "The time (in months) required for the monthly tax benefits to fully offset the target DTA balance is 61.1 months",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "requires_network": false,
+  "tools_requiring_network": [],
+  "tools_offline": [
+    "calendar",
+    "chat",
+    "code_execution",
+    "edgar_sec",
+    "excel",
+    "filesystem",
+    "mail",
+    "pdfs",
+    "powerpoint",
+    "uspto",
+    "word"
+  ]
+}

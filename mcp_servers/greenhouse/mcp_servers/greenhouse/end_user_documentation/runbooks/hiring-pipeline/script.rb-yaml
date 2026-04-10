@@ -1,0 +1,318 @@
+# Hiring Pipeline Workflow
+# Demonstrates: Reset DB -> Create job -> Create candidate -> Apply -> Advance stages -> Submit feedback -> Hire
+#
+# Tools exercised:
+# - Login (recruiter, coordinator, hiring_manager)
+# - Reset State (Admin)
+# - Create Job (Jobs)
+# - Get Job (Jobs)
+# - Get Stages (Jobs)
+# - Create Candidate (Candidates)
+# - Create Application (Applications)
+# - Get Application (Applications)
+# - Advance Stage (Applications)
+# - Add Note (Candidates)
+# - Submit Feedback (Feedback)
+# - List Feedback (Feedback)
+# - Hire (Applications)
+# - Get Activity (Activity)
+
+url: http://localhost:3000
+
+output: screenshots
+
+defaults:
+  server: greenhouse-greenhouse
+
+steps:
+  # Step 1: Initial view
+  - TakeScreenshot
+
+  # Step 2: Login as Recruiter
+  - Login:
+      persona: recruiter
+      screenshot_params:
+        element: *tool_panel
+        max_height: 600
+
+  # Step 3: Reset database to clean state
+  - SelectTool:
+      tool: reset_state
+      category: Admin
+  - Wait: 500
+  - FillToolParam:
+      params:
+        confirm: true
+        clear_users: false
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 400
+
+  # Step 4: Create a job opening
+  - SelectTool:
+      tool: jobs_create
+      category: Jobs
+  - Wait: 500
+  - FillToolParam:
+      params:
+        name: Senior Backend Engineer
+        status: open
+        number_of_openings: 2
+        notes: >
+          We are looking for an experienced backend engineer to join the
+          platform team. Must have strong Python and distributed systems
+          experience.
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 5: Execute job creation
+  - ExecuteTool:
+      capture:
+        job_id: $.id
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 6: View job pipeline stages
+  - SelectTool:
+      tool: jobs_get_stages
+      category: Jobs
+  - Wait: 500
+  - FillToolParam:
+      params:
+        job_id: "{{ job_id }}"
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 7: Create a candidate
+  - SelectTool:
+      tool: candidates_create
+      category: Candidates
+  - Wait: 500
+  - FillToolParam:
+      params:
+        first_name: Maria
+        last_name: Chen
+        company: Stripe
+        title: Staff Engineer
+  - FillListItems:
+      param: email_addresses
+      items:
+        - value: maria.chen@example.com
+          type: personal
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 8: Execute candidate creation
+  - ExecuteTool:
+      capture:
+        candidate_id: $.id
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 9: Create application linking candidate to job
+  - SelectTool:
+      tool: applications_create
+      category: Applications
+  - Wait: 500
+  - FillToolParam:
+      params:
+        candidate_id: "{{ candidate_id }}"
+        job_id: "{{ job_id }}"
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 10: Execute application creation
+  - ExecuteTool:
+      capture:
+        application_id: $.id
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 11: Coordinator adds a note
+  - Login:
+      persona: coordinator
+      screenshot_params:
+        element: *tool_panel
+        max_height: 600
+
+  - SelectTool:
+      tool: candidates_add_note
+      category: Candidates
+  - Wait: 500
+  - FillToolParam:
+      params:
+        candidate_id: "{{ candidate_id }}"
+        body: >
+          Phone screen completed. Candidate has 8 years of backend experience
+          with Python and Go. Strong distributed systems knowledge. Recommend
+          advancing to technical interview.
+        visibility: public
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+  - ExecuteTool
+  - Wait: 1500
+
+  # Step 12: Advance through stages (Recruiter)
+  - Login:
+      persona: recruiter
+      screenshot_params:
+        element: *tool_panel
+        max_height: 600
+
+  - SelectTool:
+      tool: applications_advance_stage
+      category: Applications
+  - Wait: 500
+  - FillToolParam:
+      params:
+        application_id: "{{ application_id }}"
+  - ExecuteTool  # Application Review -> Phone Screen
+  - Wait: 500
+
+  - SelectTool:
+      tool: applications_advance_stage
+      category: Applications
+  - FillToolParam:
+      params:
+        application_id: "{{ application_id }}"
+  - ExecuteTool  # Phone Screen -> Technical Interview
+  - Wait: 500
+
+  - SelectTool:
+      tool: applications_advance_stage
+      category: Applications
+  - FillToolParam:
+      params:
+        application_id: "{{ application_id }}"
+  - ExecuteTool  # Technical Interview -> Onsite
+  - Wait: 500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 13: Hiring manager submits feedback
+  - Login:
+      persona: hiring_manager
+      screenshot_params:
+        element: *tool_panel
+        max_height: 600
+
+  - SelectTool:
+      tool: feedback_submit
+      category: Feedback
+  - Wait: 500
+  - FillToolParam:
+      params:
+        application_id: "{{ application_id }}"
+        interviewer_id: 3
+        overall_recommendation: strong_yes
+  - FillListItems:
+      param: attributes
+      items:
+        - name: Technical Skills
+          type: Skills
+          rating: strong_yes
+          note: Excellent system design and coding ability
+  - Wait: 500
+  - FillListItems:
+      param: questions
+      items:
+        - id: 1
+          question: Describe a complex system you designed
+          answer: Designed a real-time event processing pipeline handling 50K events/sec with exactly-once semantics
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 900
+
+  # Step 14: Execute feedback submission
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 15: View submitted feedback
+  - SelectTool:
+      tool: feedback_list
+      category: Feedback
+  - Wait: 500
+  - FillToolParam:
+      params:
+        application_id: "{{ application_id }}"
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 16: Recruiter advances to Offer and hires
+  - Login:
+      persona: recruiter
+      screenshot_params:
+        element: *tool_panel
+        max_height: 600
+
+  - SelectTool:
+      tool: applications_advance_stage
+      category: Applications
+  - FillToolParam:
+      params:
+        application_id: "{{ application_id }}"
+  - ExecuteTool  # Onsite -> Offer
+  - Wait: 500
+
+  - SelectTool:
+      tool: applications_hire
+      category: Applications
+  - Wait: 500
+  - FillToolParam:
+      params:
+        application_id: "{{ application_id }}"
+        opening_id: 1
+        start_date: "2026-03-01"
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 17: Execute hire
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 18: View candidate activity feed
+  - SelectTool:
+      tool: activity_get
+      category: Activity
+  - Wait: 500
+  - FillToolParam:
+      params:
+        candidate_id: "{{ candidate_id }}"
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800

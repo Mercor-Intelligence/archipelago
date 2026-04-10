@@ -1,0 +1,152 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_be67f873c24b43c9ad75125d2da5741c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_aa331b351b064a4cbb96ef842b347a4b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the sum of Cost of Service values is 27",
+        "modality": "Free text",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4facb5d1f368450eb590f13046ef6578",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_aa331b351b064a4cbb96ef842b347a4b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the criteria with the highest sum of respondents is Cost of Server",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c315f86c6ed348c0921bec9b5e940e8f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_aa331b351b064a4cbb96ef842b347a4b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the sum of Weak customer service values is 28",
+        "modality": "Free text",
+        "negative_criteria": "States that the total sum for Weak customer service respondents is any value other than 28",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_826ad6221d0d46abb1b8c531c2ab3aa5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_aa331b351b064a4cbb96ef842b347a4b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the most mentioned pain point for respondents is Weak Customer Service",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_06b656a4c53f4c88aafeda1f1948d0cf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_aa331b351b064a4cbb96ef842b347a4b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that total mentioning Scalability as most important factor is 14",
+        "modality": "Free text",
+        "negative_criteria": "States that total mentioning Scalability as most important factor is any value other than 14",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_09ff87f0394745c79ab60014a4012080",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_aa331b351b064a4cbb96ef842b347a4b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the most mentioned most important factor for respondents is Scalability",
+        "modality": "Free text",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

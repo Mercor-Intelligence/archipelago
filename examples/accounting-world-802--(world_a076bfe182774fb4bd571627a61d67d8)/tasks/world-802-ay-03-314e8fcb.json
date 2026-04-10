@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Hey, can you take a look at Ironclad’s accrued salary expenses? We need to reconcile the reported balance against the attached department schedules. There’s a discrepancy and we believe two employees were mistakenly included in the accrual. Can you identify which two employees were mistakenly included and provide their employee IDs?\n\nDo not round intermediate calculations. Report as a message in console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that based on reconciling the accrued salary schedules to the reported... (ver_2956739177604dabaa3847e7c6e988aa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on reconciling the accrued salary schedules to the reported balance, one of the two employee IDs that have been mistakenly included is 100035 (acceptable range 99.0 to 101)."
+        }
+      ]
+    },
+    {
+      "name": "States that based on reconciling the accrued salary schedules to the reported... (ver_66bb1b3037f846b4a3386a3bef2539c2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on reconciling the accrued salary schedules to the reported balance, one of the two employee IDs that have been mistakenly included is 102310 (acceptable range 101 to 103)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-802-ay-03-314e8fcb"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_a076bfe182774fb4bd571627a61d67d8",
+    "world_name": "Accounting World 802",
+    "task_id": "task_314e8fcb95184cd4b5275ad9bbc26b09",
+    "task_name": "World_802_AY_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d1a71e8f029d424f9504603ddf5802d3",
+        "golden_text_response": "Based on reconciling the accrued salary schedules to the reported balance, the two employee IDs that have been mistakenly included are 100035 and 102310.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_51dd689d0f2e4c86ab3e37d4eb88bc6b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_79e1a323feaf429d94e3e476ec72b671",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States 1. Compile written reports from qualified consultants documenting the contamination. V.2 - DDA Draft Section 5.3(b)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "See the most recent version of the DDA - V.2 - DDA Draft.docx. Section 5.3(b) requires written reports from qualified consultants that document the contamination.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e5a3844693c1479b9c8cccc6cc60f5d8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_79e1a323feaf429d94e3e476ec72b671",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States 2. Draft a written request to the City for a $100,000 reduction of the purchase price with the supporting documentation from Step 1. V.2 - DDA Draft Section 5.3(b)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "See the most recent version of the DDA - V.2 - DDA Draft.docx. Section 5.3(b) states that if Liverbird discovers contamination they may request a reduction of the purchase price in writing with supporting documentation.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9f8514d6be304b1891354bdd4551ff73",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_79e1a323feaf429d94e3e476ec72b671",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States 3. Deliver the written notice by personal service, certified mail, or reputable overnight courier. V.2 - DDA Draft Section 18.2",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "See the most recent version of the DDA - V.2 - DDA Draft.docx. Section 18.2 requires very specific notice requirements that must be followed in order for the notice to be effective. It must be sent by one of the specified ways, addressed specifically to the city attorney, Myric, and delivered to their correct address.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0f224f7eea9e4674953d9e1538b10c24",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_79e1a323feaf429d94e3e476ec72b671",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the specific recipient of the written notice is City of San Dimas, Attn: Myric, City Attorney. V.2 - DDA Draft Section 18.2",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "See the most recent version of the DDA - V.2 - DDA Draft.docx. Section 18.2 requires very specific notice requirements that must be followed in order for the notice to be effective. It must be sent by one of the specified ways, addressed specifically to the city attorney, Myric, and delivered to their correct address.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4fee208e6ad048eab4ede57d3c1e0cd1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_79e1a323feaf429d94e3e476ec72b671",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the written notice must be addressed to 245 East Bonita Avenue, San Dimas, CA 91773. V.2 - DDA Draft Section 18.2",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "See the most recent version of the DDA - V.2 - DDA Draft.docx. Section 18.2 requires very specific notice requirements that must be followed in order for the notice to be effective. It must be sent by one of the specified ways, addressed specifically to the city attorney, Myric, and delivered to their correct address.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

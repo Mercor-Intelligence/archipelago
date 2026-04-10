@@ -1,0 +1,399 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use the Granite IEP template to create an IEP plan document for Navy Peterson with:\n* Student name, first and last\n* Student ID number\n* Total number of days student has been absent\n* Total number of times student has been tardy\n* Student grade average \n* 2 accommodations that the student would need per the Gifted Programs accommodation policy.\n       \nNumeric outputs should be rounded to the nearest integer. Please express this IEP output as a DOCX file saved as the student’s Last name, first name and student ID number. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Identifies Navy Peterson as the student in the IEP document (ver_f5c44577add141e3af12d6dcf0523d39)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Navy Peterson as the student in the IEP document."
+        }
+      ]
+    },
+    {
+      "name": "IEP is in the same format as the IEP template (ver_0ce3be5eeac74217a9c4be6a3b253114)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "IEP is in the same format as the IEP template."
+        }
+      ]
+    },
+    {
+      "name": "Enters Navy Peterson's ID number as 700014 (acceptable range 693 to 707) (ver_b5e21800cc4c4b048155f1a8a1632443)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Enters Navy Peterson's ID number as 700014 (acceptable range 693 to 707)."
+        }
+      ]
+    },
+    {
+      "name": "Enters any other number other than 700014. (ver_b5e21800cc4c4b048155f1a8a1632443)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Enters any other number other than 700014."
+        }
+      ]
+    },
+    {
+      "name": "Enters the student's grade level as 9th grade (acceptable range 8.9 to 9.1) (ver_628c558eac07485280e6e990c440b022)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Enters the student's grade level as 9th grade (acceptable range 8.9 to 9.1)."
+        }
+      ]
+    },
+    {
+      "name": "Enters the student's grade level as anything other than 9th grade. (ver_628c558eac07485280e6e990c440b022)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Enters the student's grade level as anything other than 9th grade."
+        }
+      ]
+    },
+    {
+      "name": "States Navy Peterson was absent 1 day (ver_94a4e05bcc9747d492aa7a42ace8bc5c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Navy Peterson was absent 1 day."
+        }
+      ]
+    },
+    {
+      "name": "States the number of days Navy Peterson was absent as anything other than 1. (ver_94a4e05bcc9747d492aa7a42ace8bc5c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the number of days Navy Peterson was absent as anything other than 1."
+        }
+      ]
+    },
+    {
+      "name": "States the number of days the Navy Peterson was tardy as 0 (ver_16727554e45349aba3090eedea366f39)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the number of days the Navy Peterson was tardy as 0."
+        }
+      ]
+    },
+    {
+      "name": "Extracts the number of days Navy Peterson was tardy to Biology class as... (ver_16727554e45349aba3090eedea366f39)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Extracts the number of days Navy Peterson was tardy to Biology class as anything other than 0."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the average for the student's grade in Biology as 96% (acceptable... (ver_db3172e1c0b2437995da7f601074d81e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the average for the student's grade in Biology as 96% (acceptable range 95% to 97%)."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the average of the student's grades in Biology as anything other... (ver_db3172e1c0b2437995da7f601074d81e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the average of the student's grades in Biology as anything other than 96%."
+        }
+      ]
+    },
+    {
+      "name": "Lists any two of the accommodations listed in the gifted policy that aligned... (ver_e9ff49e3d96d432c86c7ff10d7952531)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists any two of the accommodations listed in the gifted policy that aligned with having a high grade including tiered assignments, open-ended assignments, enrichment or acceleration."
+        }
+      ]
+    },
+    {
+      "name": "Lists any accommodation other than those found in the Amethyst Academy Gifted... (ver_e9ff49e3d96d432c86c7ff10d7952531)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists any accommodation other than those found in the Amethyst Academy Gifted Program Accommodation Policy."
+        }
+      ]
+    },
+    {
+      "name": "Names the file 'Peterson Navy 700014' (ver_fcdb471454f44f6098e794929d334463)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Names the file 'Peterson Navy 700014'."
+        }
+      ]
+    },
+    {
+      "name": "Names the file anything other than 'Peterson Navy 700014'. (ver_fcdb471454f44f6098e794929d334463)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Names the file anything other than 'Peterson Navy 700014'."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh teachingworld306-jd-02-natural-prompt-ac2facb9"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_576565f6cc9649d7b3d56ec4763d3f7e",
+    "world_name": "Teaching World 306",
+    "task_id": "task_ac2facb9695d4537afce2c9e7611f7f1",
+    "task_name": "Teachingworld306_JD_02 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_5abfbd4a621146a1b2d6e1e3169acf10",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_63fd27a05e9745b4a4e8a24300827442"
+      }
+    ]
+  }
+}

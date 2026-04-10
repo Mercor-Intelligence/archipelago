@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using Ironclad's Q4 FY24 Revenue Schedule and the attached Q1 FY25 Growth Forecast, can you project Q1 FY25 Recognized and Expected revenue for enterprise customers with TCV greater than $1M?\n\nI need two figures reported to the console:\n1. Incremental Recognized Revenue\n2. Revenue Realization Gap as the difference between Q1 FY 25 Expected and Q1 FY 25 Recognized\n\nReport both final figures rounded to two decimal places. Do not round intermediary calculations. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that based on the Q4 FY24 Revenue Schedule and Q1 FY25 Growth Forecast,... (ver_addb5df2f3324c4e80b1c6990ed8f530)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on the Q4 FY24 Revenue Schedule and Q1 FY25 Growth Forecast, the Incremental Recognized Revenue is $135,885.01 (acceptable range $134,526.16 to $137,243.86)."
+        }
+      ]
+    },
+    {
+      "name": "States that based on the Q4 FY24 Revenue Schedule and Q1 FY25 Growth Forecast,... (ver_0b646aed11ea46d1807a0cb3f44d6a06)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on the Q4 FY24 Revenue Schedule and Q1 FY25 Growth Forecast, the Revenue Realization Gap is $358,634.27 (acceptable range $355,047.93 to $362,220.61)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh accounting-802-sp-task-02-543a3feb"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_a076bfe182774fb4bd571627a61d67d8",
+    "world_name": "Accounting World 802",
+    "task_id": "task_543a3febbd944b1db9a93bc2f98102f3",
+    "task_name": "Accounting 802 SP Task 02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_738becae4499418c91942c5e718a1864",
+        "golden_text_response": "Based on the Q4 FY24 Revenue Schedule and Q1 FY25 Growth Forecast, the Incremental Recognized Revenue is $135,885.01 and the Revenue Realization Gap is $358,634.27. ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

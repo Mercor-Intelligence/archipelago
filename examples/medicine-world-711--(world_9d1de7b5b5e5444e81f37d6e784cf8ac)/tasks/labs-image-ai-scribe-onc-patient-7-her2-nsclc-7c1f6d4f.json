@@ -1,0 +1,330 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 7” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nPatient 7 presents to the clinic for follow-up. Based on the patient's chart, the physician's conversation, lab results, and the most current guidelines or clinical trials as of December 31, 2025, what is the most appropriate next treatment option? What are the dosing and frequency for this treatment? Explain your reasoning."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient has non-small cell lung cancer. (ver_b7648240a9724b2db01cf19f7081a601)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has non-small cell lung cancer."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's cancer is metastatic. (ver_e6ce20f7a540436697735a28aa40bd77)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's cancer is metastatic."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's cancer has an HER2 mutation. (ver_de7c2f0c781746ffb3dec86c5dbcacac)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's cancer has an HER2 mutation."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has already received systemic therapy. (ver_af1841e8b84a47469d399c6633cde987)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has already received systemic therapy."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's non-small cell lung cancer is non-squamous. (ver_3a48ed15fba24a59a8ba2db794ef7e63)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's non-small cell lung cancer is non-squamous."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient wants to avoid further deterioration in her... (ver_9e740d49f25143c980d4a8b9f57b5337)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient wants to avoid further deterioration in her respiratory function during the next treatment."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient wants to avoid reducing her white blood cell count... (ver_2d0833d075c044f896fa624a093bf98d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient wants to avoid reducing her white blood cell count during the next treatment."
+        }
+      ]
+    },
+    {
+      "name": "States that the most appropriate next treatment option is zongertinib. (ver_1994e01db73a4a7f980d75d7379b081b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the most appropriate next treatment option is zongertinib."
+        }
+      ]
+    },
+    {
+      "name": "States that zongertinib is dosed once daily. (ver_0df18807eb89410a8ea35d7eee864d68)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that zongertinib is dosed once daily."
+        }
+      ]
+    },
+    {
+      "name": "States that zongertinib is dosed orally. (ver_7e983b26befd4e2ca3fdc7f761e47399)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that zongertinib is dosed orally."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient weighs 50.8 kg (acceptable range 50.3 to 51.3). (ver_d3fe52ceb1e345cf9664c4506434b46c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient weighs 50.8 kg (acceptable range 50.3 to 51.3)."
+        }
+      ]
+    },
+    {
+      "name": "States that zongertinib is dosed at 120 mg for this patient. (ver_c9daeb581e8a48949df6b5abcb87deb0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that zongertinib is dosed at 120 mg for this patient."
+        }
+      ]
+    },
+    {
+      "name": "States that zongertinib can be reduced to 60 mg if the patient has side effects. (ver_c047ef2bc9a04d63ba34034c0d44ec5d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that zongertinib can be reduced to 60 mg if the patient has side effects."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-onc-patient-7-her2-nsclc-7c1f6d4f"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_7c1f6d4f03164d4eabe82f4555c99dc6",
+    "task_name": "Labs_Image_AI Scribe Onc Patient 7 - HER2 NSCLC",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_2f624dbc785e4d959c76981d89351d02",
+        "golden_text_response": "The patient has been diagnosed with non-squamous, metastatic, non-small cell lung cancer (NSCLC) and has already completed prior chemotherapy (platinum-based) or immunotherapy. The patient's cancer is positive for a HER2-activating mutation (based on the attached lab results), and the patient has expressed a desire to avoid medications that could worsen breathing or reduce white blood cell count (based on the attached script). Based on this information, the most appropriate next treatment step is zongertinib. Zongertinib is a kinase inhibitor indicated for the treatment of adult patients with unresectable or metastatic non-squamous NSCLC whose tumors have HER2 tyrosine kinase domain-activating mutations and who have received prior systemic therapy. The patient meets all indications for zongertinib. The patient's most recent weight in the chart is 50.8 kg. This is under 90 kg, so the zongertinib dose is 120 mg daily, orally. The dosage can be reduced to 60 mg if the patient has side effects. ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

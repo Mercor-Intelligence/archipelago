@@ -1,0 +1,373 @@
+version: "1.0"
+project_name: "workday"
+
+servers:
+  - name: workday
+    display_name: "Workday HCM"
+    description: "Mock MCP server simulating Workday Human Capital Management APIs for pre-onboarding coordination and workforce management (includes Workday Help module)"
+    tools_module: "mcp_servers.workday.tools"
+    base_url: "http://localhost:8000"
+    requires_auth: true
+    auth_type: "bearer"
+
+categories:
+  # HCM Categories
+  - name: "Workers"
+    description: "Hire, terminate, transfer, and query worker records"
+    servers: [workday]
+
+  - name: "Positions"
+    description: "Create, close, and manage job positions"
+    servers: [workday]
+
+  - name: "Organizations"
+    description: "Manage supervisory organizations and hierarchy"
+    servers: [workday]
+
+  - name: "Job Profiles"
+    description: "Create and query job profile definitions"
+    servers: [workday]
+
+  - name: "Cost Centers & Locations"
+    description: "Manage cost centers and work locations"
+    servers: [workday]
+
+  - name: "Cases"
+    description: "Pre-onboarding case lifecycle management"
+    servers: [workday]
+
+  - name: "Milestones & Tasks"
+    description: "Track onboarding milestones and manual tasks"
+    servers: [workday]
+
+  - name: "Policies"
+    description: "Manage lead time policies and payroll cutoffs"
+    servers: [workday]
+
+  - name: "Exceptions"
+    description: "Request and approve milestone exceptions"
+    servers: [workday]
+
+  - name: "HCM Integration"
+    description: "Read HCM context and confirm start dates"
+    servers: [workday]
+
+  - name: "Reports"
+    description: "Generate workforce and organizational reports"
+    servers: [workday]
+
+  - name: "Audit"
+    description: "View audit trail and change history"
+    servers: [workday]
+
+  - name: "System"
+    description: "Health checks and server status"
+    servers: [workday]
+
+  # Workday Help Categories
+  - name: "Help Cases"
+    description: "Create, view, and update help desk cases with ownership, status, and due dates"
+    servers: [workday]
+
+  - name: "Help Messages"
+    description: "Log internal/inbound/outbound case communications"
+    servers: [workday]
+
+  - name: "Help Timeline"
+    description: "Append timeline events and retrieve timelines or snapshots"
+    servers: [workday]
+
+  - name: "Help Attachments"
+    description: "Add and list attachments for help cases"
+    servers: [workday]
+
+tool_overrides:
+  # ==========================================================================
+  # Workers
+  # ==========================================================================
+  - tool: "workday.workday_hire_worker"
+    category: "Workers"
+    display_name: "Hire Worker"
+
+  - tool: "workday.workday_get_worker"
+    category: "Workers"
+    display_name: "Get Worker"
+
+  - tool: "workday.workday_list_workers"
+    category: "Workers"
+    display_name: "List Workers"
+
+  - tool: "workday.workday_terminate_worker"
+    category: "Workers"
+    display_name: "Terminate Worker"
+
+  - tool: "workday.workday_transfer_worker"
+    category: "Workers"
+    display_name: "Transfer Worker"
+
+  # ==========================================================================
+  # Positions
+  # ==========================================================================
+  - tool: "workday.workday_create_position"
+    category: "Positions"
+    display_name: "Create Position"
+
+  - tool: "workday.workday_get_position"
+    category: "Positions"
+    display_name: "Get Position"
+
+  - tool: "workday.workday_list_positions"
+    category: "Positions"
+    display_name: "List Positions"
+
+  - tool: "workday.workday_close_position"
+    category: "Positions"
+    display_name: "Close Position"
+
+  # ==========================================================================
+  # Organizations
+  # ==========================================================================
+  - tool: "workday.workday_create_org"
+    category: "Organizations"
+    display_name: "Create Organization"
+
+  - tool: "workday.workday_get_org"
+    category: "Organizations"
+    display_name: "Get Organization"
+
+  - tool: "workday.workday_list_orgs"
+    category: "Organizations"
+    display_name: "List Organizations"
+
+  - tool: "workday.workday_get_org_hierarchy"
+    category: "Organizations"
+    display_name: "Get Org Hierarchy"
+
+  # ==========================================================================
+  # Job Profiles
+  # ==========================================================================
+  - tool: "workday.workday_create_job_profile"
+    category: "Job Profiles"
+    display_name: "Create Job Profile"
+
+  - tool: "workday.workday_get_job_profile"
+    category: "Job Profiles"
+    display_name: "Get Job Profile"
+
+  - tool: "workday.workday_list_job_profiles"
+    category: "Job Profiles"
+    display_name: "List Job Profiles"
+
+  # ==========================================================================
+  # Cost Centers & Locations
+  # ==========================================================================
+  - tool: "workday.workday_create_cost_center"
+    category: "Cost Centers & Locations"
+    display_name: "Create Cost Center"
+
+  - tool: "workday.workday_create_location"
+    category: "Cost Centers & Locations"
+    display_name: "Create Location"
+
+  # ==========================================================================
+  # Cases (HCM Pre-onboarding)
+  # ==========================================================================
+  - tool: "workday.workday_create_case"
+    category: "Cases"
+    display_name: "Create Case"
+
+  - tool: "workday.workday_get_case"
+    category: "Cases"
+    display_name: "Get Case"
+
+  - tool: "workday.workday_update_case"
+    category: "Cases"
+    display_name: "Update Case Status"
+
+  - tool: "workday.workday_assign_owner_case"
+    category: "Cases"
+    display_name: "Assign Case Owner"
+
+  - tool: "workday.workday_search_case"
+    category: "Cases"
+    display_name: "Search Cases"
+
+  - tool: "workday.workday_snapshot_case"
+    category: "Cases"
+    display_name: "Case Snapshot"
+
+  # ==========================================================================
+  # Milestones & Tasks
+  # ==========================================================================
+  - tool: "workday.workday_milestones_list"
+    category: "Milestones & Tasks"
+    display_name: "List Milestones"
+
+  - tool: "workday.workday_milestones_update"
+    category: "Milestones & Tasks"
+    display_name: "Update Milestone"
+
+  - tool: "workday.workday_tasks_create"
+    category: "Milestones & Tasks"
+    display_name: "Create Task"
+
+  - tool: "workday.workday_tasks_update"
+    category: "Milestones & Tasks"
+    display_name: "Update Task"
+
+  # ==========================================================================
+  # Policies
+  # ==========================================================================
+  - tool: "workday.workday_policies_get_applicable"
+    category: "Policies"
+    display_name: "Get Applicable Policies"
+
+  - tool: "workday.workday_policies_attach_to_case"
+    category: "Policies"
+    display_name: "Attach Policies to Case"
+
+  - tool: "workday.workday_policies_create"
+    category: "Policies"
+    display_name: "Create Policy"
+
+  - tool: "workday.workday_policies_create_payroll_cutoff"
+    category: "Policies"
+    display_name: "Create Payroll Cutoff"
+
+  # ==========================================================================
+  # Exceptions
+  # ==========================================================================
+  - tool: "workday.workday_exception_request"
+    category: "Exceptions"
+    display_name: "Request Exception"
+
+  - tool: "workday.workday_exception_approve"
+    category: "Exceptions"
+    display_name: "Approve Exception"
+
+  # ==========================================================================
+  # HCM Integration
+  # ==========================================================================
+  - tool: "workday.workday_hcm_read_context"
+    category: "HCM Integration"
+    display_name: "Read HCM Context"
+
+  - tool: "workday.workday_hcm_read_position"
+    category: "HCM Integration"
+    display_name: "Read Position Context"
+
+  - tool: "workday.workday_hcm_confirm_start_date"
+    category: "HCM Integration"
+    display_name: "Confirm Start Date"
+
+  - tool: "workday.workday_hcm_update_readiness"
+    category: "HCM Integration"
+    display_name: "Update Readiness"
+
+  # ==========================================================================
+  # Reports
+  # ==========================================================================
+  - tool: "workday.workday_report_workforce_roster"
+    category: "Reports"
+    display_name: "Workforce Roster Report"
+
+  - tool: "workday.workday_report_headcount"
+    category: "Reports"
+    display_name: "Headcount Report"
+
+  - tool: "workday.workday_report_movements"
+    category: "Reports"
+    display_name: "Movement Report"
+
+  - tool: "workday.workday_report_positions"
+    category: "Reports"
+    display_name: "Position Report"
+
+  - tool: "workday.workday_report_org_hierarchy"
+    category: "Reports"
+    display_name: "Org Hierarchy Report"
+
+  # ==========================================================================
+  # Audit
+  # ==========================================================================
+  - tool: "workday.workday_audit_get_history"
+    category: "Audit"
+    display_name: "Get Audit History"
+
+  # ==========================================================================
+  # System
+  # ==========================================================================
+  - tool: "workday.workday_health_check"
+    category: "System"
+    display_name: "Health Check"
+
+  # ==========================================================================
+  # Help Cases (Workday Help Module)
+  # ==========================================================================
+  - tool: "workday.workday_help_cases_create"
+    category: "Help Cases"
+    display_name: "Create Help Case"
+
+  - tool: "workday.workday_help_cases_get"
+    category: "Help Cases"
+    display_name: "Get Help Case"
+
+  - tool: "workday.workday_help_cases_update_status"
+    category: "Help Cases"
+    display_name: "Update Help Case Status"
+
+  - tool: "workday.workday_help_cases_reassign_owner"
+    category: "Help Cases"
+    display_name: "Reassign Help Case Owner"
+
+  - tool: "workday.workday_help_cases_update_due_date"
+    category: "Help Cases"
+    display_name: "Update Help Case Due Date"
+
+  - tool: "workday.workday_help_cases_search"
+    category: "Help Cases"
+    display_name: "Search Help Cases"
+
+  # ==========================================================================
+  # Help Messages
+  # ==========================================================================
+  - tool: "workday.workday_help_messages_add"
+    category: "Help Messages"
+    display_name: "Add Help Message"
+
+  - tool: "workday.workday_help_messages_search"
+    category: "Help Messages"
+    display_name: "Search Help Messages"
+
+  # ==========================================================================
+  # Help Timeline
+  # ==========================================================================
+  - tool: "workday.workday_help_timeline_add_event"
+    category: "Help Timeline"
+    display_name: "Add Timeline Event"
+
+  - tool: "workday.workday_help_timeline_get_events"
+    category: "Help Timeline"
+    display_name: "Get Timeline Events"
+
+  - tool: "workday.workday_help_timeline_get_snapshot"
+    category: "Help Timeline"
+    display_name: "Get Timeline Snapshot"
+
+  # ==========================================================================
+  # Help Attachments
+  # ==========================================================================
+  - tool: "workday.workday_help_attachments_add"
+    category: "Help Attachments"
+    display_name: "Add Help Attachment"
+
+  - tool: "workday.workday_help_attachments_list"
+    category: "Help Attachments"
+    display_name: "List Help Attachments"
+
+  # ==========================================================================
+  # Help Audit
+  # ==========================================================================
+  - tool: "workday.workday_help_audit_query_history"
+    category: "Audit"
+    display_name: "Query Help Audit History"

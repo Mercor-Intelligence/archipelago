@@ -1,0 +1,127 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_250f67156f104298b36dea174a20ec3a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6d9643604e0442b799540d200ab71dde",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the number of contents that StreamVibe will lose as exactly 474",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to \"Report the number of contents and the percentage (rounded to one decimal point) of total currently available contents that StreamVibe will lose\"",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_655e670396194c6da48f9858e62096e0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6d9643604e0442b799540d200ab71dde",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the percentage of total currently available contents that StreamVibe will lose as 10.0% +/- 0.2",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to \"Report the number of contents and the percentage (rounded to one decimal point) of total currently available contents that StreamVibe will lose\"",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_15250e05aa5343bfb362db5f59b9d56f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6d9643604e0442b799540d200ab71dde",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the percentage of total currently available movie content duration lost as 17.3% +/- 0.2",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to \"For the movie and tv_show content types separately, report the percentage (rounded to one decimal point) of total currently available content duration lost.\"",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8e4180c2d6a7479e9fa0bed51301a362",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6d9643604e0442b799540d200ab71dde",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the percentage of total currently available tv show content duration lost as 15.1% +/- 0.2",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to \"For the movie and tv_show content types separately, report the percentage (rounded to one decimal point) of total currently available content duration lost.\"",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_51fb7c711c4a425da38df084201e88bc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6d9643604e0442b799540d200ab71dde",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the number of currently active (account status) users StreamVibe may lose as exactly 237",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to \"Report the number of currently active (account status) users StreamVibe may lose as a result.\"",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

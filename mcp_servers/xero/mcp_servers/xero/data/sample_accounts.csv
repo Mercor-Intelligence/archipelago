@@ -1,0 +1,5 @@
+AccountID,Code,Name,Status,Type,TaxType,Class,CurrencyCode,ReportingCode,ReportingCodeName
+csv-acc-001,100,Cash on Hand,ACTIVE,BANK,NONE,ASSET,USD,ASS,Asset
+csv-acc-002,300,Product Sales,ACTIVE,REVENUE,OUTPUT,REVENUE,USD,INC,Income
+csv-acc-003,400,Office Expenses,ACTIVE,EXPENSE,INPUT,EXPENSE,USD,EXP,Expense
+

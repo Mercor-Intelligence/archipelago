@@ -1,0 +1,158 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_b2ec0c5d8c8740728b1a4337e715aebf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5ec256fe1ee845aaa86f0b239a4caa09",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that experts' average total minimum water remediation cost is $48.0M (acceptable range $47.5 to $48.5)",
+        "negative_criteria": "States that experts' average total minimum cost is a number other than $48.0M",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d513423091244dbab5612653b97b95ad",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5ec256fe1ee845aaa86f0b239a4caa09",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that experts' average total maximum water remediation cost is $123.0M (acceptable range $121.8 to $124.2)",
+        "negative_criteria": "States that experts' average total maximum cost is a number other than $123.0M",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_67beafd981a94f1d86c0a28a9a950ff0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5ec256fe1ee845aaa86f0b239a4caa09",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that total water-related capex is $13.8M (acceptable range $13.7 to $13.9)",
+        "negative_criteria": "States that total capex is a number other than $13.8M",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_341bdfdfa2844ca28c9a28c43f75b7fc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5ec256fe1ee845aaa86f0b239a4caa09",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that total water-related opex is $17.2M (acceptable range $17.0 to $17.4)",
+        "negative_criteria": "States that total opex is a number other than $17.2M",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3715ec3df1db43eda9a3217b0398f29d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5ec256fe1ee845aaa86f0b239a4caa09",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that total water cost is $31.0M (acceptable range $30.7 to $31.3)",
+        "negative_criteria": "States that total water cost is a number other than $31.0M",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bfc9a457f2f94b84b510c166c2017d92",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5ec256fe1ee845aaa86f0b239a4caa09",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that client's estimate of total water costs does not fall within the average expert range of water remediation costs",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 17,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cb9d9b24dd054a95be0db4e456ac8970",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5ec256fe1ee845aaa86f0b239a4caa09",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the amount that client's total water estimate is below experts' average total minimum cost is $17.0M (acceptable range $16.8 to $17.2)",
+        "negative_criteria": "States the amount that client's total water estimate is below experts' average total minimum cost is a number other than $17.0M",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 18,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

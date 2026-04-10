@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Write a short legal memo in a new document explaining what causation test should be used in Anthony Porter's retaliation claim. Use case law and any pertinent regulations to support your position.                                                                    "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that University of Texas Southwestern Med Center v. Nassar held that... (ver_8bc71562049a46f4956a2f0e1fed2741)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that University of Texas Southwestern Med Center v. Nassar held that “but for” causation is used to prove Title VII retaliation claims."
+        }
+      ]
+    },
+    {
+      "name": "States that, according to Bostock v. Clayton County, the but-for causation... (ver_1e8675925d454281917b7ac3b681e57a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that, according to Bostock v. Clayton County, the but-for causation test does not require that the prohibited factor be the sole or primary reason for the adverse action."
+        }
+      ]
+    },
+    {
+      "name": "State that 29 CRF 1977.6(b) was updated to reflect the Court's decisions in... (ver_3de57e7b92384968bbe8d6c2334c82b8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that 29 CRF 1977.6(b) was updated to reflect the Court's decisions in Nassar and Bostock."
+        }
+      ]
+    },
+    {
+      "name": "States that Porter must prove “but-for” causation (ver_7834b8f5f656447db9c788510777fcde)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Porter must prove “but-for” causation."
+        }
+      ]
+    },
+    {
+      "name": "States that Porter does not need to prove that the protected factor was the... (ver_612d8fdc67cd421f9ff9b4a2777c3cd6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Porter does not need to prove that the protected factor was the primary reason for his being fired to prevail."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh law437-ac-02-567c1e6f"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_567c1e6f81c94132a7e135e61b489b9b",
+    "task_name": "Law437_AC_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_bfb9de0ce14244a5b8c6dcb223e2a615",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_0cbd912584b5462bbb0e2e3823f6bbd9"
+      }
+    ]
+  }
+}

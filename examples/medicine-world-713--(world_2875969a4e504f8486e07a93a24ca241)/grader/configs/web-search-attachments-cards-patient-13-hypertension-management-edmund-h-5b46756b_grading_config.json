@@ -1,0 +1,272 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_e6ac8377622e438ca14523ca5cc89cf0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5b46756b61f9446495a33e2e3f5ac31b",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the blood pressure at the clinic visit is 150/80 mmHg (acceptable range 148 to 152).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from the script. \"Physician: Oh yes It was high today. The nurse recorded it at 150/80\r\nPatient: Yes I thought it was high too but when I went to the emergency department they said it didn\u2019t need to be lowered there.\"",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8c2ab7dd5cce4f14abfd0b88f2fd2bdc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5b46756b61f9446495a33e2e3f5ac31b",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that combined angiotensin-converting enzyme inhibitor (ACEi) therapy with angiotensin receptor blocker (ARB) therapy increases risk of renal failure.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"High-quality RCT reports demonstrate that simultaneous administration of RAS blockers (ie, an ACEi combined with an ARB or an ACEi or ARB combined with the direct renin inhibitor, aliskiren) increases the risk of CVD, kidney disease, and hyperkalemia\" https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6ab95e090d844abcba0f99683208c23d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5b46756b61f9446495a33e2e3f5ac31b",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that combined ACEi therapy with ARB therapy increases risk of hyperkalemia.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"High-quality RCT reports demonstrate that simultaneous administration of RAS blockers (ie, an ACEi combined with an ARB or an ACEi or ARB combined with the direct renin inhibitor, aliskiren) increases the risk of CVD, kidney disease, and hyperkalemia\" https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c1992536b2134fbc9d053242d619e8a3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5b46756b61f9446495a33e2e3f5ac31b",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that concurrent use of lisinopril with losartan is not recommended.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"In adults with hypertension, simultaneous use of an ACEi, ARB, and/or renin inhibitor in combination is not recommended due to the potential for harm\" https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_302596b51893461d9d2accd1cae8f914",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5b46756b61f9446495a33e2e3f5ac31b",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies that the most recent laboratory results show normal renal function.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Urea nitrogen (BUN) 14 7 - 18 mg/dL\r\nCreatinine 1.05 0.6 - 1.2 mg/dL\"",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a178604af2fe41318a74b419e2a2d1d9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5b46756b61f9446495a33e2e3f5ac31b",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies that the most recent laboratory results show no evidence of hyperkalemia.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Potassium (K+) 4.2 3.5 - 5 mEq/L\"",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3137bb8c97574d90a492c487668f177b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5b46756b61f9446495a33e2e3f5ac31b",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Utilizes the blood pressure guidelines from American Heart Association or American College of Cardiology in 2025.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Circulation CLINICAL PRACTICE GUIDELINES 2025 AHA/ACC/AANP/AAPA/ABC/ACCP/ ACPM/AGS/AMA/ASPC/NMA/PCNA/ SGIM Guideline for the Prevention, Detection, Evaluation and Management of High Blood Pressure in Adults: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines\" https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c4c5fd39d34a492ba4e0ec5ebfdc12bd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5b46756b61f9446495a33e2e3f5ac31b",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient has stage II hypertension.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Table 4. Categories of Blood Pressure in Adults* SBP BP Category Normal Elevated Hypertension Stage 1 Stage 2 <120 mm Hg 120 to 129 mm Hg 130 to 139 mm Hg \u2265140 mm Hg DBP and and or or <80 mm Hg <80 mm Hg 80 to 89 mm Hg \u226590 mm Hg\" https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356\n\nThe patient has a known history of \"Past Medical History  Diagnosis Date  . Hypertension\" noted from his chart on CLINICALNOTES sheet, row 336, column NOTETEXT under Progress Note.\nHis BP in clinic is 150/80 mmHg. ",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c107a8e8758943e99b06937bd086f833",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5b46756b61f9446495a33e2e3f5ac31b",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States stage II hypertension is treated with two first-line antihypertensive agents.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"1. In adults with stage 2 hypertension (SBP \u2265 140 mm Hg and DBP \u226590 mm Hg), initiation of  antihypertensive drug therapy with 2 first-line agents of different classes, ideally in a single-pill combination (SPC), is recommended to improve  BP control and adherence.1\u20136\" \"For adults initiating antihypertensive drug therapy, thiazide-type diuretics, long-acting dihydropyridine CCB, and ACEi or ARB are recommended as firstline therapy\" https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2fde971b31eb4499a031d8293ab7e08b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5b46756b61f9446495a33e2e3f5ac31b",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the two first-line antihypertensive agents must be from different medication classes.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"1. In adults with stage 2 hypertension (SBP \u2265 140 mm Hg and DBP \u226590 mm Hg), initiation of  antihypertensive drug therapy with 2 first-line agents of different classes, ideally in a single-pill combination (SPC), is recommended to improve  BP control and adherence.1\u20136\" \"For adults initiating antihypertensive drug therapy, thiazide-type diuretics, long-acting dihydropyridine CCB, and ACEi or ARB are recommended as firstline therapy\" https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1e6d3be5876a4dcf89d953722b634a37",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5b46756b61f9446495a33e2e3f5ac31b",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the two first-line antihypertensive agents should preferably be in a single-pill combination.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"1. In adults with stage 2 hypertension (SBP \u2265 140 mm Hg and DBP \u226590 mm Hg), initiation of  antihypertensive drug therapy with 2 first-line agents of different classes, ideally in a single-pill combination (SPC), is recommended to improve  BP control and adherence.1\u20136\" \"For adults initiating antihypertensive drug therapy, thiazide-type diuretics, long-acting dihydropyridine CCB, and ACEi or ARB are recommended as firstline therapy\" https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d44d285a9170411cb4fe754475cae9dc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5b46756b61f9446495a33e2e3f5ac31b",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States first-line antihypertensives as either: thiazide-type diuretics, long-acting dihydropyridine calcium-channel blockers, ACEi or ARB.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Strong RCT evidence supports 4 classes of first-line agents compared with placebo (thiazide-type diuretics, long-acting dihydropyridine CCB, and ACEi and ARB) due to their favorable profiles for BP lowering, CVD prevention, and tolerability.\"\n\nhttps://www.ahajournals.org/doi/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a052393db0bb441e96418264cbda0809",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5b46756b61f9446495a33e2e3f5ac31b",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recommends initiation of a single-pill combination antihypertensive regimen as the best next step.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "For stage II hypertension in this patient, they should be started on a single-pill combination of the first-line antihypertensives, but not a combination of ACEi and ARB. Otherwise with a normal potassium and renal function, the patient is not limited to other combinations.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 13” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nPatient 13 presents to the clinic for evaluation.\nPDFs are attached documenting the conversation between Patient 13 and the physician, as well as the patient's procedure report.\n\nThe patient failed the first-line treatment for the most likely diagnosis. So, what is the second-line treatment for the most likely diagnosis per American Urological Association guidelines as of December 2025?  Explain your reasoning."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Recognizes the patient's symptoms are consistent with interstitial cystitis. (ver_c6a206ca79a94b0d8596c7f7a3bf013e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient's symptoms are consistent with interstitial cystitis."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the patient's repeat negative urine cultures are consistent with... (ver_3aaff35733d04b6eb3e477c13510d6c2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient's repeat negative urine cultures are consistent with interstitial cystitis."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes at least two of the following demographic risk factors for... (ver_5615812e3ede4a35a873b5547b0c5ee4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes at least two of the following demographic risk factors for interstitial cystitis present in this patient: female gender, White race, age of 65 years old (acceptable range 64 to 66)."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the patient's history of pelvic reconstruction surgery is a... (ver_c842e32bf44c46aea869a6c8c6eac344)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient's history of pelvic reconstruction surgery is a significant risk factor for interstitial cystitis."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the patient has a Hunner lesion on cystoscopy. (ver_cbdbed3bdc7b499fb79d3adf288a94ac)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient has a Hunner lesion on cystoscopy."
+        }
+      ]
+    },
+    {
+      "name": "States Hunner lesions are diagnostic for interstitial cystitis. (ver_28f3a23d9e9b48bda2f4dacaf7fabc6c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Hunner lesions are diagnostic for interstitial cystitis."
+        }
+      ]
+    },
+    {
+      "name": "Concludes the most likely diagnosis is interstitial cystitis. (ver_4989382374b04811a45518b415bd1860)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Concludes the most likely diagnosis is interstitial cystitis."
+        }
+      ]
+    },
+    {
+      "name": "References the American Urological Association (AUA) guideline \"Diagnosis and... (ver_20927a25f32840e8b296f4896900f559)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "References the American Urological Association (AUA) guideline \"Diagnosis and Treatment of Interstitial Cystitis/Bladder Pain Syndrome\" from 2022."
+        }
+      ]
+    },
+    {
+      "name": "Explains that the presence of Hunner lesions alters management from... (ver_791ce533a8dc4ba0947f3c079f382c87)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Explains that the presence of Hunner lesions alters management from non-surgical to immediate fulguration or injection."
+        }
+      ]
+    },
+    {
+      "name": "States the first-line treatment is fulguration with electrocautery and/or... (ver_ca0b95acbcf141f4b12e64eda7c9d36f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the first-line treatment is fulguration with electrocautery and/or injection of triamcinolone."
+        }
+      ]
+    },
+    {
+      "name": "States the second-line treatment is oral cyclosporine A. (ver_9274a33a75fa4a61a2ad0339bc9aab1a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the second-line treatment is oral cyclosporine A."
+        }
+      ]
+    },
+    {
+      "name": "States patients on cyclosporine A should be closely monitored due to the... (ver_f069f797970542d7a769e2b2c87e45bc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States patients on cyclosporine A should be closely monitored due to the potential for serious adverse events."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-cards-patient-13-hunner-lesions-sean-p-86460000"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_864600001f724f35b605f71b10073cc6",
+    "task_name": "Labs_Image_AI Scribe_Cards Patient 13 - Hunner Lesions - Sean P",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_1ae370b64eb64f89bf1f76694f538475",
+        "golden_text_response": "What is the second-line treatment for the most likely diagnosis per American Urological Association guidelines as of December 2025?  Explain your reasoning.\n\nThe patient presents with chronic suprapubic pain, urinary frequency, and pain relieved by voiding in the setting of repeat negative urine cultures, a clinical picture consistent with interstitial cystitis.  The patient is a White female in her 60s, a demographic profile that matches the classic risk factors of a patient diagnosed with interstitial cystitis.  Of patients with interstitial cystitis, 94% are White, approximately 90% are female, and the median age of diagnosis is 40 (tends to affect older populations).  The patient's history of pelvic reconstruction surgery is also a significant predisposing factor to interstitial cystitis.  The American Urological Association (AUA) indicates cystoscopy is reasonable to offer for patients over the age of 50, as there is a higher likelihood of finding Hunner lesions that would change management of the condition.   Cystoscopy obtained in this patient demonstrates a focal denuded erythematous mucosal lesion that bleeds with hydrodistension, a description consistent with a Hunner lesion.  Hunner lesions are considered diagnostic for interstitial cystitis; they are also the only consistent cystoscopic finding considered diagnostic for interstitial cystitis.  According to most recent AUA guidelines, last updated in July of 2022, patients with interstitial cystitis who have Hunner lesions are treated differently than those who do not have lesions.  Interstitial cystitis is typically treated non-surgically, with the exception being patients with Hunner lesions.  First-line treatment for these patients is fulguration (with electrocautery) and/or injection of triamcinolone.  According to the AUA treatment algorithm, oral cyclosporine A is the recommended second-line treatment for patients with Hunner lesions and symptoms refractory to fulguration and/or triamcinolone.  It is recommended that patients on this medication be closely monitored due to potential for serious adverse events, such as infection related to immunosuppression and nephrotoxicity.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

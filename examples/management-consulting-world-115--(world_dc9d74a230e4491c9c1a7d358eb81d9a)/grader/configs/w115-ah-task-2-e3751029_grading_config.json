@@ -1,0 +1,212 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_97de2daeca7c45fd8aad037731fe35bc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e375102920964f8790a99fb822f30d2d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Y1 net closing cost is $19,700,000 (acceptable range $19,503,000 to $19,897,000)",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_793b9426b82b4d5c86c0d3cca7782c56",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e375102920964f8790a99fb822f30d2d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Y2 net closing cost is $19,700,000 (acceptable range $19,503,000 to $19,897,000)",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a50ad137c181408bab8d102390e060e2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e375102920964f8790a99fb822f30d2d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Y3 net closing cost is $15,390,625 (acceptable range $15,236,719 to $15,544,531)",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f392811f930e4d5798500c5360a99bbc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e375102920964f8790a99fb822f30d2d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Y4 net closing cost is $15,390,625 (acceptable range $15,236,719 to $15,544,531)",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_745b8dd5b4564518b9108b1e3f502077",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e375102920964f8790a99fb822f30d2d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Y5 net closing cost is $15,390,625 (acceptable range $15,236,719 to $15,544,531)",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_96df326304ae43d29c9b5dcc51b830a0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e375102920964f8790a99fb822f30d2d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Y6 net closing cost is $15,390,625 (acceptable range $15,236,719 to $15,544,531)",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d88b47031c8541daa02480ceda9123ee",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e375102920964f8790a99fb822f30d2d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Y7 net closing cost is $11,081,250 (acceptable range $10,970,438 to $11,192,062)",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3c2445bf1e6c4fcbba4cb52521aca4a7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e375102920964f8790a99fb822f30d2d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Y8 net closing cost is $11,081,250 (acceptable range $10,970,438 to $11,192,062)",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_87e734a101c24129871b9b8191a5a644",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e375102920964f8790a99fb822f30d2d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Y9 net closing cost is $11,081,250 (acceptable range $10,970,438 to $11,192,062)",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6fbaddf387e64e8a811097659e6ae172",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e375102920964f8790a99fb822f30d2d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Y10 net closing cost is $11,081,250 (acceptable range $10,970,438 to $11,192,062)",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

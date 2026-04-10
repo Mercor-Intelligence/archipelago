@@ -1,0 +1,399 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Compute a blended average for the most influential factor ratings from interviews and the survey. For the interview piece, calculate the average Question 5 score for each category across the five data center customers (Park, Martinez, Rodriguez, Richard Chen, Sarah Chen). For the survey piece, use the latest survey, count how often each category is selected as the most influential factor, then create but do not return standardized scores where the highest count = 10.0, second = 9.0, third = 8.0, fourth = 7.0, fifth = 6.0. Break ties alphabetically. Standardize categories by mapping Cost Pricing/Structure to Cost savings, Physical Security to Cybersecurity, Scalability and flexibility to Scalability, Uptime/reliability (SLAs) to Customer service, and Compliance Certifications to Brand reputation. Exclude Geographic location, Network connectivity and bandwidth, and Energy efficiency/sustainability. For each category, calculate and return the straight average of the interview average and the survey standardized score, weighted equally.\n\nIdentify the top 2 categories by blended average. Break ties alphabetically. Using the latest survey data and the same mapping, calculate the average stated premium for storage/service/capacity among respondents who selected each top category as most influential, converting responses as follows: 10% = 10%, +6–10% = 8%, +3–5% = 4%, +1–2% = 1.5%, 0% = 0%. Return a console message showing Blended Average by Category, the top 2 categories, and the Average Premium for storage/service/capacity for each of the top 2 categories, rounded to 1 decimal place."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the blended average of Cost savings (Cost Pricing/Structure) is 8.4... (ver_bd5823d982a243cabb7dadcb2b00e15b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the blended average of Cost savings (Cost Pricing/Structure) is 8.4 (acceptable range 8.3 to 8.5)."
+        }
+      ]
+    },
+    {
+      "name": "States the blended average of Cost savings (Cost Pricing/Structure) is any... (ver_bd5823d982a243cabb7dadcb2b00e15b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the blended average of Cost savings (Cost Pricing/Structure) is any value other than 8.4."
+        }
+      ]
+    },
+    {
+      "name": "States the blended average of Scalability (Scalability and flexibility) is 9.1... (ver_56a102cfa86c41c4b621bdc68344e7ee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the blended average of Scalability (Scalability and flexibility) is 9.1 (acceptable range 9.0 to 9.2)."
+        }
+      ]
+    },
+    {
+      "name": "States the blended average of Scalability (Scalability and flexibility) is any... (ver_56a102cfa86c41c4b621bdc68344e7ee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the blended average of Scalability (Scalability and flexibility) is any value other than 9.1."
+        }
+      ]
+    },
+    {
+      "name": "States the blended average of Brand reputation (Compliance Certifications) is... (ver_fd5da845a610416db6d07dab874bf385)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the blended average of Brand reputation (Compliance Certifications) is 8.2 (acceptable range 8.1 to 8.3)."
+        }
+      ]
+    },
+    {
+      "name": "States the blended average of Brand reputation (Compliance Certifications) is... (ver_fd5da845a610416db6d07dab874bf385)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the blended average of Brand reputation (Compliance Certifications) is any value other than 8.2."
+        }
+      ]
+    },
+    {
+      "name": "States the blended average of Cybersecurity (Physical Security) is 8.1... (ver_02f4f7b2b3b140dc96b1d57ae31bfde5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the blended average of Cybersecurity (Physical Security) is 8.1 (acceptable range 8.0 to 8.2)."
+        }
+      ]
+    },
+    {
+      "name": "States the blended average of Cybersecurity (Physical Security) is any value... (ver_02f4f7b2b3b140dc96b1d57ae31bfde5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the blended average of Cybersecurity (Physical Security) is any value other than 8.1."
+        }
+      ]
+    },
+    {
+      "name": "States the blended average of Customer service (Uptime/reliability (SLAs)) is... (ver_1af816a53aaa43eb8089d0b6a3138134)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the blended average of Customer service (Uptime/reliability (SLAs)) is 8.0 (acceptable range 7.9 to 8.1)."
+        }
+      ]
+    },
+    {
+      "name": "States the blended average of Customer service (Uptime/reliability (SLAs)) is... (ver_1af816a53aaa43eb8089d0b6a3138134)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the blended average of Customer service (Uptime/reliability (SLAs)) is any value other than 8.0."
+        }
+      ]
+    },
+    {
+      "name": "States Scalability (Scalability and flexibility) is a top 2 category by... (ver_45393d88586942558c756de53267b93a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Scalability (Scalability and flexibility) is a top 2 category by blended average."
+        }
+      ]
+    },
+    {
+      "name": "States Cost savings (Cost Pricing/Structure) is a top 2 category by blended... (ver_1f25b1e92baf461bad5978661785a282)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Cost savings (Cost Pricing/Structure) is a top 2 category by blended average."
+        }
+      ]
+    },
+    {
+      "name": "States the Cost savings average Premium for storage/service / capacity is 2.9%... (ver_afec1f0cdd524e4898ece77e4baee2b6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Cost savings average Premium for storage/service / capacity is 2.9% (acceptable range 2.87% to 2.93%)."
+        }
+      ]
+    },
+    {
+      "name": "States the Cost savings average Premium for storage/service / capacity is any... (ver_afec1f0cdd524e4898ece77e4baee2b6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Cost savings average Premium for storage/service / capacity is any value other than 2.9%."
+        }
+      ]
+    },
+    {
+      "name": "States the Scalability average Premium for storage/service / capacity is 5.1%... (ver_801bb67f4e88420eab40b2332513c620)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Scalability average Premium for storage/service / capacity is 5.1% (acceptable range 5.0% to 5.2%)."
+        }
+      ]
+    },
+    {
+      "name": "States the Scalability average Premium for storage/service / capacity is any... (ver_801bb67f4e88420eab40b2332513c620)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Scalability average Premium for storage/service / capacity is any value other than 5.1%."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world115-cp-06-0c33b167"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_0c33b1675fc646d39c372fccc7e42397",
+    "task_name": "world115_cp_06",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c4b03b196c7e4ab29c537c827eaf068c",
+        "golden_text_response": "Blended Average by Category\nCost savings (Cost Pricing/Structure): 8.4\nScalability (Scalability and flexibility): 9.1\nBrand reputation (Compliance Certifications): 8.2\nCybersecurity (Physical Security): 8.1\nCustomer service (Uptime/reliability (SLAs)): 8.0 \n\nScalability (Scalability and flexibility) and Cost savings (Cost Pricing/Structure) had the highest blended average.\n\nAverage Premium for storage/service / capacity \nCost savings: 2.9%\nScalability: 5.1%",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

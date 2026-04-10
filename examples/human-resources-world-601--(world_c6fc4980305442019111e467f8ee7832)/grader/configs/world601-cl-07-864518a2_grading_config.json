@@ -1,0 +1,211 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_6e7efcac13844068883b1ec2a551023f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864518a2a36642feb9f650604b1ab987",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Tool Use"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of new departments created in BambooHR is 5.0 (acceptable range 4.95 to 5.05)",
+        "autogen_source": null,
+        "expected_file_type": "All output (modified files and final message in console)",
+        "criteria_explanation": "Add items via the department list. ",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1d140bd37877423381d0891d32123fd7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864518a2a36642feb9f650604b1ab987",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Tool Use"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of employees with department information being updated is 27.0 (acceptable range 26.7 to 27.3)",
+        "autogen_source": null,
+        "expected_file_type": "All output (modified files and final message in console)",
+        "criteria_explanation": "Via the employee profile, the department can be changed. ",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5a560e49fe2c428a8c3ef39c9ad0b3eb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864518a2a36642feb9f650604b1ab987",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the total employee salaries in the new Revenue Operations division is $484,000 (acceptable range $479,160 to $488,840)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_da9455c2d1864e8897b33c33b12be3fc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864518a2a36642feb9f650604b1ab987",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the total employee salaries in the new GTM Enablement division is $245,000 (acceptable range $242,550 to $247,450)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6468bab4f2934403bba8ef52facf8a1c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864518a2a36642feb9f650604b1ab987",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the total employee salaries in the new Sales Engineering division is $514,000 (acceptable range $508,860 to $519,140)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a0120db8c253401cadcbd4c7fc040923",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864518a2a36642feb9f650604b1ab987",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the total employee salaries in the new Sales (Enterprise) division is $644,000 (acceptable range $637,560 to $650,440)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_33c0accdca05464084e9edb749c1fa5b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864518a2a36642feb9f650604b1ab987",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the total employee salaries in the new Sales (Mid Market) division is $2,792,000 (acceptable range $2,764,080 to $2,819,920)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f03ff0cbe7744ae39f4fdc95b75821e1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864518a2a36642feb9f650604b1ab987",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the average span of control for L3 in the Sales organization is 2.7 (acceptable range 2.67 to 2.73)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1c9f58e061564d1285e447dd0a4a9e60",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864518a2a36642feb9f650604b1ab987",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the average span of control for L4 in the Sales organization is 2.0 (acceptable range 1.98 to 2.02)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

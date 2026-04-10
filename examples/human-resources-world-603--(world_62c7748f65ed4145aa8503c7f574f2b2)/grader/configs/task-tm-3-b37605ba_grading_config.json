@@ -1,0 +1,169 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_e2bf56fa830d4ec1af7a2a60216e6328",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b37605bae5c646908bb0368373502473",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that one of the top 3 candidates for the Head of Automation position is Paul Blue.",
+        "autogen_source": null,
+        "expected_file_type": "All output (modified files and final message in console)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dc5cece56ca7412592a06863c372ec7c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b37605bae5c646908bb0368373502473",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that one of the top 3 candidates for the Head of Automation position is Jason Lewis.\n",
+        "autogen_source": null,
+        "expected_file_type": "All output (modified files and final message in console)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bad44033da17421dbdf4e494cc67ac5c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b37605bae5c646908bb0368373502473",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that one of the top 3 candidates for the Head of Automation position is James Rhodes. \n",
+        "autogen_source": null,
+        "expected_file_type": "All output (modified files and final message in console)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a3bff876f3ca4c0f85d44e6b54d86b5e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b37605bae5c646908bb0368373502473",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the score, as per the internal scoring methodology, for Jason Lewis is 91.67 (acceptable range 90.75 to 92.59).",
+        "autogen_source": null,
+        "expected_file_type": "All output (modified files and final message in console)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c05711dbbb25476b8711ea6884dac8cc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b37605bae5c646908bb0368373502473",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the score, as per the internal scoring methodology, for James Rhodes is 90.04 (acceptable range 89.14 to 90.94).",
+        "autogen_source": null,
+        "expected_file_type": "All output (modified files and final message in console)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_005b6c07b77649d0bfed58a32aa493c6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b37605bae5c646908bb0368373502473",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the score, as per the internal scoring methodology, for Paul Blue is 94.21 (acceptable range 93.27 to 95.15).",
+        "autogen_source": null,
+        "expected_file_type": "All output (modified files and final message in console)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9f44bd04d2da4e8ba74f23c219752ce4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b37605bae5c646908bb0368373502473",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the Platinum Lead with the lowest score is James Rhodes. ",
+        "autogen_source": null,
+        "expected_file_type": "All output (modified files and final message in console)",
+        "criteria_explanation": "As per the methodology document, a Platinum lead is someone who has 90-100 score. Only 3 people have this - out of them, James Rhodes has the lowest score at 90.04.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

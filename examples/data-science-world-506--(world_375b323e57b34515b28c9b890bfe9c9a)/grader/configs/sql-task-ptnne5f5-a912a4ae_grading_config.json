@@ -1,0 +1,85 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_a36c4aa1f899454d8ce3d527e5750501",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a912a4ae8a994de8b414dda7ce16f13e",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the number of user-months in the sample to be 639 +/- 1.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the total number of user-month data points after aggregating and filtering the daily usage data.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d4109c4e4bff447588a538431b7ad2c3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a912a4ae8a994de8b414dda7ce16f13e",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the number of user-months where the total data consumed exceeded 80% of the plan's allowance to be 230 +/- 1.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "After aggregating and filtering the data usage daily by user and month, calculating the total data consumed, and associating the user with their plan, one is able to calculate the fraction of the total data consumed over the plans data allowance. This is the number of instances where this fraction exceeds 80%.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e0896148d3ea451dad55fe2c1f26303f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a912a4ae8a994de8b414dda7ce16f13e",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that the percent of user-months where the user consumed over 80% of their data allowance to be 35.99% +/- 0.05%.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the fraction of occurrences (rubric item 2) of the total (rubric item 1) represented as a percentage to 2 decimals.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

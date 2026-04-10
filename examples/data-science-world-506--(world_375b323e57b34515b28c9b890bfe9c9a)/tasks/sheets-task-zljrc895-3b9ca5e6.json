@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using legacy_billing_migration.csv as an Excel file calculate a Balance Recovery Adjusted metric, calculated by taking the balance of the old system and multiplying it by 0.8 if the old phone number is in the parentheses format (has “(“), but in any other format multiply by 1 within the original sheet.\nThen in a new sheet, create a bar chart that shows the average Balance Recovery Adjusted by completed migration month for the first 5 months of 2023. Label all the bars with values rounded to the nearest whole number, and ensure the chart updates automatically when the sheet data changes. Return the completed Excel file."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "The Average Balance Recovery Adjusted metric in the month of Jan 2023 is... (ver_4c5a8097778d411c869c93f7cf1dd678)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The Average Balance Recovery Adjusted metric in the month of Jan 2023 is exactly 48 (acceptable range 47.5 to 48.5)."
+        }
+      ]
+    },
+    {
+      "name": "The Average Balance Recovery Adjusted metric in the month of Feb 2023 is... (ver_717b2096efb04b07b8f21ab4d6b9d291)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The Average Balance Recovery Adjusted metric in the month of Feb 2023 is exactly 95 (acceptable range 94 to 96)."
+        }
+      ]
+    },
+    {
+      "name": "The Average Balance Recovery Adjusted metric in the month of Mar 2023 is... (ver_d12c16a0eaa14a43b268e98abffc09ba)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The Average Balance Recovery Adjusted metric in the month of Mar 2023 is exactly 77 (acceptable range 76 to 78)."
+        }
+      ]
+    },
+    {
+      "name": "The Average Balance Recovery Adjusted metric in the month of Apr 2023 is... (ver_c3ae934ae715409d9589d0afc6e4a11b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The Average Balance Recovery Adjusted metric in the month of Apr 2023 is exactly 33 (acceptable range 32.7 to 33.3)."
+        }
+      ]
+    },
+    {
+      "name": "The Average Balance Recovery Adjusted metric in the month of May 2023 is... (ver_56284b1664934f0795a3e28f77e0c882)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The Average Balance Recovery Adjusted metric in the month of May 2023 is exactly 65 (acceptable range 64 to 66)."
+        }
+      ]
+    },
+    {
+      "name": "Creates a bar chart that shows the average Balance Recovery Adjusted by... (ver_aa4668691a4645aa90b6c68403e008c3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a bar chart that shows the average Balance Recovery Adjusted by completed migration month for the first 5 months of 2023 (acceptable range 200 to 204)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sheets-task-zljrc895-3b9ca5e6"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_3b9ca5e663b74974a789a9fb8eb52b5a",
+    "task_name": "Sheets - Task zljrc895",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_58acd95f2ff046c2ada0e62804f20318",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_c5a009c0088f4ea0b41dd0c984ab5281"
+      }
+    ]
+  }
+}

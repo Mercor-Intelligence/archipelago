@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the Company Financial Snapshot (GAAP) in the model, compute the following ratios after making the below adjustments. \n\nAdjustments: \n\n1. Referencing the PurchaseOrders document on Xero, assume that the Drafts and Submitted purchase orders in FY2023 & FY2024 will be authorized before year-end FY2024 and are included in FY2024 total assets. \n  - Output the sum of the Draft and Submitted purchase orders for FY2023 and FY2024.  \n\n2. Referencing the payments document in Xero, assume that the payments received in Q4 FY2024 were incorrectly recognized as FY2024 revenue and should be classified as deferred revenue for FY2025. These entries were misclassified under Accounts Receivable.\n   - Output the total Q4 FY2024 payments, converted to USD using the exchange rates provided.\n3. Output the revised Asset Turnover Ratio and Pre-Tax Book Income Margin for FY2024 after making the above edits.\n\nPresent monetary values in $ terms, round all values to two decimals"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the sum of the Draft and Submitted purchase orders in FY2023 and... (ver_20842598f5c34884a8800dd13bef2230)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the sum of the Draft and Submitted purchase orders in FY2023 and FY2024 is $8,283,582.14 (acceptable range $8,283,582.14 to $8,283,583.14)."
+        }
+      ]
+    },
+    {
+      "name": "States that the payments received in the last quarter of FY2024 is... (ver_e55d86968fc748be8f245eb217a22af2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the payments received in the last quarter of FY2024 is $2,375,618.19 (acceptable range $2,375,613.19 to $2,375,623.19)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Revised Asset Turnover Ratio for FY2024 is 1.87. (acceptable... (ver_7e167ea294b743eeae9e209ed1f9894c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Revised Asset Turnover Ratio for FY2024 is 1.87. (acceptable range 1.86 to 1.88)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Revised Pre-Tax Book Income Margin for FY2024 is 12.11%.... (ver_ef8c13bb105d4bf596c93b00a6f07837)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Revised Pre-Tax Book Income Margin for FY2024 is 12.11%. (acceptable range 12.10% to 12.12%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-801-smn-02-f19210a1"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_f19210a1bd8645c688d86b30e95b8e84",
+    "task_name": "World 801_SMN_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_3ce5548ae3ba47e1a0023b08e8620e33",
+        "golden_text_response": "1. States that the sum of the Draft and Submitted purchase orders in FY2023 and FY2024 is $8,283,582.14. \n2. States that the payments received in the last quarter of FY2024 is $2,375,618.19.\n3. States that the Revised Asset Turnover Ratio for FY2024 is 1.87.\n4. States that the Revised Pre-Tax Book Income Margin for FY2024 is 12.11%.\n\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

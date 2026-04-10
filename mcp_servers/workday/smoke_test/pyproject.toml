@@ -1,0 +1,18 @@
+[project]
+name = "workday-smoke-test"
+version = "0.1.0"
+description = "Smoke tests for Workday MCP server"
+requires-python = ">=3.13"
+dependencies = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "httpx>=0.24.0",
+    "testcontainers>=3.7.0",
+    "fastmcp",]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["."]
+
+[tool.uv.sources]
+fastmcp = { git = "https://github.com/jlowin/fastmcp.git", rev = "bc2f601" }

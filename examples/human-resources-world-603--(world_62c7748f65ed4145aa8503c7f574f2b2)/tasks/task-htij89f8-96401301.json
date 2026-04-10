@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Review the data in the filesystem. Grab the Candidate Pipeline Stage Tracker.xlsx, Executive_Candidate_Comparison_Matrix.xlsx, and Cultural_Fit_Assessment_Matrix_vf.xlsx that we have for candidates.\n\nOur Board needs the HR team to report on average recruiting timelines by candidate as a function of time in process. Using the aforementioned files, determine the length of time that candidates were in the recruiting process from initial sourcing through stagnation at a particular stage. \n\nThen, create a new weighted score called \"blended score\" for each candidate that weights the following three scores in the following weights: skill score, avg cultural fit score, and avg interviews score; 30%, 20%, 50%, respectively. \n\nFor final outputs, report the average blended score for those that were in process for 21 days or less versus those in process for 22+ days, as numbers to two decimal places. \n\nPlease provide your response as a message in the console. Exclude those where data is unavailable from analysis, as well as those flagged as having limited experience abroad. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the average blended score for those that were in process for 21... (ver_6c3001c8c875477b8f184ca039dfc158)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average blended score for those that were in process for 21 days or less is 5.75 (acceptable range 5.69 to 5.81)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average blended score for those that were in process for 22+... (ver_927105cadde14cec940cb973076a1b90)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average blended score for those that were in process for 22+ days is 5.94 (acceptable range 5.88 to 6.00)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-htij89f8-96401301"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_96401301f10346428d54ff862e7da29f",
+    "task_name": "Task htij89f8",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_b29b4afc6f8d459c8a0ef4e88faaea75",
+        "golden_text_response": "The average blended score for those that were in process for 21 days or less is 5.75. \n\nThe average blended score for those that were in process for 22+ days is 5.94. ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

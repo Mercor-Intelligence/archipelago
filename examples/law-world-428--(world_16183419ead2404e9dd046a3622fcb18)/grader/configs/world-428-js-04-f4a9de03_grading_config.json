@@ -1,0 +1,66 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_45b81bca877e408a83ed5a8eb2662c72",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f4a9de03d44640699a670f1cfbf2cab0",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the approval for the Disposition and Development Agreement for the project can still be set aside",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "In \"tara-v-city-of-west-hollywood-california.pdf\" the Plaintiff challenged a city's approval of a Development agreement prior to approving an EIR. \"tara-v-city-of-west-hollywood-california.pdf\" at page 5.  The Plaintiff asked for the development agreement to be set aside. Id. The court initially ruled against the Plaintiff. Id. The Plaintiff appealed and during the pendency of the appeal the City approved an EIR but did not start any work of the project. Id. at 6. The Court held that the appeal was not moot because no irreversible legal or physical change had occurred and the Court could still set aside the approvals. Id. at 6-7. The Court also cites several cases where an appeal was not moot because the construction on the project could be modified, removed, or mitigated. Id. at 6.\n\nHere, the prompt indicates that only minor work on the project has begun. The Appeal is therefore unlikely to be moot because whatever minor work was done on the project could likely be modified, removed, or mitigated and the City's approval for the disposition and development agreement for the project can still be set aside.\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_33f506761b434c4bb9a49785d65044fb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f4a9de03d44640699a670f1cfbf2cab0",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that the appeal is likely not moot",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "In \"tara-v-city-of-west-hollywood-california.pdf\" the Plaintiff challenged a city's approval of a Development agreement prior to approving an EIR. \"tara-v-city-of-west-hollywood-california.pdf\" at page 5.  The Plaintiff asked for the development agreement to be set aside. Id. The court initially ruled against the Plaintiff. Id. The Plaintiff appealed, and during the pendency of the appeal, the City approved an EIR but did not start any work on the project. Id. at 6. The Court held that the appeal was not moot because no irreversible legal or physical change had occurred, and the Court could still set aside the approvals. Id. at 6-7. The Court also cites several cases where an appeal was not moot because the construction on the project could be modified, removed, or mitigated. Id. at 6.\n\nHere, the prompt indicates that only minor work on the project has begun. The Appeal is therefore unlikely to be moot because whatever minor work was done on the project could likely be modified, removed, or mitigated, and the City's approval for the disposition and development agreement for the project can still be set aside.\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Aggregate and analyse the survey data across the attached Survey and survey results file, with the Survey Questionnaire file for additional context. For both data sets, convert the numeric age into 4 evenly distributed age groups, then number the groups from 1 to 4 (1 being the lowest) and assign each row to its corresponding group. Similarly, for the budget, convert them into 20 evenly distributed budget groups, number them from 1 to 20 (1 being the lowest), and assign each row to its corresponding group. Use equal numeric ranges (e.g., width = (max-min)/4). Do not use an equal number of respondents; groups should have an exclusive lower bound and an inclusive upper bound.\n\nNow, for the combined data set, incl. the new survey and the original survey, calculate the correlation between the following variables:\n1. Age groups and columns Q1 to Q11\n2. Budget Groups and columns Q1 to Q11\n\nAs a final output, provide the correlation for the variable pair with the strongest positive correlation and the strongest negative correlation. Finally, treating the correlation values as a new complete data set, report the z-score for the pair that has the highest absolute z-score. Please provide all answers in the console and round the final output to 4 decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the correlation for the variable pair with the strongest positive... (ver_c49424a359df4b16aaa4987ef461ae9a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the correlation for the variable pair with the strongest positive correlation is 0.0188 (acceptable range 0.0186 to 0.0190)."
+        }
+      ]
+    },
+    {
+      "name": "States that the correlation for the variable pair with the strongest positive... (ver_c49424a359df4b16aaa4987ef461ae9a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the correlation for the variable pair with the strongest positive correlation is any value other than 0.0188."
+        }
+      ]
+    },
+    {
+      "name": "States that the correlation for the variable pair with the strongest negative... (ver_aafd4c4288b74f61bb25045652d5f8f4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the correlation for the variable pair with the strongest negative correlation is -0.0262 (acceptable range -0.0265 to -0.0259)."
+        }
+      ]
+    },
+    {
+      "name": "States that the correlation for the variable pair with the strongest negative... (ver_aafd4c4288b74f61bb25045652d5f8f4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the correlation for the variable pair with the strongest negative correlation is any value other than -0.0262."
+        }
+      ]
+    },
+    {
+      "name": "States that the z-score for the pair that has the highest absolute z-score is... (ver_191df59d02a74adf90898033154d65a8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the z-score for the pair that has the highest absolute z-score is -2.4103 (acceptable range -2.4344 to -2.3862)."
+        }
+      ]
+    },
+    {
+      "name": "States that the z-score for the pair that has the highest absolute z-score is... (ver_191df59d02a74adf90898033154d65a8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the z-score for the pair that has the highest absolute z-score is any value other than -2.4103."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-122-rg-01-b5b8b475"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_93767f48e4d9497a8f6b129492a1ae14",
+    "world_name": "Management Consulting World 122",
+    "task_id": "task_b5b8b475f1ed48fbb20df7cc5a0ad5b6",
+    "task_name": "Task 122_RG_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_dae061e13c964852a4e1e3cabbe81f11",
+        "golden_text_response": "The Correlation for the variable pair with the strongest positive correlation = 0.0188\nThe correlation for the variable pair with the strongest negative correlation = -0.0262\nThe z-score for the pair that has the highest absolute z-score = -2.4103",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "You have the file enriched_loan_data.csv. Please save this file as an Excel file and perform the analysis only for Variable interest type within that new file. Please first calculate a new metric, Loss Inflation Adjusted, calculated by multiplying Expected Loss Amount by (1 + CPI Inflation divided by 100) within the original sheet.\n\nThen in a new sheet called 'chart', create a bar chart that shows Loss Inflation Adjusted per loan by Region only for the Construction sector, with Region on the x-axis and Loss Inflation Adjusted per loan on the y-axis. Please also display the values on top of each bar, rounded to the nearest whole number.  Ensure that the chart will update automatically if the original dataset changes and use formulas in the sheet so it can be reused by other analysts. Export the modified .xlsx file with the requested changes."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Produces a bar chart in \"chart\" sheet. (ver_be90c98b5795421da361ae1259159e2d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Produces a bar chart in \"chart\" sheet."
+        }
+      ]
+    },
+    {
+      "name": "Produces exactly 5 bars in the bar chart. (ver_4b03c0b9f6ec481f9946accce42d4f2b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Produces exactly 5 bars in the bar chart."
+        }
+      ]
+    },
+    {
+      "name": "Places Region on the x-axis of the chart. (ver_11ec794ee4de49a5aad2a4e53d057a50)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Places Region on the x-axis of the chart."
+        }
+      ]
+    },
+    {
+      "name": "Places Loss Inflation Adjusted per loan on the y-axis of the chart. (ver_44bfc0e7bb494e9aa54326e0b0bf478e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Places Loss Inflation Adjusted per loan on the y-axis of the chart."
+        }
+      ]
+    },
+    {
+      "name": "Labels the Loss Inflation Adjusted per loan for Central as exactly 459,512... (ver_23b27383d1924dbe84626a877629368d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels the Loss Inflation Adjusted per loan for Central as exactly 459,512 (acceptable range 454,917 to 464,107)."
+        }
+      ]
+    },
+    {
+      "name": "Labels the Loss Inflation Adjusted per loan for East as exactly 502,489... (ver_71594d5b8cb14a188435436e0fae781e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels the Loss Inflation Adjusted per loan for East as exactly 502,489 (acceptable range 497,464 to 507,514)."
+        }
+      ]
+    },
+    {
+      "name": "Labels the Loss Inflation Adjusted per loan for North as exactly 467,545... (ver_a8d1a8d124de4c1490f887dfc259ae32)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels the Loss Inflation Adjusted per loan for North as exactly 467,545 (acceptable range 462,870 to 472,220)."
+        }
+      ]
+    },
+    {
+      "name": "Labels the Loss Inflation Adjusted per loan for South as exactly 487,978... (ver_5a17725dcae645e2bb5384398bc3f2ca)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels the Loss Inflation Adjusted per loan for South as exactly 487,978 (acceptable range 483,098 to 492,858)."
+        }
+      ]
+    },
+    {
+      "name": "Labels the Loss Inflation Adjusted per loan for West as exactly 412,920... (ver_d73b98a8ddab42e9a9fbd9f9a11be489)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels the Loss Inflation Adjusted per loan for West as exactly 412,920 (acceptable range 408,791 to 417,049)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sheets-kk08-baabde3a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_baabde3acff54046a3c1891c04f2f7e4",
+    "task_name": "Sheets - KK08",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_8ed6ec2131c243c1a4c5159989882e61",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_ca7cbd964b2242958169f4e7d4a661cd"
+      }
+    ]
+  }
+}

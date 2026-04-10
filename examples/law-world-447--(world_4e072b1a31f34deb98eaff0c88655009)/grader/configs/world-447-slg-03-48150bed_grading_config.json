@@ -1,0 +1,88 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_60a4d4bd1d674b429681a341b7ecc3d7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_48150bed9e9d4996990a940e7d2bf850",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that Streamiverse has no rights to related works created after the time of the agreement. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "There is a clause in INE's agreement (4a) that states that the transaction involves work created \"prior to or during the term of [the] engagement.\" \n\nSince INE was the purchaser here, a sentence that makes this even more protective of CineCorp as the seller is to clarify outright that all works produced after the agreement is entered into belong to CineCorp. Although C1 implies that, it's common to add clarifying language in agreements like this for avoidance of doubt. ",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_05e3fd75aef34550a12e1355d6656b2c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_48150bed9e9d4996990a940e7d2bf850",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that this agreement shall bind any and all employees and contractors of both parties. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The IP provision (4b) states that it shall \"bind any and all employees and/or contractors of the Projects engaged by Production Partner, including without limitation, the other creative team members engaged by Production Partner to the relevant terms herein.\" This clarifies that while the agreement is between two entertainment companies, anyone who works for those companies cannot be exempt from the terms by virtue of not being an actual party to the agreement. This prevents internal conflict at CineCorp over employees claiming they don't have to obey the agreement with Streamiverse, and adding the mutual language that buyer's employees are bound is protective of CineCorp. ",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cae925b7934444359c1a9eb1dcaeb8c9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_48150bed9e9d4996990a940e7d2bf850",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that Streamiverse has the exclusive duty to market purchased materials. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The INE Entertainment IP provision (4b) gives the purchasing company the exclusive right of marketing and advertising the purchased materials, but it doesn't necessarily assign them the obligation. Updating the language to give Streamiverse the duty to advertise means that CineCorp wouldn't have to pay for and execute marketing functions for any sold assets.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "d75f8557-805e-4b99-b3f6-eb71cb7e8385",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

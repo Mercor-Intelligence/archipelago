@@ -1,0 +1,238 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "You have access to the file Dim_Borrower_Master.csv. Please save this file as an Excel file and perform the analysis only for Variable interest type within that new file. In the original sheet, create a new metric for each borrower called 'Total Revenue' by multiplying Annual Revenue by Years in Business. However, if the Credit Score of a borrower is less than the median of all the Credit Scores, then Total Revenue should be reduced by 10%. \n\nThen, in the same sheet, create a bar chart that shows the Average Total Revenue for five sectors, Construction, Healthcare, Hospitality, Logistics and Manufacturing. Place the Average Total Revenue on the y-axis and Sector on the x-axis. Label all the bars with values rounded to the nearest whole number. Ensure that the chart will update automatically if the original dataset changes and use formulas in the sheet so it can be reused by other analysts. Export the modified .xlsx file with the requested changes."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Produces a bar chart in excel file. (ver_637d3e43afb64f23a9eb55c6b2a6d588)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Produces a bar chart in excel file."
+        }
+      ]
+    },
+    {
+      "name": "Produces exactly 5 bars in the bar chart. (ver_41072f71e2ef4cadab20f83022716d73)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Produces exactly 5 bars in the bar chart."
+        }
+      ]
+    },
+    {
+      "name": "Places Sector on the x-axis of the chart. (ver_b54b04a45c7d4e4d901298f228032e24)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Places Sector on the x-axis of the chart."
+        }
+      ]
+    },
+    {
+      "name": "Places Average Total Revenue on the y-axis of the chart. (ver_e10288ab3ae248428e473d08ca676274)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Places Average Total Revenue on the y-axis of the chart."
+        }
+      ]
+    },
+    {
+      "name": "Labels the Average Total Revenue of Construction as 299,245,291 +/- 100. (ver_29c336bbeefd41b481a191d2d1d496db)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels the Average Total Revenue of Construction as 299,245,291 +/- 100."
+        }
+      ]
+    },
+    {
+      "name": "Labels the Average Total Revenue of Healthcare as 329,226,483 +/- 100. (ver_35f3606392e44c2ca4aabe1c8880a8cb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels the Average Total Revenue of Healthcare as 329,226,483 +/- 100."
+        }
+      ]
+    },
+    {
+      "name": "Labels the Average Total Revenue of Hospitality as 316,864,726 +/- 100... (ver_a8b0ba9b056b446cbc6f7150dcaa3265)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels the Average Total Revenue of Hospitality as 316,864,726 +/- 100 (acceptable range 313,696,079 to 320,033,373)."
+        }
+      ]
+    },
+    {
+      "name": "Labels the Average Total Revenue of Logistics as 327,563,991 +/- 100. (ver_84b11ed455674a0ca048e3e887c79432)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels the Average Total Revenue of Logistics as 327,563,991 +/- 100."
+        }
+      ]
+    },
+    {
+      "name": "Labels the Average Total Revenue of Manufacturing as 325,518,370 +/- 100. (ver_f4093fa7ab7c408fbc4ddba6f30cac8f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Labels the Average Total Revenue of Manufacturing as 325,518,370 +/- 100."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sheets-kk10-dd38f615"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_dd38f61514bb42a79fb5567bed410f7a",
+    "task_name": "Sheets - KK10",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_3d5d3ea83a384be89173676173b64142",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_2359bdafa692440893dd35bcdfba3200"
+      }
+    ]
+  }
+}

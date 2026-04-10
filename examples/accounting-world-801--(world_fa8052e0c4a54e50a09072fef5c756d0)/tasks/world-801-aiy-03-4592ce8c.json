@@ -1,0 +1,192 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Change the following:\n1.\tOn the Redwood Components Tax Exposure Final schedule, change the MACRS depreciation rates to be 100bps higher on all asset classes \n2.\tReplace annual 2021 – 2023 book depreciation by the annual amounts from the relevant journals found in Xero, and increase them by 10%.\n3.\tChange the federal tax to 22% in 2021 - 2023.\n4.\tChange the state tax to 7.5% in 2021 - 2023.\nCalculate the following revised numbers:\n1.\tDifference between the combined 2021 – 2023 total MACRS depreciation and the combined total depreciation for 2021 – 2023 based on the relevant journals found in Xero increased by 10%.\n2.\tAnnual total federal and state taxes for 2021 – 2023 \n3.\tAnnual 2021 – 2023 effective tax rates on book income\nRound all values to the nearest whole number and present it in the console.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the difference between the revised 2021 – 2023 combined MACRS... (ver_a584f06381d6432c9a2ae5d444b9bb40)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the difference between the revised 2021 – 2023 combined MACRS depreciation and the revised combined depreciation for 2021 – 2023 based on the relevant journals found in Xero is 37,199,543 (acceptable range 37,199,542 to 37,199,544)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 2021 federal and state taxes is $14,035,569 (acceptable range... (ver_2fc1ed3726a744d88519ae647ff987da)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 2021 federal and state taxes is $14,035,569 (acceptable range $14,035,568 to $14,035,570)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 2022 federal and state taxes is $10,456,010 (acceptable range... (ver_d3971df774084bda80882a63add18d03)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 2022 federal and state taxes is $10,456,010 (acceptable range $10,456,009 to $10,456,011)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 2023 federal and state taxes is $7,867,975 (acceptable range... (ver_b50b5788caa74044a5bb66e00453fbd2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 2023 federal and state taxes is $7,867,975 (acceptable range $7,867,974 to $7,867,976)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 2021 effective tax rate is 37% (acceptable range 36.6% to 37.4%) (ver_56ced81bbcc84134a7ed83738ca420e6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 2021 effective tax rate is 37% (acceptable range 36.6% to 37.4%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 2022 effective tax rate is 25% (acceptable range 24.8% to 25.2%) (ver_a9f18b719fc149c294b2f2887d7b0756)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 2022 effective tax rate is 25% (acceptable range 24.8% to 25.2%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 2023 effective tax rate is 19% (acceptable range 18.8% to 19.2%) (ver_0d3bb09aa5c649c4a0104b9336e77db6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 2023 effective tax rate is 19% (acceptable range 18.8% to 19.2%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-801-aiy-03-4592ce8c"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_4592ce8c5039461eae5b74306b7be7f5",
+    "task_name": "World-801-AIY-03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d3e0010720c24f11a0628017eba0ce80",
+        "golden_text_response": "1.\tDifference between the revised 2021 – 2023 combined MACRS depreciation and the revised combined depreciation for 2021 – 2023 based on the relevant journals found in Xero = 37,199,543\n2.\t2021 federal and state taxes = $14,035,569\n3.\t2022 federal and state taxes = $10,456,010\n4.\t2023 federal and state taxes  = $7,867,975\n5.\t2021 effective tax rate = 37%\n6.\t2022 effective tax rate = 25%\n7.\t2023 effective tax rate = 19%\n",
+        "golden_file_responses": "snap_4f6d9644dd8549a9b1d1aae2e1dbc6f0"
+      }
+    ]
+  }
+}

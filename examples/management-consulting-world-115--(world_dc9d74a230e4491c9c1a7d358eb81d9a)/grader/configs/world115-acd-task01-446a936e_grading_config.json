@@ -1,0 +1,212 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_ea7936abd3ed4003a5015b744845f298",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_446a936ead7149c6a1bca53d14994a25",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the midpoint CAPEX for David Richardson is $13.0M per MW (acceptable range $12.9 to $13.1)",
+        "negative_criteria": "States the midpoint CAPEX for David Richardson is a value different than $13.0M per MW\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3b0d5a81551249598e6948ac92e27407",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_446a936ead7149c6a1bca53d14994a25",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the midpoint OPEX for David Richardson is $1.0M per MW (acceptable range $0.99 to $1.0)",
+        "negative_criteria": "States the midpoint OPEX for David Richardson is a value different than $1.0M per MW\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d861059ba71d410a8193c7f3b58ea681",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_446a936ead7149c6a1bca53d14994a25",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the midpoint CAPEX for Michael Torres is $11.3M per MW (acceptable range $11.2 to $11.4)",
+        "negative_criteria": "States the midpoint CAPEX for Michael Torres is a value different than $11.3M per MW\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_201e2befd545489b88a22ebc5ea4e24d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_446a936ead7149c6a1bca53d14994a25",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the midpoint OPEX for Michael Torres is $1.0M per MW (acceptable range $0.99 to $1.0)",
+        "negative_criteria": "States the midpoint OPEX for Michael Torres is a value different than $1.0M per MW\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8ec0b359b7534249b041087bfae7ba3e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_446a936ead7149c6a1bca53d14994a25",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the midpoint CAPEX for Rob Hastings is $13.6M per MW (acceptable range $13.5 to $13.7)",
+        "negative_criteria": "States the midpoint CAPEX for Rob Hastings is a value different than $13.6M per MW\n ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fd955f6aa2a045a7b36297304dfc3693",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_446a936ead7149c6a1bca53d14994a25",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the midpoint OPEX for Rob Hastings is $0.8M per MW (acceptable range $0.79 to $0.81)",
+        "negative_criteria": "States the midpoint OPEX for Rob Hastings is a value different than $0.8M per MW\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_615fd74bbca94a89b625c09eeb26b75a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_446a936ead7149c6a1bca53d14994a25",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the midpoint CAPEX for Thomas Chen is $14.0M per MW (acceptable range $13.9 to $14.1)",
+        "negative_criteria": "States the midpoint CAPEX for Thomas Chen is a value different than $14.0M per MW\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_63ca45f0e04a4149975199d1313070fd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_446a936ead7149c6a1bca53d14994a25",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the midpoint OPEX for Thomas Chen is $0.9M per MW (acceptable range $0.89 to $0.91)",
+        "negative_criteria": "States the midpoint OPEX for Thomas Chen is a value different than $0.9M per MW\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7713fbfa232248a79048d89185e0bdc5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_446a936ead7149c6a1bca53d14994a25",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the Grand Total Average CAPEX is $13.0M per MW (acceptable range $12.9 to $13.1)",
+        "negative_criteria": "States the Grand Total Average CAPEX is a value different than $13.0M per MW\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fca3ae9430524755a71a2ffecfb23d47",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_446a936ead7149c6a1bca53d14994a25",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the Grand Total Average OPEX is $0.9M per MW (acceptable range $0.89 to $0.91)",
+        "negative_criteria": "States the Grand Total Average OPEX is a value different than $0.9M per MW\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 17,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

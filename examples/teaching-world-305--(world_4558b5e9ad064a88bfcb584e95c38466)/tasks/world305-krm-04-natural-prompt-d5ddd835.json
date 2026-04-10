@@ -1,0 +1,266 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Mrs. A is taking PTO from November 3 - November 7. Can you help her develop a sub plan that reviews a different CC standard each day of her leave?\n\nShe'd like to ensure a specific cadence of coverage. November 3 to 7 should align to the same CC primary standards as Lesson 2 to 6, respectively. A primary standard is the single CC standard that aligns to both the lesson’s learning objective and the lesson’s assessment. The underlying details for your reference can be found in the Unit Overview and PACore ELA documents.\n\nCan you please share the recommendations as a new word document (“Sub Plan”)? Simply list each day (November 3 - November 7), along with the corresponding standard Mrs. A’s sub should cover that day, and a one-sentence description of the assigned standard. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Identifies the primary CC standard for November 3 as CC.1.2.8.A (ver_3a01cdd77f4841c2ac4f2ce33f79e252)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the primary CC standard for November 3 as CC.1.2.8.A."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the primary CC standard for November 4 as CC.1.3.8.B (ver_8deab1c17a2f4852b5d92baaa6a40bdc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the primary CC standard for November 4 as CC.1.3.8.B."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the primary standard for November 5 as CC.1.3.8.C (ver_4885f4b636594e2980ce4ecc59dbe66e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the primary standard for November 5 as CC.1.3.8.C."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the primary CC standard for November 6 as CC.1.3.8.A (ver_4ea6b7cba58f4a2192a2068aaee7d5f8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the primary CC standard for November 6 as CC.1.3.8.A."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the primary CC standard for November 7 as CC.1.3.8.A (ver_afd759f997bb43b3bad427183b0571d9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the primary CC standard for November 7 as CC.1.3.8.A."
+        }
+      ]
+    },
+    {
+      "name": "Includes a one-sentence description of CC.1.2.8.A for November 3 (ver_63230d9388e84acb96393297a6e720be)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a one-sentence description of CC.1.2.8.A for November 3."
+        }
+      ]
+    },
+    {
+      "name": "Includes a one-sentence description of the CC.1.3.8.B for November 4 (ver_31ec273209a0461689509d44fb36e0d0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a one-sentence description of the CC.1.3.8.B for November 4."
+        }
+      ]
+    },
+    {
+      "name": "Includes a one-sentence description of CC.1.3.8.C for November 5 (ver_73fa426b3258454681edb281ba0d6ba0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a one-sentence description of CC.1.3.8.C for November 5."
+        }
+      ]
+    },
+    {
+      "name": "Includes a one-sentence description of CC.1.3.8.A for November 6 (ver_6b437b7aa8604eef8fab4c203d6b5109)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a one-sentence description of CC.1.3.8.A for November 6."
+        }
+      ]
+    },
+    {
+      "name": "Includes a one-sentence description of CC.1.3.8.A for November 7 (ver_0598d6566b1549b6850a905a52560593)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a one-sentence description of CC.1.3.8.A for November 7."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world305-krm-04-natural-prompt-d5ddd835"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_d5ddd835ac73475aaa8819c5b13f5dcf",
+    "task_name": "World305_KRM_04 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_338ad9ec5971486e961e52d6699d5136",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_389b104b64744fe8b243a7a54d0700b8"
+      },
+      {
+        "golden_response_id": "gold_64c0853827184948950ce7575758fea4",
+        "golden_text_response": "Please see attached. ",
+        "golden_file_responses": "snap_389b104b64744fe8b243a7a54d0700b8"
+      }
+    ]
+  }
+}

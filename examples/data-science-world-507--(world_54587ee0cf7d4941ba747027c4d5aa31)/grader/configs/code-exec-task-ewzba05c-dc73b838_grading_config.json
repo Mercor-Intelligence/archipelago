@@ -1,0 +1,136 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_6a4c0a1167f44c6c922f9467f8cde6b9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dc73b838f5394ba8924d3c819593f03b",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that the average number of available content impressions per user is 2.55 +/ 0.05.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the average count of content impressions per user after filtering the content_impressions dataset for availability and impressions occurring before a user's survey_date for users with survey results.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2ce39f070ee34cbe8897d51107ef6a06",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dc73b838f5394ba8924d3c819593f03b",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that the average share of available promoted content per user is 76.96% +/-0.05%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the fraction of per-user promoted content impressions out of the per-user total after the forementioned applied filters.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4c2e1f58f83b4cd99f91371e5f923066",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dc73b838f5394ba8924d3c819593f03b",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that the average platform_satisfaction score for users with above-average share of available promoted content is 7.05 +/- 0.05.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "After filtering and aggregating the content_impressions dataset to achieve criteria 1 and 2, this is the average platform_satisfaction score among users who were shown an above average portion of promoted content.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_af2a473e8ec54e7eb57c4d48846c15fd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dc73b838f5394ba8924d3c819593f03b",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that the percent of satisfied users for users with above-average share of available promoted content is 45.14% +/- 0.05%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "After filtering and aggregating the content_impressions dataset to achieve criteria 1 and 2, this is the percent of users with platform_satisfaction score >=8 among the users who were shown an above average portion of promoted content.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c7a2c092ba5f4fbf9934a04a0766a1a9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dc73b838f5394ba8924d3c819593f03b",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that the average platform_satisfaction score for users with below-average share of available promoted content is 7.11 +/- 0.05.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "After filtering and aggregating the content_impressions dataset to achieve criteria 1 and 2, this is the average platform_satisfaction score among users who were shown a belowaverage portion of promoted content.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b229e8806f7249229ff87e18336591be",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dc73b838f5394ba8924d3c819593f03b",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that the percent of satisfied users for users with below-average share of available promoted content is 46.00% +/- 0.05%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "After filtering and aggregating the content_impressions dataset to achieve criteria 1 and 2, this is the percent of users with platform_satisfaction score >=8 among the users who were shown a below average portion of promoted content.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

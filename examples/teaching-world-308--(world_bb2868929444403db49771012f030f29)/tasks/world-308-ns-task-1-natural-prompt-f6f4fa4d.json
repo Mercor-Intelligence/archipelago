@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Edit slides 5 onward of the Spanish Market slideshow (for ESL students) to ensure that each of the vocabulary words listed in slide 3 are featured on their own slide. Each vocabulary word should appear in a separate slide in the slideshow with a corresponding definition, in the order they are listed in slide 3 (and remove any extra slides). For reference, there's a finished version of the slideshow that is not for ESL students. However, the dictionary uses complicated terms, so please use the relevant definition from the bank below, which was developed through prior years of teaching the ESL class.\n\nDefinition Bank:\n(1) \"They are usually colored powders that give color to paint.\"\n(2) \"Carved wooden sculptures of saints and other religious figures.\"\n(3) \"A covering that is applied to protect the paint and sculpture.\"\n(4) \"A copy, made with plaster of Paris, of Napoleon Bonaparte's head.\"\n(5) \"Local artists who carve and paint bultos; saint-makers.\"\n(6) \"A paste that covers the bulto to prepare it for painting.\"\n(7) \"A substance that shields or protects the skin's cuts when fingerpainting.\"\n(8) \"Usually made from heating wood or other natural things without air.\""
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Returns slide 5 of \"ESL- The Spanish Market.pptx\" with all of the following... (ver_9de3748370ea497681379d8e92a1ab05)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Returns slide 5 of \"ESL- The Spanish Market.pptx\" with all of the following edits: (1) titled \"santero\" and (2) includes the following definition: \"Local artists who carve and paint bultos; saint-makers.\"."
+        }
+      ]
+    },
+    {
+      "name": "Returns slide 6 of \"ESL- The Spanish Market.pptx\" with all of the following... (ver_171d533c00dd4eafa6b05e6659f20849)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Returns slide 6 of \"ESL- The Spanish Market.pptx\" with all of the following edits: (1) titled \"gesso\" and (2) includes the following definition: \"A paste that covers the bulto to prepare it for painting.\"."
+        }
+      ]
+    },
+    {
+      "name": "Returns slide 7 of \"ESL- The Spanish Market.pptx\" with all of the following... (ver_e9ebb5602823437c8d76e778d5b0ec60)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Returns slide 7 of \"ESL- The Spanish Market.pptx\" with all of the following edits: (1) titled \"pigments\" and (2) includes the following definition: \"They are usually colored powders that give color to paint.\"."
+        }
+      ]
+    },
+    {
+      "name": "Returns slide 8 of \"ESL- The Spanish Market.pptx\" with all of the following... (ver_76ef858dd47d4452ae4e885b09e95e14)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Returns slide 8 of \"ESL- The Spanish Market.pptx\" with all of the following edits: (1) titled \"varnish\" and (2) includes the following definition: \"A covering that is applied to protect the paint and sculpture.\"."
+        }
+      ]
+    },
+    {
+      "name": "Returns slide 9 of \"ESL- The Spanish Market.pptx\" with all of the following... (ver_4bc3f71963b1484ab0c1701700a9d30c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Returns slide 9 of \"ESL- The Spanish Market.pptx\" with all of the following edits: (1) titled \"charcoal\" and (2) includes the following definition: \"Usually made from heating wood or other natural things without air.\"."
+        }
+      ]
+    },
+    {
+      "name": "Returns a slide deck containing 9 slides. (ver_eb5cb80765674afaadad25365f732fe6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Returns a slide deck containing 9 slides."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-308-ns-task-1-natural-prompt-f6f4fa4d"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_bb2868929444403db49771012f030f29",
+    "world_name": "Teaching World 308",
+    "task_id": "task_f6f4fa4d8cb04bf88f92fac82d2a0d92",
+    "task_name": "World 308_NS_Task 1  [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_b9e0d4f7d5664e2ba07da914904614b4",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_e4253e44c38a4519aa5b9bd0a4bcdf86"
+      }
+    ]
+  }
+}

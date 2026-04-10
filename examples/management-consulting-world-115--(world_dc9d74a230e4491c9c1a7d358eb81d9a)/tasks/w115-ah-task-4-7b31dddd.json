@@ -1,0 +1,192 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "You have received additional survey results in the attached file. You need to combine these results with the latest version of the previous survey results. Answer and list out the following directly in the console:\n\nFor each private employer Org Type, report what percent of companies within that Org Type use in house services, CyrusOne, Digital Realty Trust, Equinix, and Iron Mountain. If no companies in the org type not use a vendor, you do not need to report this as 0.00%.\n\nRound all final answers to two decimal places. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the percent of Private employer (>5,000 employees) companies using... (ver_9c417ce7760a4fbbb33c6c124a0e07c5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percent of Private employer (>5,000 employees) companies using CyrusOne is 38.89% (acceptable range 38.50% to 39.28%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percent of Private employer (>5,000 employees) companies using... (ver_ca11fb2ad5bb49188692eff0bcc2d34d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percent of Private employer (>5,000 employees) companies using Digital Realty Trust is 27.78% (acceptable range 27.50% to 28.06%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percent of Private employer (>5,000 employees) companies using... (ver_b1cf211f792b4baf93c3fcadeb14c4ce)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percent of Private employer (>5,000 employees) companies using In-House is 33.33% (acceptable range 33.00% to 33.66%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percent of Private employer (500–5,000 employees) using... (ver_d4ed18a253354915a378d7f555bfdee7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percent of Private employer (500–5,000 employees) using CyrusOne is 25.93% (acceptable range 25.67% to 26.19%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percent of Private employer (500–5,000 employees) companies... (ver_63c79404bb0b439c91f4c33d856e3d34)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percent of Private employer (500–5,000 employees) companies using Digital Realty Trust is 48.15% (acceptable range 47.67% to 48.63%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percent of Private employer (500–5,000 employees) using... (ver_78ef7c04e2fd4ef683df127da762a140)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percent of Private employer (500–5,000 employees) using Equinix is 14.81% (acceptable range 14.66% to 14.96%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percent of Private employer (500–5,000 employees) companies... (ver_46bbb94e7a664010bb3e9d0814bd59e0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percent of Private employer (500–5,000 employees) companies using Iron Mountain is 11.11% (acceptable range 11.00% to 11.22%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh w115-ah-task-4-7b31dddd"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_7b31dddd9f46432c98efc85473a6979c",
+    "task_name": "W115_AH_Task 4",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_1ee9afa1f94a40ae8a12e928d9e4bd95",
+        "golden_text_response": "The percent of companies within each org type using each vendor are:\n\nPrivate employer (>5,000 employees):\t\nCyrusOne\t38.89%\nDigital Realty Trust\t27.78%\nIn-House\t33.33%\n\nPrivate employer (500–5,000 employees)\t\t\nCyrusOne\t\t25.93%\nDigital Realty Trust\t\t48.15%\nEquinix\t\t14.81%\nIron Mountain\t\t11.11%",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_190687b4ab8843aba3a75ef50f1a1b8c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_267a621a58bc44688c1351886459d8c7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States that the first time code 90834 was utilised to file a claim is 2013 (acceptable range 199 to 203)",
+        "negative_criteria": "States that the first time code 90834 was utilised to file a claim is a value other than 2013",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Create a pivot with Row headers as the 7 codes, Years as the column heads and SUM of column \"PAYMENT\" as values.\n\nBased on the pivot table, we can clear see the first year where the code \"90834\" has non-zero value is for the year 2013.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b1411e4f829c40d0a032ea093d379a15",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_267a621a58bc44688c1351886459d8c7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total payment in year 2015 is $935,010,479 (acceptable range $925,660,374 to $944,360,584)",
+        "negative_criteria": "States that the total payment in year 2015 is a value other than $935,010,479",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Create a pivot with Row headers as the 7 codes, Years as the column heads and SUM of column \"PAYMENT\" as values.\n\nThe last row of the pivot table represent the total value of payments for every year. The output is as follows-\n\n2015\t $935,010,479\n2016\t $980,593,580\n2017\t $1,000,561,842\n2018\t $1,046,570,493\n2019\t $1,084,136,130",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8a5f9aff8e9041cf9e78c2addd1eb7fc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_267a621a58bc44688c1351886459d8c7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total payment in year 2016 is $980,593,580 (acceptable range $970,787,644 to $990,399,516)",
+        "negative_criteria": "States that the total payment in year 2016 is a value other than $980,593,580",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Create a pivot with Row headers as the 7 codes, Years as the column heads and SUM of column \"PAYMENT\" as values.\n\nThe last row of the pivot table represent the total value of payments for every year. The output is as follows-\n\n2015\t $935,010,479\n2016\t $980,593,580\n2017\t $1,000,561,842\n2018\t $1,046,570,493\n2019\t $1,084,136,130",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f33c5b4ebe7841d98fbbb20936b49c47",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_267a621a58bc44688c1351886459d8c7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total payment in year 2017 is $1,000,561,842 (acceptable range $990,556,223.6 to $1,010,567,460)",
+        "negative_criteria": "States that the total payment in year 2017 is a value other than $1,000,561,842",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Create a pivot with Row headers as the 7 codes, Years as the column heads and SUM of column \"PAYMENT\" as values.\n\nThe last row of the pivot table represent the total value of payments for every year. The output is as follows-\n\n2015\t $935,010,479\n2016\t $980,593,580\n2017\t $1,000,561,842\n2018\t $1,046,570,493\n2019\t $1,084,136,130",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_93fce560ff604a66988d190e87efbe60",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_267a621a58bc44688c1351886459d8c7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total payment in year 2018 is $1,046,570,493 (acceptable range $1,036,104,788 to $1,057,036,198)",
+        "negative_criteria": "States that the total payment in year 2018 is a value other than $1,046,570,493",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Create a pivot with Row headers as the 7 codes, Years as the column heads and SUM of column \"PAYMENT\" as values.\n\nThe last row of the pivot table represent the total value of payments for every year. The output is as follows-\n\n2015\t $935,010,479\n2016\t $980,593,580\n2017\t $1,000,561,842\n2018\t $1,046,570,493\n2019\t $1,084,136,130",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_64f07e06cc264a6a80c7a72daae03317",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_267a621a58bc44688c1351886459d8c7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total payment in year 2019 is $1,084,136,130 (acceptable range $1,073,294,769 to $1,094,977,491)",
+        "negative_criteria": "States that the total payment in year 2019 is a value other than $1,084,136,130",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Create a pivot with Row headers as the 7 codes, Years as the column heads and SUM of column \"PAYMENT\" as values.\n\nThe last row of the pivot table represent the total value of payments for every year. The output is as follows-\n\n2015\t $935,010,479\n2016\t $980,593,580\n2017\t $1,000,561,842\n2018\t $1,046,570,493\n2019\t $1,084,136,130",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_105d4a2a12ab42349e293a9f06108739",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_267a621a58bc44688c1351886459d8c7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the CAGR of total payments between 2018-2022 is 0.99% (acceptable range 0.98% to 1.0%)",
+        "negative_criteria": "States that the CAGR of total payments between 2018-2022 is a value other than 0.99%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "CAGR of last 5 years = Growth rate of total payment value between year 2018-2022.\n\nAs per the pivot table-\nTotal payment value in 2018 =  1,046,570,493 \nTotal payment value in 2022 =  1,088,810,087 \n\nBased on the formula = RRI (4,  1,046,570,493,  1,088,810,087), we get CAGR as 0.994%.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bc8cb5c8a4a948eca0296171bba0e39a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_267a621a58bc44688c1351886459d8c7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total payment value in 2030 is $1,178,472,451 (acceptable range $1,166,687,726 to $1,190,257,176)",
+        "negative_criteria": "States that the total payment value in 2030 is a value other than $1,178,472,451",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "To estimate the total payment value for 2030, for which we need to extrapolate using CAGR of last 5 years as recommended in the prompt.\n\nCAGR as 0.994% (as per criteria 7)\n\nUsing that to estimate, we get total payment value in 2030 as  1,178,472,451.\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_601c628dc1d948aca1a71ebc6af5521e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_267a621a58bc44688c1351886459d8c7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the cost of insurance for the client in 2030 is $58,923,624 (acceptable range $58,334,388 to $59,512,860)",
+        "negative_criteria": "States that the cost of insurance for the client in 2030 is a value other than $58,923,624",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Total payment value in 2030 as  1,178,472,451. (as per criteria 8)\n\nAs per prompt, our client has a 10% share in that, and of that, 50% is borne by them as insurance cost.\n\nSo net insurance cost for hospital in 2030 = 1,178,472,451 * 10% * 50%\n=  $58,923,623.53 \n=$58,923,624 (Rounded off as per prompt instructions)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fa9e6603641147598ad732edc01b6f9f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_267a621a58bc44688c1351886459d8c7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the percentage ratio of claim to payment for code 90837 is 75.19% (acceptable range 74.44% to 75.94%)",
+        "negative_criteria": "States that the percentage ratio of claim to payment for code 90837 is a value other than 75.19%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Payment to percentage claim ratio for each code.\n\nUsing the pivot table, we calculate the sum of \"Allowed Charges\" and \"Payment\" for each code. we get the following-\n\nCode |\tSum of ALLOWED CHARGES\t| Sum of PAYMENT\n90791 |\t 1,083,443,407 \t | 799,157,502 \n90792\t|  792,121,307 \t | 582,931,539 \n90832 |  1,351,053,744 \t| 1,005,731,648 \n90834\t | 3,928,453,268 \t | 2,896,767,203 \n90837\t | 6,124,524,287 \t| 4,604,945,222 \n90839\t | 22,356,822 \t| 16,858,079 \n90840\t | 3,951,460 \t | 3,066,626 \n\nBased on that, the percentage ratio of payment to claim is as follows for every code-\n\nCode\t| Payment to Claim Ratio percentage\n90791\t| 73.76%\n90792\t| 73.59%\n90832\t| 74.44%\n90834\t| 73.74%\n90837\t| 75.19%\n90839\t| 75.40%\n90840\t| 77.61%",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7cd6b581d1854e31969a07d11e03ed3c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_267a621a58bc44688c1351886459d8c7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the percentage ratio of claim to payment for code 90839 is 75.40% (acceptable range 74.65% to 76.15%)",
+        "negative_criteria": "States that the percentage ratio of claim to payment for code 90839 is a value other than 75.40%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Payment to percentage claim ratio for each code.\n\nUsing the pivot table, we calculate the sum of \"Allowed Charges\" and \"Payment\" for each code. we get the following-\n\nCode |\tSum of ALLOWED CHARGES\t| Sum of PAYMENT\n90791 |\t 1,083,443,407 \t | 799,157,502 \n90792\t|  792,121,307 \t | 582,931,539 \n90832 |  1,351,053,744 \t| 1,005,731,648 \n90834\t | 3,928,453,268 \t | 2,896,767,203 \n90837\t | 6,124,524,287 \t| 4,604,945,222 \n90839\t | 22,356,822 \t| 16,858,079 \n90840\t | 3,951,460 \t | 3,066,626 \n\nBased on that, the percentage ratio of payment to claim is as follows for every code-\n\nCode\t| Payment to Claim Ratio percentage\n90791\t| 73.76%\n90792\t| 73.59%\n90832\t| 74.44%\n90834\t| 73.74%\n90837\t| 75.19%\n90839\t| 75.40%\n90840\t| 77.61%",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8675ca46fb6646038a822de262f7daf4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_267a621a58bc44688c1351886459d8c7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the percentage ratio of claim to payment for code 90840 is 77.61% (acceptable range 76.83% to 78.39%)",
+        "negative_criteria": "States that the percentage ratio of claim to payment for code 90840 is a value other than 77.61%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Payment to percentage claim ratio for each code.\n\nUsing the pivot table, we calculate the sum of \"Allowed Charges\" and \"Payment\" for each code. we get the following-\n\nCode |\tSum of ALLOWED CHARGES\t| Sum of PAYMENT\n90791 |\t 1,083,443,407 \t | 799,157,502 \n90792\t|  792,121,307 \t | 582,931,539 \n90832 |  1,351,053,744 \t| 1,005,731,648 \n90834\t | 3,928,453,268 \t | 2,896,767,203 \n90837\t | 6,124,524,287 \t| 4,604,945,222 \n90839\t | 22,356,822 \t| 16,858,079 \n90840\t | 3,951,460 \t | 3,066,626 \n\nBased on that, the percentage ratio of payment to claim is as follows for every code-\n\nCode\t| Payment to Claim Ratio percentage\n90791\t| 73.76%\n90792\t| 73.59%\n90832\t| 74.44%\n90834\t| 73.74%\n90837\t| 75.19%\n90839\t| 75.40%\n90840\t| 77.61%",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

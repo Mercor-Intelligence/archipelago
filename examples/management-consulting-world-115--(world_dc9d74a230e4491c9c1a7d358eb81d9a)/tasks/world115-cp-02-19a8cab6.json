@@ -1,0 +1,473 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The client needs to update the data center cost model using inputs from prior research, which must be cleaned before entry into the core model.\n\nThe Capex total is incorrect. Recalculate total Capex (USD M) using the Capex inputs spreadsheet.\n\nUsing the revenue assumptions Excel file, calculate a consolidated MW/year rate. Include only Base Rent, Cross-Connect Fees, and Rack Rental. Assume 20 connections and 15 racks per MW/year. Return yearly Base Rent, Cross-Connect Fees, Rack Rental, and total MW/year rates in a new spreadsheet. Report values in $M/MW, rounded to the nearest $0.01M.\n\nAfter cleaning the data, use the latest Scenario B data center model methodology to update model estimates. Assume 2026 is Year 0 and each subsequent year follows sequentially. In a new spreadsheet, return:\n -Year 10 Revenue\n- Year 10 EBITDA\n- Year 10 Free Cash Flow\n- Year 10 TV\n- IRR (%)\n\nReport dollar values in $M (rounded to $0.01M) and percentages to the nearest 0.01%.\n\nTo calculate these metrics, reference the Capex phasing spreadsheet. Compute the difference between the Capex total in that schedule and the recalculated Capex total, and add the difference to 2026 Capex. Use the adjusted schedule to update Year 0–Year 4 Capex in the model. Assume constant Capex of $10M after 2030. Depreciation is 0 in Years 0–3, $25M in Year 4, increasing by $0.5M annually thereafter.\n\nMultiply average MW ramp values from the OpEx ramp spreadsheet by the total MW/year rate from above to derive annual revenue. Assume 100% capacity and 2.5% annual growth after 2030."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States Base Rent yearly revenue / MW  is $2.22 M (acceptable range $2.20 to... (ver_b28a41424aa04643882b7049c45baa84)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Base Rent yearly revenue / MW  is $2.22 M (acceptable range $2.20 to $2.24)."
+        }
+      ]
+    },
+    {
+      "name": "States Base Rent yearly revenue / MW is a value other than $2.22 M (ver_b28a41424aa04643882b7049c45baa84)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Base Rent yearly revenue / MW is a value other than $2.22 M."
+        }
+      ]
+    },
+    {
+      "name": "States Cross-Connect Fees yearly revenue / MW is $0.06 M (acceptable range... (ver_a07d7c44b3884e888181198c953ba4bf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Cross-Connect Fees yearly revenue / MW is $0.06 M (acceptable range $0.059 to $0.061)."
+        }
+      ]
+    },
+    {
+      "name": "States Cross-Connect Fees yearly revenue / MW is a value other than $0.06 M (ver_a07d7c44b3884e888181198c953ba4bf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Cross-Connect Fees yearly revenue / MW is a value other than $0.06 M."
+        }
+      ]
+    },
+    {
+      "name": "States Rack Rental yearly revenue / MW is $0.22 M (acceptable range $0.218 to... (ver_ed2111bb9b4642cbbe742d7942aa29d3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Rack Rental yearly revenue / MW is $0.22 M (acceptable range $0.218 to $0.222)."
+        }
+      ]
+    },
+    {
+      "name": "States Rack Rental yearly revenue / MW is a value other than $0.22 M (ver_ed2111bb9b4642cbbe742d7942aa29d3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Rack Rental yearly revenue / MW is a value other than $0.22 M."
+        }
+      ]
+    },
+    {
+      "name": "States total yearly revenue / MW is $2.50 M (acceptable range $2.48 to $2.52) (ver_ab5db32596ba410589323a35d6d6f3ee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States total yearly revenue / MW is $2.50 M (acceptable range $2.48 to $2.52)."
+        }
+      ]
+    },
+    {
+      "name": "States total yearly revenue / MW is a value other than $2.50 M (ver_ab5db32596ba410589323a35d6d6f3ee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States total yearly revenue / MW is a value other than $2.50 M."
+        }
+      ]
+    },
+    {
+      "name": "States year 10 revenue is $144.73 M (acceptable range $143.28 to $146.18) (ver_295c77f6e8b3428aa21fe844517874ba)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States year 10 revenue is $144.73 M (acceptable range $143.28 to $146.18)."
+        }
+      ]
+    },
+    {
+      "name": "States year 10 EBITDA is $116.55 M (acceptable range $115.38 to $117.72) (ver_172146fb5c654fe6a8472b47c84abfb7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States year 10 EBITDA is $116.55 M (acceptable range $115.38 to $117.72)."
+        }
+      ]
+    },
+    {
+      "name": "States year 10 EBITDA is a value other than $116.55 M (ver_172146fb5c654fe6a8472b47c84abfb7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States year 10 EBITDA is a value other than $116.55 M."
+        }
+      ]
+    },
+    {
+      "name": "States year 10 free cash flow is $75.41 M (acceptable range $74.66 to $76.16) (ver_6c33b3ca2f5641b19e62474fa2d4184d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States year 10 free cash flow is $75.41 M (acceptable range $74.66 to $76.16)."
+        }
+      ]
+    },
+    {
+      "name": "States year 10 free cash flow is a value other than $75.41 M (ver_6c33b3ca2f5641b19e62474fa2d4184d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States year 10 free cash flow is a value other than $75.41 M."
+        }
+      ]
+    },
+    {
+      "name": "States year 10 TV is $1189.17 M (acceptable range $117 to $119) (ver_99a9929783d44b34a2a98e9227d77dc5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States year 10 TV is $1189.17 M (acceptable range $117 to $119)."
+        }
+      ]
+    },
+    {
+      "name": "States year 10 TV is a value other than $1189.17 M (ver_99a9929783d44b34a2a98e9227d77dc5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States year 10 TV is a value other than $1189.17 M."
+        }
+      ]
+    },
+    {
+      "name": "States NPV is $327.52 M (acceptable range $324.24 to $330.80) (ver_f227028376d442ffa3d46702dda72901)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States NPV is $327.52 M (acceptable range $324.24 to $330.80)."
+        }
+      ]
+    },
+    {
+      "name": "States NPV is a value other than $327.52 M (ver_f227028376d442ffa3d46702dda72901)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States NPV is a value other than $327.52 M."
+        }
+      ]
+    },
+    {
+      "name": "States IRR is 17.52% (acceptable range 17.34% to 17.70%) (ver_b4784b93798d4a4e9ec9aee7c17d643b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States IRR is 17.52% (acceptable range 17.34% to 17.70%)."
+        }
+      ]
+    },
+    {
+      "name": "States IRR is a value other than 17.52% (ver_b4784b93798d4a4e9ec9aee7c17d643b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States IRR is a value other than 17.52%."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world115-cp-02-19a8cab6"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_19a8cab6ba0548189a82c6276bfc7123",
+    "task_name": "world115_cp_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_9111bd1db1564ba4a4d9b473abb011dc",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_6469f133749b487c85b572421e4c0a05"
+      },
+      {
+        "golden_response_id": "gold_f4a8e16f5a7a42b2bb11ceb2a8c65dd6",
+        "golden_text_response": "See file",
+        "golden_file_responses": "snap_6469f133749b487c85b572421e4c0a05"
+      }
+    ]
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_eeaa8cfe921045b187e0064de938b11b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_40bd80532d5d4345ae7244f8005e6a8d",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the 2026 projected salary costs for R&D is $25,153,500 (acceptable range $24,901,965 to $25,405,035)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5195297757d44ca6a82caabbf9676c01",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_40bd80532d5d4345ae7244f8005e6a8d",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the 2026 projected salary costs for Sales is $6,800,610 (acceptable range $6,732,604 to $6,868,616)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_018595618fcb4359bc3dcd23f699cf97",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_40bd80532d5d4345ae7244f8005e6a8d",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the 2026 projected salary costs for Customer Success is $4,954,609 (acceptable range $4,905,063 to $5,004,155)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e26eb30fc78e4799b1b4bb540bccfe2a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_40bd80532d5d4345ae7244f8005e6a8d",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the 2026 projected salary costs for G&A is $5,371,690 (acceptable range $5,317,973 to $5,425,407)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ba84a96579804eaaa41494a745fe55a5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_40bd80532d5d4345ae7244f8005e6a8d",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the year-over-year change in salary costs for R&D is 8.9% (acceptable range 8.8% to 9.0%)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b327402b30af4f848891e972aaeb348d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_40bd80532d5d4345ae7244f8005e6a8d",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the year-over-year change in salary costs for Sales is 38.0% (acceptable range 37.6% to 38.4%)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e5ef1be5a4a946c68e51244627edb186",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_40bd80532d5d4345ae7244f8005e6a8d",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the year-over-year change in salary costs for Customer Success is 28.0% (acceptable range 27.7% to 28.3%)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8bc6f8e24a474e92a7906b83a92fe51d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_40bd80532d5d4345ae7244f8005e6a8d",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the year-over-year change in salary costs for G&A is -4.4% (acceptable range -4.44% to -4.36%)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

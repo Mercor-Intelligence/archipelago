@@ -1,0 +1,307 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Aggregate and analyse the supplement file attached and the customer ancillary spend file for customers > 40 years of age and with a salary > $100k, and report the ratio of the highest absolute z-score to the second-highest z-score for each variable (extended_returns, extended_warranty, and insurance_protection). Also, state the percentile of Texas's Z-score for each variable.\nProvide all the answers as a console message, rounded to 4 decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the ratio of the highest absolute z-score to the second-highest... (ver_218bb5efcedf46e88f407eb01f04f774)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the ratio of the highest absolute z-score to the second-highest z-score for extended_returns is 1.0169 (acceptable range 1.0067 to 1.0271)."
+        }
+      ]
+    },
+    {
+      "name": "States that the ratio of the highest absolute z-score to the second-highest... (ver_218bb5efcedf46e88f407eb01f04f774)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the ratio of the highest absolute z-score to the second-highest z-score for extended_returns is any value other than 1.0169."
+        }
+      ]
+    },
+    {
+      "name": "States that the ratio of the highest absolute z-score to the second-highest... (ver_c2b7f89463204a2390d8db60b7862b12)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the ratio of the highest absolute z-score to the second-highest z-score for extended_warranty is 1.0758 (acceptable range 1.0650 to 1.0866)."
+        }
+      ]
+    },
+    {
+      "name": "States that the ratio of the highest absolute z-score to the second-highest... (ver_c2b7f89463204a2390d8db60b7862b12)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the ratio of the highest absolute z-score to the second-highest z-score for extended_warranty is any value other than 1.0758."
+        }
+      ]
+    },
+    {
+      "name": "States that the ratio of the highest absolute z-score to the second-highest... (ver_1db15285e47845dbb4c8336333de1b97)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the ratio of the highest absolute z-score to the second-highest z-score for insurance_protection is 1.1649 (acceptable range 1.1533 to 1.1765)."
+        }
+      ]
+    },
+    {
+      "name": "States that the ratio of the highest absolute z-score to the second-highest... (ver_1db15285e47845dbb4c8336333de1b97)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the ratio of the highest absolute z-score to the second-highest z-score for insurance_protection is any value other than 1.1649."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentile of Texas's z-score for extended_returns is 4.1000... (ver_6b7a555f659644e2b7d9a6ad83eb5f93)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentile of Texas's z-score for extended_returns is 4.1000 (acceptable range 4.0590 to 4.1410)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentile of Texas's z-score for extended_returns is any... (ver_6b7a555f659644e2b7d9a6ad83eb5f93)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentile of Texas's z-score for extended_returns is any value other than 4.1000."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentile of Texas's z-score for extended_warranty is 65.3000... (ver_7f7cd431ed7b4514a2e4ce03830323c1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentile of Texas's z-score for extended_warranty is 65.3000 (acceptable range 64.6470 to 65.9530)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentile of Texas's z-score for extended_warranty is any... (ver_7f7cd431ed7b4514a2e4ce03830323c1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentile of Texas's z-score for extended_warranty is any value other than 65.3000."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentile of Texas's z-score for insurance_protection is... (ver_727dec40e1674a2eabca8a5473e0adf5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentile of Texas's z-score for insurance_protection is 2.0000 (acceptable range 1.9800 to 2.0200)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentile of Texas's z-score for insurance_protection is any... (ver_727dec40e1674a2eabca8a5473e0adf5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentile of Texas's z-score for insurance_protection is any value other than 2.0000."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-122-rg-03-59c2f918"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_93767f48e4d9497a8f6b129492a1ae14",
+    "world_name": "Management Consulting World 122",
+    "task_id": "task_59c2f9182d2f45de90aec6d2f7e65a68",
+    "task_name": "Task 122_RG_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_bbc2fafe92194051ae5323d74db10a00",
+        "golden_text_response": "The ratio of the highest absolute z-score to the second-highest z-score for extended_returns: 1.0169\nThe ratio of the highest absolute z-score to the second-highest z-score for extended_warranty: 1.0758\nThe ratio of the highest absolute z-score to the second-highest z-score for insurance_protection: 1.1649\nThe percentile of Texas's z-score for extended_returns: 4.1000\nThe percentile of Texas's z-score for extended_warranty: 65.3000\nThe percentile of Texas's z-score for insurance_protection: 2.0000",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

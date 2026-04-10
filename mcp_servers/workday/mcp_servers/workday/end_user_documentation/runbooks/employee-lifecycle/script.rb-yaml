@@ -1,0 +1,153 @@
+# Employee Lifecycle Workflow
+# Demonstrates: Create position -> Hire worker -> View worker -> Transfer -> Terminate
+#
+# Tools exercised:
+# - Login (hr_admin)
+# - Create Position (Positions)
+# - Hire Worker (Workers)
+# - Get Worker (Workers)
+# - List Workers (Workers)
+# - Transfer Worker (Workers)
+# - Terminate Worker (Workers)
+
+url: http://localhost:3000
+
+output: screenshots
+
+defaults:
+  server: workday-workday
+
+steps:
+  # Step 1: Initial view
+  - TakeScreenshot
+
+  # Step 2: Login as HR Admin
+  - Login:
+      persona: hr_admin
+      screenshot_params:
+        element: *tool_panel
+        max_height: 600
+
+  # Step 3: Create a new position
+  - SelectTool:
+      tool: create_position
+      category: Positions
+  - Wait: 500
+  - FillToolParam:
+      params:
+        title: Senior Software Engineer
+        job_profile_id: JP001
+        org_id: ORG001
+        cost_center_id: CC001
+        location_id: LOC001
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 4: Execute position creation
+  - ExecuteTool:
+      capture:
+        position_id: $.id
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 600
+
+  # Step 5: Hire a new worker
+  - SelectTool:
+      tool: hire_worker
+      category: Workers
+  - Wait: 500
+  - FillToolParam:
+      params:
+        first_name: Alex
+        last_name: Johnson
+        email: alex.johnson@company.com
+        position_id: "{{ position_id }}"
+        hire_date: "2026-02-01"
+        work_location: San Francisco
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 900
+
+  # Step 6: Execute hire
+  - ExecuteTool:
+      capture:
+        worker_id: $.id
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 600
+
+  # Step 7: Get worker details
+  - SelectTool:
+      tool: get_worker
+      category: Workers
+  - Wait: 500
+  - FillToolParam:
+      params:
+        worker_id: "{{ worker_id }}"
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 8: List all workers
+  - SelectTool:
+      tool: list_workers
+      category: Workers
+  - Wait: 500
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 9: Transfer worker to new position
+  - SelectTool:
+      tool: transfer_worker
+      category: Workers
+  - Wait: 500
+  - FillToolParam:
+      params:
+        worker_id: "{{ worker_id }}"
+        new_position_id: POS002
+        effective_date: "2026-06-01"
+        reason: Promotion to Lead Engineer
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 10: Execute transfer
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 600
+
+  # Step 11: Terminate worker (for demonstration)
+  - SelectTool:
+      tool: terminate_worker
+      category: Workers
+  - Wait: 500
+  - FillToolParam:
+      params:
+        worker_id: "{{ worker_id }}"
+        termination_date: "2026-12-31"
+        reason: Voluntary Resignation
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 12: Execute termination
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 600

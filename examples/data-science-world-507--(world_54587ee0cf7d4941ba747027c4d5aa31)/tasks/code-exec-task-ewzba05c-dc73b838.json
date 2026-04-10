@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "I want to understand whether promoted content tends to lead to greater platform satisfaction scores. Considering only available content impressions that occurred on or before a user's survey date, compute the average number of content impressions and the average share of promoted content impressions per user as a percentage (use all available impressions in the denominator). Then split the users into above (inclusive) and below (exclusive) the average share of promoted content impressions and compute 1) the average platform satisfaction and 2) the percent of satisfied users (platform satisfaction >= 8) in each group. You'll need to use the files content_impressions.csv, content_catalog.csv, and user_preferences_survey.csv. Round your answers to 2 decimals and include the Python code for analysis.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports that the average number of available content impressions per user is... (ver_6a4c0a1167f44c6c922f9467f8cde6b9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that the average number of available content impressions per user is 2.55 +/ 0.05."
+        }
+      ]
+    },
+    {
+      "name": "Reports that the average share of available promoted content per user is... (ver_2ce39f070ee34cbe8897d51107ef6a06)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that the average share of available promoted content per user is 76.96% +/-0.05%."
+        }
+      ]
+    },
+    {
+      "name": "Reports that the average platform_satisfaction score for users with... (ver_4c2e1f58f83b4cd99f91371e5f923066)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that the average platform_satisfaction score for users with above-average share of available promoted content is 7.05 +/- 0.05."
+        }
+      ]
+    },
+    {
+      "name": "Reports that the percent of satisfied users for users with above-average share... (ver_af2a473e8ec54e7eb57c4d48846c15fd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that the percent of satisfied users for users with above-average share of available promoted content is 45.14% +/- 0.05%."
+        }
+      ]
+    },
+    {
+      "name": "Reports that the average platform_satisfaction score for users with... (ver_c7a2c092ba5f4fbf9934a04a0766a1a9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that the average platform_satisfaction score for users with below-average share of available promoted content is 7.11 +/- 0.05."
+        }
+      ]
+    },
+    {
+      "name": "Reports that the percent of satisfied users for users with below-average share... (ver_b229e8806f7249229ff87e18336591be)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that the percent of satisfied users for users with below-average share of available promoted content is 46.00% +/- 0.05%."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh code-exec-task-ewzba05c-dc73b838"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_54587ee0cf7d4941ba747027c4d5aa31",
+    "world_name": "Data Science World 507",
+    "task_id": "task_dc73b838f5394ba8924d3c819593f03b",
+    "task_name": "Code Exec - Task ewzba05c",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_4b53e773ac564101b7be586f33698535",
+        "golden_text_response": "The average number of content impressions per user is 2.55\nThe average share of promoted content per user is 76.96%\nAmong users with above-average share of promoted content, the average platform satisfaction is 7.05 and 45.14% are satisfied.\nAmong users with below-average share of promoted content, the average platform satisfaction is 7.11 and 46.00% are satisfied.\n\n```\nimport pandas as pd\n\n# Read datasets\ncontent_catalog = pd.read_csv('csv_datasets/content_catalog.csv')\ncontent_impressions = pd.read_csv('csv_datasets/content_impressions.csv')\nuser_preferences_survey = pd.read_csv('csv_datasets/user_preferences_survey.csv')\n\n# Created merged dataset on content impressions\ndf = pd.merge(content_impressions, content_catalog[['content_id', 'release_date', 'content_type', 'is_promoted', 'is_available']], on='content_id', how='inner')\ndf = pd.merge(df, user_preferences_survey[['user_id', 'survey_date', 'platform_satisfaction']], on='user_id', how='inner')\n\n# Preprocessing\ndf['impression_timestamp'] = pd.to_datetime(df['impression_timestamp'])\ndf['release_date'] = pd.to_datetime(df['release_date'])\ndf['survey_date'] = pd.to_datetime(df['survey_date'])\ndf['is_promoted'] = df['is_promoted']==1\ndf['is_available'] = df['is_available']==1\n\n\n# Filter for valid impressions on available content\ndf = df[(df['survey_date'] >= df['impression_timestamp'])]\ndf = df[df['is_available']]\n\n# Get user-level results\ndef get_user_result(d):\n    return pd.Series({\n        'n_impressions': len(d),\n        'is_promoted': d['is_promoted'].sum(),\n        'platform_satisfaction': d['platform_satisfaction'].iloc[0],\n    })    \ngrouped = df.groupby('user_id').apply(get_user_result, include_groups=False)\ngrouped['promo_share'] = grouped['is_promoted'] / grouped['n_impressions']\ngrouped['satisfied'] = grouped['platform_satisfaction'] >= 8\n\n# Split group by mean promo share\nabove_mean = grouped[grouped['promo_share']>=grouped['promo_share'].mean()]\nbelow_mean = grouped[grouped['promo_share']<grouped['promo_share'].mean()]\n\n# Print final results\nprint(f\"The average number of content impressions per user is {grouped['n_impressions'].mean():.2f}\")\nprint(f\"The average share of promoted content per user is {100*grouped['promo_share'].mean():.2f}%\")\nprint(f\"Among users with above-average share of promoted content, the average platform satisfaction is {above_mean['platform_satisfaction'].mean():.2f} and {100*above_mean['satisfied'].mean():.2f}% are satisfied.\")\nprint(f\"Among users with below-average share of promoted content, the average platform satisfaction is {below_mean['platform_satisfaction'].mean():.2f} and {100*below_mean['satisfied'].mean():.2f}% are satisfied.\")\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Bekzat Belleville is requesting for her time-off balances as of December 31st, 2025. Unfortunately, her time-off requests in BambooHR were not recorded properly due to human error, so her time-off balances are incorrect in the system and we need to fix that. This is what we know about the time off that Bekzat actually took in 2025:\n- She did not take any vacation or sick leave in 2024\n- She took 7 days of sick leave on 5/27/25 - 6/2/2025, which was approved by her manager on 5/25/25\n- She took 4 days of vacation leave on 9/23/25 - 9/26/25, and another 2 days of vacation leave on 10/12/25 - 10/13/25. Both were approved on 9/22/25\n\nUpdate each of the balances in BambooHR with the correct information, so that we can provide the correct time-off balances to Bekzat. Output as a message in the console Bekzat's time-off balances (in days, rounded to 1 decimal) for each time-off policy (except unpaid leave) after these corrections are made."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the updated balance for vacation leave is 14.0 days. (ver_64ed9c2b999c47498b248f5476c77b49)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the updated balance for vacation leave is 14.0 days."
+        }
+      ]
+    },
+    {
+      "name": "States that the updated balance for sick leave is 8.0 days. (ver_ddd53f4b50b444a18c9cc89f1dad1ca5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the updated balance for sick leave is 8.0 days."
+        }
+      ]
+    },
+    {
+      "name": "States that the updated balance for personal leave is 3.0 days. (ver_748c3ab556d249efa27d22deb4bcf588)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the updated balance for personal leave is 3.0 days."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world601-bh-02-11028b81"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_11028b813fa64567b9cdba785285246f",
+    "task_name": "World601_BH_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_51251453ecfd4d74a3753dea2da1d7c9",
+        "golden_text_response": "Vacation leave - updated balance 14.0 days\nSick leave -  updated balance 8.0 days\nPersonal leave - updated balance 3.0 days",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

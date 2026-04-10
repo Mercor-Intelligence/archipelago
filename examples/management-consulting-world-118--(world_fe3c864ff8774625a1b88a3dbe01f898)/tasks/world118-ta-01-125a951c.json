@@ -1,0 +1,330 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the v0.1 facility requirement checklist:\n\n1. If the goal is to achieve at least an average readiness score of 3.7 across all facilities; \nWhat is the current readiness score gap (in total terms) based on the findings from the associate? (1 decimal)\nHow many (as few as possible) facilities (integer) would need to increase their score to 5.0 to reach this goal?\n2. Eliminate the bottom two states by avg. readiness score. What would be the new overall average? \n\n3. Readiness improvement funding from HappyHospital is limited to 30 facilities. If the engagement manager wants to maximize total national readiness score, which facilities should be prioritized, assuming each upgraded facility would score 5.0? State only the first priority state for upgrade, the gain in average readiness score per facility for that state and the gain in total readiness score in that state. In case of tie, select the state with a higher total number of facilities."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the current readiness score gap is 19.6 (acceptable range 19.4 to... (ver_6bff758bea324f6e8b0d33b73084c83d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the current readiness score gap is 19.6 (acceptable range 19.4 to 19.8)."
+        }
+      ]
+    },
+    {
+      "name": "States that the current readiness score gap is a value other than 19.6 (ver_6bff758bea324f6e8b0d33b73084c83d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the current readiness score gap is a value other than 19.6."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of facilities that need to increase their score to 5.0... (ver_18a66d2a6a164c3aafd1aedfa9df9ec0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of facilities that need to increase their score to 5.0 is 11."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of facilities that need to increase their score to 5.0... (ver_18a66d2a6a164c3aafd1aedfa9df9ec0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of facilities that need to increase their score to 5.0 is a value other than 11."
+        }
+      ]
+    },
+    {
+      "name": "States that the new overall average readiness score across the remaining... (ver_1b1507c88ba94ca988aed41e82daf905)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the new overall average readiness score across the remaining states is 3.6 (acceptable range 3.56 to 3.64)."
+        }
+      ]
+    },
+    {
+      "name": "States that the new overall average readiness score across the remaining... (ver_1b1507c88ba94ca988aed41e82daf905)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the new overall average readiness score across the remaining states is a value other than 3.6."
+        }
+      ]
+    },
+    {
+      "name": "States that the first priority state for upgrade is Missouri (ver_40bb7df5b1fe40df969a5a97d756fe6f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the first priority state for upgrade is Missouri."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of facilities to be prioritized for upgrade in Missouri... (ver_7a053fd429664b709dcb9c03df989664)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of facilities to be prioritized for upgrade in Missouri is 14."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of facilities to be prioritized for upgrade in Missouri... (ver_7a053fd429664b709dcb9c03df989664)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of facilities to be prioritized for upgrade in Missouri is a value other than 14."
+        }
+      ]
+    },
+    {
+      "name": "States that gain in readiness score per facility for Missouri is 1.8... (ver_e8e51189cbe249e29cf2e24595c7cc52)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that gain in readiness score per facility for Missouri is 1.8 (acceptable range 1.78 to 1.82)."
+        }
+      ]
+    },
+    {
+      "name": "States that gain in readiness score per facility for Missouri is a value other... (ver_e8e51189cbe249e29cf2e24595c7cc52)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that gain in readiness score per facility for Missouri is a value other than 1.8."
+        }
+      ]
+    },
+    {
+      "name": "States that the gain in the total readiness score in Missouri is 19.8... (ver_7d6af4d37fd540e98bfe4b3e14026e23)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the gain in the total readiness score in Missouri is 19.8 (acceptable range 19.6 to 20.0)."
+        }
+      ]
+    },
+    {
+      "name": "States that the gain in the total readiness score in Missouri is a value other... (ver_7d6af4d37fd540e98bfe4b3e14026e23)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the gain in the total readiness score in Missouri is a value other 19.8."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world118-ta-01-125a951c"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_125a951c3cf3416f918a948720fd6055",
+    "task_name": "World118_TA_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_9c8834dbb958410baa957be8f8727b48",
+        "golden_text_response": "1. Current Readiness Score Gap = 19.6; \n11 facilities will need to increase their scores to 5.0\n\n2. Weighted average after lowest states performing  states is eliminated is = 3.6; \n\n3. First Priority: Missouri - 14 facilities; Gain per facility: 1.8; Total Readiness gain: 19.8\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_be90c98b5795421da361ae1259159e2d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_baabde3acff54046a3c1891c04f2f7e4",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "Produces a bar chart in \"chart\" sheet.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt specifically requests to produce a bar chart showing the Loss Inflation Adjusted per loan for each Region.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4b03c0b9f6ec481f9946accce42d4f2b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_baabde3acff54046a3c1891c04f2f7e4",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "Produces exactly 5 bars in the bar chart.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt explicity requires the model to create a bar chart with Region on the x-axis. There are exactly 5 Regions hence there should be 5 bars. ",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_11ec794ee4de49a5aad2a4e53d057a50",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_baabde3acff54046a3c1891c04f2f7e4",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Style / formatting"
+        ],
+        "weight": 1,
+        "criteria": "Places Region on the x-axis of the chart.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt explicity requires the model to use Region in the x-axis.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_44bfc0e7bb494e9aa54326e0b0bf478e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_baabde3acff54046a3c1891c04f2f7e4",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Style / formatting"
+        ],
+        "weight": 1,
+        "criteria": "Places Loss Inflation Adjusted per loan on the y-axis of the chart.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt explicity requires the model to use  Loss Inflation Adjusted per loan in the y-axis.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_23b27383d1924dbe84626a877629368d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_baabde3acff54046a3c1891c04f2f7e4",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Labels the Loss Inflation Adjusted per loan for Central as exactly 459,512 (acceptable range 454,917 to 464,107).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt specifically requests to create a bar chart that shows Loss Inflation Adjusted per loan by Region only for the Construction sector. 459,512 is the correct Loss Inflation Adjusted per loan for Central Region.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_71594d5b8cb14a188435436e0fae781e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_baabde3acff54046a3c1891c04f2f7e4",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Labels the Loss Inflation Adjusted per loan for East as exactly 502,489 (acceptable range 497,464 to 507,514).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt specifically requests to create a bar chart that shows Loss Inflation Adjusted per loan by Region only for the Construction sector. 502,489 is the correct Loss Inflation Adjusted per loan for East Region.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a8d1a8d124de4c1490f887dfc259ae32",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_baabde3acff54046a3c1891c04f2f7e4",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Labels the Loss Inflation Adjusted per loan for North as exactly 467,545 (acceptable range 462,870 to 472,220).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt specifically requests to create a bar chart that shows Loss Inflation Adjusted per loan by Region only for the Construction sector. 467,545 is the correct Loss Inflation Adjusted per loan for North Region.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5a17725dcae645e2bb5384398bc3f2ca",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_baabde3acff54046a3c1891c04f2f7e4",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Labels the Loss Inflation Adjusted per loan for South as exactly 487,978 (acceptable range 483,098 to 492,858).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt specifically requests to create a bar chart that shows Loss Inflation Adjusted per loan by Region only for the Construction sector. 487,978 is the correct Loss Inflation Adjusted per loan for South Region.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d73b98a8ddab42e9a9fbd9f9a11be489",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_baabde3acff54046a3c1891c04f2f7e4",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Labels the Loss Inflation Adjusted per loan for West as exactly 412,920 (acceptable range 408,791 to 417,049).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "The prompt specifically requests to create a bar chart that shows Loss Inflation Adjusted per loan by Region only for the Construction sector. 412,920 is the correct Loss Inflation Adjusted per loan for West Region.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "eval_config_name": "Output LLM",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "4658aec9-7eeb-4c9b-84c2-5464345e345f",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

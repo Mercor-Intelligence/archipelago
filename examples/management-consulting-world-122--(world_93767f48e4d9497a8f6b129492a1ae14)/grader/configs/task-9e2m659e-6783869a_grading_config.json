@@ -1,0 +1,86 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_efc22de92555443598cc24d312cc784c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6783869a00c74ed187add6a7d3143d20",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the customer price sensitivity index for Japan is 4.20% (acceptable range 4.16% to 4.24%)",
+        "negative_criteria": "States that the customer price sensitivity index for Japan is a value other than 4.20%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1a6d169a28d04785bcddd8a79d600199",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6783869a00c74ed187add6a7d3143d20",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the customer price sensitivity index for Australia is 10.23% (acceptable range 10.13% to 10.33%)",
+        "negative_criteria": "States the customer price sensitivity index for Australia is a value other than 10.23%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_37d98977484d4151af3224602e045548",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6783869a00c74ed187add6a7d3143d20",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the customer price sensitivity index for EU-5 is 13.60% (acceptable range 13.46% to 13.74%)",
+        "negative_criteria": "States the customer price sensitivity index for EU-5 is a value other than 13.60%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

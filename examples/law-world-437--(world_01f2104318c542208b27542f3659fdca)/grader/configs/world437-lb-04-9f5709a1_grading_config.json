@@ -1,0 +1,66 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_8d7968a3dcbe469c8deb185756b43c54",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9f5709a160694f739c64bb1c1504f0cf",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that only recordable injuries need to be recorded on the OSHA 300 Log",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "29 CFR 1904.29(a):\n\"(a) Basic requirement. You must use OSHA 300, 300-A, and 301 forms, or equivalent forms, for recordable injuries and illnesses. The OSHA 300 form is called the Log of Work-Related Injuries and Illnesses, the 300-A is the Summary of Work-Related Injuries and Illnesses, and the OSHA 301 form is called the Injury and Illness Incident Report.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2f2a5076c2e94186a4bfd96f3a9196a4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9f5709a160694f739c64bb1c1504f0cf",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that SBP needed to record one injury on the OSHA 300 Log",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As explained for the first criterion, only recordable injuries need to be recorded in the OSHA 300 Log. Based on the OSHA notice of incident submitted by SBP, there was only one recordable injury. Specifically, the OSHA notice states, \"Two SteelTree Solutions employees suffered non-fatal injuries. (One requiring medical assistance beyond first aid.)\"\n\nThe definition of a \"recordable\" incident is set forth in 29 CFR 1904.7(a): \"You must consider an injury or illness to meet the general recording criteria, and therefore to be recordable, if it results in any of the following: death, days away from work, restricted work or transfer to another job, medical treatment beyond first aid, or loss of consciousness. You must also consider a case to meet the general recording criteria if it involves a significant injury or illness diagnosed by a physician or other licensed health care professional, even if it does not result in death, days away from work, restricted work or job transfer, medical treatment beyond first aid, or loss of consciousness.\"\n\nGiven that the prompt directs the model to consider the information in SBP's notice of the incident as accurate and comprehensive in terms of what happened with the beam collapse and its consequences/injuries to workers - only one of the two injuries (the one requiring medical assistance beyond first aid) meets the \"recordable\" standard.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

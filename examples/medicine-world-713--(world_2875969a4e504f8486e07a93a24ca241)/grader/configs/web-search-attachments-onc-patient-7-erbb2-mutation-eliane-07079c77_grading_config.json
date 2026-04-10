@@ -1,0 +1,383 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_251fb9ee94fd455598eb614e1edd359a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_07079c777b3942c79e5f513f266ac469",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has a history of stage I non-small cell lung cancer (NSCLC).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has a history of Stage I NSCLC and is now status post radiotherapy.\n\n\"is 47 y.o. female presents to the clinic today for 1 month follow-up status post SBRT to her right upper lobe for stage I non-small cell lung cancer. REFERRING PROVIDER: Dion Body, MD HPI: Patient is a 53 year old female now at 1 month having completed SBRT to her right upper lobe for stage I non-small cell lung cancers. Seen today in routine follow-up she is doing well.\"\nSource: Tab - CLINICALNOTES, Note type - Progress Notes, Column - D, Row - 33",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1c863ba0e94c4793831c8e2f5e3bcfe7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_07079c777b3942c79e5f513f266ac469",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient previously received pembrolizumab.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The last time the patient had a recurrence of the NSCLC, the patient was put on systemic therapy. The patient most likely received: pembrolizumab + carboplatin/pemetrexed (or cisplatin) per NCCN guidelines for first-line therapy in metastatic NSCLC without driver mutations.\n\n\"Pembrolizumab combined with chemotherapy is now first-line standard of care in advanced non-small cell lung cancer.\" from https://pmc.ncbi.nlm.nih.gov/articles/PMC9989798/\n\n\"Patient 7: Absolutely, they even biopsied it while I was there which was so nice and efficient. The last time this happened, it took them forever to get a tissue sample. Doctor: What do you mean by 'last time'? Patient 7: Well\u2026 I know I stopped seeing you for a while because my insurance changed and I had to go to a different hospital but last year they found a spot in my chest and I started some systemic therapy and had been doing great\u2026. Until now.\"\nSource: Onc_Patient 7 script.pdf\n\nReference: NCCN Clinical Practice Guidelines in Oncology: Non-Small Cell Lung Cancer (NSCLC.pdf), page 94.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Onc_Patient 7 script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_eb6560fa0a1847378106e4b414671d13"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_99545f68824045aaa665292991bffe67",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_07079c777b3942c79e5f513f266ac469",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient previously received carboplatin/pemetrexed or cisplatin.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The last time the patient had a recurrence of the NSCLC the patient was put on systemic therapy. The patient most likely received: Pembrolizumab + Carboplatin/Pemetrexed (or Cisplatin) per NCCN guidelines.\n\n\"KEYTRUDA, in combination with pemetrexed and platinum chemotherapy, is indicated for the first-line treatment of patients with metastatic nonsquamous non-small cell lung cancer (NSCLC), with no epidermal growth factor receptor (EGFR) or anaplastic lymphoma kinase (ALK) genomic tumor aberrations.\" from https://www.keytrudahcp.com/efficacy/nsclc-nonsquamous-first-line-combination-therapy/\n\n\"Patient 7: Well\u2026 I know I stopped seeing you for a while because my insurance changed and I had to go to a different hospital but last year they found a spot in my chest and I started some systemic therapy and had been doing great\u2026. Until now.\"\nSource: Onc_Patient 7 script.pdf\n\nReference: NCCN Clinical Practice Guidelines in Oncology: Non-Small Cell Lung Cancer (NSCLC.pdf), page 94.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Onc_Patient 7 script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_eb6560fa0a1847378106e4b414671d13"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9ed6f7a50aaa4e3ca74fac2324ccd046",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_07079c777b3942c79e5f513f266ac469",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient now has evidence of brain metastases.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "According to the patient, during her ED visit in Banff, she was found to have \"spots in her brain\" which are likely intracranial metastatic lesions given the context of her cancer history.\n\n\"Patient 7: I was able to go to Banff National park but I developed a really bad cough, some bloody mucus, and these splitting headaches that wouldn't go away. I went to the emergency room and they did a chest CT scan and an MRI of my head and found a new thing in my left arm pit and spots in my brain.\"\nSource: Onc_Patient 7 script.pdf",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Onc_Patient 7 script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_eb6560fa0a1847378106e4b414671d13"
+          }
+        ]
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bafdac1837dd45f2af9bb3b4cfd509ef",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_07079c777b3942c79e5f513f266ac469",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's lymph node biopsy shows a recurrence of NSCLC.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The left axillary lymph node was biopsied. The final diagnosis showed metastatic NSCLC consistent with her prior diagnosis.\n\n\"A. LEFT AXILLARY LYMPH NODE, CORE BIOPSY: METASTATIC ADENOCARCINOMA, LUNG PRIMARY. Morphology and immunoprofile (TTF-1+, Napsin A+, GATA3-) support origin from the patient's known non-small cell lung cancer. See separate addendum for molecular profiling.\"\nSource: Labs.pdf",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_eb6560fa0a1847378106e4b414671d13"
+          }
+        ]
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_12c81a6136e74753844999fd022267ee",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_07079c777b3942c79e5f513f266ac469",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's lymph node biopsy shows A775_G776insYVMA/HER2 mutation on exon 20.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The molecular profiling of the left axillary lymph node shows an ERBB2 (HER2) Exon 20 insertion mutation. The A775_G776insYVMA mutation is the most common HER2 mutation in lung cancer.\n\n\"GENOMIC ALTERATIONS DETECTED Tier I/II Variants (Pathogenic / Likely Pathogenic) 1.TP53 c.524G>A (R175H) Allele Frequency: 22% Interpretation: Loss of function mutation common in NSCLC. 2.ERBB2 c.2326_2327insTGT (A775_G776insYVMA) Allele Frequency: 18% Interpretation: In-frame insertion in Exon 20.\"\nSource: Labs.pdf\n\n\"The 12-base pair (bp) in-frame insertion A775_G776insYVMA (YVMA), resulting in duplication of four amino acids Tyrosine-Valine-Methionine-Alanine (Tyr-Val-Met-Ala) in exon 20, is observed the most frequent HER2 alteration variant in NSCLC, which is accounting for approximately 60\u201370% of HER2 exon 20 insertions.\" from Wang R, et al. Front Pharmacol. 2022;13:806737. PMID: 35308198\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC8940162/",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_eb6560fa0a1847378106e4b414671d13"
+          }
+        ]
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6c930bab0e0a4a93929511180c0c3edd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_07079c777b3942c79e5f513f266ac469",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that fam-trastuzumab deruxtecan-nxki is one of the options for the next line of systemic therapy for this patient.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "According to NCCN guidelines, patients with ERBB2 (HER2) mutation who have had systemic therapy and then progress have subsequent therapy options that include fam-trastuzumab deruxtecan-nxki (T-DXd).\n\n\"Trastuzumab deruxtecan (T-DXd) is a HER2-directed antibody-drug conjugate (ADC) that has demonstrated significant efficacy in treating HER2-positive and HER2-low cancers, including metastatic breast cancer, gastric cancer, and non-small-cell lung cancer (NSCLC).\" from https://pmc.ncbi.nlm.nih.gov/articles/PMC12564367/\n\nReference: NCCN Clinical Practice Guidelines in Oncology: Non-Small Cell Lung Cancer (NSCLC.pdf), page 61.\nReference: Li BT, et al. N Engl J Med. 2022;386(3):241-251. PMID: 34534430\nhttps://pubmed.ncbi.nlm.nih.gov/34534430/",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Onc_Patient 7 script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_eb6560fa0a1847378106e4b414671d13"
+          },
+          {
+            "name": "Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_eb6560fa0a1847378106e4b414671d13"
+          }
+        ]
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cfb7cc5e91ba4285a26d955acbcfe578",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_07079c777b3942c79e5f513f266ac469",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that zongertinib is one of the options for the next line of systemic therapy for this patient.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "According to NCCN guidelines, zongertinib is listed as a preferred subsequent therapy option for HER2-mutant NSCLC after progression on first-line chemotherapy.\n\n\"Zongertinib represents a breakthrough HER2-selective tyrosine kinase inhibitor (TKI) that spares EGFR, avoiding common rash and diarrhea adverse effects associated with dual-target inhibitors. Phase 1 data presented at AACR and published in the New England Journal of Medicine demonstrate robust response rates exceeding 70% with progression-free survival of 12.9 months. The drug's selectivity profile offers improved tolerability compared to antibody-drug conjugates, with minimal fatigue, nausea, or hematologic toxicity, and notably no interstitial lung disease risk.\" from https://www.onclive.com/view/emerging-oral-her2-targeted-tkis-zongertinib-and-sevabertinib-efficacy-and-safety-in-her2-mutated-nsclc\n\nReference: NCCN Clinical Practice Guidelines in Oncology: Non-Small Cell Lung Cancer (NSCLC.pdf), pages 4 and 61.\nReference: FDA Drug Approval: https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-zongertinib-non-squamous-nsclc-her2-tkd-activating-mutations",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Onc_Patient 7 script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_eb6560fa0a1847378106e4b414671d13"
+          },
+          {
+            "name": "Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_eb6560fa0a1847378106e4b414671d13"
+          }
+        ]
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8c2a7d0f852e4c6d98923cb405fcedec",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_07079c777b3942c79e5f513f266ac469",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that sevabertinib is one of the options for the next line of systemic therapy for this patient.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "According to NCCN guidelines, patients with ERBB2 (HER2) mutation who have had systemic therapy and then progress have subsequent therapy options that include sevabertinib.\n\n\"Sevabertinib (formerly BAY 2927088) functions as a dual HER2/EGFR exon 20 inhibitor, showing equally impressive 60% response rates in recent ASCO 2025 data. While less HER2-specific than zongertinib, this agent has been filed with the FDA for second-line approval. The dual inhibition profile results in higher gastrointestinal toxicity rates, particularly diarrhea, due to EGFR-mediated effects.\" from https://www.onclive.com/view/emerging-oral-her2-targeted-tkis-zongertinib-and-sevabertinib-efficacy-and-safety-in-her2-mutated-nsclc\n\n\"Sevabertinib showed antitumor activity in patients with locally advanced or metastatic HER2-mutant NSCLC. Diarrhea was the most common adverse event.\" from Le X, et al. N Engl J Med. 2025. PMID: 41104928\nhttps://pubmed.ncbi.nlm.nih.gov/41104928/\n\nReference: NCCN Clinical Practice Guidelines in Oncology: Non-Small Cell Lung Cancer (NSCLC.pdf), page 61.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_eb6560fa0a1847378106e4b414671d13"
+          },
+          {
+            "name": "Onc_Patient 7 script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_eb6560fa0a1847378106e4b414671d13"
+          }
+        ]
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_79caef4fc06e40e3878417ea3a0c0674",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_07079c777b3942c79e5f513f266ac469",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that zongertinib selectively targets the A775_G776insYVMA mutation.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Zongertinib is an FDA-approved drug specifically designed for tyrosine kinase domain mutations within the ERBB2 (HER2) gene. It selectively targets TKD mutations while sparing wild-type EGFR.\n\n\"The oral HER2-selective tyrosine kinase inhibitor (TKI) zongertinib binds selectively and covalently to the tyrosine kinase domain (TKD) of both wild-type and mutated HER2 receptors while sparing wild-type EGFR, thereby avoiding associated toxicities.\" from https://memoinoncology.com/wclc-2024/her2-aberrations-and-other-oncogenic-drivers/\n\n\"Zongertinib received FDA accelerated approval for adults with unresectable or metastatic non-squamous NSCLC whose tumors have HER2 (ERBB2) tyrosine kinase domain activating mutations.\" from https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-zongertinib-non-squamous-nsclc-her2-tkd-activating-mutations\n\nIn contrast, \"Sevabertinib (formerly BAY 2927088) functions as a dual HER2/EGFR exon 20 inhibitor... While less HER2-specific than zongertinib...\" from https://www.onclive.com/view/emerging-oral-her2-targeted-tkis-zongertinib-and-sevabertinib-efficacy-and-safety-in-her2-mutated-nsclc\n\nReference: Heymach JV, et al. N Engl J Med. 2025;392:2321-2333. doi:10.1056/NEJMoa2503704",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b2eea190010049819243704e467b0ac2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_07079c777b3942c79e5f513f266ac469",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that zongertinib demonstrates significant activity against brain metastases among the three treatments.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Zongertinib demonstrates significant CNS activity in patients with brain metastases compared to the other options.\n\nZONGERTINIB CNS DATA (Beamion LUNG-1):\n\"Zongertinib demonstrated intracranial activity in participants, with 81% of participants with brain metastases achieving disease control.\" from https://www.ilcn.org/beamion-lung-01-trial-results-support-zongertinibs-potential-as-a-first-line-therapy/\n\n\"Among 27 patients with TKD mutations and brain metastases, the ORR was 41% (95% CI, 25%\u201359%), with 15% CR and 26% PR. The disease control rate was 81%.\" from https://www.oncologynewscentral.com/nsclc/quite-extraordinary-results-for-novel-tki-in-her2-mutated-nsclc-trial\n\n\"Of the evaluable patients, 95% experienced a reduction in brain lesion size from baseline.\" from https://conference-correspondent.com/highlights/wclc/wclc-2025-non-small-cell-lung-cancer/zongertinib-in-her2-mutant-nsclc-with-brain-metastases-findings-from-the-beamion-lung-1-trial\n\nSEVABERTINIB CNS DATA (SOHO-01):\n\"Patients with baseline brain metastases had an ORR of 64.7%.\" from https://conference-correspondent.com/highlights/asco/asco-2025-non-small-cell-lung-cancer/safety-and-efficacy-of-sevabertinib-bay-2927088-in-her2-mutant-advanced-non-small-cell-lung-cancer-nsclc-results-from-the-phase-i-ii-soho-01-trial\n\nT-DXd CNS LIMITATION:\n\"These are kind of big, clunky, clumsy things that these molecules can't get into the blood brain barrier to penetrate these brain metastases... smaller molecules, tyrosine kinase inhibitors that can penetrate through the blood brain barrier.\" from https://cor2ed.com/lung-connect/programmes/her2-diagnostic-treatment-nsclc-2/\n\nZongertinib's prospective CNS data is more mature with documented 81% disease control rate and 95% lesion reduction.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cc3b41a51bdd4e66b8a5f5a7c8e691a8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_07079c777b3942c79e5f513f266ac469",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that zongertinib has the lowest risk of drug-induced pneumonitis among the three treatments.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This patient has a history of COPD requiring 2L home oxygen and significant smoking history (~1.5 packs/day), which substantially increases her baseline risk for drug-induced pneumonitis/ILD.\n\nPatient COPD/smoking history from chart:\n\"COPD on 2 L of oxygen at home\" - Source: Tab - CLINICALNOTES, Note type - Progress Notes, Column - D, Row - 228\n\"patient still smokes about 1 1/2 pack of cigarettes a day\" - Source: Tab - CLINICALNOTES, Note type - H&P, Column - D, Row - 11\n\nZONGERTINIB ILD RISK:\n\"No cases of drug-related interstitial lung disease were observed across all cohorts.\" from https://oncodaily.com/oncolibrary/zongertinib-her2-nsclc-beamion-lung-1\n\n\"There were no cases of interstitial lung disease (ILD).\" from Yamamoto N, et al. Ann Oncol. 2024;35(suppl 4):S1623-S1624. doi:10.1016/j.annonc.2024.10.642\nhttps://www.annalsofoncology.org/article/S0923-7534(24)04698-2/fulltext\n\n\"Special patient populations require individualized management approaches, particularly those with baseline lung dysfunction or CNS metastases. For patients with preexisting lung dysfunction, zongertinib offers advantages due to the absence of interstitial lung disease risk, which is particularly important in patients with reduced pulmonary reserve or prior lung radiation exposure.\" from https://www.onclive.com/view/sequencing-treatment-options-in-her2-mutation-mnsclc\n\nT-DXd ILD RISK:\n\"In the DESTINY-Lung01 trial, the incidence of ILD/pneumonitis was 26% (24 of 91).\" from https://pmc.ncbi.nlm.nih.gov/articles/PMC11904318/\n\n\"HER2-mutant lung cancer patients have shown ILD rates around 24\u201326% likely due in part to underlying pulmonary comorbidities and diminished lung reserve.\" from https://pmc.ncbi.nlm.nih.gov/articles/PMC12564367/\n\n\"The overall incidence of adjudicated drug-related ILD/pneumonitis was 15.4% (grade 5, 2.2%).\" from Powell CA, et al. ESMO Open. 2022;7(4):100554. PMID: 35988453\nhttps://pubmed.ncbi.nlm.nih.gov/35988453/",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a6831746cc1c4e4ea6d668a35ee31788",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_07079c777b3942c79e5f513f266ac469",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that zongertinib has no contraindication in patients with autoimmune disease among the three treatments.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This patient has a history of rheumatoid arthritis. Active autoimmune disease is a potential contraindication for immunotherapy-based regimens. Zongertinib, as a targeted TKI, does not carry this restriction.\n\n\"rheumatoid arthritis\" - Source: Tab - CLINICALNOTES, Note type - Progress Notes, Column - D, Row - 228\n\nZongertinib is a targeted TKI that works via direct inhibition of the HER2 tyrosine kinase domain, not through immune modulation. Therefore, it does not carry contraindications related to autoimmune disease.\n\n\"Zongertinib represents a breakthrough HER2-selective tyrosine kinase inhibitor (TKI) that spares EGFR, avoiding common rash and diarrhea adverse effects associated with dual-target inhibitors.\" from https://www.onclive.com/view/emerging-oral-her2-targeted-tkis-zongertinib-and-sevabertinib-efficacy-and-safety-in-her2-mutated-nsclc\n\nReference: NCCN Clinical Practice Guidelines in Oncology: Non-Small Cell Lung Cancer (NSCLC.pdf) - notes autoimmune conditions as relative contraindications to immune checkpoint inhibitors.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_eec5b6884a814a53a1e5ec7a35bc3f6a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_07079c777b3942c79e5f513f266ac469",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Concludes that zongertinib should be the next best systemic treatment option for this patient.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Given the patient's clinical profile:\n- HER2 (ERBB2) A775_G776insYVMA TKD mutation\n- Brain metastases requiring CNS-penetrant therapy\n- COPD with home oxygen and significant smoking history (high ILD risk)\n- Rheumatoid arthritis (autoimmune disease)\n\nZongertinib is the optimal choice because:\n\n1. SELECTIVE TKD TARGETING: \"The oral HER2-selective tyrosine kinase inhibitor (TKI) zongertinib binds selectively and covalently to the tyrosine kinase domain (TKD) of both wild-type and mutated HER2 receptors while sparing wild-type EGFR, thereby avoiding associated toxicities.\" from https://memoinoncology.com/wclc-2024/her2-aberrations-and-other-oncogenic-drivers/\n\n2. SUPERIOR CNS ACTIVITY: \"Zongertinib demonstrated intracranial activity in participants, with 81% of participants with brain metastases achieving disease control\" and \"95% experienced a reduction in brain lesion size from baseline.\" from Beamion LUNG-1 data.\n\n3. NO ILD RISK: \"No cases of drug-related interstitial lung disease were observed across all cohorts.\" This is critical given her COPD and smoking history.\n\n4. NO AUTOIMMUNE CONTRAINDICATION: As a targeted TKI, zongertinib has no restrictions for patients with autoimmune disease.\n\nWhile sevabertinib is also a preferred subsequent therapy option, zongertinib is prioritized for this patient due to the maturity and specificity of clinical data regarding intracranial efficacy and its superior safety profile for patients with pulmonary comorbidities.\n\nReferences:\n- Heymach JV, et al. N Engl J Med. 2025;392:2321-2333. doi:10.1056/NEJMoa2503704\n- NCCN Clinical Practice Guidelines in Oncology: Non-Small Cell Lung Cancer (NSCLC.pdf), pages 4 and 61\n- FDA approval: https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-zongertinib-non-squamous-nsclc-her2-tkd-activating-mutations",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

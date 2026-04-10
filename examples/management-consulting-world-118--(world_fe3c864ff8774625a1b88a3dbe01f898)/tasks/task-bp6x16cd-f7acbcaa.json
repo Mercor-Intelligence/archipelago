@@ -1,0 +1,353 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Provide analysis for Michigan patients who experienced either headache or nausea during or after ketamine sessions, and answer in the console. Use the session‑level dataset and do not round intermediate calculations.\nReport how many Michigan patients in 2024 and 2025 experienced either headache or nausea.\nFor each year, split Michigan patients into two groups: those with headache or nausea and those with neither. For each group and year, trim the lowest and highest 5% of dosage values (rounding down counts), then report the difference in mean dosage (mg) between groups, rounded to 1 decimal place, using “‑” if negative.\nRepeat step 2 for session length, trimming the lowest and highest 5% of values. Report the difference in mean session length in MM:SS, rounded to 1 second, using “‑” if negative.\nState the updated 2026 cost per session in Michigan, rounded to 2 decimals and prefixed with “$”, assuming:\nThe board reduces dosage if, in the preceding year, patients with headache or nausea had a higher average dose than those without.\nIf reduced, 2026 dosage is 10% less than the 2025 average dosage for patients with neither symptom (using trimmed means).\nOnly the “Drug + pharmacy handling” cost changes, proportional to the dosage change.\nProvide outputs for steps 1–4 in the console.​"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of patients in Michigan in 2024 who experienced either... (ver_8e4e8dcdbcd043f5843e31e039e7e4e7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of patients in Michigan in 2024 who experienced either headache or nausea during or after the ketamine session is 20 (acceptable range 19.8 to 20.2)."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of patients in Michigan in 2024 who experienced either... (ver_8e4e8dcdbcd043f5843e31e039e7e4e7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of patients in Michigan in 2024 who experienced either headache or nausea during or after the ketamine session is any other value than 20."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of patients in Michigan in 2025 who experienced either... (ver_aaa107496cd645d2902690b9a54fb98b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of patients in Michigan in 2025 who experienced either headache or nausea during or after the ketamine session is 600 (acceptable range 594 to 606)."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of patients in Michigan in 2025 who experienced either... (ver_aaa107496cd645d2902690b9a54fb98b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of patients in Michigan in 2025 who experienced either headache or nausea during or after the ketamine session is any other value than 600."
+        }
+      ]
+    },
+    {
+      "name": "States that the difference in mean dosage in mg between patients in Michigan... (ver_a976c013cf6d49bd84913f614613abe9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the difference in mean dosage in mg between patients in Michigan in 2024 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is 5.7 (acceptable range 5.6 to 5.8)."
+        }
+      ]
+    },
+    {
+      "name": "States that the difference in mean dosage in mg between patients in Michigan... (ver_a976c013cf6d49bd84913f614613abe9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the difference in mean dosage in mg between patients in Michigan in 2024 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is any other value than 5.7."
+        }
+      ]
+    },
+    {
+      "name": "States that the difference in mean dosage in mg between patients in Michigan... (ver_df0104e0c63f4ac4bd3c2c2c0923c9ef)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the difference in mean dosage in mg between patients in Michigan in 2025 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is 25.0 (acceptable range 24.8 to 25.2)."
+        }
+      ]
+    },
+    {
+      "name": "States that the difference in mean dosage in mg between patients in Michigan... (ver_df0104e0c63f4ac4bd3c2c2c0923c9ef)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the difference in mean dosage in mg between patients in Michigan in 2025 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is any other value than 25.0."
+        }
+      ]
+    },
+    {
+      "name": "States that the difference in mean session length in minutes and seconds... (ver_0fcb5220f8a64a87aa0dfad277669349)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the difference in mean session length in minutes and seconds between patients in Michigan in 2024 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is -21:17 (acceptable range -21.2 to -20.8)."
+        }
+      ]
+    },
+    {
+      "name": "States that the difference in mean session length in minutes and seconds... (ver_0fcb5220f8a64a87aa0dfad277669349)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the difference in mean session length in minutes and seconds between patients in Michigan in 2024 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is any other value than -21:17."
+        }
+      ]
+    },
+    {
+      "name": "States that the difference in mean session length in minutes and seconds... (ver_b8ac425e9f394b1fb09dd085907b43b8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the difference in mean session length in minutes and seconds between patients in Michigan in 2025 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is 47:01 (acceptable range 46.5 to 47.5)."
+        }
+      ]
+    },
+    {
+      "name": "States that the difference in mean session length in minutes and seconds... (ver_b8ac425e9f394b1fb09dd085907b43b8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the difference in mean session length in minutes and seconds between patients in Michigan in 2025 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is any other value than 47:01."
+        }
+      ]
+    },
+    {
+      "name": "States that the updated cost per session in Michigan in 2026 is $383.58... (ver_9696f6e77271498590723234fe0ed892)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the updated cost per session in Michigan in 2026 is $383.58 (acceptable range $379.74 to $387.42)."
+        }
+      ]
+    },
+    {
+      "name": "States that the updated cost per session in Michigan in 2026 is any other... (ver_9696f6e77271498590723234fe0ed892)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the updated cost per session in Michigan in 2026 is any other value than $383.58."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-bp6x16cd-f7acbcaa"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_f7acbcaad185454bbc2a35e57ef9d619",
+    "task_name": "Task bp6x16cd",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_605b1b71bb4241b098aa64dbecc01478",
+        "golden_text_response": "1.\tThe number of patients in Michigan in 2024 who experienced either headache or nausea during or after the ketamine session is 20\n2.\tThe number of patients in Michigan in 2025 who experienced either headache or nausea during or after the ketamine session is 600\n3.\tThe difference in mean dosage in mg between patients in Michigan in 2024 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is 5.7\n4.\tThe difference in mean dosage in mg between patients in Michigan in 2025 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is 25.0\n5.\tThe difference in mean session length in minutes and seconds between patients in Michigan in 2024 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is -21:17\n6.\tThe difference in mean session length in minutes and seconds between patients in Michigan in 2025 who experienced either headache or nausea compared to patients in the same state and year who did not experience any of these symptoms is 47:01\n7.\tThe updated cost per session in Michigan in 2026 is $383.58",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

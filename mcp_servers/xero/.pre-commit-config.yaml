@@ -1,0 +1,37 @@
+repos:
+  # Pre-commit hooks for general file hygiene
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: check-added-large-files
+        exclude: "(testdata|docs/.*)"
+
+  # Python formatting with Black
+  - repo: https://github.com/psf/black
+    rev: 25.9.0
+    hooks:
+      - id: black
+        language_version: python3.12
+        additional_dependencies: []
+        args: ["--line-length=100"]
+
+  # Linting and auto-fixes with Ruff
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.14.3
+    hooks:
+      - id: ruff
+        language_version: python3.12
+        args: ["--fix", "--select=E,W,F,I,B,C4,UP", "--ignore=E501"]
+
+  # Type checking with BasedPyright
+  - repo: local
+    hooks:
+      - id: basedpyright
+        name: basedpyright
+        entry: uv run basedpyright
+        language: system
+        types: [python]
+        pass_filenames: false

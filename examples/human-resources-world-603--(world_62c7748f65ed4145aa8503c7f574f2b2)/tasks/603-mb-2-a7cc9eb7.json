@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The Decision has been made that the role will be based in Paris, which will significantly change the travel dynamics, Let’s exclude any candidates for whom this could be concern. Candidates identified to have no or limited international experience should get their average cultural fit score lowered by 2. Check the cultural fit assessments for candidate concerns. \n\nAfter applying these changes, re-rank the candidates in the exec comparison matrix using the following weights in the overall score:\n-\tAvg Skill Rating – 30%\n-\tAvg Overall Interview – 10%\n-\tAvg Cultural Fit – 30%\n-\tExperience Score – 20% (needs to be converted from 0-1 to 0-10 scale)\n-\tSkill Score – 10% (needs to be converted from 0-1 to 0-10 scale)\n\nPlease state in the console what rank Rachel Moore would hold in the updated executive candidate comparison matrix.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the new rank that Rachel Moore would occupy in the updated executive... (ver_590872e01407408983daa2814139d1e6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the new rank that Rachel Moore would occupy in the updated executive candidate compensation matrix in the overall score is 24."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh 603-mb-2-a7cc9eb7"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_a7cc9eb789834529bdd7abed2d9e1289",
+    "task_name": "603 - MB_2",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_25980413af6b4a62853c3d78d797a4cd",
+        "golden_text_response": "The new place in the exec compensation matrix that Rachel Moore would occupy, given the changes and assigning the new weights in the overall score is 24",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

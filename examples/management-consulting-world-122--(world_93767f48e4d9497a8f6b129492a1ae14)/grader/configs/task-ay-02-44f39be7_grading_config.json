@@ -1,0 +1,354 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_a4b8e9e0f5384fb0a54b08477dde8443",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44f39be7d3904e10ae3b94257935e951",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States Article is the most preferred brand for Price",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Find the most frequently mentioned brand for Price",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d941cc5ff67047b1a9e9de898e98ca53",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44f39be7d3904e10ae3b94257935e951",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States Apt2B is the most preferred brand for Style",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_50ccd205e31845fdb5fc5d10f9f8ad8d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44f39be7d3904e10ae3b94257935e951",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States Interior Define is the most preferred brand for Quality",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Find the most frequently mentioned brand for Quality",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_773cb9dd1d4a470691eeec47b0fe5e13",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44f39be7d3904e10ae3b94257935e951",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States Forma is the most preferred brand for Delivery Speed",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Find the most frequently mentioned brand for Delivery Speed",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_61f4f2b98c314b1ea5f36cedb03b50a5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44f39be7d3904e10ae3b94257935e951",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States Forma is the most preferred brand for delivery cost",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Find the most frequently mentioned brand for Delivery cost. Since there is a tie with Inside Whether, Forma is picked based on alphabetical order.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e7dcbcd3a3f6458db0b5b35164408ad6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44f39be7d3904e10ae3b94257935e951",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States Arhaus is the most preferred brand for reviews",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Find the most frequently mentioned brand for reviews",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cd08a04d46874cd68434b7c07f919dfa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44f39be7d3904e10ae3b94257935e951",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States The inside is the most preferred brand for returns",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Find the most frequently mentioned brand for returns",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d609febe8d5e4284b91e3a5eff0545ed",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44f39be7d3904e10ae3b94257935e951",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States Poly & Bark is the most preferred brand for assembly service",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Find the most frequently mentioned brand for assembly service",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ff087f65abe8467aba0082dbbf3de8df",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44f39be7d3904e10ae3b94257935e951",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States BenchMade Mordern is the most preferred brand for warranty",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Find the most frequently mentioned brand for warranty",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dbf9584a623740bbbbb3e859e513d3ad",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44f39be7d3904e10ae3b94257935e951",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States The Inside is the most preferred brand for Brand Reputation",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Find the most frequently mentioned brand for brand reputation",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ab5220eda22f44f4a7aa37eba6f61e96",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44f39be7d3904e10ae3b94257935e951",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the number of users having very loyalty towards Forma is 41 (acceptable range 40.6 to 41.4)",
+        "negative_criteria": "States the number of users having very loyalty towards Forma is a value other than 41",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "There are 41 users who have picked Forma as their preferred brand across 3 or more purchase drivers. Detailed calculations can be found in the working sheet ",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a6301b3266924489bf5a6a602c560d5e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44f39be7d3904e10ae3b94257935e951",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "Identifies Arhaus as one of the brands with more very high loyalty users compared to Forma ",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Very high loyalty users for Arhaus is 44 and for Apt2B it is 42 while Forma is at 41. All other brands are lower than Forma \nDetailed calculations captured in the working sheet  ",
+        "is_primary_objective": true
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b69c9bd7627040dba62f0e79d69463be",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44f39be7d3904e10ae3b94257935e951",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "Identifies Apt2B as one of the brands with more very high loyalty users compared to Forma ",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Very high loyalty users for Arhaus is 44 and for Apt2B it is 42 while Forma is at 41. All other brands are lower than Forma. Detailed calculations are in working sheet.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_85e3b687fc4d4381b04f5969eebd4fc0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44f39be7d3904e10ae3b94257935e951",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the number of users having very loyalty towards Arhaus is 44",
+        "negative_criteria": "States the number of users having very loyalty towards Arhaus is a value other than 44",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "There are 44 users who picked Arhaus across 3 or more purchase drivers. Detailed calculation are in the working sheet",
+        "is_primary_objective": true
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a24c93a511f145c0a32da0d8aaf8d79c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44f39be7d3904e10ae3b94257935e951",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the number of users having very loyalty towards Apt2B is 42",
+        "negative_criteria": "States the number of users having very loyalty towards Apt2B is a value other than 42",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "There are 42 users who picked Apt2B across 3 or more purchase drivers. Detailed calculation are in the working sheet",
+        "is_primary_objective": true
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0700936f6ebd473fb28edbe8ecf99e20",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44f39be7d3904e10ae3b94257935e951",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States across customer selections for style and pricing, the brand pair that occurs most frequently is \"BenchMade Modern and Havenly\"",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Details in working file",
+        "is_primary_objective": true
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3f5dcd5b1653421888e7a4fe4ae2243b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_44f39be7d3904e10ae3b94257935e951",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the brand pair that occurs most frequently across customer selections for style and pricing appears 24 times",
+        "negative_criteria": "States the brand pair that occurs most frequently across customer selections for style and pricing appears anything other than 24 times",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Detailed calculations in working file",
+        "is_primary_objective": true
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

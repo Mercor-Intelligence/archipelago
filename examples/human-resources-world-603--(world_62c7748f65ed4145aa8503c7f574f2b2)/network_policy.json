@@ -1,0 +1,15 @@
+{
+  "requires_network": false,
+  "tools_requiring_network": [],
+  "tools_offline": [
+    "bamboohr",
+    "code_execution",
+    "excel",
+    "filesystem",
+    "greenhouse",
+    "pdfs",
+    "powerpoint",
+    "word",
+    "workday"
+  ]
+}

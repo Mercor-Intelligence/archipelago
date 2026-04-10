@@ -1,0 +1,127 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_4130d3d53c3a4a9598cced4ae580f785",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2d220f8c95140b8b7e83bd6ae2606f0",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the mean value of the overage charges as 103 +/- 2",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report the mean and median values of the daily overage charges, rounded to the nearest integer.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a6cdae1abcfd4c3ca9e1a17f572c365a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2d220f8c95140b8b7e83bd6ae2606f0",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the median value of the overage charges as 36 +/- 2",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report the mean and median values of the daily overage charges, rounded to the nearest integer.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_37232f9933714c409d3ac8e30ffef178",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2d220f8c95140b8b7e83bd6ae2606f0",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report 2.7% +/- 0.2% of subscribers in the low group experienced overage (acceptable range 2.67% to 2.73%).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests for each of the three groups (low/medium/high), to report the percentage of all distinct subscribers who experienced overage, in % value rounded to one decimal point.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1b8e89c3afe44d10a87aaabf2f7d175f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2d220f8c95140b8b7e83bd6ae2606f0",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report 2.3% +/- 0.2% of subscribers in the medium group experienced overage (acceptable range 2.28% to 2.32%).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests for each of the three groups (low/medium/high), to report the percentage of all distinct subscribers who experienced overage, in % value rounded to one decimal point.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0afd48d2728849bc913bf26f2b3a27ac",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2d220f8c95140b8b7e83bd6ae2606f0",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report 2.1% +/- 0.2% of subscribers in the high group experienced overage (acceptable range 2.08% to 2.12%).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests for each of the three groups (low/medium/high), to report the percentage of all distinct subscribers who experienced overage, in % value rounded to one decimal point.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

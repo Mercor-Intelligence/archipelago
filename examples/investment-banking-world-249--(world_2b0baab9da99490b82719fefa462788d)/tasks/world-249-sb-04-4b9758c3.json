@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the the model, calculate the Shareholder Equity Value Creation in $ under the following assumptions:\n\nAssumptions \n1) For S&P Global use the closing share price as of 1/8/2026 for SPGI share price\n2) For S&P Global, S&P Mobility and RemainCo use the 5-year treasury rate as of 1/8/2026 as your risk-free rate\n3) For the period 2026 to 2030 decrease non-subscription/transaction revenue growth by 175 bps each year from current values for S&P Mobility\n4) For the period 2026 to 2030 decrease depreciation and amortization % of revenue by one third each year from current values for S&P Mobility\n5) For the period 2026 to 2030 increase the dis-synergy costs by 750bps each year from current values for S&P Mobility \n6) Use beta of 1.207 for S&P Global and RemainCo \n7) For S&P Global use EBITDA multiple of 21.7x\n8) Use EBITDA multiple approach to calculate total enterprise value for S&P Global, S&P Mobility and RemainCo \n9) Round to two decimals and present data in $ millions\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States Shareholder Equity Value Creation is -$15,130.88 (acceptable range... (ver_005b48d44f134b9894477489d0bdece1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Shareholder Equity Value Creation is -$15,130.88 (acceptable range $-15,282.19 to $-14,979.57)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-249-sb-04-4b9758c3"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_4b9758c3c964441b8fe6d01840e87188",
+    "task_name": "World 249 SB 04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_8ca04c3ac39e4d5e866bc7853b33d217",
+        "golden_text_response": "Shareholder Equity Value Creation: -$15,130.88\n",
+        "golden_file_responses": "snap_83caf93603764bc4b6f8bfb3d7ce3241"
+      }
+    ]
+  }
+}

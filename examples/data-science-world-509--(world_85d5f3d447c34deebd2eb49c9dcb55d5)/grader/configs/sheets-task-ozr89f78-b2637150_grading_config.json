@@ -1,0 +1,307 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_16c75ec58c7a431fadb5b709e45495ea",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2637150dde0427dad5514b0afee84bf",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Company_13127_Manufacturing as the top critical exposure borrower for the Manufacturing industry.\n",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Calculated as the max total expected loss amount in the manufacturing sector.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cca12cac8d13483f8b4800792d879e2f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2637150dde0427dad5514b0afee84bf",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Company_13127_Manufacturing has a change in liquid cash of -422,860.635 +/- 100",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Calculate the latest liquid cash by doing current balance - RWA amount and then do new- old for latest and earliest value",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_90aeef3ad0a545778f266359c7ba4c63",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2637150dde0427dad5514b0afee84bf",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Company_13087_Logistics as the top critical exposure borrower for the Logisitics industry.\n",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Calculated as the max total expected loss amount in the logistics sector.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b1f1ecd2270e404c9b2c09aba5bbccbe",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2637150dde0427dad5514b0afee84bf",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Company_13087_Logistics has a change in liquid cash of -349,280.845 +/- 100",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Calculate the latest liquid cash by doing current balance - RWA amount and then do new- old for latest and earliest value",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_87c2c1c416bf4ed3b38ba19880ab6875",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2637150dde0427dad5514b0afee84bf",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Company_12291_Retail as the top critical exposure borrower for the Retail industry.\n",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Calculated as the max total expected loss amount in the retail sector.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_61395e3b5e7c4e34a6f6d8cda19c9228",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2637150dde0427dad5514b0afee84bf",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Company_12291_Retail has a change in liquid cash of -425,633.400 +/- 100",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Calculate the latest liquid cash by doing current balance - RWA amount and then do new- old for latest and earliest value",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a1aa18b1a3c346b3aa13078426b7ca66",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2637150dde0427dad5514b0afee84bf",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Company_12613_Healthcare as the top critical exposure borrower for the Healthcare industry.\n",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Calculated as the max total expected loss amount in the healthcare sector.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e283276e21f8400aba6a0cdf53e32182",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2637150dde0427dad5514b0afee84bf",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Company_12613_Healthcare has a change in liquid cash of -412,774.388 +/- 100",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Calculate the latest liquid cash by doing current balance - RWA amount and then do new- old for latest and earliest value",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ccc44fe1c18a4eb1928bc82647857660",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2637150dde0427dad5514b0afee84bf",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Company_13312_Hospitality as the top critical exposure borrower for the Hospitality industry.\n",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Calculated as the max total expected loss amount in the hospitality sector.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8003bc8ebfbc4d7a95efbb1a0add3759",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2637150dde0427dad5514b0afee84bf",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Company_13312_Hospitality has a change in liquid cash of -407,631.905 +/- 100 (acceptable range -411,708.224 to -403,555.586)",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Calculate the latest liquid cash by doing current balance - RWA amount and then do new- old for latest and earliest value",
+        "is_primary_objective": true
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_aae0559785f144ea82c581bd60d45ee6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2637150dde0427dad5514b0afee84bf",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Company_10419_Technology as the top critical exposure borrower for the Technology industry.\n",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Calculated as the max total expected loss amount in the technology sector.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9ba81817efa94ead80d8a86f21491f51",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2637150dde0427dad5514b0afee84bf",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Company_10419_Technology has a change in liquid cash of -411,802.005 +/- 100",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Calculate the latest liquid cash by doing current balance - RWA amount and then do new- old for latest and earliest value",
+        "is_primary_objective": true
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4d701277d2d84faabd9580b627c9ea2a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2637150dde0427dad5514b0afee84bf",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Company_10572_Construction as the top critical exposure borrower for the Construction industry.\n",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Calculated as the max total expected loss amount in the construction sector.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9f0c6019a21246bf87f76920559f2c9b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2637150dde0427dad5514b0afee84bf",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Company_10572_Construction has a change in liquid cash of 0 +/- 100",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Calculate the latest liquid cash by doing current balance - RWA amount and then do new- old for latest and earliest value",
+        "is_primary_objective": true
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2043b73312104973b576c730803b8387",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b2637150dde0427dad5514b0afee84bf",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the company to remove from future loans as Company_12291_Retail.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Company_12291_Retail had the lowest change in liquid cash.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "eval_config_name": "Output LLM",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "4658aec9-7eeb-4c9b-84c2-5464345e345f",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

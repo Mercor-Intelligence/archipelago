@@ -1,0 +1,192 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_63611fe3686a463d8176b3da09368445",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_62843969edb64aeda22be77c2900a072",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Adds the student name 'Fatima Bowman' under 'Current High Achievers.'",
+        "modality": "Free text",
+        "negative_criteria": "Adds the student name 'Fatima Bowman' somewhere other than under 'Current High Achievers.'.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The student has 97%",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7f34b75819924e22a6762e6bc28a4111",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_62843969edb64aeda22be77c2900a072",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Adds the student name 'Grace King' under 'Current High Achievers.'",
+        "modality": "Free text",
+        "negative_criteria": "Adds the student name 'Grace King' somewhere other than under 'Current High Achievers.'.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_aa9a835b3d1941c9b2c3985784d22fe1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_62843969edb64aeda22be77c2900a072",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Adds the student name 'Jacob Smith' under 'Current High Achievers.'",
+        "modality": "Free text",
+        "negative_criteria": "Adds the student name 'Jacob Smith'  somewhere other than under 'Current High Achievers', 'Improved Students', and 'Students to consider for the highest honor.'.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "has 97.3%",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6754ad3c859c44398e5cc970b0041353",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_62843969edb64aeda22be77c2900a072",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Adds the student name 'Owen Walters' under 'Current High Achievers.'",
+        "modality": "Free text",
+        "negative_criteria": "Adds the student name 'Owen Walters' somewhere other than under 'Current High Achievers.'.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a166e6eda72549c8a064dfbdbb4f3b71",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_62843969edb64aeda22be77c2900a072",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Adds the student name 'Jasmine Fisher' under 'Improved Students.'",
+        "modality": "Free text",
+        "negative_criteria": "Add the student name 'Jasmine Fisher' somewhere other than under 'Improved Students.'.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6dc35cc499a44b76b97551050634f7bd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_62843969edb64aeda22be77c2900a072",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Adds the student name 'Caleb Kowalski' under 'Improved Students.'",
+        "modality": "Free text",
+        "negative_criteria": "Adds the student name 'Caleb Kowalski' somewhere other than under 'Improved Students.'.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_64abf2b59edc4359b923da5ff9242e7c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_62843969edb64aeda22be77c2900a072",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Adds the student name 'Jacob Smith' under 'Improved Students.'",
+        "modality": "Free text",
+        "negative_criteria": "Adds the student name 'Jacob Smith' somewhere other than under 'Improved Students', 'Current High Achievers', and 'Students to consider for the highest honor.'.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0692d5e5196d496f8442721e048d4a67",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_62843969edb64aeda22be77c2900a072",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Adds the student name 'Jacob Smith' under 'Students to consider for the highest honor.'",
+        "modality": "Free text",
+        "negative_criteria": "Adds a student name other than 'Jacob Smith' under 'Students to consider for the highest honor.'.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

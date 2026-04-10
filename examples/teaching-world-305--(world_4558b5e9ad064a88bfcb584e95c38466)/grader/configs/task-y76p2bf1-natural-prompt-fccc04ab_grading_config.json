@@ -1,0 +1,262 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_37f1ae36f7d74ca0804d27cfe145512b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fccc04ab93784df99dfffc6480f26079",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Writes \"How the three friends spent their summer together\" in question form",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4209817b31d842f492b7059c735e7f8b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fccc04ab93784df99dfffc6480f26079",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Writes \"What act of daring Jem performed\" in question form",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bc691e6468ec40a29497ec108e9c5200",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fccc04ab93784df99dfffc6480f26079",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Writes \"How old the narrator and Jem were when Dill entered the story\" in question form",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_05c8acb8d24846edbb7d6b9333c62a7e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fccc04ab93784df99dfffc6480f26079",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Writes \"What idea Dill proposed to his friends\" in question form",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4bc18d390b2046d488f31eae786adc82",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fccc04ab93784df99dfffc6480f26079",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Writes a quiz question instructing quiz takers to put the four events in order based on their appearance in the story",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8f662bb72b5644a7b39719d237e05ff8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fccc04ab93784df99dfffc6480f26079",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Writes a quiz question requiring quiz takers to recount the event that caused Boo Radley's downfall and ostracism in the community",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6ce8c9b957d0462bb1b7813754c6c994",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fccc04ab93784df99dfffc6480f26079",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Writes \"as testified to by Miss Stephanie Crawford\" in the quiz question to specify the event",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_adcf7703a2e340b6aac3322b19069e74",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fccc04ab93784df99dfffc6480f26079",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Writes in the quiz question that quiz takers should include at least one example of how the townspeople behaved with fear toward Boo Radley",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7b04cfe1f9ab4f4c8d4a4bd2b62aa48b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fccc04ab93784df99dfffc6480f26079",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Writes a quiz question requiring quiz takers to identify at least one distinctive characteristic of Jem",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c228f29a4de940efb95af8147bb2fbff",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fccc04ab93784df99dfffc6480f26079",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Writes a quiz question requiring quiz takers to identify at least one distinctive characteristic of Dill",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_330e4bb4c52a4111b72b1d53f0208e2d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fccc04ab93784df99dfffc6480f26079",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Writes a quiz question requiring quiz takers to identify at least one distinctive characteristic of Atticus",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c0577a83f6964355910ec0f55b6d010a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_fccc04ab93784df99dfffc6480f26079",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Writes a quiz question requiring quiz takers to identify at least one distinctive characteristic of Calpurnia",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

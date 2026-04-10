@@ -1,0 +1,112 @@
+[arco]
+source = "foundry_app"
+name = "Terrapin"
+version = "1.0.0"
+
+[arco.env.host]
+REPO_URL = "https://github.com/Mercor-Intelligence/mercor-terrapin.git"
+# Shell script color codes
+BLUE = ""
+GREEN = ""
+RED = ""
+YELLOW = ""
+NC = ""
+# Shell script utility vars
+OSTYPE = ""
+WATCH_CMD = ""
+CLAUDE_PROJECTS_DIR = ""
+OUTPUT_DIR = ""
+DAEMON_MODE = ""
+PID_FILE = ""
+REPO_ROOT = ""
+# Bridge/UI process vars
+BRIDGE_PID = ""
+BRIDGE_PORT = ""
+UI_PID = ""
+UI_PORT = ""
+# Smoke test / build vars
+BUILD_IMAGE = ""
+ENVIRONMENT_IMAGE = "archipelago-environment:test"
+SRC_DIR = ""
+DEST_DIR = ""
+
+[arco.env.build]
+STATE_LOCATION = "/.apps_data/terrapin"
+
+[arco.env.runtime]
+MCP_TRANSPORT = "http"
+MCP_PORT = "5000"
+APP_FS_ROOT = "/filesystem"
+INTERNET_ENABLED = "true"
+TERRAPIN_OFFLINE = "0"
+GUI_ENABLED = "true"
+DATABASE_URL = ""
+HAS_STATE = "true"
+TERRAPIN_API_BASE_URL = ""
+NEXT_PUBLIC_API_BASE = ""
+STATE_LOCATION = "/.apps_data/terrapin"
+
+[arco.env.runtime.schema.INTERNET_ENABLED]
+type = "bool"
+label = "Internet access"
+description = "Allow the MCP server to make outbound network requests"
+
+[arco.env.runtime.schema.TERRAPIN_OFFLINE]
+type = "string"
+label = "Offline mode"
+description = "Set '1' to use bundled bond data, '0' for live Terrapin API"
+
+[arco.env.runtime.schema.GUI_ENABLED]
+type = "bool"
+label = "GUI mode"
+description = "Enable GUI mode to expose all individual tools instead of consolidated meta-tools"
+
+[arco.secrets.host]
+GITHUB_TOKEN = "RLS_GITHUB_READ_TOKEN"
+RLS_GITHUB_READ_TOKEN = "RLS_GITHUB_READ_TOKEN"
+
+[arco.secrets.build]
+
+[arco.secrets.runtime]
+TERRAPIN_API_KEY = "TERRAPIN_API_KEY"
+
+# Error injection scenarios for Dynamic Friction testing
+[[arco.injected_errors.scenarios]]
+name = "network_timeout"
+description = "Simulates network timeout errors"
+error_type = "timeout"
+error_message = "Network request timed out after 30 seconds"
+affected_tools = ["*"]
+probability = 0.0
+
+[[arco.injected_errors.scenarios]]
+name = "rate_limit"
+description = "Simulates API rate limiting"
+error_type = "rate_limit"
+error_message = "Rate limit exceeded. Please retry after 60 seconds."
+affected_tools = ["*"]
+probability = 0.0
+
+[[arco.injected_errors.scenarios]]
+name = "auth_failure"
+description = "Simulates authentication failures"
+error_type = "authentication"
+error_message = "Authentication failed: Invalid or expired credentials"
+affected_tools = ["*"]
+probability = 0.0
+
+[[arco.injected_errors.scenarios]]
+name = "service_unavailable"
+description = "Simulates service unavailability"
+error_type = "service_unavailable"
+error_message = "Service temporarily unavailable. Please try again later."
+affected_tools = ["*"]
+probability = 0.0
+
+[[arco.injected_errors.scenarios]]
+name = "invalid_response"
+description = "Simulates malformed API responses"
+error_type = "parse_error"
+error_message = "Failed to parse response: Unexpected token in JSON"
+affected_tools = ["*"]
+probability = 0.0

@@ -1,0 +1,36 @@
+flowchart LR
+    subgraph Setup["Setup Phase"]
+        J[jobs_create] --> JS[Job with Stages]
+    end
+
+    subgraph Sourcing["Sourcing Phase"]
+        C[candidates_create] --> CA[Candidate]
+        CA --> APP[applications_create]
+        JS --> APP
+        APP --> A[Application]
+    end
+
+    subgraph Pipeline["Interview Pipeline"]
+        A --> S1[Application Review]
+        S1 -->|advance_stage| S2[Phone Screen]
+        S2 -->|advance_stage| S3[Technical]
+        S3 -->|advance_stage| S4[Onsite]
+        S4 -->|advance_stage| S5[Offer]
+    end
+
+    subgraph Evaluation["Evaluation"]
+        S2 -.->|feedback_submit| FB1[Scorecard]
+        S3 -.->|feedback_submit| FB2[Scorecard]
+        S4 -.->|feedback_submit| FB3[Scorecard]
+    end
+
+    subgraph Decision["Decision Phase"]
+        S5 -->|applications_hire| H[Hired]
+        S1 -->|applications_reject| R[Rejected]
+        S2 -->|applications_reject| R
+        S3 -->|applications_reject| R
+        S4 -->|applications_reject| R
+    end
+
+    style H fill:#10b981
+    style R fill:#ef4444

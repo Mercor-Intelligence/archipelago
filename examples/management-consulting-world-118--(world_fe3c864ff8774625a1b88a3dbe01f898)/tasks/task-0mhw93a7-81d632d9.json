@@ -1,0 +1,330 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use the attached doctor cost, drug cost, and treatment record files to determine the state-specific 2025 average price per session and cost per session for each state modeled in the financial model. Assume the doctor and drug costs are the only relevant costs.\n\nUpdate the financial model with these state-specific price per session and cost per session figures to create an updated estimate for 2026 Revenues, COGS, and Gross Margin. Assume the calculated 2025 average price per session and cost per session values are comprehensive, and that they will apply in 2026.\n\nReturn a console message with the 2025 margin per session for each state in the financial model, and the updated overall 2026 Revenue, COGS, and Gross Margin values from the updated financial model. Report dollar values rounded to the nearest $ and percentage values rounded to the nearest 0.01%."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the per session margin in 2025 in Illinois is -12.50% (acceptable... (ver_a8add0f4a6054387b7dac65036fc874a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the per session margin in 2025 in Illinois is -12.50% (acceptable range -12.62% to -12.38%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the per session margin in 2025 in Illinois is any other value than... (ver_a8add0f4a6054387b7dac65036fc874a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the per session margin in 2025 in Illinois is any other value than -12.50%."
+        }
+      ]
+    },
+    {
+      "name": "States that the per session margin in 2025 in Ohio is -32.85% (acceptable... (ver_484b110382ff42d08fc7e8f0f5336850)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the per session margin in 2025 in Ohio is -32.85% (acceptable range -33.18% to -32.52%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the per session margin in 2025 in Ohio is any other value than... (ver_484b110382ff42d08fc7e8f0f5336850)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the per session margin in 2025 in Ohio is any other value than -32.85%."
+        }
+      ]
+    },
+    {
+      "name": "States that the per session margin in 2025 in Minnesota is -13.55% (acceptable... (ver_c848f17967404349b22e91079f1ee2b5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the per session margin in 2025 in Minnesota is -13.55% (acceptable range -13.69% to -13.41%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the per session margin in 2025 in Minnesota is any other value... (ver_c848f17967404349b22e91079f1ee2b5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the per session margin in 2025 in Minnesota is any other value than -13.55%."
+        }
+      ]
+    },
+    {
+      "name": "States that the per session margin in 2025 in Missouri is 7.95% (acceptable... (ver_a4f3e03c22cd4bdb9623f8e9e850e909)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the per session margin in 2025 in Missouri is 7.95% (acceptable range 7.87% to 8.03%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the per session margin in 2025 in Missouri is any other value than... (ver_a4f3e03c22cd4bdb9623f8e9e850e909)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the per session margin in 2025 in Missouri is any other value than 7.95%."
+        }
+      ]
+    },
+    {
+      "name": "States that the per session margin in 2025 in Michigan is 14.90% (acceptable... (ver_33062bc19d13466ab41d0360321d7487)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the per session margin in 2025 in Michigan is 14.90% (acceptable range 14.75% to 15.05%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the per session margin in 2025 in Michigan is any other value than... (ver_33062bc19d13466ab41d0360321d7487)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the per session margin in 2025 in Michigan is any other value than 14.90%."
+        }
+      ]
+    },
+    {
+      "name": "States that the updated 2026 Revenue is $17,884,761 (acceptable range... (ver_cf0489e78e284d8b994c6209eab16a0a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the updated 2026 Revenue is $17,884,761 (acceptable range $17,705,913 to $18,063,609)."
+        }
+      ]
+    },
+    {
+      "name": "States that the updated 2026 COGS is -$19,044,414 (acceptable range... (ver_220952a382824aa48586480b912ff1f5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the updated 2026 COGS is -$19,044,414 (acceptable range $-19,234,858 to $-18,853,970)."
+        }
+      ]
+    },
+    {
+      "name": "States that the updated 2026 Gross Margin is -$1,159,653 (acceptable range... (ver_0074d521466a45b596095da927e78c01)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the updated 2026 Gross Margin is -$1,159,653 (acceptable range $-1,171,250 to $-1,148,056)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-0mhw93a7-81d632d9"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_81d632d92ba9459fb0c8a38a01e205f2",
+    "task_name": "Task 0mhw93a7",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_72a63f894d444f9c9ad1334f341962c1",
+        "golden_text_response": "The Per Session Margin in 2025:\n- in Illinois is -12.50%\n- in Ohio is -32.85%\n- in Minnesota is -13.55%\n- in Missouri is 7.95%\n- in Michigan is 14.90%\n\nThe updated 2026 business model metrics are:\n- Revenue: $17,884,761 \n- COGS: -$19,044,414\n- Gross Margin: -$1,159,653",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

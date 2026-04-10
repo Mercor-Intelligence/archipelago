@@ -1,0 +1,110 @@
+[project]
+name = "uspto-mcp"
+version = "0.1.0"
+description = "USPTO patent applications research MCP server"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp-schema",
+    "fastmcp",
+    "loguru",
+    "sqlalchemy>=2.0.0,<3.0.0",
+    "aiosqlite",
+    "greenlet>=3.0",
+    "httpx",
+    "asyncer",
+    "pydantic>=2.0",
+    "click>=8.0.0",
+    "jinja2>=3.0.0",
+    "pyyaml>=6.0",
+    "fastapi>=0.121.2",
+    "uvicorn>=0.38.0",
+    "mcp-testing",
+    "mcp-auth",
+    "mcp-cache",
+    "mcp-middleware",
+    "data-ingestion==0.1.0",
+    "reportlab>=4.0.0",
+]
+
+[project.scripts]
+mcp-ui-gen = "ui_generator.cli.main:cli"
+mcp-ui = "ui_generator.cli.run_ui:run_ui"
+uspto-mcp = "mcp_servers.uspto.main:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "ruff>=0.6.0",
+    "mypy",
+    "pre-commit>=3.0.0",
+    "pyyaml>=6.0",
+    "pandas>=2.0.0",  # Required for CSV import/export tests
+]
+testing = [
+    "mcp-testing",
+]
+database = [
+    "sqlalchemy[asyncio]>=2.0",
+    "alembic>=1.13.0",
+    "aiosqlite>=0.19.0",
+    "greenlet>=3.0",  # Required by SQLAlchemy async
+    "pandas>=2.0.0",  # For robust CSV import/export
+]
+config = [
+    "pydantic-settings>=2.0",
+    "python-dotenv>=1.0.0",
+]
+auth = [
+    "starlette>=0.27.0",  # Required for auth_server HTTP endpoints
+    "httpx>=0.24.0",  # For testing auth endpoints
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ui_generator*", "mcp_servers*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["verifier_configs", "templates"]  # Templates contain placeholder names
+
+[tool.ruff.lint]
+# Enable: pyflakes, pycodestyle, isort, pep8-naming, pyupgrade
+select = ["F", "E", "W", "I", "N", "UP"]
+ignore = []
+# Allow auto-fix for all enabled rules (when `--fix` is provided)
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.lint.per-file-ignores]
+# Allow longer lines in test files for CSV test data
+"tests/*" = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.basedpyright]
+exclude = ["scripts"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+norecursedirs = ["utils", ".git", ".ruff_cache", "__pycache__", "mcp_servers"]
+asyncio_mode = "auto"
+
+[tool.uv.sources]
+mcp-schema = { path = "packages/mcp_schema" }
+fastmcp = { git = "https://github.com/jlowin/fastmcp.git", rev = "bc2f601" }
+mcp-testing = { path = "packages/mcp_testing" }
+mcp-auth = { path = "packages/mcp_auth" }
+mcp-cache = { path = "packages/mcp_cache" }
+mcp-middleware = { path = "packages/mcp_middleware" }
+data-ingestion = { path = "packages/data_ingestion" }

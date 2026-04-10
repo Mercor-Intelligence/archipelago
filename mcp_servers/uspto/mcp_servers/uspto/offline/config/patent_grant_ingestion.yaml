@@ -1,0 +1,408 @@
+# USPTO Patent Grant Ingestion Configuration
+#
+# This configuration extracts data from USPTO patent grant XML files
+# based on the database models defined in mcp_servers/uspto/offline/models/
+#
+# Data Storage Strategy:
+# 1. Main patent data → patents table (PatentRecord model)
+# 2. Normalized tables → inventors, assignees, cpc_classifications, patent_citations, examiners
+# 3. JSON fields → Rarely-queried data stored as JSON in patents table
+
+source:
+  type: file
+  path: ../../../../data/patent-grant/ipg251230.xml  # Relative path
+
+extractor:
+  type: xml
+  record_tags: [us-patent-grant]  # Each patent grant is a separate record
+
+  fields:
+    # All fields configured below are for the 'patents' table (28 columns total)
+    # ==================== METADATA ====================
+    document_type_tag:
+      xpath: name(.)
+      type: string
+      required: true
+
+    # ==================== PRIMARY IDENTIFIERS ====================
+    application_number:
+      xpath: .//application-reference/document-id/doc-number
+      type: string
+      required: true
+
+    publication_number:
+      xpath: .//publication-reference/document-id/doc-number
+      type: string
+      required: false
+
+    patent_number:
+      xpath: .//publication-reference/document-id/doc-number
+      type: string
+      required: false
+
+    # ==================== DOCUMENT METADATA ====================
+    kind_code:
+      xpath: .//publication-reference/document-id/kind
+      type: string
+      required: false
+
+    country:
+      xpath: .//publication-reference/document-id/country
+      type: string
+      required: false
+
+    application_type:
+      xpath: .//application-reference/@appl-type
+      type: string
+      required: false
+
+    # ==================== DATES ====================
+    filing_date:
+      xpath: .//application-reference/document-id/date
+      type: date
+      required: true
+
+    publication_date:
+      xpath: .//publication-reference/document-id/date
+      type: date
+      required: false
+
+    issue_date:
+      xpath: .//publication-reference/document-id/date
+      type: date
+      required: false
+
+    # ==================== TITLE AND ABSTRACT ====================
+    title:
+      xpath: .//invention-title
+      type: string
+      required: false
+
+    abstract:
+      xpath: .//abstract
+      type: string
+      required: false
+
+    # ==================== FULL TEXT CONTENT ====================
+    description:
+      xpath: .//description
+      type: string
+      required: false
+
+    claims:
+      xpath: .//claims
+      type: string
+      required: false
+
+    # ==================== JSON FIELDS (stored as JSON in patents table) ====================
+    applicants_json:
+      xpath: .//us-applicants/us-applicant
+      type: array
+      required: false
+      array_item_fields:
+        orgname:
+          xpath: ./addressbook/orgname
+        first_name:
+          xpath: ./addressbook/first-name
+        last_name:
+          xpath: ./addressbook/last-name
+        city:
+          xpath: ./addressbook/address/city
+        state:
+          xpath: ./addressbook/address/state
+        country:
+          xpath: ./addressbook/address/country
+        role:
+          xpath: ./addressbook/role
+
+    attorneys_json:
+      xpath: .//us-parties/agents/agent
+      type: array
+      required: false
+      array_item_fields:
+        orgname:
+          xpath: ./addressbook/orgname
+        first_name:
+          xpath: ./addressbook/first-name
+        last_name:
+          xpath: ./addressbook/last-name
+        country:
+          xpath: ./addressbook/address/country
+
+    ipc_codes_json:
+      xpath: .//classifications-ipcr/classification-ipcr
+      type: array
+      required: false
+      array_item_fields:
+        section:
+          xpath: ./section
+        class:
+          xpath: ./class
+        subclass:
+          xpath: ./subclass
+
+    uspc_codes_json:
+      xpath: .//us-bibliographic-data-grant/classification-national/main-classification | .//us-bibliographic-data-grant/classification-national/further-classification
+      type: array
+      required: false
+      array_item_fields:
+        code:
+          xpath: .
+
+    locarno_classification:
+      xpath: .//classifications-locarno/classification-locarno
+      type: array
+      required: false
+      array_item_fields:
+        edition:
+          xpath: ./edition
+        main_class:
+          xpath: ./main-classification
+        further_class:
+          xpath: ./further-classification
+
+    npl_citations_json:
+      xpath: .//us-references-cited/us-citation[nplcit]
+      type: array
+      required: false
+      array_item_fields:
+        text:
+          xpath: ./nplcit/othercit
+        category:
+          xpath: ./category
+
+    priority_claims_json:
+      xpath: .//priority-claims/priority-claim
+      type: array
+      required: false
+      array_item_fields:
+        country:
+          xpath: ./country
+        doc_number:
+          xpath: ./doc-number
+        date:
+          xpath: ./date
+
+    related_applications_json:
+      # Captures ALL domestic priority data from us-related-documents:
+      # 1. Parent/child relations (continuation, division, CIP, reissue) via relation elements
+      # 2. Provisional applications (us-provisional-application elements)
+      # 3. Related publications (related-publication elements)
+      xpath: .//us-related-documents/*/relation | .//us-related-documents/us-provisional-application | .//us-related-documents/related-publication
+      type: array
+      required: false
+      array_item_fields:
+        # === UNIVERSAL FIELD (all types) ===
+        # Element name - used to identify relationship type
+        _element_name:
+          xpath: local-name()
+        # Parent element name - used for <relation> elements
+        _parent_name:
+          xpath: local-name(..)
+
+        # === FOR PARENT/CHILD RELATIONS (continuation, division, CIP, reissue) ===
+        # Parent application basic info
+        parent_doc_number:
+          xpath: ./parent-doc/document-id/doc-number
+        parent_country:
+          xpath: ./parent-doc/document-id/country
+        parent_filing_date:
+          xpath: ./parent-doc/document-id/date
+        parent_status:
+          xpath: ./parent-doc/parent-status
+
+        # Parent if granted (shows grant number and date)
+        parent_grant_number:
+          xpath: ./parent-doc/parent-grant-document/document-id/doc-number
+        parent_grant_date:
+          xpath: ./parent-doc/parent-grant-document/document-id/date
+
+        # Parent if PCT application
+        parent_pct_number:
+          xpath: ./parent-doc/parent-pct-document/document-id/doc-number
+        parent_pct_country:
+          xpath: ./parent-doc/parent-pct-document/document-id/country
+        parent_pct_date:
+          xpath: ./parent-doc/parent-pct-document/document-id/date
+
+        # International filing date (for PCT conversions)
+        international_filing_date:
+          xpath: ./parent-doc/international-filing-date/date
+
+        # Child application reference
+        child_doc_number:
+          xpath: ./child-doc/document-id/doc-number
+        child_country:
+          xpath: ./child-doc/document-id/country
+
+        # === FOR PROVISIONAL APPLICATIONS (us-provisional-application) ===
+        # Provisional apps have document-id directly under us-provisional-application
+        provisional_doc_number:
+          xpath: ./document-id/doc-number
+        provisional_country:
+          xpath: ./document-id/country
+        provisional_filing_date:
+          xpath: ./document-id/date
+
+        # === FOR RELATED PUBLICATIONS (related-publication) ===
+        # Related pubs also have document-id directly under related-publication
+        publication_doc_number:
+          xpath: ./document-id/doc-number
+        publication_kind:
+          xpath: ./document-id/kind
+        publication_date:
+          xpath: ./document-id/date
+        publication_country:
+          xpath: ./document-id/country
+
+    pct_filing_data_json:
+      xpath: .//pct-or-regional-filing-data
+      type: array
+      required: false
+      array_item_fields:
+        doc_number:
+          xpath: ./document-id/doc-number
+        country:
+          xpath: ./document-id/country
+        date:
+          xpath: ./document-id/date
+
+    # ==================== GRANT-SPECIFIC FIELDS ====================
+    term_of_grant:
+      xpath: .//us-term-of-grant/length-of-grant
+      type: integer
+      required: false
+
+    number_of_claims:
+      xpath: count(.//claims/claim)
+      type: integer
+      required: false
+
+    number_of_figures:
+      xpath: count(.//drawings/figure)
+      type: integer
+      required: false
+
+    number_of_drawing_sheets:
+      xpath: .//number-of-drawing-sheets
+      type: integer
+      required: false
+
+    # ==================== SOURCE METADATA ====================
+    xml_file_name:
+      xpath: ./@file
+      type: string
+      required: false
+
+    # ==================== INVENTORS TABLE ====================
+    # Normalized table: inventors (7 columns)
+    inventors:
+      xpath: .//inventors/inventor
+      type: array
+      required: false
+      array_item_fields:
+        sequence:
+          xpath: ./@sequence
+        first_name:
+          xpath: ./addressbook/first-name
+        last_name:
+          xpath: ./addressbook/last-name
+        full_name:
+          xpath: concat(./addressbook/first-name, ' ', ./addressbook/last-name)
+        city:
+          xpath: ./addressbook/address/city
+        state:
+          xpath: ./addressbook/address/state
+        country:
+          xpath: ./addressbook/address/country
+
+    # ==================== ASSIGNEES TABLE ====================
+    # Normalized table: assignees (6 columns)
+    # Extract all assignee info from <assignees> section
+    # Name constructed in factory.py from orgname OR first_name + last_name
+    assignees:
+      xpath: .//assignees/assignee
+      type: array
+      required: false
+      array_item_fields:
+        orgname:
+          xpath: ./addressbook/orgname
+        first_name:
+          xpath: ./addressbook/first-name
+        last_name:
+          xpath: ./addressbook/last-name
+        role:
+          xpath: ./addressbook/role
+        city:
+          xpath: ./addressbook/address/city
+        state:
+          xpath: ./addressbook/address/state
+        country:
+          xpath: ./addressbook/address/country
+
+    # ==================== CPC_CLASSIFICATIONS TABLE ====================
+    # Normalized table: cpc_classifications (6 columns)
+    cpc_classifications:
+      xpath: .//classifications-cpc/main-cpc | .//classifications-cpc/further-cpc
+      type: array
+      required: false
+      array_item_fields:
+        is_main:
+          xpath: boolean(self::main-cpc)
+        section:
+          xpath: ./classification-cpc/section
+        class:
+          xpath: ./classification-cpc/class
+        subclass:
+          xpath: ./classification-cpc/subclass
+        main_group:
+          xpath: ./classification-cpc/main-group
+        subgroup:
+          xpath: ./classification-cpc/subgroup
+
+    # ==================== PATENT_CITATIONS TABLE ====================
+    # Normalized table: patent_citations (5 columns)
+    patent_citations:
+      xpath: .//us-references-cited/us-citation[patcit]
+      type: array
+      required: false
+      array_item_fields:
+        cited_patent_number:
+          xpath: ./patcit/document-id/doc-number
+        cited_country:
+          xpath: ./patcit/document-id/country
+        cited_kind:
+          xpath: ./patcit/document-id/kind
+        cited_date:
+          xpath: ./patcit/document-id/date
+        category:
+          xpath: ./category
+
+    # ==================== EXAMINERS TABLE ====================
+    # Normalized table: examiners (4 columns)
+    primary_examiners:
+      xpath: .//examiners/primary-examiner
+      type: array
+      required: false
+      array_item_fields:
+        last_name:
+          xpath: ./last-name
+        first_name:
+          xpath: ./first-name
+        department:
+          xpath: ./department
+
+    assistant_examiners:
+      xpath: .//examiners/assistant-examiner
+      type: array
+      required: false
+      array_item_fields:
+        last_name:
+          xpath: ./last-name
+        first_name:
+          xpath: ./first-name
+        department:
+          xpath: ./department
+
+pipeline:
+  batch_size: 100  # Insert 100 records per batch for optimal performance

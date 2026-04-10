@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use the \"network_outages.csv\", \"customer_complaints.csv\", and \"invoices_max_confusion_v2.csv\" in order to evaluate the operational stresses on our business. First, calculate the monthly outage performance by associating outages to the month of the outage start time. If a duration field exists for the outage -use it- but otherwise compute the outage minutes from end time - start time. Then identify the three months with the highest number of total outage minutes and report the total outage minutes and the average outage minutes for those months and output these values in a table. When computing outage minutes, go ahead and exclude outages with non-positive minutes. Since the disruptions to production are greater during certain times, we will need to incorporate the invoice risk. To do that, use a normalized payment_status field for each month and calculate the proportion of invoices labeled as overdue, ensuring to exclude blank or placeholder statuses from the denominator and excluding negative balances/amounts from the proportion calculation. It's important that the overdue proportion is calculated only using invoices issued within the same calendar month as the outage month (defined by using \"billing_period_start\" to identify the month). After doing so, apply an adjustment value to the top three months by scaling total and average outage minutes by (1+monthly overdue proportion). \n\n\nOutput the second and third highest outage months with the adjusted total outage minutes and adjusted average outage minutes. Round values to two decimal places and provide python code to complete the analysis, along with its executed results."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Identifies the second highest outage month as 2023-08. (ver_d1374904f3ec4cf8ad0d50ecddab8406)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the second highest outage month as 2023-08."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the adjusted total outage minutes value for 2023-08 as 5419.16 +/-... (ver_0155ed4c63e541948a202c26d5f1e0b2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the adjusted total outage minutes value for 2023-08 as 5419.16 +/- 0.01."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the adjusted total outage minutes value for 2025-05 as 4884.77 +/-... (ver_cb5540decb994fb782866f8c09592d38)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the adjusted total outage minutes value for 2025-05 as 4884.77 +/- 0.01."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the third highest outage month as 2025-05. (ver_1e585bc6a83f47e4b35c204eae74a077)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the third highest outage month as 2025-05."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the adjusted average outage minutes value for 2023-08 as 387.08 +/-... (ver_36c7582a2e394d37b2f1393eb5826c37)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the adjusted average outage minutes value for 2023-08 as 387.08 +/- 0.01."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the adjusted average outage minutes value for 2025-05 as 325.65 +/-... (ver_4b537a13b63346fcb2e323c7bb03de9d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the adjusted average outage minutes value for 2025-05 as 325.65 +/- 0.01."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh code-exec-task-xzpw648d-5c90bdd3"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_5c90bdd338c141a8bb0d302de251225d",
+    "task_name": "Code Exec- Task xzpw648d",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f2dacb2ed8c948da9ea187f3201de2cd",
+        "golden_text_response": "outage_month  adjusted_total_outage_minutes  adjusted_avg_outage_minutes\n     2023-08                        5419.16                       387.08\n     2025-05                        4884.77                       325.65\n\n```python\nimport pandas as pd\nimport numpy as np\nimport re\n\n\nOUTAGES_PATH = \"network_outages.csv\"\nINVOICES_PATH = \"invoices_max_confusion_v2.csv\"\n\nSTATUS_PLACEHOLDERS = {\"\", \"nan\", \"n/a\", \"na\", \"none\", \"null\", \"unknown\"}\n\n#data cleaning\ndef _strip_invisibles(s: str) -> str:\n    \"\"\"Remove common zero-width/invisible characters that can break exact string matching.\"\"\"\n    if s is None:\n        return \"\"\n    invis = [\"\\u200b\", \"\\u200c\", \"\\u200d\", \"\\ufeff\"]\n    for ch in invis:\n        s = s.replace(ch, \"\")\n    return s\n\ndef normalize_status(x) -> str:\n    if pd.isna(x):\n        return \"\"\n    s = _strip_invisibles(str(x)).strip().lower()\n    s = re.sub(r\"\\s+\", \" \", s)\n    s = re.sub(r\"[^a-z]+\", \"\", s)\n    return s\n\ndef parse_amount_to_float(x):\n\n    if pd.isna(x):\n        return np.nan\n\n    s = _strip_invisibles(str(x)).strip()\n\n    # Accounting negatives\n    is_paren_negative = bool(re.search(r\"^\\s*\\(.*\\)\\s*$\", s))\n\n    # Remove parentheses\n    if is_paren_negative:\n        s = re.sub(r\"^\\s*\\(|\\)\\s*$\", \"\", s)\n\n    # Remove commas\n    s = s.replace(\",\", \"\")\n\n    # Extract first float-like number (supports optional exponent)\n    m = re.search(r\"[-+]?\\d*\\.?\\d+\", s)\n    if not m:\n        return np.nan\n\n    try:\n        val = float(m.group(0))\n    except Exception:\n        return np.nan\n\n    # Apply accounting negative\n    if is_paren_negative:\n        val = -abs(val)\n\n    return val\n\ndef parse_datetime_series(series: pd.Series) -> pd.Series:\n    \"\"\"Robust datetime parse (no deprecated infer_datetime_format).\"\"\"\n    return pd.to_datetime(series, errors=\"coerce\")\n\ndef find_first_col(cols, patterns):\n    \"\"\"Find first column name containing ANY of the provided patterns (case-insensitive).\"\"\"\n    cols_l = {c: c.lower() for c in cols}\n    for p in patterns:\n        p = p.lower()\n        for c, cl in cols_l.items():\n            if p in cl:\n                return c\n    return None\n\n#load\noutages = pd.read_csv(OUTAGES_PATH)\n\nstart_col = find_first_col(outages.columns, [\"outage_start\", \"start_time\", \"start\", \"begin\"])\nend_col   = find_first_col(outages.columns, [\"outage_end\", \"end_time\", \"end\", \"finish\"])\ndur_col   = find_first_col(outages.columns, [\"duration\"])\n\nif start_col is None:\n    raise KeyError(\"Could not locate an outage start timestamp column in network_outages.csv\")\n\noutages[start_col] = parse_datetime_series(outages[start_col])\n\n# Use duration if exists, else end-start\nif dur_col is not None:\n    outages[\"outage_minutes\"] = pd.to_numeric(outages[dur_col], errors=\"coerce\")\nelse:\n    if end_col is None:\n        raise KeyError(\"No duration column found and could not locate an outage end timestamp column.\")\n    outages[end_col] = parse_datetime_series(outages[end_col])\n    outages[\"outage_minutes\"] = (outages[end_col] - outages[start_col]).dt.total_seconds() / 60.0\n\n# Exclude non-positive minutes (and NaN)\noutages = outages[outages[\"outage_minutes\"].notna() & (outages[\"outage_minutes\"] > 0)].copy()\n\noutages[\"outage_month\"] = outages[start_col].dt.to_period(\"M\").astype(str)\n\nmonthly_outages = (\n    outages.groupby(\"outage_month\", as_index=False)\n          .agg(\n              outage_count=(\"outage_minutes\", \"size\"),\n              total_outage_minutes=(\"outage_minutes\", \"sum\"),\n              avg_outage_minutes=(\"outage_minutes\", \"mean\"),\n          )\n)\n\ntop3 = monthly_outages.sort_values(\"total_outage_minutes\", ascending=False).head(3).copy()\ntop_months = set(top3[\"outage_month\"].tolist())\n\n#load\ninvoices = pd.read_csv(INVOICES_PATH)\n\nissue_date_col = \"billing_period_start\"\nstatus_col = \"payment_status\"\n\ninvoices[issue_date_col] = parse_datetime_series(invoices[issue_date_col])\n\n# Drop rows with invalid invoice dates\ninvoices = invoices[invoices[issue_date_col].notna()].copy()\n\ninvoices[\"invoice_month\"] = invoices[issue_date_col].dt.to_period(\"M\").astype(str)\n\n#Normalization\ninvoices[\"status_norm\"] = invoices[status_col].apply(normalize_status)\n\n# exclusions\nvalid_status_mask = ~invoices[\"status_norm\"].isin(STATUS_PLACEHOLDERS)\namount_col = \"total_amount\"\n\ninvoices[\"amount_num\"] = invoices[amount_col].apply(parse_amount_to_float)\nnonneg_amount_mask = invoices[\"amount_num\"].notna() & (invoices[\"amount_num\"] >= 0)\n\neligible_invoices = invoices[valid_status_mask & nonneg_amount_mask].copy()\n\n# label overdue\neligible_invoices[\"is_overdue\"] = eligible_invoices[\"status_norm\"].eq(\"overdue\")\n\nmonthly_overdue = (\n    eligible_invoices.groupby(\"invoice_month\", as_index=False)\n                    .agg(\n                        overdue_cnt=(\"is_overdue\", \"sum\"),\n                        eligible_cnt=(\"is_overdue\", \"size\"),\n                    )\n)\n\nmonthly_overdue[\"overdue_proportion\"] = np.where(\n    monthly_overdue[\"eligible_cnt\"] > 0,\n    monthly_overdue[\"overdue_cnt\"] / monthly_overdue[\"eligible_cnt\"],\n    np.nan\n)\n\n# top outage months\nmonthly_overdue = monthly_overdue[monthly_overdue[\"invoice_month\"].isin(top_months)].copy()\n\n# merge\ntop3 = top3.merge(\n    monthly_overdue[[\"invoice_month\", \"overdue_proportion\"]],\n    left_on=\"outage_month\",\n    right_on=\"invoice_month\",\n    how=\"left\"\n).drop(columns=[\"invoice_month\"])\n\ntop3[\"overdue_proportion\"] = top3[\"overdue_proportion\"].fillna(0.0)\n\n# Adjusted totals\ntop3[\"adjusted_total_outage_minutes\"] = top3[\"total_outage_minutes\"] * (1.0 + top3[\"overdue_proportion\"])\ntop3[\"adjusted_avg_outage_minutes\"] = top3[\"avg_outage_minutes\"] * (1.0 + top3[\"overdue_proportion\"])\n\n# final output\nout_table = top3[[\n    \"outage_month\",\n    \"adjusted_total_outage_minutes\",\n    \"adjusted_avg_outage_minutes\"\n]].sort_values(\"adjusted_total_outage_minutes\", ascending=False).iloc[1:3]\n\nout_table[\"adjusted_total_outage_minutes\"] = out_table[\"adjusted_total_outage_minutes\"].round(2)\nout_table[\"adjusted_avg_outage_minutes\"] = out_table[\"adjusted_avg_outage_minutes\"].round(2)\n\nprint(out_table.to_string(index=False))\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_bbda14dd23cb4b9fba8e8280ff297256",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_858b333a5a954558bc5217d8c682269d",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Utilizes the \"2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care\" or the \"European Resuscitation Council and European Society of Intensive Care Medicine Guidelines 2025 Post-Resuscitation Care.\"",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt states \"Use the latest and most clinically appropriate guidelines as of 01/12/2026.\" The guidelines that are most clinically appropriate in this case are the American Heart Association or European Society for Intensive Care Medicine post-cardiac arrest care guidelines. These guidelines are widely cited and used to guide post-cardiac arrest care and the policies in post-cardiac arrest care. \n\nGuideline: AHA Post-Arrest Care Guideline 2025 (https://www.ahajournals.org/doi/10.1161/CIR.0000000000001375) \nGuideline: ESICM Post-Arrest Care Guideline 2025 (https://www.resuscitationjournal.com/article/S0300-9572(25)00321-1/fulltext)  ",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7cac24a66a1d4fdb9942682726357d68",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_858b333a5a954558bc5217d8c682269d",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient was shocked in the field prior to arrival to the emergency department. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This information is from the prompt and crucial to the reasoning for the final answer to this prompt. \"The patient immediately received ACLS and was shocked once using an AED from bystanders.\" ",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_876c902be0a84b80a5fc01b086adca9a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_858b333a5a954558bc5217d8c682269d",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient underwent cardioversion for ventricular arrhythmias in the emergency department. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is also from the prompt and crucial to the reasoning for the final answer. \"The patient is cardioverted twice for ventricular arrhythmia during their first hour in the emergency department.\" ",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bd337065fd6f466dabb267af9551e3b3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_858b333a5a954558bc5217d8c682269d",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's initial troponin was elevated at 2.0 ng/mL. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This information is extracted from the attached file containing laboratory results. ",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_35cb741dedcd47ad8704a9d2f856562c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_858b333a5a954558bc5217d8c682269d",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient was having episodes of chest pressure in the days leading up to their cardiac arrest. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This information is extracted from the attached transcripted file. ",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_af0291c116ad4837916d61dc6d62732b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_858b333a5a954558bc5217d8c682269d",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient was having shortness of breath in the days leading up to the cardiac arrest. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This information is extracted from the attached transcript file. ",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1bd42f3127464f79a48f6131fd15dd2c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_858b333a5a954558bc5217d8c682269d",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient is at high risk for a coronary ischemic event causing their cardiac arrest. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Based on the patient's symptoms leading up to the cardiac arrest (chest pressure and shortness of breath), their rising troponin level, and the recurrent ventricular arrhythmias requiring cardioversion. \"The classic symptom of ACS is substernal chest pain, often described as crushing or pressure-like feeling, radiating to the jaw and/or left arm. This classic presentation is not seen always, and the presenting complaint can be very vague and subtle with chief complaints often being difficulty breathing, lightheadedness, isolated jaw or left arm pain, nausea, epigastric pain, diaphoresis, and weakness. \" \"Cardiac enzymes especially troponin, CK-MB/CK ratio is important in assessing the NSTEMI versus myocardial ischemia without tissue destruction.\"https://www.ncbi.nlm.nih.gov/books/NBK459157/ \"Acute Coronary Syndrome (ACS) is frequently complicated by cardiac arrhythmias, which significantly contribute to morbidity and mortality.\"https://www.intechopen.com/chapters/1228763",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_30da4477ac6d4578b1e70771725eacd8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_858b333a5a954558bc5217d8c682269d",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that current post-cardiac arrest care guidelines recommend emergent coronary angiography when the patient is high risk for myocardial infarction irregardless of whether or not the electrocardiogram (EKG) demonstrates ST segment elevations. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"In multiple RCTs of stable comatose OHCA patients without STEMI, there was no evidence of improved overall survival or favorable neurologic outcome with early invasive coronary angiography (eg, within 2 hours) versus delayed or selective invasive coronary angiography (eg, after awakening), with some studies suggesting potential harm with early angiography.38 In the delayed angiography group, up to 40% of patients did not receive invasive coronary angiography due to lack of awakening12 and up to 17% crossed over to early intervention8 due to hemodynamic or electrical instability or severe myocardial ischemia. Invasive coronary angiography can be safely deferred until after neurological awakening in comatose OHCA patients without any of the following: STEMI or STEMI-equivalent patterns, CS, recurrent ventricular arrhythmias, or evidence of significant myocardial ischemia.\" - AHA Post-Arrest Care Guideline 2025 (https://www.ahajournals.org/doi/10.1161/CIR.0000000000001375) \n\n\"When an ischaemic cause is considered likely, a similar approach as for patients with STEMI should be followed. The decision for early coronary angiography should be based on careful assessment of the patients for the presence of haemodynamic or electrical instability and ongoing myocardial ischaemia, taking into account multiple factors including previous medical history, prearrest warning symptoms, initial cardiac rhythm for cardiac arrest, ECG pattern post ROSC, and echocardiography, as well as preexisting comorbidities.\" - ESICM Post-Arrest Care Guideline 2025 (https://www.resuscitationjournal.com/article/S0300-9572(25)00321-1/fulltext) ",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9cd8b14d95c049d3bd5e037a8b6dae13",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_858b333a5a954558bc5217d8c682269d",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that when a cardiac arrest is likely caused by cardiac ischemia, the management should be similar to patients treated for a ST-segment elevation myocardial infarction (STEMI). ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"When an ischaemic cause is considered likely, a similar approach as for patients with STEMI should be followed. The decision for early coronary angiography should be based on careful assessment of the patients for the presence of haemodynamic or electrical instability and ongoing myocardial ischaemia, taking into account multiple factors including previous medical history, prearrest warning symptoms, initial cardiac rhythm for cardiac arrest, ECG pattern post ROSC, and echocardiography, as well as preexisting comorbidities.\" ESICM Post-Arrest Care Guideline 2025 (https://www.resuscitationjournal.com/article/S0300-9572(25)00321-1/fulltext) ",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d3de1adbf4f344dda4f1bf43d807da47",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_858b333a5a954558bc5217d8c682269d",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that current post-cardiac arrest care guidelines recommend emergent coronary angiography in patients with recurrent ventricular arrhythmias. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Emergency coronary angiography is reasonable for selected adult patients after cardiac arrest with suspected cardiac etiology without ST-segment elevation on EKG in the presence of cardiogenic shock, recurrent ventricular arrhythmias, or evidence of significant ongoing myocardial ischemia, regardless of the presence of coma.\" AHA Post-Arrest Care Guideline 2025 (https://www.ahajournals.org/doi/10.1161/CIR.0000000000001375) \n\n\"The decision for early coronary angiography should be based on careful assessment of the patients for the presence of haemodynamic or electrical instability and ongoing myocardial ischaemia, taking into account multiple factors including previous medical history, prearrest warning symptoms, initial cardiac rhythm for cardiac arrest, ECG pattern post ROSC, and echocardiography, as well as preexisting comorbidities.\" ESICM Post-Arrest Care Guideline 2025 (https://www.resuscitationjournal.com/article/S0300-9572(25)00321-1/fulltext)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_955a9371350a4bc4b773620f99912a83",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_858b333a5a954558bc5217d8c682269d",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that this patient should undergo an emergent coronary catheterization to identify a culprit lesion that could have led to their cardiac arrest. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This patient has a high likelihood of an occlusive myocardial lesion leading to their cardiac arrest that is supported by a charted cardiac disease history including mitral valve disease and palpitations, chest pressure and shortness of breath in the days leading up to the cardiac arrest, elevated troponins, and multiple cardioversions for ventricular arrhythmias. \n\nCLINICALNOTES - Progress Notes - Column D - Row 183",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

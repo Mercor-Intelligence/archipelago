@@ -1,0 +1,242 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_5b008e42e1b5448793cb698b6e9fcc56",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64b5ef6076ac417aaa31ad624e2af046",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Team 1 average as 71.36% (acceptable range 70.65% to 72.07%)",
+        "modality": "Free text",
+        "negative_criteria": "Reports Team 1 average as anything other than 71.36%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1f296a11555a4ddb921cc67d187a57f7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64b5ef6076ac417aaa31ad624e2af046",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Team 2 average as 86.49% (acceptable range 85.63% to 87.35%)",
+        "modality": "Free text",
+        "negative_criteria": "Reports Team 2 average as anything other than 86.49%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_085fb885d6dc43fd846eceb0dea25410",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64b5ef6076ac417aaa31ad624e2af046",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Team 3 average as 69.71% (acceptable range 69.01% to 70.41%)",
+        "modality": "Free text",
+        "negative_criteria": "Reports Team 3 average as anything other than 69.17%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5215983b539a4402b4a675c4f1e539aa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64b5ef6076ac417aaa31ad624e2af046",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Team 4 average as 72.93% (acceptable range 72.20% to 73.66%)",
+        "modality": "Free text",
+        "negative_criteria": "Reports Team 4 average as anything other than 72.93%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2b32ee97b0294a729644db8eb9e1e683",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64b5ef6076ac417aaa31ad624e2af046",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Team 5 average as 87.56% (acceptable range 86.68% to 88.44%)",
+        "modality": "Free text",
+        "negative_criteria": "Reports Team 5 average as anything other than 87.56%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_111075e0aa864e63a68c998af2ef995c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64b5ef6076ac417aaa31ad624e2af046",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Ranks Team 5 as number 1 (highest average)",
+        "modality": "Free text",
+        "negative_criteria": "Ranks Team 5 as any rank other than 1.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9b5d536f51b94dff9d1995e9b4059e93",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64b5ef6076ac417aaa31ad624e2af046",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Ranks Team 2 as number 2 (second highest average)",
+        "modality": "Free text",
+        "negative_criteria": "Ranks Team 2 as any rank other than 2.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_32679b5af2db4d388414375934c69e9f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64b5ef6076ac417aaa31ad624e2af046",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Ranks Team 4 as number 3 (third highest average)",
+        "modality": "Free text",
+        "negative_criteria": "Ranks Team 4 as any rank other than 3.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e8847fbbd1384fcd94fde86a923fbeaa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64b5ef6076ac417aaa31ad624e2af046",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Ranks Team 1 as number 4 (fourth highest average)",
+        "modality": "Free text",
+        "negative_criteria": "Ranks Team 1 as any rank other than 4.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9a6d4ec02209440083b2050acef92113",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64b5ef6076ac417aaa31ad624e2af046",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Ranks Team 3 as number 5 (lowest average)",
+        "modality": "Free text",
+        "negative_criteria": "Ranks Team 3 as any rank other than 5.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_4995da480ee0445cae8f4e7bbd43f84d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56278c7d5ec4471294a9558e9f7d6ac9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the BMI threshold to consider bariatric surgery is adjusted based on race.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"In the Asian population the prevalence of diabetes and cardiovascular disease is higher at a lower BMI than in the non-Asian population. Thus, BMI risk zones should be adjusted to define obesity at a BMI threshold of 25\u201327.5 kg/m2 in this population. Therefore, in certain populations access to MBS should not be denied solely based on traditional BMI thresholds.\"\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC9834364/\n\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_144dff77006c43d799e8b6b13ce2a7dc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56278c7d5ec4471294a9558e9f7d6ac9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the BMI threshold to consider bariatric surgery in the Asian population is \u226527.5 kg/m2.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"BMI thresholds should be adjusted in the Asian population such that a BMI >25 kg/m2 suggests clinical obesity, and individuals with BMI >27.5 kg/m2 should be offered MBS.\"\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC9834364/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8f559c453b2f4d7ab00b6648c737971e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56278c7d5ec4471294a9558e9f7d6ac9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the bariatric surgery is recommended for Asian patients with BMI\u226527.5 kg/m2 and uncontrolled diabetes. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\u201cBMI thresholds should be adjusted in the Asian population such that a BMI >25 kg/m2 suggests clinical obesity, and individuals with BMI >27.5 kg/m2 should be offered MBS.\u201d https://pmc.ncbi.nlm.nih.gov/articles/PMC9834364/\n\n\u201cBMI 30.0\u201334.9 (27.5\u201332.4 in Asian Americans) if hyperglycemia is inadequately controlled despite optimal medical control by either oral or injectable medications\u201d https://asmbs.org/resources/type-2-diabetes-and-metabolic-surgery-fact-sheet/",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0134ede491ee46cdb10f10106b752930",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56278c7d5ec4471294a9558e9f7d6ac9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient\u2019s race is Asian. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Correctly identifying the patient as Asian is necessary because bariatric surgery BMI eligibility threshold differs for asians vs non-asians. \n\nFrom the patient file \u201cRACE - Asian\u201d  Source: Tab - PATIENTS, Column - H, Row - 2",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1dc5360b02d146b98c770dd7db9992a4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56278c7d5ec4471294a9558e9f7d6ac9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient\u2019s BMI is 27.62 kg/m2 (acceptable range 27.34 to 27.90).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the chart \u201cBMI: 27.62\u201c\nSource: Tab - CLINICALNOTES, Note type - Progress notes, Column - D, Row - 201",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_81b190c37753490c92abd95cd4fc171f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56278c7d5ec4471294a9558e9f7d6ac9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has diabetes.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the chart \u201cCyenna Rebello is a 40 y.o. 72 year old female with past medical history significant for hypertension, hyperlipidemia, and diabetes who is here to establish care with cardiology.\u201d\nSource: Tab - CLINICALNOTES, Note type - Progress notes, Column - D, Row - 201",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7603cbafa6c747c1aa29de5ccb00d0e5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56278c7d5ec4471294a9558e9f7d6ac9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "criteria": "States that the patient's recent HbA1c is 9.2 (acceptable range 9.1 to 9.3).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the attached file \" HbA1c - 9.2 High\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "9th Lab Results.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_ee990b552a044d24a626814438148caf"
+          }
+        ]
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a5ca52550eef43498abcce216fd55761",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56278c7d5ec4471294a9558e9f7d6ac9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient is adherent to diabetic medication. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the script: \"Patient: Yes, I have been taking my oral medication for diabetes without missing any pills.\" Therefore, the patient is adherent to diabetic medication.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "9th Task Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_ee990b552a044d24a626814438148caf"
+          }
+        ]
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8f1739a78ea74539a361047ac23759b9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56278c7d5ec4471294a9558e9f7d6ac9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's diabetes is uncontrolled despite adherence to diabetic medication. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has diabetes and is compliant with all diabetic medications. However, the most recent HbA1c is 9.2, which indicates uncontrolled diabetes despite adherence to diabetic medications. \n\n\u201cAdditionally, it is recommended that more rigorous glycemic targets (HbA1c < 6.5%) be set for patients with diabetes mellitus who have a relatively short disease duration and a long\u2010life expectancy provided these targets can be met safely without causing significant hypoglycemic events. Conversely, more lenient targets (HbA1c up to 8%) are advised for individuals with a limited life expectancy, notable comorbid conditions, progressive microvascular or macrovascular complications and those who experience recurrent or grave hypoglycemic events. \u201c https://pmc.ncbi.nlm.nih.gov/articles/PMC11896812/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "9th Lab Results.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_ee990b552a044d24a626814438148caf"
+          },
+          {
+            "name": "9th Task Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_ee990b552a044d24a626814438148caf"
+          }
+        ]
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_43712485810a4854a9d13b84d58cf80e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56278c7d5ec4471294a9558e9f7d6ac9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient requests an opinion about bariatric surgery. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the script: \"Patient: I wanted to ask about bariatric surgery.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "9th Task Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_ee990b552a044d24a626814438148caf"
+          }
+        ]
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cf852115320c43588403cf3a84a28694",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_56278c7d5ec4471294a9558e9f7d6ac9",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Concludes that the bariatric surgery should be recommended for this patient.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This patient is an appropriate candidate for bariatric surgery. BMI is 27.62 kg/m2, and the patient is Asian, meeting the lower BMI threshold used for Asian patients in major guidelines. Her body mass index (BMI) of 27.62 kg/m2 is below the accepted eligibility threshold. Her latest HbA1c is 9.2, indicating inadequate control of her diabetes. The patient is adherent to diabetic medication. Therefore, the patient's diabetes is uncontrolled despite adherence to diabetic medication. The latest American Society for Metabolic and Bariatric Surgery (ASMBS) guidelines from 2022 recommend bariatric surgery if BMI is \u226527.5 kg/m2 in Asian Americans with uncontrolled diabetes.   \n\n \u201cBMI thresholds should be adjusted in the Asian population such that a BMI >25 kg/m2 suggests clinical obesity, and individuals with BMI >27.5 kg/m2 should be offered MBS.\u201d https://pmc.ncbi.nlm.nih.gov/articles/PMC9834364/\n\u201cBMI 30.0\u201334.9 (27.5\u201332.4 in Asian Americans) if hyperglycemia is inadequately controlled despite optimal medical control by either oral or injectable medications\u201d https://asmbs.org/resources/type-2-diabetes-and-metabolic-surgery-fact-sheet/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "9th Lab Results.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_ee990b552a044d24a626814438148caf"
+          },
+          {
+            "name": "9th Task Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_ee990b552a044d24a626814438148caf"
+          }
+        ]
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

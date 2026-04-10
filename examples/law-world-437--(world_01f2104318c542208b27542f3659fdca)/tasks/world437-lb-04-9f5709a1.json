@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Following the beam collapse, SBP recorded the two injuries in the OSHA 300 Log. It also completed one OSHA 301 Incident Report form. It is storing these records on a computer and intends to retain them until December 31, 2030.\n\nTo the extent these actions/plans suggest a misunderstanding of applicable requirements, please clarify those misunderstood requirements and explain what SBP needed or needs to do to comply with those requirements. Also, you should consider the information in SBP's notice to OSHA of the incident as accurate and comprehensive in terms of what happened with the beam collapse and its consequences/injuries to workers"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that only recordable injuries need to be recorded on the OSHA 300 Log (ver_8d7968a3dcbe469c8deb185756b43c54)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that only recordable injuries need to be recorded on the OSHA 300 Log."
+        }
+      ]
+    },
+    {
+      "name": "States that SBP needed to record one injury on the OSHA 300 Log (ver_2f2a5076c2e94186a4bfd96f3a9196a4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that SBP needed to record one injury on the OSHA 300 Log."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world437-lb-04-9f5709a1"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_9f5709a160694f739c64bb1c1504f0cf",
+    "task_name": "World437_LB_04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_b0e870aaaef34e3fabd834de2bb0b2a6",
+        "golden_text_response": "Only recordable injuries need to be recorded on the OSHA 300 Log. Accordingly, SBP only needed to record one injury on the log.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

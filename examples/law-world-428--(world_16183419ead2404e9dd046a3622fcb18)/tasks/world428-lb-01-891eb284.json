@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The City and Liverbird finalized a Disposition and Development Agreement (DDA) with no substantive differences from version 2 of the DDA. Liverbird subsequently received a written report from an environmental consultant indicating significant amounts of pollutants in the soil. Liverbird anticipates that remediating this issue will cost approximately $200,000. Accordingly, Liverbird sent a request, with supporting documentation, to the City to reduce the purchase price by $200,000. \n\nThe City responded immediately via email to Liverbird’s request, explaining that they were responding to a natural disaster (an earthquake) and would be delayed in evaluating the reduced purchase price. After 30 days, Liverbird sent a letter via certified mail, asserting that the City was in breach of the agreement for its failure to respond regarding the reduced purchase price. Now 30 more days have passed, and the City still has not responded – is the City in default? "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the City is in default under the Disposition and Development... (ver_5d285e624e3c44928052bb6687c76933)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the City is in default under the Disposition and Development Agreement."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world428-lb-01-891eb284"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_891eb284948940c28fce911e06245db1",
+    "task_name": "World428_LB_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_070a40cf8b3244218d0175fb6ae6eb0a",
+        "golden_text_response": "Yes, the City is in default under the Disposition and Development Agreement.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

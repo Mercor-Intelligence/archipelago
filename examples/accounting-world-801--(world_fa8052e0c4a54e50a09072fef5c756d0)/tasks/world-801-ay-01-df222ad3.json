@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "I want to determine percentage of gross profit contributed by top customers in 2021, 2022 and 2023.\n\nTop customers are defined for each year independently as customers with a Z-score greater than one, where Z-scores are calculated based on net revenue among customers with non-zero revenue in that year. Customers contributing 0 revenue in the year should be ignored for that year's analysis. \n\nAssume the COGS as percentage of Net revenue is 1 pp lower for top customers compared to remaining customers in that year. Let's use sample standard deviation when calculating Z-scores please. \n\nUse data in Deliverable 1_Audited Redwood Components Tax Exposure.xlsx and attached Customer_Net_Revenue.pdf for this analysis.\n\nDo not round intermediate calculations. Round final values to two decimal places and report them in the console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the percentage of gross profit contributed by top customers (defined as... (ver_742be4a388624ccfa11b12ad5d65770b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percentage of gross profit contributed by top customers (defined as those with a Z-score greater than one) for 2021 is 42.12% (acceptable range 42.11% to 42.13%)."
+        }
+      ]
+    },
+    {
+      "name": "States the percentage of gross profit contributed by top customers (defined as... (ver_d7bf7820b5754566acd687a14567abb6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percentage of gross profit contributed by top customers (defined as those with a Z-score greater than one) in 2022 is 38.66% (acceptable range 38.65% to 38.67%)."
+        }
+      ]
+    },
+    {
+      "name": "States the percentage of gross profit contributed by top customers (defined as... (ver_fd06b40030f34e348be2dc31aee85591)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percentage of gross profit contributed by top customers (defined as those with a Z-score greater than one) in 2023 is 40.18% (acceptable range 40.17% to 40.19%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-801-ay-01-df222ad3"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_df222ad39e014ec28353913d372a9ce8",
+    "task_name": "World_801_AY_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_2139be65c2bd4b5d85caf755c64653b2",
+        "golden_text_response": "Based on the analysis of the audited Redwood Components Tax Exposure and the customer-wise net revenue data, the percentage of gross profit contributed by top customers (defined as those with a Z-score greater than one) is as follows:\n\n2021: 42.12%\n2022: 38.66%\n2023: 40.18%",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

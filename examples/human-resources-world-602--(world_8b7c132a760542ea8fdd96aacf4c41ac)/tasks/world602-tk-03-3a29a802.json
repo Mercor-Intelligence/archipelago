@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use the Greenhouse tool and refer to Departments_Categories_v1 and Job_Pipeline_Targets.csv in the filesystem for department category and target pipeline count respectively, please categorize open jobs as ‘Critical’ if they meet all the following criteria:\n\n1.\tThe category of the department is Clinical\n2.\tIt has been open for 548 days or longer. Use opened_at to determine days open. Assume today is 2026-01-28.\n3.\tHas zero Pipeline Coverage Ratio. Pipeline coverage ratio is Pipeline Count divided by Target Pipeline Count. Pipeline Count is the count of applications for that job. \n\nPlease state in the console the number of Critical jobs that don’t have a sourcer assigned. Then add Maria Santos as the sourcer in the hiring team for the oldest of the Critical jobs. State the value of job_id of the oldest of the Critical jobs in the console.\n\nPlease provide a full report of your analysis and actions in the console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of Critical jobs that don’t have a sourcer assigned is 4. (ver_637062713d074463a94cd23ffc581c81)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of Critical jobs that don’t have a sourcer assigned is 4."
+        }
+      ]
+    },
+    {
+      "name": "Adds Maria Santos as the sourcer to the hiring team of job 198. (ver_c84bdd3ae3644367b85751d52784ded1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Adds Maria Santos as the sourcer to the hiring team of job 198."
+        }
+      ]
+    },
+    {
+      "name": "States that the value of the job_id field from the oldest of the Critical jobs... (ver_296480f86d894816b080d6382ebf10a5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the value of the job_id field from the oldest of the Critical jobs is 198."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world602-tk-03-3a29a802"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_3a29a802e55c4b55a386a5b548fcc30c",
+    "task_name": "World602_TK_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_0fa2bf85fc274d0491d80dff3472f355",
+        "golden_text_response": "The number of Critical jobs that don’t have a sourcer assigned is 4.\nThe value of the job_id field of the oldest of the Critical jobs is 198.\nMaria Santos has been assigned as the sourcer for job id 198.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

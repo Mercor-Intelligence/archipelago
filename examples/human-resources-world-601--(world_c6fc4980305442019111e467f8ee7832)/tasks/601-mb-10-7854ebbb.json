@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Hannah is taking over the coordination of all the active recruitments. Please update Greenhouse accordingly and state the number of active recruitments moved to Hannah. Also, she wants to cross train managers responsible for recruitment. The goal is that every branch that had a hiring rate in the past below the company average will now have to increase it to the company average. We have only 1 branch in each city we are present.\n\nIf a branch's hiring rate is above the company average, the rate will stay the same as the historical rate. Please state how many candidates in total from recruitments coordinated by Hannah we can expect to get hired. Report your answer as a message in console, rounding the answer to 1 decimal place."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the total number of active recruitments moved to Hannah is 60.0. (ver_7050839055f64f07bde6711955f7f3fd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of active recruitments moved to Hannah is 60.0."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of active candidates in total from recruitments... (ver_c0b8507fd7ab4184893ea548519caf21)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of active candidates in total from recruitments coordinated by Hannah that can be expected to get hired is 38.8 (acceptable range 38.4 to 39.2)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh 601-mb-10-7854ebbb"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_7854ebbb844240a180068b3004095a24",
+    "task_name": "601 - MB_10",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_3456a66086ad438d96c2759f4e462017",
+        "golden_text_response": "The total number of active recruitments moved to Hannah is 60.0.\nThe number of candidates in total from recruitments coordinated by Hannah can be expected to get hired is 38.8",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

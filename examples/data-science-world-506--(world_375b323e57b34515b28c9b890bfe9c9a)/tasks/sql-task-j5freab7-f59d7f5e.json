@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "You have access to the tables 'invoices', 'subscribers', and 'subscriber_plans'. I need to analyze our outstanding payment issues to understand the financial impact. \n\nFor invoices with a payment status of either overdue or disputed, calculate the total amount outstanding (sum of total_amount) for each status category. I want to see the breakdown by payment status showing how much money is at risk. Round the totals to 2 decimal places.\n\nPlease use only SQLite queries to complete this entire analysis throughout all of its steps. Include your full SQLite query used for analysis as well as the requested results in the final output."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports the total amount outstanding for disputed as 17746.71 +/- 0.05. (ver_451a26148fd248d88e454ec42393b86a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the total amount outstanding for disputed as 17746.71 +/- 0.05."
+        }
+      ]
+    },
+    {
+      "name": "Reports the total amount outstanding for overdue as 27406.97 +/- 0.05. (ver_e3d035dd998a45f08583cdfefbfab7a3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the total amount outstanding for overdue as 27406.97 +/- 0.05."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sql-task-j5freab7-f59d7f5e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_f59d7f5e1e614c0499a11d3b25c3c5f5",
+    "task_name": "SQL - Task j5freab7",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c0e3b2031856470e9011d0f8538d87c4",
+        "golden_text_response": "payment_status  total_outstanding\n      disputed           17746.71\n       overdue           27406.97\n\n```sql\nSELECT \n    LOWER(payment_status) as payment_status,\n    ROUND(SUM(total_amount), 2) as total_outstanding\nFROM invoices\nWHERE LOWER(payment_status) IN ('overdue', 'disputed')\nGROUP BY LOWER(payment_status)\nORDER BY payment_status;\n```\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

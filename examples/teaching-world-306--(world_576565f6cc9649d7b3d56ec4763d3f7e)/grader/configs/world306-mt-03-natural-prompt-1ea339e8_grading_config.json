@@ -1,0 +1,358 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_f43bfda85cd6487c8cc3171639811d77",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1ea339e89b0c4da0a55e686c257f0bd6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Ethan Garcia as an ELL student",
+        "modality": "Free text",
+        "negative_criteria": "States that a student other than Ethan Garcia, Hyrum Young, Sofia Gomez, Eli Garcia, or Xander Gomez is an ELL student.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Ethan Garcia is an ELL student.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3405d6bf95954ceb9b1fd1df5fc3bb74",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1ea339e89b0c4da0a55e686c257f0bd6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Hyrum Young as an ELL student",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Hyrum Young is an ELL student.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f1034fd0c8d14f7a8b6d545e8c6276e9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1ea339e89b0c4da0a55e686c257f0bd6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Sophia Gomez as an ELL student",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Sophia Gomez is an ELL student.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1dea3313d24a4e0ab8a17d046dab02b1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1ea339e89b0c4da0a55e686c257f0bd6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Eli Garcia as an ELL student",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Eli Garcia is an ELL student.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_87c711d47db74bbfb6790fce6ad54806",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1ea339e89b0c4da0a55e686c257f0bd6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Xander Gomez as an ELL student",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Xander Gomez is an ELL student.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6e2561ba4c69404e8d72dc14d7882c28",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1ea339e89b0c4da0a55e686c257f0bd6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the attendance rate of Ethan Garcia as 100 (acceptable range 99.0 to 101)",
+        "modality": "Free text",
+        "negative_criteria": "Identifies the attendance rate of Ethan Garcia as anything other than 100.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Ethan Garcia has 100% attendance rate.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b724f54313b34a1d94ca8dc26454c39a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1ea339e89b0c4da0a55e686c257f0bd6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the attendance rate of Hyrum Young as 96.7 (acceptable range 95.7 to 97.7)",
+        "modality": "Free text",
+        "negative_criteria": "Identifies the attendance rate of Hyrum Young as anything other than 96.7.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Hyrum Young has 96.7 attendance rate.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bd3f7a3dfbd84a42ac3a77b23310bb4e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1ea339e89b0c4da0a55e686c257f0bd6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the attendance rate of Eli Garcia as 95.6 (acceptable range 94.6 to 96.6)",
+        "modality": "Free text",
+        "negative_criteria": "Identifies the attendance rate of Eli Garcia as anything other than 95.6.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Eli Garcia has 95.6 attendance rate.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d020db1fe19a46839984c82bed961218",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1ea339e89b0c4da0a55e686c257f0bd6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the attendance rate of Xander Gomez as 93.3 (acceptable range 92.4 to 94.2)",
+        "modality": "Free text",
+        "negative_criteria": "Identifies the attendance rate of Xander Gomez as anything other than 93.3.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Xander Gomez has 93.3 attendance rate.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f967ecbf382842e391313c4663b487ba",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1ea339e89b0c4da0a55e686c257f0bd6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the attendance rate of Sophia Gomez as 96.7 (acceptable range 95.7 to 97.7)",
+        "modality": "Free text",
+        "negative_criteria": "Identifies the attendance rate of Hyrum Young as anything other than 96.7.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Sophia Gomez has 96.7% attendance rate.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_24ed2fed57c04f34bc00ead47afd90c5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1ea339e89b0c4da0a55e686c257f0bd6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Recalculates the new grade average for Ethan Garcia as 75 when rounded to the nearest whole number",
+        "modality": "Free text",
+        "negative_criteria": "Recalculates the new grade average for Ethan Garcia as anything other than 75.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Ethan Garcia meets 90% attendance criteria and their new average is 75.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_011b51ec46444ff8aa8ce29b5915325a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1ea339e89b0c4da0a55e686c257f0bd6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Recalculates the new grade average for Hyrum Young as 67  when rounded to the nearest whole number",
+        "modality": "Free text",
+        "negative_criteria": "Recalculates the new grade average for Hyrum Young as anything other than 67.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Hyrum Young meets the 90% attendance criteria and their new grade is 67.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e87597f623f5493ca1f301c764233a42",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1ea339e89b0c4da0a55e686c257f0bd6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Recalculates the new grade average for Sophia Gomez as 91 when rounded to the nearest whole number",
+        "modality": "Free text",
+        "negative_criteria": "Recalculates the new grade average for Sophia Gomez as anything other than 91.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Sophia Gomez meets the 90% attendance criteria and their new grade is 91.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_729fd57ffd3b430ab1fe401a4bc2b944",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1ea339e89b0c4da0a55e686c257f0bd6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Recalculates the new grade average for Eli Garcia as 82 when rounded to the nearest whole number",
+        "modality": "Free text",
+        "negative_criteria": "Recalculates the new grade average for Eli Garcia as anything other than 82.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Eli Garcia meets the 90% attendance criteria and their new grade is 82.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_823d418a49df4f14abb921f2c924a7db",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1ea339e89b0c4da0a55e686c257f0bd6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Recalculates the new grade average for Xander Gomez as 81 when rounded to the nearest whole number",
+        "modality": "Free text",
+        "negative_criteria": "Recalculates the new grade average for Xander Gomez as anything other than 81.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Xander Gomez meets the 90% attendance criteria and their new grade is 81.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

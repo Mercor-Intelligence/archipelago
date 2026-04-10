@@ -1,0 +1,427 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Generate a letter template in new word document to parents of students who have been absent for more than 5 days in January. Include a placeholder for a physical signature, a placeholder for the student's name and number of absences, and reference the school's truancy policy. It should also include the current date (02/15/2025) and the Subject line: \"AP US History Attendance Policy\", salutation should be \"To (Student's Full Name)'s Parent\", Name: Mr Limas. The body should include the reason for the letter as the student's repeated absences in APUSH class, note that Arizona's Truancy Policy requires parents to first be notified by both a letter and a phone call, and reminder to please contact the school if the student is going to be absent for any legitimate reason (e.g., medical appointments, illnesses, etc.)"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Includes \"To (Student's Full Name)'s Parent\" as the salutation (ver_07f9f44f439d44e2ba29a8789af3465c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes \"To (Student's Full Name)'s Parent\" as the salutation."
+        }
+      ]
+    },
+    {
+      "name": "Includes something other than \"To (Student's Full Name)'s Parent\" as the... (ver_07f9f44f439d44e2ba29a8789af3465c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes something other than \"To (Student's Full Name)'s Parent\" as the salutation."
+        }
+      ]
+    },
+    {
+      "name": "Uses a placeholder for the student's number of absences (ver_93c3fb0b1c9d4b9eb51571ee6746f76c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Uses a placeholder for the student's number of absences."
+        }
+      ]
+    },
+    {
+      "name": "Includes a placeholder for a physical signature (ver_77c8bb9d92c74017bbb069e7b25bdf26)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a placeholder for a physical signature."
+        }
+      ]
+    },
+    {
+      "name": "Uses a placeholder for the student's name (ver_1b2f6f16510d40958224578303d264b8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Uses a placeholder for the student's name."
+        }
+      ]
+    },
+    {
+      "name": "Includes the date 02/15/2025 (ver_c994dca3905a4e36882982058bc039cc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes the date 02/15/2025."
+        }
+      ]
+    },
+    {
+      "name": "Includes a date other than 02/15/2025 in the header. (ver_c994dca3905a4e36882982058bc039cc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a date other than 02/15/2025 in the header."
+        }
+      ]
+    },
+    {
+      "name": "Includes \"AP US History Attendance Policy\" as the subject line (ver_0949f60fd5be4f148af9274d79bfd6a6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes \"AP US History Attendance Policy\" as the subject line."
+        }
+      ]
+    },
+    {
+      "name": "Includes something other than \"AP US History Attendance Policy\" as the... (ver_0949f60fd5be4f148af9274d79bfd6a6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes something other than \"AP US History Attendance Policy\" as the header's subject line."
+        }
+      ]
+    },
+    {
+      "name": "Includes the teacher's name, \"Mr Limas\" (ver_1552009c8804462398c01315f9d4188c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes the teacher's name, \"Mr Limas\"."
+        }
+      ]
+    },
+    {
+      "name": "Includes a name other than \"Mr Limas\" in the closing of the letter. (ver_1552009c8804462398c01315f9d4188c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a name other than \"Mr Limas\" in the closing of the letter."
+        }
+      ]
+    },
+    {
+      "name": "States the reason for the letter as the student's repeated absences in AP US... (ver_83df7c393775475b8a5420a69e26a99a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the reason for the letter as the student's repeated absences in AP US History class."
+        }
+      ]
+    },
+    {
+      "name": "States a reason for the letter other than the student's repeated absences in... (ver_83df7c393775475b8a5420a69e26a99a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States a reason for the letter other than the student's repeated absences in APUSH class."
+        }
+      ]
+    },
+    {
+      "name": "Notes that Arizona's Truancy Policy requires parents to first be notified by... (ver_cf917de6b8784ddfb956b7cb45119796)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Notes that Arizona's Truancy Policy requires parents to first be notified by both a letter and a phone call."
+        }
+      ]
+    },
+    {
+      "name": "Notes that Arizona's Truancy Policy requires something other than that parents... (ver_cf917de6b8784ddfb956b7cb45119796)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Notes that Arizona's Truancy Policy requires something other than that parents first be notified by both a letter and phone call."
+        }
+      ]
+    },
+    {
+      "name": "Provides a reminder to please contact the school if the student is going to be... (ver_366ca7c62e064b48aee91427ac827b74)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides a reminder to please contact the school if the student is going to be absent for any legitimate reason (e.g., medical appointments, illnesses, etc.)."
+        }
+      ]
+    },
+    {
+      "name": "Provides a reminder to contact the school for something other than the student... (ver_366ca7c62e064b48aee91427ac827b74)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides a reminder to contact the school for something other than the student being absent for any legitimate reasons (e.g., medical appointments, illnesses, etc.)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-308-hlv-task-01-natural-prompt-339d16bc"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_bb2868929444403db49771012f030f29",
+    "world_name": "Teaching World 308",
+    "task_id": "task_339d16bc92a046938382e557962d950e",
+    "task_name": "World 308_HLV_Task_01 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f250e31c0008441398fd6733324054e0",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_202706050ac647c68c983f524a9da394"
+      },
+      {
+        "golden_response_id": "gold_3e9a772ab9c842b080a4b255e497e318",
+        "golden_text_response": "See the Policy Template for a version of the letter that should be ideal.",
+        "golden_file_responses": "snap_202706050ac647c68c983f524a9da394"
+      }
+    ]
+  }
+}

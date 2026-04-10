@@ -1,0 +1,212 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_b28a41424aa04643882b7049c45baa84",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_19a8cab6ba0548189a82c6276bfc7123",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States Base Rent yearly revenue / MW  is $2.22 M (acceptable range $2.20 to $2.24)",
+        "negative_criteria": "States Base Rent yearly revenue / MW is a value other than $2.22 M",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a07d7c44b3884e888181198c953ba4bf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_19a8cab6ba0548189a82c6276bfc7123",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States Cross-Connect Fees yearly revenue / MW is $0.06 M (acceptable range $0.059 to $0.061)",
+        "negative_criteria": "States Cross-Connect Fees yearly revenue / MW is a value other than $0.06 M",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ed2111bb9b4642cbbe742d7942aa29d3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_19a8cab6ba0548189a82c6276bfc7123",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States Rack Rental yearly revenue / MW is $0.22 M (acceptable range $0.218 to $0.222)",
+        "negative_criteria": "States Rack Rental yearly revenue / MW is a value other than $0.22 M",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ab5db32596ba410589323a35d6d6f3ee",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_19a8cab6ba0548189a82c6276bfc7123",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States total yearly revenue / MW is $2.50 M (acceptable range $2.48 to $2.52)",
+        "negative_criteria": "States total yearly revenue / MW is a value other than $2.50 M",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_295c77f6e8b3428aa21fe844517874ba",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_19a8cab6ba0548189a82c6276bfc7123",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States year 10 revenue is $144.73 M (acceptable range $143.28 to $146.18)",
+        "negative_criteria": "",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_172146fb5c654fe6a8472b47c84abfb7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_19a8cab6ba0548189a82c6276bfc7123",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States year 10 EBITDA is $116.55 M (acceptable range $115.38 to $117.72)",
+        "negative_criteria": "States year 10 EBITDA is a value other than $116.55 M",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6c33b3ca2f5641b19e62474fa2d4184d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_19a8cab6ba0548189a82c6276bfc7123",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States year 10 free cash flow is $75.41 M (acceptable range $74.66 to $76.16)",
+        "negative_criteria": "States year 10 free cash flow is a value other than $75.41 M",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_99a9929783d44b34a2a98e9227d77dc5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_19a8cab6ba0548189a82c6276bfc7123",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States year 10 TV is $1189.17 M (acceptable range $117 to $119)",
+        "negative_criteria": "States year 10 TV is a value other than $1189.17 M",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 17,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f227028376d442ffa3d46702dda72901",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_19a8cab6ba0548189a82c6276bfc7123",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States NPV is $327.52 M (acceptable range $324.24 to $330.80)",
+        "negative_criteria": "States NPV is a value other than $327.52 M",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 18,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b4784b93798d4a4e9ec9aee7c17d643b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_19a8cab6ba0548189a82c6276bfc7123",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States IRR is 17.52% (acceptable range 17.34% to 17.70%)",
+        "negative_criteria": "States IRR is a value other than 17.52%",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 19,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

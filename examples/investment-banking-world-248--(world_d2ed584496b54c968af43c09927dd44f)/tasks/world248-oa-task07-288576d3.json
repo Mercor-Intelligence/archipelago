@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Make the following changes to the RAMBUS vs SLAB analysis in the merger model: \n\n•\tUpdate SLAB’s share price at acquisition to its average trading daily price between December 1, 2025 and December 31, 2025 (including both dates)\n•\tUpdate RMBS’s share price at acquisition to the closing share price on January 7th, 2026\n\nBuild a 4-year projection of the proforma balance sheet assuming the existing the current balance sheet is year 0;\n\n1.\tGrow Other current assets annually by the revenue growth rate. The revenue growth rate is equal to the weighted average growth rate of RMBS and SLAB’s revenue between 2024 and annualized 9M 2025, using the 9M 2025 revenue as the weights. 9M 2025 is as of October 4, 2025. The numbers can be found in the merger model.\n\n2.\tImpair goodwill by 5% of its pro forma value annually\n\n3.\tAssume 15 year remaining life on the PPE & Intangibles pro forma balance and depreciate equally over the forecast period\n\n4.\tKeep other non-current assets fixed at the pro forma level\n\n5.\tGrow the current liabilities by the same way as other current assets\n\n6.\tAssume no long-term debt\n\n7.\tAssume non-current liabilities stay fixed at the pro forma level\n\n8.\tAssume no additional paid in capital or changes to common stock\n\n9.\tAssume dividends are paid out of the business starting year 1 and each dividend amount is equal to 20% of prior year’s net income\n\n10.\tIncrease retained earnings by net income every year, assume the same net income margin of the proforma income statement for the forecast period.\n\n11.\tAssume cash and cash equivalents for each year is such that ensures the total value of assets is equal to the value of total liabilities and shareholders’ equity \n\nCalculate the following;\n\na.\tThe Net debt to equity in years 2, 3 and 4 (show each value to 2 decimal places)\n\nb.\tThe percentage increase/(decrease) in leverage (net debt/equity) between year 0 and year 4 (show result in % to 2 decimal places)\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States Year 2 Net Debt/equity is -0.13 (acceptable range -0.131 to -0.129) (ver_af59f3e495d144959a93af95b5116a3b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Year 2 Net Debt/equity is -0.13 (acceptable range -0.131 to -0.129)."
+        }
+      ]
+    },
+    {
+      "name": "Sates Year 3 Net Deb/equity is -0.15 (acceptable range -0.152 to -0.148) (ver_c6912a08003c4495af5b9a5b4dc2d9f2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Sates Year 3 Net Deb/equity is -0.15 (acceptable range -0.152 to -0.148)."
+        }
+      ]
+    },
+    {
+      "name": "States Year 4 Net Debt/equity is -0.17 (acceptable range -0.172 to -0.168) (ver_0fa9f49d4b2f490f87c082a878b52e55)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Year 4 Net Debt/equity is -0.17 (acceptable range -0.172 to -0.168)."
+        }
+      ]
+    },
+    {
+      "name": "Sates the percentage increase/(decrease) in net debt/equity: 168.22%... (ver_851dc65fa6d245e5982577f99b887c02)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Sates the percentage increase/(decrease) in net debt/equity: 168.22% (acceptable range 166.54% to 169.90%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world248-oa-task07-288576d3"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_288576d3c15a4a32a24a653329db39ed",
+    "task_name": "World248_OA_Task07",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_5320e78b5f2c40ff8c1226eb01bac87d",
+        "golden_text_response": "Year 2 Net Debt/equity : -0.13\nYear 3 Net Deb/equity : -0.15\nYear 4 Net Debt/equity : -0.17\nPercentage increase/(decrease) in net debt/equity: 168.22%",
+        "golden_file_responses": "snap_0bba5da5cbe9487691c2c75fb876a957"
+      }
+    ]
+  }
+}

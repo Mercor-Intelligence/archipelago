@@ -1,0 +1,261 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using network_outages.csv and customer_complaints.csv (you should use Python just to copy these files into the new Excel sheet), create an Excel workbook named outage_complaint_tracker.xlsx for the operations team. Keep one raw data tab for each file, then build an Outage_Tracker sheet that includes all network_outages rows and adds new Excel columns: outage_day (date derived from start_time), complaints_48h (count of complaints whose complaint_date falls on outage_day or the next day), and high_complaint_flag (1 if complaints_48h is at least 3, else 0). In a small Summary section on the same sheet, report the total number of outages in 2024, the percent of 2024 outages that are flagged high_complaint_flag, and the outage_id with the highest complaints_48h. Add a column chart that shows the count of 2024 outages by complaints_48h bucket, using buckets 0, 1-2, 3-5, and 6-9 (x axis = bucket label, y axis = outage count). Format the percent to two decimals and give the completed Excel file."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports the total outages for 2024 to be exactly 124. (ver_d83d3186b62d403b8f056d19c60978f7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the total outages for 2024 to be exactly 124."
+        }
+      ]
+    },
+    {
+      "name": "Reports the percentage of outages that have high complaints in 2024 as 23.39%... (ver_6aa769913a3b4bf5b6b4505339679fd6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the percentage of outages that have high complaints in 2024 as 23.39% (+/- 0.03)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the outage_id with the most complaints in 2024 as 313. (ver_380e7798efe3472fb4af85d04a32f4d4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the outage_id with the most complaints in 2024 as 313."
+        }
+      ]
+    },
+    {
+      "name": "Creates a column chart. (ver_f37ad46054be4091aa045289ab5584aa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a column chart."
+        }
+      ]
+    },
+    {
+      "name": "The x axis represents the bucket label. (ver_19cbb354e1244aa8a59c0e7a9c5f6623)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The x axis represents the bucket label."
+        }
+      ]
+    },
+    {
+      "name": "The y axis represents the outage count. (ver_798ccfcae9504c6b953ca4b09bc711dc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The y axis represents the outage count."
+        }
+      ]
+    },
+    {
+      "name": "The column chart with the bar representing 0 complaints_48h has an outage... (ver_9ea6c009484e44ec9bdae11b41bb19de)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The column chart with the bar representing 0 complaints_48h has an outage count of exactly 20 (acceptable range 19.8 to 20.2)."
+        }
+      ]
+    },
+    {
+      "name": "The column chart with the bar representing 1-2 complaints_48h has an outage... (ver_25dfbab27a054ad78ff8f2622176281b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The column chart with the bar representing 1-2 complaints_48h has an outage count of exactly 75."
+        }
+      ]
+    },
+    {
+      "name": "The column chart with the bar representing 3-5 complaints_48h has an outage... (ver_2f384f8fa54e4143b6bbb9b483d5c07e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The column chart with the bar representing 3-5 complaints_48h has an outage count of exactly 28."
+        }
+      ]
+    },
+    {
+      "name": "The column chart with the bar representing 6-9 complaints_48h has an outage... (ver_de73ddd7f71e4357b4d52a94c4ff2f6d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The column chart with the bar representing 6-9 complaints_48h has an outage count of exactly 1."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sheets-task-coslc22d-86f9bd42"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_86f9bd4294d5402488a1b34a963453a5",
+    "task_name": "Sheets - Task coslc22d",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_13f5a044331d4330b78e05b28ad71197",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_82633e68c0dc4927ab364667457b6b40"
+      }
+    ]
+  }
+}

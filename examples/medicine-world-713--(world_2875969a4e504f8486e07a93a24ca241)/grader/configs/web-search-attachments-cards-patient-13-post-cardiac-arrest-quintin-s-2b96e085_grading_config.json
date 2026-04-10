@@ -1,0 +1,197 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_f950ad92e2464dcb971dbdc9dae0279e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2b96e08586c84d00b89b7ea802e127d9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Utilizes the \"2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care\" or the \"European Resuscitation Council and European Society of Intensive Care Medicine Guidelines 2025 Post-Resuscitation Care.\"",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt states \"Use the latest and most clinically appropriate guidelines as of 01/12/2026.\" The guidelines that are most clinically appropriate in this case are the American Heart Association or European Society for Intensive Care Medicine post-cardiac arrest care guidelines. These guidelines are widely cited and used to guide post-cardiac arrest care and the policies in post-cardiac arrest care. \n\nGuideline: AHA Post-Arrest Care Guideline 2025 (https://www.ahajournals.org/doi/10.1161/CIR.0000000000001375) \nGuideline: ESICM Post-Arrest Care Guideline 2025 (https://www.resuscitationjournal.com/article/S0300-9572(25)00321-1/fulltext)  ",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6d407ca1ac2e4ab4bbbe5eec83ccd185",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2b96e08586c84d00b89b7ea802e127d9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient should undergo a computed tomography (CT) scan of their head. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "In post cardiac arrest patients the AHA states that it is reasonable to obtain a CT scan of the head, chest, abdomen, and pelvis to identify a cause for the cardiac arrest. \n\n\"Full body CT scan (ie, head to pelvis) can diagnose pathologies contributing to cardiac arrest, including but not limited to intracerebral hemorrhage, pulmonary embolism, cardiac tamponade, aortic dissection, and pneumothorax. A 2019 systematic review evaluating post\u2013cardiac arrest imaging to determine arrest etiology included 17 observational studies and found that, despite heterogeneity in the CT protocols, the diagnostic yield of CT scans for clinically significant diagnoses and injuries ranges from 8% to 54%\" \n\nGuideline: AHA Post-Arrest Care Guideline 2025 (https://www.ahajournals.org/doi/10.1161/CIR.0000000000001375)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4a1308287cbd4d30ac372e1bbbffcc4f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2b96e08586c84d00b89b7ea802e127d9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the patient should undergo a CT scan of their chest. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "In post cardiac arrest patients the AHA states that it is reasonable to obtain a CT scan of the head, chest, abdomen, and pelvis to identify a cause for the cardiac arrest. \n\n\"Full body CT scan (ie, head to pelvis) can diagnose pathologies contributing to cardiac arrest, including but not limited to intracerebral hemorrhage, pulmonary embolism, cardiac tamponade, aortic dissection, and pneumothorax. A 2019 systematic review evaluating post\u2013cardiac arrest imaging to determine arrest etiology included 17 observational studies and found that, despite heterogeneity in the CT protocols, the diagnostic yield of CT scans for clinically significant diagnoses and injuries ranges from 8% to 54%\" \n\nGuideline: AHA Post-Arrest Care Guideline 2025 (https://www.ahajournals.org/doi/10.1161/CIR.0000000000001375)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_721aa8fa8cea41a2b0dc58e5b6cf727f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2b96e08586c84d00b89b7ea802e127d9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the patient should undergo a CT scan of their abdomen. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "In post cardiac arrest patients the AHA states that it is reasonable to obtain a CT scan of the head, chest, abdomen, and pelvis to identify a cause for the cardiac arrest. \n\n\"Full body CT scan (ie, head to pelvis) can diagnose pathologies contributing to cardiac arrest, including but not limited to intracerebral hemorrhage, pulmonary embolism, cardiac tamponade, aortic dissection, and pneumothorax. A 2019 systematic review evaluating post\u2013cardiac arrest imaging to determine arrest etiology included 17 observational studies and found that, despite heterogeneity in the CT protocols, the diagnostic yield of CT scans for clinically significant diagnoses and injuries ranges from 8% to 54%\" \n\nGuideline: AHA Post-Arrest Care Guideline 2025 (https://www.ahajournals.org/doi/10.1161/CIR.0000000000001375)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_469b57fdbbd246c19f777119cffdecf3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2b96e08586c84d00b89b7ea802e127d9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the patient should undergo a CT scan of their pelvis. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "In post cardiac arrest patients the AHA states that it is reasonable to obtain a CT scan of the head, chest, abdomen, and pelvis to identify a cause for the cardiac arrest. \n\n\"Full body CT scan (ie, head to pelvis) can diagnose pathologies contributing to cardiac arrest, including but not limited to intracerebral hemorrhage, pulmonary embolism, cardiac tamponade, aortic dissection, and pneumothorax. A 2019 systematic review evaluating post\u2013cardiac arrest imaging to determine arrest etiology included 17 observational studies and found that, despite heterogeneity in the CT protocols, the diagnostic yield of CT scans for clinically significant diagnoses and injuries ranges from 8% to 54%\" \n\nGuideline: AHA Post-Arrest Care Guideline 2025 (https://www.ahajournals.org/doi/10.1161/CIR.0000000000001375)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_469ab67e926643e4a8f6d37909ce79cb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2b96e08586c84d00b89b7ea802e127d9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has a history of pericardial effusion during their past treatment with chemotherapy. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This information is extracted from the conversation document attached to the task. \n\n\"Patient family member: She does not have a cardiac history that I am aware of. She told me before when she was undergoing chemotherapy a long time ago that she had some fluid around her heart that had resolved after therapy.\" ",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5688aa7ffa3f4cbeafd4e6387d864649",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2b96e08586c84d00b89b7ea802e127d9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that this patient should undergo an echocardiogram. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This patient has a history of pericardial effusion in the past while they were undergoing chemotherapy.  In addition, the patient has a history of valvular pathology that could have contributed to their arrest.  Given this history, it is more than reasonable to recommend this patient receive an echocardiogram. The AHA would also recommend this based on their 2025 post-cardiac arrest care guidelines. \n\n\"Echocardiogram 5/4/2021:  There is moderate holosystolic prolapse of both leaflets of the mitral valve.\"\nCLINICALNOTES - Consult Note - Column D - Row 176\n\n\"Echocardiography and point-of-care cardiac ultrasound have been studied in the intra-arrest setting for a variety of purposes, including identification of a reversible cause for cardiac arrest. Available data suggest that these modalities can also contribute to elucidating the etiology of cardiac arrest in the postarrest setting. Diagnoses that have been evaluated with echocardiography or point-of-care ultrasound include pericardial effusion, pericardial tamponade, right ventricular dilation suggestive of pulmonary embolism, aortic dissection, cardiac regional wall motion abnormalities suggestive of myocardial infarction, cardiomyopathy, and hypovolemia.\" \n\nGuideline: AHA Post-Arrest Care Guideline 2025 (https://www.ahajournals.org/doi/10.1161/CIR.0000000000001375)  ",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5d79503bd6da4696b87043c68d1bddab",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2b96e08586c84d00b89b7ea802e127d9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that, based on the arterial blood gas results, the patient's minute ventilation should be increased to reduce the partial pressure of carbon dioxide (PaCO2) to a range of 35-45 mmHg. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient's arterial blood gas demonstrated a PaCO2 of 55 mmHg which is above the guideline recommended range of 35-45 mmHg. To correct this value, this patient's minute ventilation should be increased. \n\nThis is in accordance with the AHA post cardiac arrest care guidelines, \"Arterial pressure of carbon dioxide (PaCO2) should be maintained within a normal physiologic range (35-45 mmHg) in adult patients who remain comatose after achieving return of spontaneous circulation.\" \n\nGuideline: AHA Post-Arrest Care Guideline 2025 (https://www.ahajournals.org/doi/10.1161/CIR.0000000000001375)  ",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_db445afc00d34b9eaae3fde0beb6feb6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2b96e08586c84d00b89b7ea802e127d9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the targeted temperature range for this patient is 32.0-37.5 degrees Celsius. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Based on the current guidelines that exist for post-cardiac arrest care the AHA recommends targeting a temperature range of 32.0-37.5 degrees Celsius. \n\n\"Maintaining a temperature of 32.0-37.5 degrees Celsius in patients unresponsive to verbal commands after achieving return of spontaneous circulation in adults.\" \n\nGuideline: AHA Post-Arrest Care Guideline 2025 (https://www.ahajournals.org/doi/10.1161/CIR.0000000000001375)  ",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

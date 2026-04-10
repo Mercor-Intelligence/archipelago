@@ -1,0 +1,44 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_2755f1779a4a46ccb551fdc0cb018d6a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0825cebefc924406b541a7c64cfb36af",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that Liverbird will prevail in its breach of contract suit against the City",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The court in Citizen's of Responsible Government v. City of Albany, the Court found that \"the development agreement...once approved by the voters provided the developer with a vested interest\" to complete the project. Also, the Court stated that \"the City had contracted away its power to consider the full range of alternatives and mitigation measures by CEQA and had precluded consideration of a 'no project' option.\" Additionally, Tara v. City of West Hollywood California in formulating its decision, the Court stated that it was not rendering an opinion as to the correctness of the Court's decision in Citizen's of Responsible Government v. City of Albany. Therefore, the developer has a valid breach of contract action, and is likely to prevail. (see tara-v-city-of-west-hollywood-california.pdf, page 13).",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

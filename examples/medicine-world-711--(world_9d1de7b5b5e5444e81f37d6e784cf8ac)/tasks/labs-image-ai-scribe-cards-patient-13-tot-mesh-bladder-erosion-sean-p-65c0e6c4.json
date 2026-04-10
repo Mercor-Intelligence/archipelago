@@ -1,0 +1,330 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 13” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nPatient 13 presents to clinic for evaluation.\nPDFs are attached documenting the conversation between Patient 13 and the physician, as well as the patient's imaging and lab results.\nAssume physical exam findings are unchanged from the most recent documented exam on record.\n\nBased on the patient's history and presentation, indicate the definitive treatment for the patient's likely underlying diagnosis.  Provide an ICD-10 code for that diagnosis. Explain your reasoning."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Recognizes the patient's ultrasound findings are consistent with a bladder... (ver_b4b18369c78e4de6997d7b7d361c281b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient's ultrasound findings are consistent with a bladder calculus."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the patient's hematuria on urinalysis is consistent with a bladder... (ver_2fb2b64a39f44091a14d1e8899d03d34)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient's hematuria on urinalysis is consistent with a bladder calculus."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the patient's urinalysis results make an infectious process unlikely. (ver_84e2a86c62b341eca2d2cb5037d324b4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient's urinalysis results make an infectious process unlikely."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the patient has a history of transobturator tape (TOT) sling... (ver_c6624ee69ece40548c1e6b26eaaaf41e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the patient has a history of transobturator tape (TOT) sling placement."
+        }
+      ]
+    },
+    {
+      "name": "States a potential late complication of TOT sling placement is mesh erosion... (ver_e8b4f2233c914e7793400b49da71e75a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States a potential late complication of TOT sling placement is mesh erosion into the bladder wall or urethra."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the patient's symptoms are consistent with mesh erosion into the... (ver_d0cc2092795741b2b108e1cafae74877)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient's symptoms are consistent with mesh erosion into the bladder."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes mesh erosion into the bladder can initially present as a bladder... (ver_3f9c4cb90fee42ebae7b4c58b7e6dea0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes mesh erosion into the bladder can initially present as a bladder calculus."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the patient's likely underlying diagnosis is mesh erosion with... (ver_7adf9215968d4f95ab1129c8e58b4c62)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient's likely underlying diagnosis is mesh erosion with bladder stone formation on a nidus of mesh."
+        }
+      ]
+    },
+    {
+      "name": "States the definitive diagnosis of mesh erosion should be confirmed by... (ver_d1ca03b7b09a48d6aedcba74661cea93)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the definitive diagnosis of mesh erosion should be confirmed by urethrocystoscopy."
+        }
+      ]
+    },
+    {
+      "name": "States the definitive treatment for the patient's likely diagnosis involves... (ver_0c9c71bb6c5844fa82ff41e974264729)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the definitive treatment for the patient's likely diagnosis involves mesh removal."
+        }
+      ]
+    },
+    {
+      "name": "States mesh removal may be performed via at least one of the following... (ver_b0cf4e7e9edc4c8dbcdfc0c60706135f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States mesh removal may be performed via at least one of the following techniques: combined laparoscopic and cystoscopic excision, combined vaginal and laparoscopic approaches, or using assistance from ear, nose, and throat instruments."
+        }
+      ]
+    },
+    {
+      "name": "States bladder calculus fragmentation may be needed to facilitate removal. (ver_131d0ed5a12c4c3aa3c18fa556922796)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States bladder calculus fragmentation may be needed to facilitate removal."
+        }
+      ]
+    },
+    {
+      "name": "States the ICD-10 code is T83.7. (ver_08952eb595c64129b74ff5daa2de1e66)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the ICD-10 code is T83.7."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-cards-patient-13-tot-mesh-bladder-erosion-sean-p-65c0e6c4"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_65c0e6c4108f4639b24edd7f56a69368",
+    "task_name": "Labs_Image_AI Scribe_Cards Patient 13 - TOT Mesh Bladder Erosion- Sean P",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_e2dc6e81500342338fe86d118fbe4ac8",
+        "golden_text_response": "The patient's ultrasound imaging report demonstrates the presence of a 1 cm echogenic structure on the anterior bladder wall with posterior shadowing.  This description is consistent with a bladder calculus.  The patient's urinalysis demonstrates increased red blood cells on microscopy, with 5-10/hpf, which is consistent with a bladder calculus.  Leukocyte esterase and nitrites are negative, which indicates the bladder calculus is unlikely to be infected.  The patient has a history of transobturator tape (TOT) sling placement for treatment of stress urinary incontinence.  A potential late complication of this procedure is mesh erosion from the sling through the urethra or bladder wall.  The complication classically presents as a bladder calculus because the mesh acts as a nidus for stone formation.  Given the patient's history, the likely underlying diagnosis is therefore mesh erosion with subsequent bladder stone formation on a nidus of mesh.  The definitive diagnosis should be confirmed by urethrocystoscopy.  The definitive treatment for this diagnosis is mesh removal.  Per ACOG guidelines, mesh removal may be performed via combined laparoscopic and cystoscopic excision, combined vaginal and laparoscopic approaches, or using assistance from ear, nose, and throat instruments.  The bladder calculus may require fragmentation to facilitate removal.  The ICD-10 code for the diagnosis is T83.7, \"Complications due to implanted mesh and other prosthetic materials\".",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

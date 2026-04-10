@@ -1,0 +1,215 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The facilities checklist has been updated: facilities meeting readiness increased by 25% in Illinois, 10% in Indiana, to 10 in Missouri, and by 3 in Ohio; all other data is unchanged. \n\nA total of $140,000 will be used to bring non ready facilities to readiness, with priority based on potential ROI, defined as potential net profit divided by potential investment cost in a state.\n\nAssume the cost to bring one facility to readiness is $25,000 for states with average readiness < 3.4, $27,000 for states with average readiness of 3.5, $26,500 for states with average readiness > 3.7, and $23,200 for all remaining states, and that target net profit per facility is $150,000. I\n\nn the console, answer: \n1- which state has the lowest potential ROI if funds are used entirely for its non ready facilities (return all tied for the lowest potential ROI if in a tie); \n2- which states have all facilities brought to readiness with the $140,000 investments when funds are applied sequentially in descending ROI order;\n3- which states still have facilities not meeting readiness after the $140,000 is used, if tied in ROI, choose first the state whose total readiness cost fits within remaining funds."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the states that offer the lowest potential ROI is Michigan (ver_26bdfab5b1754841a4e9ebf0200a2bf2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the states that offer the lowest potential ROI is Michigan."
+        }
+      ]
+    },
+    {
+      "name": "States that the states that offer the lowest potential ROI is Ohio (ver_ef352645d79d4c35ad7372739256b28d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the states that offer the lowest potential ROI is Ohio."
+        }
+      ]
+    },
+    {
+      "name": "States that the state where all the facilities in the state will be brought to... (ver_57c2ac53c1de47e3b84625e85c92a90d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the state where all the facilities in the state will be brought to readiness with the $140,000 investment is Wisconsin."
+        }
+      ]
+    },
+    {
+      "name": "States that the state where all the facilities in the state will be brought to... (ver_9ec212b3f1964f0bb029c99f66c30805)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the state where all the facilities in the state will be brought to readiness with the $140,000 investment is Missouri."
+        }
+      ]
+    },
+    {
+      "name": "States that the state that still has facilities not meeting readiness after... (ver_a44afdc1a07c4f22b05af38a5e0f3f98)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the state that still has facilities not meeting readiness after all the usable $140,000 investment has been made is Michigan."
+        }
+      ]
+    },
+    {
+      "name": "States that the state that still has facilities not meeting readiness after... (ver_c1d175f9a94f44be8125585ba29dc870)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the state that still has facilities not meeting readiness after all the usable $140,000 investment has been made is Minnesota."
+        }
+      ]
+    },
+    {
+      "name": "States that the state that still has facilities not meeting readiness after... (ver_af0ffb952dd74d3681f5b90d5edf8db1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the state that still has facilities not meeting readiness after all the usable $140,000 investment has been made is Ohio."
+        }
+      ]
+    },
+    {
+      "name": "States that the state that still has facilities not meeting readiness after... (ver_c286f30932bb42bb8080b3e8536450c5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the state that still has facilities not meeting readiness after all the usable $140,000 investment has been made is Indiana."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-bucjd423-437c6005"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_437c60053ae64a01b6c0c8a36157b736",
+    "task_name": "Task bucjd423",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_42153de425e74836914519f3c498ebe0",
+        "golden_text_response": "1. States that offers lowest potential ROI are Michigan and Ohio\n\n2. States where all facilities in the state will be brought to readiness are: Wisconsin and Missouri\n\n3. States that still have facilities not meeting readiness are: Michigan, Minnesota, Ohio, and Indiana ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

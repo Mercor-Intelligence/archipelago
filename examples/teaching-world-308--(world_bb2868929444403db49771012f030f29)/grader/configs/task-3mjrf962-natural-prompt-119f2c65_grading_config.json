@@ -1,0 +1,338 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_e0ce8dc9622d441ba2b061a195ae95ca",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_119f2c658dab4627b164bfde54cf6727",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists rhyming word pair:  (high, good-bye)",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_775d00a6a9374085921b980e930d6b8b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_119f2c658dab4627b164bfde54cf6727",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"No example\" for the rhyme scheme",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7e3c0bd5dd5a4de9a80db66b84225979",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_119f2c658dab4627b164bfde54cf6727",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists this example for alliteration:\n\"Perhaps if the sun\u2019s tears would sing against a white stone . . .\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_98d2f45a3de041bab0a744a70b818ec0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_119f2c658dab4627b164bfde54cf6727",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists this example of allusion:\n\"Penned up inside this ghetto\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8c158f59a0144bf1b0f13206243c783f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_119f2c658dab4627b164bfde54cf6727",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists this example of imagery:\n\"So richly, brightly, dazzingly, yellow.\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_94d0ba6151214d0db3f6179b06898087",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_119f2c658dab4627b164bfde54cf6727",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists this example of repetition: \n\"The last, the very last,\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ebc2b31f744e472abdcf3f32bda7980f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_119f2c658dab4627b164bfde54cf6727",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists this example of repetition: \n\"Such, such a yellow\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2cd1f485477e42ed8127f8dcf7c02b35",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_119f2c658dab4627b164bfde54cf6727",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists this example of hyperbole:\n\"So richly, brightly, dazzingly yellow. Perhaps if the sun\u2019s tears would sing against a white stone. \"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_be7e783dfecc4c5fba47b118e619b206",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_119f2c658dab4627b164bfde54cf6727",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists this example of personification: \n\"Perhaps if the sun\u2019s tears would sing . . .\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7d0eaa7ad73c4c1cbdb0ccde1e9e59bc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_119f2c658dab4627b164bfde54cf6727",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists this example of allusion:  \"In the ghetto\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_247d9ad914ca4ee0978dcff9e2fa6af4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_119f2c658dab4627b164bfde54cf6727",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists this example of imagery:\n\"And the white chestnut branches in the court.\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d42edcf826fc48e58f905c2ad5e6a04c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_119f2c658dab4627b164bfde54cf6727",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists this example of imagery:\n\"Perhaps if the sun's tears would sing against a white stone\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f481a1b11ec64798a0c016a1cce941a8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_119f2c658dab4627b164bfde54cf6727",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists this example of imagery:\n\"The dandelions call to me\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c3b81c8b629d4d7f9cde206545587232",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_119f2c658dab4627b164bfde54cf6727",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists this example of personification: \n\"It went away I\u2019m sure because it wished to kiss the world good-bye.\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ea3a742a9f5748618deecb3c644b6f4b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_119f2c658dab4627b164bfde54cf6727",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists this example of personification: \n\"The dandelions call to me... \"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    },
+    {
+      "eval_config_id": "72d7d96a-9d94-4a38-bbe3-96c08ded727c",
+      "eval_config_name": "Content Length Check Verifier",
+      "eval_defn_id": "content_length_check",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

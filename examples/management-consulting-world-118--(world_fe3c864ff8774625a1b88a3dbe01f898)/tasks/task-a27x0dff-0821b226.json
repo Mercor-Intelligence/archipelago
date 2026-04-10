@@ -1,0 +1,261 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "1. State gross profit CAGR and EBIT CAGR for 2026-2040 using only the happy hospital financials graph document (please take the input numbers from the graph in the format as they are presented, which means in $ millions rounded to 1 decimal place). Make sure that both COGS and SG&A are calculated correctly and include all of their subcomponents. State value in console in % rounding it to 2 decimal places.\n2. Repeat the exercise using the client ready strategic recommendation & implementation plan deck. And state the numbers using same format as in step 1\n3. State \"yes'” or \"no\", answering if there is any difference between the outcomes of step 1 and step 2 separately for gross profit CAGR and EBIT CAGR"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the gross profit CAGR for 2026-2040 using only Happy hospital... (ver_af61b15d22dc4e5c9ed3c308106e9598)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the gross profit CAGR for 2026-2040 using only Happy hospital financials graph is -6.94% (acceptable range -7.01% to -6.87%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the gross profit CAGR for 2026-2040 using only Happy hospital... (ver_af61b15d22dc4e5c9ed3c308106e9598)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the gross profit CAGR for 2026-2040 using only Happy hospital financials graph is any other value than -6.94%."
+        }
+      ]
+    },
+    {
+      "name": "States that the EBIT CAGR for 2026-2040 using only the Happy hospital... (ver_f669befb4e114b6e87f8f8d1f13596ce)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the EBIT CAGR for 2026-2040 using only the Happy hospital financials graph is -8.69% (acceptable range -8.78% to -8.60%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the EBIT CAGR for 2026-2040 using only the Happy hospital... (ver_f669befb4e114b6e87f8f8d1f13596ce)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the EBIT CAGR for 2026-2040 using only the Happy hospital financials graph is any other value than -8.69%."
+        }
+      ]
+    },
+    {
+      "name": "States that the gross profit CAGR for 2026-2040 using the client ready... (ver_4b4d6de452ea4f8e909ad99b60d40fa5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the gross profit CAGR for 2026-2040 using the client ready Strategic Recommendation & Implementation Plan deck is -6.94% (acceptable range -7.01% to -6.87%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the gross profit CAGR for 2026-2040 using only the client ready... (ver_4b4d6de452ea4f8e909ad99b60d40fa5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the gross profit CAGR for 2026-2040 using only the client ready Strategic Recommendation & Implementation Plan deck is any other value than -6.94%."
+        }
+      ]
+    },
+    {
+      "name": "States that the EBIT CAGR for 2026-2040 using only the client ready Strategic... (ver_6d3d0d7dc8a34216b8adf32466032b9f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the EBIT CAGR for 2026-2040 using only the client ready Strategic Recommendation & Implementation Plan deck is -8.69% (acceptable range -8.78% to -8.60%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the EBIT CAGR for 2026-2040 using only the client ready Strategic... (ver_6d3d0d7dc8a34216b8adf32466032b9f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the EBIT CAGR for 2026-2040 using only the client ready Strategic Recommendation & Implementation Plan deck is any other value than -8.69%."
+        }
+      ]
+    },
+    {
+      "name": "States \"no\" to answer if there is any difference between the outcomes of step... (ver_443e5d9ab4f84763abca88bdd61cc1c3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States \"no\" to answer if there is any difference between the outcomes of step 1 and step 2 gross profit CAGR."
+        }
+      ]
+    },
+    {
+      "name": "States \"no\" to answer if there is any difference between the outcomes of step... (ver_c61ed471a0394b0a8ddfbd662df6cbac)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States \"no\" to answer if there is any difference between the outcomes of step 1 and step 2 EBIT CAGR calculation."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-a27x0dff-0821b226"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_0821b226f80649c78f50ba7e3849a16c",
+    "task_name": "Task a27x0dff",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f4cd410c91674b44b84fa2bb652fc107",
+        "golden_text_response": "1.\tThe gross profit and EBIT CAGR for 2026-2040 using only the Happy hospital financials graph are:\n  a.\tGross profit CAGR: -6.94%\n  b.\tEBIT CAGR: -8.69%\n\n2.\tThe gross profit and EBIT CAGR for 2026-2040 using only the client ready Strategic Recommendation & Implementation Plan deck are:\n  a.\tGross profit CAGR: -6.94%\n  b.\tEBIT CAGR: -8.69%\n\n3.\tIs there any difference between the outcomes of step 1 and step 2:\n  a.\tNo for gross profit CAGR\n  b.\tNo for EBIT CAGR\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

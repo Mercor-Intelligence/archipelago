@@ -1,0 +1,237 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_85ef17e54c214d5384a2fe132c997f56",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a9f9f23747f34028ba9b503bbbd18180",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "Includes Questions 1, 2, 3, 4, 5, 6, 7, and 8 from \"Answerkey Unit Assessment, Chapters 1-14 Exam\" in new document \"Answer Key Misconceptions 1-8\"",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Assessments/Answerkey Unit Assessment, Chapters 1-14 Exam.docx",
+            "source": "world",
+            "snapshotId": "snap_bebca1298bd04ba3a95356e6da5a6fc6"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_971509e26147485bad04ddb5a275a23d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a9f9f23747f34028ba9b503bbbd18180",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Labels Question 5 answer choice a as a literal misconception",
+        "modality": "Free text",
+        "negative_criteria": "Labels Question 5 answer choice a as a literal misconception.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_228d7450ebc64a608dac9654817cb923",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a9f9f23747f34028ba9b503bbbd18180",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Labels Question 5 answer choice b as a literal misconception",
+        "modality": "Free text",
+        "negative_criteria": "Labels Question 5 answer choice b as a misconception other than literal.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6ff3eb75c1c24eddb875b99386bf1695",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a9f9f23747f34028ba9b503bbbd18180",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Labels Question 6 answer choice a as a comprehension misconception",
+        "modality": "Free text",
+        "negative_criteria": "Labels Question 6 answer choice a as a misconception other than comprehension.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 17,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_09f89bf7eb484f65ae5216ef3078e1c2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a9f9f23747f34028ba9b503bbbd18180",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Labels Question 6 answer choice b as a comprehension misconception",
+        "modality": "Free text",
+        "negative_criteria": "Labels Question 6 answer choice b as a misconception other than comprehension.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 18,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_11d7105ec71a4d699e3abd7f8dea3f59",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a9f9f23747f34028ba9b503bbbd18180",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Labels Question 6 answer choice c as a comprehension misconception",
+        "modality": "Free text",
+        "negative_criteria": "Labels Question 6 answer choice c as a comprehension misconception.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 19,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f2b26636279f4d9ab41d7b864fb3fcee",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a9f9f23747f34028ba9b503bbbd18180",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Labels Question 7 answer choice a as an application misconception",
+        "modality": "Free text",
+        "negative_criteria": "Labels Question 7 answer choice a as a misconception other than comprehension.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 21,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_300de90d0b704bfca7de7696b0501083",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a9f9f23747f34028ba9b503bbbd18180",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Labels Question 7 answer choice b as a comprehension misconception",
+        "modality": "Free text",
+        "negative_criteria": "Labels Question 7 answer choice b as a misconception other than comprehension.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 22,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b0acb1fe446843bbbd42745227ee5851",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a9f9f23747f34028ba9b503bbbd18180",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Labels Question 8 answer choice a as an application misconception",
+        "modality": "Free text",
+        "negative_criteria": "Labels Question 8 answer choice a as a misconception other than comprehension.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 24,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bd5ecfb4cc654d8283854e425f1f25a7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a9f9f23747f34028ba9b503bbbd18180",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Labels Question 8 answer choice c as an application misconception",
+        "modality": "Free text",
+        "negative_criteria": "Labels Question 8 answer choice c as a misconception other than application.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 26,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

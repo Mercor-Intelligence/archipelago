@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the SQLite tables subscribers, subscriber_plans, subscription_plans, data_usage_daily, and roaming_sessions, analyze 2025 to see whether having hotspot included is associated with heavier day to day usage and overage behavior. Build the dataset at the subscriber-day level from data_usage_daily, keeping only days where data consumed > 0 mb, and only subscribers with active accounts and credit score >= 700. For each subscriber-day, attach the single plan that is active on that day by requiring activation date <= usage date and (contract_end_date is NULL/blank OR contract_end_date >= usage date), and if multiple plans qualify choose the one with the most recent activation date. Also ensure the plan definition in subscription_plans is valid on that day using effective date <= usage date and (end date is NULL/blank OR end date >= usage date). Exclude any subscriber-day that falls within a roaming session window for that subscriber (usage date between start date and end date in roaming_sessions). Finally, split results by whether the active plan has hotspot_included = 1 vs 0, and return these outputs (rounded to 2 decimals): average data consumed in mb per day (hotspot vs no hotspot), percent of days with overage mb > 0 (hotspot vs no hotspot), and average overage mb on overage days only (hotspot vs no hotspot)."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports the average daily mb for hotspot included plans as 3532.11 (+/- 0.05). (ver_c62984bee7914b39b85ba3681410725b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the average daily mb for hotspot included plans as 3532.11 (+/- 0.05)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the average daily mb for no hotspot plans as 3125.81 (+/- 0.05) (ver_ece90cdc916341418a9ae8e53496d5ca)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the average daily mb for no hotspot plans as 3125.81 (+/- 0.05)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the percent overage days for hotspot included plans as1.11 (+/- 0.05) (ver_7afd242fa25849839363480315ac6cd4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the percent overage days for hotspot included plans as1.11 (+/- 0.05)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the percent overage days for no hotspot plans as 1.56 (+/- 0.05) (ver_a3da4c7470034d6984b0d2214974f751)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the percent overage days for no hotspot plans as 1.56 (+/- 0.05)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the average overage mb on overage days for hotspot included plans as... (ver_1a9a0982c44d406f8e1af52d75d5fc4c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the average overage mb on overage days for hotspot included plans as 11213.50 (+/- 0.05)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the average overage mb on overage days for no hotspot plans as 9863.04... (ver_3f6e9338cecd4e4db4eeefea8bd03afa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the average overage mb on overage days for no hotspot plans as 9863.04 (+/- 0.05)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sql-task-rulz5168-789f3880"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_789f38807b564be2b4e7b1abe26ae823",
+    "task_name": "SQL - Task rulz5168",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_61864025bc9243048033b9b24d941f2b",
+        "golden_text_response": "plan_type  avg_daily_mb  percent_overage_days  avg_overage_mb_on_overage_days \n0  Hotspot Included       3532.11                  1.11                          11213.50  \n1        No Hotspot       3125.81                  1.56                             9863.04                          \n\n```\nWITH daily_usage AS (\n  SELECT\n    d.subscriber_id,\n    DATE(d.usage_date) AS usage_date,\n    SUM(d.data_consumed_mb) AS data_consumed_mb,\n    SUM(d.overage_mb) AS overage_mb\n  FROM data_usage_daily d\n  WHERE DATE(d.usage_date) >= DATE('2025-01-01')\n    AND DATE(d.usage_date) <  DATE('2026-01-01')\n    AND d.data_consumed_mb > 0\n  GROUP BY d.subscriber_id, DATE(d.usage_date)\n),\nbase AS (\n  SELECT\n    du.*\n  FROM daily_usage du\n  JOIN subscribers s\n    ON s.subscriber_id = du.subscriber_id\n  WHERE LOWER(TRIM(s.account_status)) = 'active'\n    AND CAST(s.credit_score AS REAL) >= 700\n),\nranked_subscriber_plans AS (\n  SELECT\n    b.subscriber_id,\n    b.usage_date,\n    b.data_consumed_mb,\n    b.overage_mb,\n    sp.plan_id,\n    ROW_NUMBER() OVER (\n      PARTITION BY b.subscriber_id, b.usage_date\n      ORDER BY DATE(sp.activation_date) DESC\n    ) AS rn\n  FROM base b\n  JOIN subscriber_plans sp\n    ON sp.subscriber_id = b.subscriber_id\n   AND DATE(sp.activation_date) <= b.usage_date\n   AND (\n     NULLIF(TRIM(sp.contract_end_date), '') IS NULL\n     OR DATE(sp.contract_end_date) >= b.usage_date\n   )\n),\nactive_plan AS (\n  SELECT\n    subscriber_id,\n    usage_date,\n    data_consumed_mb,\n    overage_mb,\n    plan_id\n  FROM ranked_subscriber_plans\n  WHERE rn = 1\n),\nranked_plan_defs AS (\n  SELECT\n    ap.subscriber_id,\n    ap.usage_date,\n    ap.data_consumed_mb,\n    ap.overage_mb,\n    p.hotspot_included,\n    ROW_NUMBER() OVER (\n      PARTITION BY ap.subscriber_id, ap.usage_date\n      ORDER BY DATE(p.effective_date) DESC\n    ) AS rn\n  FROM active_plan ap\n  JOIN subscription_plans p\n    ON p.plan_id = ap.plan_id\n   AND DATE(p.effective_date) <= ap.usage_date\n   AND (\n     NULLIF(TRIM(p.end_date), '') IS NULL\n     OR DATE(p.end_date) >= ap.usage_date\n   )\n),\nplan_def AS (\n  SELECT\n    subscriber_id,\n    usage_date,\n    data_consumed_mb,\n    overage_mb,\n    hotspot_included\n  FROM ranked_plan_defs\n  WHERE rn = 1\n),\nnon_roaming AS (\n  SELECT\n    pd.*\n  FROM plan_def pd\n  WHERE NOT EXISTS (\n    SELECT 1\n    FROM roaming_sessions r\n    WHERE r.subscriber_id = pd.subscriber_id\n      AND DATE(r.start_date) <= pd.usage_date\n      AND (\n        NULLIF(TRIM(r.end_date), '') IS NULL\n        OR DATE(r.end_date) >= pd.usage_date\n      )\n  )\n)\nSELECT\n  CASE\n    WHEN LOWER(TRIM(CAST(hotspot_included AS TEXT))) IN ('true','1') THEN 'Hotspot Included'\n    ELSE 'No Hotspot'\n  END AS plan_type,\n  ROUND(AVG(data_consumed_mb), 2) AS avg_daily_mb,\n  ROUND(100.0 * AVG(CASE WHEN overage_mb > 0 THEN 1.0 ELSE 0.0 END), 2) AS percent_overage_days,\n  ROUND(AVG(CASE WHEN overage_mb > 0 THEN overage_mb END), 2) AS avg_overage_mb_on_overage_days\nFROM non_roaming\nGROUP BY\n  CASE\n    WHEN LOWER(TRIM(CAST(hotspot_included AS TEXT))) IN ('true','1') THEN 'Hotspot Included'\n    ELSE 'No Hotspot'\n  END\nORDER BY plan_type;\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

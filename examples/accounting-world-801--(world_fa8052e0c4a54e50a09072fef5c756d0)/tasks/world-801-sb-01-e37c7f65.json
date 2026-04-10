@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the Trial Balance Summary in the model, and the payments document in Xero. Calculate the absolute value difference in accrual based gross profit margin and cash based gross profit margin for FY2021 and FY2022.\n\nAssumptions:\n- For cash based calculations assume all expenses are part of COGS\n- For intermediate calculations use USD, convert other currencies if needed.\n\nPresent output in %, rounded to two decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the absolute value difference in accrual based gross profit margin... (ver_55294b8ed0774fe68faafc4af055a909)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the absolute value difference in accrual based gross profit margin and cash based gross profit margin value difference in 2021 is 45.09% (acceptable range 44.64% to 45.54%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the absolute value difference in accrual based gross profit margin... (ver_55a7cfe070e94ea5b6a70b64720e8d51)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the absolute value difference in accrual based gross profit margin and cash based gross profit margin value difference in 2022 is 49.74% (acceptable range 49.24% to 50.24%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-801-sb-01-e37c7f65"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_e37c7f652db64a4d8a727544713c40d3",
+    "task_name": "World 801 SB_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_df9aa7fc1fbc43f7bb522d034cd64400",
+        "golden_text_response": "The absolute value difference in accrual based gross profit margin and cash based gross profit margin value difference in 2021: 45.09%\nThe absolute value difference in accrual based gross profit margin and cash based gross profit margin value difference in 2022: 49.74%\n\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

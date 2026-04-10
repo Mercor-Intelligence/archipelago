@@ -1,0 +1,44 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_82d46279ba7c41949ffbe9dd7bc0cd07",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_970f0865f5c1450999a415b19858615f",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that \"Schedule Delay Costs\" is the weakest category for SBP to sustain in court",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The Aas decision established that homeowners can't sue for \"pure economic losses\" under a claim for negligence. Aas v. Superior Court, S071258 (Cal. filed Dec. 4, 2000). Essentially, if a construction defect exists but hasn't caused physical property damage, recovery of the costs to repair the property or the diminution in the home's value are not recoverable through a negligence lawsuit. The court leaned on the Seely rule to explain that tort law is meant to protect people and property from physical harm, not to act as a safety net for \"lost business income\" or the price of repairing a bad product.  Aas at 10-11, citing Seely v. White Motor Co., 63 Cal. 2d 9 (1965).\nThe \"Schedule Delay Costs\" are the most vulnerable to being upheld in court because they are purely economic, consequential losses. They are basically the equivalent of the \"lost business income\" that the Aas court explicitly noted is not recoverable in a negligence case. Also, they are the largest of the damages categories.\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

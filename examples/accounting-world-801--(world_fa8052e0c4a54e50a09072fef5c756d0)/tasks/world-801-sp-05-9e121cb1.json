@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Calculate the Systemic documentation Coverage (Combined Invoice and Purchase Order value relative to total Operating Volume) for each of the years 2021-2023 using the audited components tax file in the filesystem and the Invoices and Purchase Orders in Xero.\n\nFor the documentation value, use only the aggregate of AUTHORISED Invoices and AUTHORISED Purchase Orders recorded in Xero for each respective year and for the Operating Volume, aggregate the Net Revenue and the Cost of Goods Sold (COGS) as reported in the Trial Balance Summary\n\nPresent the final Systemic Documentation Coverage for each year as a percentage, rounded to two decimal places to the console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the Systemic Documentation Coverage in 2021 is 2.04% (acceptable... (ver_43427a09bc724de5899ad169b0d335d6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Systemic Documentation Coverage in 2021 is 2.04% (acceptable range 2.02% to 2.06%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Systemic Documentation Coverage in 2022 is 1.40% (acceptable... (ver_d437b362ac7840b2b6015b1ba829ded4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Systemic Documentation Coverage in 2022 is 1.40% (acceptable range 1.39% to 1.41%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Systemic Documentation Coverage in 2023 is 1.48% (acceptable... (ver_9514941b7a0c493a883d0db3fc31dbb1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Systemic Documentation Coverage in 2023 is 1.48% (acceptable range 1.47% to 1.49%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-801-sp-05-9e121cb1"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_9e121cb15b3d4a1d9f3a9dfe4ca14915",
+    "task_name": "World 801 SP_05",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_83e6dbf8bff24bd0a67aef36edeebaac",
+        "golden_text_response": "States FY2021 Systemic Documentation Coverage is 2.04%\nStates FY2022 Systemic Documentation Coverage is 1.40%\nStates FY2023 Systemic Documentation Coverage is 1.48%\n\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

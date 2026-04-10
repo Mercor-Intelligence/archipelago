@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Liverbird Development, Co. has entered into version two of the DDA with the city for the development of property for mixed use. During excavation, the excavation company found significant amounts of lead under the soil. The city counsel becomes aware of the issue and sends Liverbird Development, Co. a letter indicating the city's intent to suspend key provisions of the contract, including 1.1(i), 1.1(iii), and 2.1(b)(i). Using only the documents provided, if Liverbird Development, Co. sues the city for breach of contract, will Liverbird prevail? Respond in a short paragraph answering the question presented and justifying your answer."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the City may suspend a provision of the DDA if the city determines... (ver_dacc14b633d2487181f1f8a35bb228fd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the City may suspend a provision of the DDA if the city determines that the failure to do so would place the residents of the territory in a condition dangerous to their health."
+        }
+      ]
+    },
+    {
+      "name": "States that lead is classified as a material hazardous to human health (ver_acf29fc7a00d4aeeab05ac6825b6baeb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that lead is classified as a material hazardous to human health."
+        }
+      ]
+    },
+    {
+      "name": "States that the provisions of the DDA that the City wishes to suspend concern... (ver_28a38503d552405b998d60d4d0792ded)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the provisions of the DDA that the City wishes to suspend concern housing of people."
+        }
+      ]
+    },
+    {
+      "name": "States that Liverbird would not prevail on its breach of contract claim... (ver_e98ae1e67a9540baafc29e322eecf724)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Liverbird would not prevail on its breach of contract claim against the City."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh lawworld428-anb-02-dca43139"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_dca431396e114941b7271491d6e67e37",
+    "task_name": "LawWorld428_ANB_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_e8c98436c78c4a608ad40b7e87f07a96",
+        "golden_text_response": "No, Lovebird would not prevail in a breach of contract lawsuit against the City for suspension of its residential , because lead has been classified as a material hazardous to human health by the State of California (see p65chemicalslist.pdf), and the suspended provisions of the DDA involve housing of human beings (see V.2 - DDA Draft.docx). Under Ca. Gov. Code § 65865.3(b), the City \"may modify or suspend the provisions of the development agreement if the city determines that the failure of the city to do so would place the residents of the territory subject to the development agreement, or the residents of the city, or both, in a condition dangerous to their health or safety, or both\" (see Development Agreements.pdf).",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

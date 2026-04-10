@@ -1,0 +1,358 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the 8th grade standards listed in the Pennsylvania ELA Core Standards and Lesson Plan 10 for To Kill a Mockingbird, could you create one modified student handout document based on the “Text-Based Exploration” directions. This handout should include a labeled place for the student name, directions that include working in a group, choosing one thematic topic from the provided list, identifying a theme, and finding two textual examples. The handout should also include the specified example in the \"Text-Based Exploration\" directions in the Lesson Plan 10.\n\nPlease ensure the modified student handout is aligned to Step 5: Guided Reading Support in the remediations strategies for struggling students document, addresses Accommodations / Modifications in Lesson Plan 10, and incorporates appropriate Specially Designed Instruction (SDI) modification from the IEP Wyatt Zimmerman document. Please try to keep this document within 1-2 pages."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that students will work in a group (ver_2c56ea8d0330473bb2a9ec0da4658089)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that students will work in a group."
+        }
+      ]
+    },
+    {
+      "name": "States that students will work in a configuration other than a group. (ver_2c56ea8d0330473bb2a9ec0da4658089)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that students will work in a configuration other than a group."
+        }
+      ]
+    },
+    {
+      "name": "Lists 4 thematic topics: prejudice, justice and morality, family and... (ver_af74f89ec1c04172a023e1d6d1ef70d6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists 4 thematic topics: prejudice, justice and morality, family and parenting, and good and evil in human nature."
+        }
+      ]
+    },
+    {
+      "name": "Provides directions telling students to Identify a theme Harper Lee develops... (ver_80b78e06da9740b1aa5eddcb86aac8a5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides directions telling students to Identify a theme Harper Lee develops about a chosen topic from the list."
+        }
+      ]
+    },
+    {
+      "name": "States to “Find two textual examples (quotes or paraphrases) showing how... (ver_bfd2d1ea975c4eddb0c8762e1ed58fe6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States to “Find two textual examples (quotes or paraphrases) showing how Atticus, Scout, or Jem help develop this theme”."
+        }
+      ]
+    },
+    {
+      "name": "Provides an Example Model of Topic: Good and Evil/Human Nature (ver_ebf6ea2840ba42efa56f984f3caf1c59)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides an Example Model of Topic: Good and Evil/Human Nature."
+        }
+      ]
+    },
+    {
+      "name": "Provides an Example Model of Theme: \"People are capable of both good and evil,... (ver_94e5cfe88af346428067c378f6d20985)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides an Example Model of Theme: \"People are capable of both good and evil, but empathy allows us to see the good in others\"."
+        }
+      ]
+    },
+    {
+      "name": "Provides an Example Model that includes: Textual Evidence: \"Atticus teaches... (ver_baefddb848e44d1188a6e9b3c05aee4c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides an Example Model that includes: Textual Evidence: \"Atticus teaches Scout to “climb into someone’s skin and walk around in it” and \"Scout’s final realization that Boo Radley is kind and human after she stands on his porch.\"."
+        }
+      ]
+    },
+    {
+      "name": "Provides a notes section that states: “A thematic topic is a big idea (e.g.... (ver_8420e60b5bc74bc2a807f65c18a35f35)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides a notes section that states: “A thematic topic is a big idea (e.g. courage, prejudice, justice, family, innocence, good vs. evil)”."
+        }
+      ]
+    },
+    {
+      "name": "Provides a notes section that states: ”A theme is the author’s message or... (ver_5815b06c9d4445478c9a3cfa3f794632)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides a notes section that states: ”A theme is the author’s message or statement about that idea”."
+        }
+      ]
+    },
+    {
+      "name": "Provides a notes section that states “Examples: Thematic topic: Courage,... (ver_ab365a5573b946df8a99e69a218bf1cf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides a notes section that states “Examples: Thematic topic: Courage, Theme: True courage is standing up for what is right, even when you know you might lose.”."
+        }
+      ]
+    },
+    {
+      "name": "Provides a labeled space with a sentence starter for students to choose one... (ver_05e2ef8e419c490fbf9c8d0eb8fa9721)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides a labeled space with a sentence starter for students to choose one thematic topic from the list."
+        }
+      ]
+    },
+    {
+      "name": "Provides a labeled space with a sentence starter for students to Identify a... (ver_0e78a9b031624669b8be5bbdaeb27f1c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides a labeled space with a sentence starter for students to Identify a theme."
+        }
+      ]
+    },
+    {
+      "name": "Provides a labeled space for students to provide two textual examples from the... (ver_ef4748892cc24f8e93205d3d7b4f30b0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides a labeled space for students to provide two textual examples from the text."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world305-ajw-01-natural-prompt-5c248e19"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_5c248e19a25d49af9db683616827827c",
+    "task_name": "World305_ajw_01 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_330fd7e5fb674860b6de9518255dca86",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_b9375d87924e4e6583435047f3b3dfa6"
+      },
+      {
+        "golden_response_id": "gold_b470c77b539c47f3a0f4d17d3e86bccc",
+        "golden_text_response": "The attached file is the expected output that the agent should produce for this task.",
+        "golden_file_responses": "snap_b9375d87924e4e6583435047f3b3dfa6"
+      }
+    ]
+  }
+}

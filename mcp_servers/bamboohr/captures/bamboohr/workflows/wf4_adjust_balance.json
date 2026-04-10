@@ -1,0 +1,10 @@
+{
+  "name": "Adjust Balance",
+  "pdf_page": 4,
+  "steps": [
+    {
+      "step": 1,
+      "action": "Navigate to employee Time Off tab"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+id,field_name,option_value,sort_order,archived
+1,employment_type,Full-time,1,false
+2,employment_type,Part-time,2,false
+3,employment_type,Per Diem,3,false
+4,employment_type,Contract,4,false
+5,fte_band,0.5,1,false
+6,fte_band,0.75,2,false
+7,fte_band,0.9,3,false
+8,fte_band,1.0,4,false
+9,shift,Day,1,false
+10,shift,Evening,2,false
+11,shift,Night,3,false
+12,shift,Rotating,4,false
+13,clinical_privileges,None,1,false
+14,clinical_privileges,Limited,2,false
+15,clinical_privileges,Full,3,false
+16,union_status,Non-union,1,false
+17,union_status,Union,2,false
+18,remote_status,Onsite,1,false
+19,remote_status,Hybrid,2,false
+20,remote_status,Remote,3,false

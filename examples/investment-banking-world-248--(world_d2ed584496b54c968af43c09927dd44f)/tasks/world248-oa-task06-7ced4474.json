@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Make the following changes to the RMBS vs MTSI analysis in the merger model and calculate the min required 1 year growth rate of the Pro forma revenue to ensure that the EPS is not dilutive (compared to same RMBS base case)\n\n1.\tUpdate the MTSI’s share price at acquisition to the average dividend adjusted daily closing price between September 2, 2025 and December 31, 2025\n\n2.\tUpdate the % cash consideration to 7.5%; % Bid Premium to 25%; and %SG&A Synergies to 60%\n\n3.\tAssumptions for year 1 income statement\na.\tCost of revenue has the same ratio to revenue as the Pro forma income statement \nb.\tSG&A expense is the sum of RMBS and MTSI average analyst estimate for 2026 less the synergies\nc.\tOther operating expenses has the same ratio to revenue as the Pro forma income statement \nd.\tAdvisory & financing fees reduce to 0 \ne.\tNet interest income stays fixed in year 1\nf.\tTax rate of 24%\n\nOutput the 1 year revenue growth rate in 2 decimal places "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the revenue growth rate is 64.62% (acceptable range 63.97% to 65.27%) (ver_76ea5863c6a544c6bcbc7af424295831)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the revenue growth rate is 64.62% (acceptable range 63.97% to 65.27%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world248-oa-task06-7ced4474"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_7ced4474eec74a2c9366e9c6a9a34b32",
+    "task_name": "World248_OA_Task06",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_7a08822d3ebc4dc98eadae7161483d9f",
+        "golden_text_response": "Rrevenue growth rate is 64.62%",
+        "golden_file_responses": "snap_7a355f7e0fe0427bbb81d14dfed9d0f8"
+      }
+    ]
+  }
+}

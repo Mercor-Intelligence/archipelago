@@ -1,0 +1,296 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_c6a206ca79a94b0d8596c7f7a3bf013e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864600001f724f35b605f71b10073cc6",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient's symptoms are consistent with interstitial cystitis.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Cards_Patient 13 Script 4: \"I\u2019ve been having pain in my lower abdomen for 2 months now and constantly feel the need to urinate.  It feels better when I pee, but I can\u2019t keep running to the bathroom every half an hour. \"\n\n\"Symptoms must last at least 6 weeks with negative urine cultures and no acceptable explanation or alternative diagnosis. Typical symptoms involve urinary frequency, nocturia, and suprapubic pain, which persist even after voiding. There may be urgency, nocturia, or dysuria, but usually no incontinence. IC/BPS pain is usually suprapubic but may also be perineal. The discomfort is typically improved but not totally relieved by voiding.\"\nhttps://www.ncbi.nlm.nih.gov/books/NBK570588/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3aaff35733d04b6eb3e477c13510d6c2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864600001f724f35b605f71b10073cc6",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient's repeat negative urine cultures are consistent with interstitial cystitis.",
+        "autogen_source": null,
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient is continuing to have symptoms in the setting of multiple negative urine cultures, which makes urinary tract infection unlikely.\n\nCards_Patient 13 Script 4: \"Patient: I know the urine cultures keep coming back negative but my symptoms still aren\u2019t going away.\"  \"Taking a look at your chart, I am seeing your urine cultures have been negative and I\u2019m not seeing outstanding issues with your blood work.  \"\n\n\"Symptoms must last at least 6 weeks with negative urine cultures and no acceptable explanation or alternative diagnosis. Typical symptoms involve urinary frequency, nocturia, and suprapubic pain, which persist even after voiding. There may be urgency, nocturia, or dysuria, but usually no incontinence. IC/BPS pain is usually suprapubic but may also be perineal. The discomfort is typically improved but not totally relieved by voiding.\"\nhttps://www.ncbi.nlm.nih.gov/books/NBK570588/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5615812e3ede4a35a873b5547b0c5ee4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864600001f724f35b605f71b10073cc6",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)",
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes at least two of the following demographic risk factors for interstitial cystitis present in this patient: female gender, White race, age of 65 years old (acceptable range 64 to 66).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Of patients with interstitial cystitis, 94% are White and approximately 90% are female...Median age at presentation is 40 years.\"\nhttps://emedicine.medscape.com/article/2055505-overview#a5\n\nThe patient is noted to be a white female throughout the chart.\n\"MAKIRAH CORAL is a 86 y.o. White or Caucasian female\"\nCLINICALNOTES - Progress Notes - Column D - Row 193\n\nThe patient is 65 years old given her date of birth and the date of her cytoscopy.\nCards_Patient Cytoscopy.pdf:\n\"Patient: Cards Patient 13\nDOB: 01/01/1961\nPatient ID: 123456789\nDate of Procedure: 01/07/2026\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c842e32bf44c46aea869a6c8c6eac344",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864600001f724f35b605f71b10073cc6",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient's history of pelvic reconstruction surgery is a significant risk factor for interstitial cystitis.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"There is a high rate of prior pelvic surgery (especially hysterectomy) and levator ani pain in women with IC/BPS, suggesting that trauma or other local factors may contribute to symptoms.\"\nhttps://www.auanet.org/guidelines-and-quality/guidelines/diagnosis-and-treatment-interstitial-of-cystitis/bladder-pain-syndrome-(2022)\n\nThe patient has a history of major pelvic reconstructive surgery that included hysterectomy. She also has levator ani pain.\n\n\"Has a history of LAVH [Laparoscopically Assisted Vaginal Hysterectomy], BSO, with anterior and posterior repair, sacrospinous fixation and TOT sling...Ms. Balam is a 60 y.o. with:  1. Recurrent urinary tract infection   2. Leukocytes in urine   3. Urinary frequency   4. Levator spasm\"\nCLINICALNOTES - Progress Notes - Column D - Row 193",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cbdbed3bdc7b499fb79d3adf288a94ac",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864600001f724f35b605f71b10073cc6",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient has a Hunner lesion on cystoscopy.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Cards_Patient 13 Cystoscopy: \"Initial inspection of the bladder revealed a lesion identified on the right lateral wall measuring approximately 1.0 cm, characterized by a focal denuded erythematous area of mucosa. With hydrodistension, an adherent clot is visible and the area has oozing bleeding.\"\n\n\"Characteristic cystoscopic findings of Hunner\u2019s lesion. The lesion is usually present with erythematous mucosa with, (a) central de-epithelialization, radiating vessels toward the center of lesion with coagulum, (b) central hemorrhage during cystoscopic distention, (c) focal chronic scaring of the surrounding bladder wall, or (d) denuded mucosa and diffuse bleeding\"\nhttps://journals.lww.com/tcmj/fulltext/2024/36010/cystoscopic_characteristic_findings_of.3.aspx?utm_source=chatgpt.com",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_28f3a23d9e9b48bda2f4dacaf7fabc6c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864600001f724f35b605f71b10073cc6",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States Hunner lesions are diagnostic for interstitial cystitis.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"The only consistent cystoscopic finding that leads to a diagnosis of IC/BPS is that of one or several inflammatory appearing lesions or ulcerations as initially described by Hunner in 1918.\"\nhttps://www.auanet.org/guidelines-and-quality/guidelines/diagnosis-and-treatment-interstitial-of-cystitis/bladder-pain-syndrome-(2022)\n\n\"A Hunner ulcer is characteristic and diagnostic of classic IC.\"\nhttps://www.ncbi.nlm.nih.gov/books/NBK570588/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4989382374b04811a45518b415bd1860",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864600001f724f35b605f71b10073cc6",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Concludes the most likely diagnosis is interstitial cystitis.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient presents with chronic suprapubic pain, urinary frequency, and pain relieved by voiding in the setting of repeat negative urine cultures, a clinical picture consistent with interstitial cystitis.  The patient is a White female in her 60s, a demographic profile that matches the classic risk factors of a patient diagnosed with interstitial cystitis.  Of patients with interstitial cystitis, 94% are White, approximately 90% are female, and the median age of diagnosis is 40 (tends to affect older populations).  The patient's history of pelvic reconstruction surgery is also a significant predisposing factor for interstitial cystitis.  The American Urological Association (AUA) indicates cystoscopy is reasonable to offer for patients over the age of 50, as there is a higher likelihood of finding Hunner lesions that would change management of the condition.   Cystoscopy obtained in this patient demonstrates a focal denuded erythematous mucosal lesion that bleeds with hydrodistension, a description consistent with a Hunner lesion.  Hunner lesions are considered diagnostic for interstitial cystitis; they are also the only consistent cystoscopic finding considered diagnostic for interstitial cystitis.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_20927a25f32840e8b296f4896900f559",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864600001f724f35b605f71b10073cc6",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "References the American Urological Association (AUA) guideline \"Diagnosis and Treatment of Interstitial Cystitis/Bladder Pain Syndrome\" from 2022.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests \"the most likely diagnosis per American Urological Association guidelines as of December 2025\".  The most recent guideline as of December 2025 is the 2022 update.\n\nFrom the AUA website:\n\"Diagnosis and Treatment of Interstitial Cystitis/Bladder Pain Syndrome (2022)\"\n\"Published 2011; Amended 2014, 2022\"\nhttps://www.auanet.org/guidelines-and-quality/guidelines/diagnosis-and-treatment-interstitial-of-cystitis/bladder-pain-syndrome-(2022)",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_791ce533a8dc4ba0947f3c079f382c87",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864600001f724f35b605f71b10073cc6",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Explains that the presence of Hunner lesions alters management from non-surgical to immediate fulguration or injection.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Except for patients with Hunner lesions (Statement 19), initial treatment should be nonsurgical....If Hunner lesions are present, then fulguration (with electrocautery) and/or injection of triamcinolone should be performed. \"\nhttps://www.auanet.org/guidelines-and-quality/guidelines/diagnosis-and-treatment-interstitial-of-cystitis/bladder-pain-syndrome-(2022)",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ca0b95acbcf141f4b12e64eda7c9d36f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864600001f724f35b605f71b10073cc6",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the first-line treatment is fulguration with electrocautery and/or injection of triamcinolone.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Per most recent American Urological Association guidelines, the most recent guidelines as of December 2025, last updated in July of 2022: \"If Hunner lesions are present, then fulguration (with electrocautery) and/or injection of triamcinolone should be performed.\"\nhttps://www.auanet.org/guidelines-and-quality/guidelines/diagnosis-and-treatment-interstitial-of-cystitis/bladder-pain-syndrome-(2022)\n\nThe full treatment summary algorithm (Figure 1 in the above article) can be downloaded at this website under the Interstitial Cystitis/Bladder Pain Syndrome section: https://www.auanet.org/guidelines-and-quality/guidelines/non-oncology-guidelines.  ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9274a33a75fa4a61a2ad0339bc9aab1a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864600001f724f35b605f71b10073cc6",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the second-line treatment is oral cyclosporine A.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Oral cyclosporine A may be offered particularly for patients with Hunner lesions refractory to fulguration and/or triamcinolone. \"\nhttps://www.auanet.org/guidelines-and-quality/guidelines/diagnosis-and-treatment-interstitial-of-cystitis/bladder-pain-syndrome-(2022)\n\nThe full treatment summary algorithm (Figure 1 in the above article) can be downloaded at this website under the Interstitial Cystitis/Bladder Pain Syndrome section: https://www.auanet.org/guidelines-and-quality/guidelines/non-oncology-guidelines.  ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f069f797970542d7a769e2b2c87e45bc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_864600001f724f35b605f71b10073cc6",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States patients on cyclosporine A should be closely monitored due to the potential for serious adverse events.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Taken together, these data suggest sustained efficacy, particularly in patients with Hunner lesions or with active bladder inflammation; however, because of the relatively small number of patients treated, the lack of long-term follow-up data on large numbers of patients, and the potential for serious AEs (e.g., immunosuppression, nephrotoxicity), the Panel judged some uncertainty remains in the balance between benefits and risks/burdens. The decision to use oral CyA, therefore, is an Option. Patients taking CyA should have close monitoring, especially for renal function and blood pressure.  A monitoring protocol should also take into account the risks of hepatotoxicity, hyperuricemia, hypomagnesemia, hematologic abnormalities and malignancies, especially skin cancer and lymphomas.\"\nhttps://www.auanet.org/guidelines-and-quality/guidelines/diagnosis-and-treatment-interstitial-of-cystitis/bladder-pain-syndrome-(2022)",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

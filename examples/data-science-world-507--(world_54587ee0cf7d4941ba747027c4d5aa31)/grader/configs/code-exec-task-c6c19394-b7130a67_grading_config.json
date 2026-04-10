@@ -1,0 +1,174 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_133d22bfde3941fe9052d315d05548d6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b7130a6702144691a0204ae7172051b0",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the percentage of female users from the filtered population as 54.05% +/- 0.1% ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "After cleaned both datasets, and identified English-speaking credit card users in the United States who use US dollars for payments, have an active account status and verified email, and have retried no fewer than three payment attempts in 2024. We found that 54.05% filtered users are females. ",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e584f6725fe54e3e9027b9222f6a4a71",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b7130a6702144691a0204ae7172051b0",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the percentage of male users from the filtered population as 45.95% +/- 0.1%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "After cleaned both datasets, and identified English-speaking credit card users in the United States who use US dollars for payments, have an active account status and verified email, and have retried no fewer than three payment attempts in 2024. We found that 45.95% filtered users are males. ",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1f1a0d7dede741149f5a6d7f0122df75",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b7130a6702144691a0204ae7172051b0",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the user with the largest total amount spent as 1414.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "After cleaning the datasets and filter for English-speaking credit card users in the United States who use US dollars for payments, have an active account status and verified email, and have retried no fewer than three payment attempts in 2024. We found that the TOP 1st users with largest total amount spent is user 1414.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cc196240ec704e96aba9ebed866fa725",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b7130a6702144691a0204ae7172051b0",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that user 1414 spent $72.94 +/- 0.05",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "After cleaning the datasets and filter for English-speaking credit card users in the United States who use US dollars for payments, have an active account status and verified email, and have retried no fewer than three payment attempts in 2024. We found that the TOP 1st users with largest total amount spent is user 1414 who spent $72.94 +/- 0.05",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9dcb3e4c9e554502a67db1fe9247600d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b7130a6702144691a0204ae7172051b0",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the user with the second largest total amount spent as 4817. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "After cleaning the datasets and filter for English-speaking credit card users in the United States who use US dollars for payments, have an active account status and verified email, and have retried no fewer than three payment attempts in 2024. We found that the TOP 2nd users with largest total amount spent is user 4817. ",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_054d334dadc34c2d8a2d422bfacfabd7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b7130a6702144691a0204ae7172051b0",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that user 4817 spent $67.95 +/- 0.05.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "After cleaning the datasets and filter for English-speaking credit card users in the United States who use US dollars for payments, have an active account status and verified email, and have retried no fewer than three payment attempts in 2024. We found that the TOP 2nd users with largest total amount spent is user 4817 who spent $67.95 +/- 0.05.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_08b1e0fc71754bb78aa833e7392ebce9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b7130a6702144691a0204ae7172051b0",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the user with the third largest total amount spent as 3861.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "After cleaning the datasets and filter for English-speaking credit card users in the United States who use US dollars for payments, have an active account status and verified email, and have retried no fewer than three payment attempts in 2024. We found that the TOP 3rd users with largest total amount spent is user 3861.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b485479f68cd4dc89c76d45367b4d170",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b7130a6702144691a0204ae7172051b0",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports that user 3861 spent $62.95 +/- 0.05.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "After cleaning the datasets and filter for English-speaking credit card users in the United States who use US dollars for payments, have an active account status and verified email, and have retried no fewer than three payment attempts in 2024. We found that the TOP 3rd users with largest total amount spent is user 3861 who spent $62.95 +/- 0.05.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

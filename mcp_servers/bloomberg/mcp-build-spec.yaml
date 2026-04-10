@@ -1,0 +1,67 @@
+version: '1.0'
+servers:
+  - name: bloomberg_api
+    display_name: Bloomberg Terminal Emulator
+    description: Bloomberg-compatible financial data API for market data, analytics, and research
+    tools_module: mcp_servers.bloomberg.tools
+    base_url: http://localhost:8000
+    requires_auth: false
+
+categories:
+  - name: Market Data
+    description: Query real-time and historical market data
+    servers:
+      - bloomberg_api
+  - name: Intraday Data
+    description: Intraday bars and tick-level data
+    servers:
+      - bloomberg_api
+  - name: Screening
+    description: Equity screening and filtering
+    servers:
+      - bloomberg_api
+  - name: Data Management
+    description: Manage offline database and download data
+    servers:
+      - bloomberg_api
+
+tool_overrides:
+  # Market Data
+  - tool: reference_data
+    display_name: Reference Data
+    category: Market Data
+    description: Get current quotes and reference data for securities (PX_LAST, PX_OPEN, etc.)
+  - tool: historical_data
+    display_name: Historical Data
+    category: Market Data
+    description: Get historical OHLCV data with Bloomberg field mappings
+
+  # Intraday Data
+  - tool: intraday_bars
+    display_name: Intraday Bars
+    category: Intraday Data
+    description: Get intraday OHLCV bar data at various intervals (1min, 5min, 15min, etc.)
+  - tool: intraday_ticks
+    display_name: Intraday Ticks
+    category: Intraday Data
+    description: Get intraday tick-level trade and quote data
+
+  # Screening
+  - tool: equity_screening
+    display_name: Equity Screening
+    category: Screening
+    description: Screen equities by criteria (sector, market cap, etc.) using BEQS
+
+  # Data Management
+  - tool: list_symbols
+    display_name: List Symbols
+    category: Data Management
+    description: List all symbols available in the offline database
+  - tool: data_status
+    display_name: Database Status
+    category: Data Management
+    description: Show date ranges and row counts for historical and intraday data
+  - tool: download_symbol
+    display_name: Download Symbol
+    category: Data Management
+    description: Download CSV data for a single symbol (historical or intraday)

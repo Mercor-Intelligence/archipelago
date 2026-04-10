@@ -1,0 +1,245 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_b60406a15e554dc7bc0ded85c8a48790",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_699d2fd3c7d74ccb90e6d34986831669",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States October 21, 2025 as the email date",
+        "modality": "Free text",
+        "negative_criteria": "States a date other than October 21, 2025 as the email date.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_33c45972886f4c71a95d9b5f20aceb62",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_699d2fd3c7d74ccb90e6d34986831669",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the lesson completed in class as Lesson 6",
+        "modality": "Free text",
+        "negative_criteria": "States the lesson completed in class as a lesson other than Lesson 6.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8cd6fcb9f1f8438bbecc88453c8581df",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_699d2fd3c7d74ccb90e6d34986831669",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the parents have been notified of the unexcused absence",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ac53a10a08a5415b80d5521d9d172b17",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_699d2fd3c7d74ccb90e6d34986831669",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the expectation that he must complete all missed assignments",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_52317a8e003b4d48a712ceb79500007b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_699d2fd3c7d74ccb90e6d34986831669",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that failure to complete the missed assignments within two school days will result in a grade of zero",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e51b6e04e7fe47ef8d3021433c4b50ec",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_699d2fd3c7d74ccb90e6d34986831669",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States directive to \"write two predictions for what you think will happen in chapters 7 and 8\" as the Do Now activity from lesson 6",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_58dd09c6e9f44dd19ec468f62de0db06",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_699d2fd3c7d74ccb90e6d34986831669",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States reading chapters 7-8 as the guided instruction activity from Lesson 6",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_eaec0abdf03e4a77bcf8837af939dfe7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_699d2fd3c7d74ccb90e6d34986831669",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that students may choose to read silently or listen to the provided audio version as instructions for reading chapters 7-8",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_38d451f333aa4698b425b0b4cdd5c272",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_699d2fd3c7d74ccb90e6d34986831669",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the instructions to write a summary of what you have read in chapters 7 and 8 as the Lesson 6 exit ticket",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f6d0fedc504e4aae9f497c6d6d239a9a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_699d2fd3c7d74ccb90e6d34986831669",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States instructions that the summary should be a paragraph and contain a minimum of five sentences for the Lesson 6 exit ticket",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d2e5a6ff742449f69d0be11225ada5f3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_699d2fd3c7d74ccb90e6d34986831669",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the student needs to read chapters 10-14 to prepare for the next class",
+        "modality": "Free text",
+        "negative_criteria": "Mentions that the student needs to read chapters other than 10, 11, 12, 13, 14 to prepare for the next class.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

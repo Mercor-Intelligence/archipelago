@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Annalise Keaton has determined that Liverbird needs to adjust its fiscal year-end to maximize its tax deductions with the redevelopment project with the City. She calls a special meeting of the shareholders and the other shareholders don't show up. She unilaterally votes to amend the company bylaws to change the fiscal year. Is this vote valid? Provide me with a yes or no answer and an explanation."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the bylaws may be amended by the shareholders entitled to exercise... (ver_507937fdefad4e089ae6b5e980d14714)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the bylaws may be amended by the shareholders entitled to exercise a majority of the voting power of the corporation."
+        }
+      ]
+    },
+    {
+      "name": "States that Annalise Keating holds a majority of the voting power of the... (ver_0799ed371b6e482aa5fa7ad2bd2ac22c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Annalise Keating holds a majority of the voting power of the corporation."
+        }
+      ]
+    },
+    {
+      "name": "States yes, this vote is valid per Liverbird's bylaws (ver_2466e41a027f4d3e936d1a3c922ef8ee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States yes, this vote is valid per Liverbird's bylaws."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world428-ro-06-b9eb23a3"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_b9eb23a3410e47d5a862a2aa718d01cf",
+    "task_name": "World428_RO_06",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_0a5ef2a606a143bda9b9e7f6b14c8492",
+        "golden_text_response": "Yes, this vote is valid per Liverbird's bylaws. The bylaws may be amended by the shareholders entitled to exercise a majority of the voting power of the corporation, which Annalise Keating holds.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

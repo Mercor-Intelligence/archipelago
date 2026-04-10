@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Can you tell me whether Steel Tree Solutions (STS) is subject to treble damages under the California False Claims Act? Provide your answer as a message and briefly explain your reasoning. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Concludes that STS is not subject to treble damages under the California False... (ver_8f8025dfb2dd4e8aa6c2c6f516291a06)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Concludes that STS is not subject to treble damages under the California False Claims Act."
+        }
+      ]
+    },
+    {
+      "name": "States that treble damages under the California False Claims Act only apply to... (ver_7d2441597f7645bc9a547be7babd79af)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that treble damages under the California False Claims Act only apply to false claims involving government funds."
+        }
+      ]
+    },
+    {
+      "name": "States that under the California False Claims Act, a \"claim\" is defined as a... (ver_5e326805a36142f3a455801a7b0aee44)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that under the California False Claims Act, a \"claim\" is defined as a request or demand for money made to the state or a political subdivision."
+        }
+      ]
+    },
+    {
+      "name": "States that under the California False Claims Act, a \"claim\" is defined as a... (ver_a31fa5b28beb42efabe3a201a18ad56e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that under the California False Claims Act, a \"claim\" is defined as a request to a contractor or recipient if any portion of the money issued from or was provided by the state or a political subdivision."
+        }
+      ]
+    },
+    {
+      "name": "States that the SBP Construction Contract expressly identifies that no... (ver_5f62e614657a4f7088e39abd3d7ddc4e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the SBP Construction Contract expressly identifies that no government funds are involved in the project."
+        }
+      ]
+    },
+    {
+      "name": "States that the California False Claims Act does not apply to STS's actions (ver_5a2203483fbe4aa1a7de05dd68fbcebd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the California False Claims Act does not apply to STS's actions."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world437-dpm-02-f833469d"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_f833469dc4b04f498538b967782074e4",
+    "task_name": "World437_DPM_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_11a83c69bad04f32b59bdac4335f791f",
+        "golden_text_response": "STS is not subject to treble damages under the California False Claims Act.\n\nTreble damages under False Claims Act (Government Code § 12650 et seq.) only apply to false claims involving government funds. Under Section 12650(b)(1), a \"claim\" is defined as a request or demand for money made to the state or a political subdivision, or to a contractor or other recipient \"if any portion of the money, property, or services requested or demanded issued from, or was provided by, the state... or by any political subdivision.\"\n\nThe SBP Construction Contract between SBP and St. Joseph Diocesan Schools (a ministry of the Roman Catholic Diocese of Fresno) expressly states in Article 3.2 that NO federal, state, or local government funds are being used for this project. \n\nSince there are no government funds involved, the California False Claims Act simply does not apply, regardless of how fraudulent STS's conduct may have been.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

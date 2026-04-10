@@ -1,0 +1,215 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "I need you to update the model (\"SingleSignal Salary Cost Projections Model v3.xlsx\"). Update the headcount plan, as reflected in \"12-month Hiring Demand Simulation.xlsx\". Also, update the target headcount level composition, as reflected in the table in \"2026 Target State Org Level Composition.xlsx\". Based on those changes:\n\nWhat are the updated 2026 projected salary costs by function, in dollars rounded to the nearest dollar? What are the year-over-year percentage changes in salary costs by function, from 2025-2026, as a percentage, rounded to 1 decimal place?\n\nBy the way, the EM mentioned that the job title / level mapping in the model is wonky. Let's use \"Correct mapping.xlsx\" as the source of truth for that mapping.\n\nDo not round intermediate calculations. Review the files in the filesystem. Give me your final answers as a message in the console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the 2026 projected salary costs for R&D is $25,153,500 (acceptable... (ver_eeaa8cfe921045b187e0064de938b11b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 2026 projected salary costs for R&D is $25,153,500 (acceptable range $24,901,965 to $25,405,035)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 2026 projected salary costs for Sales is $6,800,610... (ver_5195297757d44ca6a82caabbf9676c01)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 2026 projected salary costs for Sales is $6,800,610 (acceptable range $6,732,604 to $6,868,616)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 2026 projected salary costs for Customer Success is $4,954,609... (ver_018595618fcb4359bc3dcd23f699cf97)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 2026 projected salary costs for Customer Success is $4,954,609 (acceptable range $4,905,063 to $5,004,155)."
+        }
+      ]
+    },
+    {
+      "name": "States that the 2026 projected salary costs for G&A is $5,371,690 (acceptable... (ver_e26eb30fc78e4799b1b4bb540bccfe2a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 2026 projected salary costs for G&A is $5,371,690 (acceptable range $5,317,973 to $5,425,407)."
+        }
+      ]
+    },
+    {
+      "name": "States that the year-over-year change in salary costs for R&D is 8.9%... (ver_ba84a96579804eaaa41494a745fe55a5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the year-over-year change in salary costs for R&D is 8.9% (acceptable range 8.8% to 9.0%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the year-over-year change in salary costs for Sales is 38.0%... (ver_b327402b30af4f848891e972aaeb348d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the year-over-year change in salary costs for Sales is 38.0% (acceptable range 37.6% to 38.4%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the year-over-year change in salary costs for Customer Success is... (ver_e5ef1be5a4a946c68e51244627edb186)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the year-over-year change in salary costs for Customer Success is 28.0% (acceptable range 27.7% to 28.3%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the year-over-year change in salary costs for G&A is -4.4%... (ver_8bc6f8e24a474e92a7906b83a92fe51d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the year-over-year change in salary costs for G&A is -4.4% (acceptable range -4.44% to -4.36%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world601-bh-05-40bd8053"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_40bd80532d5d4345ae7244f8005e6a8d",
+    "task_name": "World601_BH_05",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_3a4ba8cae69748b4b43cde3ecbdb18c4",
+        "golden_text_response": "2026 projected salary costs:\n- R&D: $25,153,500\n- Sales: $6,800,610\n- Customer Success: $4,954,609\n- G&A: $5,371,690\n\nYear-over-year percentage change in salary costs:\n- R&D: 8.9%\n- Sales: 38.0%\n- Customer Success: 28.0%\n- G&A: -4.4%",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

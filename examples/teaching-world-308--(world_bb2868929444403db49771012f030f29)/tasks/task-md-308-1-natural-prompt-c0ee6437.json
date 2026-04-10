@@ -1,0 +1,289 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Create me a slide deck using these vocabulary words: Abhor, Demeanor, Irksome. Put one word per slide and break them down into their morphemes and indicate whether the morphemes are free or bound. Note that \"-some\" in \"irksome\" is a bound morpheme (a derivational suffix), not a free morpheme"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Creates a slide with the word \"abhor\" (ver_6f1c3a636829456882bb7aa11f90d2ab)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a slide with the word \"abhor\"."
+        }
+      ]
+    },
+    {
+      "name": "Indicates that the word \"abhor\" has two morphemes: ab- and -hor (ver_1d25f8e3855a470a9d1dd17d05dad421)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Indicates that the word \"abhor\" has two morphemes: ab- and -hor."
+        }
+      ]
+    },
+    {
+      "name": "Indicates \"ab-\" is a bound morpheme (ver_aed906e0390e4f7ebb4d15120da9dbd0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Indicates \"ab-\" is a bound morpheme."
+        }
+      ]
+    },
+    {
+      "name": "Indicates \"-hor\" is a bound morpheme (ver_55c2f42424214dc7989f93f000384b84)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Indicates \"-hor\" is a bound morpheme."
+        }
+      ]
+    },
+    {
+      "name": "Creates a slide with the word \"demeanor\" (ver_51741a555012498ba9384e1068bb3754)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a slide with the word \"demeanor\"."
+        }
+      ]
+    },
+    {
+      "name": "Indicates that the word \"demeanor\" has one morpheme (ver_323db53df6b342ea8baf21d169d56944)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Indicates that the word \"demeanor\" has one morpheme."
+        }
+      ]
+    },
+    {
+      "name": "Indicates that the morpheme \"demeanor\" is a free morpheme (ver_76232edc84214d7e8a9fd65f5f82cc60)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Indicates that the morpheme \"demeanor\" is a free morpheme."
+        }
+      ]
+    },
+    {
+      "name": "Creates a slide for the word \"irksome\" (ver_f79f34c10ff04344b15e487d6f6ec05f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a slide for the word \"irksome\"."
+        }
+      ]
+    },
+    {
+      "name": "Indicates that the word \"irksome\" has two morphemes: irk- and -some (ver_4b2fcac0747141cca2f1abc4f1bcf22b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Indicates that the word \"irksome\" has two morphemes: irk- and -some."
+        }
+      ]
+    },
+    {
+      "name": "Indicates that \"irk\" is a free morpheme (ver_67b259e0ffa644488b3de946f65a9ef1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Indicates that \"irk\" is a free morpheme."
+        }
+      ]
+    },
+    {
+      "name": "Indicates that \"-some\" is a free morpheme (ver_cecb7e23a6b44ccd81db6836657ecef1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Indicates that \"-some\" is a free morpheme."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-md-308-1-natural-prompt-c0ee6437"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_bb2868929444403db49771012f030f29",
+    "world_name": "Teaching World 308",
+    "task_id": "task_c0ee6437a81744708ca4bd13ed57ce72",
+    "task_name": "Task md_308_1 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_bfcde05f747346b5bd1dc973c007a3b9",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_258883b0faea417eb50d53c23e02f576"
+      },
+      {
+        "golden_response_id": "gold_a2512ef82b8a4093b2d54938cd7f95a4",
+        "golden_text_response": "See file. ",
+        "golden_file_responses": "snap_258883b0faea417eb50d53c23e02f576"
+      }
+    ]
+  }
+}

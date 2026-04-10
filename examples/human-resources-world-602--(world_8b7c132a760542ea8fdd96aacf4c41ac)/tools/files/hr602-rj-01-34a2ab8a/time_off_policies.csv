@@ -1,0 +1,8 @@
+id,name,type_id,accrual_type,accrual_rate,accrual_frequency,max_balance,carry_over,carry_over_max
+1,Standard Vacation (Non-Exempt),1,accrual,4.62,biweekly,200.0,true,40.0
+2,Standard Vacation (Exempt),1,accrual,6.15,biweekly,240.0,true,40.0
+3,Sick Leave Accrual,2,accrual,3.08,biweekly,120.0,true,120.0
+4,Personal Time Bank,3,accrual,1.54,biweekly,40.0,false,
+5,Bereavement (3 Days),4,lump_sum,,per_event,,false,
+6,Jury Duty (Paid),5,unlimited,,,,false,
+7,Unpaid Leave (FMLA/LOA),6,unlimited,,,,false,

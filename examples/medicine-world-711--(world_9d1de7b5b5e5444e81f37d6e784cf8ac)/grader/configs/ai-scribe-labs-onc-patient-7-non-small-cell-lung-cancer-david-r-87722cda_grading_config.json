@@ -1,0 +1,376 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_0bbffd586c324daabf2a508178f60b04",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_87722cdac681467fbf8d3fe2d64f18eb",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has non-small cell lung cancer.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This can be found in the OpenEMR patient chart (Onc Patient 7), tab Clinical Notes, row 33, column E, which says, \"stage I non-small cell lung cancer.\" \n\nThis also requires synthesizing the statement from the script, which says, \"I\u2019m sorry the lung cancer you developed several years ago has returned.\" \n\nPutting both together means this patient has non-small cell lung cancer. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 7 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_a74095fa406e46a6934529cc458c47a5"
+          }
+        ]
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9ed413a0e12f466fa75277ae76102bd5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_87722cdac681467fbf8d3fe2d64f18eb",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's cancer is metastatic.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This can be found in the attached patient script. \"You were diagnosed in the past with lung cancer in the right upper lobe. Now, that same cancer has spread to some lymph nodes and a small spot in the opposite lung. There is also a spot in your brain.\" This indicates metastasis.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 7 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_a74095fa406e46a6934529cc458c47a5"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d469aaa5fb1641e793def33899c63419",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_87722cdac681467fbf8d3fe2d64f18eb",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has brain metastasis.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This can be found in the attached patient script. \"There is also a spot in your brain.\" \n\nThis indicates brain metastasis.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 7 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_a74095fa406e46a6934529cc458c47a5"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2ba5210760e343c9abe082b428009049",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_87722cdac681467fbf8d3fe2d64f18eb",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's cancer has an EGFR Exon 19 deletion.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This can be found in the attached patient lab results. \"EGFR exon 19 del Positive.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 7 Labs - Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_a74095fa406e46a6934529cc458c47a5"
+          }
+        ]
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8685e3a4da1f4425a5c3f6655d83a761",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_87722cdac681467fbf8d3fe2d64f18eb",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has not received systemic therapy.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This can be found in the attached patient script. \"However, you have not yet received any treatment for his round of diagnosis, correct?\u201d Patient: \u201cYes.\u201d",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc Patient 7 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_a74095fa406e46a6934529cc458c47a5"
+          }
+        ]
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_54cdddf09c7b497fb40214860b737d49",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_87722cdac681467fbf8d3fe2d64f18eb",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the most appropriate next treatment option is a combination of lazertinib and amivantamab.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This patient has not yet received systemic therapy for this diagnosis of cancer. The patient has NSCLC with brain metastasis and an EGFR exon 19 deletion. Based on the results of the MARIPOSA III trial, the most appropriate treatment option is now a combination of lazertinib and amivantamab. \n\n\"Amivantamab\u2013lazertinib showed superior efficacy to osimertinib as first-line treatment in EGFR-mutated advanced NSCLC.\" \nhttps://www.nejm.org/doi/full/10.1056/NEJMoa2403614",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_33a58db20d694c9dbe53533c516a7315",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_87722cdac681467fbf8d3fe2d64f18eb",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that lazertinib is dosed daily.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the frequency of lazertinib. LAZCLUZE is the brand name for lazertinib.\n\n\"The recommended dosage of LAZCLUZE is 240 mg orally once daily.\" \nhttps://www.accessdata.fda.gov/drugsatfda_docs/label/2024/219008s000lbl.pdf",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_86d163dacf284262bbe6cdaa205d7b96",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_87722cdac681467fbf8d3fe2d64f18eb",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that lazertinib is dosed orally.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the route of administration of lazertinib. \n\n\"The recommended dosage of LAZCLUZE is 240 mg orally once daily.\" \nhttps://www.accessdata.fda.gov/drugsatfda_docs/label/2024/219008s000lbl.pdf",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c8049686e43b47dba53f8027234920d0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_87722cdac681467fbf8d3fe2d64f18eb",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that lazertinib is dosed at 240 mg.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the dosing of lazertinib. \n\n\"The recommended dosage of LAZCLUZE is 240 mg orally once daily.\" \nhttps://www.accessdata.fda.gov/drugsatfda_docs/label/2024/219008s000lbl.pdf",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_91eee439cd92494b90fabbae99012452",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_87722cdac681467fbf8d3fe2d64f18eb",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient weighs 50 kg.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the patient's latest weight according to the chart, \"Onc Patient 7,\" tab, \"Vitals,\" row, \"9,\" column, \"L,\" which states that the patient weighs 1792 ounces. This equates to about 50 kg.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8f37585a00754ed0887d091aa1b9bda7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_87722cdac681467fbf8d3fe2d64f18eb",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that amivantamab is dosed intravenously.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the route of administration of amivantamab. \n\n\"RYBREVANT (amivantamab-vmjw) injection, for intravenous use.\" \nhttps://www.accessdata.fda.gov/drugsatfda_docs/label/2021/761210s000lbl.pdf",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_58c870f6a9414423a92a4315f9d786ec",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_87722cdac681467fbf8d3fe2d64f18eb",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the first dose of amivantamab is 350 mg.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the first dose of amivantamab for the \n\n\"Body Weight under 80 kg, Week 1, Day 1, 350 mg.\" \nhttps://www.rybrevanthcp.com/pdfs/RYBREVANT_Dosing_and_Administration_Guide-Digital.pdf",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_76a50e3b26bb4267891df3cb0392f34b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_87722cdac681467fbf8d3fe2d64f18eb",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the second dose of amivantamab is delivered the day after the first dose.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is the scheduling of amivantamab administration.\n\n\"Body Weight under 80 kg, Week 1, Day 2, 350 mg.\" \nhttps://www.rybrevanthcp.com/pdfs/RYBREVANT_Dosing_and_Administration_Guide-Digital.pdf",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_13fb62f69d9047e5a50973fed0cadacf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_87722cdac681467fbf8d3fe2d64f18eb",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the second dose of amivantamab is 700 mg.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The second dose is 700 mg based on the patient's weight being under 80 kg. \n\n\"Body Weight under 80 kg, Week 1, Day 2, 700 mg.\" \nhttps://www.rybrevanthcp.com/pdfs/RYBREVANT_Dosing_and_Administration_Guide-Digital.pdf",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_15cbef1b6de44a8d8ed149c9c46bb80e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_87722cdac681467fbf8d3fe2d64f18eb",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that amivantamab is delivered weekly after the second dose.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The dosing schedule is weekly after the loading doses. Refer to \"Week 2, Week 3, Week 4, Week 5\" which indicates weekly scheduling. \n\nhttps://www.rybrevanthcp.com/pdfs/RYBREVANT_Dosing_and_Administration_Guide-Digital.pdf",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_14f8b3cc55bd44eeb396f7157f905712",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_87722cdac681467fbf8d3fe2d64f18eb",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the weekly dose of amivantamab is 1050 mg after the second dose.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The weekly dose of amivantamab is weight-based. Refer to the \"Week 2 1050 mg, Week 3 1050 mg, Week 4 1050 mg\" for patients under 80 kg. \n\nhttps://www.rybrevanthcp.com/pdfs/RYBREVANT_Dosing_and_Administration_Guide-Digital.pdf",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

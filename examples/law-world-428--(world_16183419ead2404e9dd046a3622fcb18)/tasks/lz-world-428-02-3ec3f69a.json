@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Does the City's redline version of the DDA draft meet the requirements for a general release to release all known and unknown claims under CA law? If not, propose language that would meet the requirements of California law. If it does, explain why it meets the requirements with citations to the California statute. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the release provisions in the DDA draft are sufficient to release... (ver_69d57df6c6b54d30afae998cfd9e42f8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the release provisions in the DDA draft are sufficient to release known and unknown claims under CA law."
+        }
+      ]
+    },
+    {
+      "name": "States that California Civil Code § 1542 prohibits general release provisions... (ver_520070b4539b4f6c9f289c23d25ec98e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that California Civil Code § 1542 prohibits general release provisions from releasing unknown claims."
+        }
+      ]
+    },
+    {
+      "name": "States that parties may contractually waive the rights conferred by California... (ver_1d080ead90144fe689cba330dea36eee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that parties may contractually waive the rights conferred by California Civil Code § 1542 if they knowingly assume the risks of such waiver."
+        }
+      ]
+    },
+    {
+      "name": "States that the language of the release must clearly and expressly waive the... (ver_fe8270f247ca40edaeeee5bd94756b3b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the language of the release must clearly and expressly waive the rights conferred by California Civil Code § 1542."
+        }
+      ]
+    },
+    {
+      "name": "States that the release provision in the DDA Draft clearly and expressly... (ver_7097c7d6b90c4876808260a4f1f3d9b0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the release provision in the DDA Draft clearly and expressly waives the rights conferred by California Civil Code § 1542."
+        }
+      ]
+    },
+    {
+      "name": "States that general release provisions are generally permissible under... (ver_30d11bb243fb4adab2e2da7623e69121)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that general release provisions are generally permissible under California law."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh lz-world-428-02-3ec3f69a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_3ec3f69a4d6c46a8bd17a3033793ecc5",
+    "task_name": "LZ_World 428_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_ff46b812b17442b9ac60bdad1743e5cf",
+        "golden_text_response": "Yes, the release in the City's redlined version of the DDA complies with the requirements of California law to release all known and unknown claims.  A general release provision in contracts are generally permissible under California law subject to California Civil Code § 1542 which prevents a general release from covering unknown claims.  Case law, such as Winet v. Price (1992), makes clear that parties can contractually waive California Civil Code § 1542's prohibition upon release of unknown claims, if they knowingly assume the risks of such waiver. To do so requires the parties to expressly and clearly waive the rights conferred by California Civil Code § 1542. The release provision in the City's redlined version of the DDA clearly and expressly refers to and waives California Civil Code § 1542, as it even replicates the language of the statute in full.  Therefore, it will be effective under California law to waive known and unknown claims. ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

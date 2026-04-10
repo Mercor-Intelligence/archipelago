@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Prior to entering into the DDA, the City allowed the citizens of San Dimas to vote on whether the project should move forward. The citizens voted in favor of the project. Eight weeks after Liverbird Development Co. and the City entered into a DDA regarding the San Dimas property, the City decided that as a result of the EIR, conducted after the DDA was executed, the environmental risk is too great for the project to proceed. Based in the case law in the file, if Liverbird sues the city for breach of the DDA, is it likely to prevail? "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that Liverbird will prevail in its breach of contract suit against the... (ver_2755f1779a4a46ccb551fdc0cb018d6a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Liverbird will prevail in its breach of contract suit against the City."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh lawworld428-anb-05-0825cebe"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_0825cebefc924406b541a7c64cfb36af",
+    "task_name": "LawWorld428_ANB_05",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f53176fc10c448b9b6e0f44e7c9c1984",
+        "golden_text_response": "Yes, Liverbird is likely to prevail on its breach of contract suit against the City. The court in Citizen's of Responsible Government v. City of Albany, the Court found that \"the development agreement...once approved by the voters provided the developer with a vested interest\" to complete the project. Also, the Court stated that \"the City had contracted away its power to consider the full range of alternatives and mitigation measures by CEQA and had precluded consideration of a 'no project' option.\" Additionally, Tara v. City of West Hollywood California in formulating its decision, the Court stated that it was not rendering an opinion as to the correctness of the Court's decision in Citizen's of Responsible Government v. City of Albany. Therefore, the developer has a valid breach of contract action, and is likely to prevail. (see tara-v-city-of-west-hollywood-california.pdf, page 13).",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

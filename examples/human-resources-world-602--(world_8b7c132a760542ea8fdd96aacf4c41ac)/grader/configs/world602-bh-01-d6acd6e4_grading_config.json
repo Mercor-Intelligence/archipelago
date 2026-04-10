@@ -1,0 +1,148 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_a45dc289744a40fcb01a6eafd67b221e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d6acd6e4a2274a628d06679ce31ba8b0",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that based on the updated FY 2025 salary costs, the service line with the largest positive change in salary costs is Support Services.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4dd6b1e69c1b46c98f8629f7059b762d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d6acd6e4a2274a628d06679ce31ba8b0",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that based on the updated FY 2025 salary costs, the change in total salary costs for Support Services is $9,439,668 (acceptable range $9,345,271 to $9,534,065).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d51aa9498c244abc956489add81cd113",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d6acd6e4a2274a628d06679ce31ba8b0",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that based on the updated FY 2025 salary costs, the service line with the largest negative change in salary costs is Surgical Services.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_23789d1ad6e4492b8ddb735d908ab29f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d6acd6e4a2274a628d06679ce31ba8b0",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that based on the updated FY 2025 salary costs, the change in total salary costs for Surgical Services is -$10,045,771 (acceptable range $-10,146,229 to $-9,945,313.3).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9e996ba6083144ecb2b2c6edf3ac2d29",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d6acd6e4a2274a628d06679ce31ba8b0",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that based on the updated FY 2025 salary costs, the change in average salary for Critical Care is $11,347 (acceptable range $11,234 to $11,460).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_11b9dc2d3e754b368dd289467d712a32",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d6acd6e4a2274a628d06679ce31ba8b0",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that based on the updated FY 2025 salary costs, the change in average salary for Pediatrics is $17,989 (acceptable range $17,809 to $18,169).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

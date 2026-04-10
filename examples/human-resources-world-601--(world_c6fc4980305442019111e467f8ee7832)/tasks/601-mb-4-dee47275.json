@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "CTO just hired an additional security team lead. He says he offered the new hire a salary equal to the average of the remaining security team leads he has. Can you please add this new role to our employee list in Bamboo. Please state how much does the CTO team cost in total (including CTOs salary) annually, rounding your answer to 1 decimal place in the console. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the cost of CTO team in total (including CTOs salary) annually is... (ver_c3e076240d6c474d9c566219e0f5b677)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the cost of CTO team in total (including CTOs salary) annually is $15,177,750.0 (acceptable range $15,025,972.5 to $15,329,527.5)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh 601-mb-4-dee47275"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_dee472755f1b4ed4aab3292b916a7fdb",
+    "task_name": "601 - MB_4",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_71c4e174d52442b1b506541f056c14d7",
+        "golden_text_response": "The cost of CTO team in total (including CTOs salary) annually is $15,177,750.0 ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

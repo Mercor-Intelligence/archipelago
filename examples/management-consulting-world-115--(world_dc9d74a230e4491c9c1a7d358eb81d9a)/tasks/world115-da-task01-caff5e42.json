@@ -1,0 +1,468 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Calculate and report the following metrics using the latest survey data:\n1. Provider Insights\n-Percentage of respondents using each data center provider\n-A statement identifying the leading data center provider (by respondent share)\n-A statement identifying the most frequently selected \"most influential factor\" among respondents who use the leading data center provider\n\n2. Customer Behavior: \n- Overall average switching likelihood\n- Average switching likelihood by sector (Public, Private, Other)\n- Percentage of respondents with high switching propensity (i.e, selecting 4 or 5 for switching likelihood) \n\nReturn outputs in a console message, with percentage values rounded to the nearest 0.01%, and all other numeric outputs rounded to two decimals."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the percentage of respondents using Digital Realty Trust is 32.00%... (ver_4a45dda7d62a4abb93e15de81f27040e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percentage of respondents using Digital Realty Trust is 32.00% (acceptable range 31.68% to 32.32%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentage of respondents using Equinix is 24.00% (acceptable... (ver_ab23285b47814ee8b304e42712895a10)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentage of respondents using Equinix is 24.00% (acceptable range 23.76% to 24.24%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentage of respondents using Iron Mountain is 16.00%... (ver_820c2cda5881425594df4e39cdf318e7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentage of respondents using Iron Mountain is 16.00% (acceptable range 15.84% to 16.16%)."
+        }
+      ]
+    },
+    {
+      "name": "States the percentage of respondents using CyrusOne is 22.00% (acceptable... (ver_bbabb762fe0447c0a97e9bebc191945d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percentage of respondents using CyrusOne is 22.00% (acceptable range 21.78% to 22.22%)."
+        }
+      ]
+    },
+    {
+      "name": "States the percentage of respondents using CyrusOne is a value other than 22.00% (ver_bbabb762fe0447c0a97e9bebc191945d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percentage of respondents using CyrusOne is a value other than 22.00%."
+        }
+      ]
+    },
+    {
+      "name": "States the percentage of respondents using In-House is 6.00% (acceptable range... (ver_d95580031efa4fe299ad9c2a214d41b3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percentage of respondents using In-House is 6.00% (acceptable range 5.94% to 6.06%)."
+        }
+      ]
+    },
+    {
+      "name": "States the percentage of respondents using In-House is a value other than 6.00% (ver_d95580031efa4fe299ad9c2a214d41b3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percentage of respondents using In-House is a value other than 6.00%."
+        }
+      ]
+    },
+    {
+      "name": "States the leading data center provider (by respondent share) is Digital... (ver_98a58d33a2384c79b659fcd41fd96ef1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the leading data center provider (by respondent share) is Digital Realty Trust."
+        }
+      ]
+    },
+    {
+      "name": "States the most frequently selected \"most influential factor\" among... (ver_8e339a4553b74d05ab7df66d750f457d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the most frequently selected \"most influential factor\" among respondents who use the leading data center provider is scalability."
+        }
+      ]
+    },
+    {
+      "name": "States the Overall average switching likelihood is 2.96 (acceptable range 2.93... (ver_489142c1204543c185b7b5632245bf22)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Overall average switching likelihood is 2.96 (acceptable range 2.93 to 2.99)."
+        }
+      ]
+    },
+    {
+      "name": "States the Overall average switching likelihood is any other number other than... (ver_489142c1204543c185b7b5632245bf22)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Overall average switching likelihood is any other number other than 2.96."
+        }
+      ]
+    },
+    {
+      "name": "States the percent of respondents with high switching propensity is 38.00%... (ver_e04d2ae9623d43cd87e141850ab00aa1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percent of respondents with high switching propensity is 38.00% (acceptable range 37.62% to 38.38%)."
+        }
+      ]
+    },
+    {
+      "name": "States the percent of respondents with high switching propensity is a value... (ver_e04d2ae9623d43cd87e141850ab00aa1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percent of respondents with high switching propensity is a value other than 38.00%."
+        }
+      ]
+    },
+    {
+      "name": "States the Average Switching Likelihood for respondents in the Public sector... (ver_72742eb5cc7844ca811517fb18860756)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Average Switching Likelihood for respondents in the Public sector is 3.14 (acceptable range 3.11 to 3.17)."
+        }
+      ]
+    },
+    {
+      "name": "States the Average Switching Likelihood for respondents in the Public sector... (ver_72742eb5cc7844ca811517fb18860756)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Average Switching Likelihood for respondents in the Public sector is any other number other than 3.14."
+        }
+      ]
+    },
+    {
+      "name": "States the Average Switching Likelihood for respondents in the Private sector... (ver_04d1305536494d70987fe499eaba4e2d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Average Switching Likelihood for respondents in the Private sector is 3.03 (acceptable range 3.00 to 3.06)."
+        }
+      ]
+    },
+    {
+      "name": "States the Average Switching Likelihood for respondents in the Private sector... (ver_04d1305536494d70987fe499eaba4e2d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Average Switching Likelihood for respondents in the Private sector is a value other than 3.03."
+        }
+      ]
+    },
+    {
+      "name": "States the Average Switching Likelihood for respondents in the Other sector is... (ver_592e14d7911f484b905efc820140dbfd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Average Switching Likelihood for respondents in the Other sector is 2.00 (acceptable range 1.98 to 2.02)."
+        }
+      ]
+    },
+    {
+      "name": "States the Average Switching Likelihood for respondents in the Other sector is... (ver_592e14d7911f484b905efc820140dbfd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Average Switching Likelihood for respondents in the Other sector is a value other than 2.00."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world115-da-task01-caff5e42"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_caff5e4231d94df6bfefa36f1a4bb49d",
+    "task_name": "world115_da_task01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_3a6accbe90614dd7bc9cce6a289c84de",
+        "golden_text_response": "Provider Insights\nPercentage of respondents using Digital Realty Trust = 32.00%\nPercentage of respondents using Equinix = 24.00%\nPercentage of respondents using Iron Mountain = 16.00%\nPercentage of respondents using CyrusOne = 22.00%\nPercentage of respondents using In-House solutions = 6.00%\nLeading data center provider (by respondent share) = Digital Realty Trust\nMost influential factor selected by users of the leading provider = Scalability\n\nCustomer Behavior\nOverall average switching likelihood (1–5 scale) = 2.96\nPercentage of respondents with high switching propensity = 38.00%\nAverage switching likelihood among Public Sector respondents = 3.14\nAverage switching likelihood among Private Sector respondents = 3.03\nAverage switching likelihood among Other respondents = 2.00",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

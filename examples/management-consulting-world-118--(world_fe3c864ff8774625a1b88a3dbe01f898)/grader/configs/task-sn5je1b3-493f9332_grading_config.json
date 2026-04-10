@@ -1,0 +1,155 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_c57b52624c034bc29c5003f889f2b3a9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_493f9332bc7d4ba589bcfb4c6c54beac",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the first state to be prioritized is Indiana",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5496f4d1b09d47b98f44840365257ca5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_493f9332bc7d4ba589bcfb4c6c54beac",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the second state to be prioritized is Missouri",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_44125fdf4abf458d9441fdf0b3854cce",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_493f9332bc7d4ba589bcfb4c6c54beac",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the third state to be prioritized is Ohio",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1f5f721519a042c89c0d93848ff07a25",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_493f9332bc7d4ba589bcfb4c6c54beac",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the number of facilities to be prioritized in Indiana is 14",
+        "negative_criteria": "States that the number of facilities to be prioritized in Indiana is a value other than 14.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2260aba3c8054676b13b7d57bd7ce121",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_493f9332bc7d4ba589bcfb4c6c54beac",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the number of facilities to be prioritized in Missouri is 11",
+        "negative_criteria": "States that the number of facilities to be prioritized in Missouri is a value other than 11.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a04ff94bf551450ca5b03ce25b5552a0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_493f9332bc7d4ba589bcfb4c6c54beac",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the number of facilities to be prioritized in Ohio is 17",
+        "negative_criteria": "States that the number of facilities to be prioritized in Ohio is a value other than 17.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8648312953324a83813ab8d430fb3a30",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_493f9332bc7d4ba589bcfb4c6c54beac",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total investment for prioritized states is $229,000 (acceptable range $226,710 to $231,290)",
+        "negative_criteria": "States that the total investment for prioritized states is a value other than $229,000.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

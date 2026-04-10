@@ -1,0 +1,246 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_627768838d814276a37320577d495095",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b96a156e1238496fb397e7f227ba9903",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States that CareSphere is one of the two empanelled providers",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9350c36306d84f6988aecb4707e2c75d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b96a156e1238496fb397e7f227ba9903",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States that Medisoft is one of the two empanelled providers",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c3b1a6fcfbb44c5cbfc9b8e54f4e9ead",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b96a156e1238496fb397e7f227ba9903",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the discount offered by two empanelled providers is 5.88% (acceptable range 5.82% to 5.94%)",
+        "negative_criteria": "States that the discount offered by two empanelled providers is a value other than 5.88%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_99ddbc60b3914ed8bfd2533a50d712c8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b96a156e1238496fb397e7f227ba9903",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the average discount offered by AstraCore Software is 5.83% (acceptable range 5.77% to 5.89%)",
+        "negative_criteria": "States that the average discount offered by AstraCore Software is a value other than 5.83%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9484d6a60c4749b3aa723116d0922582",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b96a156e1238496fb397e7f227ba9903",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the average discount offered by BlueQuark Technologies is 5.96% (acceptable range 5.90% to 6.02%)",
+        "negative_criteria": "States that the average discount offered by BlueQuark Technologies is a value other than 5.96%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_db1d4242e24b43449de7a9fbf53e435c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b96a156e1238496fb397e7f227ba9903",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the average discount offered by CareSphere is 6.07% (acceptable range 6.01% to 6.13%)",
+        "negative_criteria": "States that the average discount offered by CareSphere is a value other than 6.07%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_070d71951bbd46daa73f2a6d4c30acb7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b96a156e1238496fb397e7f227ba9903",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the average discount offered by CrestEdge Solutions is 6.01% (acceptable range 5.95% to 6.07%)",
+        "negative_criteria": "States that the average discount offered by CrestEdge Solutions is a value other than 6.01%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2d0dfd6d2dc541cbb571c5bd5083ae5c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b96a156e1238496fb397e7f227ba9903",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the average discount offered by Medisoft is 6.22% (acceptable range 6.16% to 6.28%)",
+        "negative_criteria": "States that the average discount offered by Medisoft is a value other than 6.22%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_187bc14896584b41b29f04e6f7f9463f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b96a156e1238496fb397e7f227ba9903",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the average discount offered by NimbusLogic Systems is 6.04% (acceptable range 5.98% to 6.10%)",
+        "negative_criteria": "States that the average discount offered by NimbusLogic Systems is a value other than 6.04%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1033f816acca49f8847c8be40d8d1694",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b96a156e1238496fb397e7f227ba9903",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the average discount offered by SynapseWave Labs is 5.85% (acceptable range 5.79% to 5.91%)",
+        "negative_criteria": "States that the average discount offered by SynapseWave Labs is a value other than 5.85%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d23c3236eb754ded81579f0d61c109c3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b96a156e1238496fb397e7f227ba9903",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the discount offered to the client by CareSphere is lower than the discount provided by it to the market for non-exclusive partnerships",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_41110c7916354bfabeace0771f4eb325",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b96a156e1238496fb397e7f227ba9903",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the discount offered to the client by Medisoft is lower than the discount provided by it to the market for non-exclusive partnerships",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

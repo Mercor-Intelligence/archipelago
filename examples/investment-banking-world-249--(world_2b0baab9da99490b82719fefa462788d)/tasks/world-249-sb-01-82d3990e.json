@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the model, calculate the Enterprise Value for S&P Global under the following assumptions.\n\nAssumptions:\n\n1) Total US equity risk premium of 4.47% + 25 bps\n2) Risk-free rate as the 5 year treasury rate (2026-01-05) \n3) Decrease the long term growth rate by 50 bps. Use the growth in perpetuity approach to calculate the Enterprise Value.\n4) Round to two decimals and present data in $ millions."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States S&P Global Enterprise Value is $126,324.36 million (acceptable range... (ver_1fb86dffb2cd4c8190861602f0cfe91a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States S&P Global Enterprise Value is $126,324.36 million (acceptable range $125,061.12 to $127,587.60)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-249-sb-01-82d3990e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_82d3990ebfe84f59a61cdc915acdd9ef",
+    "task_name": "World 249 SB 01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_7e9c6baa028647e2999b03b845442d65",
+        "golden_text_response": "S&P Global Enterprise Value: $126,324.36 million",
+        "golden_file_responses": "snap_5072b8b693d948f099b3eae6c3302fc7"
+      }
+    ]
+  }
+}

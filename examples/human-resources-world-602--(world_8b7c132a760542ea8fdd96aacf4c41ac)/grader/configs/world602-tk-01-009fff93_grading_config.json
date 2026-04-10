@@ -1,0 +1,154 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_8e2151b7e13646fdb1cf76283de7d19c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_009fff93ba06480295d1e809091a655a",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)",
+          "Tool Use"
+        ],
+        "weight": 1,
+        "criteria": "States that the Job ID with the lowest Pipeline Coverage Ratio is Job ID 198.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c4b4aab9965f48ba94f28db2cf882a1e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_009fff93ba06480295d1e809091a655a",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)",
+          "Tool Use"
+        ],
+        "weight": 1,
+        "criteria": "States that the Job Id of the posting is 198.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3bd6d097656e482c8520f7174fc52b7c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_009fff93ba06480295d1e809091a655a",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)",
+          "Tool Use"
+        ],
+        "weight": 1,
+        "criteria": "States that the Title of the posting is Junior Nurse Practitioner.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_61964bf842e14b2ba994359da85df653",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_009fff93ba06480295d1e809091a655a",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)",
+          "Tool Use"
+        ],
+        "weight": 1,
+        "criteria": "States that the Location Name of the posting is Columbus OH.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a11159f8bc9f4598bb1179416dbe8a8a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_009fff93ba06480295d1e809091a655a",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Tool Use",
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the Live flag is True.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f53a9c3c5d9640cfa6031c5b3d054ae0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_009fff93ba06480295d1e809091a655a",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Tool Use",
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the Internal flag is True.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

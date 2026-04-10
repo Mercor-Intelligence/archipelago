@@ -1,0 +1,5 @@
+journal_id,journal_date,account_id,account_code,amount,dr_cr,description
+jrnl-001,2025-01-31,acc-001,200,1000.00,DR,Revenue recognition
+jrnl-001,2025-01-31,acc-003,310,1000.00,CR,Accounts receivable
+jrnl-002,2025-02-28,acc-006,620,500.00,DR,Rent expense
+jrnl-002,2025-02-28,acc-005,500,500.00,CR,Accounts payable

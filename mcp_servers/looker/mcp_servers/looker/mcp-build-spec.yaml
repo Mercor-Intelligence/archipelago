@@ -1,0 +1,152 @@
+# MCP Build Specification for Looker Server
+# This file defines tool categories for UI generation
+# See: https://github.com/Mercor-Intelligence/mercor-mcp/blob/docs/ui-meta-tools-separation/UI_META_TOOLS_SEPARATION_GUIDE.md
+
+version: "1.0"
+project_name: "looker"
+
+servers:
+  - name: looker
+    display_name: "Looker MCP Server"
+    description: "MCP server for exploring Looker's semantic layer and querying data"
+    tools_module: "mcp_servers.looker.tools"
+    base_url: "http://localhost:8000"
+    requires_auth: false
+
+categories:
+  - name: "LookML Discovery"
+    description: "Explore LookML models, explores, and views in the semantic layer"
+    servers: [looker]
+
+  - name: "LookML Management"
+    description: "Generate and deploy LookML view and model files from data"
+    servers: [looker]
+
+  - name: "Content Discovery"
+    description: "Discover folders, explores, fields, and content in Looker"
+    servers: [looker]
+
+  - name: "Look Management"
+    description: "Create, update, and manage saved Looks (query visualizations)"
+    servers: [looker]
+
+  - name: "Dashboard Management"
+    description: "Create, update, and manage dashboards and tiles"
+    servers: [looker]
+
+  - name: "Query Execution"
+    description: "Create, execute, and export queries against the semantic layer"
+    servers: [looker]
+
+  - name: "Rendering & Export"
+    description: "Download and manage rendered files (PDFs, PNGs)"
+    servers: [looker]
+
+  - name: "Admin & Health"
+    description: "Server health checks and administration"
+    servers: [looker]
+
+tool_overrides:
+  # LookML Discovery
+  - tool: "looker.list_lookml_models"
+    category: "LookML Discovery"
+  - tool: "looker.get_explore"
+    category: "LookML Discovery"
+  - tool: "looker.list_views"
+    category: "LookML Discovery"
+
+  # LookML Management
+  - tool: "looker.generate_lookml"
+    category: "LookML Management"
+  - tool: "looker.get_generated_lookml"
+    category: "LookML Management"
+  - tool: "looker.list_available_views"
+    category: "LookML Management"
+  - tool: "looker.deploy_lookml"
+    category: "LookML Management"
+
+  # Content Discovery
+  - tool: "looker.list_folders"
+    category: "Content Discovery"
+  - tool: "looker._search_content"
+    category: "Content Discovery"
+  - tool: "looker.list_explores"
+    category: "Content Discovery"
+  - tool: "looker.list_fields"
+    category: "Content Discovery"
+
+  # Look Management
+  - tool: "looker.list_looks"
+    category: "Look Management"
+  - tool: "looker.get_look"
+    category: "Look Management"
+  - tool: "looker.create_look"
+    category: "Look Management"
+  - tool: "looker.run_look"
+    category: "Look Management"
+  - tool: "looker.run_look_pdf"
+    category: "Look Management"
+  - tool: "looker.looker_update_look"
+    category: "Look Management"
+  - tool: "looker.looker_delete_look"
+    category: "Look Management"
+  - tool: "looker.looker_search_looks"
+    category: "Look Management"
+  - tool: "looker.looker_render_look"
+    category: "Look Management"
+
+  # Dashboard Management
+  - tool: "looker.list_dashboards"
+    category: "Dashboard Management"
+  - tool: "looker.get_dashboard"
+    category: "Dashboard Management"
+  - tool: "looker.create_dashboard"
+    category: "Dashboard Management"
+  - tool: "looker.add_tile_to_dashboard"
+    category: "Dashboard Management"
+  - tool: "looker.run_dashboard"
+    category: "Dashboard Management"
+  - tool: "looker.run_dashboard_pdf"
+    category: "Dashboard Management"
+  - tool: "looker.looker_reorder_dashboard_tiles"
+    category: "Dashboard Management"
+  - tool: "looker.looker_delete_tile"
+    category: "Dashboard Management"
+  - tool: "looker.looker_delete_dashboard"
+    category: "Dashboard Management"
+  - tool: "looker.looker_search_dashboards"
+    category: "Dashboard Management"
+  - tool: "looker.looker_export_dashboard_pdf"
+    category: "Dashboard Management"
+  - tool: "looker.looker_export_dashboard_png"
+    category: "Dashboard Management"
+
+  # Query Execution
+  - tool: "looker.create_query"
+    category: "Query Execution"
+  - tool: "looker.looker_create_query"
+    category: "Query Execution"
+  - tool: "looker.looker_get_query"
+    category: "Query Execution"
+  - tool: "looker.run_query_inline"
+    category: "Query Execution"
+  - tool: "looker.run_query_by_id"
+    category: "Query Execution"
+  - tool: "looker.looker_run_query_json"
+    category: "Query Execution"
+  - tool: "looker.looker_run_query_csv"
+    category: "Query Execution"
+  - tool: "looker.run_query_png"
+    category: "Query Execution"
+  - tool: "looker.export_query"
+    category: "Query Execution"
+  - tool: "looker.run_sql_query"
+    category: "Query Execution"
+
+  # Rendering & Export
+  - tool: "looker.looker_download_rendered_file"
+    category: "Rendering & Export"
+
+  # Admin & Health
+  - tool: "looker.health_check"
+    category: "Admin & Health"

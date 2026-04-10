@@ -1,0 +1,88 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_507937fdefad4e089ae6b5e980d14714",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b9eb23a3410e47d5a862a2aa718d01cf",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the bylaws may be amended by the shareholders entitled to exercise a majority of the voting power of the corporation",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Article VII of the bylaws states that the bylaws may be amended by the shareholders entitled to exercise a majority of the voting power of the corporation. Per the 2025 stock ledger, Annalise holds 70% of the shares of Liverbird. Therefore, she can amend the bylaws.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0799ed371b6e482aa5fa7ad2bd2ac22c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b9eb23a3410e47d5a862a2aa718d01cf",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that Annalise Keating holds a majority of the voting power of the corporation",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Per the 2025 stock ledger Annalise holds 70% of the outstanding shares, which is a majority.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2466e41a027f4d3e936d1a3c922ef8ee",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b9eb23a3410e47d5a862a2aa718d01cf",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States yes, this vote is valid per Liverbird's bylaws",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Article VII of the bylaws states that the bylaws may be amended by the shareholders entitled to exercise a majority of the voting power of the corporation. Per the 2025 stock ledger, Annalise holds 70% of the shares of Liverbird.\n\nSection 2.2 of the bylaws state that a special meeting may be called by shareholders holding not less than ten percent (10%) of the votes entitled to be cast at such meeting. Section 2.5 states \"A majority of the shares entitled to vote, represented in person or by proxy, shall constitute a quorum at any meeting of shareholders. The shareholders present at a duly called or held meeting at which a quorum is present may continue to transact business until adjournment, notwithstanding the withdrawal of enough shareholders to leave less than a quorum.\"\n\nSince Annalise holds 70% of the shares of the company, she has the power to call a special meeting and vote at the meeting since a quorum is met by her majority share alone. So the vote is valid.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

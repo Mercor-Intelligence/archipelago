@@ -1,0 +1,399 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "A market benchmarking activity was conducted by the client, based on which the CHRO wants to do a one-time salary correction in the year 2026 (percentages by role provided in file attached), followed by annual increments from 2027 onwards, with a fixed CAGR till 2030. (Avg. Compensation increment CAGRs by role, provided in the file attached). FTE Count shall increase from 2026 onwards with a fixed CAGR till 2030. (FTE Count increment CAGRs by role, provided in the file attached).\n\nBased on all the above-mentioned activities, the CHRO has asked to calculate the expected total payroll expense in the year 2030.\n\nClient has provided us with details of payroll for 2025 in the latest financials, which shall be considered as the base for all projections.\n\nFurther, the client wants to retain their \"Core\" category staff (Classification provided by role in file attached) hence they want to pay higher than market, hence for them, the CAGR for Compensation (2027 onwards) shall be 1.5x of that mentioned in the file. The one-time salary correction percentage shall stay the same as in the file.\n\nYour final answer shall include the total expected payroll expenses for the year 2030, at a total firm level, and also split at the state level.\n\nKey Assumptions/ Guardrails-\n\n1. Round off the final output dollar value to the nearest integer."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the expected payroll expense in year 2030 for IL is $615,148,849... (ver_66642cef2093496e8a707fad359b4686)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the expected payroll expense in year 2030 for IL is $615,148,849 (acceptable range $608,997,361 to $621,300,337)."
+        }
+      ]
+    },
+    {
+      "name": "States that the expected payroll expense in year 2030 for IL is a value other... (ver_66642cef2093496e8a707fad359b4686)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the expected payroll expense in year 2030 for IL is a value other than $615,148,849."
+        }
+      ]
+    },
+    {
+      "name": "States that the expected payroll expense in year 2030 for MN is $301,035,829... (ver_fa5f24743a8449a899b7dc53a42db122)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the expected payroll expense in year 2030 for MN is $301,035,829 (acceptable range $298,025,471 to $304,046,187)."
+        }
+      ]
+    },
+    {
+      "name": "States that the expected payroll expense in year 2030 for MN is a value other... (ver_fa5f24743a8449a899b7dc53a42db122)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the expected payroll expense in year 2030 for MN is a value other than $301,035,829."
+        }
+      ]
+    },
+    {
+      "name": "States that the expected payroll expense in year 2030 for WI is $344,774,416... (ver_b216d72c9100413f91c09113b7f9c951)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the expected payroll expense in year 2030 for WI is $344,774,416 (acceptable range $341,326,672 to $348,222,160)."
+        }
+      ]
+    },
+    {
+      "name": "States that the expected payroll expense in year 2030 for WI is a value other... (ver_b216d72c9100413f91c09113b7f9c951)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the expected payroll expense in year 2030 for WI is a value other than $344,774,416."
+        }
+      ]
+    },
+    {
+      "name": "States that the expected payroll expense in year 2030 for OH is $489,642,934... (ver_04923a4d72914ea98a492c068b2fff51)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the expected payroll expense in year 2030 for OH is $489,642,934 (acceptable range $484,746,505 to $494,539,363)."
+        }
+      ]
+    },
+    {
+      "name": "States that the expected payroll expense in year 2030 for OH is a value other... (ver_04923a4d72914ea98a492c068b2fff51)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the expected payroll expense in year 2030 for OH is a value other than $489,642,934."
+        }
+      ]
+    },
+    {
+      "name": "States that the expected payroll expense in year 2030 for MO is $304,230,042... (ver_0fa4e6926bd0406d91f5e4f6c4cff4d6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the expected payroll expense in year 2030 for MO is $304,230,042 (acceptable range $301,187,742 to $307,272,342)."
+        }
+      ]
+    },
+    {
+      "name": "States that the expected payroll expense in year 2030 for MO is a value other... (ver_0fa4e6926bd0406d91f5e4f6c4cff4d6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the expected payroll expense in year 2030 for MO is a value other than $304,230,042."
+        }
+      ]
+    },
+    {
+      "name": "States that the expected payroll expense in year 2030 for IN is $409,583,946... (ver_7319ee9db76c4a4a882f6e1ea683955a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the expected payroll expense in year 2030 for IN is $409,583,946 (acceptable range $405,488,107 to $413,679,785)."
+        }
+      ]
+    },
+    {
+      "name": "States that the expected payroll expense in year 2030 for IN is a value other... (ver_7319ee9db76c4a4a882f6e1ea683955a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the expected payroll expense in year 2030 for IN is a value other than $409,583,946."
+        }
+      ]
+    },
+    {
+      "name": "States that the expected payroll expense in year 2030 for MI is $453,321,939... (ver_397f5915b45646ce9bde64ea76b280c5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the expected payroll expense in year 2030 for MI is $453,321,939 (acceptable range $448,788,720 to $457,855,158)."
+        }
+      ]
+    },
+    {
+      "name": "States that the expected payroll expense in year 2030 for MI is a value other... (ver_397f5915b45646ce9bde64ea76b280c5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the expected payroll expense in year 2030 for MI is a value other than $453,321,939."
+        }
+      ]
+    },
+    {
+      "name": "States that the expected total payroll expense for the firm in year 2030 is... (ver_c24c830bcda5407b8900d823150bdb82)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the expected total payroll expense for the firm in year 2030 is $2,917,737,955 (acceptable range $2,888,560,575 to $2,946,915,335)."
+        }
+      ]
+    },
+    {
+      "name": "States that the expected total payroll expense for the firm in year 2030 is a... (ver_c24c830bcda5407b8900d823150bdb82)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the expected total payroll expense for the firm in year 2030 is a value other than $2,917,737,955."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-118-rs-08-2a2d271b"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_2a2d271b4e1241b1ad667870e8b9ec9e",
+    "task_name": "Task 118_RS_08",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_3ca62078242e40ddaad6195f85328b8f",
+        "golden_text_response": "The expected payroll expense in the year 2030 is-\n\nStatewise-\n\nIL\t | $615,148,849\nMN\t|  $301,035,829\nWI\t| $344,774,416\nOH\t| $489,642,934\nMO\t| $304,230,042\nIN\t| $409,583,946\nMI\t| $453,321,939\n\nTotal (Firm Level)\t| $2,917,737,955",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

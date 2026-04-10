@@ -1,0 +1,85 @@
+Candidate_ID,Candidate_Name,Current_Company,Avg Cultural Fit Rating,Interview Coverage %,Cultural Fit Rating,Finalist Eligible,% Interviewers Recommending Advance,Cultural Score Std Dev,Primary Cultural Strength,Primary Cultural Concern,Cultural Risk Count,Final Cultural Recommendation
+1,Steven Campbell,Revolve,9.0,0,Strong Fit,No,100.0,0.79,excellent track record at CVS Health. results-driven,international exp is limited,5.0,Advance with Risk
+2,Jennifer Rivera,TJX Companies,8.0,0,Strong Fit,No,80.0,,"collaborative style, would work well with team",some hesitation about relocation,,Advance with Risk
+3,Virginia Ramirez,Best Buy,7.8,0,Strong Fit,No,80.0,,"strong commercial acumen, in-person chemistry excellent",,10.0,
+4,Justin Evans,Best Buy,8.1,0,Strong Fit,No,60.0,0.89,asked insightful questions about business,change mgmt capability needs more probing,,Advance with Risk
+5,Jonathan Wood,Nordstrom,8.4,0,Strong Fit,No,,0.32,asked insightful questions about business,concern about travel requirements fitting their situation,1.0,Advance with Risk
+6,Angela Bennett,CVS Health,,0,Strong Fit,No,100.0,,,concern about travel requirements fitting their situation,13.0,
+7,Alexandra Young,Home Depot,7.923076923076923,0,Strong Fit,No,100.0,0.83,,,13.0,
+8,Stephanie Reed,Ross Stores,7.8,0,Strong Fit,No,66.7,0.45,deep expertise in retail transformation,change mgmt capability needs more probing,10.0,Advance with Risk
+9,Kimberly Hill,Home Depot,8.0,0,Strong Fit,No,100.0,0.8,"strong leadership presence, confident but not arrogant",,10.0,Advance with Risk
+10,Helen Walker,Restoration Hardware,7.846153846153847,0,Strong Fit,No,40.0,,deep expertise in retail transformation,limited experience with scale we operate at,10.0,Advance with Risk
+11,Jason Lewis,Amazon Retail,,0,Strong Fit,No,80.0,,impressive digital/omnichannel experience,comp expectations might be high,,Advance with Risk
+12,Melissa Clark,Joss & Main,,0,Strong Fit,No,80.0,0.86,"collaborative style, would work well with team",limited experience with scale we operate at,10.0,Advance with Risk
+13,Kenneth Peterson,Tractor Supply Co,9.0,0,Insufficient Data,No,69.2,0.94,,limited experience with scale we operate at,13.0,Advance with Risk
+14,Paul Morris,REI,,0,Strong Fit,No,61.5,0.45,impressive digital/omnichannel experience,not sure about depth of P&L ownership,1.0,Advance with Risk
+15,Thomas Evans,Zulily,9.0,0,Strong Fit,No,70.0,,"collaborative style, would work well with team",comp expectations might be high,10.0,Advance with Risk
+16,Matthew Parker,Wayfair,8.0,0,Strong Fit,No,100.0,,asked insightful questions about business,,1.0,
+17,Sarah Collins,Nasty Gal,8.0,0,Strong Fit,No,90.0,0.79,strategic thinker with good execution examples,,10.0,
+18,Lisa Kelly,Nike,8.1,0,Strong Fit,No,84.6,0.84,good energy and enthusiasm for the role,limited experience with scale we operate at,13.0,Advance
+19,Robert Williams,West Elm,7.8,0,Strong Fit,No,90.0,0.8,good energy and enthusiasm for the role,may be too tactical vs strategic for CRO level,5.0,Advance with Risk
+20,James Ward,CVS Health,,0,Strong Fit,No,40.0,0.74,cultural fit looks solid based on this convo,comp expectations might be high,,
+21,Rachel Moore,CVS Health,9.0,0,Strong Fit,No,,,good energy and enthusiasm for the role,,,Advance with Risk
+22,Justin Brooks,Zappos,7.8,0,Strong Fit,No,84.6,,asked insightful questions about business,,5.0,
+23,Brandon Morgan,Best Buy Canada,8.0,0,Insufficient Data,No,,0.57,,not sure about depth of P&L ownership,1.0,Advance with Risk
+24,Robert Sharma,West Elm,7.6,0,Strong Fit,No,61.5,1.1,"strong leadership presence, confident but not arrogant",international exp is limited,10.0,
+25,Matthew Green,West Elm,,0,Strong Fit,No,,,,international exp is limited,1.0,Advance
+26,Justin Adams,Build-A-Bear,8.4,0,Insufficient Data,No,80.0,,asked insightful questions about business,change mgmt capability needs more probing,5.0,Advance with Risk
+27,Kenneth Roberts,West Elm,9.0,0,Strong Fit,No,100.0,,impressive digital/omnichannel experience,may be too tactical vs strategic for CRO level,,Advance with Risk
+28,Patricia Wilson,Sharper Image,,0,Strong Fit,No,,0.8,,change mgmt capability needs more probing,1.0,Advance
+29,Nicole Walker,Dollar General,,0,Strong Fit,No,,0.93,"strong leadership presence, confident but not arrogant",concern about travel requirements fitting their situation,5.0,Advance with Risk
+30,Kevin Sharma,Wayfair,,0,Strong Fit,No,0.0,,impressive digital/omnichannel experience,,13.0,Advance
+31,Michael Evans,Boohoo,,0,Insufficient Data,No,76.9,,impressive digital/omnichannel experience,,1.0,Advance with Risk
+32,Frank Wood,ASOS,7.0,0,Strong Fit,No,83.3,1.0,good energy and enthusiasm for the role,innovation mindset could be stronger,10.0,Advance with Risk
+33,Stephanie Rivera,Farfetch,7.6,0,Insufficient Data,No,0.0,0.76,"collaborative style, would work well with team",team building track record unclear,13.0,Advance
+34,Amy King,Chewy,7.9,0,Strong Fit,No,100.0,0.82,strategic thinker with good execution examples,team building track record unclear,,Advance with Risk
+35,Jerry Edwards,Costco Wholesale,8.0,0,Insufficient Data,No,80.0,0.94,cultural fit looks solid based on this convo,,1.0,Advance with Risk
+36,Kevin Bailey,Ross Stores,7.833333333333333,0,Strong Fit,No,80.0,0.89,strategic thinker with good execution examples,international exp is limited,,Advance
+37,Laura Lee,Best Buy,8.0,0,Strong Fit,No,100.0,1.0,deep expertise in retail transformation,concern about travel requirements fitting their situation,1.0,
+38,Dorothy Ramirez,Target Corporation,9.0,0,Insufficient Data,No,70.0,,impressive digital/omnichannel experience,innovation mindset could be stronger,13.0,
+39,Susan James,Jo-Ann Fabrics,7.916666666666667,0,Strong Fit,No,100.0,,excellent track record at Brookstone. results-driven,may be too tactical vs strategic for CRO level,1.0,Advance
+40,Dorothy Wilson,Amazon Retail,7.0,0,Strong Fit,No,100.0,0.84,deep expertise in retail transformation,not sure about depth of P&L ownership,5.0,Advance with Risk
+41,Samantha Jackson,Spirit Halloween,7.8,0,Strong Fit,No,70.0,,,,5.0,Advance with Risk
+42,Jennifer Clark,Zappos,7.7,0,Insufficient Data,No,20.0,0.55,impressive digital/omnichannel experience,innovation mindset could be stronger,,
+43,Joseph Lewis,Rue La La,8.0,0,Strong Fit,No,,0.9,impressive digital/omnichannel experience,international exp is limited,13.0,Advance with Risk
+44,Robert Ward,Dicks Sporting Goods,8.1,0,Strong Fit,No,69.2,0.9,cultural fit looks solid based on this convo,team building track record unclear,5.0,Advance with Risk
+45,Dennis Moore,Stitch Fix,8.0,0,Strong Fit,No,80.0,,asked insightful questions about business,,1.0,Advance with Risk
+46,David Ward,American Eagle,8.0,0,Insufficient Data,No,0.0,0.95,cultural fit looks solid based on this convo,,5.0,Advance with Risk
+47,Rebecca Phillips,Walgreens,,0,Strong Fit,No,100.0,0.55,,international exp is limited,,Advance with Risk
+48,Nancy Campbell,Foot Locker,8.0,0,Strong Fit,No,40.0,,good energy and enthusiasm for the role,change mgmt capability needs more probing,1.0,
+49,Anthony Jackson,Crate and Barrel,7.6923076923076925,0,Strong Fit,No,,0.75,,comp expectations might be high,5.0,Advance with Risk
+50,Brittany Cook,ModCloth,8.0,0,Insufficient Data,No,60.0,0.89,"collaborative style, would work well with team",may be too tactical vs strategic for CRO level,5.0,Advance with Risk
+51,Kenneth Clark,Home Depot,9.0,0,Strong Fit,No,80.0,,asked insightful questions about business,innovation mindset could be stronger,10.0,Advance with Risk
+52,Jerry Wood,Urban Outfitters,,0,Strong Fit,No,70.0,,"strong leadership presence, confident but not arrogant",comp expectations might be high,1.0,Advance with Risk
+53,Kenneth Martin,ModCloth,8.23076923076923,0,Insufficient Data,No,60.0,1.0,cultural fit looks solid based on this convo,change mgmt capability needs more probing,1.0,Advance with Risk
+54,James Price,Bed Bath & Beyond,7.6,0,Strong Fit,No,90.0,,asked insightful questions about business,,,Advance with Risk
+55,Jessica Rivera,Brookstone,7.4,0,Strong Fit,No,100.0,0.89,asked insightful questions about business,international exp is limited,5.0,Advance with Risk
+56,Ashley Reed,Joss & Main,7.8,0,Strong Fit,No,0.0,0.63,good energy and enthusiasm for the role,change mgmt capability needs more probing,5.0,Advance with Risk
+57,Rachel Cooper,Foot Locker,8.1,0,Strong Fit,No,0.0,,"strong leadership presence, confident but not arrogant",change mgmt capability needs more probing,5.0,
+58,Laura King,Zulily,,0,Strong Fit,No,60.0,0.95,"collaborative style, would work well with team",team building track record unclear,,Advance
+59,William Moore,Hobby Lobby,,0,Strong Fit,No,70.0,,deep expertise in retail transformation,change mgmt capability needs more probing,13.0,Advance
+60,Frank Parker,Williams-Sonoma,,0,Strong Fit,No,,,,may be too tactical vs strategic for CRO level,5.0,Advance with Risk
+61,Angela Taylor,Revolve,7.0,0,Insufficient Data,No,,,,limited experience with scale we operate at,,Advance with Risk
+62,Adam Phillips,Nasty Gal,8.0,0,Strong Fit,No,,,asked insightful questions about business,hard to assess fully over video,10.0,Advance with Risk
+63,Matthew Walker,Target Corporation,7.0,0,Strong Fit,No,,,asked insightful questions about business,comp expectations might be high,10.0,Advance with Risk
+64,Brian Lewis,Target Corporation,7.923076923076923,0,Insufficient Data,No,83.3,1.0,impressive digital/omnichannel experience,concern about travel requirements fitting their situation,5.0,Advance with Risk
+65,Richard White,Dicks Sporting Goods,8.076923076923075,0,Insufficient Data,No,0.0,0.71,,concern about travel requirements fitting their situation,5.0,Advance with Risk
+66,Jerry White,Lululemon,7.6,0,Insufficient Data,No,100.0,,strategic thinker with good execution examples,comp expectations might be high,5.0,Advance with Risk
+67,Patricia Green,Dollar General,8.25,0,Strong Fit,No,80.0,,,some hesitation about relocation,12.0,
+68,Amy Brooks,West Elm,8.384615384615385,0,Strong Fit,No,0.0,,,international exp is limited,,
+69,Gregory Martin,Farfetch,8.0,0,Insufficient Data,No,0.0,0.88,cultural fit looks solid based on this convo,,12.0,Advance with Risk
+70,Amanda Morgan,Sephora,8.2,0,Strong Fit,No,69.2,0.88,excellent track record at Wayfair. results-driven,innovation mindset could be stronger,5.0,Advance with Risk
+71,Jonathan Bennett,Build-A-Bear,8.153846153846153,0,Strong Fit,No,,0.79,asked insightful questions about business,concern about travel requirements fitting their situation,,Advance with Risk
+72,Paul Rogers,Bed Bath & Beyond,7.8,0,Insufficient Data,No,76.9,0.89,impressive digital/omnichannel experience,change mgmt capability needs more probing,12.0,Advance with Risk
+73,Paul Morgan,REI,8.153846153846153,0,Strong Fit,No,60.0,0.45,impressive digital/omnichannel experience,concern about travel requirements fitting their situation,1.0,Advance with Risk
+74,Jeffrey Taylor,Zappos,8.2,0,Strong Fit,No,,0.84,impressive digital/omnichannel experience,not sure about depth of P&L ownership,,Advance with Risk
+75,Eric Cook,Urban Outfitters,,0,Strong Fit,No,,0.75,,change mgmt capability needs more probing,1.0,Advance with Risk
+76,Ryan Thompson,American Eagle,8.0,0,Strong Fit,No,,0.79,,,1.0,
+77,Elizabeth Jackson,Lululemon,9.0,0,Strong Fit,No,40.0,0.87,,limited experience with scale we operate at,10.0,Advance with Risk
+78,Emily Torres,Gilt,8.2,0,Strong Fit,No,0.0,,good energy and enthusiasm for the role,,1.0,Advance with Risk
+79,Sarah Jenkins,Randomized Retail,8.0,0,Insufficient Data,No,60.0,0.55,impressive digital/omnichannel experience,concern about travel requirements fitting their situation,1.0,Advance
+80,Karen O'Malley,Randomized Retail,8.0,0,Strong Fit,No,80.0,0.89,"collaborative style, would work well with team",innovation mindset could be stronger,1.0,Advance with Risk
+81,Simon DeLuca,Randomized Retail,8.0,0,Strong Fit,No,80.0,0.89,"collaborative style, would work well with team",change mgmt capability needs more probing,1.0,Advance with Risk
+82,Rachel Green,Randomized Retail,7.7,0,Strong Fit,No,76.9,0.93,impressive digital/omnichannel experience,innovation mindset could be stronger,13.0,Advance with Risk
+83,Nancy Drew,Randomized Retail,8.25,0,Strong Fit,No,69.2,0.79,cultural fit looks solid based on this convo,not sure about depth of P&L ownership,1.0,Advance with Risk
+84,Kevin Hart,Randomized Retail,8.0,0,Strong Fit,No,0.0,0.84,cultural fit looks solid based on this convo,concern about travel requirements fitting their situation,1.0,Advance with Risk

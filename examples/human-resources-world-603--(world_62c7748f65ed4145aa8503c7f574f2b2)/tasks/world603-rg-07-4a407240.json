@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Following Nikole Walker's initial recommendation, the CHRO wants to review the full list of external candidates (from the file \"External outreach candidate list.xlsx\") and select the top 3 candidates for the Chief of Staff position. Given that the HR team does not have sufficient time to conduct detailed interviews with all candidates, they plan to use their internal scoring system to evaluate all candidates and identify the top 3. Can you use the attached scoring methodology file and chart to identify the top candidates and their respective scores?\n\nPlease provide your answers directly in the console. Round the final answers to two decimal places. If there is a tie, select the candidate with the most relevant experience."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that one of the top 3 candidates for the Chief of Staff position is... (ver_d7215b0fdb3541f1b2be02e8333b3a2e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the top 3 candidates for the Chief of Staff position is Shuri Black."
+        }
+      ]
+    },
+    {
+      "name": "States that one of the top 3 candidates for the Chief of Staff position is... (ver_b2a0ba3e4c9941439a0b80daa9715be9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the top 3 candidates for the Chief of Staff position is Ryan Howard."
+        }
+      ]
+    },
+    {
+      "name": "States that one of the top 3 candidates for the Chief of Staff position is... (ver_db7cc9d4d0d24f07a57bbff9e1136dfd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the top 3 candidates for the Chief of Staff position is Sarah Lee."
+        }
+      ]
+    },
+    {
+      "name": "States that the score, as per the internal scoring methodology, for Shuri... (ver_2c784280db9345dc8b4834b1bf7b27f2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the score, as per the internal scoring methodology, for Shuri Black is 92.46 (acceptable range 91.54 to 93.38)."
+        }
+      ]
+    },
+    {
+      "name": "States that the score, as per the internal scoring methodology, for Ryan... (ver_8a093d154127463babd309458d8a48c3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the score, as per the internal scoring methodology, for Ryan Howard is 90.09 (acceptable range 89.19 to 90.99)."
+        }
+      ]
+    },
+    {
+      "name": "States that the score, as per the internal scoring methodology, for Sarah Lee... (ver_7a711fa706ff4901aa59590b6aa51967)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the score, as per the internal scoring methodology, for Sarah Lee is 89.63 (acceptable range 88.73 to 90.53)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world603-rg-07-4a407240"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_4a40724034ae4e8088809a2bfce63319",
+    "task_name": "World603_RG_07",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_bec9f03432dc4aeea4ada0465c83920f",
+        "golden_text_response": "The top 3 candidates for the Chief of Staff position, and their respective scores are\n\nShuri Black: 92.46\nRyan Howard: 90.09\nSarah Lee: 89.63",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

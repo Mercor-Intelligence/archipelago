@@ -1,0 +1,99 @@
+[env._.python.venv]
+path = ".venv"
+create = true
+
+[tools]
+python = "3.13"
+uv = "0.6.10"
+
+[tasks.install]
+run = "uv sync --all-extras"
+description = "Install dependencies"
+
+[tasks.build]
+run = "mkdir -p /.apps_data/greenhouse && uv run --no-sync python ./scripts/setup_mcp_server.py --mcp-server greenhouse"
+description = "Setup the Greenhouse MCP server (run migrations, etc.)"
+depends = ["install"]
+
+[tasks.populate]
+# Schema-aware CSV import with validation-then-import pattern.
+run = """
+STATE_LOC=${STATE_LOCATION:-/.apps_data/greenhouse}
+LOG_FILE="${STATE_LOC}/greenhouse_import_logs.txt"
+mkdir -p "${STATE_LOC}" 2>/dev/null || true
+
+if [ ! -d "${STATE_LOC}" ]; then
+  echo "STATE_LOCATION directory does not exist: ${STATE_LOC}"
+  exit 0
+fi
+
+# Check if any CSV files exist
+if ! ls "${STATE_LOC}"/*.csv 1>/dev/null 2>&1; then
+  echo "No CSV files found in ${STATE_LOC}, skipping import"
+  exit 0
+fi
+
+echo "=== Validating CSV files ===" | tee -a "$LOG_FILE"
+uv run --no-sync python scripts/import_csv.py --dir "${STATE_LOC}" --validate-only >> "$LOG_FILE" 2>&1
+if [ $? -ne 0 ]; then
+  echo "CSV validation failed! Check $LOG_FILE"
+  exit 1
+fi
+
+echo "=== Importing CSV files ===" | tee -a "$LOG_FILE"
+uv run --no-sync python scripts/import_csv.py --dir "${STATE_LOC}" >> "$LOG_FILE" 2>&1
+if [ $? -ne 0 ]; then
+  echo "CSV import failed! Check $LOG_FILE"
+  exit 1
+fi
+
+echo "CSV import completed successfully"
+
+# Fix permissions for biome environment (no-op if not in container)
+if [ -d "${STATE_LOC}" ]; then
+  chmod -R g+rw "${STATE_LOC}" 2>/dev/null || true
+fi
+"""
+description = "Validate and import CSV data with schema-aware loader (fails fast on invalid data)"
+depends = ["build"]
+
+[tasks.start]
+run = "uv run --no-sync python ./scripts/run_mcp_server.py --mcp-server greenhouse"
+description = "Start the Greenhouse MCP server"
+depends = ["populate"]
+
+[tasks.lint]
+run = "ruff check ."
+description = "Run linter"
+
+[tasks.format]
+run = "ruff format ."
+description = "Format code"
+
+[tasks.test]
+run = "pytest"
+description = "Run tests"
+
+[tasks.typecheck]
+run = "echo 'No typecheck configured'"
+description = "Run type checker"
+
+# UI tasks
+[tasks."ui:install"]
+run = "cd ui/greenhouse && npm install"
+description = "Install UI dependencies"
+
+[tasks."ui:dev"]
+run = "cd ui/greenhouse && npm run dev"
+description = "Start UI development server"
+depends = ["ui:install"]
+
+[tasks."ui:build"]
+run = "cd ui/greenhouse && npm run build"
+description = "Build UI for production"
+depends = ["ui:install"]
+
+[tasks."ui:start"]
+run = "cd ui/greenhouse && npm run start"
+description = "Start UI production server"
+depends = ["ui:build"]

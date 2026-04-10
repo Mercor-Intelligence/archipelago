@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "We’re trying to improve service quality and retention by identifying the single best agent who can cover the five most dissatisfied customers. Use the customer_service_interactions table to find the five customers with the lowest average satisfaction (no minimum resolved-interaction requirement). Break ties for the top-5 customers by most recent interaction date, then by subscriber_id. Compute per‑agent metrics (interaction count, average handle time, resolution rate, and average satisfaction), normalize each metric across all agents using min‑max scaling (0-1), and invert handle time so lower is better. Calculate a composite score weighted as 40% resolution rate, 30% satisfaction, 20% handle time (inverted), and 10% interaction volume. Identify agents who are eligible for all five customers, where eligibility means the agent covers all of a customer’s channels OR all of a customer’s interaction types. From those agents, pick the highest composite score (tie-break by higher resolution rate, higher satisfaction, lower handle time, then agent_id). Handle missing values by relying on SQLite defaults: AVG ignores NULLs; resolution_status NULLs are treated as not resolved; NULL channels or interaction types don’t add requirements in the eligibility checks. Report the chosen agent’s information: agent id, composite score, resolution rate, average satisfaction, and average handle time minutes, rounding all reported metrics to two decimals. Perform the analysis using SQLite. Provide the SQL script and results."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports the selected agent as AG8261. (ver_b1672d8a906445dab4196c77d806dac5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the selected agent as AG8261."
+        }
+      ]
+    },
+    {
+      "name": "Reports the composite score of the selected agent as 0.79 (+/-0.01). (ver_23cedd9e68034cc589b02b14fe91a720)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the composite score of the selected agent as 0.79 (+/-0.01)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the resolution rate of the selected agent as 1.00 (+/-0.01). (ver_7bfec8e2f605476c85a06d89fc440cc1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the resolution rate of the selected agent as 1.00 (+/-0.01)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the average satisfaction of the selected agent as 5.00 (+/-0.01). (ver_947dbab98da340f4a1427ea129d303bb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the average satisfaction of the selected agent as 5.00 (+/-0.01)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the average handle time in minutes of the selected agent as 34.00... (ver_5009610054a7463d83fd970f93c4d8d8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the average handle time in minutes of the selected agent as 34.00 (+/-0.01)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sql-task-y8y02554-fb96eb7a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_fb96eb7ae7e549dc938ca4c4b3419615",
+    "task_name": "SQL - Task y8y02554",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_7930f1c4b808411ca7a98b630f6511ee",
+        "golden_text_response": "agent_id   composite_score   resolution_rate avg_satisfaction avg_handle_time_minutes\n  AG8261            0.79                        1.00                 5.00                        34.00\n\n```sql\n-- 1) Per-agent base metrics\nWITH agent_base AS (\n  SELECT\n    agent_id,\n    COUNT(*) AS interactions,\n    AVG(duration_minutes) AS avg_handle_time_minutes,\n    AVG(CASE WHEN LOWER(resolution_status) = 'resolved' THEN 1.0 ELSE 0.0 END) AS resolution_rate,\n    AVG(satisfaction_score) AS avg_satisfaction\n  FROM customer_service_interactions\n  GROUP BY agent_id\n),\n-- 2) Normalize metrics to 0-1 (force float division)\nagent_norm AS (\n  SELECT\n    *,\n    (1.0 * interactions - MIN(interactions) OVER())\n      / NULLIF(1.0 * (MAX(interactions) OVER() - MIN(interactions) OVER()), 0) AS n_interactions,\n    (1.0 * resolution_rate - MIN(resolution_rate) OVER())\n      / NULLIF(1.0 * (MAX(resolution_rate) OVER() - MIN(resolution_rate) OVER()), 0) AS n_resolution,\n    (1.0 * avg_satisfaction - MIN(avg_satisfaction) OVER())\n      / NULLIF(1.0 * (MAX(avg_satisfaction) OVER() - MIN(avg_satisfaction) OVER()), 0) AS n_satisfaction,\n    1.0 - (\n      (1.0 * avg_handle_time_minutes - MIN(avg_handle_time_minutes) OVER())\n      / NULLIF(1.0 * (MAX(avg_handle_time_minutes) OVER() - MIN(avg_handle_time_minutes) OVER()), 0)\n    ) AS n_handle_time\n  FROM agent_base\n),\n-- 3) Composite score from normalized metrics\nagent_scores AS (\n  SELECT\n    agent_id,\n    resolution_rate,\n    avg_satisfaction,\n    avg_handle_time_minutes,\n    (0.40 * n_resolution\n   + 0.30 * n_satisfaction\n   + 0.20 * n_handle_time\n   + 0.10 * n_interactions) AS composite_score\n  FROM agent_norm\n),\n-- 4) Per-customer satisfaction and recency\ncustomer_stats AS (\n  SELECT\n    subscriber_id,\n    AVG(satisfaction_score) AS avg_satisfaction,\n    MAX(interaction_date) AS last_interaction_date\n  FROM customer_service_interactions\n  GROUP BY subscriber_id\n),\n-- 5) Rank customers by lowest satisfaction (tie-break by recency, id)\nworst_customers AS (\n  SELECT\n    subscriber_id,\n    ROW_NUMBER() OVER (\n      ORDER BY\n        avg_satisfaction ASC,\n        last_interaction_date DESC,\n        subscriber_id\n    ) AS customer_rank\n  FROM customer_stats\n),\n-- 6) Top 5 lowest-satisfaction customers\ntop_customers AS (\n  SELECT\n    subscriber_id,\n    customer_rank\n  FROM worst_customers\n  WHERE customer_rank <= 5\n),\n-- 7) Agent eligible if full channels OR full interaction types for customer\neligible_pairs AS (\n  SELECT\n    c.subscriber_id,\n    a.agent_id\n  FROM top_customers c\n  JOIN agent_scores a\n    ON 1 = 1\n  WHERE NOT EXISTS (\n    SELECT 1\n    FROM (\n      SELECT DISTINCT channel\n      FROM customer_service_interactions\n      WHERE subscriber_id = c.subscriber_id\n    ) cc\n    WHERE cc.channel NOT IN (\n      SELECT DISTINCT channel\n      FROM customer_service_interactions\n      WHERE agent_id = a.agent_id\n    )\n  )\n  OR NOT EXISTS (\n    SELECT 1\n    FROM (\n      SELECT DISTINCT interaction_type\n      FROM customer_service_interactions\n      WHERE subscriber_id = c.subscriber_id\n    ) ct\n    WHERE ct.interaction_type NOT IN (\n      SELECT DISTINCT interaction_type\n      FROM customer_service_interactions\n      WHERE agent_id = a.agent_id\n    )\n  )\n),\n-- 8) Agents eligible for all 5 customers\neligible_all AS (\n  SELECT\n    agent_id\n  FROM eligible_pairs\n  GROUP BY agent_id\n  HAVING COUNT(DISTINCT subscriber_id) = 5\n),\n-- 9) Pick the best eligible agent by score (tie-break by resolution, satisfaction, handle time, id)\ntop_agent AS (\n  SELECT\n    s.agent_id,\n    s.composite_score,\n    s.resolution_rate,\n    s.avg_satisfaction,\n    s.avg_handle_time_minutes,\n    ROW_NUMBER() OVER (\n      ORDER BY\n        s.composite_score DESC,\n        s.resolution_rate DESC,\n        s.avg_satisfaction DESC,\n        s.avg_handle_time_minutes ASC,\n        s.agent_id\n    ) AS agent_rank\n  FROM agent_scores s\n  WHERE s.agent_id IN (SELECT agent_id FROM eligible_all)\n)\n-- 10) Report agent metrics only\nSELECT\n  t1.agent_id,\n  printf('%.2f', t1.composite_score) AS composite_score,\n  printf('%.2f', t1.resolution_rate) AS resolution_rate,\n  printf('%.2f', t1.avg_satisfaction) AS avg_satisfaction,\n  printf('%.2f', t1.avg_handle_time_minutes) AS avg_handle_time_minutes\nFROM top_agent t1\nWHERE t1.agent_rank = 1;\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

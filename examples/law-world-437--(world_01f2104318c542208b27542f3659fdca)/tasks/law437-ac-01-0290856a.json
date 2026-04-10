@@ -1,0 +1,261 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Write a short legal memo in a Word document analyzing whether Anthony Porter has a valid whistleblower claim under section 11(c) of the Occupational Safety and Health Act of 1970 (OSH Act). Be sure to discuss the legal standards required for a claim. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that Porter filed his retaliation claim within 30 days (ver_1617cfb73df14ae0ab48f0aefba05e93)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Porter filed his retaliation claim within 30 days."
+        }
+      ]
+    },
+    {
+      "name": "States that Porter filed a safety complaint with OHSA, as required by 11(c) of... (ver_ba73f4a1da3b452d95435244e344a79c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Porter filed a safety complaint with OHSA, as required by 11(c) of the OSH Act."
+        }
+      ]
+    },
+    {
+      "name": "States that Porter was discharged three weeks after filing his complaint (ver_84be6ca4744d449eb52fd859aac11d5a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Porter was discharged three weeks after filing his complaint."
+        }
+      ]
+    },
+    {
+      "name": "States that Porter must show his dismissal was caused by filing the OHSA... (ver_c8ccde2cee954fa68ca67493c332c0cd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Porter must show his dismissal was caused by filing the OHSA complaint."
+        }
+      ]
+    },
+    {
+      "name": "States that an employee is not immune from discharge for legitimate reasons... (ver_aea67518f6124b03996324c553d16584)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that an employee is not immune from discharge for legitimate reasons even if they have filed a complaint."
+        }
+      ]
+    },
+    {
+      "name": "States that Porter received a mixed performance review on 11/1/24 (ver_55c6893dd9784e69b761ba7712031dc4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Porter received a mixed performance review on 11/1/24."
+        }
+      ]
+    },
+    {
+      "name": "States that Porter's supervisor emailed him about performance issues in 2025 (ver_0cfb5400b7494243b39a4148d1a1175c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Porter's supervisor emailed him about performance issues in 2025."
+        }
+      ]
+    },
+    {
+      "name": "States that Porter's 2025 performance review recommended termination of... (ver_318b31bf61754793aa3a9a2bc42698cd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Porter's 2025 performance review recommended termination of employment."
+        }
+      ]
+    },
+    {
+      "name": "States that Porter's personnel file did not support many of the claims made in... (ver_51e805d5e12142caa453f283fb9c1a5c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Porter's personnel file did not support many of the claims made in the 2025 performance review."
+        }
+      ]
+    },
+    {
+      "name": "States that Porter is likely to have a sustainable claim for retaliation (ver_7fa61bfdac8a4a708caec4c0d9711227)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Porter is likely to have a sustainable claim for retaliation."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh law437-ac-01-0290856a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_0290856a69614351bf9fb1c5b28bc8c9",
+    "task_name": "Law437_AC_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d0d66b29d00d49bd8aa5d6a7ada72c21",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_b77d887fae7345f080519c4912292889"
+      }
+    ]
+  }
+}

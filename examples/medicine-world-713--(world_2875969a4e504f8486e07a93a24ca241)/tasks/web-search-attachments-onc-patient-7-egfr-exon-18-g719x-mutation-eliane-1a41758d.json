@@ -1,0 +1,330 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 7” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nPrompt: \nThe patient presents to her oncologist to re-establish care after a few years. Refer to the reference files \"Onc_Patient 7,\" \"Onc_Patient 7 script.pdf,\" and \"Labs.pdf\".\n\nWhat is the best systemic treatment option for this patient? What is the dosage? What is the frequency? What is the route of administration? What is the most common reason for a dose reduction? Provide clinical reasoning and calculation in detail.\n\nAnswers should align with the most current clinical guidelines as of January 12, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient has a history of stage I non-small cell lung cancer... (ver_49e3f78d25284bd1b5b3f44ae1285da0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has a history of stage I non-small cell lung cancer (NSCLC)."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient previously received EGFR tyrosine kinase inhibitors. (ver_9ff70c8bae8e4900abd18b82dae5e7dc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient previously received EGFR tyrosine kinase inhibitors."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient previously received platinum-based chemotherapy. (ver_2c4bdd6351614e94b6e3e9bc26631ea0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient previously received platinum-based chemotherapy."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient now has metastatic disease. (ver_37604d2c0bbd49f5bfd5cb9367c8f8c6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient now has metastatic disease."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient’s lymph node biopsy shows a recurrence of NSCLC. (ver_618a415bd04c4ee7868dcd0901daf8b7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient’s lymph node biopsy shows a recurrence of NSCLC."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient’s lymph node biopsy shows an EGFR Exon 18 G719A... (ver_e511c9ad2803471486b4680852a9c573)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient’s lymph node biopsy shows an EGFR Exon 18 G719A mutation."
+        }
+      ]
+    },
+    {
+      "name": "Recommends datopotamab deruxtecan-dlnk as the next best systemic therapy... (ver_6f502da49d8b445188bde9bdbf77fbfa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recommends datopotamab deruxtecan-dlnk as the next best systemic therapy option for this patient."
+        }
+      ]
+    },
+    {
+      "name": "States that the route of administration of datopotamab deruxtecan-dlnk is... (ver_92e1cc7bad8249d7ac7cb1d5289f5ba6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the route of administration of datopotamab deruxtecan-dlnk is intravenous infusion."
+        }
+      ]
+    },
+    {
+      "name": "States that the recommended dosing of datopotamab deruxtecan-dlnk is 6 mg/kg... (ver_e84f8685968549d99a23423909df7c95)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the recommended dosing of datopotamab deruxtecan-dlnk is 6 mg/kg (acceptable range 5.9 to 6.1)."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient’s current weight is 106.2 lb or 48.2 kg (acceptable... (ver_3b43c810e27d4e2db579159743f4486f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient’s current weight is 106.2 lb or 48.2 kg (acceptable range 105.1 to 107.3)."
+        }
+      ]
+    },
+    {
+      "name": "Calculates that the patient dosing of datopotamab deruxtecan-dlnk is 289.2 mg.... (ver_6015a01467db4ff48dc0712ed8e5dc94)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates that the patient dosing of datopotamab deruxtecan-dlnk is 289.2 mg. (acceptable range 283.4 - 295.0 mg)."
+        }
+      ]
+    },
+    {
+      "name": "States that infusion of datopotamab deruxtecan-dlnk occurs every 3 weeks or 21... (ver_2bded2acc1d842ceb530ce1c55ceadf6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that infusion of datopotamab deruxtecan-dlnk occurs every 3 weeks or 21 days."
+        }
+      ]
+    },
+    {
+      "name": "States that the most common reason for dose reduction is stomatitis. (ver_004c672c734f4833a5ee5a1276335cdb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the most common reason for dose reduction is stomatitis."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-onc-patient-7-egfr-exon-18-g719x-mutation-eliane-1a41758d"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_1a41758da78a4bcc87282464f1edc22f",
+    "task_name": "Web Search_Attachments_Onc Patient 7 - EGFR Exon 18 G719X mutation - Eliane",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d17980f80ec1417abb9f39dba7234a4b",
+        "golden_text_response": "1. What is the best systemic treatment option for this patient? \n\nThe patient has a history of Stage I non-small cell lung cancer (NSCLC) and has previously received systemic chemotherapy. The patient currently has metastatic disease. A lymph node biopsy indicates a recurrence of NSCLC and reveals an EGFR2 Exon 18 G719A mutation.\n\nBecause the biopsy reports were identical, the EGFR2 mutation was known. And based on the patient's description that she was on a 'pill and then some chemo', this supports that the patient was on an EGFR2 tyrosine kinase inhibitor and a platinum-based chemotherapy. Since we can now confirm the presence of Exon 18 G719A mutation in the biopsy report of the left axillary lymph node, NCCN now recommends datopotamab deruxtecan-dlnk as the next line of therapy. Datopotamab deruxtecan-dlnk is a newly approved FDA drug for EGFR2-mutated NSCLC that has progressed on prior EGFR2 tyrosine kinase inhibitor and platinum-based chemotherapy. \n\n2. What is the dosage?\nThe recommended dosage is 6 mg/kg. Because the patient's weight is 106.2 lb (approx. = 48.2 kg), she should be administered 289.2 mg per infusion every 3 weeks (21 days). \n\n3. What is the frequency? \nDatopotamab deruxtecan-dlnk is administered every 3 weeks or 21 days.\n\n4. Route of administration? \nThe route of administration is intravenous.\n\n5. What is the most common reason for a dose reduction?\nThe most common reason for a dose reduction is stomatitis. \n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

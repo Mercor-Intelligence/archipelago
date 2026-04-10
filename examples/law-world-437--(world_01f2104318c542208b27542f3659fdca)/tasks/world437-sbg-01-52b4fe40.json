@@ -1,0 +1,353 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Compare Sweetmarch Build Partners' (“SBP”) v2 in-house delay and damages assessment to the independent damages report that SBP hired an expert to produce. Create a new spreadsheet that lists the financial damages discrepancies between the two versions. For the category with the largest discrepancy only, provide in a \"notes\" column relevant facts from the file as to why the two versions differ. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States a Total Claim discrepancy range of 1,405,600 to 555,600 (ver_1cda303e2a334657b6e3be8de22c6967)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States a Total Claim discrepancy range of 1,405,600 to 555,600."
+        }
+      ]
+    },
+    {
+      "name": "States an Extended General Conditions discrepancy range of 703,200 to 453,200 (ver_54f32dbf3e4540af8429b34b68f3e90b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States an Extended General Conditions discrepancy range of 703,200 to 453,200."
+        }
+      ]
+    },
+    {
+      "name": "States a Rework & Replacement discrepancy range of 260,480 to 50,480 (ver_902626867b554e7d8963af7cfc029ad4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States a Rework & Replacement discrepancy range of 260,480 to 50,480."
+        }
+      ]
+    },
+    {
+      "name": "States a Fraudulent Invoicing discrepancy of 241,340 (acceptable range 238,927... (ver_6fd6137c86534697bac7ea6a9691de0a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States a Fraudulent Invoicing discrepancy of 241,340 (acceptable range 238,927 to 243,753)."
+        }
+      ]
+    },
+    {
+      "name": "States a Labor Inefficiency discrepancy range of 55,080 to -4,920 (acceptable... (ver_86917b7013f14c1ea8f765f4c6b542ad)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States a Labor Inefficiency discrepancy range of 55,080 to -4,920 (acceptable range 54,529 to 55,631)."
+        }
+      ]
+    },
+    {
+      "name": "States an Insurance & OSHA Costs discrepancy range of 205,900 to 115,900 (ver_36a5391691d44c008058c83fe6ac04db)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States an Insurance & OSHA Costs discrepancy range of 205,900 to 115,900."
+        }
+      ]
+    },
+    {
+      "name": "States an Investigative/QA Costs discrepancy range of -35,000 to -75,000... (ver_1f04ee01db0441c298a4457af16c226b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States an Investigative/QA Costs discrepancy range of -35,000 to -75,000 (acceptable range -35,350 to -34,650)."
+        }
+      ]
+    },
+    {
+      "name": "States a Home Office Overhead discrepancy range of -140,000 to -190,000... (ver_b67f2ade06e143e793e4697dd63f5fd5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States a Home Office Overhead discrepancy range of -140,000 to -190,000 (acceptable range -141,400 to -138,600)."
+        }
+      ]
+    },
+    {
+      "name": "States an Acceleration/Liquidated Damages Exposure discrepancy range of... (ver_8026255442914369be9907df7b8c5f8a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States an Acceleration/Liquidated Damages Exposure discrepancy range of 114,600 to -35,400 (acceptable range 113,454 to 115,746)."
+        }
+      ]
+    },
+    {
+      "name": "Creates a \"Notes\" column for Extended General Conditions, as the category with... (ver_ebce823d57c0472fbd618f7e955dcbab)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Creates a \"Notes\" column for Extended General Conditions, as the category with the largest discrepancy."
+        }
+      ]
+    },
+    {
+      "name": "States the fact that the in-house report calculates damages delays of 100 days... (ver_38a74313353a44439ccb068a9b7af2e4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the fact that the in-house report calculates damages delays of 100 days (acceptable range 99.0 to 101)."
+        }
+      ]
+    },
+    {
+      "name": "States the fact that the in-house report calculates damages delays at a range... (ver_a40af6c85a8d444e87cbb2d5fb150d69)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the fact that the in-house report calculates damages delays at a range of $4,000-$6,500/day (acceptable range $3,960 to $4,040)."
+        }
+      ]
+    },
+    {
+      "name": "States the fact that the hired expert report calculates damages delays of 112... (ver_c771c05213d54eae8e196cbbbdd9e675)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the fact that the hired expert report calculates damages delays of 112 days (acceptable range 111 to 113)."
+        }
+      ]
+    },
+    {
+      "name": "States the fact that the hired expert report calculates damages delays at a... (ver_457ce2f925d942a68b880206f2b29ce8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the fact that the hired expert report calculates damages delays at a rate of $9,850/day (acceptable range $9,752 to $9,948)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world437-sbg-01-52b4fe40"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_52b4fe40e549437a9242603dfd9daab1",
+    "task_name": "World437_SBG_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_0ced929bd0da4838871e6e2cbf5a5c2b",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_78e28b47a20a411e8344ecc6fe4830d6"
+      }
+    ]
+  }
+}

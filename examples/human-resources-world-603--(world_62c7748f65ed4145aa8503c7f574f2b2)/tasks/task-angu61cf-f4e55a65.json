@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Review the data in the filesystem. Grab the following files that we have: Executive Compensation Market Report.xlsx, Compensation & Offer Data.xlsx, Executive Search_Recommendation.pptx\n\nOur CEO has asked the HR team for an update on the projected compensation growth for this new executive role for the sake of budget planning. Use the attached historical market compensation extended data that our HR team pulled together. Note that all-in annual compensation is made up of the following components: cash, bonus, and LTI. Calculate the historical CAGRs by component by taking the average of relevant entries. \n\nFor final outputs, return the names and percent changes between expected 2028 all-in compensation and the two closest benchmarks, as percentages to two decimal places. \n\nPlease provide your response as a message in the console. Assume the offer data is as of January 1, 2026, and project forward to January 1, 2028. Use the most recent historical data that matches this forecast duration, assuming that the historical growth is a good proxy for future growth.  Assume that each component in the future should grow at the respective rate of that component historically. Exclude entries related to roles that are not Chief-level as part of the analysis. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the name of one of the two closest benchmarks is SVP, E-Commerce &... (ver_8f1ab79bf90d4e70a560172ce06dd238)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the name of one of the two closest benchmarks is SVP, E-Commerce & Digital 75th Percentile."
+        }
+      ]
+    },
+    {
+      "name": "States that the percent changes between expected 2028 all-in compensation and... (ver_5687a68bfec24d26a2cf4de05d16b94e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percent changes between expected 2028 all-in compensation and the SVP, E-Commerce & Digital 75th Percentile benchmark is 1.50% (acceptable range 1.48% to 1.52%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the name of one of the two closest benchmarks is SVP, Omni-Channel... (ver_865d514ad7714eb2869baa0300340027)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the name of one of the two closest benchmarks is SVP, Omni-Channel Strategy 75th Percentile."
+        }
+      ]
+    },
+    {
+      "name": "States that the percent changes between expected 2028 all-in compensation and... (ver_8df80d1d4cc249a388b4714bccc02f8d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percent changes between expected 2028 all-in compensation and the SVP, Omni-Channel Strategy 75th Percentile benchmark is 2.58% (acceptable range 2.55% to 2.61%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-angu61cf-f4e55a65"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_f4e55a65c58c49a3a90f7c4fc0940ec1",
+    "task_name": "Task angu61cf",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_8442d1c47cc74cbbaa89791d57b89407",
+        "golden_text_response": "The names and percent changes between expected 2028 all-in compensation and the two closest benchmarks are SVP, E-Commerce & Digital 75th Percentile (1.50%) and\nSVP, Omni-Channel Strategy 75th Percentile (2.58%)",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

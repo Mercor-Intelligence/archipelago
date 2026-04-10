@@ -1,4 +1,0 @@
-{
-  "llm_judge_model": "gemini/gemini-2.5-flash",
-  "llm_judge_extra_args": null
-}

@@ -1,0 +1,209 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_ff7df023072e4ed29fe38bf7914e3d55",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64ad3bdd5b01485e9204a40f1483f72d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that Vale's aggregate financial efficiency score is 22",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8ef2acebf8d04bedb31d1066a940847c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64ad3bdd5b01485e9204a40f1483f72d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that Royal Gold's aggregate financial efficiency score is 19",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3b901fa1e6c1423997abea59b3f909a4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64ad3bdd5b01485e9204a40f1483f72d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that Newmont's aggregate financial efficiency score is 18",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c205905ce6df4639bee9818d073d720e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64ad3bdd5b01485e9204a40f1483f72d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that ResourceCo's aggregate financial efficiency score is 16",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9c148603918045e28b223a2337c1f969",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64ad3bdd5b01485e9204a40f1483f72d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that Freeport-McMoran's aggregate financial efficiency score is 15",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_135b23de84f043c5b5a9415b09742a73",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64ad3bdd5b01485e9204a40f1483f72d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the company with the highest aggregate financial efficiency score is Vale",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_66da0fffc2e049aa90b8e45ee41b05e6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64ad3bdd5b01485e9204a40f1483f72d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the company with the second-highest aggregate financial efficiency score is Royal Gold",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e572d56e3c24441da5e02aeb8df5fef7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64ad3bdd5b01485e9204a40f1483f72d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the company with the third-highest aggregate financial efficiency score is Newmont",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f86f2a8f92b64c00b3c0854e2c1208e8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64ad3bdd5b01485e9204a40f1483f72d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the company with the fourth-highest aggregate financial efficiency score is ResourceCo",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1e9d921068b6415cb4a1f6ac96f704a2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_64ad3bdd5b01485e9204a40f1483f72d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the company with the fifth-highest aggregate financial efficiency score is Freeport-McMoran",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

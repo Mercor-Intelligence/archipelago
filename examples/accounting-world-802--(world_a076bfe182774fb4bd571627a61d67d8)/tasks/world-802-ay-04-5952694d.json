@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Based on Ironclad's Q4FY24 Revenue Schedule and attached FY25 projections, calculate the difference between Recognized and Expected Revenue in Q1FY25 for enterprise clients (ECs) with total contract value (TCV) of greater than $1M. A positive value means recognized revenue exceeds expected revenue.\n\nDo not round intermediate calculations. Round final value to two decimal places. Respond as a message in console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that based on the Q4FY24 Revenue Schedule and Q1FY25 projections, the... (ver_9702edfab2da476b89820f75f7cc3b7a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on the Q4FY24 Revenue Schedule and Q1FY25 projections, the difference between Recognized and Expected Revenue in Q1FY25 for enterprise clients (ECs) with total contract value (TCV) of greater than $1M is -$215,807.28 (acceptable range $-217,965.35 to $-213,649.21)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-802-ay-04-5952694d"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_a076bfe182774fb4bd571627a61d67d8",
+    "world_name": "Accounting World 802",
+    "task_id": "task_5952694d62ce4c06adc7a70692fa5f97",
+    "task_name": "World_802_AY_04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f07ea9f3e1674642b99c9930425d94a2",
+        "golden_text_response": "Based on the Q4FY24 Revenue Schedule and Q1FY25 projections, the difference between Recognized and Expected Revenue in Q1FY25 for enterprise clients (ECs) with total contract value (TCV) of greater than $1M is -$215,807.28.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

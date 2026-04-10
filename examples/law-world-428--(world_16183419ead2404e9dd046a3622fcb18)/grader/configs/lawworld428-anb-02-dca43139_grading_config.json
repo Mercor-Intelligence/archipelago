@@ -1,0 +1,111 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_dacc14b633d2487181f1f8a35bb228fd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dca431396e114941b7271491d6e67e37",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the City may suspend a provision of the DDA if the city determines that the failure to do so would place the residents of the territory in a condition dangerous to their health",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": " Under Ca. Gov. Code \u00a7 65865.3(b), the City \"may modify or suspend the provisions of the development agreement if the city determines that the failure of the city to do so would place the residents of the territory subject to the development agreement, or the residents of the city, or both, in a condition dangerous to their health or safety, or both\" (see Development Agreements.pdf).",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_acf29fc7a00d4aeeab05ac6825b6baeb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dca431396e114941b7271491d6e67e37",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that lead is classified as a material hazardous to human health",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Lead has been classified as a material hazardous to human health by the State of California ( see p65chemicalslist.pdf). ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_28a38503d552405b998d60d4d0792ded",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dca431396e114941b7271491d6e67e37",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the provisions of the DDA that the City wishes to suspend concern housing of people",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "DDA provisions 1.1(i), 1.1(iii), and 2.1(b)(i) involve housing of human beings (see V.2 - DDA Draft.docx). ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e98ae1e67a9540baafc29e322eecf724",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dca431396e114941b7271491d6e67e37",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that Liverbird would not prevail on its breach of contract claim against the City",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "No, Lovebird would not prevail in a breach of contract lawsuit against the City for suspension of its residential , because lead has been classified as a material hazardous to human health by the State of California ( see p65chemicalslist.pdf), and the suspended provisions of the DDA involve housing of human beings (see V.2 - DDA Draft.docx). Under Ca. Gov. Code \u00a7 65865.3(b), the City \"may modify or suspend the provisions of the development agreement if the city determines that the failure of the city to do so would place the residents of the territory subject to the development agreement, or the residents of the city, or both, in a condition dangerous to their health or safety, or both\" (see Development Agreements.pdf).",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_e9bc24c3d46945abb5c575fde5fc3f13",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4383a836fec6470883f51f60f3b74e4e",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the mean of origination credit score for risky group as 609.60 (+/-0.10)",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the mean of origination credit score for risky group correctly calculated as 609.60 (+/-0.10) for the correctly identified 10 borrowers on the watch list.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_85f1ae65c5964aa5a9d4cc0e4e805714",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4383a836fec6470883f51f60f3b74e4e",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the mean of origination credit score for non-risky group as 670.27 (+/-0.10) .",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the mean of origination credit score for non-risky group correctly calculated as 670.27 (+/-0.10) for other retail borrowers except for the 10 on the watch list.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dbce75b3dc084f869a9463b556639b2d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4383a836fec6470883f51f60f3b74e4e",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the mean of years in business for risky group as 14.00 (+/-0.10).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the mean of years in business for risky group correctly calculated as 14.00 (+/-0.10) for the correctly identified 10 borrowers on the watch list.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7bc94a896e7f41658b75f17d8d2c523e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4383a836fec6470883f51f60f3b74e4e",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the mean of years in business for non-risky group as 13.05 (+/-0.10).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the mean of years in business for non-risky group correctly calculated as 13.05 (+/-0.10) for other retail borrowers except for the 10 on the watch list.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0611bd52f6aa4fb3a8b52ef4fd79791e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4383a836fec6470883f51f60f3b74e4e",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the mean of annual revenue for risky group correctly calculated as 24328537.00 (+/-0.10).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the mean of annual revenue for risky group correctly calculated as 24328537.00 (+/-0.10) for the correctly identified 10 borrowers on the watch list.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7c5722b5f33542f5aedf6ad9aa159dde",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4383a836fec6470883f51f60f3b74e4e",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the mean of annual revenue for non-risky group correctly calculated as 24322805.03 (+/-0.10).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the mean of annual revenue for non-risky group correctly calculated as 24322805.03 (+/-0.10) for other retail borrowers except for the 10 on the watch list.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1cac0b6ac3024b98a51b4bcff4d7e159",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4383a836fec6470883f51f60f3b74e4e",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the p-value for origination credit score between risky and non-risky groups as 0.00 (+/-0.01).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the p-value for origination credit score between risk and non-risk groups correctly calculated as 0.00 (+/-0.01) based on Mann\u2011Whitney U test.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_957953192bc1405db8491f1bc3107a10",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4383a836fec6470883f51f60f3b74e4e",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the p-value for years in business between risky and non-risky groups correctly calculated as 0.64 (+/-0.01).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the p-value for years in business between risky and non-risky groups correctly calculated as 0.64 (+/-0.01) based on Mann\u2011Whitney U test.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_22b1641c8fba4aef9527ed49994c1455",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4383a836fec6470883f51f60f3b74e4e",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the p-value for annual revenue between risky and non-risky groups as 0.98 (+/-0.01).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm the p-value for annual revenue between risk and non-risk groups correctly calculated as 0.98 (+/-0.01) based on Mann\u2011Whitney U test.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "eval_config_name": "Output LLM",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "4658aec9-7eeb-4c9b-84c2-5464345e345f",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

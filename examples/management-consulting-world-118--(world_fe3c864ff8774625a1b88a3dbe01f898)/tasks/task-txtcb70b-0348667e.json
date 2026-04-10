@@ -1,0 +1,445 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The associate at Strain & Co who was assigned to the capability assessment workstream for the HappyHospital project had to take emergency PTO.\nAs a result, the Engagement Manager decided to review the associate's capability assessment in Clinical Capability Framework.\nTo ensure accuracy and rigor in the final recommendations to the client, the manager reworked the entire assessment process. This included conducting an in-depth, on-site evaluation across all seven operating states. The reassessment focused on clinical, facility, operational, governance, regulatory, compliance, and technological readiness.\nSeveral discrepancies emerged between the associate’s original assessment and the Engagement Manager’s updated findings. Following multiple iterations and validations, the manager’s new capability assessment was determined to be more reliable and reflective of actual system readiness. The results from the manager’s capability assessment supersede the assessment initially prepared by the associate. \n\nBelow are the manager’s revised findings:\n\n1. In Wisconsin, the manager’s assessment resulted in a 1.2 point increase in clinical readiness, a 1.0 point increase in facility readiness, a 1.2 point increase in technological readiness, a 1.2 point increase in compliance readiness, a 0.6 point increase in operational readiness, and a 1.1 point increase in governance readiness.\n2. In Michigan, the manager’s assessment resulted in a 0.3 point increase in facility readiness.\n3. In Indiana, the engagement manager’s assessment resulted in a 1.5 point increase in clinical readiness, a 0.5 point increase in facility readiness, a 1.3 point increase in technology readiness, a 1.3 point increase in compliance readiness, a 1.1 point increase in operational readiness, and a 1.3 point increase in governance readiness.\n4. In Illinois, the manager’s assessment resulted in a 0.1 point decrease in clinical readiness, 0.3 point increase in facility readiness, and 0.5 point increase in operational readiness.\n5. In Minnesota, the manager’s assessment resulted in a 0.3 point decrease in operational readiness.\nAssume that all other assessments across the 105 facilities remain the same as in the associate’s original assessment.\n\nTo help HappyHospital in the rollout plan for Esketamine or Ketamine-Assisted Psychotherapy (KAP) strategy, please provide answers to each of the following questions in the message console:\n\n1. Based on the updated findings from the Engagement Manager, what are the top three (i.e., highest-ranked) overall readiness scores? \n\n2. Based on the updated findings from the Engagement Manager, what scores are in the bottom three (i.e., lowest ranked) overall readiness scores?\n\n3. What is the weighted average overall readiness score for the Engagement Manager’s assessment across all facilities? \n\n4. What is the weighted average overall readiness score for the associate’s original assessment across all facilities? \n\n5. What is the absolute value change in the weighted average readiness scores between the associate’s initial work and the engagement manager’s new assessment? Calculate using the final answers to (3) and (4).\n\nFor the purposes of this analysis, assume that the correct total number of clinics across the seven states is 105.\nOverall readiness score is defined as the average of the clinical, facility, operational, governance, regulatory, compliance, and technological readiness scores.\n\nFor (1) and (2), overall readiness scores are ranked highest score to lowest score, where rank n = 1 is the highest score and rank n+1 is the second-highest score, rank n+2 is the third-highest score and so on. The highest rank possible is 1. Tied scores are assigned the same rank.\n\nFor (3)-(5), assume the weights of the weighted averages requested are the number of clinics per state and that each state has an equal number of clinics.\nRound all final answers to one decimal place."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the #1 ranked overall readiness score is 4.2 (ver_9a4a5b111c6d49e5a85b5bda07ddc38a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the #1 ranked overall readiness score is 4.2."
+        }
+      ]
+    },
+    {
+      "name": "States that the #1 ranked overall readiness score is a number other than 4.2. (ver_9a4a5b111c6d49e5a85b5bda07ddc38a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the #1 ranked overall readiness score is a number other than 4.2."
+        }
+      ]
+    },
+    {
+      "name": "States that the #2 ranked overall readiness score is 4.1 (ver_96c2c62d0db94906a883975bc7243640)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the #2 ranked overall readiness score is 4.1."
+        }
+      ]
+    },
+    {
+      "name": "States that the #2 ranked overall readiness score is a number other than 4.1. (ver_96c2c62d0db94906a883975bc7243640)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the #2 ranked overall readiness score is a number other than 4.1."
+        }
+      ]
+    },
+    {
+      "name": "States that the #3 ranked overall readiness score is 4.0 (ver_56a6fa8aa5b14dfd9b589feda967649a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the #3 ranked overall readiness score is 4.0."
+        }
+      ]
+    },
+    {
+      "name": "States that the #3 ranked overall readiness score is a number other than 4.0. (ver_56a6fa8aa5b14dfd9b589feda967649a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the #3 ranked overall readiness score is a number other than 4.0."
+        }
+      ]
+    },
+    {
+      "name": "States that the third lowest readiness scores is 3.9 (ver_293c7d3f9fb242d5958962f9ccb7f243)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the third lowest readiness scores is 3.9."
+        }
+      ]
+    },
+    {
+      "name": "States that the third lowest readiness scores is a value other than 3.9. (ver_293c7d3f9fb242d5958962f9ccb7f243)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the third lowest readiness scores is a value other than 3.9."
+        }
+      ]
+    },
+    {
+      "name": "States that the second lowest overall readiness scores is 3.3 (ver_9fbcf0f54fa54fefbcc7872e18d4e1e9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the second lowest overall readiness scores is 3.3."
+        }
+      ]
+    },
+    {
+      "name": "States that the second lowest overall readiness scores is a value other than... (ver_9fbcf0f54fa54fefbcc7872e18d4e1e9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the second lowest overall readiness scores is a value other than 3.3."
+        }
+      ]
+    },
+    {
+      "name": "States that the lowest overall readiness scores is 2.9 (ver_349baf29ca91418eb658e7f5704a2b1d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the lowest overall readiness scores is 2.9."
+        }
+      ]
+    },
+    {
+      "name": "States that the lowest overall readiness scores is a value other than 2.9. (ver_349baf29ca91418eb658e7f5704a2b1d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the lowest overall readiness scores is a value other than 2.9."
+        }
+      ]
+    },
+    {
+      "name": "States that the weighted average overall readiness score for the Engagement... (ver_834c21476eaa43988340d036a4b18f01)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the weighted average overall readiness score for the Engagement Manager’s assessment is 3.7 (acceptable range 3.66 to 3.74)."
+        }
+      ]
+    },
+    {
+      "name": "States that the weighted average overall readiness score for the Engagement... (ver_834c21476eaa43988340d036a4b18f01)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the weighted average overall readiness score for the Engagement Manager’s assessment is a number other than 3.7."
+        }
+      ]
+    },
+    {
+      "name": "States that the weighted average overall readiness score for the associate’s... (ver_02d5b0fb44e1402e9d3e479dc35b9ccd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the weighted average overall readiness score for the associate’s original assessment is 3.5 (acceptable range 3.46 to 3.54)."
+        }
+      ]
+    },
+    {
+      "name": "States that the weighted average overall readiness score for the associate’s... (ver_02d5b0fb44e1402e9d3e479dc35b9ccd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the weighted average overall readiness score for the associate’s original assessment is a number other than 3.5."
+        }
+      ]
+    },
+    {
+      "name": "States that absolute value change in the weighted average readiness scores... (ver_61e2e08ee90740a795aa1b6f7460678a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that absolute value change in the weighted average readiness scores between the associate’s assessment and the engagement manager’s new assessment is 0.2 (acceptable range 0.198 to 0.202)."
+        }
+      ]
+    },
+    {
+      "name": "States that absolute value change in the weighted average readiness scores... (ver_61e2e08ee90740a795aa1b6f7460678a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that absolute value change in the weighted average readiness scores between the associate’s assessment and the engagement manager’s new assessment is a number other than 0.2."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-txtcb70b-0348667e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_0348667e83f640a3a8240d02ddccbb0b",
+    "task_name": "Task txtcb70b",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_24584f3412464120a516ca67eb750ff6",
+        "golden_text_response": "1)\n    1. Highest readiness score = 4.2\n    2. Second highest readiness score = 4.1\n    3. Third highest readiness score = 4.0\n\n2)\n\n    1. The third lowest readiness score = 3.9\n    2. The second lowest readiness score = 3.3\n    3. The lowest readiness score = 2.9\n\n3) The wt. average overall readiness score for the Engagement Management = 3.5\n\n4) The wt. average overall readiness score for the Engagement Management = 3.7\n\n5) The absolute value change is 0.2.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

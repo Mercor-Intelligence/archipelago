@@ -1,0 +1,261 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient_10” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n------\n\nAssume the vital signs are unchanged from the patient's last visit on record.\n\nCalculate the Troponin-only Manchester Acute Coronary Syndromes (T-MACS) Decision Aid score for this patient.  Explain your reasoning."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the high-sensitivity troponin value of 65 ng/L is a continuous variable... (ver_1029eb871d804a2697808796b583908a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the high-sensitivity troponin value of 65 ng/L is a continuous variable used to calculate the T-MACS score (acceptable range 64 to 66)."
+        }
+      ]
+    },
+    {
+      "name": "Assigns 0 points to the patient’s T-MACS score for not having EKG ischemia. (ver_a12c96ffac3f4fbd82c2a4c70096a722)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 0 points to the patient’s T-MACS score for not having EKG ischemia."
+        }
+      ]
+    },
+    {
+      "name": "Assigns 0 points to the patient’s T-MACS score for not having worsening or... (ver_af846513ce3440d1bea3448623a7979e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 0 points to the patient’s T-MACS score for not having worsening or crescendo angina."
+        }
+      ]
+    },
+    {
+      "name": "Assigns 0 points to the patient's T-MACS score for not having pain that... (ver_b6cbef07f4fe439e92b3196f5df92caf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 0 points to the patient's T-MACS score for not having pain that radiates to the right arm or shoulder."
+        }
+      ]
+    },
+    {
+      "name": "Assigns 0 points to the patient's T-MACS score for not having pain that is... (ver_836dbb9823444c0daad4af3ffc6b47ea)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 0 points to the patient's T-MACS score for not having pain that is associated with vomiting."
+        }
+      ]
+    },
+    {
+      "name": "Assigns 0 points to the patient's T-MACS score for no sweating observed by the... (ver_a3d6270a09cd4f34b98ede3d21fa8251)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 0 points to the patient's T-MACS score for no sweating observed by the physician."
+        }
+      ]
+    },
+    {
+      "name": "Assigns 0 points to the patient's T-MACS score for not having hypotension. (ver_16cc9b9d50394dca8d1db6fd0b341270)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 0 points to the patient's T-MACS score for not having hypotension."
+        }
+      ]
+    },
+    {
+      "name": "States the T-MACS score is 73.5 +/- 0.5% (acceptable range 72.8 to 74.2). (ver_087e2a151d7747989438dc50a94690b4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the T-MACS score is 73.5 +/- 0.5% (acceptable range 72.8 to 74.2)."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient is at moderate risk for acute coronary syndrome (ACS)... (ver_3a8d7dd1c96843518b6998ffb23ce4ee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient is at moderate risk for acute coronary syndrome (ACS) or major adverse cardiovascular event (MACE) in the next 30 days."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the T-MACS decision aid should not replace clinical judgement. (ver_084f6084203449d3b09f4cc1e8ead9a6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the T-MACS decision aid should not replace clinical judgement."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-cardiology-patient-10-tmacs-anmol-j-0559a711"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_0559a711f05b4a069ef59912f86319df",
+    "task_name": "Labs_Image_AI Scribe_Cardiology Patient 10 - TMACS - Anmol J",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_0b14ecc23be44d47885e10d987f30bfe",
+        "golden_text_response": "Calculate the Troponin-only Manchester Acute Coronary Syndromes (T-MACS) Decision Aid score for this patient.  Explain your reasoning. \n\nThe T-MACS criteria for this patient are specified as follows, with a score of 0 assigned for a \"No\" answer and 1 for a \"Yes\" answer.  The exception is the troponin level, which is a continuous variable used in calculation.\n\nECG Ischemia: No (EKG shows first degree AV block and poor R wave progression ,which do not indicate ischemic findings)\nHigh-sensitivity Troponin: 65 ng/L\nWorsening/Crescendo Angina: No (Chest pain is intermittent and not described as getting worse)\nPain Radiating to Right Arm or Shoulder: No (The chest pain is described as non-radiating)\nPain Associated with Vomiting: No (Patient denies nausea)\nSweating Observed: No (No sweating is observed by the physician)\nHypotension (defined as SBP < 100 mmHg): No (BP is normotensive at 117/77).\n\nThe T-MACS score is calculated using the following formula: probability of ACS (p) = 1/(1+e^-(1.713E + 0.847A + 0.607R + 1.417V + 2.058S + 1.208H + 0.089T - 4.766)).\n\nThe variables are:\nE: EKG ischemia\nA: Worsening or crescendo angina\nR: Pain radiation to the right arm or shoulder\nV: Pain associated with vomiting\nS: Sweating observed\nH: Hypotension\nT: hs-cTnT concentration on arrival\n\nResult & Reasoning:  The probability of ACS is calculated as approximately 0.735 using the formula and the patient's variables.  The T-MACS score is expressed as a percentage, which in this case would be 73.5%.  The patient is therefore categorized as being at Moderate Risk of ACS or MACE in 30 days, for having a probability in the range of at least 5% to less than 95%.  The TMACS score is a decision-making aid which helps clinicians guide their workup for patients with chest pain.  It should not be used to replace clinical decision making.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

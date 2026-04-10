@@ -1,0 +1,250 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_7be96c77783f4a29b7f76e2f00674fa4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e1ecadf71c3045d68a9101b9d9cb6836",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Assigns specific readings by title (as listed in LB Reader - Slaver Primary Sources.pdf) for each day of the module. Category-level references (e.g., \"anti-slavery documents by Black authors\") without naming specific document titles do not satisfy this criterion",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Assignments/LB Reader - Slavery Primary Sources.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_60d68de9da0b497fa415749787677ff3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e1ecadf71c3045d68a9101b9d9cb6836",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Lesson plan includes a 5 minute introduction",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0852152eb7ff4e18803c40cc4e16ceaf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e1ecadf71c3045d68a9101b9d9cb6836",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies that each of the auditory learners must give a 5 minute presentation in at least one of the modules",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_501afcb50f604a81b47fd06eaa5b518b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e1ecadf71c3045d68a9101b9d9cb6836",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies a Demonstration activity (one where something is demonstrated to students), in line with sc Merrill's Principles Of Instruction_ The Definitive Guide.pdf",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ef06a14c5c7346958ee5506a66d4dc93",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e1ecadf71c3045d68a9101b9d9cb6836",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies an Application activity (in the form of interactive problem-solving and task performance), in line with sc Merrill's Principles Of Instruction_ The Definitive Guide.pdf",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "sc Merrill's Principles Of Instruction_ The Definitive Guide.pdf",
+            "source": "task",
+            "snapshotId": "snap_fe44a04b96f64067a918334044dd76f1"
+          }
+        ]
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_080aad1812524e3a9986098e3650823e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e1ecadf71c3045d68a9101b9d9cb6836",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies an Activation activity in which students are explicitly prompted to recall, describe, or apply their own relevant prior knowledge or experience as a foundation for new content, in line with Merrill's Principles of Instruction",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8c2e6e367b1844218d25706875c29b0f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e1ecadf71c3045d68a9101b9d9cb6836",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies an Integration activity (integrate their newfound skills or knowledge into their daily lives), in line with sc Merrill's Principles Of Instruction_ The Definitive Guide.pdf.",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 17,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0273fca4aab344abade4d312c787885b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e1ecadf71c3045d68a9101b9d9cb6836",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies an Engagement activity (use everything they've learned to solve the problem and connect it to real-world applications), in line with sc Merrill's Principles Of Instruction_ The Definitive Guide.pdf",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 18,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_157b070cd076420b8ea8bbeb02f23aed",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e1ecadf71c3045d68a9101b9d9cb6836",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Lesson plan includes a 10 minute student break",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 19,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_26e95986e69b4684a31d1e83700464b9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e1ecadf71c3045d68a9101b9d9cb6836",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Lesson plan is 55 minutes long in total",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 23,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    },
+    {
+      "eval_config_id": "72d7d96a-9d94-4a38-bbe3-96c08ded727c",
+      "eval_config_name": "Content Length Check Verifier",
+      "eval_defn_id": "content_length_check",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

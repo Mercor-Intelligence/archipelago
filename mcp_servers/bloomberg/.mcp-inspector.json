@@ -1,0 +1,12 @@
+{
+  "servers": [
+    {
+      "id": "blpapi-mcp",
+      "command": "python",
+      "args": [
+        "-m",
+        "blpapi_mcp.main"
+      ]
+    }
+  ]
+}

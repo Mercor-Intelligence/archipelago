@@ -1,0 +1,239 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_aa952a791ab34564ac2602bf7f47af94",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7d5203d3946c447a8ac70221c37c439b",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has a history of recurrent urinary tract infections.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the chart: \"Recurrent urinary tract infection.\" \nCLINICALNOTES, Progress notes, Column D, Row 193",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a137e861157c4130893e7f46437f940c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7d5203d3946c447a8ac70221c37c439b",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that the patient currently has another urinary tract infection. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the script: \"Yes we were traveling and then I had some discomfort with peeing so I went to an urgent care and they checked my urine and got the urine culture.\"\nThe patient has a history of recurrent UTIs and presents with dysuria and fever. It is important to consider a recurrent urinary tract infection. \nhttps://my.clevelandclinic.org/health/diseases/9135-urinary-tract-infections\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_7b0339452fe1467c875f61cd2c6ccd47"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6c04c13fa5e64edd859e914d089faf44",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7d5203d3946c447a8ac70221c37c439b",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that the patient's most recent urine culture showed growth of Acinetobacter baumannii.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from the attachment. \"Urine Culture, Comprehensive\n Final Report\nOrdered by Dr. Disneyland\nPatient name: deidentified\nCollection date: 12/25/2025\nResult date: 1/2/2026\nResult 1: Acinetobacter baumannii\n Greater than 100,000 colony forming units per mL\n Abnormal\" ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Test SM.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_7b0339452fe1467c875f61cd2c6ccd47"
+          }
+        ]
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8a1ed3b2d8e84852ab11223bff3a3b73",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7d5203d3946c447a8ac70221c37c439b",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that Acinetobacter baumannii is carbapenem-resistant in the patient's most recent urine culture.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from the attachment (Cards_Patient 13 Test CR (1).pdf):\n\"Antimicrobial Susceptibility\nS = Susceptible, I = Intermediate, R = Resistant\nErtapenem R\nImipenem R\"\nErtapenem and imipenem belong to the carbapenem antibiotic group. \nhttps://share.google/PL9Tit83QKwl6fYnN",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Test SM.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_7b0339452fe1467c875f61cd2c6ccd47"
+          }
+        ]
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5871fd875e03464f924b4e50a0689f46",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7d5203d3946c447a8ac70221c37c439b",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has not received any antimicrobial therapy.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from the script the patient has not started treatment. \"They recommended antibiotics but I said I wanted to wait till I talked it over with you.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_7b0339452fe1467c875f61cd2c6ccd47"
+          }
+        ]
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9b5418ae3676416cab4a55cc7493666a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7d5203d3946c447a8ac70221c37c439b",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient should receive a combination of antibiotics as standard therapy for carbapenem-resistant Acinetobacter baumannii infection.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has a history of recurrent urinary tract infections, and urine culture\u2013guided therapy is indicated. A recent urine culture is available and should guide antimicrobial selection. The culture grew carbapenem-resistant Acinetobacter baumannii (CRAB). The organism is resistant to all tested antibiotics, including carbapenems. The patient has not yet received antimicrobial therapy. According to the US IDSA guideline, the patient should receive a combination of antibiotics as standard therapy for carbapenem-resistant Acinetobacter baumannii infection.\n\n\"The use of an antibiotic regimen which includes a sulbactam-containing agent is suggested for the treatment of CRAB infections. The preferred regimen is sulbactam-durlobactam in combination with a carbapenem (i.e., imipenem-cilastatin or meropenem). An alternative regimen is high-dose ampicillin-sulbactam (total daily dose of 9 grams of the sulbactam component) in combination with at least one other agent (i.e., polymyxin B, minocycline > tigecycline, or cefiderocol), if sulbactam- durlobactam is not available.\" \nhttps://www.idsociety.org/practice-guideline/amr-guidance/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_7b0339452fe1467c875f61cd2c6ccd47"
+          }
+        ]
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8e9161e2c53042b099cdcc3171c7547c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7d5203d3946c447a8ac70221c37c439b",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes sulbactam-durlobactam as the first component of the combination antibiotic therapy for carbapenem-resistant Acinetobacter baumannii infection.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"The use of an antibiotic regimen which includes a sulbactam-containing agent is suggested for the treatment of CRAB infections. The preferred regimen is sulbactam-durlobactam in combination with a carbapenem (i.e., imipenem-cilastatin or meropenem). An alternative regimen is high-dose ampicillin-sulbactam (total daily dose of 9 grams of the sulbactam component) in combination with at least one other agent (i.e., polymyxin B, minocycline > tigecycline, or cefiderocol), if sulbactam- durlobactam is not available.\" https://www.idsociety.org/practice-guideline/amr-guidance/",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b8c44261a17c43df8f4e7aaacd7968ce",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7d5203d3946c447a8ac70221c37c439b",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes meropenem as the second component of the combination antibiotic therapy for carbapenem-resistant Acinetobacter baumannii infection.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"The use of an antibiotic regimen which includes a sulbactam-containing agent is suggested for the treatment of CRAB infections. The preferred regimen is sulbactam-durlobactam in combination with a carbapenem (i.e., imipenem-cilastatin or meropenem). An alternative regimen is high-dose ampicillin-sulbactam (total daily dose of 9 grams of the sulbactam component) in combination with at least one other agent (i.e., polymyxin B, minocycline > tigecycline, or cefiderocol), if sulbactam- durlobactam is not available.\" https://www.idsociety.org/practice-guideline/amr-guidance/",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7990a4236ecd4f0b87d095f466e278b7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7d5203d3946c447a8ac70221c37c439b",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes imipenem-cilastatin as an alternative for meropenem. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"The use of an antibiotic regimen which includes a sulbactam-containing agent is suggested for the treatment of CRAB infections. The preferred regimen is sulbactam-durlobactam in combination with a carbapenem (i.e., imipenem-cilastatin or meropenem). An alternative regimen is high-dose ampicillin-sulbactam (total daily dose of 9 grams of the sulbactam component) in combination with at least one other agent (i.e., polymyxin B, minocycline > tigecycline, or cefiderocol), if sulbactam- durlobactam is not available.\" https://www.idsociety.org/practice-guideline/amr-guidance/",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

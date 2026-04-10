@@ -1,0 +1,261 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "We, the loan team at Harbor Capital, are interested in analyzing one of our datasets containing a variety of loan information. This information is vital for us to be able to resolve our “Rate Crisis” situation. \n\nFirst, we want you to take the “enriched_loan_data.csv” dataset, and filter it for rows where the borrowing company’s annual revenue is three million dollars or more and the company has been in business for more than five years. Then, take those rows and put them in a new Excel (.xlsx) file named “enriched_loan_three_million.xlsx”. In “enriched_loan_three_million.xlsx”, create a new sheet and name it “Three Million Companies”. Inside this new sheet, for loans with a report date in the first six months of 2023, for each internal risk grade, calculate the average origination credit score. Repeat these calculations for loans with report dates in the second six months of 2023. Do not include any loans with no risk grade in any of these calculations. Finally, please round all average credit scores to three decimal places.\n\nThe averages and associated rounding reported in “Three Million Companies” should be computed using Excel formulas that would update if the data in the original sheet of “enriched_loan_three_million.xlsx” is modified. Give us the completed Excel file in your response, please."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "The average origination credit score for “A - Low Risk” internal risk grade in... (ver_b6f384105da344ea81b33a6cd35f75bc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The average origination credit score for “A - Low Risk” internal risk grade in the first six months of 2023 is calculated as 766.862 +/- 0.001."
+        }
+      ]
+    },
+    {
+      "name": "The average origination credit score for “B - Moderate” internal risk grade in... (ver_390604aa706940dda888f6e3b45ba29b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The average origination credit score for “B - Moderate” internal risk grade in the first six months of 2023 is calculated as 713.654 +/- 0.001."
+        }
+      ]
+    },
+    {
+      "name": "The average origination credit score for “C - Elevated” internal risk grade in... (ver_357d8aa3bf154ac2a130e0a88961010b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The average origination credit score for “C - Elevated” internal risk grade in the first six months of 2023 is calculated as 677.150 +/- 0.001."
+        }
+      ]
+    },
+    {
+      "name": "The average origination credit score for “D - High Risk” internal risk grade... (ver_c08cc7463fe743baaf58162c532517c8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The average origination credit score for “D - High Risk” internal risk grade in the first six months of 2023 is calculated as 631.654 +/- 0.001."
+        }
+      ]
+    },
+    {
+      "name": "The average origination credit score for “F - Distressed” internal risk grade... (ver_c02ef536777c4c1b957ee43a854ff0d1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The average origination credit score for “F - Distressed” internal risk grade in the second six months of 2023 is calculated as 611.056 +/- 0.001."
+        }
+      ]
+    },
+    {
+      "name": "The average origination credit score for “A - Low Risk” internal risk grade in... (ver_d2c2937d1b6142eabdbaca4f699060dd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The average origination credit score for “A - Low Risk” internal risk grade in the second six months of 2023 is calculated as 766.102 +/- 0.001."
+        }
+      ]
+    },
+    {
+      "name": "The average origination credit score for “B - Moderate” internal risk grade in... (ver_5f1287b736f8432ebc072c209c4b21ef)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The average origination credit score for “B - Moderate” internal risk grade in the second six months of 2023 is calculated as 713.249 +/- 0.001."
+        }
+      ]
+    },
+    {
+      "name": "The average origination credit score for “C - Elevated” internal risk grade in... (ver_3605435058444445b0bb2da66d9da4ad)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The average origination credit score for “C - Elevated” internal risk grade in the second six months of 2023 is calculated as 709.014 +/- 0.001."
+        }
+      ]
+    },
+    {
+      "name": "The average origination credit score for “D - High Risk” internal risk grade... (ver_574e59dc24864202b9a0d097d011b7b1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The average origination credit score for “D - High Risk” internal risk grade in the second six months of 2023 is calculated as 648.294 +/- 0.001."
+        }
+      ]
+    },
+    {
+      "name": "The average origination credit score for “F - Distressed” internal risk grade... (ver_e8d4858d459b4f91a57ed5d48e562748)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The average origination credit score for “F - Distressed” internal risk grade in the second six months of 2023 is calculated as 617.935 +/- 0.001."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sheets-task-is6r9759-5414cc33"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_5414cc33fe424b2aa44fe58fe2da1d2f",
+    "task_name": "Sheets - Task is6r9759",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_2287517328524527aea3efb72750d840",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_45e4e2d6bd3d4def994cfbb7355fad79"
+      }
+    ]
+  }
+}

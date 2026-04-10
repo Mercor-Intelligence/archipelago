@@ -1,0 +1,276 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_a4eb31d26a714b2dab97e1079d62dc52",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a6a55b5cf99b4ce38f32dcbae144402f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the symptoms are consistent with heart failure.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\u201cPatient: I\u2019ve been struggling to breathe, especially over the last few weeks. Even sitting still, I sometimes feel like I can\u2019t get enough air.\nDoctor: Is it worse when you\u2019re lying flat?\nPatient: Yes. I\u2019ve had to sleep propped up with three pillows. If I lie flat, I feel like I\u2019m suffocating.\nDoctor: Have you woken up at night short of breath?\nPatient: A few times. I wake up gasping and have to sit on the edge of the bed.\nDoctor: That sounds very uncomfortable. Have you noticed any swelling in your legs or ankles?\nPatient: Yes, my ankles are quite swollen by the evening, and my shoes feel tight.\nDoctor: Any weight gain recently?\nPatient: About four kilos in the last month, even though I\u2019m not eating more.\nDoctor: Have you had chest pain or tightness?\nPatient: Sometimes when I walk even a short distance. It eases when I stop.\nDoctor: Any dizziness or blackouts?\nPatient: I get lightheaded, especially when I stand up quickly, but I haven\u2019t passed out.\u201c\n\u201cDoctor: I can see swelling in your legs and hear crackles at the bases of your lungs, which suggests fluid build-up. When I listen to your heart, I hear a loud, harsh murmur when the heart is pumping blood out, and your pulse rises more slowly than expected.\nPatient: What does that mean?\nDoctor: Taken together, your symptoms and exam findings suggest that your heart is struggling to pump blood forward effectively, and fluid is backing up into your lungs and legs. This is what we call congestive cardiac failure.\nPatient: Why would that happen?\nDoctor: There are several possible causes. One of my main concerns, given the murmur and your symptoms, is that the aortic valve may be severely narrowed. When that valve doesn\u2019t open properly, the heart has to work much harder, and eventually it can start to fail.\nPatient: Is that dangerous?\nDoctor: It can be serious, especially when symptoms like breathlessness, swelling, and chest pain are present. However, we need to confirm the exact cause before deciding on treatment.\u201d\nExtract from script. \n\n\u201cA 78-year-old gentleman presents to the emergency department with shortness of breath\u201d\nExtract from the prompt.\n\n\u201cMain symptoms\nThe most common\u00a0symptoms of heart failure are:\nbreathlessness\u00a0\u2013 this may occur after activity or at rest; it may be worse when you're lying down, and\u00a0you may wake up at night needing to catch your breath\nfatigue \u2013 you may feel tired\u00a0most of\u00a0the time and find exercise exhausting\nswollen ankles and legs\u00a0\u2013 this is caused by a build-up of fluid (oedema); it may be\u00a0better in the morning and get worse later in the day\nfeeling lightheaded and fainting\u201d\nhttps://www.nhs.uk/conditions/heart-failure/symptoms/\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c33caccec2654f8cb7b889fa939edef6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a6a55b5cf99b4ce38f32dcbae144402f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the symptoms are consistent with aortic stenosis.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\u201cPatient: I\u2019ve been struggling to breathe, especially over the last few weeks. Even sitting still, I sometimes feel like I can\u2019t get enough air.\nDoctor: Is it worse when you\u2019re lying flat?\nPatient: Yes. I\u2019ve had to sleep propped up with three pillows. If I lie flat, I feel like I\u2019m suffocating.\nDoctor: Have you woken up at night short of breath?\nPatient: A few times. I wake up gasping and have to sit on the edge of the bed.\nDoctor: That sounds very uncomfortable. Have you noticed any swelling in your legs or ankles?\nPatient: Yes, my ankles are quite swollen by the evening, and my shoes feel tight.\nDoctor: Any weight gain recently?\nPatient: About four kilos in the last month, even though I\u2019m not eating more.\nDoctor: Have you had chest pain or tightness?\nPatient: Sometimes when I walk even a short distance. It eases when I stop.\nDoctor: Any dizziness or blackouts?\nPatient: I get lightheaded, especially when I stand up quickly, but I haven\u2019t passed out.\u201c\n\u201cDoctor: I can see swelling in your legs and hear crackles at the bases of your lungs, which suggests fluid build-up. When I listen to your heart, I hear a loud, harsh murmur when the heart is pumping blood out, and your pulse rises more slowly than expected.\nPatient: What does that mean?\nDoctor: Taken together, your symptoms and exam findings suggest that your heart is struggling to pump blood forward effectively, and fluid is backing up into your lungs and legs. This is what we call congestive cardiac failure.\nPatient: Why would that happen?\nDoctor: There are several possible causes. One of my main concerns, given the murmur and your symptoms, is that the aortic valve may be severely narrowed. When that valve doesn\u2019t open properly, the heart has to work much harder, and eventually it can start to fail.\nPatient: Is that dangerous?\nDoctor: It can be serious, especially when symptoms like breathlessness, swelling, and chest pain are present. However, we need to confirm the exact cause before deciding on treatment.\u201d\nExtract from script. \n\n\u201cA 78-year-old gentleman presents to the emergency department with shortness of breath\u201d\nExtract from prompt.\n\n\u201cAortic stenosis causes impaired outflow of blood from the heart and is usually progressive. The increased cardiac workload leads to left ventricular hypertrophy and heart failure. Symptoms of aortic stenosis typically include shortness of breath and chest pain on exertion. Mortality rates are high in symptomatic patients.\u201d\nhttps://www.nice.org.uk/guidance/ipg586/chapter/2-Indications-and-current-treatments\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1cc62ad5ca694947aad1187494fe3643",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a6a55b5cf99b4ce38f32dcbae144402f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the ECHO confirms severe aortic stenosis.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\u201cDilated LV cavity size with impaired systolic function. LVEF estimated at 32% visually. There is LVH.\u201d\n\u201csevere aortic stenosis: AV peak velocity 4.2 m/s, peak gradient 44 mmHg, AVA 0.8 cm2\u201d\nExtract from echo\n\n\u201c1.2.8\nPerform transthoracic echocardiography to exclude important valve disease, assess the systolic (and diastolic) function of the left ventricle and detect intracardiac shunts.\u201d\nhttps://www.nice.org.uk/guidance/ng106/chapter/Recommendations#diagnosing-heart-failure\n\n\u201cAortic stenosis causes impaired outflow of blood from the heart and is usually progressive. The increased cardiac workload leads to left ventricular hypertrophy and heart failure. Symptoms of aortic stenosis typically include shortness of breath and chest pain on exertion. Mortality rates are high in symptomatic patients.\u201d\nhttps://www.nice.org.uk/guidance/ipg586/chapter/2-Indications-and-current-treatments\n\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0c894f31a746472faf41f744d6ae1d3c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a6a55b5cf99b4ce38f32dcbae144402f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the ECHO confirms systolic heart failure.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\u201cDilated LV cavity size with impaired systolic function. LVEF estimated at 32% visually. There is LVH.\u201d\n\u201csevere aortic stenosis: AV peak velocity 4.2 m/s, peak gradient 44 mmHg, AVA 0.8 cm2\u201d\nExtract from echo\n\n\u201c1.2.8\nPerform transthoracic echocardiography to exclude important valve disease, assess the systolic (and diastolic) function of the left ventricle and detect intracardiac shunts.\u201d\nhttps://www.nice.org.uk/guidance/ng106/chapter/Recommendations#diagnosing-heart-failure\n\n\u201cAortic stenosis causes impaired outflow of blood from the heart and is usually progressive. The increased cardiac workload leads to left ventricular hypertrophy and heart failure. Symptoms of aortic stenosis typically include shortness of breath and chest pain on exertion. Mortality rates are high in symptomatic patients.\u201d\nhttps://www.nice.org.uk/guidance/ipg586/chapter/2-Indications-and-current-treatments\n\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fc9c8ba5217348c3b75d753dcf29a0aa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a6a55b5cf99b4ce38f32dcbae144402f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient developed hyperkalemia while being on an ACE inhibitor.\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\u201cThe gentleman was started on an ACE inhibitor, but it was stopped due to high potassium.\u201d\nExtract from prompt.\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7243eaacac604849a77a66f83a0d0627",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a6a55b5cf99b4ce38f32dcbae144402f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that second-line therapy should be considered. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\nSecond line therapy includes - Digoxin, Angiotensin receptor neprolysin inhibitors, Mineralocorticoid receptor antagonist , Hydralazine and nitrate , Ivabradine.\n\u201cOverview\nThis guideline covers diagnosing and managing chronic heart failure in people aged 18 and over. It aims to improve diagnosis and treatment to increase the length and quality of life for people with heart failure.\u201d\nhttps://www.nice.org.uk/guidance/ng106\n\n\u201cIf symptoms persist, seek specialist advice and consider:\u201d\nhttps://www.nice.org.uk/guidance/ng106/resources/chronic-heart-failure-core-treatments-for-heart-failure-pdf-6663137725\n\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_966d828de3a54b95a9f0b3ed1cb9da7b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a6a55b5cf99b4ce38f32dcbae144402f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that digoxin is ruled out due to documented allergy.\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\u201cand has a digoxin allergy.\u201d\nExtract from prompt.\n\n\u201cOffer digoxin to people with worsening or severe heart failure with reduced ejection fraction despite optimised treatment combinations as detailed in recommendations 1.4.1 to 1.4.4. Seek specialist advice before starting treatment. [2010, amended 2025]\u201c\nhttps://www.nice.org.uk/guidance/ng106/chapter/Recommendations#treating-people-with-newly-diagnosed-and-pre-existing-heart-failure-with-reduced-ejection-fraction\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_eebda5ca720e4344bee3b2b1ef487ad9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a6a55b5cf99b4ce38f32dcbae144402f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that mineralocorticoid receptor antagonist (MRA) is contraindicated in the setting of hyperkalemia.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Mineralocorticoid receptor antagonist (MRA) is ruled out because of hyperkalemia.\n\nMRAs:\n\u201cSpironolactone\nContra-indications\nContra-indicationsFor spironolactone\nAddison\u2019s disease; anuria; hyperkalaemia\nMonitoring of patient parametersFor spironolactone\nMonitor electrolytes\u2014discontinue if hyperkalaemia occurs (in severe heart failure monitor potassium \u201d\nhttps://bnf.nice.org.uk/drugs/spironolactone/\n\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c41286593c8a490ab38995ec24bc7a83",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a6a55b5cf99b4ce38f32dcbae144402f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that hydralazine-nitrate dual therapy is contraindicated in severe aortic stenosis.",
+        "negative_criteria": "States that hydralazine-nitrate dual therapy  can be used in severe aortic stenosis.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\u201cnitrates are not recommended in patients with severe AS\u201d\nhttps://www.ahajournals.org/doi/10.1161/circulationaha.116.023997\nand\nhttps://pubmed.ncbi.nlm.nih.gov/24589852/\n\nHYDRALAZINE AND NITRATES in patients with LVSD:\n\u201cBOX 1: CONTRAINDICATIONS AND CAUTIONS CONTRAINDICATIONS \u2022 Hypersensitivity to nitrates and or hydralazine (and any excipients) \u2022 Acute circulatory failure (shock, vascular collapse) \u2022 Severe tachycardia and heart failure with a high cardiac output (e.g. in thyrotoxicosis). \u2022 Conditions with fixed cardiac output: Hypertrophic (obstructive) cardiomyopathy, severe aortic stenosis, cardiac tamponade, constrictive pericarditis, mitral stenosis (unless under specialist supervision),\u201d\nhttps://swlimo.southwestlondon.icb.nhs.uk/wp-content/uploads/2022/02/HEART-FAILURE-Pharmacological-Management-of-Heart-failure.pdf\n\n\n\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3084f5cc13204dac9b8ad13706295700",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a6a55b5cf99b4ce38f32dcbae144402f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that angiotensin receptor blockers (ARBs) are contraindicated in the setting of hyperkalemia.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "ARBs\n\u201cFor all angiotensin II receptor antagonists\nCommon or very common\nAbdominal pain; asthenia; back pain; cough; diarrhoea; dizziness; headache; hyperkalaemia; hypotension; nausea; postural hypotension (more common in patients with intravascular volume depletion, e.g. those taking high-dose diuretics); renal impairment; vertigo; vomiting\u201d\nhttps://bnf.nice.org.uk/drugs/candesartan-cilexetil/\n\nARBs:\n\u201cangiotensin II receptor antagonists\nElderly\nScreening Tool of Older Persons' potentially inappropriate Prescriptions (STOPP) criteria to aid medication reviews (see Prescribing in the elderly for information). Potentially inappropriate:\n\u2022\twith hyperkalaemia\u201d\nhttps://bnf.nice.org.uk/drugs/candesartan-cilexetil/\n\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_66b63a548afd45dab6b19d95c75fa5e2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a6a55b5cf99b4ce38f32dcbae144402f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that angiotensin receptor neprolysin inhibitors (ARNIs) are contraindicated in the setting of hyperkalemia.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\u201cContra-indications\nFor eplerenone\nHyperkalaemia\u201d\nhttps://bnf.nice.org.uk/drugs/eplerenone/#contra-indications\n\nANRIs\n\u201cSide-effects\nSide-effects For eplerenone\nAngioedema; arterial thrombosis; cholecystitis; eosinophilia; flatulence; gynaecomastia; hyperhidrosis; hypothyroidism; increased risk of infection; malaise; numbness; postural hypotension\u201d\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_92091cc3314d4527a92b0d3b862be1e6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a6a55b5cf99b4ce38f32dcbae144402f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that Ivabradine is the most appropriate medication for this patient at this time.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Ivabradine is the best choice as the patient have sinus rhythm, along with ejection fraction of 35% or less. \u2018Specialist treatment\nIvabradine\n1.4.8\nIvabradine is recommended as an option in NICE technology appraisal guidance for treating heart failure with reduced ejection fraction. For full details, see the guidance on ivabradine (TA267, 2012).\u201d\nhttps://www.nice.org.uk/guidance/ng106/chapter/Recommendations#treating-people-with-newly-diagnosed-and-pre-existing-heart-failure-with-reduced-ejection-fraction\n\n\u201cIvabradine, if sinus rhythym and heart rate of 75 beats per minute or more and ejection fraction is 35% or less\u201d\nhttps://www.nice.org.uk/guidance/ng106/resources/chronic-heart-failure-core-treatments-for-heart-failure-pdf-6663137725\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7cf61d29dd7a468b8afa1e060ee95652",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a6a55b5cf99b4ce38f32dcbae144402f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the starting dose would be 2.5mg twice daily.\n\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\u201cMild to severe chronic heart failure for ivabradine\nBy mouth\nAdult 18\u201374 years\nInitially 5 mg twice daily for 2 weeks, then increased if necessary to 7.5 mg twice daily; reduced if not tolerated to 2.5\u20135 mg twice daily, heart rate at rest should not be allowed to fall below 50 beats per minute.\nAdult 75 years and over\nInitially 2.5 mg twice daily for 2 weeks, then increased if necessary up to 7.5 mg twice daily, dose to be increased gradually; reduced if not tolerated to 2.5\u20135 mg twice daily, heart rate at rest should not be allowed to fall below 50 beats per minute.\u201d\nhttps://bnf.nice.org.uk/drugs/ivabradine/\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

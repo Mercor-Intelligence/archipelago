@@ -1,0 +1,93 @@
+[env._.python.venv]
+path = ".venv"
+create = true
+
+[env]
+STATE_LOCATION = "/.apps_data/bamboohr"
+BAMBOOHR_DB_PATH = "/.apps_data/bamboohr/data.db"
+
+[tools]
+python = "3.13"
+uv = "0.6.10"
+
+[tasks.install]
+run = "uv sync --all-extras"
+description = "Install dependencies"
+
+[tasks.build]
+# Create state directory and db directory. DB schema is created lazily via Base.metadata.create_all in session.py.
+# No alembic migrations exist for this project.
+run = "mkdir -p /.apps_data/bamboohr"
+description = "Create state directory"
+depends = ["install"]
+
+[tasks.start]
+run = "cd mcp_servers/bamboohr && uv run --no-sync python ../../scripts/_mcp_wrapper.py"
+description = "Start the MCP server"
+depends = ["populate"]
+
+[tasks.populate]
+# Import CSV data from STATE_LOCATION after snapshot extraction.
+# Task input files (CSV) are extracted to STATE_LOCATION by the runtime.
+# NOTE: arco.env vars may not be synced (see build task), so we set defaults inline.
+run = """
+STATE_LOCATION="${STATE_LOCATION:-/.apps_data/bamboohr}"
+BAMBOOHR_DB_PATH="${BAMBOOHR_DB_PATH:-${STATE_LOCATION}/data.db}"
+export BAMBOOHR_DB_PATH
+export DATABASE_URL="sqlite+aiosqlite:///${BAMBOOHR_DB_PATH}"
+
+if [ -d "${STATE_LOCATION}" ] && ls "${STATE_LOCATION}"/*.csv 1>/dev/null 2>&1; then
+  echo "Importing CSV files from ${STATE_LOCATION} into ${BAMBOOHR_DB_PATH}..."
+  cd mcp_servers/bamboohr && uv run --no-sync python ../../scripts/import_csv.py --dir "${STATE_LOCATION}" --db "${BAMBOOHR_DB_PATH}" 2>&1
+else
+  echo "No CSV files to import from ${STATE_LOCATION}"
+fi
+
+# Fix permissions for biome environment (no-op if not in container)
+if [ -d "/.apps_data/bamboohr" ]; then
+  chmod -R g+rw /.apps_data/bamboohr 2>/dev/null || true
+fi
+"""
+description = "Import CSV data into database (runs at container startup)"
+depends = ["build"]
+
+[tasks.lint]
+run = "ruff check ."
+description = "Run linter"
+
+[tasks.format]
+run = "ruff format ."
+description = "Format code"
+
+[tasks.test]
+run = "pytest"
+description = "Run tests"
+
+[tasks.typecheck]
+run = "echo 'No typecheck configured'"
+description = "Run type checker"
+
+# UI tasks
+[tasks."ui:install"]
+run = "cd ui/bamboohr && npm install"
+description = "Install UI dependencies"
+
+[tasks."ui:dev"]
+run = "cd ui/bamboohr && npm run dev"
+description = "Start UI development server"
+depends = ["ui:install"]
+
+[tasks."ui:build"]
+run = "cd ui/bamboohr && npm run build"
+description = "Build UI for production"
+depends = ["ui:install"]
+
+[tasks."ui:start"]
+run = "cd ui/bamboohr && npm run start"
+description = "Start UI production server"
+depends = ["ui:build"]
+
+[tasks."ui:lint"]
+run = "cd ui/bamboohr && npm run lint"
+description = "Lint UI code"
+depends = ["ui:install"]

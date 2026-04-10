@@ -1,0 +1,86 @@
+[arco]
+source = "foundry_app"
+name = "Code Execution"
+version = "1.0.0"
+
+[arco.env.host]
+REPO_URL = "https://github.com/Mercor-Intelligence/mercor-rls-code-execution.git"
+
+[arco.env.build]
+INSTALL_MEDICINE = "false"
+INSTALL_SCICOMP = "false"
+
+[arco.env.build.schema.INSTALL_MEDICINE]
+type = "bool"
+label = "Install medicine dependencies"
+description = "Install pydicom and other medical imaging libraries"
+
+[arco.env.build.schema.INSTALL_SCICOMP]
+type = "bool"
+label = "Install scientific computing dependencies"
+description = "Install sympy, h5py and other scientific computing libraries"
+
+[arco.env.runtime]
+MCP_TRANSPORT = "http"
+MCP_PORT = "5000"
+APP_FS_ROOT = "/filesystem"
+SANDBOX_LIBRARY_PATH = "/app/lib/sandbox_fs.so"
+CODE_EXEC_COMMAND_TIMEOUT = "300"
+
+[arco.env.runtime.schema.CODE_EXEC_COMMAND_TIMEOUT]
+type = "string"
+label = "Timeout for code execution"
+description = "Maximum time in seconds for command execution (default: 300)"
+
+[arco.secrets.host]
+GITHUB_TOKEN = "RLS_GITHUB_READ_TOKEN"
+
+[arco.secrets.build]
+
+[arco.secrets.runtime]
+
+# Error injection scenarios for testing agent resilience
+[[arco.error_injection.scenarios]]
+id = "api_timeout"
+description = "Simulates API timeout during code execution"
+tool = "code_exec"
+error_type = "timeout"
+error_message = "Request timed out after 30 seconds"
+http_status = 504
+probability = 0.0
+
+[[arco.error_injection.scenarios]]
+id = "rate_limit"
+description = "Simulates rate limiting response"
+tool = "code_exec"
+error_type = "rate_limit"
+error_message = "Rate limit exceeded. Please retry after 60 seconds."
+http_status = 429
+probability = 0.0
+
+[[arco.error_injection.scenarios]]
+id = "permission_denied"
+description = "Simulates permission denied error"
+tool = "code_exec"
+error_type = "permission_denied"
+error_message = "Permission denied: insufficient privileges to execute this command"
+http_status = 403
+probability = 0.0
+
+[[arco.error_injection.scenarios]]
+id = "server_error"
+description = "Simulates internal server error"
+tool = "code_exec"
+error_type = "server_error"
+error_message = "Internal server error: execution engine unavailable"
+http_status = 500
+probability = 0.0
+
+[[arco.error_injection.scenarios]]
+id = "malformed_response"
+description = "Simulates malformed response from execution engine"
+tool = "code_exec"
+error_type = "malformed_response"
+error_message = "Failed to parse execution result: unexpected response format"
+http_status = 502
+probability = 0.0

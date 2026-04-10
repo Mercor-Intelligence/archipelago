@@ -1,0 +1,232 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_b192878fc30246619f5153b98a7f0abc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3e28d3fc0b4a47ec920ec32a7330979f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the patient has complicated cystitis.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has dysuria and chills and chills is a symptom beyond the bladder. From the prompt. \"She reports dysuria and some chills.\" \"Box 1: Complicated UTI classifications for guidelines purposes (intended to guide treatment, not diagnosis)\r\n\u2022\tClinical presentation:\r\no\tComplicated urinary tract infection is accompanied by symptoms that suggest an infection extending beyond the bladder, including:\r\n\uf0a7\tFever\r\n\uf0a7\tOther signs or symptoms of systemic illness, including chills, rigors, or hemodynamic instability\r\n\uf0a7\tFlank pain\r\n\uf0a7\tCostovertebral angle tenderness\r\n\r\n\" https://www.idsociety.org/practice-guideline/complicated-urinary-tract-infections/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_abb262dad9db45c2a6200fe31b5e6aa3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3e28d3fc0b4a47ec920ec32a7330979f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the patient's complicated cystitis is due to an extended-spectrum beta-lactamase producing Escherichia coli.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Noted from the test result \"Cards_Patient 13 Test.pdf\" \"Result 1: Escherichia coli (ESBL-producing) Greater than 100,000 colony forming units per mL\"\nThe sensitivities are to Trimethoprim/Sulfamethoxazole, Nitrofurantoin and Imipenem.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Test.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_04f8bc5b1ae94b2fa6947d1fab5f0767"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_958e6be1ebc7456997a7a24ef5c6abc7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3e28d3fc0b4a47ec920ec32a7330979f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the patient has not been treated for the complicated cystitis.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from the script \"Cards_Patient 13 Script.pdf\" which is important so patient can start treatment and has not already failed an antibiotic.\n\"Physician: Oh yes the nurse did mention you received a urine culture from an outside facility\nthat I was not sent over.\nPatient: Yes we were traveling and then I had some discomfort with peeing so I went to an\nurgent care and they checked my urine and got the urine culture. They recommended antibiotics\nbut I said I wanted to wait till I talked it over with you.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 13 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_04f8bc5b1ae94b2fa6947d1fab5f0767"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_995b5c5a67c6492ab591bc264ce3b63c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3e28d3fc0b4a47ec920ec32a7330979f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes nitrofurantoin is wrongly listed as an allergy in the patient's chart.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Allergies    Nitrofurantoin macrocrystal  \" Tab-ClinicalNotes, Note Type- ED Provider Notes, Column D, Row 173, Section Allergies. \nThis is from the prompt. \"The patient verifies that her reaction to Macrobid in the past was charted in error and it was actually macrolide no Macrobid. \"",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3f3efb21f6c0408a9c4daa5845f2e02d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3e28d3fc0b4a47ec920ec32a7330979f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States trimethoprim sulfamethoxazole is first-line for complicated urinary tract infections caused by extended-spectrum beta-lactamase producing organisms.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Question 1.2: What are preferred antibiotics for the treatment of pyelonephritis or cUTI caused by ESBL-E?\nSuggested approach: TMP-SMX, ciprofloxacin, or levofloxacin are preferred treatment options for pyelonephritis or cUTIs caused by ESBL-E. Ertapenem, meropenem, and imipenem-cilastatin are preferred agents when resistance or toxicities preclude the use of TMP-SMX or fluoroquinolones.\"\nIt would be suitable where susceptibility has been confirmed as well.\n\nhttps://www.idsociety.org/practice-guideline/complicated-urinary-tract-infections/",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_72df1540b9ba4b6bb9277a63eb80ec06",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3e28d3fc0b4a47ec920ec32a7330979f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States imipenem is second-line for complicated urinary tract infections caused by extended-spectrum beta-lactamase producing organisms.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Question 1.2: What are preferred antibiotics for the treatment of pyelonephritis or cUTI caused by ESBL-E?\nSuggested approach: TMP-SMX, ciprofloxacin, or levofloxacin are preferred treatment options for pyelonephritis or cUTIs caused by ESBL-E. Ertapenem, meropenem, and imipenem-cilastatin are preferred agents when resistance or toxicities preclude the use of TMP-SMX or fluoroquinolones.\"\nIt would be suitable where susceptibility has been confirmed as well, after noting resistance/unsuitability to first-line options.\n\nhttps://www.idsociety.org/practice-guideline/complicated-urinary-tract-infections/\n\nImipenem is always given with cilastatin, thus that is a given that we are referring to imipenem-cilastatin.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_518562009f84425481ac5a7a4e2e4ee1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3e28d3fc0b4a47ec920ec32a7330979f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States nitrofurantoin is not an treatment option in complicated cystitis.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Question 1.2: What are preferred antibiotics for the treatment of pyelonephritis or cUTI caused by ESBL-E?\nSuggested approach: TMP-SMX, ciprofloxacin, or levofloxacin are preferred treatment options for pyelonephritis or cUTIs caused by ESBL-E. Ertapenem, meropenem, and imipenem-cilastatin are preferred agents when resistance or toxicities preclude the use of TMP-SMX or fluoroquinolones.\"\n\nhttps://www.idsociety.org/practice-guideline/complicated-urinary-tract-infections/",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_aa29de97d47846f188bf976c8f754dea",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3e28d3fc0b4a47ec920ec32a7330979f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that the patient is clinically stable. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt states she is well apart from early signs of sepsis which is chills. ",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_01af3b89182c4a58a88b2afb6f25b07a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3e28d3fc0b4a47ec920ec32a7330979f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States imipenem would be preferred in critically ill patients. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Meropenem, imipenem-cilastatin, or ertapenem are preferred for the treatment of infections outside of the urinary tract caused by ESBL-E. For patients who are critically ill and/or experiencing hypoalbuminemia, meropenem or imipenem-cilastatin are the preferred carbapenems. \"\n\nhttps://www.idsociety.org/practice-guideline/amr-guidance/\n\n\"Meropenem, imipenem-cilastatin, or ertapenem are preferred for the treatment of infections outside of the urinary tract caused by ESBL-E.\nFor patients who are critically ill and/or experiencing hypoalbuminemia, meropenem or imipenem-cilastatin are the preferred carbapenems.\"\n\nhttps://www.emdocs.net/em3am-esbl-producing-organisms-and-their-management/",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c5a271bb3ae14a9991abec49fd9cacb9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3e28d3fc0b4a47ec920ec32a7330979f",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States trimethoprim sulfamethoxazole is the next best step for treatment in this patient.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient's ESBL E coli complicated cystitis sensitivties are Bactrim, nitrofurantoin and imipenem. Since Bactrim is the first-line, that was the best option. Macrobid was never an option for complicated UTI but is an option for uncomplicated UTI. Imipenem would be an option if Bactrim was not available or resistant to. \n\n\"Question 1.2: What are preferred antibiotics for the treatment of pyelonephritis or cUTI caused by ESBL-E?\nSuggested approach: TMP-SMX, ciprofloxacin, or levofloxacin are preferred treatment options for pyelonephritis or cUTIs caused by ESBL-E. Ertapenem, meropenem, and imipenem-cilastatin are preferred agents when resistance or toxicities preclude the use of TMP-SMX or fluoroquinolones.\"\n\n\"The trials supporting this recommendation mostly included patients who were afebrile, hemodynamically stable, and had achieved source control (relief of any urinary obstruction) before transitioning to oral antibiotics.\" \nhttps://www.idsociety.org/practice-guideline/complicated-urinary-tract-infections/\n\nThe patient is clinically stable, and the recommendation is for oral antibiotics especially since the patient has an option available. ",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

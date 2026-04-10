@@ -1,0 +1,128 @@
+version: "1.0"
+
+servers:
+  - name: uspto
+    display_name: "USPTO Patent Applications"
+    description: "Tools for searching and managing USPTO patent application research"
+    tools_module: "mcp_servers.uspto.tools"
+    base_url: "http://localhost:8000"
+    requires_auth: true
+    auth_type: "bearer"
+
+categories:
+  - name: "Applications"
+    description: "Search USPTO patent applications and issued patents"
+    servers: [uspto]
+
+  - name: "Workspaces"
+    description: "Create and manage research workspaces for organizing queries and snapshots"
+    servers: [uspto]
+
+  - name: "Queries"
+    description: "Save, retrieve, and execute reusable search queries"
+    servers: [uspto]
+
+  - name: "Status Codes"
+    description: "Reference data for USPTO application status codes"
+    servers: [uspto]
+
+  - name: "Documents"
+    description: "Retrieve document inventory and metadata for patent applications"
+    servers: [uspto]
+
+  - name: "Foreign Priority"
+    description: "Retrieve foreign priority claim metadata for patent applications"
+    servers: [uspto]
+
+  - name: "Bundles"
+    description: "Export citation-ready research bundles with queries, snapshots, documents, and foreign priority data"
+    servers: [uspto]
+
+  - name: "Health"
+    description: "Monitor server readiness and upstream connectivity"
+    servers: [uspto]
+
+tool_overrides:
+  # Applications tools
+  - tool: "uspto.uspto_applications_search"
+    category: "Applications"
+    display_name: "Applications Search"
+
+  # Workspace tools
+  - tool: "uspto.uspto_workspaces_create"
+    category: "Workspaces"
+    display_name: "Workspaces Create"
+
+  - tool: "uspto.uspto_workspaces_get"
+    category: "Workspaces"
+    display_name: "Workspaces Get"
+
+  - tool: "uspto.uspto_workspaces_list"
+    category: "Workspaces"
+    display_name: "Workspaces List"
+
+  # Query tools
+  - tool: "uspto.uspto_queries_save"
+    category: "Queries"
+    display_name: "Queries Save"
+
+  - tool: "uspto.uspto_queries_get"
+    category: "Queries"
+    display_name: "Queries Get"
+
+  - tool: "uspto.uspto_queries_run"
+    category: "Queries"
+    display_name: "Queries Run"
+
+  # Status codes tools
+  - tool: "uspto.uspto_status_codes_list"
+    category: "Status Codes"
+    display_name: "Status Codes List"
+
+  # Document tools
+  - tool: "uspto.uspto_documents_list"
+    category: "Documents"
+    display_name: "Documents List"
+
+  - tool: "uspto.uspto_documents_get_download_url"
+    category: "Documents"
+    display_name: "Documents Get Download Url"
+
+  # Foreign priority tools
+  - tool: "uspto.uspto_foreign_priority_get"
+    category: "Foreign Priority"
+    display_name: "Foreign Priority Get"
+  # Bundle tools
+  - tool: "uspto.uspto_bundles_export"
+    category: "Bundles"
+    display_name: "Bundles Export"
+
+  # Health check tool (no auth required for monitoring systems)
+  - tool: "uspto.uspto_health_check"
+    category: "Health"
+    display_name: "Health Check"
+    requires_auth: false
+
+  # Hide *_api.py wrapper tools (use main tools with uspto_ prefix instead)
+  - tool: "uspto.applications_search"
+    hidden: true
+  - tool: "uspto.workspaces_create"
+    hidden: true
+  - tool: "uspto.workspaces_get"
+    hidden: true
+  - tool: "uspto.workspaces_list"
+    hidden: true
+  - tool: "uspto.queries_save"
+    hidden: true
+  - tool: "uspto.queries_get"
+    hidden: true
+  - tool: "uspto.queries_run"
+    hidden: true
+  - tool: "uspto.status_codes_list"
+    hidden: true
+  - tool: "uspto.documents_list"
+    hidden: true
+  - tool: "uspto.documents_get_download_url"
+    hidden: true
+  - tool: "uspto.foreign_priority_get"
+    hidden: true

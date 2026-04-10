@@ -1,0 +1,491 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "For each class level (standard and advanced) in 9th grade biology, give me the overall weighted average final grade for each student group (504, IEP, ELL, none) and highlight any differences in the average grade comparisons between any student groups with a designation (504, IEP, ELL) against the groups without, that are consistent patterns across both levels. Please output your response (the grades and any patterns) as a message in console.\n\nTo calculate the weighted average for each student group per each class level, please first calculate each student's final grade for all students. \nTo calculate each student's final grade, use a simple average of grades within each weight category (refer to the syllabus, as further noted below), and use that to calculate the weighted average of each student. Do not round figures during your calculations.\nUsing these per-student weighted average values, compute each group’s straight average (per class level), and express the grades as integers rounded to the nearest whole number (e.g., 80.1% = 80; 23.56% = 24).\n\nWhen calculating the final grade, use the class syllabus for the weight in each category. Some of the assignments should be clear which categories they belong in. For assignments that are not clear: Case Studies = Notebook grades; Experiments and Labs = Labs; Historical Rat Study and the Rat Modeling Investigations = Bellwork; Exploring Juncos and the Letter from Lamarck = Homework; Quizzes = Classwork."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the average final grade of students with no special designation as 73... (ver_d665b3b1e6864e54810b67f5be58004c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average final grade of students with no special designation as 73 in the standard level (acceptable range 72 to 74)."
+        }
+      ]
+    },
+    {
+      "name": "States the average final grade of students with no special designation as a... (ver_d665b3b1e6864e54810b67f5be58004c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average final grade of students with no special designation as a value other than 73 in the standard level."
+        }
+      ]
+    },
+    {
+      "name": "States the average final grade of students with no special designation as 87... (ver_238eba265d1f44b6a17d6126d4f54094)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average final grade of students with no special designation as 87 in the advanced level (acceptable range 86 to 88)."
+        }
+      ]
+    },
+    {
+      "name": "States the final grade of students with no special designation as a value... (ver_238eba265d1f44b6a17d6126d4f54094)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the final grade of students with no special designation as a value other than 87 in the advanced level."
+        }
+      ]
+    },
+    {
+      "name": "States the average final grade of students with 504 plans as 89 in the... (ver_6992ab9ed35840e6805aad8ebf323799)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average final grade of students with 504 plans as 89 in the advanced level (acceptable range 88 to 90)."
+        }
+      ]
+    },
+    {
+      "name": "States the average final grade of students with 504 plans as a value other... (ver_6992ab9ed35840e6805aad8ebf323799)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average final grade of students with 504 plans as a value other than 90 in the advanced level."
+        }
+      ]
+    },
+    {
+      "name": "States the average final grade of students with 504 plans as 78 in the... (ver_d385bf829de94a63b085994331af202c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average final grade of students with 504 plans as 78 in the standard level (acceptable range 77 to 79)."
+        }
+      ]
+    },
+    {
+      "name": "States the average final grade of students with 504 plans as a value other... (ver_d385bf829de94a63b085994331af202c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average final grade of students with 504 plans as a value other than 78 in the standard level."
+        }
+      ]
+    },
+    {
+      "name": "States the average final grade of students with IEPs as 68 in the standard... (ver_5a2c801933fe45a794f36d1c5bc2154a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average final grade of students with IEPs as 68 in the standard level (acceptable range 67 to 69)."
+        }
+      ]
+    },
+    {
+      "name": "States the average final grade of students with IEPs as a value other than 68... (ver_5a2c801933fe45a794f36d1c5bc2154a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average final grade of students with IEPs as a value other than 68 in the standard level."
+        }
+      ]
+    },
+    {
+      "name": "States the average final grade of students with IEPs as 81 in the advanced... (ver_a1e9e998014f41818c189df156f2b4b2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average final grade of students with IEPs as 81 in the advanced level (acceptable range 80 to 82)."
+        }
+      ]
+    },
+    {
+      "name": "States the average final grade of students with IEPs as a value other than 82... (ver_a1e9e998014f41818c189df156f2b4b2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average final grade of students with IEPs as a value other than 82 in the advanced level."
+        }
+      ]
+    },
+    {
+      "name": "States the average final grade of students who are ELLs as 88 in the advanced... (ver_eae7fe3b65a34842bb52cb873d2c570b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average final grade of students who are ELLs as 88 in the advanced level (acceptable range 87 to 89)."
+        }
+      ]
+    },
+    {
+      "name": "States the average final grade of students who are ELLs as a value other than... (ver_eae7fe3b65a34842bb52cb873d2c570b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average final grade of students who are ELLs as a value other than 88 in the advanced level."
+        }
+      ]
+    },
+    {
+      "name": "States the average final grade of students who are ELLs as 73 in the standard... (ver_b9aa5e979923412daa8ba2bed21bd6cd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average final grade of students who are ELLs as 73 in the standard level (acceptable range 72 to 74)."
+        }
+      ]
+    },
+    {
+      "name": "States the average final grade of students who are ELLs as a value other than... (ver_b9aa5e979923412daa8ba2bed21bd6cd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average final grade of students who are ELLs as a value other than 74 in the standard level."
+        }
+      ]
+    },
+    {
+      "name": "States that students with 504 plans have higher final grades than students... (ver_64f33a638a9f469aa5db5964c386c044)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that students with 504 plans have higher final grades than students with no special designation in both levels."
+        }
+      ]
+    },
+    {
+      "name": "States that students with 504 plans have lower final grades than students with... (ver_64f33a638a9f469aa5db5964c386c044)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that students with 504 plans have lower final grades than students with no special designation in both levels."
+        }
+      ]
+    },
+    {
+      "name": "States that students with IEPs have lower final grades than students with no... (ver_c41dc472d5044ecd91774af9bf002704)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that students with IEPs have lower final grades than students with no special designation in both levels."
+        }
+      ]
+    },
+    {
+      "name": "States that students with IEPs have higher final grades than students with no... (ver_c41dc472d5044ecd91774af9bf002704)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that students with IEPs have higher final grades than students with no special designation in both levels."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world306-na-01-natural-prompt-d7545883"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_576565f6cc9649d7b3d56ec4763d3f7e",
+    "world_name": "Teaching World 306",
+    "task_id": "task_d75458836d1f4eed814f995e912fa4b3",
+    "task_name": "World306_NA_01 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_fb8d6dc68b3e4d169dd9e1a093e0eb8c",
+        "golden_text_response": "Average Standard Level Final Grades (Teams 1, 3, 4)\nStudents with no special designation: 73\nStudents with a 504 Plan: 78\nStudents with an IEP: 68\nStudents that are ELLs: 73\n\nAverage Advanced Level Final Grades (Teams 2,5)\nStudents with no special designation: 87\nStudents with a 504 Plan: 89\nStudents with an IEP: 81\nStudents that are ELLs: 88\n\nIn both the standard and the advanced levels, students with 504 plans have higher final grades than students with no special designation.\nIn both the standard and the advanced levels, students with IEPs have lower final grades than the students with no special designation.",
+        "golden_file_responses": "snap_ab9d13154cae4566b1ae66a5065f918c"
+      }
+    ]
+  }
+}

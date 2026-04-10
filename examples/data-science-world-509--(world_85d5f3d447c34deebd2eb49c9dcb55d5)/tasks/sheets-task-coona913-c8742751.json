@@ -1,0 +1,261 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "I am a data analyst who works for the Harbor Capital risk team. The macroeconomic situation in 2023 and 2024 has convinced Harbor Capital of the need to better understand the dangers lurking in our loans, and I have been assigned to perform an initial analysis. The loan data you will need is located in the “enriched_loan_data.csv” file. The rest of the risk team uses Excel files, so to begin, from the data file, filter out each row where the loan’s delinquency bucket is not classified as “Current”. Then, take all the rows remaining after the filter and insert them into a new Excel (.xlsx) file. After that, inside the new Excel file, create a new sheet and name it “Curr_Bal_Weighted_Avg”. \n\nCreate a 5 by 2 table in the “Curr_Bal_Weighted_Avg” sheet where each cell in the table displays one of the possible combinations of loan interest type and region. Then, for all filtered loans classified under each combination, calculate the weighted arithmetic mean of the current balance, using the standard weighted arithmetic mean formula. Display the weighted arithmetic means in the table by employing Excel formulas that are dynamic. Use the reciprocal of each loan’s origination credit score as the weights. I want all reported averages rounded to one decimal place. The finished Excel file needs to be included in your response."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports the weighted average current balance for Central, Variable as... (ver_b090d116baf54d5298a2fbb56c24089b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the weighted average current balance for Central, Variable as 1978919.0 +/- 0.1."
+        }
+      ]
+    },
+    {
+      "name": "Reports the weighted average current balance for North, Variable as 1981833.2... (ver_eba126bb9c3747feb39a073e6cf3e1cc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the weighted average current balance for North, Variable as 1981833.2 +/- 0.1."
+        }
+      ]
+    },
+    {
+      "name": "Reports the weighted average current balance for East, Variable as 2118848.0... (ver_b3db1eca224b4f89a03eb521a999f03b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the weighted average current balance for East, Variable as 2118848.0 +/- 0.1."
+        }
+      ]
+    },
+    {
+      "name": "Reports the weighted average current balance for West, Variable as 1962187.4... (ver_6a4af060f8da4387885767ab5bc759a7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the weighted average current balance for West, Variable as 1962187.4 +/- 0.1."
+        }
+      ]
+    },
+    {
+      "name": "Reports the weighted average current balance for South, Variable as 2098650.2... (ver_f228255583ee46cab574872965f052ca)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the weighted average current balance for South, Variable as 2098650.2 +/- 0.1."
+        }
+      ]
+    },
+    {
+      "name": "Reports the weighted average current balance for Central, Fixed as 2117296.9... (ver_63012682ac5c4de9b95412eaec5d2962)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the weighted average current balance for Central, Fixed as 2117296.9 +/- 0.1."
+        }
+      ]
+    },
+    {
+      "name": "Reports the weighted average current balance for North, Fixed as 2068926.8 +/-... (ver_8664ef65e9e84a57bccc7e31886361ee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the weighted average current balance for North, Fixed as 2068926.8 +/- 0.1."
+        }
+      ]
+    },
+    {
+      "name": "Reports the weighted average current balance for East, Fixed as 2146731.1 +/-... (ver_844b63bfd8bd4bb4b15eeb3a5e80bf29)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the weighted average current balance for East, Fixed as 2146731.1 +/- 0.1."
+        }
+      ]
+    },
+    {
+      "name": "Reports the weighted average current balance for West, Fixed as 1976355.3 +/-... (ver_08778a6cd4f1478d956a2a6e82c5d516)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the weighted average current balance for West, Fixed as 1976355.3 +/- 0.1."
+        }
+      ]
+    },
+    {
+      "name": "Reports the weighted average current balance for South, Fixed as 2081971.3 +/-... (ver_68dc05e234c4491e93a2d14ddb7e37f7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the weighted average current balance for South, Fixed as 2081971.3 +/- 0.1."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sheets-task-coona913-c8742751"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_c87427519c254cec92f245aa78dc714a",
+    "task_name": "Sheets - Task coona913",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_adf58a6bdf414817a61480f8ecf7601e",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_06893094f59346a1b51f28b47a02c82a"
+      }
+    ]
+  }
+}

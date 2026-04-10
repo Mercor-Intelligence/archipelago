@@ -1,0 +1,266 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Grab the 1) SI DBQ week 1 practice and 2) How the Dominoes Fell files and review the 3) attached report card for Liam in particular.\n\nI'll need you to draft a letter as a new doc. First determine which letter format is appropriate for Liam from the Exceeds Standards format (level 3 on exit and grade >85%), Meets Standards format (level 2 exit and grade between 80%-85%), or Approaching Standards format (level 2 and grade below 80%). The header must include the date, \"February 12th, 2024\"; Subject line: \"AP US History Update: [Corresponding Letter Name]\"; addressed as: \"To Liam Martinez's Parent\"\nThe body of the letter should include: \n    1- A summary of the Teacher Annotation found on Liam's exit ticket.\n    2- A reminder to complete the end-of-term assignment from the Road to War Unit."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the Approaching Standards letter is the correct option for Liam (ver_a7997b6f169d4427b944946424a670d2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Approaching Standards letter is the correct option for Liam."
+        }
+      ]
+    },
+    {
+      "name": "Determines that an option other than the Approaching Standards letter is the... (ver_a7997b6f169d4427b944946424a670d2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Determines that an option other than the Approaching Standards letter is the correct option."
+        }
+      ]
+    },
+    {
+      "name": "Includes the current date as \"February 12th, 2024\" (ver_53dc34b07db14f63b8e26c99b1c36e53)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes the current date as \"February 12th, 2024\"."
+        }
+      ]
+    },
+    {
+      "name": "Includes the current date as a date other than \"February 12th, 2024\". (ver_53dc34b07db14f63b8e26c99b1c36e53)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes the current date as a date other than \"February 12th, 2024\"."
+        }
+      ]
+    },
+    {
+      "name": "States the Subject line as \"AP US History Update: Approaching Standards\" (ver_2ebe1666c1fd4a728d57d0d652c3a66d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Subject line as \"AP US History Update: Approaching Standards\"."
+        }
+      ]
+    },
+    {
+      "name": "Addresses the letter as \"To Liam Martinez's Parent\" (ver_d2eae74739cb4881a47311ba80afe046)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Addresses the letter as \"To Liam Martinez's Parent\"."
+        }
+      ]
+    },
+    {
+      "name": "Includes a summary of the Teacher Annotation (ver_ba74ab0d4cd24f2ca9cb3a17228bedb0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a summary of the Teacher Annotation."
+        }
+      ]
+    },
+    {
+      "name": "Indicates that the end-of-term assignment is from the Road to War Unit (ver_b034eca62bfb4e62be9b5b559e1eb007)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Indicates that the end-of-term assignment is from the Road to War Unit."
+        }
+      ]
+    },
+    {
+      "name": "Indicates that the end-of-term assignment is from a unit other than the Road... (ver_b034eca62bfb4e62be9b5b559e1eb007)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Indicates that the end-of-term assignment is from a unit other than the Road to War Unit."
+        }
+      ]
+    },
+    {
+      "name": "Includes a reminder to complete the end-of-term assignment (ver_a9e83f1060f04bcd9d6a392affdd8b60)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a reminder to complete the end-of-term assignment."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world308-si-01-natural-prompt-02c701bf"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_bb2868929444403db49771012f030f29",
+    "world_name": "Teaching World 308",
+    "task_id": "task_02c701bf005f41f488af8f6a1efecf58",
+    "task_name": "world308_SI_01 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_467c36b9f4fa442aafc700540cd1e1c9",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_b5c4032616c94b6d87418d72145b57bb"
+      },
+      {
+        "golden_response_id": "gold_b4e99216e99541d28aefcafeb114a31d",
+        "golden_text_response": "Document attached.",
+        "golden_file_responses": "snap_b5c4032616c94b6d87418d72145b57bb"
+      }
+    ]
+  }
+}

@@ -1,0 +1,208 @@
+# Job Board and Reporting Workflow
+# Demonstrates: Reset DB -> Create jobs -> Publish to board -> Apply via board -> Export snapshot -> Server info
+#
+# Tools exercised:
+# - Login (recruiter)
+# - Reset State (Admin)
+# - Create Job (Jobs)
+# - Get Job (Jobs)
+# - Create Job Post (Job Board)
+# - Job Board List Jobs (Job Board)
+# - Job Board Apply (Job Board)
+# - Get Application (Applications)
+# - Export Snapshot (Admin)
+# - Server Info (Server)
+
+url: http://localhost:3000
+
+output: screenshots
+
+defaults:
+  server: greenhouse-greenhouse
+
+steps:
+  # Step 1: Initial view
+  - TakeScreenshot
+
+  # Step 2: Login as Recruiter
+  - Login:
+      persona: recruiter
+      screenshot_params:
+        element: *tool_panel
+        max_height: 600
+
+  # Step 3: Reset database
+  - SelectTool:
+      tool: reset_state
+      category: Admin
+  - Wait: 500
+  - FillToolParam:
+      params:
+        confirm: true
+        clear_users: false
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 400
+
+  # Setup: Create two jobs
+  - SelectTool:
+      tool: jobs_create
+      category: Jobs
+  - Wait: 500
+  - FillToolParam:
+      params:
+        name: Frontend Developer
+        status: open
+        number_of_openings: 1
+        notes: React and TypeScript expertise required
+  - ExecuteTool:
+      capture:
+        job_id: $.id
+  - Wait: 1000
+
+  - SelectTool:
+      tool: jobs_create
+      category: Jobs
+  - Wait: 500
+  - FillToolParam:
+      params:
+        name: Data Scientist
+        status: open
+        number_of_openings: 1
+        notes: ML and statistical analysis background preferred
+  - ExecuteTool:
+      capture:
+        job_id_2: $.id
+  - Wait: 1000
+
+  # Step 4: Get job details
+  - SelectTool:
+      tool: jobs_get
+      category: Jobs
+  - Wait: 500
+  - FillToolParam:
+      params:
+        job_id: "{{ job_id }}"
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 5: Publish first job to the public board
+  - SelectTool:
+      tool: jobboard_create_post
+      category: Job Board
+  - Wait: 500
+  - FillToolParam:
+      params:
+        job_id: "{{ job_id }}"
+        title: Frontend Developer
+        location_name: San Francisco, CA
+        content: >
+          We are hiring a Frontend Developer with React and TypeScript expertise.
+          Join our growing team building modern web applications.
+        live: true
+  - ExecuteTool:
+      capture:
+        job_post_id: $.id
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 6: View public job board (should now show the posted job)
+  - SelectTool:
+      tool: jobboard_list_jobs
+      category: Job Board
+  - Wait: 500
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 7: Apply via job board (external applicant)
+  - SelectTool:
+      tool: jobboard_apply
+      category: Job Board
+  - Wait: 500
+  - FillToolParam:
+      params:
+        job_post_id: "{{ job_post_id }}"
+        first_name: Alex
+        last_name: Thompson
+        email: alex.thompson@example.com
+        phone: "+1-555-0199"
+        location: San Francisco, CA
+        resume_text: >
+          5 years of frontend development experience with React, TypeScript,
+          and Next.js. Previously at Airbnb and Vercel. Led a team of 4
+          engineers building design system components.
+        cover_letter_text: >
+          I am excited to apply for the Frontend Developer position.
+          My experience building production React applications at scale
+          makes me a strong fit for this role.
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 900
+
+  # Step 8: Execute job board application
+  - ExecuteTool:
+      capture:
+        jb_app_id: $.application_id
+        jb_candidate_id: $.candidate_id
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 700
+
+  # Step 9: Verify the application was created
+  - SelectTool:
+      tool: applications_get
+      category: Applications
+  - Wait: 500
+  - FillToolParam:
+      params:
+        application_id: "{{ jb_app_id }}"
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 10: Export database snapshot
+  - SelectTool:
+      tool: export_snapshot
+      category: Admin
+  - Wait: 500
+  - FillToolParam:
+      params:
+        include_schema: true
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 700
+
+  # Step 11: Execute export
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 12: View server info
+  - SelectTool:
+      tool: server_info
+      category: Server
+  - Wait: 500
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800

@@ -1,0 +1,401 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_6da07c817160404482620355f108d60c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_90ba3b136b824b56aee37f578dcf2430",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has a history of stage I non-small cell lung cancer (NSCLC).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has a history of Stage I Non-Small Cell Lung Cancer (NSCLC) and is now status post radiotherapy. \n\n\u201c47 y.o. female presents to the clinic today for 1 month follow-up status post SBRT to her right upper lobe for stage I non-small cell lung cancer.  REFERRING PROVIDER: Dion Body, MD  HPI: Patient is a 53 year old female now at 1 month having completed SBRT to her right upper lobe for stage I non-small cell lung cancers.  Seen today in routine follow-up she is doing well.  She specifically denies cough hemoptysis or chest tightness.  She is having no dysphagia..  She has a CT scan of her chest with contrast scheduled for April.  COMPLICATIONS OF TREATMENT: none\u201c \n--from openemr chart Onc_Patient 7: Tab - CLINICALNOTES, Note type - Progress Note, Column - D, Row - 33\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8de8eb223de84339a6bd4ed23a0bb98c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_90ba3b136b824b56aee37f578dcf2430",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient previously received EGFR tyrosine kinase inhibitors.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient had a tissue sample taken last time and mentioned that the biopsy reports look \u2018identical\u2019, it is implied that the same EGFR mutation is known. EGFR mutations are treated with EGFR tyrosine kinase inhibitors and are given orally. When she refers to the 'pill' she took in the past, she was taking a EGFR tyrosine kinase inhibitor. \n\u201cPatient 7: Absolutely, they even biopsied it while I was there which was so nice and efficient. The last time this happened, it took them forever to get a tissue sample. But overall, the reports almost look identical. Doctor: What do you mean by \u2018last time\u2019? Patient 7: Well\u2026 I know I stopped seeing you for a while because my insurance changed and I had to go to a different hospital but last year they found a spot in my chest and I started some systemic therapy, some pill and then also chemo, and had been doing great\u2026. Until now.\u201d \n--from \u2018Onc_Patient 7 script.pdf\u2019\n\n\"Epidermal growth factor receptor (EGFR) tyrosine kinase inhibitors (TKIs) are standard first-line therapy for EGFR-mutant, metastatic non-small cell lung cancer (NSCLC); however, most patients experience disease progression.\" from https://pubmed.ncbi.nlm.nih.gov/39173098/",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9702cb26d74140e19a0d15cc2f7a34c9"
+          },
+          {
+            "name": "Onc_Patient 7 script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9702cb26d74140e19a0d15cc2f7a34c9"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c946f0bbec6c448d9cb41e9a190e573f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_90ba3b136b824b56aee37f578dcf2430",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient previously received platinum-based chemotherapy.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"The patient had a tissue sample taken last time that resulted in some sort of \u2018systemic therapy\u2019 which included a 'pill and some chemo'. \n--\u201cPatient 7: Well\u2026 I know I stopped seeing you for a while because my insurance changed and I had to go to a different hospital but last year they found a spot in my chest and I started some systemic therapy, some pill and then also chemo, and had been doing great\u2026. Until now.\u201d \n-from \"Onc_Patient 7 script.pdf\"\n\n\"Current treatment guidelines for patients with epidermal growth factor receptor (EGFR)-mutated metastatic non-small cell lung cancer (mNSCLC) recommend EGFR tyrosine kinase inhibitors (TKIs) as the standard of care for first-line treatment, with third-generation osimertinib the preferred choice. However, most patients develop resistance to targeted therapy, and subsequent systemic chemotherapy is recommended.\" \nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC11333428/\n\n\"Platinum-based chemotherapy has long been the first-line therapy for most patients with metastatic NSCLC without a targetable driver mutation\"\nhttps://pmc.ncbi.nlm.nih.gov \u203a articles \u203a PMC6444295",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9702cb26d74140e19a0d15cc2f7a34c9"
+          },
+          {
+            "name": "Onc_Patient 7 script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9702cb26d74140e19a0d15cc2f7a34c9"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1707067418474b66a91dd5147751b665",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_90ba3b136b824b56aee37f578dcf2430",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient now has metastatic disease.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient went on vacation and then developed a cough that led to imaging which revealed metastatic disease in her left axilla. \n\u201cPatient 7: I was able to go to Banf National park but I developed a really bad cough and some bloody mucus. I went to the emergency room and they did a chest CT scan and found a new thing in my left arm pit.\u201d from Onc_Patient 7 script.pdf.\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc_Patient 7 script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9702cb26d74140e19a0d15cc2f7a34c9"
+          }
+        ]
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7eefb539331d472b919df346b37624e1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_90ba3b136b824b56aee37f578dcf2430",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's biopsy shows recurrence of NSCLC. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient\u2019s biopsy shows adenocarcinoma, consistent with lung origin. Since she has a history of NSCLC, we can safely assume this patient has a recurrence of the same cancer. \n\n\"A. LEFT AXILLARY LYMPH NODE, CORE BIOPSY:\nMETASTATIC ADENOCARCINOMA, LUNG PRIMARY.\nMorphology and immunoprofile (TTF-1+, Napsin A+, GATA3-) support\norigin from the patient's known non-small cell lung cancer.\nSee separate addendum for molecular profiling.\n\u201d from \u2018Labs.pdf\u2019",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9702cb26d74140e19a0d15cc2f7a34c9"
+          }
+        ]
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0869d2659a0a4e42afc706e15c25aade",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_90ba3b136b824b56aee37f578dcf2430",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's biopsy has an EGFR Exon 19 deletion mutation.  ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The biopsy report now shows that the patient's biopsy has an EGFR2 Exon 19 deletion. \n\u201cEEGFR Exon 19 Deletion (p.E746_A750del) Allele Frequency: 18% Interpretation: Sensitizing mutation in EGFR kinase domain.\u201d from \u2018Labs.pdf\u2019\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9702cb26d74140e19a0d15cc2f7a34c9"
+          }
+        ]
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c550590ab2474c558ef2c3492b4ee08b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_90ba3b136b824b56aee37f578dcf2430",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recommends lazertinib plus amivantamab-vmjw as the next best systemic therapy option for this patient.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Lazertinib + amivantamab-vmjw is now added as a subsequent therapy option specifically for EGFR Exon 19 mutation for those that progressed on carboplatin or cisplatin/osimertinib/pemetrexed. Since this patient already had systemic therapy that included a EGFR tyrosine kinase inhibitor and a platinum-based chemotherapy, it is now reasonable to proceed with lazertinib + amivantamab-vmjw for this patient. \n\n\u201cAmivantamab plus lazertinib was added to the useful in certain circumstances category as a subsequent therapy if not previously given for patients with NSCLC harboring EGFR exon 19 deletions or exon 21 L858R mutations with multiple lesions following disease progression on osimertinib.\u201d from https://www.onclive.com/view/experts-unpack-the-most-notable-nccn-guideline-changes-heading-into-2026\n\n\"Amivantamab-lazertinib is FDA-approved as first-line treatment for patients with advanced NSCLC with EGFR Ex19del\" from https://ascopubs.org/doi/10.1200/JCO-24-02835",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9702cb26d74140e19a0d15cc2f7a34c9"
+          },
+          {
+            "name": "Onc_Patient 7 script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9702cb26d74140e19a0d15cc2f7a34c9"
+          }
+        ]
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c939d121281140e8a6c37be98de04389",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_90ba3b136b824b56aee37f578dcf2430",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient\u2019s current weight is 48.2 kg. (acceptable range 47.2 to 49.2 kg)\r\n ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient's weight is 106.2 lbs. 1 lb = 0.453\n106.2 x 0.453 = 48.2 kg \n\n\u201cWeight: 106.2 lb \u201c from Source: Tab - CLINICALNOTES, Note type - Progress Note, Column - D, Row - 221\n\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_af24daaab47340ecbbac571dc6ae7fcf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_90ba3b136b824b56aee37f578dcf2430",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that lazertinib dosage is 240 mg (acceptable range 238 to 242).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Lazertinib is to be administered 240 mg. \n\u201cAdults\u2014240 milligrams (mg) once a day on the same day amivantamab is also given. Your doctor may adjust your dose as needed and tolerated.\"\nhttps://www.mayoclinic.org/drugs-supplements/lazertinib-oral-route/description/drg-20573799",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b702a69534e94c72ab958714621110ad",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_90ba3b136b824b56aee37f578dcf2430",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that lazertinib is given orally.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "lazertinib is to be administered orally. \n\u201cThe recommended dosage of LAZCLUZE is 240 mg orally once daily administered in combination with amivantamab, with or without food\u201d from https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_917b4c44fe634e198831f97e5cc42b91",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_90ba3b136b824b56aee37f578dcf2430",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that lazertinib is given once daily.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "lazertinib is to be administered once daily. \n\u201cThe recommended dosage of LAZCLUZE is 240 mg orally once daily administered in combination with amivantamab, with or without food\u201d from https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4cef72ec299e4799a4074557c3697873",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_90ba3b136b824b56aee37f578dcf2430",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that amivantamab-vmjw dosage is 1050 mg (acceptable range 104 to 106).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Because the patient is 106.2 lb (approx 48.2 kg) and is less than 80 kg, she should be getting 1050 mg every two weeks.  \u201cThe recommended dose for patients < 80 kg is 1,050 mg split over D1 (350 mg) and D2 (700 mg) followed by 1,050 mg on D1 for weeks 2\u20135. Starting at week 7, amivantamab 1,050 mg is administered every 2 weeks. \u201c from https://pmc.ncbi.nlm.nih.gov/articles/PMC11933153/\n\u201cWeight: 106.2 lb \u201c from Source: Tab - CLINICAL NOTES, Note type - Progress Note, Column - D, Row - 221\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_36d0383396ee46f1b293478dc04317a7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_90ba3b136b824b56aee37f578dcf2430",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that amivantamab-vmjw is given intravenously.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Amivantamab-vmjw is given intravenously. \"RYBREVANT (amivantamab-vmjw) injection, for intravenous use\nInitial U.S. Approval: 2021\" from https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/761210s001lbl.pdf. \n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d094de8089a14a80a37d19a36a939478",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_90ba3b136b824b56aee37f578dcf2430",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that amivantamab-vmjw is given weekly for the first 4 weeks.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Amivantamab-vmjw is indeed given weekly for the first 4 weeks.  \u201cThe recommended dose for patients < 80 kg is 1,050 mg split over D1 (350 mg) and D2 (700 mg) followed by 1,050 mg on D1 for weeks 2\u20135. Starting at week 7, amivantamab 1,050 mg is administered every 2 weeks. \u201c from https://pmc.ncbi.nlm.nih.gov/articles/PMC11933153/\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_14d9ae4960464e5888bab1222be731ec",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_90ba3b136b824b56aee37f578dcf2430",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that amivantamab-vmjw is given every 2 weeks after the first 4 weeks.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Amivantamab-vmjw is given every two weeks after the first 4 weeks. \u201cThe recommended dose for patients < 80 kg is 1,050 mg split over D1 (350 mg) and D2 (700 mg) followed by 1,050 mg on D1 for weeks 2\u20135. Starting at week 7, amivantamab 1,050 mg is administered every 2 weeks. \u201c from https://pmc.ncbi.nlm.nih.gov/articles/PMC11933153/\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cbcc096779664b73b8adff5ac1309f57",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_90ba3b136b824b56aee37f578dcf2430",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the most common reason for dose reduction is dermatological adverse reactions.\r",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The most common reason for dose reduction is dermatologic adverse reactions, particularly rash and paronychia. In the MARIPOSA trial, 59% of patients required dose reduction of any trial agent, with dermatologic toxicities being the primary driver for dose modifications from https://www.nejm.org/doi/full/10.1056/NEJMoa2403614\r\n\u201cDose interruptions and reductions of any agent were reported in 83% and 59% of patients, respectively, in the amivantamab\u2013lazertinib group... The most common adverse events leading to dose reduction were paronychia (in 19% of the patients) and rash (in 16%).\" from mivantamab plus lazertinib in Previously Untreated EGFR-Mutated Advanced NSCLC",
+        "is_primary_objective": true
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

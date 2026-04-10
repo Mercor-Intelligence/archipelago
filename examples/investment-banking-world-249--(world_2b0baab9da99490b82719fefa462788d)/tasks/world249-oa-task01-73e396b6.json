@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Make the following updates to assess S&P Mobility’s value in the model using a peer based approach\n\n1.\tUpdate the subscription revenue YoY growth rate to 9% in 2026, keep fixed until 2028, then reduce by 1 percentage point in 2029 and 2030\n\n2.\tUpdate the Non-subscription / transaction revenue YoY growth rate to 5% in 2026, keep fixed until 2028 and decline by 0.5 percentage points in 2029 and 2030\n\n3.\tUpdate the Operating-related expenses  % revenue assumption to 30% in 2026, and decline by 0.5 percentage points every year following\n\n4.\tUpdate the selling and general expenses % revenue assumption to 26% in 2026, then keep fixed every year following\n\n5. Update Risk-free rate to 5 year US treasury rate as of Jan 02, 2025\n\n6.\tFind the enterprise value and TTM EBITDA of the following peer companies. \n\na.\tVontier Corporation (VNT) as of September 26, 2025 \n\nb.\tLi Auto Inc (LI) as of September 30, 2025 \n\n7.\tCalculate the average of the EV/TTM EBITDA of the peer companies above (to 2 decimal places) and use it to calculate the present value of the terminal value of S&P mobility (in $ million to the nearest million)\n\n8.\tCalculate the following; \na.\tEnterprise value (in $ million to the nearest million)\nb.\tImplied EV/ 2025 EBITDA (to 2 decimal places)"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States Enterprise Value is $17,509 million (acceptable value $17,333.91... (ver_1865a9420d6e4f7389b9cf9ee65773e3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Enterprise Value is $17,509 million (acceptable value $17,333.91 million to $17,684.09 million)."
+        }
+      ]
+    },
+    {
+      "name": "States implied EV/2025 EBITDA is 24.01 (acceptable value 23.77 to 24.25) (ver_7994afe5872f45bd898b7edeb14c777c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States implied EV/2025 EBITDA is 24.01 (acceptable value 23.77 to 24.25)."
+        }
+      ]
+    },
+    {
+      "name": "States the present value of terminal value is $14,533 million (acceptable... (ver_e8a5b35c7acd421380526b8ec7acb7e3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the present value of terminal value is $14,533 million (acceptable value $14,387.67 million to $14,678.33 million)."
+        }
+      ]
+    },
+    {
+      "name": "States average of the EV/TTM EBITDA of peer companies is 19.44 (acceptable... (ver_7e462d7f3fe7401fb5237ea94d73be34)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States average of the EV/TTM EBITDA of peer companies is 19.44 (acceptable value 19.25 to 19.63)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world249-oa-task01-73e396b6"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_73e396b6bd1841feb5d7ab1c5adf9e52",
+    "task_name": "World249_OA_Task01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_54b738a2cf2142e1ace66b33140a274e",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_1f0616a423324d43885d7f2f169536c6"
+      }
+    ]
+  }
+}

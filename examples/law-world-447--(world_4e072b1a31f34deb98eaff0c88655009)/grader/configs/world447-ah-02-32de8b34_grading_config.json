@@ -1,0 +1,127 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_d69fce0123124143a3ae1249f227ad31",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_32de8b348c0d4affb54983ee4155499e",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States all of the following: \"there are no transactions, agreements, arrangements, or understandings between Seller and any Affiliate (including any officer or director) of Seller.\"",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Original Broadcom Inc. / VMware, Inc. language:\nSection 4.24. Related Party Transactions. Except (x) as set forth in the Company SEC Documents filed with the SEC prior to the date hereof, (y) any compensation or other employment arrangements entered into between the Company or any Company Subsidiary, on the one hand, and any director or officer thereof, on the other hand, in the ordinary course of business consistent with past practice and (z) ordinary course commercial Contracts with Dell (and its Subsidiaries), there are no transactions, agreements, arrangements or understandings between the Company or any Company Subsidiary, on the one hand, and (a) any affiliate (including any officer or director) thereof (but not including any wholly owned Subsidiary of the Company), on the other hand, or (b) any beneficial owner, directly or indirectly, of 5% or more of the shares of Company Common Stock, on the other hand.\n\nProposed language:\nRelated Party Transactions. Except for (a) any compensation or other employment arrangements entered into between Seller and any director or officer thereof in the ordinary course of business and (b) as set forth in Schedule [INSERT], there are no transactions, agreements, arrangements, or understandings between Seller, on the one hand, and (i) any Affiliate (including any officer or director) of Seller, or (ii) any beneficial owner, directly or indirectly, of 5% or more of the outstanding equity interests of Seller, on the other hand, in each case that relates to the Business or the Purchased Assets.\n\nThe material changes involved are:\n1- conforming defined terms (including removing references to subsidiaries)\n2- removing references to SEC filings and Dell transactions, which are unique to the precedent language transaction\n3- adding a reference to disclosures made (either could be disclosed in writing, or in a disclosure schedule - left the relevant criterion vague to be permissive)\n4 - qualifying the representation by reference to the Business/Purchased Assets, which are defined terms from the APA. Without this qualifier, the rep would also pull in related party transactions that aren't relevant to the purchaser.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ee8afa884bff4913b87d6499b66c70e9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_32de8b348c0d4affb54983ee4155499e",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States all of the following: \"there are no transactions, agreements, arrangements, or understandings between Seller and any beneficial owner, directly or indirectly, of 5% or more of the outstanding equity interests of Seller.\" (acceptable range 4.95% to 5.05%)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Original Broadcom Inc. / VMware, Inc. language:\nSection 4.24. Related Party Transactions. Except (x) as set forth in the Company SEC Documents filed with the SEC prior to the date hereof, (y) any compensation or other employment arrangements entered into between the Company or any Company Subsidiary, on the one hand, and any director or officer thereof, on the other hand, in the ordinary course of business consistent with past practice and (z) ordinary course commercial Contracts with Dell (and its Subsidiaries), there are no transactions, agreements, arrangements or understandings between the Company or any Company Subsidiary, on the one hand, and (a) any affiliate (including any officer or director) thereof (but not including any wholly owned Subsidiary of the Company), on the other hand, or (b) any beneficial owner, directly or indirectly, of 5% or more of the shares of Company Common Stock, on the other hand.\n\nProposed language:\nRelated Party Transactions. Except for (a) any compensation or other employment arrangements entered into between Seller and any director or officer thereof in the ordinary course of business and (b) as set forth in Schedule [INSERT], there are no transactions, agreements, arrangements, or understandings between Seller, on the one hand, and (i) any Affiliate (including any officer or director) of Seller, or (ii) any beneficial owner, directly or indirectly, of 5% or more of the outstanding equity interests of Seller, on the other hand, in each case that relates to the Business or the Purchased Assets.\n\nThe material changes involved are:\n1- conforming defined terms (including removing references to subsidiaries)\n2- removing references to SEC filings and Dell transactions, which are unique to the precedent language transaction\n3- adding a reference to disclosures made (either could be disclosed in writing, or in a disclosure schedule - left the relevant criterion vague to be permissive)\n4 - qualifying the representation by reference to the Business/Purchased Assets, which are defined terms from the APA. Without this qualifier, the rep would also pull in related party transactions that aren't relevant to the purchaser.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f9fba2bb69b64072ba6c4643ca06041d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_32de8b348c0d4affb54983ee4155499e",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that disclosed transactions are an exception to the related party transaction representation.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Original Broadcom Inc. / VMware, Inc. language:\nSection 4.24. Related Party Transactions. Except (x) as set forth in the Company SEC Documents filed with the SEC prior to the date hereof, (y) any compensation or other employment arrangements entered into between the Company or any Company Subsidiary, on the one hand, and any director or officer thereof, on the other hand, in the ordinary course of business consistent with past practice and (z) ordinary course commercial Contracts with Dell (and its Subsidiaries), there are no transactions, agreements, arrangements or understandings between the Company or any Company Subsidiary, on the one hand, and (a) any affiliate (including any officer or director) thereof (but not including any wholly owned Subsidiary of the Company), on the other hand, or (b) any beneficial owner, directly or indirectly, of 5% or more of the shares of Company Common Stock, on the other hand.\n\nProposed language:\nRelated Party Transactions. Except for (a) any compensation or other employment arrangements entered into between Seller and any director or officer thereof in the ordinary course of business and (b) as set forth in Schedule [INSERT], there are no transactions, agreements, arrangements, or understandings between Seller, on the one hand, and (i) any Affiliate (including any officer or director) of Seller, or (ii) any beneficial owner, directly or indirectly, of 5% or more of the outstanding equity interests of Seller, on the other hand, in each case that relates to the Business or the Purchased Assets.\n\nThe material changes involved are:\n1- conforming defined terms (including removing references to subsidiaries)\n2- removing references to SEC filings and Dell transactions, which are unique to the precedent language transaction\n3- adding a reference to disclosures made (either could be disclosed in writing, or in a disclosure schedule - left the relevant criterion vague to be permissive)\n4 - qualifying the representation by reference to the Business/Purchased Assets, which are defined terms from the APA. Without this qualifier, the rep would also pull in related party transactions that aren't relevant to the purchaser.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_046047bba9ab4d9795b0c29265086330",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_32de8b348c0d4affb54983ee4155499e",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the following as an exception to the related party transaction representation: \"any compensation or other employment arrangements entered into between Seller and any director or officer thereof in the ordinary course of business.\"",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Original Broadcom Inc. / VMware, Inc. language:\nSection 4.24. Related Party Transactions. Except (x) as set forth in the Company SEC Documents filed with the SEC prior to the date hereof, (y) any compensation or other employment arrangements entered into between the Company or any Company Subsidiary, on the one hand, and any director or officer thereof, on the other hand, in the ordinary course of business consistent with past practice and (z) ordinary course commercial Contracts with Dell (and its Subsidiaries), there are no transactions, agreements, arrangements or understandings between the Company or any Company Subsidiary, on the one hand, and (a) any affiliate (including any officer or director) thereof (but not including any wholly owned Subsidiary of the Company), on the other hand, or (b) any beneficial owner, directly or indirectly, of 5% or more of the shares of Company Common Stock, on the other hand.\n\nProposed language:\nRelated Party Transactions. Except for (a) any compensation or other employment arrangements entered into between Seller and any director or officer thereof in the ordinary course of business and (b) as set forth in Schedule [INSERT], there are no transactions, agreements, arrangements, or understandings between Seller, on the one hand, and (i) any Affiliate (including any officer or director) of Seller, or (ii) any beneficial owner, directly or indirectly, of 5% or more of the outstanding equity interests of Seller, on the other hand, in each case that relates to the Business or the Purchased Assets.\n\nThe material changes involved are:\n1- conforming defined terms (including removing references to subsidiaries)\n2- removing references to SEC filings and Dell transactions, which are unique to the precedent language transaction\n3- adding a reference to disclosures made (either could be disclosed in writing, or in a disclosure schedule - left the relevant criterion vague to be permissive)\n4 - qualifying the representation by reference to the Business/Purchased Assets, which are defined terms from the APA. Without this qualifier, the rep would also pull in related party transactions that aren't relevant to the purchaser.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_25f88cb64a124e448ff5bce207c0f455",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_32de8b348c0d4affb54983ee4155499e",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the related party transactions representation is limited to all of the following: \"the Business or the Purchased Assets.\"",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Original Broadcom Inc. / VMware, Inc. language:\nSection 4.24. Related Party Transactions. Except (x) as set forth in the Company SEC Documents filed with the SEC prior to the date hereof, (y) any compensation or other employment arrangements entered into between the Company or any Company Subsidiary, on the one hand, and any director or officer thereof, on the other hand, in the ordinary course of business consistent with past practice and (z) ordinary course commercial Contracts with Dell (and its Subsidiaries), there are no transactions, agreements, arrangements or understandings between the Company or any Company Subsidiary, on the one hand, and (a) any affiliate (including any officer or director) thereof (but not including any wholly owned Subsidiary of the Company), on the other hand, or (b) any beneficial owner, directly or indirectly, of 5% or more of the shares of Company Common Stock, on the other hand.\n\nProposed language:\nRelated Party Transactions. Except for (a) any compensation or other employment arrangements entered into between Seller and any director or officer thereof in the ordinary course of business and (b) as set forth in Schedule [INSERT], there are no transactions, agreements, arrangements, or understandings between Seller, on the one hand, and (i) any Affiliate (including any officer or director) of Seller, or (ii) any beneficial owner, directly or indirectly, of 5% or more of the outstanding equity interests of Seller, on the other hand, in each case that relates to the Business or the Purchased Assets.\n\nThe material changes involved are:\n1- conforming defined terms (including removing references to subsidiaries)\n2- removing references to SEC filings and Dell transactions, which are unique to the precedent language transaction\n3- adding a reference to disclosures made (either could be disclosed in writing, or in a disclosure schedule - left the relevant criterion vague to be permissive)\n4 - qualifying the representation by reference to the Business/Purchased Assets, which are defined terms from the APA. Without this qualifier, the rep would also pull in related party transactions that aren't relevant to the purchaser.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "d75f8557-805e-4b99-b3f6-eb71cb7e8385",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

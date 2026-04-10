@@ -1,0 +1,231 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_872f13bd48274ba29614c3d0e23b47a8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caab5413bcb7469a9752d8d2aa3c69a7",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "Creates a bar chart in the \u201cHigh risk delinquency pipeline\u201d sheet.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Confirm a horizontal bar chart created in the \u201cHigh risk delinquency pipeline\u201d sheet that mimics the chart type of \u201cDelinquency Pipeline\u201d chart.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0514f1d422cb44a497888f5bd30fc616",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caab5413bcb7469a9752d8d2aa3c69a7",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Style / formatting"
+        ],
+        "weight": 1,
+        "criteria": "The bar chart's orientation is horizontal.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Confirm the bar chart is horizontally oriented.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0592346ac41d4964959243b19ef0a0e6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caab5413bcb7469a9752d8d2aa3c69a7",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "The first bar from top to bottom is \"1-30 Days\".",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Confirm bars are ordered correctly as in the \u201cDelinquency Pipeline\u201d chart.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_80d11bd1ed78429c9f3670c66019c8c1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caab5413bcb7469a9752d8d2aa3c69a7",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "The second bar from top to bottom is \"31-90 Days\".",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Confirm bars are ordered correctly as in the \u201cDelinquency Pipeline\u201d chart.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7fac03dc62d943a0b797a4f415c89c3e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caab5413bcb7469a9752d8d2aa3c69a7",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "The third bar from top to bottom is \"90+ Days\".",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Confirm bars are ordered correctly as in the \u201cDelinquency Pipeline\u201d chart.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_69d56dccc4364045b8ff51d91ed0de8b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caab5413bcb7469a9752d8d2aa3c69a7",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Style / formatting"
+        ],
+        "weight": 1,
+        "criteria": "The bar for \"1-30 Days\" is yellow.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Confirm the color of the horizontal bar chart is consistent with \u201cDelinquency Pipeline\u201d chart.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_845707edd0454d4d89e6d7c23c09e971",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caab5413bcb7469a9752d8d2aa3c69a7",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Style / formatting"
+        ],
+        "weight": 1,
+        "criteria": "The bar for \"31-90 Days\" is orange.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Confirm the color of the horizontal bar chart is consistent with \u201cDelinquency Pipeline\u201d chart.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_12a0978bb9f14c999f0ba3e4ca914eb7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caab5413bcb7469a9752d8d2aa3c69a7",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Style / formatting"
+        ],
+        "weight": 1,
+        "criteria": "The bar for \"90+ Days\" is red.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Confirm the color of the horizontal bar chart is consistent with \u201cDelinquency Pipeline\u201d chart.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6cd16ba17bf743e287cb5cec5491bdca",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caab5413bcb7469a9752d8d2aa3c69a7",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Labels the bar for \"1-30 Days\" as 154,620,276 +/- 1.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Confirm bars are labeled correctly as in the \u201cDelinquency Pipeline\u201d chart.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7c042ade6fde405fbcd453c2e7b65cb2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caab5413bcb7469a9752d8d2aa3c69a7",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Labels the bar for \"31-90 Days\" as 57,787,641 +/- 1.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Confirm bars are labeled correctly as in the \u201cDelinquency Pipeline\u201d chart.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_becfef7c72634d90ae551a9cef49000d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caab5413bcb7469a9752d8d2aa3c69a7",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Labels the bar for \"90+ Days\" as 46,946,492 +/- 1.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Confirm bars are labeled correctly as in the \u201cDelinquency Pipeline\u201d chart.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "eval_config_name": "Output LLM",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "4658aec9-7eeb-4c9b-84c2-5464345e345f",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_1aee4388250442c4b6d04afed7436994",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b4dcc7c5d056476a9d8a88d31d527d22",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that SB 497 would not influence any determination regarding whether SBP violated section 6310 of the California Labor Code",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "SB 497 describes itself as \u201c[a]n act to amend Sections 98.6, 1102.5, and 1197.5 of the Labor Code.\u201d It revised those specific sections to add a rebuttable presumption of retaliation for prohibited employer conduct that occurs within 90 days of a protected activity. For example, the following language was added to section 98.6: \u201cIf an employer engages in any action prohibited by this section within 90 days of the protected activity specified in this section, there shall be a rebuttable presumption in favor of the employee\u2019s claim.\u201d\n\nHowever, the prompt is asking about a potential violation of section 6310 of the Labor Code, and that section was not revised by SB 497. Accordingly, the rebuttable presumption does not apply, and SB 497 does not alter the analysis.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

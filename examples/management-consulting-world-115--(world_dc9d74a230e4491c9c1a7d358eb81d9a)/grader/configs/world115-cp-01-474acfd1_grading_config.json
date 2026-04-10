@@ -1,0 +1,220 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_de7bbf86af7e44cf927076a541f7f8ec",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_474acfd11f584c168f2d561915f68631",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "Creates a new tab labeled \"Alternate Scenario Metrics\"",
+        "modality": "Free text",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fcf47ed268684a87a6f542620ab57219",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_474acfd11f584c168f2d561915f68631",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the alternate scenario Year 10 revenue is $124.91M (acceptable range $123.66 to $126.16)",
+        "modality": "Free text",
+        "negative_criteria": "",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ba75d1cbc6064c3cbc7715a7f9522501",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_474acfd11f584c168f2d561915f68631",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the alternate scenario Year 10 Gross Profit is $104.91M (acceptable range $103.86 to $105.96)",
+        "modality": "Free text",
+        "negative_criteria": "",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_173d6e20eb204bb3a4ee8988af2377a6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_474acfd11f584c168f2d561915f68631",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the alternate scenario Year 10 EBITDA is $96.69M (acceptable range $95.72 to $97.66)",
+        "modality": "Free text",
+        "negative_criteria": "",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_564a5cf7e0d94931931fcbbe6b1738d9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_474acfd11f584c168f2d561915f68631",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the alternate scenario Year 10 Net Income as $47.51M (acceptable range $47.03 to $47.99)",
+        "modality": "Free text",
+        "negative_criteria": "",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ea3d7d5f6af5411e9bd6deaa1497850f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_474acfd11f584c168f2d561915f68631",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the alternate scenario Year 10 Free Cash Flow is $60.51M (acceptable range $59.90 to $61.12)",
+        "modality": "Free text",
+        "negative_criteria": "",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_31c44959249243f0b4a37592eb498c69",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_474acfd11f584c168f2d561915f68631",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the alternate scenario Year 10 TV is $954.26M (acceptable range $944.72 to $963.80)",
+        "modality": "Free text",
+        "negative_criteria": "",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f272e6aa8d204ec3bccbf88c6ffbba02",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_474acfd11f584c168f2d561915f68631",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the alternate scenario NPV is $206.25M (acceptable range $204.19 to $208.31)",
+        "modality": "Free text",
+        "negative_criteria": "",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7a26ea31460f43bba0cbf55bf634e2aa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_474acfd11f584c168f2d561915f68631",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the alternate scenario IRR is 15.03% (acceptable range 14.88% to 15.18%)",
+        "modality": "Free text",
+        "negative_criteria": "",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

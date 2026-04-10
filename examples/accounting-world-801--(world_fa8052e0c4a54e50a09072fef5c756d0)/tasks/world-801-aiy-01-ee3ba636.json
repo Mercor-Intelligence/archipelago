@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Change the following metrics in the tax exposure calculation:\n1.\t2021 – 2023 gross margin to 34%.\n2.\tFixed asset book straight line depreciation period to 6 years for all asset classes.\nCalculate the net taxable income increase for the years 2021, 2022, and 2023.\nFormat: Dollar figures to zero decimal places.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States 2021 net taxable income increase  is $12,998,200 (acceptable range... (ver_90df8ef36d7e4761a69e26243b528cd3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2021 net taxable income increase  is $12,998,200 (acceptable range $12,998,201 to $12,998,199)."
+        }
+      ]
+    },
+    {
+      "name": "States 2022 net taxable income increase  is $5,715,767 (acceptable range... (ver_0e52c95ec4034598bc7a1c20a9841ca3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2022 net taxable income increase  is $5,715,767 (acceptable range $5,715,766 to $5,715,768)."
+        }
+      ]
+    },
+    {
+      "name": "States 2023 net taxable income increase is -$618,900 (acceptable range... (ver_6ef1fe28e1ce401b8f5ca46cd98502b4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2023 net taxable income increase is -$618,900 (acceptable range -$618,901 to -$618,899)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-801-aiy-01-ee3ba636"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_ee3ba6362af04f47ae4f3bd8281aa27a",
+    "task_name": "World-801-AIY-01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_6ed7672257f54937b150328eb4eededa",
+        "golden_text_response": "2021 net taxable income increase  is $12,998,200\n2022 net taxable income increase  is $5,715,767\n2023 net taxable income increase is -$618,900\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

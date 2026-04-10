@@ -1,0 +1,76 @@
+[arco]
+source = "foundry_app"
+name = "Calendar"
+version = "1.0.0"
+
+[arco.env.host]
+REPO_URL = "https://github.com/Mercor-Intelligence/mercor-rls-calendar.git"
+BUILD_IMAGE = ""
+DEST_DIR = "./src/views"
+ENVIRONMENT_IMAGE = "archipelago-environment:test"
+OSTYPE = ""
+RLS_GITHUB_READ_TOKEN = ""
+SRC_DIR = "../rls-ui"
+
+[arco.env.build]
+
+[arco.env.runtime]
+MCP_TRANSPORT = "http"
+MCP_PORT = "5000"
+HAS_STATE = "true"
+APP_FS_ROOT = "/filesystem"
+STATE_LOCATION = "/.apps_data/calendar"
+USE_INDIVIDUAL_TOOLS = "true"
+INTERNET_ENABLED = "false"
+APP_APPS_DATA_ROOT = "/.apps_data"
+APP_CALENDAR_DATA_ROOT = "/.apps_data/calendar"
+APP_CALENDAR_LIST_DEFAULT_LIMIT = "50"
+APP_CALENDAR_LIST_MAX_LIMIT = "100"
+
+[arco.env.runtime.schema.USE_INDIVIDUAL_TOOLS]
+type = "bool"
+label = "Use individual tools"
+description = "Enable individual tools for UI instead of consolidated meta-tools for LLMs"
+
+[arco.secrets.host]
+GITHUB_TOKEN = "RLS_GITHUB_READ_TOKEN"
+
+[arco.secrets.build]
+
+[arco.secrets.runtime]
+
+# Error injection scenarios for testing agent robustness
+[[arco.error_injection_scenarios]]
+name = "api_timeout"
+description = "Simulates calendar API timeout during event operations"
+error_rules = [
+    { error_type = "timeout", tool = "*", probability = 1.0, message = "Request timed out: The calendar service did not respond within the expected time. Please try again." },
+]
+
+[[arco.error_injection_scenarios]]
+name = "rate_limit"
+description = "Simulates calendar API rate limiting when quota is exceeded"
+error_rules = [
+    { error_type = "rate_limit", tool = "*", probability = 1.0, message = "Rate limit exceeded: Too many requests to calendar service. Please wait before retrying." },
+]
+
+[[arco.error_injection_scenarios]]
+name = "permission_denied"
+description = "Simulates access denied errors when user lacks calendar permissions"
+error_rules = [
+    { error_type = "permission_denied", tool = "*", probability = 1.0, message = "Permission denied: You do not have access to this calendar resource. Request access from the calendar owner." },
+]
+
+[[arco.error_injection_scenarios]]
+name = "server_error"
+description = "Simulates calendar service internal server errors"
+error_rules = [
+    { error_type = "server_error", tool = "*", probability = 1.0, message = "Internal server error: Calendar service encountered an unexpected error. Please try again later." },
+]
+
+[[arco.error_injection_scenarios]]
+name = "malformed_response"
+description = "Simulates corrupted or unexpected responses from calendar service"
+error_rules = [
+    { error_type = "malformed_response", tool = "*", probability = 1.0, message = "Malformed response: The calendar service returned an unexpected data format. The event data may be corrupted." },
+]

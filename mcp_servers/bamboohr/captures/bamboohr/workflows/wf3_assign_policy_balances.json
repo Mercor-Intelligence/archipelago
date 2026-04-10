@@ -1,0 +1,22 @@
+{
+  "name": "Assign Policy & View Balances",
+  "pdf_page": 3,
+  "steps": [
+    {
+      "step": 1,
+      "action": "Navigate to Settings > Time Off"
+    },
+    {
+      "step": 2,
+      "action": "Click Salary Employees policy"
+    },
+    {
+      "step": 3,
+      "action": "Open assign employees modal (assign_policy)"
+    },
+    {
+      "step": 4,
+      "action": "Employee Time Off tab (get_employee_policies)"
+    }
+  ]
+}

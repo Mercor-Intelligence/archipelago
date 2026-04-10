@@ -1,0 +1,105 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "In a new Word document, evaluate the attached new district court complaint. Conduct legal research on governing law within the Ninth Circuit, and prepare an outline identifying the factual weaknesses in the temporal proximity argument."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that Anthony Porter’s OSHA 11(c) retaliation complaint relies solely on... (ver_50a70b6d8cd44b34b9c06e4444e328d8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Anthony Porter’s OSHA 11(c) retaliation complaint relies solely on temporal proximity to prove a causal nexus between his protected activity - the October 13, 2025 OSHA safety complaint, and his November 4, 2025 discharge."
+        }
+      ]
+    },
+    {
+      "name": "States that Porter’s discharge was caused by the November 3, 2025 performance... (ver_2d333bd775be4f11810ae64cda7957b7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Porter’s discharge was caused by the November 3, 2025 performance evaluation, in which Jordan McAllister recommended discharge for continuing performance deficiencies."
+        }
+      ]
+    },
+    {
+      "name": "States that the timing of November 3, 2025 performance evaluation was dictated... (ver_0b5764a3f141400cb003fad986f16037)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the timing of November 3, 2025 performance evaluation was dictated by employer policy, which required that the evaluation would be conducted in the first week of November, 2025."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world437-mmf-02-4f55a5a1"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_4f55a5a13c204d0a875ee9d34d12d2b7",
+    "task_name": "World437_MMF_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c56d2b050328468aa613c42f2071fe72",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_8fe219358f7d4d68a4d02eb5d361dd91"
+      },
+      {
+        "golden_response_id": "gold_59d51273bf1a4bc6b1c52c01a7be3b12",
+        "golden_text_response": "See attached.",
+        "golden_file_responses": "snap_8fe219358f7d4d68a4d02eb5d361dd91"
+      }
+    ]
+  }
+}

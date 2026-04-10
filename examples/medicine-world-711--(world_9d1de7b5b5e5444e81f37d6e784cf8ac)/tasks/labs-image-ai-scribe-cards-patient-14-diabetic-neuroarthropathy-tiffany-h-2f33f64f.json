@@ -1,0 +1,376 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “cards_patient 14” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n------\n\nPrompt: A 55-year-old man is complaining of left ankle swelling and redness. His vitals are normal. There is no skin ulceration or point tenderness on physical exam. There is a small joint effusion over the left ankle. The ankle X-ray is unchanged from prior. Given his clinical scenario, what is the next recommended diagnostic test to further evaluate the patient's condition? What treatment should be initiated at this time? Briefly explain your response."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient has unilateral ankle swelling. (ver_42b65b254bd440f99c063814c569d264)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has unilateral ankle swelling."
+        }
+      ]
+    },
+    {
+      "name": "States that the arthrocentesis with synovial fluid analysis does not reveal... (ver_9f72201b6d92438ea234cf7cae008926)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the arthrocentesis with synovial fluid analysis does not reveal any abnormalities."
+        }
+      ]
+    },
+    {
+      "name": "States that infectious causes are unlikely to be causing the patient’s symptoms. (ver_4f696b5a612b49dc9a708fd03bd146d1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that infectious causes are unlikely to be causing the patient’s symptoms."
+        }
+      ]
+    },
+    {
+      "name": "States that crystalline arthropathy is unlikely to be causing the patient’s... (ver_392150b611b94594a5358f7618249f38)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that crystalline arthropathy is unlikely to be causing the patient’s symptoms."
+        }
+      ]
+    },
+    {
+      "name": "States that the left ankle xray shows moderate to severe ankle osteoarthritis. (ver_1861a5dd8ffa41a88e773cdfd93451c9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the left ankle xray shows moderate to severe ankle osteoarthritis."
+        }
+      ]
+    },
+    {
+      "name": "States that osteoarthritis does not commonly cause redness or swelling. (ver_4ab311b2d56d4ebea337bc1cb3e5ca09)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that osteoarthritis does not commonly cause redness or swelling."
+        }
+      ]
+    },
+    {
+      "name": "States that osteoarthritis is unlikely to be causing the patient’s symptoms. (ver_bdfeb568d2db4f00bfbc52d057dd4ca6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that osteoarthritis is unlikely to be causing the patient’s symptoms."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has no history of autoimmune disease. (ver_ee66969df1a84e85863a04f4d2fedbf8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has no history of autoimmune disease."
+        }
+      ]
+    },
+    {
+      "name": "States that there is a mild elevation in the patient's inflammatory markers. (ver_e5f57a676d164a9c80da0c154fde4789)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that there is a mild elevation in the patient's inflammatory markers."
+        }
+      ]
+    },
+    {
+      "name": "States that inflammatory arthritis is unlikely to be causing the patient’s... (ver_3da6756c24ca43ebaf259d19d710efc3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that inflammatory arthritis is unlikely to be causing the patient’s symptoms."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has uncontrolled diabetes. (ver_d8507fca52c44507b2623f259f7d8b2b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has uncontrolled diabetes."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has diabetic neuropathy. (ver_bef7954d90204b64813bfb7db81d0083)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has diabetic neuropathy."
+        }
+      ]
+    },
+    {
+      "name": "States that the most likely primary diagnosis is acute diabetic... (ver_a27062b3be534465a5009f59560681d0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the most likely primary diagnosis is acute diabetic neuroarthropathy."
+        }
+      ]
+    },
+    {
+      "name": "States that additional diagnostic tests are unnecessary when a diagnosis of... (ver_5c75a80cde0247f0b1dc8214c1a06450)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that additional diagnostic tests are unnecessary when a diagnosis of acute diabetic neuroarthropathy can be established on clinical grounds."
+        }
+      ]
+    },
+    {
+      "name": "Recommends the use of a total contact cast to be initiated. (ver_94b6b6d081324300a3c5c27a8ca38880)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recommends the use of a total contact cast to be initiated."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-cards-patient-14-diabetic-neuroarthropathy-tiffany-h-2f33f64f"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_2f33f64f37024dbaa05d1d6a0bec0e35",
+    "task_name": "Labs_Image _AI Scribe_Cards Patient 14 - Diabetic neuroarthropathy - Tiffany H",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_a16d96750ee046c6aff5d50ea0d47ac7",
+        "golden_text_response": "Given his clinical scenario, what is the next recommended diagnostic test to further evaluate the patient's condition? Assuming the diagnostic test does not reveal any abnormalities, should treatment be initiated at this time? Briefly explain your response.\n\nThe patient is currently experiencing a warm, red, swollen left ankle with a small joint effusion.  When a joint effusion is present, arthrocentesis with synovial fluid analysis should be performed to rule out infection.  This would be the next diagnostic test to further evaluate the patient's condition. Since we are assuming the synovial fluid analysis does not reveal any abnormalities, then infectious causes of unilateral joint swelling as well as crystalline arthropathy can be excluded.  Alternative causes of the patient's symptoms must be considered.\n\nHis prior ankle x-ray shows moderate to severe osteoarthritis; however, osteoarthritis does not commonly cause redness and warmth.  He has no past medical history of autoimmune disease, and only a mild elevation in one of his inflammatory markers (CRP is mildly elevated, ESR is normal). The swelling is isolated to one joint. Hence, this makes inflammatory arthritis unlikely.  This patient with a history of uncontrolled diabetes as evidenced by a hemoglobin A1C of 7.9% and 8.5% in the past year. He is also complaining of tingling in his feet which has been present for a \"long time\". Along with his other risk factors ( i.e. hypertension, hyperlipidemia, chronic alcohol use, elevated hemoglobin A1C), this suggests the patient has diabetic neuropathy. Since he is presenting with unilateral swelling, warmth, and redness in his left ankle that cannot be attributed to an alternative explanation, acute diabetic neuroarthropathy is the most likely primary diagnosis. \n\nAdditional diagnostic tests are not required to confirm the diagnosis, so treatment of the patient's acute diabetic neuroarthropathy should be initiated at this time. The treatment for acute diabetic neuroarthropathy in patients who present with swelling, redness, and/or warmth of the affected joint is the use of a total contact cast for offloading and immobilization.\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

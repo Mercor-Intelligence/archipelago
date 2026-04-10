@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Following the completion of an enterprise-wide compensation benchmarking initiative, SingleSignal will operationalize the recommended salary adjustments. Leveraging the base salaries contained in Employee Roster_Enhanced.xlsx and attached benchmarking recommendation, perform recalibration of employee compensation for the forthcoming fiscal year. Subsequently, report the resulting annual incremental salary cost (in USD) via console message.\n\nRound the final answer to the nearest integer. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the resulting annual incremental salary cost, based on the... (ver_084dd258253a4c6687da8a34da0e42b5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the resulting annual incremental salary cost, based on the recommended adjustments from the compensation benchmarking exercise, is $871,510 (acceptable range $862,795 to $880,225)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world601-pj-task-02-ce4fbdc6"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_ce4fbdc6aa5143208f4591ac51c84f2d",
+    "task_name": "World601_PJ_Task 02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_bf08e6d2caca458e8ef1d9304d42564e",
+        "golden_text_response": "The resulting annual incremental salary cost, based on the recommended adjustments from the compensation benchmarking exercise, is $871,510.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

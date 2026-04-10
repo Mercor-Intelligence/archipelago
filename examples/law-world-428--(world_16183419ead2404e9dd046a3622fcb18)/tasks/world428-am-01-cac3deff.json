@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The updated plans for the 344 W Bonita project show a total building square footage of 150,000 square feet. The planned commercial building square footage is unchanged from the terms in the project term sheet. It is discovered that before the current structures on the property were built, an endangered species lived in a single tree which was cut down, and the species was pushed out unlawfully by the previous developers. Is the current 344 W Bonita project still eligible for the Sustainable Communities Project Exemption?"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the 344 W Bonita Project is eligible for the Sustainable... (ver_67abf7c51e3b4a498ea76fb7ee22de1f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 344 W Bonita Project is eligible for the Sustainable Communities Project Exemption."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world428-am-01-cac3deff"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_cac3deffaaaf4d9fa1173518f215bfd7",
+    "task_name": "World428_AM_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_b22c47d47e214d75bc7f8c3bcbde62d3",
+        "golden_text_response": "The 344 W Bonita Project is eligible for the Sustainable Communities Project Exemption as it no longer holds significant value as a wildlife habitat.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

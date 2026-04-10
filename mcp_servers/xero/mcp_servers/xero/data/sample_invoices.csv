@@ -1,0 +1,4 @@
+InvoiceID,Type,InvoiceNumber,Status,Date,DueDate,CurrencyCode,SubTotal,TotalTax,Total,AmountDue,AmountPaid,AmountCredited,Contact.ContactID,Contact.Name,LineItems.0.Description,LineItems.0.Quantity,LineItems.0.UnitAmount,LineItems.0.LineAmount,LineItems.0.AccountCode,LineItems.0.TaxType,LineItems.0.TaxAmount
+csv-inv-001,ACCREC,INV-CSV-001,AUTHORISED,2024-11-01,2024-12-01,USD,1000.0,0.0,1000.0,1000.0,0.0,0.0,csv-001,Acme Corporation,Professional Services,10,100.0,1000.0,200,NONE,0.0
+csv-inv-002,ACCREC,INV-CSV-002,PAID,2024-10-01,2024-11-01,USD,500.0,0.0,500.0,0.0,500.0,0.0,csv-002,Beta Industries,Consulting,5,100.0,500.0,200,NONE,0.0
+

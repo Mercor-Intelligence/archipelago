@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "I've got this Tableau workbook 'RetailSales.twbx' from the team, which contains monthly seasonally adjusted US retail sales from the Federal Reserve economic data service.  Given that retail has been identified as the second riskiest sector in our loan book, I would like to understand the relationship between our retail sector loan portfolio and broad US retail sales. Compute month-over-month percent change in total retail Expected_Loss_Amount (from our enriched_loan_data.csv) and US retail sales (data series named MRTSSM44000USS in the workbook) to transform them to stationary series. Note the dates of retail sales need to be properly matched to the report dates in loan data: our reports are near the end of the month and the coincident retail sales gets released on the first of next month. With this data, calculate the cross-correlation between these two variables using lead/lag times of -2 months to 2 months. That means calculate the correlation coefficient of change in expected loss (Y) to change in retail sales (X) shifted from -2 to +2 (including 0, positive means X leads Y). Report the correlation coefficients for each of these shifts to 3 decimals. Considering absolute coefficients in [0.3, 0.5) as weakly correlating, [0.5,0.7) as moderate, and >=0.7 as strong, identify any correlating relationships by strength and months of shift."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports the correlation coefficient at a shift of -2 as -0.192 +/- 0.005... (ver_824fe99f3c1d4edebbd20989104ac2d8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the correlation coefficient at a shift of -2 as -0.192 +/- 0.005 (acceptable range -2.02 to -1.98)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the correlation coefficient at a shift of -1 as -0.295 +/- 0.005... (ver_a27e566a643c4163bcf6cf4d634dbdd9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the correlation coefficient at a shift of -1 as -0.295 +/- 0.005 (acceptable range -1.0 to -0.99)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the correlation coefficient at a shift of 0 as 0.052 +/- 0.005. (ver_10b9fd69339446dda5591b421d139d52)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the correlation coefficient at a shift of 0 as 0.052 +/- 0.005."
+        }
+      ]
+    },
+    {
+      "name": "Reports the correlation coefficient at a shift of 1 as -0.306 +/- 0.005... (ver_7863a57b45d947bfb9fdcbd80dbe27b2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the correlation coefficient at a shift of 1 as -0.306 +/- 0.005 (acceptable range 0.99 to 1.0)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the correlation coefficient at a shift of 2 as 0.204 +/- 0.005... (ver_a1334c95df574fffbd28533203786f7e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the correlation coefficient at a shift of 2 as 0.204 +/- 0.005 (acceptable range 1.98 to 2.02)."
+        }
+      ]
+    },
+    {
+      "name": "Reports that there is a weak correlating relationship between the expected... (ver_cd12833d807e4a57bf1f6b49413b986d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that there is a weak correlating relationship between the expected retail loan loss and US retail sales at a shift of 1 month (acceptable range 0.99 to 1.0)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh tableau-task-6w330db3-2ccbf9d0"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_2ccbf9d0ec3d422b93cd0e7037898c1a",
+    "task_name": "Tableau - Task 6w330db3",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_834b8a5125ca4adeb2bc6b1ac3ba51f2",
+        "golden_text_response": "The cross-correlation table between the month-over-month change in expected retail loss amount (y) and the change in US retail sales (x) is as follows (positive = x leads y):\nShift\n-2   -0.192\n-1   -0.295\n0     0.052\n1    -0.306\n2     0.204\n\nThere is a weak correlating relationship between the expected retail loss amount and US retail sales at a shift of 1 month(s).\n\n```\nimport pandas as pd\n\nloan_data_path = 'enriched_loan_data.csv'\nretail_sales_path = 'RetailSales.csv'\n\nloan_data = pd.read_csv(loan_data_path)\nretail_data = pd.read_csv(retail_sales_path)\n\n# Parse dates\nloan_data['Report_Date'] = pd.to_datetime(loan_data['Report_Date'])\nretail_data['observation_date'] = pd.to_datetime(retail_data['observation_date'])\n\n# Get total retail expected loss\ndf = loan_data[loan_data['NAICS_Sector']=='Retail'].groupby('Report_Date')['Expected_Loss_Amount'].sum().to_frame()\n\n# Match report date to retail sales observation date\ndf['report_month'] = df.index.to_period(\"M\")\nretail_data['report_month'] = (retail_data['observation_date'] - pd.offsets.MonthBegin(1)).dt.to_period(\"M\")\n\n# Merge the two datasets\ndf = pd.merge(df, retail_data[['report_month', 'MRTSSM44000USS']], left_on='report_month', right_on='report_month')\n\n# Calc MoM pct changes\ndf['change_in_loss'] = df['Expected_Loss_Amount'].pct_change()\ndf['change_in_sales'] = df['MRTSSM44000USS'].pct_change()\n\n# Calc cross correlation\nx = df['change_in_sales']\ny = df['change_in_loss']\nshifts = range(-2,3)\ncross_correlation = pd.Series([y.corr(x.shift(k)) for k in shifts], shifts).round(3)\ncross_correlation.index.name = 'Shift'\ncross_correlation.name = 'Cross-Correlation'\n\n# Print results\nprint(f\"The cross-correlation table between the month-over-month change in expected retail loss amount (y) and the change in US retail sales (x) is as follows (positive = x leads y):\\n{cross_correlation}\\n\")\n\nfor lag, corr in cross_correlation.items():\n    abs_corr = abs(corr)\n    sign_corr = \"positive\" if corr > 0 else \"negative\"\n    strength = None\n\n    if abs_corr >= 0.7:\n        strength = \"strong\"\n    elif abs_corr >= 0.5:\n        strength = \"moderate\"\n    elif abs_corr >= 0.3:\n        strength = \"weak\"\n\n    if strength:\n        print(f\"There is a {strength} correlating relationship between the expected retail loss amount and US retail sales at a shift of {lag} month(s).\")\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

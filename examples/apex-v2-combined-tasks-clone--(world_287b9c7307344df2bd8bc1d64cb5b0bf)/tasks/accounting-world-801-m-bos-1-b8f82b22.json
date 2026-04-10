@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Referencing the Redwood Assets document in Xero, determine the absolute difference in total fixed assets between what Redwood reported as Fixed Asset Summary in the Audited Tax file, and what is showing up in Xero. Output the discrepancy values for FY2021, FY2022, and FY2023.  Present values in absolute $ terms. Round all values to two decimals.\n\nNote: Include assets in both registered and draft status in the assets document on Xero."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the absolute difference in total fixed assets for FY2021 is is... (ver_14226b82de7c42538a0ac35fd40c7663)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the absolute difference in total fixed assets for FY2021 is is $34,169,491.22 (acceptable range $33,827,796.31 to $34,511,186.13)."
+        }
+      ]
+    },
+    {
+      "name": "States the absolute difference in total fixed assets for FY2022 is... (ver_486a35ea47514087ae30c749b56b05ed)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the absolute difference in total fixed assets for FY2022 is $40,097,069.63 (acceptable range $39,696,098.93 to $40,498,040.33)."
+        }
+      ]
+    },
+    {
+      "name": "States the absolute difference in total fixed assets for FY2023 is... (ver_51e44f6531b94a12b33026ac19bc33d4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the absolute difference in total fixed assets for FY2023 is $3,157,437.85 (acceptable range $3,125,863.47 to $3,189,012.23)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh accounting-world-801-m-bos-1-b8f82b22"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_287b9c7307344df2bd8bc1d64cb5b0bf",
+    "world_name": "Apex v2 - Combined Tasks Clone",
+    "task_id": "task_b8f82b22aa8e45f4af6b003778d83a3e",
+    "task_name": "Accounting World 801 - M Bos - 1",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_7e345e0bf198402ab13b58a23dc8339b",
+        "golden_text_response": "States the absolute difference in total fixed assets for FY2021 is is $34,169,491.22\nStates the absolute difference in total fixed assets for FY2022 is $40,097,069.63\nStates the absolute difference in total fixed assets for FY2023 is $3,157,437.85",
+        "golden_file_responses": "snap_88bce721b7464f4d91c1aa59748e15dc"
+      }
+    ]
+  }
+}

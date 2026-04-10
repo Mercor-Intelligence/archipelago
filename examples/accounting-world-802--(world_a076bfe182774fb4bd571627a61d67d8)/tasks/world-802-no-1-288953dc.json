@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Apply the FY2024 adjusted journal entries against the FY2024 trial balance to create an adjusted trial balance. Report the total debit and credit balance of the adjusted trial balance.\n\nOutput the following ratios, referencing only accounts on the adjusted trial balance that can be found on the chart of accounts on Xero. Where the trial balance uses sub-accounts, map them to the corresponding parent account in the chart of accounts. For these ratios, treat debt as total liabilities and equity as the balance sheet equity accounts only.\n• Debt-to-Assets\n• Debt-to-Equity\n• Equity Ratio\n\nRound all values to two decimal places, express monetary units in $mm"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the total credit balance of the adjusted trial balance is $500.46mm... (ver_eb59a93b45034535a2273dcfac355193)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the total credit balance of the adjusted trial balance is $500.46mm (acceptable range $495.46 to $505.46)."
+        }
+      ]
+    },
+    {
+      "name": "States the total debit balance of the adjusted trial balance is $500.46mm... (ver_6f95a0195357447b88c8f0a5dd70e003)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the total debit balance of the adjusted trial balance is $500.46mm (acceptable range $495.46 to $505.46)."
+        }
+      ]
+    },
+    {
+      "name": "States the debt-to-asset ratio of the adjusted trial balance is 1.34x... (ver_bfdf4ca098bd48a290eabb69e53a0b70)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the debt-to-asset ratio of the adjusted trial balance is 1.34x (acceptable range 1.33 to 1.35)."
+        }
+      ]
+    },
+    {
+      "name": "States the debt-to-equity ratio of the adjusted trial balance is 2.16x... (ver_761f2cfaaa1a4a83b0425f505d3e2212)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the debt-to-equity ratio of the adjusted trial balance is 2.16x (acceptable range 2.14 to 2.18)."
+        }
+      ]
+    },
+    {
+      "name": "States the equity ratio of the adjusted trial balance is 0.62x (acceptable... (ver_6676ee6584874113be86b705100c6894)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the equity ratio of the adjusted trial balance is 0.62x (acceptable range 0.61 to 0.63)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-802-no-1-288953dc"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_a076bfe182774fb4bd571627a61d67d8",
+    "world_name": "Accounting World 802",
+    "task_id": "task_288953dc335d442f92eace28209b5d05",
+    "task_name": "World 802_NO_1",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_a044a1fd38f841ceb8d53e82d0c653b6",
+        "golden_text_response": "1. States the total credit balance of the adjusted trial balance is $500.46mm\n2. States the total debit balance of the adjusted trial balance is $500.46mm\n3. States the debt-to-asset ratio of the adjusted trial balance is 1.34x\n4. States the debt-to-equity ratio of the adjusted trial balance is 2.16x\n5. States the equity ratio of the adjusted trial balance is 0.62x",
+        "golden_file_responses": "snap_ec36160750fb4f5b800e0ceef2cc681a"
+      }
+    ]
+  }
+}

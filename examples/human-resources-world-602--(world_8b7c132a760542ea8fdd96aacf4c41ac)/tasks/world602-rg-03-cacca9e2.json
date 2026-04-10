@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "In the Greenhouse application, please assess the top 2 highest-performing recruiters with the lowest average AHT (in hours) for rejected candidates. For the top-performing recruiter, report the total number of active applications.\n\nWe now need to move these candidates to a recruiter with the second-lowest AHT for rejected candidates to free up the top-performing recruiter's capacity for our MBA recruitment campaign. As there is no direct functionality to update applications, please move them to the Reject status, then create a new application with the updated recruiter reference while keeping all other details the same.\n\nAfter completion, to QC the data, report the number of active applications for the recruiter with the second-lowest AHT for rejected candidates that are both from Fort Wayne and have coordinator_id 2.\n\nPlease report your answer directly in console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the total number of active applications for the top-performing... (ver_0f7a3c2418134414ad69169174ae2e73)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of active applications for the top-performing recruiter is 42."
+        }
+      ]
+    },
+    {
+      "name": "States that reassigning the top-performing recruiter's active applications to... (ver_05939847186a4f0dafdbf5cee1062b9b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that reassigning the top-performing recruiter's active applications to the recruiter with the second-lowest AHT for rejected candidates in Greenhouse ATS, the number of active applications that are both from Fort Wayne and have coordinator_id 2 is 4."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world602-rg-03-cacca9e2"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_cacca9e2136c4b908ce82cc1c86618b3",
+    "task_name": "World602_RG_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_cb9f1f57ab7843118a99a330454a10c5",
+        "golden_text_response": "For the top-performing recruiter, the total number of active applications is 42.\n\nAfter reassigning the top-performing recruiter's active applications to the recruiter with the second-lowest AHT for rejected candidates in Greenhouse ATS, the number of active applications that are both from Fort Wayne and have coordinator_id 2 is 4.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

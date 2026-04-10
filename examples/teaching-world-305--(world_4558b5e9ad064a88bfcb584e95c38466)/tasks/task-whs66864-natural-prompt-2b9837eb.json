@@ -1,0 +1,243 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Create a document with a table listing students with Period 1 8th grade ELA quiz average below 74% and their quiz average, rounded to the nearest tenth decimal. Include \"#\" next to names of students who receive special education services, and include \"+\" next to names of students who do not receive special education services."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Calculates Olivia Johnson's quiz average as 67.4% in the table (acceptable... (ver_4fbbf42dea7c499ba0f41262e219fa18)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates Olivia Johnson's quiz average as 67.4% in the table (acceptable range 66.7% to 68.1%)."
+        }
+      ]
+    },
+    {
+      "name": "Calculates Olivia Johnson's quiz average as other than 67%. (ver_4fbbf42dea7c499ba0f41262e219fa18)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates Olivia Johnson's quiz average as other than 67%."
+        }
+      ]
+    },
+    {
+      "name": "Calculates Mason Brown's quiz average as 62.6% in the table (acceptable range... (ver_3f827a74711c4ab894d058bf38d841fd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates Mason Brown's quiz average as 62.6% in the table (acceptable range 62.0% to 63.2%)."
+        }
+      ]
+    },
+    {
+      "name": "Calculates Mason Brown's quiz average as a percentage other than 65%. (ver_3f827a74711c4ab894d058bf38d841fd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates Mason Brown's quiz average as a percentage other than 65%."
+        }
+      ]
+    },
+    {
+      "name": "Calculates Levi Thompson's quiz average as 71.8% in the table (acceptable... (ver_e4310928ecd04f88900723ede4d60008)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates Levi Thompson's quiz average as 71.8% in the table (acceptable range 71.1% to 72.5%)."
+        }
+      ]
+    },
+    {
+      "name": "Calculates Levi Thompson's quiz average as a percentage other than 72.5%. (ver_e4310928ecd04f88900723ede4d60008)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates Levi Thompson's quiz average as a percentage other than 72.5%."
+        }
+      ]
+    },
+    {
+      "name": "Adds a plus sign next to the name Olivia Johnson (ver_fbf68c9eec364b9abe3134d8bce288c6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Adds a plus sign next to the name Olivia Johnson."
+        }
+      ]
+    },
+    {
+      "name": "Adds a # next to the name Mason Brown (ver_868fca1f96384cc7b997cc8360c4d181)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Adds a # next to the name Mason Brown."
+        }
+      ]
+    },
+    {
+      "name": "Adds a plus sign next to the name Levi Thompson (ver_5211a788cba64834967adcfceb1fd59f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Adds a plus sign next to the name Levi Thompson."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-whs66864-natural-prompt-2b9837eb"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_2b9837eb4f2649f78a8e9a9014a60460",
+    "task_name": "Task whs66864 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_837400185367415c8b1bb97ccba9df81",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_5e76e94b2af9482586f8ae4d123830a4"
+      },
+      {
+        "golden_response_id": "gold_2f76bfabbfc14a90891fc55cf0e5bc5c",
+        "golden_text_response": "See attached.",
+        "golden_file_responses": "snap_20b8738ce31947748193a0d2ed9e0c4e"
+      }
+    ]
+  }
+}

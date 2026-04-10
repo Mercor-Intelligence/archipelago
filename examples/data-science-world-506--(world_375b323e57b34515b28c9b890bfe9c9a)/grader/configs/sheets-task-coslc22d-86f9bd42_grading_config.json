@@ -1,0 +1,220 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_d83d3186b62d403b8f056d19c60978f7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86f9bd4294d5402488a1b34a963453a5",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the total outages for 2024 to be exactly 124.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Finds the correct total number of outages for 2024",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6aa769913a3b4bf5b6b4505339679fd6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86f9bd4294d5402488a1b34a963453a5",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the percentage of outages that have high complaints in 2024 as 23.39% (+/- 0.03)",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Finds the percentage of outages that have high complaints in 2024",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_380e7798efe3472fb4af85d04a32f4d4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86f9bd4294d5402488a1b34a963453a5",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the outage_id with the most complaints in 2024 as 313.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Finds the correct outage id value that has the most complaints in 2024",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f37ad46054be4091aa045289ab5584aa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86f9bd4294d5402488a1b34a963453a5",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Editing an existing file"
+        ],
+        "weight": 1,
+        "criteria": "Creates a column chart.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Makes a column chart that shows the count of 2024 outages by complaints_48h bucket.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_19cbb354e1244aa8a59c0e7a9c5f6623",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86f9bd4294d5402488a1b34a963453a5",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Style / formatting"
+        ],
+        "weight": 1,
+        "criteria": "The x axis represents the bucket label.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Provides label clarification on chart.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_798ccfcae9504c6b953ca4b09bc711dc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86f9bd4294d5402488a1b34a963453a5",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Style / formatting"
+        ],
+        "weight": 1,
+        "criteria": "The y axis represents the outage count.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Provides label clarification on chart.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9ea6c009484e44ec9bdae11b41bb19de",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86f9bd4294d5402488a1b34a963453a5",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The column chart with the bar representing 0 complaints_48h has an outage count of exactly 20 (acceptable range 19.8 to 20.2).",
+        "autogen_source": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "This is the correct value for the bucket related to the outage count for complaints_48h in the column chart.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_25dfbab27a054ad78ff8f2622176281b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86f9bd4294d5402488a1b34a963453a5",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The column chart with the bar representing 1-2 complaints_48h has an outage count of exactly 75.\n",
+        "autogen_source": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "This is the correct value for the bucket related to the outage count for complaints_48h in the column chart.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2f384f8fa54e4143b6bbb9b483d5c07e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86f9bd4294d5402488a1b34a963453a5",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The column chart with the bar representing 3-5 complaints_48h has an outage count of exactly 28.",
+        "autogen_source": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "This is the correct value for the bucket related to the outage count for complaints_48h in the column chart.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_de73ddd7f71e4357b4d52a94c4ff2f6d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_86f9bd4294d5402488a1b34a963453a5",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "The column chart with the bar representing 6-9 complaints_48h has an outage count of exactly 1.",
+        "autogen_source": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "This is the correct value for the bucket related to the outage count for complaints_48h in the column chart.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

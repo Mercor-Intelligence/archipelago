@@ -1,0 +1,491 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the 9th-grade biology grades to:\n\nCalculate and compare the average grades for Teams 1, 2, 3, 4, and 5\n\nReport the output as a message in the console with teams ranked from highest average grade to lowest average grade, and team names with their respective average grades as percentages rounded to two decimal places"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports Team 1 average as 71.36% (acceptable range 70.65% to 72.07%) (ver_5b008e42e1b5448793cb698b6e9fcc56)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Team 1 average as 71.36% (acceptable range 70.65% to 72.07%)."
+        }
+      ]
+    },
+    {
+      "name": "Reports Team 1 average as anything other than 71.36%. (ver_5b008e42e1b5448793cb698b6e9fcc56)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Team 1 average as anything other than 71.36%."
+        }
+      ]
+    },
+    {
+      "name": "Reports Team 2 average as 86.49% (acceptable range 85.63% to 87.35%) (ver_1f296a11555a4ddb921cc67d187a57f7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Team 2 average as 86.49% (acceptable range 85.63% to 87.35%)."
+        }
+      ]
+    },
+    {
+      "name": "Reports Team 2 average as anything other than 86.49%. (ver_1f296a11555a4ddb921cc67d187a57f7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Team 2 average as anything other than 86.49%."
+        }
+      ]
+    },
+    {
+      "name": "Reports Team 3 average as 69.71% (acceptable range 69.01% to 70.41%) (ver_085fb885d6dc43fd846eceb0dea25410)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Team 3 average as 69.71% (acceptable range 69.01% to 70.41%)."
+        }
+      ]
+    },
+    {
+      "name": "Reports Team 3 average as anything other than 69.17%. (ver_085fb885d6dc43fd846eceb0dea25410)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Team 3 average as anything other than 69.17%."
+        }
+      ]
+    },
+    {
+      "name": "Reports Team 4 average as 72.93% (acceptable range 72.20% to 73.66%) (ver_5215983b539a4402b4a675c4f1e539aa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Team 4 average as 72.93% (acceptable range 72.20% to 73.66%)."
+        }
+      ]
+    },
+    {
+      "name": "Reports Team 4 average as anything other than 72.93%. (ver_5215983b539a4402b4a675c4f1e539aa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Team 4 average as anything other than 72.93%."
+        }
+      ]
+    },
+    {
+      "name": "Reports Team 5 average as 87.56% (acceptable range 86.68% to 88.44%) (ver_2b32ee97b0294a729644db8eb9e1e683)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Team 5 average as 87.56% (acceptable range 86.68% to 88.44%)."
+        }
+      ]
+    },
+    {
+      "name": "Reports Team 5 average as anything other than 87.56%. (ver_2b32ee97b0294a729644db8eb9e1e683)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Team 5 average as anything other than 87.56%."
+        }
+      ]
+    },
+    {
+      "name": "Ranks Team 5 as number 1 (highest average) (ver_111075e0aa864e63a68c998af2ef995c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Ranks Team 5 as number 1 (highest average)."
+        }
+      ]
+    },
+    {
+      "name": "Ranks Team 5 as any rank other than 1. (ver_111075e0aa864e63a68c998af2ef995c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Ranks Team 5 as any rank other than 1."
+        }
+      ]
+    },
+    {
+      "name": "Ranks Team 2 as number 2 (second highest average) (ver_9b5d536f51b94dff9d1995e9b4059e93)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Ranks Team 2 as number 2 (second highest average)."
+        }
+      ]
+    },
+    {
+      "name": "Ranks Team 2 as any rank other than 2. (ver_9b5d536f51b94dff9d1995e9b4059e93)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Ranks Team 2 as any rank other than 2."
+        }
+      ]
+    },
+    {
+      "name": "Ranks Team 4 as number 3 (third highest average) (ver_32679b5af2db4d388414375934c69e9f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Ranks Team 4 as number 3 (third highest average)."
+        }
+      ]
+    },
+    {
+      "name": "Ranks Team 4 as any rank other than 3. (ver_32679b5af2db4d388414375934c69e9f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Ranks Team 4 as any rank other than 3."
+        }
+      ]
+    },
+    {
+      "name": "Ranks Team 1 as number 4 (fourth highest average) (ver_e8847fbbd1384fcd94fde86a923fbeaa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Ranks Team 1 as number 4 (fourth highest average)."
+        }
+      ]
+    },
+    {
+      "name": "Ranks Team 1 as any rank other than 4. (ver_e8847fbbd1384fcd94fde86a923fbeaa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Ranks Team 1 as any rank other than 4."
+        }
+      ]
+    },
+    {
+      "name": "Ranks Team 3 as number 5 (lowest average) (ver_9a6d4ec02209440083b2050acef92113)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Ranks Team 3 as number 5 (lowest average)."
+        }
+      ]
+    },
+    {
+      "name": "Ranks Team 3 as any rank other than 5. (ver_9a6d4ec02209440083b2050acef92113)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Ranks Team 3 as any rank other than 5."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world306-jmh-02-natural-prompt-64b5ef60"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_576565f6cc9649d7b3d56ec4763d3f7e",
+    "world_name": "Teaching World 306",
+    "task_id": "task_64b5ef6076ac417aaa31ad624e2af046",
+    "task_name": "World306_JMH_02 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f7d61084d73a4ef58c0054692e1af2ae",
+        "golden_text_response": "1. Team 5: 87.56%\n2. Team 2: 86.49%\n3. Team 4: 72.93%\n4. Team 1: 71.36%\n5. Team 3: 69.71%",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

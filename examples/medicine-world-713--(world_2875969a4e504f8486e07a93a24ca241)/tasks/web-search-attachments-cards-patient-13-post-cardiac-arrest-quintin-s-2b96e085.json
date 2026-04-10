@@ -1,0 +1,238 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 13” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nCards Patient 13 underwent cardiopulmonary resuscitation in the outside hospital setting. The patient collapsed by their loved one and received immediate cardiopulmonary resuscitation from the family member. The emergency medical services team arrived, shocked the patient, and achieved return of spontaneous circulation after two shocks were delivered along with one round of cardiac arrest dosed epinephrine. Upon arrival to the emergency department the patient had a GCS of 3 and was intubated. \n\nWhat imaging should this patient undergo immediately once they are stable? \nThe current attending on staff wants to keep the pCO2 in a range of 50-55 mmHg. Based on current guidelines as of 1/12/26, what change(s) should be made to the patient’s ventilation status based on the blood gas, if any, and why? \nWhat should the body temperature goal be for this patient? \nUse the latest and most clinically appropriate guidelines as of 01/12/2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Utilizes the \"2025 American Heart Association Guidelines for Cardiopulmonary... (ver_f950ad92e2464dcb971dbdc9dae0279e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Utilizes the \"2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care\" or the \"European Resuscitation Council and European Society of Intensive Care Medicine Guidelines 2025 Post-Resuscitation Care.\"."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient should undergo a computed tomography (CT) scan of... (ver_6d407ca1ac2e4ab4bbbe5eec83ccd185)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient should undergo a computed tomography (CT) scan of their head."
+        }
+      ]
+    },
+    {
+      "name": "States the patient should undergo a CT scan of their chest. (ver_4a1308287cbd4d30ac372e1bbbffcc4f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient should undergo a CT scan of their chest."
+        }
+      ]
+    },
+    {
+      "name": "States the patient should undergo a CT scan of their abdomen. (ver_721aa8fa8cea41a2b0dc58e5b6cf727f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient should undergo a CT scan of their abdomen."
+        }
+      ]
+    },
+    {
+      "name": "States the patient should undergo a CT scan of their pelvis. (ver_469b57fdbbd246c19f777119cffdecf3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient should undergo a CT scan of their pelvis."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has a history of pericardial effusion during their... (ver_469ab67e926643e4a8f6d37909ce79cb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has a history of pericardial effusion during their past treatment with chemotherapy."
+        }
+      ]
+    },
+    {
+      "name": "States that this patient should undergo an echocardiogram. (ver_5688aa7ffa3f4cbeafd4e6387d864649)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that this patient should undergo an echocardiogram."
+        }
+      ]
+    },
+    {
+      "name": "States that, based on the arterial blood gas results, the patient's minute... (ver_5d79503bd6da4696b87043c68d1bddab)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that, based on the arterial blood gas results, the patient's minute ventilation should be increased to reduce the partial pressure of carbon dioxide (PaCO2) to a range of 35-45 mmHg."
+        }
+      ]
+    },
+    {
+      "name": "States that the targeted temperature range for this patient is 32.0-37.5... (ver_db445afc00d34b9eaae3fde0beb6feb6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the targeted temperature range for this patient is 32.0-37.5 degrees Celsius."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-cards-patient-13-post-cardiac-arrest-quintin-s-2b96e085"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_2b96e08586c84d00b89b7ea802e127d9",
+    "task_name": "Web Search_Attachments_Cards Patient 13 - Post-cardiac arrest - Quintin S",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_53e7c84de17548a0ad694f439e3d0b09",
+        "golden_text_response": "What imaging should this patient undergo immediately once they are stable? \n- The patient should undergo a computed tomography (CT) scan of their head, chest, abdomen, and pelvis once stable. \n- Additionally, the patient has a history of pericardial effusion during their past treatment with chemotherapy. They could also undergo a bedside echocardiogram, however this should not delay a CT scan as the CT scan will provide much more information than the echocardiogram. \n\nThe current attending on staff wants to keep the pCO2 in a range of 50-55 mmHg. Based on current guidelines as of 1/12/26, what change(s) should be made to the patient’s ventilation status based on the blood gas, if any, and why? \n- Based on current guidelines the patient's minute ventilation should be increased in order to achieve a pCO2 of 35-45 mmHg as current evidence does not support a goal pCO2 of 50-55 mmHg. The TAME trial demonstrated non-inferiority of a goal pCO2 of 50-55 mmHg, however the culmination of current evidence and guidelines recommend normocapnia (pCO2 35-45 mmHg). \n\nWhat should the body temperature goal be for this patient? \n- Based on current guidelines, the target temperature for comatose patients post-cardiac arrest ranges from 32.0-37.5 degrees celsius depending on the guideline (AHA versus ESICM). \n\nGuideline: AHA Post-Arrest Care Guideline 2025 (https://www.ahajournals.org/doi/10.1161/CIR.0000000000001375) \nGuideline: ESICM Post-Arrest Care Guideline 2025 (https://www.resuscitationjournal.com/article/S0300-9572(25)00321-1/fulltext) ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

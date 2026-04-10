@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use the subscriber_plans, subscription_plans and data_usage_daily tables for the analysis. The subscriber_plans table details the current plan assignments of subscribers. The subscription_plans table contains information about service plan catalog with pricing tiers and features. The data_usage_daily table records daily data consumption with app categorization. Analyze the daily data usage of all subscribers while they were active on the current plans and the plans were effective. If contract end date is NULL, it means the contract hasn't ended. Subscribers can stay active on legacy plans even after the plans were discontinued, and the plans are still effective for them. Across all usage ids where overage (exceeding the plan's data limit) occurred, report the mean and median values of the daily overage charges, rounded to the nearest integer. Use data_usage_daily.overage_mb as the source of overage. Furthermore, group subscribers without unlimited data into three categories based on their current plan's data allowance: low (<=10GB), medium (10GB<limit<=30GB) and high (>30GB). For each of the three groups, report the percentage of all distinct subscribers who experienced overage, in % value rounded to one decimal point. Treat 1GB = 1000MB for all calculations in this analysis. Perform the analysis using SQLite. Provide the SQL script along with the results."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Report the mean value of the overage charges as 103 +/- 2 (ver_4130d3d53c3a4a9598cced4ae580f785)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report the mean value of the overage charges as 103 +/- 2."
+        }
+      ]
+    },
+    {
+      "name": "Report the median value of the overage charges as 36 +/- 2 (ver_a6cdae1abcfd4c3ca9e1a17f572c365a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report the median value of the overage charges as 36 +/- 2."
+        }
+      ]
+    },
+    {
+      "name": "Report 2.7% +/- 0.2% of subscribers in the low group experienced overage... (ver_37232f9933714c409d3ac8e30ffef178)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report 2.7% +/- 0.2% of subscribers in the low group experienced overage (acceptable range 2.67% to 2.73%)."
+        }
+      ]
+    },
+    {
+      "name": "Report 2.3% +/- 0.2% of subscribers in the medium group experienced overage... (ver_1b8e89c3afe44d10a87aaabf2f7d175f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report 2.3% +/- 0.2% of subscribers in the medium group experienced overage (acceptable range 2.28% to 2.32%)."
+        }
+      ]
+    },
+    {
+      "name": "Report 2.1% +/- 0.2% of subscribers in the high group experienced overage... (ver_0afd48d2728849bc913bf26f2b3a27ac)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Report 2.1% +/- 0.2% of subscribers in the high group experienced overage (acceptable range 2.08% to 2.12%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sql-task-g2zqf864-b2d220f8"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_b2d220f8c95140b8b7e83bd6ae2606f0",
+    "task_name": "SQL - Task g2zqf864",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_91cf6f9ab44141efa4d6e37c0f972348",
+        "golden_text_response": "overage_charge_mean \n103\n\noverage_charge_median\n36\n\nallowance_group pct_wtOverage\nhigh 2.1%\nlow 2.7%\nmedium 2.3%\n\n```\n-- Part 1: calculate the mean of overage charges\nwith subscriber_plan_details as (\n  select sp.subscriber_id, sp.activation_date, sp.contract_end_date,\n    p.data_allowance_gb, p.overage_rate_per_gb, p.effective_date\n  from subscriber_plans as sp\n  left join subscription_plans as p\n  on sp.plan_id = p.plan_id\n),\n\n-- join with the data usage, ensuring the subscriber was active on the current plan and the plan was effective\nsubscriber_plan_usage as (\n  select spd.*,\n    dud.usage_date, dud.overage_mb,\n    spd.overage_rate_per_gb * dud.overage_mb / 1000.0 as overage_charge\n  from subscriber_plan_details as spd\n  left join data_usage_daily as dud\n  on spd.subscriber_id = dud.subscriber_id\n    and spd.activation_date <= dud.usage_date\n    and ((spd.contract_end_date is NULL) or dud.usage_date <= spd.contract_end_date)\n    and spd.effective_date <= dud.usage_date\n)\n\n-- report mean value of the overage charges when there was overage\nselect printf('%d', round(avg(overage_charge))) as overage_charge_mean\nfrom subscriber_plan_usage\nwhere overage_mb > 0;\n```\n\n```\n-- Part 2: calculate the median of overage charges\nwith subscriber_plan_details as (\n  select sp.subscriber_id, sp.activation_date, sp.contract_end_date,\n    p.data_allowance_gb, p.overage_rate_per_gb, p.effective_date\n  from subscriber_plans as sp\n  left join subscription_plans as p\n  on sp.plan_id = p.plan_id\n),\n\n-- join with the data usage, ensuring the subscriber was active on the current plan and the plan was effective\nsubscriber_plan_usage as (\n  select spd.*,\n    dud.usage_date, dud.overage_mb,\n    spd.overage_rate_per_gb * dud.overage_mb / 1000.0 as overage_charge\n  from subscriber_plan_details as spd\n  left join data_usage_daily as dud\n  on spd.subscriber_id = dud.subscriber_id\n    and spd.activation_date <= dud.usage_date\n    and ((spd.contract_end_date is NULL) or dud.usage_date <= spd.contract_end_date)\n    and spd.effective_date <= dud.usage_date\n),\n\n-- report median values of the overage charges when there was overage\nsubscriber_plan_usage_filter as (\n  select *\n  from subscriber_plan_usage\n  where overage_mb > 0\n)\n\nselect\n  printf('%d', round(avg(overage_charge))) as overage_charge_median\nfrom (\n    select overage_charge\n    from subscriber_plan_usage_filter\n    order by overage_charge\n    limit 2 - (select count(*) from subscriber_plan_usage_filter) % 2\n    offset (select (count(*) - 1) / 2 from subscriber_plan_usage_filter)\n);\n```\n\n```\n-- Part 3: calculate % of subscribers who experienced overage\nwith subscriber_plan_details as (\n  select sp.subscriber_id, sp.activation_date, sp.contract_end_date,\n    p.data_allowance_gb, p.overage_rate_per_gb, p.effective_date\n  from subscriber_plans as sp\n  left join subscription_plans as p\n  on sp.plan_id = p.plan_id\n),\n\n-- join with the data usage, ensuring the subscriber was active on the current plan and the plan was effective\nsubscriber_plan_usage as (\n  select spd.*,\n    dud.usage_date, dud.overage_mb\n  from subscriber_plan_details as spd\n  left join data_usage_daily as dud\n  on spd.subscriber_id = dud.subscriber_id\n    and spd.activation_date <= dud.usage_date\n    and ((spd.contract_end_date is NULL) or dud.usage_date <= spd.contract_end_date)\n    and spd.effective_date <= dud.usage_date\n),\n\n-- filter for subscribers without unlimited data\nsubscriber_plan_usage_filter as (\n  select *\n  from subscriber_plan_usage\n  where data_allowance_gb != 'unlimited'\n),\n\n-- add subscriber groups per data allowance\n-- also calculate the overage charge\nsubscriber_plan_group_usage as (\n  select *,\n    case\n      when cast(data_allowance_gb as real) <= 10 then 'low'\n      when cast(data_allowance_gb as real) <= 30 then 'medium'\n      else 'high'\n    end as allowance_group\n  from subscriber_plan_usage_filter\n),\n\n-- calculate whether overage occurred at the subscriber level\nsubscriber_group_overage as (\n  select allowance_group, subscriber_id, \n    case \n      when max(overage_mb) > 0 then 1\n      else 0\n    end as if_overage\n  from subscriber_plan_group_usage\n  group by allowance_group, subscriber_id\n)\n\n-- report % subscribers who had overage \nselect allowance_group, \n  printf('%.1f%%', 100.0 * sum(if_overage) / count(*)) as pct_wtOverage\nfrom subscriber_group_overage\ngroup by allowance_group;\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

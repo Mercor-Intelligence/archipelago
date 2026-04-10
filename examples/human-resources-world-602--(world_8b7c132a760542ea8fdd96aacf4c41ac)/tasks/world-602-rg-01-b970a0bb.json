@@ -1,0 +1,215 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "We are trying to determine whether the AHT of our recruitment process depends on the recruiter managing the applicant. Hence, using the Get application tool on Greenhouse, based on the average time between applied_at and rejected_at for each application, calculate the average AHT in hours for each recruiter for applicants that were rejected on or before 12 June 2025.\n\nProvide your answers directly in the console. Do not round intermediate calculations and round final answers to two decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that one of the recruiters with applications rejected on or before 12... (ver_ebec35c89f584a4abd03bf7eb15145ca)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the recruiters with applications rejected on or before 12 June 2025 is Rachel W."
+        }
+      ]
+    },
+    {
+      "name": "States that one of the recruiters with applications rejected on or before 12... (ver_47ca4912890848249601db9178efdcc8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the recruiters with applications rejected on or before 12 June 2025 is Maria Santos."
+        }
+      ]
+    },
+    {
+      "name": "States that one of the recruiters with applications rejected on or before 12... (ver_df664c13334c4488b36250007662b126)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the recruiters with applications rejected on or before 12 June 2025 is Michael Thompson."
+        }
+      ]
+    },
+    {
+      "name": "States that one of the recruiters with applications rejected on or before 12... (ver_63ec33a083964242aee04eb7f1a68e83)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the recruiters with applications rejected on or before 12 June 2025 is David Rodriguez."
+        }
+      ]
+    },
+    {
+      "name": "States that the average AHT for Rachel W for applications that were rejected... (ver_e9be8313ac6646af87d29248f0a12e19)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average AHT for Rachel W for applications that were rejected on or before 12 June 2025 is 822.29 hours (acceptable range 814.07 to 830.51)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average AHT for Maria Santos for applications that were... (ver_f7a8f9ed11da459cabbfeb805dcbf8b9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average AHT for Maria Santos for applications that were rejected on or before 12 June 2025 is 752.00 hours (acceptable range 744.48 to 759.52)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average AHT for Michael Thompson for applications that were... (ver_b84ed228f7104289946d716c5b195d31)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average AHT for Michael Thompson for applications that were rejected on or before 12 June 2025 is 804.24 hours (acceptable range 796.20 to 812.28)."
+        }
+      ]
+    },
+    {
+      "name": "States that the average AHT for David Rodriguez for applications that were... (ver_ed009d1eca9a4b758ad607c72f9605ee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average AHT for David Rodriguez for applications that were rejected on or before 12 June 2025 is 720.98 hours (acceptable range 713.77 to 728.19)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-602-rg-01-b970a0bb"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_b970a0bb4c884d1bbf1056691138c509",
+    "task_name": "World 602_RG_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_5f4fe554d8a04c2aba7ce08a02c6e39a",
+        "golden_text_response": "The average AHT in hours for each recruiter for applicants that were rejected on or before 12 June 2025 is as follows:\n\nEMP-0001 Rachel W: 822.29 \nEMP-0005 Maria Santos: 752.00\nEMP-0007 Michael Thompson: 804.24\nEMP-0009 David Rodriguez: 720.98",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

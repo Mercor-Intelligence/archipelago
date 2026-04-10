@@ -1,0 +1,287 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_4db4d53369fd4a60b3090bd83896fcf5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b0520a3fd61442b82eae0123b451a17",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total number of beds needed is 140",
+        "negative_criteria": "States that the total number of beds needed is a value other than 140",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Identify the number of unfit facilities in each state using file \"Facility_Requirements_Checklist_v0.3.docx\" and page 2.\n\nState\t| \u2705 Fully Met |\t\u26a0\ufe0f Partial\t | \u274c Not Met\nIllinois\t| 12\t| 6\t| 2\nIndiana\t| 8\t| 4\t| 2\nMichigan\t| 10\t| 4\t| 1\nMinnesota |\t9\t| 2\t| 0\nMissouri|\t6\t| 3\t| 2\nOhio\t| 11\t| 5\t| 1\nWisconsin\t| 9\t| 2\t1\n\nConsidering \"Partial\" & \"Not Met\" as unfit facilities, the total number of unfit facilities= 35\n\nNumber of beds = Number of facilities * 2 * 2 = 140 (every facility has 2 rooms, with 2 beds each as per the prompt), refer to  working file, tab \"#beds required\" , cell (A1:F9)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_47faa2ec5da0423ca8f64204e1467393",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b0520a3fd61442b82eae0123b451a17",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the order acceptance rate for \"Therapy\" beds by Vendor 1 is 33.33% (acceptable range 33.00% to 33.66%)",
+        "negative_criteria": "States that the order acceptance rate for \"Therapy\" beds by Vendor 1 is a value other than 33.33%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "2a. Calculation of total order & rejected order - \nFrom the raw data, Using Pivot or SUMIFS function (Refer to working file , tab \"Acceptance rate calculation\" Pivot on cell A1), first we will calculate the total number of orders for each vendor delivered in the months of January, February, March, April, May or June for these 4 years, 2021-2024 (For bed type= \"Therapy\"). We will also add the split of rejected/ accepted in the same table. We will get the following output\n\nFilters: \nTo be considered\t1\t\nBed Types \tTherapy\t\n\nTable\t\t\nRow Labels\t| Count of Accepted (Y/N)\t| Count of Order no \nVendor1 |\t6\t| 9\nVendor2 |\t5\t| 12\nVendor3\t| 4\t| 9\nGrand Total\t| 15 | \t30\n\nTotal beds required = 140 \n\n2b. calculation of rejection rate and acceptance rate \nFrom the raw data, Using Pivot mentioned in 2a. (Refer to working file , tab \"Acceptance rate calculation\" Pivot on cell A1), first we will calculate the rejection rate for each of the vendor by dividing the no of rejected order by no of total orders delivered in the months of January, February, March, April, May or June for these 4 years, 2021-2024 (For bed type= \"Therapy\").  For calculations refer to working file , tab \"Acceptance rate calculation\" Table on cell A1:E8. We will get the following output \n\nRow Labels\t| Rejection rate  |\tAcceptance Rate \nVendor1 |\t67% |\t33.33%\nVendor2\t| 42%\t| 58.33%\nVendor3 |\t44%\t| 55.56%\nGrand Total\t| 50%\t| 50.00%\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_da305d83ca6c4759b61e0a558dc2af16",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b0520a3fd61442b82eae0123b451a17",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the order acceptance rate for \"Therapy\" beds by Vendor 2 is 58.33% (acceptable range 57.75% to 58.91%)",
+        "negative_criteria": "States that the order acceptance rate for \"Therapy\" beds by Vendor 2 is a value other than 58.33%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "2a. Calculation of total order & rejected order - \nFrom the raw data, Using Pivot or SUMIFS function (Refer to working file , tab \"Acceptance rate calculation\" Pivot on cell A1), first we will calculate the total number of orders for each vendor delivered in the months of January, February, March, April, May or June for these 4 years, 2021-2024 (For bed type= \"Therapy\"). We will also add the split of rejected/ accepted in the same table. We will get the following output\n\nFilters: \nTo be considered\t1\t\nBed Types \tTherapy\t\n\nTable\t\t\nRow Labels\t| Count of Accepted (Y/N)\t| Count of Order no \nVendor1 |\t6\t| 9\nVendor2 |\t5\t| 12\nVendor3\t| 4\t| 9\nGrand Total\t| 15 | \t30\n\nTotal beds required = 140 \n\n2b. calculation of rejection rate and acceptance rate \nFrom the raw data, Using Pivot mentioned in 2a. (Refer to working file , tab \"Acceptance rate calculation\" Pivot on cell A1), first we will calculate the rejection rate for each of the vendor by dividing the no of rejected order by no of total orders delivered in the months of January, February, March, April, May or June for these 4 years, 2021-2024 (For bed type= \"Therapy\").  For calculations refer to working file , tab \"Acceptance rate calculation\" Table on cell A1:E8. We will get the following output \n\nRow Labels\t| Rejection rate  |\tAcceptance Rate \nVendor1 |\t67% |\t33.33%\nVendor2\t| 42%\t| 58.33%\nVendor3 |\t44%\t| 55.56%\nGrand Total\t| 50%\t| 50.00%\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_825fcd868bf3493d84bf610ce4186e20",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b0520a3fd61442b82eae0123b451a17",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the order acceptance rate for \"Therapy\" beds by Vendor 3 is 55.56% (acceptable range 55.00% to 56.12%)",
+        "negative_criteria": "States that the order acceptance rate for \"Therapy\" beds by Vendor 3 is a value other than 55.56%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "2a. Calculation of total order & rejected order - \nFrom the raw data, Using Pivot or SUMIFS function (Refer to working file , tab \"Acceptance rate calculation\" Pivot on cell A1), first we will calculate the total number of orders for each vendor delivered in the months of January, February, March, April, May or June for these 4 years, 2021-2024 (For bed type= \"Therapy\"). We will also add the split of rejected/ accepted in the same table. We will get the following output\n\nFilters: \nTo be considered\t1\t\nBed Types \tTherapy\t\n\nTable\t\t\nRow Labels\t| Count of Accepted (Y/N)\t| Count of Order no \nVendor1 |\t6\t| 9\nVendor2 |\t5\t| 12\nVendor3\t| 4\t| 9\nGrand Total\t| 15 | \t30\n\nTotal beds required = 140 \n\n2b. calculation of rejection rate and acceptance rate \nFrom the raw data, Using Pivot mentioned in 2a. (Refer to working file , tab \"Acceptance rate calculation\" Pivot on cell A1), first we will calculate the rejection rate for each of the vendor by dividing the no of rejected order by no of total orders delivered in the months of January, February, March, April, May or June for these 4 years, 2021-2024 (For bed type= \"Therapy\").  For calculations refer to working file , tab \"Acceptance rate calculation\" Table on cell A1:E8. We will get the following output \n\nRow Labels\t| Rejection rate  |\tAcceptance Rate \nVendor1 |\t67% |\t33.33%\nVendor2\t| 42%\t| 58.33%\nVendor3 |\t44%\t| 55.56%\nGrand Total\t| 50%\t| 50.00%\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5203606f28f24d9ca5faae6c518f6e2e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b0520a3fd61442b82eae0123b451a17",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that average TAT for therapy beds for vendor 1 is 159 days (acceptable range 157 to 161)",
+        "negative_criteria": "States that average TAT for therapy beds for vendor 1 is a value other than 159 days",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "3a. Average TAT calculation for each vendor -\nIn the raw data calculate TAT in column I by subtracting the date of order accepted in Column D by date of order delivered in Column E (refer to working sheet, Tab \"Data Worked\", cell I1). Using pivot , TAT data and SUMIFS, we will calculate the average TAT for each vendor delivered in the months of January, February, March, April, May or June for these 4 years, 2021-2024 (For bed type= \"Therapy\"). For calculations refer to working file , tab \"Average TAT calculation\" Table on cell A1:B8. We will get the following output \n\nRow Labels  |  Average of TAT\nVendor1  |\t159.11 - Rounded to 159 days\nVendor2  |\t25.7 - Rounded to 26 days\nVendor3  |   165.75  - Rounded to 166 days\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8dba2fba9f6741c38582437b21610271",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b0520a3fd61442b82eae0123b451a17",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the average TAT for therapy beds for vendor 2 is 26 days (acceptable range 25.7 to 26.3)",
+        "negative_criteria": "States that the average TAT for therapy beds for vendor 2 is a value other than 26 days",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "3a. Average TAT calculation for each vendor -\nIn the raw data calculate TAT in column I by subtracting the date of order accepted in Column D by date of order delivered in Column E (refer to working sheet, Tab \"Data Worked\", cell I1). Using pivot , TAT data and SUMIFS, we will calculate the average TAT for each vendor delivered in the months of January, February, March, April, May or June for these 4 years, 2021-2024 (For bed type= \"Therapy\"). For calculations refer to working file , tab \"Average TAT calculation\" Table on cell A1:B8. We will get the following output \n\nRow Labels  |  Average of TAT\nVendor1  |\t159.11 - Rounded to 159 days\nVendor2  |\t25.7 - Rounded to 26 days\nVendor3  |   165.75  - Rounded to 166 days",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_174691de650d42b6bab9d581b0d2d780",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b0520a3fd61442b82eae0123b451a17",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the average TAT for therapy beds for vendor 3 is 166 days (acceptable range 164 to 168)",
+        "negative_criteria": "States that the average TAT for therapy beds for vendor 3 is a value other than 166 days",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "3a. Average TAT calculation for each vendor -\nIn the raw data calculate TAT in column I by subtracting the date of order accepted in Column D by date of order delivered in Column E (refer to working sheet, Tab \"Data Worked\", cell I1). Using pivot , TAT data and SUMIFS, we will calculate the average TAT for each vendor delivered in the months of January, February, March, April, May or June for these 4 years, 2021-2024 (For bed type= \"Therapy\"). For calculations refer to working file , tab \"Average TAT calculation\" Table on cell A1:B8. We will get the following output \n\nRow Labels  |  Average of TAT\nVendor1  |\t159.11 - Rounded to 159 days\nVendor2  |\t25.7 - Rounded to 26 days\nVendor3  |   165.75  - Rounded to 166 days",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_67ec094ad9b2485daca62d789153a6f4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b0520a3fd61442b82eae0123b451a17",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total cost of order for Vendor 1 is $2,750.00 (acceptable range $2,722.50 to $2,777.50)",
+        "negative_criteria": "States that the total cost of order for Vendor 1 is a value other than $2,750.00",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "4. Average order value for each vendor = Based on the pricing scheme and total no of beds required (140), first calculate the price for 50 beds at the price per bed for first 50 beds of respective vendors, second calculate the price for 30 beds  at the price per bed for (50-80 beds) of respective vendors, third calculate the  price for 60 beds  at the price per bed for (80-150 beds) of respective vendors (Refer to working file , tab \"Avg order value\" matrix on cell A1:D18). We will get the following output \n\nVendor 1\t\t2750.00\nVendor 2\t\t9700.00\nVendor 3\t\t5950.00",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e4187808257740db936a93b21e52bb91",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b0520a3fd61442b82eae0123b451a17",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total order cost for Vendor 2 is $9,700.00 (acceptable range $9,603.00 to $9,797.00)",
+        "negative_criteria": "States that the total order cost for Vendor 2 is a value other than $9,700.00",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "4. Average order value for each vendor = Based on the pricing scheme and total no of beds required (140), first calculate the price for 50 beds at the price per bed for first 50 beds of respective vendors, second calculate the price for 30 beds  at the price per bed for (50-80 beds) of respective vendors, third calculate the  price for 60 beds  at the price per bed for (80-150 beds) of respective vendors (Refer to working file , tab \"Avg order value\" matrix on cell A1:D18). We will get the following output \n\nVendor 1\t\t2750.00\nVendor 2\t\t9700.00\nVendor 3\t\t5950.00",
+        "is_primary_objective": true
+      },
+      "verifier_index": 17,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8e016a9018ac4a90a2b5fbf988154c59",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b0520a3fd61442b82eae0123b451a17",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total cost of order for Vendor 3 is $5,950.00 (acceptable range $5,890.50 to $6,009.50)",
+        "negative_criteria": "States that the total cost of order for Vendor 1 is a value other than $5,950.00",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "4. Average order value for each vendor = Based on the pricing scheme and total no of beds required (140), first calculate the price for 50 beds at the price per bed for first 50 beds of respective vendors, second calculate the price for 30 beds  at the price per bed for (50-80 beds) of respective vendors, third calculate the  price for 60 beds  at the price per bed for (80-150 beds) of respective vendors (Refer to working file , tab \"Avg order value\" matrix on cell A1:D18). We will get the following output \n\nVendor 1\t\t2750.00\nVendor 2\t\t9700.00\nVendor 3\t\t5950.00",
+        "is_primary_objective": true
+      },
+      "verifier_index": 18,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_37e82b9517914eb98dbd8beb3e978814",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b0520a3fd61442b82eae0123b451a17",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States that the recommended vendor is Vendor 2",
+        "negative_criteria": "States that the recommended vendor is a vendor other than \"Vendor 2\"",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "3.  Determination of vendor's ability to deliver before the task \"Room Retrofitting\" is concluded\n\n3a. Average TAT calculation for each vendor -\nIn the raw data calculate TAT in column I by subtracting the date of order accepted in Column D by date of order delivered in Column E (refer to working sheet, Tab \"Data Worked\", cell I1). Using pivot , TAT data and SUMIFS, we will calculate the average TAT for each vendor delivered in the months of January, February, March, April, May or June for these 4 years, 2021-2024 (For bed type= \"Therapy\"). For calculations refer to working file , tab \"Average TAT calculation\" Table on cell A1:B8. We will get the following output \n\nRow Labels  |  Average of TAT\nVendor1  |\t159.11\nVendor2  |\t25.7\nVendor3  |   165.75\nGrand Total\t| 114.55\n\n3b. Task \"Room Retrofitting\" conclusion date - \nFrom the timeline referred to in \"Phased Rollout Roadmap v0.1.xlsx\" ,  \"Room Retrofitting\"  is completed at the end of week 13,. First we will calculate the total no of days in 13 weeks and then we will add it to the starting date (4 Jan, 2026) and subtract 1 (for existing day - to avoid double counting) to get the final date (Refer to working file , tab \"Dates calculation\" matrix on cell A1:E3). We will get the following output \n\nCompleted (wk) | \tDays \t| Start date | \tEnd date \n13\t| 91\t| 04-Jan-26 |\t04-Apr-26\n\nBased on TAT only Vendor 2 will be able to deliver on time\n\n\n4. Average order value for each vendor = Based on the pricing scheme and total no of beds required (140), first calculate the price for 50 beds at the price per bed for first 50 beds of respective vendors, second calculate the price for 30 beds  at the price per bed for (50-80 beds) of respective vendors, third calculate the  price for 60 beds  at the price per bed for (80-150 beds) of respective vendors (Refer to working file , tab \"Avg order value\" matrix on cell A1:D18). We will get the following output \n\nVendor 1\t\t2750.00\nVendor 2\t\t9700.00\nVendor 3\t\t5950.00",
+        "is_primary_objective": true
+      },
+      "verifier_index": 19,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ce8753158fa54994a2cd2b0adc08643f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b0520a3fd61442b82eae0123b451a17",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States that the final order value with the recommended Vendor is $9,700.00 (acceptable range $9,603.00 to $9,797.00)",
+        "negative_criteria": "States that the final order value with the recommended Vendor is a value other than $9,700.00",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "3.  Determination of vendor's ability to deliver before the task \"Room Retrofitting\" is concluded\n\n3a. Average TAT calculation for each vendor -\nIn the raw data calculate TAT in column I by subtracting the date of order accepted in Column D by date of order delivered in Column E (refer to working sheet, Tab \"Data Worked\", cell I1). Using pivot , TAT data and SUMIFS, we will calculate the average TAT for each vendor delivered in the months of January, February, March, April, May or June for these 4 years, 2021-2024 (For bed type= \"Therapy\"). For calculations refer to working file , tab \"Average TAT calculation\" Table on cell A1:B8. We will get the following output \n\nRow Labels  |  Average of TAT\nVendor1  |\t159.11\nVendor2  |\t25.7\nVendor3  |   165.75\nGrand Total\t| 114.55\n\n3b. Task \"Room Retrofitting\" conclusion date - \nFrom the timeline referred to in \"Phased Rollout Roadmap v0.1.xlsx\" ,  \"Room Retrofitting\"  is completed at the end of week 13,. First we will calculate the total no of days in 13 weeks and then we will add it to the starting date (4 Jan, 2026) and subtract 1 (for existing day - to avoid double counting) to get the final date (Refer to working file , tab \"Dates calculation\" matrix on cell A1:E3). We will get the following output \n\nCompleted (wk) | \tDays \t| Start date | \tEnd date \n13\t| 91\t| 04-Jan-26 |\t04-Apr-26\n\nBased on TAT only Vendor 2 will be able to deliver on time\n\n\n4. Average order value for each vendor = Based on the pricing scheme and total no of beds required (140), first calculate the price for 50 beds at the price per bed for first 50 beds of respective vendors, second calculate the price for 30 beds  at the price per bed for (50-80 beds) of respective vendors, third calculate the  price for 60 beds  at the price per bed for (80-150 beds) of respective vendors (Refer to working file , tab \"Avg order value\" matrix on cell A1:D18). We will get the following output \n\nVendor 1\t\t2750\nVendor 2\t\t9700\nVendor 3\t\t5950",
+        "is_primary_objective": true
+      },
+      "verifier_index": 20,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a5c1ae542efd4b118cd95af7c413dbf3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0b0520a3fd61442b82eae0123b451a17",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the last acceptable ordering date for the recommended vendor is 1st March, 2026",
+        "negative_criteria": "States that the last acceptable ordering date for the recommended vendor is a value other than 1st March, 2026",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "5. Last acceptable ordering date = \n5a. Order timeline calculation : Based on last delivery date (4-apr-2026) & the ordering timeline calculated based on average TAT of vendor 2 (26 days) (Refer to working file , tab \"Dates Calculation\" matrix on cell B21:C26). We will get the following output \n\nActivity\t| #days \nOrder placement \t| 1\nVendor acceptance \t| 7\nTAT of selected vendor |\t26\nOrdering timeline  |\t34\n\n5b. The last day of ordering is calculated by subtracting the ordering timeline (34 days) form the last acceptable delivery date. Refer to working file , tab \"Dates Calculation\" matrix on cell A28:B28. We will get the following output \n\nLast date of ordering\t01-03-2026",
+        "is_primary_objective": true
+      },
+      "verifier_index": 21,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

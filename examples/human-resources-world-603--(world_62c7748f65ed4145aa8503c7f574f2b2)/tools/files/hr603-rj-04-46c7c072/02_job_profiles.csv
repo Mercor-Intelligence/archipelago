@@ -1,0 +1,41 @@
+job_profile_id,title,job_family,job_level,created_at
+JP-RET-001,Store Associate,Retail,L1,2019-01-05 10:00:00
+JP-RET-002,Senior Store Associate,Retail,L2,2019-01-10 10:00:00
+JP-RET-003,Assistant Store Manager,Retail,L3,2019-01-15 10:00:00
+JP-RET-004,Store Manager,Retail,M1,2019-01-20 10:00:00
+JP-RET-005,District Manager,Retail,M2,2019-01-25 10:00:00
+JP-RET-006,"Regional VP, Stores",Retail,D1,2019-01-30 10:00:00
+JP-SC-001,Warehouse Associate,Supply Chain,L1,2019-02-04 10:00:00
+JP-SC-002,Warehouse Lead,Supply Chain,L2,2019-02-09 10:00:00
+JP-SC-003,Distribution Center Supervisor,Supply Chain,M1,2019-02-14 10:00:00
+JP-SC-004,Distribution Center Manager,Supply Chain,M2,2019-02-19 10:00:00
+JP-SC-005,Transportation Planner,Supply Chain,L3,2019-02-24 10:00:00
+JP-SC-006,Supply Chain Analyst,Supply Chain,L3,2019-03-01 10:00:00
+JP-MER-001,Assistant Buyer,Merchandising,L3,2019-03-06 10:00:00
+JP-MER-002,Buyer,Merchandising,M1,2019-03-11 10:00:00
+JP-MER-003,Merchandise Planner,Merchandising,L3,2019-03-16 10:00:00
+JP-MER-004,Category Manager,Merchandising,M2,2019-03-21 10:00:00
+JP-FIN-001,Financial Analyst,Finance,L3,2019-03-26 10:00:00
+JP-FIN-002,Senior Financial Analyst,Finance,L4,2019-03-31 10:00:00
+JP-FIN-003,Finance Manager,Finance,M1,2019-04-05 10:00:00
+JP-FIN-004,Controller,Finance,D1,2019-04-10 10:00:00
+JP-HR-001,HR Coordinator,HR,L2,2019-04-15 10:00:00
+JP-HR-002,HR Business Partner,HR,L4,2019-04-20 10:00:00
+JP-HR-003,Talent Acquisition Specialist,HR,L3,2019-04-25 10:00:00
+JP-HR-004,"Director, People Ops",HR,D1,2019-04-30 10:00:00
+JP-TECH-001,IT Support Analyst,Technology,L2,2019-05-05 10:00:00
+JP-TECH-002,Software Engineer,Technology,L3,2019-05-10 10:00:00
+JP-TECH-003,Senior Software Engineer,Technology,L4,2019-05-15 10:00:00
+JP-TECH-004,Product Manager,Technology,M1,2019-05-20 10:00:00
+JP-TECH-005,Data Analyst,Technology,L3,2019-05-25 10:00:00
+JP-TECH-006,Data Scientist,Technology,L4,2019-05-30 10:00:00
+JP-MKT-001,Marketing Specialist,Marketing,L3,2019-06-04 10:00:00
+JP-MKT-002,Growth Marketing Manager,Marketing,M1,2019-06-09 10:00:00
+JP-CX-001,Customer Care Associate,Customer Experience,L2,2019-06-14 10:00:00
+JP-CX-002,Customer Care Team Lead,Customer Experience,L3,2019-06-19 10:00:00
+JP-EXEC-001,Chief Operating Officer,Executive,C-Level,2019-06-24 10:00:00
+JP-EXEC-002,Chief Financial Officer,Executive,C-Level,2019-06-29 10:00:00
+JP-EXEC-003,Chief People Officer,Executive,C-Level,2019-07-04 10:00:00
+JP-EXEC-004,Chief Technology Officer,Executive,C-Level,2019-07-09 10:00:00
+JP-EXEC-005,"VP, E-Commerce",Executive,VP,2019-07-14 10:00:00
+JP-EXEC-006,"VP, Supply Chain",Executive,VP,2019-07-19 10:00:00

@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Update the DCF model with the treasury rates as of 1/6/26 as follows\n- update the risk-free rate in the S&P Global model to the 5-year treasury rate plus 25 basis points\n- update the risk-free rate in the S&P Mobility model to the 1-year treasury rate plus 10 basis points\n- update the risk-free rate in the RemainCo model to the 7-year treasury rate plus 50 basis points\n\nCut the long-term growth rate in half, apply the mid-year adjustment to all entities, and assume basic shares outstanding for S&P Global is reduced by 10%. Output the shareholder equity value creation in $ to the nearest whole number in millions and in % to the nearest one decimal place."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States shareholder equity value creation in $ is $129 million (acceptable... (ver_d005099fc0f9417c90f7015e2d8b8374)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States shareholder equity value creation in $ is $129 million (acceptable range $128 to $130)."
+        }
+      ]
+    },
+    {
+      "name": "States shareholder equity value creation in % is 0.1% (acceptable range 0.099%... (ver_738d857f473842619e26c93c06c67578)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States shareholder equity value creation in % is 0.1% (acceptable range 0.099% to 0.10%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world249-rl-03-b3f5e0fc"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_b3f5e0fc99754f8fb1b62ad9b5183653",
+    "task_name": "World249_RL_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_cd5e8effb0d341bb81e9838e03803681",
+        "golden_text_response": "Shareholder equity value creation in $ is $129 million\nShareholder equity value creation in % is 0.1%",
+        "golden_file_responses": "snap_6664bf02d6ea4a08a31e39cde18cd52d"
+      }
+    ]
+  }
+}

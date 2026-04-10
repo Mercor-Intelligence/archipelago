@@ -1,0 +1,37 @@
+[env]
+_.python.venv = { path = ".venv", create = true }
+STATE_LOCATION = "{{env.STATE_LOCATION | default(value='/tmp/uspto-state')}}"
+
+[tools]
+python = "3.13"
+uv = "0.6.10"
+
+[tasks.lint]
+run = "ruff check ."
+description = "Run linter"
+
+[tasks.typecheck]
+run = "echo 'No typecheck configured'"
+description = "Run type checker"
+
+[tasks.start]
+run = "cd mcp_servers/uspto && uv run --no-sync python ../../scripts/_mcp_wrapper.py"
+description = "Start the MCP server"
+depends = ["build"]
+
+[tasks.format]
+run = "ruff format ."
+description = "Format code"
+
+[tasks.install]
+run = "uv sync --all-extras"
+description = "Install dependencies"
+
+[tasks.test]
+run = "pytest"
+description = "Run tests"
+
+[tasks.build]
+run = "mkdir -p $STATE_LOCATION"
+description = "Build the project"
+depends = ["install"]

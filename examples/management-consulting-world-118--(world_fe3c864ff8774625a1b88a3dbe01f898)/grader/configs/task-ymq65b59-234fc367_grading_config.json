@@ -1,0 +1,176 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_600c3381f19b4e8883bd0a0190b4c50f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_234fc367efc84b0e955eb6bb7df63cb4",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the count for family F1 is 7370",
+        "negative_criteria": "States that the count for family F1 is a value other than 7370",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0da8a4e54f304800b2ece8c8b1127756",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_234fc367efc84b0e955eb6bb7df63cb4",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the count for family F2 is 11314",
+        "negative_criteria": "States that the count for family F2 is a value other than 11314",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5524849921ba4728a7d42d60a4fad2f7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_234fc367efc84b0e955eb6bb7df63cb4",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the count for family F3 is 3359",
+        "negative_criteria": "States that the count for family F3 is a value other than 3359",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_944a146d4cba49b79bc215dee95e7978",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_234fc367efc84b0e955eb6bb7df63cb4",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the count for family F4 is 851",
+        "negative_criteria": "States that the count for family F4 is a value other than 851",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3d81cd44f852411f95bd02d2ae59bff0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_234fc367efc84b0e955eb6bb7df63cb4",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Average Billed Rate for family F1 is $838.23 (acceptable range $829.85 to $846.61)",
+        "negative_criteria": "States that the Average Billed Rate for family F1 is a value other than $838.23",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_294bc1409f874812bc57788c4508cb6e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_234fc367efc84b0e955eb6bb7df63cb4",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Average Billed Rate for family F2 is $1714.56 (acceptable range $169 to $173)",
+        "negative_criteria": "States that the Average Billed Rate for family F2 is a value other than $1714.56",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b6cdc8ebd4be45f29743f61641c9160a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_234fc367efc84b0e955eb6bb7df63cb4",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Average Billed Rate for family F3 is $2583.28 (acceptable range $255 to $261)",
+        "negative_criteria": "States that the Average Billed Rate for family F3 is a value other than $2583.28",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_337a4df4b244415abd62f1af927c77a0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_234fc367efc84b0e955eb6bb7df63cb4",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Average Billed Rate for family F4 is $3459.61 (acceptable range $342 to $348)",
+        "negative_criteria": "States that the Average Billed Rate for family F4 is a value other than $3459.61",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

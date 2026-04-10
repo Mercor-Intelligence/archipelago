@@ -1,0 +1,357 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_42b65b254bd440f99c063814c569d264",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2f33f64f37024dbaa05d1d6a0bec0e35",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has unilateral ankle swelling.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"A 55 year old man is complaining of left ankle swelling and redness.\"   Prompt",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9f72201b6d92438ea234cf7cae008926",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2f33f64f37024dbaa05d1d6a0bec0e35",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the arthrocentesis with synovial fluid analysis does not reveal any abnormalities.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Assuming the diagnostic test does not reveal any abnormalities, should treatment be initiated at this time?\"   Prompt\n\nThe next recommended diagnostic test is an arthrocentesis with synovial fluid analysis.  The prompt tells us that we can assume this diagnostic test does not reveal any abnormalities.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4f696b5a612b49dc9a708fd03bd146d1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2f33f64f37024dbaa05d1d6a0bec0e35",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that infectious causes are unlikely to be causing the patient\u2019s symptoms.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt reveals that the arthrocentesis with synovial fluid does not reveal any abnormalities.  This negative result excludes infectious causes of arthropathy as well as crystalline arthropathy as possible diagnoses causing the patient's symptoms.\n\n\"In patients with a joint effusion, the joint should be aspirated and synovial fluid should be analyzed and cultured to exclude other conditions, including septic or crystalline arthropathy.\" https://www.uptodate.com/contents/diabetic-neuroarthropathy",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_392150b611b94594a5358f7618249f38",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2f33f64f37024dbaa05d1d6a0bec0e35",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that crystalline arthropathy is unlikely to be causing the patient\u2019s symptoms.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt reveals that the arthrocentesis with synovial fluid does not reveal any abnormalities.  This negative result excludes infectious causes of arthropathy as well as crystalline arthropathy as possible diagnoses causing the patient's symptoms.\n\n\"In patients with a joint effusion, the joint should be aspirated and synovial fluid should be analyzed and cultured to exclude other conditions, including septic or crystalline arthropathy.\" https://www.uptodate.com/contents/diabetic-neuroarthropathy",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1861a5dd8ffa41a88e773cdfd93451c9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2f33f64f37024dbaa05d1d6a0bec0e35",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the left ankle xray shows moderate to severe ankle osteoarthritis.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Radiographs: Multiple views x-ray of bilateral foot and ankle: Moderate to severe ankle and subtalar joint arthritis left worse than right, some enthesiopathy of the fifth metatarsal base \"   Clinical Notes - Progress Notes - Column D - Row 155 \n\n\"The ankle xray is unchanged from prior.\"  Prompt\n\nThe prompt states that the ankle xray is unchanged from prior which implies, the results are the same. It still shows moderate to severe osteoarthritis.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4ab311b2d56d4ebea337bc1cb3e5ca09",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2f33f64f37024dbaa05d1d6a0bec0e35",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that osteoarthritis does not commonly cause redness or swelling.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt reveals that the ankle xray is unchanged from prior, which implies that moderate to severe osteoarthritis is present. The patient presents with redness and swelling of the left ankle as evidenced by the prompt.  The attached patient script reveals that the patient also has warmth of the ankle.  These symptoms are uncommon in osteoarthritis.\n\n\"A 55 year old man is complaining of left ankle swelling and redness. \"   Prompt\n\n\"Doctor: It\u2019s a little warm here too. So, how long has your ankle been swollen and red?\"   Cards Patient 14 Script.pdf\n\n\"Obvious inflammatory features, such as erythema or soft tissue swelling and tenderness, are also uncommon in uncomplicated osteoarthritis. In addition, in diabetic neuroarthropathy, but not in osteoarthritis, the temperature often differs by several degrees between the two feet.\" https://doctorabad.com/uptodate/d/topic.htm?path=diabetic-neuropathic-arthropathy",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bdfeb568d2db4f00bfbc52d057dd4ca6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2f33f64f37024dbaa05d1d6a0bec0e35",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that osteoarthritis is unlikely to be causing the patient\u2019s symptoms.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has a known history of osteoarthritis in the affected joint. However, osteoarthritis does not commonly present with redness and warmth making it an unlikely diagnosis for this patient.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ee66969df1a84e85863a04f4d2fedbf8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2f33f64f37024dbaa05d1d6a0bec0e35",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has no history of autoimmune disease.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Past Medical History:  Diagnosis Date   Allergy    Arthritis    Atrial fibrillation (HCC)    Coronary artery disease    Diabetes mellitus without complication (HCC)    Headache    Hyperlipidemia    Hypertension    Spinal headache  pt states it felt like a migraine (cluster) headache that was pulsating when he woke up from anesthesia\"   Clinical Notes - Progress Notes - Column D - Row 165    \n\nThe patient's past medical history lists the patient's diagnoses. There is no documentation of autoimmune diseases in his past medical history. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e5f57a676d164a9c80da0c154fde4789",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2f33f64f37024dbaa05d1d6a0bec0e35",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that there is a mild elevation in the patient's inflammatory markers. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"What are inflammatory markers?\nInflammatory markers are blood tests used by doctors to detect inflammation in the body, caused by many diseases. This can include infections, auto-immune conditions and cancers. The three most commonly used inflammatory markers are called C-reactive protein (CRP), erythrocyte sedimentation rate (ESR) and plasma viscosity (PV).\"   https://arc-w.nihr.ac.uk/news/inflammatory-markers-explained/\n\nThe attached document shows the C-reactive Protein is 7 mg/L. The reference interval is 0-10 mg/L.  The patient's results correlates with a mild elevation in C-reactive protein.  Cards Patient 14 CRP.pdf\n\nThe attached document shows the erythrocyte sedimentation rate is 10 mm.hr.  The normal reference interval is 0-32.  The patient's result is normal.    Cards Patient 14 ESR.pdf\n\n\"A CRP test result of more than 10 mg/dL is generally considered a marked elevation.\"  https://my.clevelandclinic.org/health/diagnostics/23056-c-reactive-protein-crp-test",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3da6756c24ca43ebaf259d19d710efc3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2f33f64f37024dbaa05d1d6a0bec0e35",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that inflammatory arthritis is unlikely to be causing the patient\u2019s symptoms.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has one inflammatory marker that is mildly elevated. The other inflammatory marker is negative. The patient does not have any history of autoimmunie disease. The patient's symptoms are affecting one isolated joint.  Collectively, this make a diagnosis of inflammatory arthritis unlikely. \n\n\"A highly elevated ESR or CRP is more indicative of an inflammatory disorder, such as an inflammatory arthritis (eg, crystalline or rheumatoid arthritis) or infection (eg, septic arthritis, osteomyelitis); however, mild elevations in acute phase reactants can be seen in acute diabetic neuropathy and do not exclude the diagnosis of diabetic neuroarthropathy.\"   https://www.uptodate.com/contents/diabetic-neuroarthropathy",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d8507fca52c44507b2623f259f7d8b2b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2f33f64f37024dbaa05d1d6a0bec0e35",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has uncontrolled diabetes.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient's medical history reports that he has diabetes. The attached labs show the patient had a hemoglobin A1C = 7.9% on 8/8/2025 and 7.9% on 1/1/2025.  This shows that the patient had a hemoglobin A1C that was above the normal range twice within the past year.  We can assume from this data that the patient has uncontrolled diabetes. \n\n\"Past Medical History:  Diagnosis Date   Allergy    Arthritis    Atrial fibrillation (HCC)    Coronary artery disease    Diabetes mellitus without complication (HCC)    Headache    Hyperlipidemia    Hypertension    Spinal headache  pt states it felt like a migraine (cluster) headache that was pulsating when he woke up from anesthesia \"   Clinical Notes - Progress Notes - Column D - Row 165 ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bef7954d90204b64813bfb7db81d0083",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2f33f64f37024dbaa05d1d6a0bec0e35",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has diabetic neuropathy.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The attached script states that the patient has tingling in his toes and has been experiencing this for a long time.  We already identified that the patient has a history of uncontrolled diabetes as evidenced by his elevated hemoglobin A1C. We can also identify from the patient's medical record that he has multiple risk factors for diabetic neuropathy (i.e. hypertension, hyperlipidemia, chronic alcohol use). We can assume that the patient has diabetic neuropathy.\n\n\"Patient: Nothing I can think of. My toes have been feeling tingly for a long time now and that makes my feet feel funny when I\u2019m walking. But, nothing in particular happened 2 weeks ago.\"  \nCards Patient 14 Script\n\n\" Past Medical History:  Diagnosis Date   Allergy    Arthritis    Atrial fibrillation (HCC)    Coronary artery disease    Diabetes mellitus without complication (HCC)    Headache    Hyperlipidemia    Hypertension    Spinal headache  pt states it felt like a migraine (cluster) headache that was pulsating when he woke up from anesthesia\"  \"Alcohol use: Yes    Alcohol/week: 7.0 standard drinks of alcohol    Types: 7 Standard drinks or equivalent per week    Comment: 1 beer per day\"  \n Clinical Notes - Progress Notes - Column D - Row 165 \n\n\"Several risk factors have been associated with the risk of developing diabetic neuropathy in multiple large clinical cohorts including the following (figure 1) [1-8]:\n\u25cfLonger duration of diabetes mellitus\n\u25cfHigher glycated hemoglobin levels\n\u25cfHypertension\n\u25cfObesity\n\u25cfDyslipidemia\n\u25cfTobacco use\n\u25cfChronic alcohol use\n\u25cfTaller patient height\n\u25cfOlder age\"\n\"he main symptoms of diabetic polyneuropathy include negative symptoms (those related to nerve fiber loss or dysfunction), such as numbness and loss of balance, and positive symptoms (those related to abnormal function of surviving nerve fibers), such as tingling and pain. Symptoms start distally in the toes and feet [15], and positive symptoms are usually worse at night. \"\nhttps://www.uptodate.com/contents/screening-for-diabetic-polyneuropathy",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a27062b3be534465a5009f59560681d0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2f33f64f37024dbaa05d1d6a0bec0e35",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the most likely primary diagnosis is acute diabetic neuroarthropathy.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Acute diabetic neuroarthropathy should be suspected in any patient with diabetic neuropathy who presents with a unilateral, warm, swollen, erythematous foot.\n\nA high index of clinical suspicion is important to diagnose diabetic neuroarthropathy early. A delay in diagnosis is very common and can result in progression of diabetic neuroarthropathy and an increased risk of complications [34]. Without treatment, progression can be rapid, and irreversible damage can occur within six months or less [35].\n\nA retrospective series of 27 patients with acute diabetic neuroarthropathy found misdiagnosis in 63 percent and a median delay in diagnosis of two months (interquartile range [IQR] one to six months) [36].\n\nEvaluation \u2014 For all patients, we suggest a careful physical examination and the following laboratory tests:\n\n\u25cfComplete blood count (CBC) with a white blood cell differential\n\n\u25cfErythrocyte sedimentation rate (ESR) and/or C-reactive protein (CRP)\n\nWhen a joint effusion is present, arthrocentesis with synovial fluid analysis should be performed to rule out alternative diagnoses. \"  https://www.uptodate.com/contents/diabetic-neuroarthropathy\n\nThe patient has a history of diabetes. He presents with a unilateral, warm, swollen erythematous ankle. Alternative diagnoses of infectious and crystalline arthropathies have been excluded after the synovial fluid analysis did not show any abnormalities.  Although he has a history of osteoarthritis in the affected joint, osteoarthritis was ruled out since it does not normally present with redness and warmth. Inflammatory arthropathy is unlikely since the patient has no history of autoimmune disease and one inflammatory marker was only mildly elevated. Collectively, this makes the diagnosis of diabetic neuroarthropathy the most likely primary diagnosis.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5c75a80cde0247f0b1dc8214c1a06450",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2f33f64f37024dbaa05d1d6a0bec0e35",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that additional diagnostic tests are unnecessary when a diagnosis of acute diabetic neuroarthropathy can be established on clinical grounds.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Acute diabetic neuroarthropathy is a clinical diagnosis. The goal of the evaluation is to identify characteristic features of acute diabetic neuroarthropathy and to recognize any atypical features that might suggest an alternate diagnosis.\"   \"However, additional imaging is unnecessary when a diagnosis of acute diabetic neuroarthropathy can be established on clinical grounds.\"   \nhttps://www.uptodate.com/contents/diabetic-neuroarthropathy",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_94b6b6d081324300a3c5c27a8ca38880",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2f33f64f37024dbaa05d1d6a0bec0e35",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recommends the use of a total contact cast to be initiated.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The primary diagnosis has been established. Since no further diagnostic tests are necessary, treatment should be initiated at this time. \n\n\"For patients with diabetic neuropathy who present with edema, redness, and/or warmth of the affected joint (ie, from stage 0, the early or inflammatory stage, to stage 2, the coalescence stage), we suggest use of a total contact cast for offloading and immobilization, with or without an initial period of non-weightbearing immobilization [25,40].\" https://www.uptodate.com/contents/diabetic-neuroarthropathy",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

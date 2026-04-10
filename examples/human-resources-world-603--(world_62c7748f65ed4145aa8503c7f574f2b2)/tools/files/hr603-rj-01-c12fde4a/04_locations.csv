@@ -1,0 +1,33 @@
+location_id,location_name,city,country,created_at
+LOC-001,NYC HQ,New York,US,2019-02-01 09:00:00
+LOC-002,Austin Tech Hub,Austin,US,2019-02-08 09:00:00
+LOC-003,Atlanta Support Center,Atlanta,US,2019-02-15 09:00:00
+LOC-004,Chicago Regional Office,Chicago,US,2019-02-22 09:00:00
+LOC-005,Los Angeles Regional Office,Los Angeles,US,2019-03-01 09:00:00
+LOC-101,DC - Pennsylvania,Harrisburg,US,2019-03-08 09:00:00
+LOC-102,DC - Texas,Dallas,US,2019-03-15 09:00:00
+LOC-103,DC - California,Riverside,US,2019-03-22 09:00:00
+LOC-201,Store - Boston,Boston,US,2019-03-29 09:00:00
+LOC-202,Store - Newark,Newark,US,2019-04-05 09:00:00
+LOC-203,Store - Philadelphia,Philadelphia,US,2019-04-12 09:00:00
+LOC-204,Store - Baltimore,Baltimore,US,2019-04-19 09:00:00
+LOC-205,Store - Cleveland,Cleveland,US,2019-04-26 09:00:00
+LOC-206,Store - Detroit,Detroit,US,2019-05-03 09:00:00
+LOC-207,Store - Columbus,Columbus,US,2019-05-10 09:00:00
+LOC-208,Store - Indianapolis,Indianapolis,US,2019-05-17 09:00:00
+LOC-209,Store - Nashville,Nashville,US,2019-05-24 09:00:00
+LOC-210,Store - Charlotte,Charlotte,US,2019-05-31 09:00:00
+LOC-211,Store - Miami,Miami,US,2019-06-07 09:00:00
+LOC-212,Store - Tampa,Tampa,US,2019-06-14 09:00:00
+LOC-213,Store - Houston,Houston,US,2019-06-21 09:00:00
+LOC-214,Store - San Antonio,San Antonio,US,2019-06-28 09:00:00
+LOC-215,Store - Phoenix,Phoenix,US,2019-07-05 09:00:00
+LOC-216,Store - Denver,Denver,US,2019-07-12 09:00:00
+LOC-217,Store - Seattle,Seattle,US,2019-07-19 09:00:00
+LOC-218,Store - Portland,Portland,US,2019-07-26 09:00:00
+LOC-219,Store - San Diego,San Diego,US,2019-08-02 09:00:00
+LOC-220,Store - San Jose,San Jose,US,2019-08-09 09:00:00
+LOC-221,Store - Minneapolis,Minneapolis,US,2019-08-16 09:00:00
+LOC-222,Store - St. Louis,St. Louis,US,2019-08-23 09:00:00
+LOC-223,Store - Kansas City,Kansas City,US,2019-08-30 09:00:00
+LOC-224,Store - Milwaukee,Milwaukee,US,2019-09-06 09:00:00

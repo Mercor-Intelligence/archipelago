@@ -1,0 +1,110 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_237a6558809a4f18867ef20b784c4cd9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e14cdfb7524d4edcaf83465e66bb7460",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that OSHA does not need to be notified of the injuries from the incident",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The original injuries described in the notice were non-fatal, with one worker \"requiring medical assistance beyond first aid.\" These injuries do not constitute a fatality, in-patient hospitalization, amputation, or loss of an eye at the time of the incident. The subsequent amputation (finger removal) on October 18, 2025 occurred more than 24 hours after the October 15, 2025 incident, placing it outside the 24 hour reporting window under 29 CFR 1904.39(b)(6). Therefore, no OSHA notification is required for any of the injuries.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a58a3e6a092443febb6111d827936e36",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e14cdfb7524d4edcaf83465e66bb7460",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that OSHA notice is required when any of the following occur as a result of a work-related incident: death, in-patient hospitalization, amputation, or loss of an eye",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": " 29 CFR 1904.39(a) provides: \"(1) Within eight (8) hours after the death of any employee as a result of a work-related incident, you must report the fatality to the Occupational Safety and Health Administration (OSHA)... (2) Within twenty-four (24) hours after the in-patient hospitalization of one or more employees or an employee's amputation or an employee's loss of an eye, as a result of a work-related incident, you must report the in-patient hospitalization, amputation, or loss of an eye to OSHA.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_27ebc2d11c814b4c809ab3b10c0be89d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e14cdfb7524d4edcaf83465e66bb7460",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that for an amputation you must only report the event to OSHA if it occurs within twenty-four (24) hours of the work-related incident",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": " 29 CFR 1904.39(b)(6) provides: \"What if the fatality, in-patient hospitalization, amputation, or loss of an eye does not occur during or right after the work-related incident? You must only report a fatality to OSHA if the fatality occurs within thirty (30) days of the work-related incident. For an in-patient hospitalization, amputation, or loss of an eye, you must only report the event to OSHA if it occurs within twenty-four (24) hours of the work-related incident.\"\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_53f2bfb4bcf14fbb994f67dd569029a7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_e14cdfb7524d4edcaf83465e66bb7460",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the amputation occurred more than 24 hours after the October 15, 2025 incident",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt states that \"the event resulted in a finger removal procedure on October 18, 2025.\" The OSHA incident notice states the incident occurred on \"10/15/25\" at \"14:42 PDT.\" October 18, 2025 is three days after October 15, 2025, which exceeds the 24-hour reporting window for amputations under 29 CFR 1904.39(b)(6).",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

@@ -1,0 +1,353 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Draft an email to Levi with:\nToday’s date\nWhat lesson from the unit the class completed today\nThe Do Now activity, along with any instructions.\nThe Guided Instruction activity, along with any instructions.\nThe Summative Assessment activity, along with any instructions.\nHow to prepare for tomorrow’s lesson\nA heads up that I've notified his parents of his unexcused absence and that I expect him to complete all of the following work within 2 school days or he will receive a zero on the missing assignments\nWe’re a day behind the unit overview schedule."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States October 21, 2025 as the email date (ver_b60406a15e554dc7bc0ded85c8a48790)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States October 21, 2025 as the email date."
+        }
+      ]
+    },
+    {
+      "name": "States a date other than October 21, 2025 as the email date. (ver_b60406a15e554dc7bc0ded85c8a48790)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States a date other than October 21, 2025 as the email date."
+        }
+      ]
+    },
+    {
+      "name": "States the lesson completed in class as Lesson 6 (ver_33c45972886f4c71a95d9b5f20aceb62)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the lesson completed in class as Lesson 6."
+        }
+      ]
+    },
+    {
+      "name": "States the lesson completed in class as a lesson other than Lesson 6. (ver_33c45972886f4c71a95d9b5f20aceb62)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the lesson completed in class as a lesson other than Lesson 6."
+        }
+      ]
+    },
+    {
+      "name": "States the parents have been notified of the unexcused absence (ver_8cd6fcb9f1f8438bbecc88453c8581df)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the parents have been notified of the unexcused absence."
+        }
+      ]
+    },
+    {
+      "name": "States the expectation that he must complete all missed assignments (ver_ac53a10a08a5415b80d5521d9d172b17)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the expectation that he must complete all missed assignments."
+        }
+      ]
+    },
+    {
+      "name": "States that failure to complete the missed assignments within two school days... (ver_52317a8e003b4d48a712ceb79500007b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that failure to complete the missed assignments within two school days will result in a grade of zero."
+        }
+      ]
+    },
+    {
+      "name": "States directive to \"write two predictions for what you think will happen in... (ver_e51b6e04e7fe47ef8d3021433c4b50ec)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States directive to \"write two predictions for what you think will happen in chapters 7 and 8\" as the Do Now activity from lesson 6."
+        }
+      ]
+    },
+    {
+      "name": "States reading chapters 7-8 as the guided instruction activity from Lesson 6 (ver_58dd09c6e9f44dd19ec468f62de0db06)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States reading chapters 7-8 as the guided instruction activity from Lesson 6."
+        }
+      ]
+    },
+    {
+      "name": "States that students may choose to read silently or listen to the provided... (ver_eaec0abdf03e4a77bcf8837af939dfe7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that students may choose to read silently or listen to the provided audio version as instructions for reading chapters 7-8."
+        }
+      ]
+    },
+    {
+      "name": "States the instructions to write a summary of what you have read in chapters 7... (ver_38d451f333aa4698b425b0b4cdd5c272)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the instructions to write a summary of what you have read in chapters 7 and 8 as the Lesson 6 exit ticket."
+        }
+      ]
+    },
+    {
+      "name": "States instructions that the summary should be a paragraph and contain a... (ver_f6d0fedc504e4aae9f497c6d6d239a9a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States instructions that the summary should be a paragraph and contain a minimum of five sentences for the Lesson 6 exit ticket."
+        }
+      ]
+    },
+    {
+      "name": "States that the student needs to read chapters 10-14 to prepare for the next... (ver_d2e5a6ff742449f69d0be11225ada5f3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the student needs to read chapters 10-14 to prepare for the next class."
+        }
+      ]
+    },
+    {
+      "name": "Mentions that the student needs to read chapters other than 10, 11, 12, 13, 14... (ver_d2e5a6ff742449f69d0be11225ada5f3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Mentions that the student needs to read chapters other than 10, 11, 12, 13, 14 to prepare for the next class."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world305-eb-02-natural-prompt-699d2fd3"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4558b5e9ad064a88bfcb584e95c38466",
+    "world_name": "Teaching World 305",
+    "task_id": "task_699d2fd3c7d74ccb90e6d34986831669",
+    "task_name": "world305_EB_02 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_51582439ad50440395d703be594d7005",
+        "golden_text_response": "Dear Levi,\n\nI am writing in regards to your absence from English class today, October 21st, 2025. In addition to sending this email, I have also notified your parents of your unexcused absence. I’m including in this email the material that you missed during today’s class. It is my expectation that you will complete all of the following assignments, and have them turned in within two school days. Failure to do so will unfortunately result in a zero on any missed assignments. Please take advantage of this opportunity to get your missing assignments turned in on time!\n\nLesson 6 - October 21st, 2025\nTo Kill a Mockingbird\n\nDo Now:\nWrite down two predictions for what you think will happen in chapters 7 and 8.\n\nGuided Instruction:\nRead Chapters 7-8. You may choose to read silently or listen to the provided audio version of the chapters. \n\nSummative Assessment: \nExit Ticket. Write a summary of what you have read in chapters 7 and 8. Your summary should be a paragraph and contain a minimum of five sentences.\n\nAdditionally, you will need to come prepared to tomorrow’s class by reading Chapters 10-14. Please let me know if you have any questions about the assignments. \n\nSincerely,  Mrs. A",
+        "golden_file_responses": "snap_529cdff2206d4cd198461b6f03976bdc"
+      }
+    ]
+  }
+}

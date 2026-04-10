@@ -1,0 +1,15 @@
+# Docker Compose
+# Usage:
+#   cp .env.template .env
+#   # edit .env
+#   docker load -i image_amd64.tar   # on arm64 hosts, use image_arm64.tar when that tarball is in the export
+#   # tag the loaded image to match the compose file:
+#   docker tag <loaded_image_tag> image-factory:local
+#   docker compose run --rm --service-ports world /app/tools/start.sh "<task_slug>"
+services:
+  world:
+    image: image-factory:local
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"

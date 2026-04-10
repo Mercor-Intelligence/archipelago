@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "In accordance with CEQA requirements, the City held a public hearing for comment on the environmental impact of the proposed 344 W Bonita project. One resident in particular has been very vocal on social media about the potential impact of the project on the environment and requested that the City run an additional specialized study on how the project will affect the environment. The City decided to do the additional study, which cost $5,000. The City did not tell Liverbird it was going to run the study, but has since asked Liverbird to pay for it through the CEQA Expenses Deposit. Can the City force Liverbird to pay? "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the City can force Liverbird to pay for the study through the CEQA... (ver_e0dcbbc2341d46d6be327e6f8dc11a7e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the City can force Liverbird to pay for the study through the CEQA Expenses Deposit."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world428-am-03-be4d8518"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_be4d851839054b53aff92e1fe055de07",
+    "task_name": "World428_AM_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_a784c37c138141e88ba9139c9ab0d406",
+        "golden_text_response": "The City can force Liverbird to pay for the study through the CEQA Expenses Deposit. ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "I'd like to understand the temporal impact of rate hikes on loan losses of both variable and fixed type loans. Inspect the chart \"Impact of Rate Hikes: Variable Rate Loan Losses\" from the file \"1.11.2026 Habor Capital Final.pdf\" and consider the point when variable rate loan losses spiked from a baseline of ~750M to ~1.2B. At the time of this spike (use the first day on the month of the change), what were the last 2 changes in the Federal Reserve's Federal Funds Target Rate, by how much did the rate change each time, how many months ago did they occur (round to nearest with 30d/month), and what were the target rates? The SQL table fred_database contains data on the Fed's target rates. Use the series DFEDTARL (target rate lower bound) as a proxy for the Fed's target rate. Round to 2 decimals. Return SQLite code for this analysis along with results."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports that first most recent change to the Federal Funds Target Rate was an... (ver_14fbe48f821c4c2d97967d6d6ef4d471)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that first most recent change to the Federal Funds Target Rate was an increase of 0.25% +/-0.02."
+        }
+      ]
+    },
+    {
+      "name": "Reports that second most recent change to the Federal Funds Target Rate was an... (ver_fad4987b1ce74203b9ab0dc3df8b72c5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that second most recent change to the Federal Funds Target Rate was an increase of 0.25% +/-0.02."
+        }
+      ]
+    },
+    {
+      "name": "Reports that the Federal Funds Target Rate at the first most recent change was... (ver_3cf205b6c2324025b0029a6fec3eb539)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that the Federal Funds Target Rate at the first most recent change was 5.25% +/-0.05."
+        }
+      ]
+    },
+    {
+      "name": "Reports that the Federal Funds Target Rate at the second most recent change... (ver_faf180e05105414895ddaefad7823981)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that the Federal Funds Target Rate at the second most recent change was 5.00% +/-0.05."
+        }
+      ]
+    },
+    {
+      "name": "Reports that the first most recent change to the Federal Funds target rate was... (ver_f569cb0fa0024dfdaaf4987c3cde828c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that the first most recent change to the Federal Funds target rate was 13 months ago."
+        }
+      ]
+    },
+    {
+      "name": "Reports that the second most recent change to the Federal Funds target rate... (ver_52aa41ad11984e938eee37372f16e508)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that the second most recent change to the Federal Funds target rate was 16 months ago."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sql-task-7vpx15f8-5d6da878"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_5d6da878422b4c3c88f609dad5034044",
+    "task_name": "SQL - Task 7vpx15f8",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_162bcf8c8834470db001b65006a408a4",
+        "golden_text_response": "The most recent change to the Fed Funds target rate was an increase of 0.25% to a target rate of 5.25%, which occurred 13 months ago.\nThe next most recent change to the Fed Funds target rate was an increase of 0.25% to a target rate of 5.00%, which occurred 16 months ago.\n\nSQLite query result:\nobservation_date  ffr_target  ffr_change  ffr_change_months_ago\n      2023-04-28        5.25        0.25                     13\n      2023-02-03        5.00        0.25                     16\n\n```SQLite\nWITH base AS (\n  SELECT\n    observation_date,\n    DFEDTARL AS ffr_target,\n    DFEDTARL - LAG(DFEDTARL) OVER (ORDER BY observation_date) AS ffr_change\n  FROM fred_database\n  ),\nfiltered AS (\n  SELECT * FROM base\n  WHERE ffr_change != 0\n  AND observation_date <= DATE('2024-06-01')\n  ORDER BY observation_date DESC\n  LIMIT 2\n  )\nSELECT\n  *,\n  CAST(ROUND((JULIANDAY('2024-06-01') - JULIANDAY(observation_date))/30, 0) AS INTEGER) as ffr_change_months_ago\nFROM filtered;\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

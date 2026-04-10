@@ -1,0 +1,66 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_820fc3f883244d41affac51971a5d2ef",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_466c2f3dd17a445d9c5d921735409312",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that the Plaintiff brought the claim outside of the 90-day statute of limitations period",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This case is very similar to \"AIDS Healthcare Foundation v LA.pdf.\" In \"AIDS Healthcare Foundation v LA.pdf\" the Court held that the Government Code section 65009 set a 90-day statute of limitations periods for claims brought under the Political Reform Act (PRA) to set aside certain land use challenges. \"AIDS Healthcare Foundation v LA.pdf\" at page 20.  The Court held that the statute of limitations in Section 65009 applied because the \"gravamen\" of the plaintiff's action was to set aside permitting and real estate decisions by the Los Angeles City Council planning and land use management (PLUM) committee the 90-day statute of limitations in section 65009 applied.\n\nHere, the gravamen of the Plaintiff's claim is to set aside the PLUM committee's approval of the development agreement. Section 65009(c)(1)(D) specifically prohibits actions seeking \"[t]o attack, review, set aside, void, or annul the decision of a legislative body to adopt, amend, or modify a development agreement. . .\" Id. at page 12. (quoting California Government Code section 65009(c)(1)(D)). In this case the Plaintiff is seeking to set aside an approval of a development agreement. The Agreement was approved on November 30, 2025, and the Plaintiff brought their claim to set aside the approval on April 25, 2026, or 146 days after the approval. Accordingly, the Plaintiff's claim is barred because it was not brought within the required 90-day period.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_55bf411166be453786a0546ef5b44b4f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_466c2f3dd17a445d9c5d921735409312",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that the Defendant's demurrer should be granted",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This case is very similar to \"AIDS Healthcare Foundation v LA.pdf.\" In \"AIDS Healthcare Foundation v LA.pdf\" the Court held that the Government Code section 65009 set a 90-day statute of limitations periods for claims brought under the Political Reform Act (PRA) to set aside certain land use challenges. \"AIDS Healthcare Foundation v LA.pdf\" at page 20.  The Court held that the statute of limitations in Section 65009 applied because the \"gravamen\" of the plaintiff's action was to set aside permitting and real estate decisions by the Los Angeles City Council planning and land use management (PLUM) committee the 90-day statute of limitations in section 65009 applied.\n\nHere, the gravamen of the Plaintiff's claim is to set aside the PLUM committee's approval of the development agreement. Section 65009(c)(1)(D) specifically prohibits actions seeking \"[t]o attack, review, set aside, void, or annul the decision of a legislative body to adopt, amend, or modify a development agreement. . .\" Id. at page 12. (quoting California Government Code section 65009(c)(1)(D)). In this case the Plaintiff is seeking to set aside an approval of a development agreement. The Agreement was approved on November 30, 2025, and the Plaintiff brought their claim to set aside the approval on April 25, 2026, or 146 days after the approval. Accordingly, the Plaintiff's claim is barred because it was not brought within the required 90-day period.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_f7c7bb5804564169b3ce6bc612373fe7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_63216af00d5a431ba3baf8e7449e2f74",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists question 3 as incorrect",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The answer key shows the correct answer is B. Student answered C. The answer key and student assessment do not match. The question was not marked as incorrect when originally graded.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d0e581dd5d524249a532c23251b714ec",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_63216af00d5a431ba3baf8e7449e2f74",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Lists B as the correct answer for question 3",
+        "modality": "Free text",
+        "negative_criteria": "Lists any other answer than B as correct for question 3.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The answer key states the correct answer is B.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_545e777d94ac461eb5449cfbeecc221d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_63216af00d5a431ba3baf8e7449e2f74",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States one point is deducted from the score for question 3",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "All responses are valued at one point. One point must be subtracted from the score total for an incorrect answer on question 3.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b86c3da1ca514f31ace0d1474d1e35d8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_63216af00d5a431ba3baf8e7449e2f74",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Lists question 12 as incorrect",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The answer key shows A is correct. Answer a. is Burris Ewell. The student answered A on the exam; however, answer a. is Heck Tate.  In any instance where the answer key options differ from the student options, prioritize the content of the answer. The answer option with the correct content is correct. In this case, only the option with content Burris Ewell is correct. All other options must be marked incorrect.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7b85fed79830448c9157a700d9c31b3f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_63216af00d5a431ba3baf8e7449e2f74",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"Burris Ewell\" as the correct answer for question 12",
+        "modality": "Free text",
+        "negative_criteria": "Lists any answer other than A \"Burris Ewell\" as correct for question 12.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The answer key states A \"Burris Ewell\" as correct. In any instance where the answer key options differ from the student options, the content of the answer is prioritized. The answer option with the correct content is correct.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_463b1d1cd58c4a47aefc831d8d358c4d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_63216af00d5a431ba3baf8e7449e2f74",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States one point is deducted from the score for question 12",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Each answer is worth 1 point. Deduct one point for any question that was marked correct but has the incorrect answer.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bc6d439cac6e4bcfab8fc851479f9de8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_63216af00d5a431ba3baf8e7449e2f74",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists question 25 as incorrect",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The answer key shows the response for item 2 is D. The student answer B. The answer shows the response for item 3 is B. The student answered D.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7592d1f9be974ea888eebaed90da9a84",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_63216af00d5a431ba3baf8e7449e2f74",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Lists D for item 2 and B for item 3 as the correct answer for question 25",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This question requires multiple responses. Each response is worth one point.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4838e6b2b06446439b34f2b27c5b882d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_63216af00d5a431ba3baf8e7449e2f74",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States two points are deducted for question 25",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Each response is worth one point. Two responses are incorrect; therefore, two points are deducted.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_aa9c59a2dce54ff4981c390bfbad6017",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_63216af00d5a431ba3baf8e7449e2f74",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the original score is 52/54 (acceptable range 51 to 53)",
+        "modality": "Free text",
+        "negative_criteria": "Does not state the original score is 52/54.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The original score is 52 out of 54 points.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a846fe47a2434939ad472bdc94404100",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_63216af00d5a431ba3baf8e7449e2f74",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the new score to be 50/54",
+        "modality": "Free text",
+        "negative_criteria": "The score is anything other than 50/54.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "There are 54 points total on the exam. All responses are valued at one point. Deduct one point for question 3. Deduct one point for question 12. Deduct one point for question 25, response 2. Deduct one point for question 25, response 3. Four incorrect responses means four points subtracted from the total points possible. 54-4=50",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 17,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

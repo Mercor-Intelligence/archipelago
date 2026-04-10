@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Can you import all the attached employee data, along with balance_adjustments, custom field values, custom reports, departments, emergency contacts, employee policies, time off requests, time off types, time off policies, and time off balances in the BambooHR?\n\nUsing the \"Create New Employees \" tool, import all new hires from Greenhouse ATS for last two FY into the BambooHR application. All of them would have all the same leave policies and for standard vacation, it would be non-exempt time-off effective as of their hire date. Assume 8 working hours a day. The bi-weekly accrual assumes a 14-day period from the hire date. All the new hires have taken 10 days of average standard leave in the current FY. As this record is not updated in Bamboo, using the create new request tool, create a dummy standard leave request for all these employees for the period of 8th Dec 2025 to 19th Dec 2025.\n\nThen, to QC the import, using the Who's out tool, report the total number of employees who have taken any leave in that period.\n\nPlease report the answer directly in console. The financial year would be from 1st Apr 2025 to 31st March 2026. Both dates are inclusive."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the total number of employees who have taken any leave during the... (ver_c771a82face045cbac9f082b62080e72)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of employees who have taken any leave during the period of 8th Dec 2025 to 19th Dec 2025 is 43."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh hr602-rj-01-34a2ab8a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_34a2ab8a714e47bf93f1c8f8a50c3239",
+    "task_name": "HR602_RJ 01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_8cdec83e3d20466299b183390cd844a2",
+        "golden_text_response": "The total number of employees who have taken any leave during the period of 8th Dec 2025 to 19th Dec 2025 is 43\n\n\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

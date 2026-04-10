@@ -1,0 +1,74 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_336914d3d69249feb12d4e67a3124d90",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1b009ce5e78045889937cfc0db8b91d5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the FY23 cash conversion cycle for Arhaus is 114.73 days (acceptable range 113.58 to 115.88)",
+        "modality": "Free text",
+        "negative_criteria": "States that the FY23 cash conversion cycle for Arhaus is any value other than 114.73 days",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Column 1\tArhaus\tRestoration hardware\nRevenue\t1287704\t3029126\nCOGS\t747281\t1640107\nInventory (start)\t286419\t801841\nInventory (end)\t254292\t754126\nReceivables (start)\t1734\t59763\nReceivables (end)\t2394\t55058\nPayables (start)\t62636\t166082\nPayables (end)\t63699\t192345\nAverage Inventory\t270355.5\t777983.5\nAverage receivables\t2064\t57410.5\nAverage payables\t63167.5\t179213.5\nDIO\t132.0517416\t173.1374706\nDSO\t0.5850412828\t6.91778173\nDPO\t17.90484265\t21.59465387\nCCC\t114.7319402\t158.4605985\n\nBased on the above table, the CCC for Arhaus is 114.7319. Rounding the answer to 2 decimal places as per the instruction in the prompt to 114.73 days",
+        "expected_change_type": "any",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ded732519ab043369b97b8595c4bf094",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1b009ce5e78045889937cfc0db8b91d5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the FY23 cash conversion cycle for Restoration Hardware is 158.46 days (acceptable range 156.88 to 160.04)",
+        "modality": "Free text",
+        "negative_criteria": "States that the FY23 cash conversion cycle for Restoration Hardware is any value other than 158.46 days",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Column 1\tArhaus\tRestoration Hardware\nRevenue\t1287704\t3029126\nCOGS\t747281\t1640107\nInventory (start)\t286419\t801841\nInventory (end)\t254292\t754126\nReceivables (start)\t1734\t59763\nReceivables (end)\t2394\t55058\nPayables (start)\t62636\t166082\nPayables (end)\t63699\t192345\nAverage Inventory\t270355.5\t777983.5\nAverage receivables\t2064\t57410.5\nAverage payables\t63167.5\t179213.5\nDIO\t132.0517416\t173.1374706\nDSO\t0.5850412828\t6.91778173\nDPO\t17.90484265\t21.59465387\nCCC\t114.7319402\t158.4605985\n\nBased on the above table, the CCC for Restoration Hardware is 158.4605. Rounding the answer to 2 decimal places as per the instruction in the prompt to 158.46 days",
+        "expected_change_type": "any",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

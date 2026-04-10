@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "SBP received notice on October 31, 2025, that OSHA closed its case file on Anthony Porter's complaint. Explain why."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that OSHA closed its case file because it does not have jurisdiction (ver_19dd127d0000467bb7e2e7a01843c06c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that OSHA closed its case file because it does not have jurisdiction."
+        }
+      ]
+    },
+    {
+      "name": "States that the Porter complaint arose out safety concerns in Fresno, CA (ver_e9a62832c2e7421783c02851cf8e9409)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Porter complaint arose out safety concerns in Fresno, CA."
+        }
+      ]
+    },
+    {
+      "name": "States that California is a State Plan state under OSHA (ver_73dac044a86b4f02a97108e922062dfb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that California is a State Plan state under OSHA."
+        }
+      ]
+    },
+    {
+      "name": "States that the California State Plan applies to all public and private sector... (ver_dde05adb9330407ba56b613a843fd83d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the California State Plan applies to all public and private sector places of employment in the state other than federal employees."
+        }
+      ]
+    },
+    {
+      "name": "States that SBP is a private employer in California (ver_c04e91e685fa4ebab49b097a2104cb7d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that SBP is a private employer in California."
+        }
+      ]
+    },
+    {
+      "name": "States that Cal/OSHA has jurisdiction here, not federal OSHA (ver_3a3f369a09b74a808718336c3cf1bda5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Cal/OSHA has jurisdiction here, not federal OSHA."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh lawworld437-ab-01-56d34983"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_56d34983d0cd49e8af44ac003a4f1a45",
+    "task_name": "LawWorld437_AB_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f2b07a2aaab249f1901208a4d2a53c6c",
+        "golden_text_response": "OSHA closed its case file because it does not have jurisdiction here. Anthony Porter's complaint originated out of safety concerns at SBP's site in Fresno, CA. California is a state with a State Plan under OSHA. The California State Plan applies to all public and private sector places of employment in the state with the exception of federal government employees. SBP is a private employer. Accordingly, Cal/OSHA has jurisdiction, not federal OSHA.  ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

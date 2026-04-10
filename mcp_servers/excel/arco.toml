@@ -1,0 +1,66 @@
+[arco]
+source = "foundry_app"
+name = "Excel"
+version = "1.0.0"
+
+[arco.env.host]
+REPO_URL = "https://github.com/Mercor-Intelligence/mercor-rls-sheets.git"
+
+[arco.env.build]
+
+[arco.env.runtime]
+MCP_TRANSPORT = "http"
+MCP_PORT = "5000"
+APP_FS_ROOT = "/filesystem"
+APP_SHEETS_ROOT = ""
+LIBREOFFICE_TIMEOUT = "30"
+SKIP_FORMULA_RECALC = "false"
+USE_INDIVIDUAL_TOOLS = "true"
+
+[arco.env.runtime.schema.USE_INDIVIDUAL_TOOLS]
+type = "bool"
+label = "Use individual tools"
+description = "Enable individual tools for UI instead of consolidated meta-tools for LLMs"
+
+[arco.secrets.host]
+GITHUB_TOKEN = "RLS_GITHUB_READ_TOKEN"
+
+[arco.secrets.build]
+
+[arco.secrets.runtime]
+
+# Error injection scenarios for testing agent error handling
+[[arco.error_injection_scenarios]]
+id = "api_timeout"
+description = "Simulates API timeout when calling spreadsheet tools"
+tools = ["*"]
+error_type = "timeout"
+error_message = "Request timed out after 30 seconds"
+
+[[arco.error_injection_scenarios]]
+id = "rate_limit"
+description = "Simulates rate limiting from the spreadsheet service"
+tools = ["*"]
+error_type = "rate_limit"
+error_message = "Rate limit exceeded. Please retry after 60 seconds."
+
+[[arco.error_injection_scenarios]]
+id = "permission_denied"
+description = "Simulates permission denied when accessing spreadsheet resources"
+tools = ["*"]
+error_type = "permission_denied"
+error_message = "Access denied. Insufficient permissions to access this resource."
+
+[[arco.error_injection_scenarios]]
+id = "server_error"
+description = "Simulates internal server error from the backend service"
+tools = ["*"]
+error_type = "server_error"
+error_message = "Internal server error. The service is temporarily unavailable."
+
+[[arco.error_injection_scenarios]]
+id = "malformed_response"
+description = "Simulates malformed or invalid response from the spreadsheet service"
+tools = ["*"]
+error_type = "malformed_response"
+error_message = "Failed to parse response: unexpected format received from upstream service"

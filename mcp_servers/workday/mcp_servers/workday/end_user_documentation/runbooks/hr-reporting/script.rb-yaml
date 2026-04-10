@@ -1,0 +1,113 @@
+# HR Reporting Workflow
+# Demonstrates: Generate various HR reports
+#
+# Tools exercised:
+# - Login (hr_admin)
+# - Report Headcount (Reports)
+# - Report Workforce Roster (Reports)
+# - Report Org Hierarchy (Reports)
+# - Report Positions (Reports)
+# - Report Movements (Reports)
+
+url: http://localhost:3000
+
+output: screenshots
+
+defaults:
+  server: workday-workday
+
+steps:
+  # Step 1: Initial view
+  - TakeScreenshot
+
+  # Step 2: Login as HR Admin
+  - Login:
+      persona: hr_admin
+      screenshot_params:
+        element: *tool_panel
+        max_height: 600
+
+  # Step 3: Generate Headcount Report
+  - SelectTool:
+      tool: report_headcount
+      category: Reports
+  - Wait: 500
+  - FillToolParam:
+      params:
+        as_of_date: "2026-01-29"
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 600
+
+  # Step 4: Execute headcount report
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 5: Generate Workforce Roster
+  - SelectTool:
+      tool: report_workforce_roster
+      category: Reports
+  - Wait: 500
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 6: Generate Org Hierarchy Report
+  - SelectTool:
+      tool: report_org_hierarchy
+      category: Reports
+  - Wait: 500
+  - FillToolParam:
+      params:
+        org_id: ORG001
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 600
+
+  # Step 7: Execute org hierarchy report
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 8: Generate Positions Report
+  - SelectTool:
+      tool: report_positions
+      category: Reports
+  - Wait: 500
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 9: Generate Movements Report
+  - SelectTool:
+      tool: report_movements
+      category: Reports
+  - Wait: 500
+  - FillToolParam:
+      params:
+        start_date: "2026-01-01"
+        end_date: "2026-01-31"
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 600
+
+  # Step 10: Execute movements report
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800

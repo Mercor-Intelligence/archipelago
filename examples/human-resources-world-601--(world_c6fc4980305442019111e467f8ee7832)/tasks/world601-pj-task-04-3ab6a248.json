@@ -1,0 +1,238 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The remote working policy has been discontinued. Two new office locations - Seattle and Chicago - are being added, bringing the total to five office locations (3 existing + 2 new). Employees must now be physically based in one of these five locations. Accordingly, update the Greenhouse tool to reject:\n- any active applicants outside these 5 office locations \n- those hired on or after 1 Dec 2025 and are based outside these office locations\n\nIn the console, report the total number of rejected applicants by location after the requested Greenhouse update."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the total number of rejected applicants, with Austin, TX as... (ver_eb060938a50c4a1abace0c4a66e8f428)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of rejected applicants, with Austin, TX as location, after the requested Greenhouse update is 9."
+        }
+      ]
+    },
+    {
+      "name": "States that the total number of rejected applicants with Boston, MA as... (ver_66217739f49e45d583032420bc035f76)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of rejected applicants with Boston, MA as location after the requested Greenhouse update is 10."
+        }
+      ]
+    },
+    {
+      "name": "States that the total number of rejected applicants with Chicago, IL as... (ver_0ee9acabd1ba4f499a5b26c2c2bf860d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of rejected applicants with Chicago, IL as location after the requested Greenhouse update is 4."
+        }
+      ]
+    },
+    {
+      "name": "States that the total number of rejected applicants with Detroit, MI as... (ver_dff84e2bf82140009ea485638ce0b3ce)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of rejected applicants with Detroit, MI as location after the requested Greenhouse update is 4."
+        }
+      ]
+    },
+    {
+      "name": "States that the total number of rejected applicants with Dublin, Ireland as... (ver_344eb6e206fb47e8a8ff3aa45ce3a416)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of rejected applicants with Dublin, Ireland as location after the requested Greenhouse update is 16."
+        }
+      ]
+    },
+    {
+      "name": "States that the total number of rejected applicants with New York, NY as... (ver_065180853d9e471495e1f07d5ab9d96f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of rejected applicants with New York, NY as location after the Greenhouse update is 22."
+        }
+      ]
+    },
+    {
+      "name": "States that the total number of rejected applicants with San Francisco, CA as... (ver_a8d59f55e33b4dfcaa734105a4e18d27)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of rejected applicants with San Francisco, CA as location after the Greenhouse update is 23."
+        }
+      ]
+    },
+    {
+      "name": "States that the total number of rejected applicants with San Jose, CA as... (ver_8def4f625c93424eb5bb107ef9c74a6c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of rejected applicants with San Jose, CA as location after the Greenhouse update is 16."
+        }
+      ]
+    },
+    {
+      "name": "States that the total number of rejected applicants with Seattle, WA as... (ver_537f7f2a909c477b9bc275df6b743e67)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of rejected applicants with Seattle, WA as location after the Greenhouse update is 12."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world601-pj-task-04-3ab6a248"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_3ab6a248a9154cd0a9f4876ea28b941a",
+    "task_name": "World601_PJ_Task 04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_e668cd2e1fb9464f8d9d67ebbad5adc6",
+        "golden_text_response": "The number of rejected applicants by location is as follows:\nAustin, TX: 9\nBoston, MA: 10\nChicago, IL: 4\nDetroit, MI: 4\nDublin, Ireland: 16\nNew York, NY: 22\nSan Francisco, CA: 23\nSan Jose, CA: 16\nSeattle, WA: 12",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

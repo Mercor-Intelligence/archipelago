@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "SingleSignal is starting the analysis to implement our future state Sales organization and expand headcount in the department from the recent workforce and hiring pipeline assessment. Unfortunately, it appears that many or all of the Sales team in BambooHR are aligned to an incorrect supervisor. Review the current Sales Department org structure in SingleSignal – Sales Department Organization.pptx and update employees' supervisor_id in BambooHR with the correct supervisor information. State the number of supervisor updates made. Once you've made the changes in BambooHR, tell me the average span of control across the Sales team's managers (excluding the CRO). \n\nPut your final answer in the console with 2 decimals. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of supervisor updates made to the correct information... (ver_312fc3f4768d426cae40d7b034c7685e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of supervisor updates made to the correct information is 23.00 (acceptable range 22.77 to 23.23)."
+        }
+      ]
+    },
+    {
+      "name": "States the average span of control in the Sales organization excluding the CRO... (ver_9d7a812511fe4b87ac2693fa9943c1a4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average span of control in the Sales organization excluding the CRO is 2.40 (acceptable range 2.38 to 2.42)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world601-cl-06-b0eac3dc"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_b0eac3dc866b415db908583516ff43a0",
+    "task_name": "World601_CL_06",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_972b0571f27d464dad05226285f901b6",
+        "golden_text_response": "The number of supervisor updates made to the correct information is 23.00\nThe average span of control in the Sales organization excluding the CRO is 2.40",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

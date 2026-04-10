@@ -1,0 +1,47 @@
+version: "1.0"
+project_name: "terrapin"
+
+servers:
+- name: terrapin
+  display_name: "Terrapin Finance"
+  description: "Bond market data for government, corporate, and municipal bonds"
+  tools_module: "mcp_servers.terrapin.tools"
+  base_url: "http://localhost:8000"
+  requires_auth: true
+
+categories:
+- name: &govt_corp "Government & Corporate Bonds"
+  description: "Search, reference, pricing, and cashflows for government and corporate bonds"
+  servers: [terrapin]
+- name: &muni "Municipal Bonds"
+  description: "Search, reference, pricing, yields, and cashflows for US municipal bonds"
+  servers: [terrapin]
+
+tool_overrides:
+- tool: "terrapin.search_bonds"
+  category: *govt_corp
+- tool: "terrapin.get_bond_reference_data"
+  category: *govt_corp
+- tool: "terrapin.get_bond_pricing_latest"
+  category: *govt_corp
+- tool: "terrapin.get_bond_pricing_history"
+  category: *govt_corp
+- tool: "terrapin.get_bond_cashflows"
+  category: *govt_corp
+- tool: "terrapin.get_inflation_factors"
+  category: *govt_corp
+
+- tool: "terrapin.search_municipal_bonds"
+  category: *muni
+- tool: "terrapin.get_muni_reference_data"
+  category: *muni
+- tool: "terrapin.get_muni_pricing_latest"
+  category: *muni
+- tool: "terrapin.get_muni_pricing_history"
+  category: *muni
+- tool: "terrapin.get_muni_pricing_daily_bulk"
+  category: *muni
+- tool: "terrapin.calculate_muni_yield_from_price"
+  category: *muni
+- tool: "terrapin.get_muni_cashflows"
+  category: *muni

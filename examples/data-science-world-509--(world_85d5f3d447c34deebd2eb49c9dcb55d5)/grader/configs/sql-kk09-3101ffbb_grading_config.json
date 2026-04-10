@@ -1,0 +1,117 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_15a74eb786094eddbd4952f3112f36e5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3101ffbb058749ccb84bd2ffe46db071",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Computes the median of Expected Loss as 622,509 +/- 10.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt states to output the median and the average expected loss, total number of loans that require VP approval, average credit score, and average interest rate loans after performing various filters. 622,509 is the correct median of Expected Loss.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_975943c882664f2e94839924e6e7ad62",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3101ffbb058749ccb84bd2ffe46db071",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Computes the average of Expected Loss as 711,233 +/- 10.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt states to output the median and the average expected loss, total number of loans that require VP approval, average credit score, and average interest rate loans after performing various filters. 711,233 is the correct average of Expected Loss.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5ed15859c2d14ee08db1fa6343da987c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3101ffbb058749ccb84bd2ffe46db071",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Computes the number of loans needing VP approvals as exactly 54 (acceptable range 53 to 55).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt states to output the median and the average expected loss, total number of loans that require VP approval, average credit score, and average interest rate loans after performing various filters. 54 is the correct number of loans that require VP approval.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9dd77e51c22d43528b01e7151824dd18",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3101ffbb058749ccb84bd2ffe46db071",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Computes the average credit score as exactly 659 +/- 1 (acceptable range 652 to 666).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt states to output the median and the average expected loss, total number of loans that require VP approval, average credit score, and average interest rate loans after performing various filters. 659 is the correct average credit score.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_27a3c7e49d794c418f85a5d021760adb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3101ffbb058749ccb84bd2ffe46db071",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Computes the average interest rate as 9.518 (+/- 0.005)",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt states to output the median and the average expected loss, total number of loans that require VP approval, average credit score, and average interest rate loans after performing various filters. 9.518 is the correct average interest rate.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "eval_config_name": "Output LLM",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "4658aec9-7eeb-4c9b-84c2-5464345e345f",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

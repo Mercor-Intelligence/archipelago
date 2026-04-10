@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use the State of the Consumer 2024 McKinsey report to identify which 3 economies have the lowest customer price sensitivity index, which is calculated based on the percentage likelihood of consumers to try a different brand multiplied by the percentage of consumers changing retailers due to price discounts. State the value of the index for the 3 economies in percentage form.\nState output directly in the console. State to 2 decimal places. \n "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the customer price sensitivity index for Japan is 4.20%... (ver_efc22de92555443598cc24d312cc784c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the customer price sensitivity index for Japan is 4.20% (acceptable range 4.16% to 4.24%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the customer price sensitivity index for Japan is a value other... (ver_efc22de92555443598cc24d312cc784c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the customer price sensitivity index for Japan is a value other than 4.20%."
+        }
+      ]
+    },
+    {
+      "name": "States the customer price sensitivity index for Australia is 10.23%... (ver_1a6d169a28d04785bcddd8a79d600199)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the customer price sensitivity index for Australia is 10.23% (acceptable range 10.13% to 10.33%)."
+        }
+      ]
+    },
+    {
+      "name": "States the customer price sensitivity index for Australia is a value other... (ver_1a6d169a28d04785bcddd8a79d600199)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the customer price sensitivity index for Australia is a value other than 10.23%."
+        }
+      ]
+    },
+    {
+      "name": "States the customer price sensitivity index for EU-5 is 13.60% (acceptable... (ver_37d98977484d4151af3224602e045548)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the customer price sensitivity index for EU-5 is 13.60% (acceptable range 13.46% to 13.74%)."
+        }
+      ]
+    },
+    {
+      "name": "States the customer price sensitivity index for EU-5 is a value other than... (ver_37d98977484d4151af3224602e045548)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the customer price sensitivity index for EU-5 is a value other than 13.60%."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-9e2m659e-6783869a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_93767f48e4d9497a8f6b129492a1ae14",
+    "world_name": "Management Consulting World 122",
+    "task_id": "task_6783869a00c74ed187add6a7d3143d20",
+    "task_name": "Task 9e2m659e",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c5b6b6f2bdd54673880bfbbff834e750",
+        "golden_text_response": "The index value for the 3 economies with the lowest customer price sensitivity index in percentage form is: \nJapan: 4.20%\nAustralia: 10.23% \nEU-5: 13.60%",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

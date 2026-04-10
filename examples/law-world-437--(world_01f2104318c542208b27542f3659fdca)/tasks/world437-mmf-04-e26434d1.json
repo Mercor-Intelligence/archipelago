@@ -1,0 +1,174 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "In a new Word document, describe the specific way in which our response to Porter's 11(c) retaliation complaint will be tested. Our defense is that the termination was caused by Anthony Porter's performance deficiencies.    "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that SBP’s defense is that Porter’s November 4, 2025 termination was... (ver_0da6fe6d5e054db28fb220a7580e3a84)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that SBP’s defense is that Porter’s November 4, 2025 termination was caused by Anthony Porter's performance deficiencies."
+        }
+      ]
+    },
+    {
+      "name": "States that pretext testing evaluates whether SBP took the adverse action... (ver_e5930264f1e34e3ea53f30052f5679f9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that pretext testing evaluates whether SBP took the adverse action against Porter for the legitimate business reason that the SBP asserts or whether the action against Porter was in fact retaliation for Porter’s engaging in protected activity."
+        }
+      ]
+    },
+    {
+      "name": "States that proper pretext testing requires the investigator to look at any... (ver_c2dc0672b6ee49e987d14ff7aa151055)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that proper pretext testing requires the investigator to look at any direct evidence of retaliation (such as statements of managers that action is being taken because of Complainant’s protected activity) that may shed light on what role, if any, the protected activity played in the employer’s decision to take adverse action."
+        }
+      ]
+    },
+    {
+      "name": "States that proper pretext testing requires the investigator to look at any... (ver_d0c3ed144d254fc1966865f64afc1b08)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that proper pretext testing requires the investigator to look at any circumstantial evidence that may shed light on what role, if any, the protected activity played in the employer’s decision to take adverse action."
+        }
+      ]
+    },
+    {
+      "name": "States that relevant circumstantial evidence can include a wide variety of... (ver_ab8233851d104327be49901f765fa42e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that relevant circumstantial evidence can include a wide variety of evidence, such as temporal proximity between the protected activity and the adverse action."
+        }
+      ]
+    },
+    {
+      "name": "States that the Whistleblower Investigations Manual outlines procedures for... (ver_667a57da8b2a4c3f81b7688a9ccc4fbb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Whistleblower Investigations Manual outlines procedures for handling retaliation complaints under the various whistleblower statutes for which responsibility was delegated to OSHA."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world437-mmf-04-e26434d1"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_e26434d158b8435b8350e881c62013b2",
+    "task_name": "World437_MMF_04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d8bbf06bcfeb46c3bfa43345039c069c",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_a2fa76060d504d1cb67c7840a3172e19"
+      },
+      {
+        "golden_response_id": "gold_6171ad748adf4cf3bf75c5b3daf14e5e",
+        "golden_text_response": "See attached.",
+        "golden_file_responses": "snap_a2fa76060d504d1cb67c7840a3172e19"
+      }
+    ]
+  }
+}

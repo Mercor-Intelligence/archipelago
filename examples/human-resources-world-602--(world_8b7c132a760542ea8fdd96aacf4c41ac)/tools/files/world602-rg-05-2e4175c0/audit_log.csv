@@ -1,0 +1,121 @@
+id,action,entity_type,entity_id,actor_id,actor_persona,old_values,new_values,timestamp
+1,approve,department,7,4,,"{""status"": ""active""}","{""status"": ""approved""}",2024-10-11T10:14:00Z
+2,deny,time_off_request,62,11,,"{""status"": ""terminated""}","{""status"": ""denied""}",2025-08-12T19:02:00Z
+3,login,time_off_request,62,10,,,,2024-07-15T00:46:00Z
+4,delete,time_off_request,27,17,,,,2024-10-02T22:25:00Z
+5,login,time_off_request,37,10,,,,2025-01-13T21:08:00Z
+6,delete,department,5,36,,,,2025-11-17T22:01:00Z
+7,approve,time_off_request,62,24,,"{""status"": ""pending""}","{""status"": ""approved""}",2025-05-04T16:16:00Z
+8,update,employee,34,10,,"{""status"": ""pending""}","{""status"": ""approved""}",2025-10-26T20:39:00Z
+9,create,custom_report,2,34,,,,2023-08-21T18:30:00Z
+10,delete,time_off_request,37,32,,,,2025-11-06T13:24:00Z
+11,update,custom_report,1,3,,,,2023-10-03T04:01:00Z
+12,approve,time_off_policy,2,37,,"{""status"": ""terminated""}","{""status"": ""active""}",2025-04-16T09:00:00Z
+13,delete,time_off_request,59,,scheduler,,,2024-08-18T18:04:00Z
+14,update,custom_report,4,22,,"{""status"": ""approved""}","{""status"": ""approved""}",2025-03-05T04:14:00Z
+15,create,time_off_request,38,17,,,,2025-08-10T14:06:00Z
+16,approve,time_off_policy,5,13,,"{""status"": ""active""}","{""status"": ""active""}",2025-11-01T04:52:00Z
+17,delete,time_off_policy,2,11,,,,2025-03-06T00:23:00Z
+18,login,custom_report,1,12,,,,2025-06-10T08:18:00Z
+19,create,time_off_policy,3,11,,,"{""created"": true}",2024-02-17T00:16:00Z
+20,delete,time_off_request,29,2,,,,2025-09-02T19:13:00Z
+21,deny,time_off_request,54,32,,"{""status"": ""active""}","{""status"": ""approved""}",2023-12-23T16:09:00Z
+22,login,custom_report,1,18,,,,2025-02-01T07:02:00Z
+23,deny,employee,4,31,,"{""status"": ""approved""}","{""status"": ""terminated""}",2025-07-13T15:26:00Z
+24,create,department,12,2,,,"{""created"": true}",2024-09-01T19:09:00Z
+25,update,custom_report,4,1,,"{""status"": ""pending""}","{""status"": ""terminated""}",2024-10-20T12:09:00Z
+26,delete,employee,14,1,,,,2025-02-18T11:56:00Z
+27,deny,employee,5,,integration,"{""status"": ""active""}","{""status"": ""terminated""}",2026-01-05T00:34:00Z
+28,delete,time_off_policy,4,32,,,,2025-01-18T07:17:00Z
+29,login,custom_report,2,12,,,,2025-08-07T16:35:00Z
+30,deny,department,12,,system,"{""status"": ""terminated""}","{""status"": ""terminated""}",2023-12-25T09:41:00Z
+31,deny,time_off_policy,7,17,,,,2025-09-01T01:48:00Z
+32,login,employee,3,16,,,,2023-12-15T09:45:00Z
+33,update,employee,7,16,,"{""status"": ""pending""}","{""status"": ""terminated""}",2024-03-19T11:05:00Z
+34,approve,department,9,28,,,,2025-12-11T05:28:00Z
+35,update,custom_report,3,19,,"{""status"": ""active""}","{""status"": ""approved""}",2023-10-21T23:45:00Z
+36,approve,time_off_request,36,36,,"{""status"": ""terminated""}","{""status"": ""terminated""}",2024-01-16T04:20:00Z
+37,create,time_off_request,49,12,,,"{""created"": true}",2024-12-06T20:51:00Z
+38,update,custom_report,4,10,,,,2023-09-11T11:51:00Z
+39,create,custom_report,4,,scheduler,,"{""created"": true}",2024-08-13T05:36:00Z
+40,update,time_off_request,11,26,,,,2025-11-03T16:14:00Z
+41,create,time_off_request,49,3,,,,2023-08-27T07:48:00Z
+42,deny,custom_report,2,28,,"{""status"": ""active""}","{""status"": ""active""}",2025-03-03T00:02:00Z
+43,login,time_off_policy,2,12,,,,2024-12-27T02:25:00Z
+44,delete,time_off_request,49,7,,,,2025-03-28T01:37:00Z
+45,deny,time_off_policy,4,39,,"{""status"": ""approved""}","{""status"": ""terminated""}",2024-10-13T23:02:00Z
+46,create,custom_report,2,1,,,,2024-07-19T15:23:00Z
+47,delete,department,4,13,,,,2023-10-07T02:29:00Z
+48,deny,time_off_request,33,17,,"{""status"": ""active""}","{""status"": ""denied""}",2024-01-27T13:13:00Z
+49,update,department,12,3,,"{""status"": ""pending""}","{""status"": ""active""}",2024-07-30T13:57:00Z
+50,create,time_off_policy,2,10,,,"{""created"": true}",2024-02-13T06:00:00Z
+51,approve,time_off_request,8,9,,"{""status"": ""pending""}","{""status"": ""terminated""}",2024-05-15T18:18:00Z
+52,create,employee,34,18,,,,2025-04-19T09:28:00Z
+53,login,time_off_policy,7,3,,,,2025-10-30T17:51:00Z
+54,update,department,10,23,,"{""status"": ""denied""}","{""status"": ""terminated""}",2025-05-08T21:55:00Z
+55,deny,department,12,10,,,,2023-09-22T07:19:00Z
+56,login,employee,6,13,,,,2024-10-07T08:20:00Z
+57,create,department,2,16,,,,2023-11-25T23:24:00Z
+58,create,custom_report,1,31,,,"{""created"": true}",2024-02-28T15:30:00Z
+59,create,time_off_request,70,1,,,,2023-09-19T23:59:00Z
+60,deny,department,13,23,,"{""status"": ""terminated""}","{""status"": ""terminated""}",2025-11-20T00:50:00Z
+61,login,custom_report,3,16,,,,2023-11-19T11:14:00Z
+62,create,custom_report,3,16,,,,2023-10-02T07:39:00Z
+63,deny,custom_report,4,,integration,"{""status"": ""denied""}","{""status"": ""terminated""}",2026-01-06T13:43:00Z
+64,update,time_off_request,49,10,,"{""status"": ""approved""}","{""status"": ""approved""}",2024-03-31T21:55:00Z
+65,login,employee,6,13,,,,2023-11-26T13:51:00Z
+66,login,time_off_policy,3,2,,,,2025-03-27T19:37:00Z
+67,delete,employee,9,16,,,,2024-07-15T16:28:00Z
+68,approve,employee,2,19,,"{""status"": ""denied""}","{""status"": ""active""}",2024-06-04T14:10:00Z
+69,delete,time_off_policy,4,14,,,,2024-07-14T02:24:00Z
+70,deny,department,11,2,,"{""status"": ""active""}","{""status"": ""terminated""}",2025-04-04T01:29:00Z
+71,delete,time_off_policy,3,1,,,,2025-05-25T02:14:00Z
+72,login,time_off_policy,5,17,,,,2025-09-21T01:00:00Z
+73,approve,time_off_request,49,12,,,,2025-02-28T20:08:00Z
+74,login,custom_report,2,3,,,,2024-02-26T03:30:00Z
+75,delete,department,7,,integration,,,2024-01-15T11:20:00Z
+76,approve,custom_report,2,11,,"{""status"": ""terminated""}","{""status"": ""approved""}",2023-11-24T21:37:00Z
+77,deny,custom_report,2,19,,"{""status"": ""approved""}","{""status"": ""active""}",2024-01-23T19:15:00Z
+78,approve,time_off_policy,2,10,,"{""status"": ""denied""}","{""status"": ""active""}",2024-04-03T05:15:00Z
+79,approve,custom_report,4,18,,"{""status"": ""approved""}","{""status"": ""active""}",2023-08-30T11:34:00Z
+80,create,department,11,3,,,,2024-05-20T08:24:00Z
+81,login,time_off_policy,7,21,,,,2025-10-21T09:54:00Z
+82,delete,department,9,19,,,,2024-03-03T15:46:00Z
+83,approve,time_off_request,51,10,,"{""status"": ""pending""}","{""status"": ""terminated""}",2024-02-29T17:51:00Z
+84,create,time_off_request,54,2,,,"{""created"": true}",2023-10-08T10:51:00Z
+85,delete,time_off_policy,7,17,,,,2024-10-07T06:32:00Z
+86,login,time_off_policy,3,1,,,,2024-02-10T06:59:00Z
+87,delete,employee,11,16,,,,2024-08-27T04:25:00Z
+88,update,time_off_request,55,,system,"{""status"": ""denied""}","{""status"": ""terminated""}",2023-11-12T21:20:00Z
+89,create,custom_report,2,16,,,"{""created"": true}",2026-02-01T11:47:00Z
+90,login,employee,37,28,,,,2025-07-29T22:40:00Z
+91,update,time_off_policy,1,27,,"{""status"": ""terminated""}","{""status"": ""terminated""}",2024-08-14T13:40:00Z
+92,deny,employee,23,17,,,,2025-08-13T12:15:00Z
+93,deny,custom_report,1,11,,"{""status"": ""active""}","{""status"": ""terminated""}",2025-06-07T00:53:00Z
+94,approve,custom_report,2,16,,"{""status"": ""active""}","{""status"": ""approved""}",2024-09-25T13:26:00Z
+95,approve,time_off_request,18,25,,"{""status"": ""pending""}","{""status"": ""terminated""}",2024-05-13T08:05:00Z
+96,update,department,14,19,,"{""status"": ""denied""}","{""status"": ""terminated""}",2024-04-08T18:34:00Z
+97,approve,department,2,21,,"{""status"": ""terminated""}","{""status"": ""denied""}",2025-06-26T00:58:00Z
+98,update,time_off_policy,5,18,,"{""status"": ""approved""}","{""status"": ""denied""}",2024-07-23T17:53:00Z
+99,deny,employee,29,40,,"{""status"": ""active""}","{""status"": ""denied""}",2025-10-24T10:07:00Z
+100,create,time_off_policy,3,23,,,,2024-11-14T06:11:00Z
+101,update,custom_report,3,3,,"{""status"": ""active""}","{""status"": ""approved""}",2024-11-25T04:21:00Z
+102,create,custom_report,3,2,,,"{""created"": true}",2025-08-17T23:15:00Z
+103,deny,time_off_request,66,,scheduler,,,2023-10-26T06:52:00Z
+104,approve,employee,18,2,,"{""status"": ""approved""}","{""status"": ""approved""}",2023-09-04T05:45:00Z
+105,login,time_off_policy,4,6,,,,2024-05-04T20:36:00Z
+106,approve,employee,6,17,,,,2024-02-25T22:31:00Z
+107,delete,custom_report,1,26,,,,2025-11-02T10:31:00Z
+108,login,time_off_request,9,13,,,,2024-11-24T03:29:00Z
+109,delete,time_off_request,37,19,,,,2024-07-06T18:10:00Z
+110,delete,employee,3,20,,,,2024-10-24T09:53:00Z
+111,update,time_off_policy,4,37,,"{""status"": ""approved""}","{""status"": ""approved""}",2025-07-13T11:02:00Z
+112,delete,employee,24,13,,,,2024-04-13T04:57:00Z
+113,approve,time_off_request,30,2,,"{""status"": ""active""}","{""status"": ""approved""}",2025-11-01T09:47:00Z
+114,deny,time_off_policy,1,12,,"{""status"": ""pending""}","{""status"": ""approved""}",2025-10-05T20:16:00Z
+115,approve,employee,7,12,,"{""status"": ""active""}","{""status"": ""approved""}",2025-04-06T05:36:00Z
+116,create,custom_report,5,7,,,"{""created"": true}",2024-11-12T22:14:00Z
+117,login,department,7,16,,,,2025-06-29T07:03:00Z
+118,create,department,13,15,,,,2025-02-11T20:40:00Z
+119,update,time_off_request,11,3,,"{""status"": ""pending""}","{""status"": ""denied""}",2024-01-29T14:42:00Z
+120,update,custom_report,5,17,,"{""status"": ""active""}","{""status"": ""terminated""}",2025-04-09T13:57:00Z

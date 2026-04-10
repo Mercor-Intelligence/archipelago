@@ -1,0 +1,210 @@
+# Time-Off Request Workflow
+# Demonstrates: Reset DB -> Setup data -> Create request -> Approve -> Who's out
+#
+# Tools exercised:
+# - Login (Admin)
+# - Reset Database (Admin)
+# - Create Employee (Employees) [setup]
+# - Create Type (Time Off) [setup]
+# - Create Policy (Time Off) [setup]
+# - Assign Policy (Time Off) [setup]
+# - Get Balances (Time Off)
+# - Create Request (Time Off)
+# - Get Requests (Time Off)
+# - Update Request Status (Time Off)
+# - Who's Out (Time Off)
+
+url: http://localhost:3000
+
+output: screenshots
+
+defaults:
+  server: bamboohr
+
+steps:
+  # Step 1: Initial view
+  - TakeScreenshot
+
+  # Step 2: Login as HR Admin
+  - Login:
+      persona: hr_admin
+      screenshot_params:
+        element: *tool_panel
+        max_height: 600
+
+  # Step 3: Reset database to clean state
+  - SelectTool:
+      tool: bamboo_reset_state
+      category: Admin
+  - Wait: 500
+  - FillToolParam:
+      params:
+        confirm: true
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 400
+
+  # Setup: Create employee, type, policy, assignment (no screenshots)
+  - SelectTool:
+      tool: bamboo_employees_create
+      category: Employees
+  - Wait: 500
+  - FillToolParam:
+      params:
+        firstName: Emily
+        lastName: Davis
+        workEmail: emily.davis@acme.com
+        department: Engineering
+        hireDate: "2026-01-15"
+  - ExecuteTool:
+      capture:
+        employee_id: $.id
+  - Wait: 1000
+
+  - SelectTool:
+      tool: bamboo_time_off_create_type
+      category: Time Off
+  - Wait: 500
+  - FillToolParam:
+      params:
+        name: Vacation
+        color: "#4CAF50"
+        paid: true
+  - ExecuteTool:
+      capture:
+        type_id: $.id
+  - Wait: 1000
+
+  - SelectTool:
+      tool: bamboo_time_off_create_policy
+      category: Time Off
+  - Wait: 500
+  - FillToolParam:
+      params:
+        name: Standard Vacation
+        typeId: "{{ type_id }}"
+  - ExecuteTool:
+      capture:
+        policy_id: $.id
+  - Wait: 1000
+
+  - SelectTool:
+      tool: bamboo_time_off_assign_policy
+      category: Time Off
+  - Wait: 1000
+  - FillToolParam:
+      params:
+        employeeId: "{{ employee_id }}"
+  - FillListItems:
+      param: policies
+      items:
+        - timeOffPolicyId: "{{ policy_id }}"
+          accrualStartDate: "2026-01-15"
+  - ExecuteTool
+  - Wait: 1000
+
+  # Set initial balance (10 days of vacation)
+  - SelectTool:
+      tool: bamboo_time_off_update_balance
+      category: Time Off
+  - Wait: 500
+  - FillToolParam:
+      params:
+        employeeId: "{{ employee_id }}"
+        timeOffTypeId: "{{ type_id }}"
+        amount: 10
+        note: "Initial vacation balance"
+  - ExecuteTool
+  - Wait: 1000
+
+  # Step 4: View employee balances
+  - SelectTool:
+      tool: bamboo_time_off_get_balances
+      category: Time Off
+  - Wait: 500
+  - FillToolParam:
+      params:
+        employeeId: "{{ employee_id }}"
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 5: Create time-off request
+  - SelectTool:
+      tool: bamboo_time_off_create_request
+      category: Time Off
+  - Wait: 500
+  - FillToolParam:
+      params:
+        employee_id: "{{ employee_id }}"
+        time_off_type_id: "{{ type_id }}"
+        start: "2026-02-10"
+        end: "2026-02-14"
+        amount: "5"
+        notes: "Family vacation"
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 6: Execute request creation
+  - ExecuteTool:
+      capture:
+        request_id: $.id
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 700
+
+  # Step 7: View pending requests
+  - SelectTool:
+      tool: bamboo_time_off_get_requests
+      category: Time Off
+  - Wait: 500
+  - FillToolParam:
+      params:
+        start: "2026-02-01"
+        end: "2026-02-28"
+        status: "requested"
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 8: Approve the request
+  - SelectTool:
+      tool: bamboo_time_off_update_request_status
+      category: Time Off
+  - Wait: 500
+  - FillToolParam:
+      params:
+        requestId: "{{ request_id }}"
+        status: approved
+        note: "Approved - enjoy your vacation!"
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 700
+
+  # Step 9: Execute approval
+  - ExecuteTool
+  - Wait: 1500
+
+  # Step 10: Check who's out
+  - SelectTool:
+      tool: bamboo_time_off_get_whos_out
+      category: Time Off
+  - Wait: 500
+  - FillToolParam:
+      params:
+        start: "2026-02-01"
+        end: "2026-02-28"
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800

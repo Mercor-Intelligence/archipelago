@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "What will be the 2023 taxable income of Redwood Components Inc., if we updated the gross revenue with actual sales transactions in 2023? Assume:\n- No intermediaries\n- FX rate conversions per PLN FX data, the FX conversion to USD is done on the transaction date. If there is no FX rate for a given day, the FX rate from previous available day rate should be used\n- Same returns & allowances ratio and COGS ratio (to gross sales) as it currently is in trial balance\n- Same selling, R&D, interest and other income (net) $ expenses\n- Adjust the pretax book income with the permanent differences and depreciation timing adjustments to calculate the taxable income (found in book-tax tie-out)\n\nState the final answer in USD rounding it to 2 decimal places"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the 2023 taxable income of Redwood Components Inc., if we updated... (ver_b6d332dec50e46829f51e8a8090904db)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the 2023 taxable income of Redwood Components Inc., if we updated the gross revenue with actual transactions, is $29,075,735.76 (acceptable range $29,075,685.76 to $29,075,785.76)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh accounting-world-801-mb-2-33d2a234"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_33d2a234a3c844208a43a827f8e3b53e",
+    "task_name": "Accounting World 801 - MB_2",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c60d0004cb3e4d14a5ea54b03b80358f",
+        "golden_text_response": "The 2023 taxable income of Redwood Components Inc., if we updated the gross revenue with actual transactions, is $29,075,735.76\n\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

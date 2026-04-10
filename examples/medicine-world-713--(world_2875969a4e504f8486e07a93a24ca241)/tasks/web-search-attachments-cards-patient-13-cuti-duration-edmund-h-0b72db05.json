@@ -1,0 +1,261 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 13” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n----\n\nPatient 13 visits her clinic appointment on 3rd January 2026. She reports dysuria and flank pain. She denies fever, back pain or abdominal pain. The patient verifies that her reaction to Macrobid in the past was charted in error and it was actually macrolide not Macrobid. What is the patient's main risk factor for her diagnosis? What is the recommended antibiotic? How many days should the medication be prescribed for? Provide an explanation.\n\nAnswers should be in line with the most recent clinical guidelines as of January 9, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient has complicated cystitis. (ver_a22bc590d1934a449058704dbc26fd67)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has complicated cystitis."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the patient has a history of recurrent urinary tract infections... (ver_58fe65fc888d4e43a143f5cf026c8c67)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient has a history of recurrent urinary tract infections (UTI)."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that is the patient's risk factor for their complicated cystitis is... (ver_93a1833118094330b22b47e2feb746a8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that is the patient's risk factor for their complicated cystitis is recurrent UTI."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's complicated cystitis is due to an extended-spectrum... (ver_2a0b5f344636466db33eddadb86542d2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's complicated cystitis is due to an extended-spectrum beta-lactamase producing Escherichia coli."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has not been treated for the complicated cystitis. (ver_200d635872474b998acce5483ee090de)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has not been treated for the complicated cystitis."
+        }
+      ]
+    },
+    {
+      "name": "States trimethoprim-sulfamethoxazole is first-line for complicated UTI caused... (ver_cc77745107984016bd5975f905b8f10f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States trimethoprim-sulfamethoxazole is first-line for complicated UTI caused by extended-spectrum beta-lactamase producing organisms."
+        }
+      ]
+    },
+    {
+      "name": "States TMP-SMX is the next best step for treatment in this patient. (ver_dd6a87cddc47414fabad4af611297409)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States TMP-SMX is the next best step for treatment in this patient."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that clinical improvement guides antibiotic duration for... (ver_6f30a7506584482aa4b640c208690505)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that clinical improvement guides antibiotic duration for complicated UTIs."
+        }
+      ]
+    },
+    {
+      "name": "Identifies a 7-day antibiotic course of TMP-SMX as appropriate for this... (ver_00f494773c484edead464e5a75de27e1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies a 7-day antibiotic course of TMP-SMX as appropriate for this patient if there is clinical improvement with therapy."
+        }
+      ]
+    },
+    {
+      "name": "Identifies a 10 to 14-day antibiotic course of TMP-SMX as an option during... (ver_aef85546ed714c03b19e666c16c2c7a1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies a 10 to 14-day antibiotic course of TMP-SMX as an option during inadequate response."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-cards-patient-13-cuti-duration-edmund-h-0b72db05"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_0b72db05513b40d39be6d04d2159cc8c",
+    "task_name": "Web Search_Attachments_Cards_Patient 13 -cUTI duration-Edmund H",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c0da5f73382e4266947443585f69aacc",
+        "golden_text_response": "The patient has a urine culture and is not currently taking antibiotics previously prescribed by urgent care. The urine culture demonstrates an extended spectrum beta lactamase producing urinary tract infection (ESBL UTI) with susceptibility to nitrofurantoin, trimethoprim sulfamethoxazole (TMP SMX), and imipenem. The patient reports dysuria and flank pain and meets criteria for complicated cystitis.\n\nThe patient's biggest risk factor for cystitis from their past medical history is a history of recurrent UTI. \n\nTMP SMX, ciprofloxacin, or levofloxacin are preferred treatment options for pyelonephritis or complicated urinary tract infections caused by ESBL producing organisms. Ertapenem, meropenem, and imipenem cilastatin are preferred agents when resistance patterns or toxicities preclude the use of TMP SMX or fluoroquinolones. The patient is allergic to fluoroquinolones.\n\nThe patient has a history of recurrent urinary tract infections, which is a risk factor for the drug resistant complicated UTI in this presentation. The best treatment option for this patient is TMP SMX.\n\nAccording to the Infectious Diseases Society of America (IDSA) 2025 guidelines on complicated UTI, in patients who are improving clinically on effective therapy, a 7 day course of a non fluoroquinolone antibiotic is suggested rather than a longer course of 10 to 14 days. Therefore, the duration of TMP SMX therapy depends on the patient’s clinical response. If the patient improves clinically, a 7 day course is appropriate. If there is inadequate clinical improvement, a longer course of 10 to 14 days may be required.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

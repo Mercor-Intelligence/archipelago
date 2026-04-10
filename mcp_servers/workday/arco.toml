@@ -1,0 +1,52 @@
+[arco]
+source = "foundry_app"
+name = "Workday"
+display_name = "Workday HCM"
+description = "Workday Human Capital Management - Complete HCM simulation with worker lifecycle management, organizational hierarchy, pre-onboarding case management, policy enforcement, milestone tracking, and HR reporting. Supports 46+ tools across workers, positions, organizations, job profiles, cases, tasks, milestones, policies, exceptions, and audit trails."
+version = "1.0.0"
+
+[arco.env.host]
+REPO_URL = "https://github.com/Mercor-Intelligence/mercor-workday.git"
+
+[arco.env.build]
+WORKDAY_DATABASE_URL = "sqlite+aiosqlite:////.apps_data/workday/data.db"
+# TO BE DEPRECATED
+DATABASE_URL = "sqlite+aiosqlite:////.apps_data/workday/data.db"
+STATE_LOCATION = "/.apps_data/workday"
+
+[arco.env.runtime]
+MCP_TRANSPORT = "http"
+MCP_PORT = "5000"
+HAS_STATE = "true"
+APP_FS_ROOT = "/filesystem"
+STATE_LOCATION = "/.apps_data/workday"
+WORKDAY_DATABASE_URL = "sqlite+aiosqlite:////.apps_data/workday/data.db"
+# TO BE DEPRECATED
+DATABASE_URL = "sqlite+aiosqlite:////.apps_data/workday/data.db"
+WORKDAY_DB_URL = "sqlite:////.apps_data/workday/data.db"
+INTERNET_ENABLED = "false"
+GUI_ENABLED = "true"
+# Comma-separated list of enabled tools in GUI mode (empty = all tools)
+TOOLS = ""
+
+[arco.env.runtime.schema.INTERNET_ENABLED]
+type = "bool"
+label = "Internet access"
+description = "Allow the MCP server to make outbound network requests"
+
+[arco.env.runtime.schema.GUI_ENABLED]
+type = "bool"
+label = "GUI mode"
+description = "Enable GUI mode to expose all individual tools instead of consolidated meta-tools"
+
+[arco.env.runtime.schema.TOOLS]
+type = "string"
+label = "Enabled tools"
+description = "Comma-separated list of tool names to enable. Leave empty to enable all tools."
+
+[arco.secrets.host]
+GITHUB_TOKEN = "RLS_GITHUB_READ_TOKEN"
+
+[arco.secrets.build]
+
+[arco.secrets.runtime]

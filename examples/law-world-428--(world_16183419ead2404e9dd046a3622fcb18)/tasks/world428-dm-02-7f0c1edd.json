@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Save the Zone, a third-party group, filed a complaint alleging that the City of San Dimas (the \"City\") violated California Environmental Quality Act (\"CEQA\") by failing to complete an Environmental Impact Report (\"EIR\") prior to the execution of the Zone Redevelopment Exclusive Negotiating Agreement (the \"Agreement\"). Attached to the Agreement was a draft Disposition and Development Agreement (\"DDA\"), which is the subject of the parties' negotiation efforts.\n\nThe City is considering filing a motion for summary judgment on the grounds that the Agreement is a plan of action and not a project requiring prior environmental review.\n\nIs the City likely to prevail? Provide your response in the console according to the following: 1) \"Yes/No\" conclusion; and 2) 1-2 sentence explanation."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States \"No\" to indicate that the City is unlikely to prevail in its motion for... (ver_a8b8d37b38704c3e995e3d13a0731fb8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States \"No\" to indicate that the City is unlikely to prevail in its motion for summary judgment."
+        }
+      ]
+    },
+    {
+      "name": "States that the DDA contains a description of the development in sufficient... (ver_ea34b60ed2de41af98743fb37111d3bf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the DDA contains a description of the development in sufficient detail to create a genuine dispute of material fact as to whether the Zone is deemed a \"project\" under CEQA."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world428-dm-02-7f0c1edd"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_7f0c1edd958e4f11bb5cbe956d025081",
+    "task_name": "World428_DM_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_364ff35e96234f1a89850c7d732852c1",
+        "golden_text_response": "No, the City is unlikely to prevail on its motion for summary judgment. The DDA contains a description of the development in sufficient detail to constitute a \"project\" under CEQA and create a genuine dispute of material fact.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_9d4f3f3a461d454aacf317f4afc2ab8a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_feebea192830446da40cb6dd6a5d79e5",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the Male percentage distribution for country US and month 7 as 42.86 (acceptable range 42.43 to 43.29).",
+        "expected_file_type": "All output (modified files and final message in console)",
+        "criteria_explanation": "Direct ask in the prompt.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_215a68c5f55448a9923459f01c041744",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_feebea192830446da40cb6dd6a5d79e5",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the Male percentage distribution for country US and month 8 as 50.00 (acceptable range 49.50 to 50.50).",
+        "expected_file_type": "All output (modified files and final message in console)",
+        "criteria_explanation": "Direct ask in the prompt.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_62343cdf81184b4aac492cf2559bb37d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_feebea192830446da40cb6dd6a5d79e5",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the Male percentage distribution for country US and month 12 as 66.67 (acceptable range 66.00 to 67.34).",
+        "expected_file_type": "All output (modified files and final message in console)",
+        "criteria_explanation": "Direct ask in the prompt.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2fdcc9436bbc4f1aa6789a6b1895f2dd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_feebea192830446da40cb6dd6a5d79e5",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the Female percentage distribution for country US and month 7 as 50.00 (acceptable range 49.50 to 50.50).",
+        "expected_file_type": "All output (modified files and final message in console)",
+        "criteria_explanation": "Direct ask in the prompt.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c28fc4cb970e4eb2acb158baca130fc3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_feebea192830446da40cb6dd6a5d79e5",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the Female percentage distribution for country US and month 8 as 43.75 (acceptable range 43.31 to 44.19).",
+        "expected_file_type": "All output (modified files and final message in console)",
+        "criteria_explanation": "Direct ask in the prompt.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_99243237cf044189a53211e71d2d9463",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_feebea192830446da40cb6dd6a5d79e5",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the Female percentage distribution for country US and month 12 as 25.00 (acceptable range 24.75 to 25.25)",
+        "expected_file_type": "All output (modified files and final message in console)",
+        "criteria_explanation": "Direct ask in the prompt.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

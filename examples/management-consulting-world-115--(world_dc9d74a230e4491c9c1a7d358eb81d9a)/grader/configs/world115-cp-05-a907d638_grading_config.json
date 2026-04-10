@@ -1,0 +1,138 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_2209eb8a628a430e97b90da0eed58671",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a907d6387f3f4557b2a5867f1defb892",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the average EBITDA Margin across companies is 40.2% (acceptable range 39.8% to 40.6%)",
+        "negative_criteria": "States the average EBITDA Margin across companies is any other value other than 40.2%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2beac57efdf748b2a7f91b5b38d1c3ec",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a907d6387f3f4557b2a5867f1defb892",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the median EBITDA Margin across companies is 36.3% (acceptable range 35.9% to 36.7%)",
+        "negative_criteria": "States the median EBITDA Margin across companies is any value other than 36.3%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_92f93f310bc9449388b8057a73d5b97a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a907d6387f3f4557b2a5867f1defb892",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the average Net Profit Margin across companies is 12.8% (acceptable range 12.7% to 12.9%)",
+        "negative_criteria": "States the average Net Profit Margin across companies is any other value other than 12.8%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d6c65e7b058347a395040b2e3b77f746",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a907d6387f3f4557b2a5867f1defb892",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the median Net Profit Margin across companies is 7.6% (acceptable range 7.5% to 7.7%)",
+        "negative_criteria": "States the median Net Profit Margin across companies is any other value other than 7.6%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c3f8caca5d0f4f23a55b78910aa2a8f8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a907d6387f3f4557b2a5867f1defb892",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the average market cap across companies is $32,259M (acceptable range $31,936 to $32,582)",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_20bc238b37b3480b837a6376851dd99b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a907d6387f3f4557b2a5867f1defb892",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the median market cap across companies is $14,557M (acceptable range $14,411 to $14,703)",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

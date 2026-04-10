@@ -1,0 +1,284 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Leadership team at HappyHospital wants to ensure that facilities across all 7 states meet or exceed industry standards for safety, environment, equipment, staffing, and infrastructure preparedness. An initial assessment on all facilities was documented in the facility requirements checklist (v0.1).\n\nTo arrive at targeted recommendations for facility readiness improvements, investigate:\n1. Which three states require the greatest increase in weighted readiness score to reach HappyHospital's target average readiness score of 3.9? How many facilities are in these states?\n2. If it costs $10,000 for every one point gain in weighted readiness score, how much in total will HappyHospital need to invest in the prioritized states identified in Question 1 to reach the target average readiness score threshold of 3.9? Round total dollar value to a whole number.\n\nReport final answers directly in console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the first state to be prioritized is Indiana (ver_c57b52624c034bc29c5003f889f2b3a9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the first state to be prioritized is Indiana."
+        }
+      ]
+    },
+    {
+      "name": "States that the second state to be prioritized is Missouri (ver_5496f4d1b09d47b98f44840365257ca5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the second state to be prioritized is Missouri."
+        }
+      ]
+    },
+    {
+      "name": "States that the third state to be prioritized is Ohio (ver_44125fdf4abf458d9441fdf0b3854cce)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the third state to be prioritized is Ohio."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of facilities to be prioritized in Indiana is 14 (ver_1f5f721519a042c89c0d93848ff07a25)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of facilities to be prioritized in Indiana is 14."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of facilities to be prioritized in Indiana is a value... (ver_1f5f721519a042c89c0d93848ff07a25)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of facilities to be prioritized in Indiana is a value other than 14."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of facilities to be prioritized in Missouri is 11 (ver_2260aba3c8054676b13b7d57bd7ce121)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of facilities to be prioritized in Missouri is 11."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of facilities to be prioritized in Missouri is a value... (ver_2260aba3c8054676b13b7d57bd7ce121)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of facilities to be prioritized in Missouri is a value other than 11."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of facilities to be prioritized in Ohio is 17 (ver_a04ff94bf551450ca5b03ce25b5552a0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of facilities to be prioritized in Ohio is 17."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of facilities to be prioritized in Ohio is a value... (ver_a04ff94bf551450ca5b03ce25b5552a0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of facilities to be prioritized in Ohio is a value other than 17."
+        }
+      ]
+    },
+    {
+      "name": "States that the total investment for prioritized states is $229,000... (ver_8648312953324a83813ab8d430fb3a30)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total investment for prioritized states is $229,000 (acceptable range $226,710 to $231,290)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total investment for prioritized states is a value other than... (ver_8648312953324a83813ab8d430fb3a30)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total investment for prioritized states is a value other than $229,000."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-sn5je1b3-493f9332"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_493f9332bc7d4ba589bcfb4c6c54beac",
+    "task_name": "Task sn5je1b3",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_66a9fa979767422baa21f9555824460c",
+        "golden_text_response": "1. States to be prioritized are: \n   1.  Indiana - 14 facilities\n   2.  Missouri - 11 facilities\n   3.  Ohio - 17 facilities\n\n2. Total investment for Prioritized states = $229,000",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

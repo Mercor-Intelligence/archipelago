@@ -1,0 +1,203 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_920785a3c6af4b1481b0353b8ca87f20",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f1fb92e85ef7443caf3eca34e6cf820b",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Assigns 1 point for the spinal location category of the Spinal Instability Neoplastic Scale (SINS) Score. \n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. The patient has a lesion in T8 (from \"MRI.pdf\").\n\"Within the T8 vertebra, there is an abnormal marrow signal characterized by focal T1 hypointensity and STIR hyperintensity involving more than half of the vertebral body.\" \n\n2. A T8 spinal location scores 1 point. \n-See \"spinal location,\" \"T3-T10\" at https://www.mdcalc.com/calc/10548/spinal-instability-neoplastic-scale-sins-score\n\n3. The location of the lesion is also noted in the script (Onc_Patient 9 Script.pdf): \"Doctor: The scan showed a specific spot in your spine, at the T8 vertebra.\"\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e952b30dd4d8465f9b537a2892bfc0ed",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f1fb92e85ef7443caf3eca34e6cf820b",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "Assigns 1 point for the presence of mechanical pain in the Spinal Instability Neoplastic Scale (SINS) Score.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. The patient has nonmechanical pain which has a score of 1 point in the Spinal Instability Neoplastic Scale (SINS) Score. Mechanical pain would be suggests the pain is constant and unrelenting, regardless of position or activity. If this were mechanical instability, the patient would typically report, \"It kills me to stand or sit up, but it goes away when I lie flat.\" \nOccasional, non-mechanical pain is given 1 point in the \"presence of mechanical pain\" category in the SINS score\n--https://www.mdcalc.com/calc/10548/spinal-instability-neoplastic-scale-sins-score\n\n2. The patient reports implies the pain is unrelated to positioning: \u201cIt can be awful. Nothing touches it when it\u2019s present.\u201c --\u201cOnc_Patient 9 script.pdf\u201d. \n\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_53b5fcbb6bc144f08a2e42dfba895d61",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f1fb92e85ef7443caf3eca34e6cf820b",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "Assigns 2 points for the quality of the bone lesion in the Spinal Instability Neoplastic Scale (SINS) Score.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. This patient has a history of Stage IIIA breast cancer and now has new acute back pain that is suspicious for metastatic lesion on imaging. Bone metastases from breast cancer are more likely to be lytic as well.  Lytic lesions are hypointense on T1 and hyperintense on T2 STIR images; thus this patient has a lytic lesion. \n--\"Lytic metastases usually manifest as foci of low T1 and high T2 signal intensity with increased enhancement, whereas osteoblastic lesions demonstrate low signal\non both T1- and T2-weighted images.\" (from https://pmc.ncbi.nlm.nih.gov/articles/PMC9283187/)\n--\"Although breast cancer bone metastases are predominantly osteolytic, 15\u201320% of cases have a predominant osteoblastic component.\" (from https://pmc.ncbi.nlm.nih.gov/articles/PMC8229615/)\n--\"Within the T8 vertebra, there is an abnormal marrow signal characterized by focal T1 hypointensity and STIR hyperintensity involving more than half of the vertebral body\" (from attached \"MRI.pdf\")\n\n2. \"Cancer Staging Malignant neoplasm of upper-outer quadrant of right breast in female, estrogen receptor negative (Spring Valley) Staging form: Breast, AJCC 8th Edition - Clinical stage from 1/13/2021: Stage IIIA (cT3, cN1, cM0, G3, ER-, PR-, HER2+) - Unsigned.\" from Source: Tab - CLINICAL NOTES, Note type - Progress Note, Column - D, Row - 14. \n\n3. Lytic bone lesion = +2 points \n-See 'bone lesion quality' in the SINS score at https://www.mdcalc.com/calc/10548/spinal-instability-neoplastic-scale-sins-score. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2be53af29b144317ba898d491fd0b4ff",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f1fb92e85ef7443caf3eca34e6cf820b",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "Assigns 0 points for radiographic spinal alignment category of the Spinal Instability Neoplastic Scale (SINS) Score. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. The patient has a normal spinal alignment. \"Alignment and Marrow Signal: There is normal thoracic kyphosis. No evidence of acute fracture or subluxation.\" from 'MRI.pdf'\n\n2. Normal alignment = +zero points. \n-See \"radiographic spinal alignment' in the Spinal Instability Neoplastic Scale (SINS) Score  (https://www.mdcalc.com/calc/10548/spinal-instability-neoplastic-scale-sins-score)",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_73c513707fca47488cf1b2ac1ba6809e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f1fb92e85ef7443caf3eca34e6cf820b",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "Assigns 1 point for greater than 50% involvement of the vetebral body without collapse in the Spinal Instability Neoplastic Scale (SINS) Score.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. While the patient's MRI findings do not show evidence of vertebral body collapse, there is greater than 50% involvement without collapse. \"Within the T8 vertebra, there is an abnormal marrow signal characterized by focal T1 hypointensity and STIR hyperintensity involving more than half of the vertebral body.\" (from \"MRI.pdf\")\n\n2. \"No collapse with >50% body involved\" = +1 points. \n-See 'vertebral body collapse' in the Spinal Instability Neoplastic Scale (SINS) Score (https://www.mdcalc.com/calc/10548/spinal-instability-neoplastic-scale-sins-score)",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ddeb7e3ff66546f495b374b8f5cb2316",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f1fb92e85ef7443caf3eca34e6cf820b",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "Assigns 0 points for absence of posterolateral involvement in the Spinal Instability Neoplastic Scale (SINS) Score.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. This patient has no sign of posterolateral involvement outside the body of vertebral body and thus the patient gets zero points. \"Alignment and Marrow Signal: There is normal thoracic kyphosis. No evidence of acute fracture or subluxation.\nWithin the T8 vertebra, there is an abnormal marrow signal characterized by focal T1 hypointensity and STIR hyperintensity involving more than half of the vertebral body.Following contrast administration, this area demonstrates intense, somewhat heterogeneous enhancement.\nCord and Canal: At the T8 level, there is extension of the enhancing soft tissue mass posteriorly from the vertebral body into the anterior epidural space. This epidural disease abuts the ventral aspect of the thecal sac.\nCrucially, on axial T2 weighted images, there is preserved cerebrospinal fluid signal between the posterior margin of the epidural tumor and the anterior margin of the spinal cord. The narrowest measurement of separation between the tumor and the spinal cord is approximately 3 mm. The spinal cord itself demonstrates normal signal intensity and morphology with no evidence of edema or intrinsic cord lesion\" from 'MRI.pdf'\n\n2. No posterolateral involvement of spinal elements = +zero points \n--See 'posterolateral involvement of the spinal elements' in the SINS score (https://www.mdcalc.com/calc/10548/spinal-instability-neoplastic-scale-sins-score)",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f0f36171cf6e4702a55a0672c35b0160",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f1fb92e85ef7443caf3eca34e6cf820b",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States that the patient has a Spinal Instability Neoplastic Scale (SINS) Score of 5 (acceptable range 4.95 to 5.05).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Spinal location: Semiridig (T3-T10) +1 points\nPresence of mechanical pain: No (occasional pain but not mechanical) +1 points\nBone lesion quality: Lytic +2 points\nRadiographic spinal alignment: Normal Alignment 0 points\nVertebral body collapse: No collapse with >50% body involved +1 points\nPosterolateral involvement of spinal elements:  0 points\n\n= total of 5 points (stable spinal stability) at https://www.mdcalc.com/calc/10548/spinal-instability-neoplastic-scale-sins-score",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5c00902c66074744a9033e248a25ec6c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f1fb92e85ef7443caf3eca34e6cf820b",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States patient has a stable spinal stability score in the Spinal Instability Neoplastic Scale (SINS) Score.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "5 points in the SINS score corresponds to a stable spinal stability score at https://www.mdcalc.com/calc/10548/spinal-instability-neoplastic-scale-sins-score",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2137f67d0dc54022a048b0ae3619d07a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f1fb92e85ef7443caf3eca34e6cf820b",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "Concludes that the patient should be seen by a radiation oncologist to discuss palliaitve radiotherapy as next best step in management. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Since this patient has a SINS score of 5, they have a stable spinal stability score. Next step in management is consulting with a radiation oncologist to discuss palliative radiation. Although a score of 7 or more will warrant a consultation with a spinal surgeon. \n\nStandard SINS Categories (Fisher et al., Spine 2010; PMID: 20562730)\n\n0\u20136: Stable \u2192 No surgical consultation needed; can proceed with radiation\n7\u201312: Potentially unstable \u2192 Surgical consultation recommended\n13\u201318: Unstable \u2192 Surgical consultation recommended\n\n\"A SINS of 7-18 warrants surgical consultation to assess for instability prior to proceeding with any planned radiation treatment.\" from https://radiopaedia.org/articles/spinal-instability-neoplastic-score?lang=us and also https://www.mdcalc.com/calc/10548/spinal-instability-neoplastic-scale-sins-score",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

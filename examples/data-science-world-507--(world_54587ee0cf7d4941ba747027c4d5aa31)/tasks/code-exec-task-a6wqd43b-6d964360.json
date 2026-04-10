@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use Python to analyze the potential impact of market consolidation to StreamVibe. The content_catalog.csv provides key attributes of the current catalog of contents, including the content availability. The content_metadata_extended.csv contains additional metadata information about the catalog of contents, including licensing details. The content_impressions.csv details homepage/search impressions and clicks. The subscribers.csv lists the accounts, user demographics and key account information. For this analysis, treat the terms of account, user and subscriber as interchangeable. The user_preferences_survey.csv records user survey responses, including feature requests. Netflix and Warner are in active mergers and acquisitions (M&A) discussion. If combined, the new company (Netflix-Warner) would own two big content producers - Netflix Productions and Warner Bros. Identify contents owned by Netflix-Warner with licenses expiring before (<) 2027. Analyze the downstream impact if the new company decides to pull these contents from StreamVibe. Report the number of contents and the percentage (rounded to one decimal point) of total currently available contents that StreamVibe will lose. For the movie and tv_show content types separately, report the percentage (rounded to one decimal point) of total currently available content duration lost. Define users at risk of churn as those who clicked at least two different titles within the affected content set or who ever requested the feature of \"More genres\". Report the number of currently active (account status) users StreamVibe may lose as a result. Provide python code along with the results."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports the number of contents that StreamVibe will lose as exactly 474 (ver_250f67156f104298b36dea174a20ec3a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the number of contents that StreamVibe will lose as exactly 474."
+        }
+      ]
+    },
+    {
+      "name": "Reports the percentage of total currently available contents that StreamVibe... (ver_655e670396194c6da48f9858e62096e0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the percentage of total currently available contents that StreamVibe will lose as 10.0% +/- 0.2."
+        }
+      ]
+    },
+    {
+      "name": "Reports the percentage of total currently available movie content duration... (ver_15250e05aa5343bfb362db5f59b9d56f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the percentage of total currently available movie content duration lost as 17.3% +/- 0.2."
+        }
+      ]
+    },
+    {
+      "name": "Reports the percentage of total currently available tv show content duration... (ver_8e4180c2d6a7479e9fa0bed51301a362)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the percentage of total currently available tv show content duration lost as 15.1% +/- 0.2."
+        }
+      ]
+    },
+    {
+      "name": "Reports the number of currently active (account status) users StreamVibe may... (ver_51fb7c711c4a425da38df084201e88bc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the number of currently active (account status) users StreamVibe may lose as exactly 237."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh code-exec-task-a6wqd43b-6d964360"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_54587ee0cf7d4941ba747027c4d5aa31",
+    "world_name": "Data Science World 507",
+    "task_id": "task_6d9643604e0442b799540d200ab71dde",
+    "task_name": "Code Exec - Task a6wqd43b",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_5de864168fa64a52b06b59f57263b7ea",
+        "golden_text_response": "the number of contents that StreamVibe will lose: 474\nthe percentage (rounded to one decimal point) of total currently available contents that StreamVibe will lose: 10.0%\nFor movie, the percentage (rounded to one decimal point) of total currently available content duration lost: 17.3%\nFor tv_show, the percentage (rounded to one decimal point) of total currently available content duration lost: 15.1%\nthe number of currently active (account status) users StreamVibe may lose: 237\n\n```\nimport pandas as pd\n\n\ndf_catalog = pd.read_csv('./csv_datasets/content_catalog.csv')\ndf_metadata = pd.read_csv('./csv_datasets/content_metadata_extended.csv')\ndf_impressions = pd.read_csv('./csv_datasets/content_impressions.csv')\ndf_subscribers = pd.read_csv('./csv_datasets/subscribers.csv')\ndf_survey = pd.read_csv('./csv_datasets/user_preferences_survey.csv')\n\n\n# filter for currently available contents\ndf_catalog_available = df_catalog[df_catalog.is_available == 1]\n\n\n# Identify contents owned by Netflix Productions and Warner Bros and expiring before 2027\ndf_catalogue_meta = df_catalog_available.merge(df_metadata, on=\"content_id\", how=\"left\")\ndf_lostContent = df_catalogue_meta.loc[\n    (df_catalogue_meta.content_producer.isin([\"Netflix Productions\", \"Warner Bros\"]))\n    & (pd.to_datetime(df_catalogue_meta.license_expiry_date).dt.year < 2027)\n]\n\n\nprint(f\"the number of contents that StreamVibe will lose: {df_lostContent.shape[0]}\")\nprint(\n    f\"the percentage (rounded to one decimal point) of total currently available contents that StreamVibe will lose: {df_lostContent.shape[0]/df_catalog_available.shape[0]:.1%}\"\n)\n\n\n# calcualte the percentage of content duration lost for \"movie\" and \"tv_show\", spearately\nfor content_type in (\"movie\", \"tv_show\"):\n    ttl_duration = (\n        df_catalog_available.loc[df_catalog_available.content_type == content_type]\n        .apply(\n            lambda s: (\n                s[\"content_duration_minutes\"]\n                if pd.isnull(s[\"total_episodes\"])\n                else s[\"content_duration_minutes\"] * s[\"total_episodes\"]\n            ),\n            axis=1,\n        )\n        .sum()\n    )\n\n    lost_duration = (\n        df_lostContent.loc[df_lostContent.content_type == content_type]\n        .apply(\n            lambda s: (\n                s[\"content_duration_minutes\"]\n                if pd.isnull(s[\"total_episodes\"])\n                else s[\"content_duration_minutes\"] * s[\"total_episodes\"]\n            ),\n            axis=1,\n        )\n        .sum()\n    )\n\n    print(\n        f\"For {content_type}, the percentage (rounded to one decimal point) of total currently available content duration lost: {lost_duration/ttl_duration:.1%}\"\n    )\n\n\n# identify at risk users\n\n# part 1, users clicked at least two lost contents\nlostContent_id = df_lostContent.content_id.unique()\ndf_userClickContentCnt = (\n    df_impressions.loc[\n        (df_impressions.content_id.isin(lostContent_id))\n        & (df_impressions.clicked == True)\n    ]\n    .groupby(\"user_id\")[\"content_id\"]\n    .nunique()\n)\natRiskUser_1 = df_userClickContentCnt[df_userClickContentCnt > 1].index.tolist()\n\n# part 2, users who ever requested \"More genres\" feature\natRiskUser_2 = (\n    df_survey.loc[df_survey.feature_requests == \"More genres\", \"user_id\"]\n    .unique()\n    .tolist()\n)\n\ndf_atRiskUser = df_subscribers.loc[\n    (df_subscribers.account_status == \"active\")\n    & (df_subscribers.user_id.isin(set(atRiskUser_1 + atRiskUser_2)))\n]\n\nprint(\n    f\"the number of currently active (account status) users StreamVibe may lose: {df_atRiskUser.shape[0]}\"\n)\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

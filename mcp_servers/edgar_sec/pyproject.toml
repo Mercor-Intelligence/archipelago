@@ -1,0 +1,90 @@
+[project]
+name = "mercor-mcp"
+version = "0.1.0"
+description = "A Python-based framework for rapidly developing Model Context Protocol (MCP) servers"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mercor-mcp-shared",
+    "fastmcp",
+    "loguru",
+    "asyncer",
+    "pydantic>=2.0",
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "httpx>=0.24.0",
+    "diskcache>=5.6.0",
+    "rapidfuzz>=3.0.0,!=3.14.4",
+    "edgartools>=2.0.0", # For XBRL parsing and equity compensation extraction
+    "aiolimiter>=1.1.0",
+    "beautifulsoup4>=4.12.0", # For HTML table extraction (Tier 3 fallback)
+    "lxml>=5.0.0", # HTML/XML parser for BeautifulSoup
+    "fastapi>=0.125.0",
+    "uvicorn>=0.38.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.6.0",
+    "pre-commit>=3.0.0",
+    "pyyaml>=6.0",  # For OpenAPI YAML generation
+    "pytest-cov>=4.0.0",
+]
+database = [
+    "sqlalchemy[asyncio]>=2.0",
+    "alembic>=1.13.0",
+    "aiosqlite>=0.19.0",
+    "greenlet>=3.0",  # Required by SQLAlchemy async
+]
+config = [
+    "pydantic-settings>=2.0",
+    "python-dotenv>=1.0.0",
+]
+auth = [
+    "starlette>=0.27.0",  # Required for auth_server HTTP endpoints
+    "httpx>=0.24.0",  # For testing auth endpoints
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mcp_servers*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+# Enable: pyflakes, pycodestyle, isort, pep8-naming, pyupgrade
+select = ["F", "E", "W", "I", "N", "UP"]
+ignore = []
+# Allow long lines in meta-tools files for detailed field descriptions
+per-file-ignores = { "mcp_servers/**/tools/_meta_tools.py" = ["E501"] }
+# Allow auto-fix for all enabled rules (when `--fix` is provided)
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.basedpyright]
+exclude = ["scripts"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+norecursedirs = ["utils", ".git", ".ruff_cache", "__pycache__", "mcp_servers"]
+asyncio_mode = "auto"
+markers = [
+    "integration: marks tests as integration tests (require internet and EDGAR_USER_AGENT)",
+    "manual: marks tests for manual exploration with custom filings",
+]
+
+[tool.uv.sources]
+mercor-mcp-shared = { path = "packages/mercor-mcp-shared" }
+fastmcp = { git = "https://github.com/jlowin/fastmcp.git", rev = "bc2f601" }

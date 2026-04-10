@@ -1,0 +1,214 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_4a7346a7a49640ebbb5ddfbdf82d4cc1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d2249c6d441b4d6ab39bff67f1787dca",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Assigns 1 point to the patient's clinical stage in the Neo-Bioscore. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient was diagnosed with clinical stage IIIA which corresponds to 1 point via the Neo-Bioscore. See \u2018clinical stage\u2019 in Table 1 on page 15 of JAMA Oncol. 2016 July 01; 2(7): 929\u2013936. doi:10.1001/jamaoncol.2015.6478.\n\u201cCLINICAL HISTORY: -year-old female with Stage IIIA (cT3 N1 M0) Invasive Ductal Carcinoma of the Right Breast. Status post neoadjuvant chemotherapy (TCHP regimen). Pre-treatment biopsy: ER-/PR-/HER2+, Grade 3.\u201c from \u201cPath.pdf\u201d\n\u201cClinical stage from 1/13/2021: Stage IIIA (cT3, cN1, cM0, G3, ER-, PR-, HER2+) - Unsigned   CHIEF COMPLAINT: Here to discuss management of right breast cancer  HISTORY OF PRESENT ILLNESS::Leiann Severt is a 36 y.o. female who presented with breast abnormality on the following: physical exam on the date of 12/22/2020\u201d from from Source: Tab - CLINICAL NOTES, Note type - Progress Note, Column - D, Row - 14. \n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Path.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_6a64386568b442e182b08f4bd2e27828"
+          }
+        ]
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_329b5c9d874640fcb6fbe6f445a22277",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d2249c6d441b4d6ab39bff67f1787dca",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (numerical)",
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "Assigns 0 points to the patient's pathological stage in the Neo-Bioscore. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient was diagnosed with pathological stage 0 which corresponds to 0 points via the Neo-Bioscore. Since there were no tumor cells noted on the pathology from the lumpectomy, this patient had a complete pathological response to the neoadjuvant chemotherapy and therefore is a Stage 0. See \u2018pathological  stage\u2019 in Table 1 on page 15 of JAMA Oncol. 2016 July 01; 2(7): 929\u2013936. doi:10.1001/jamaoncol.2015.6478.\n\n \u201cSurvivorship Doctor: \"And instead, you got the 'Complete Pathologic Response.' I was just reading the surgeon's note again. It was definitive. When they went in, the tumor bed in your right breast was just scar tissue. The lymph nodes were clear. There were no cancer cells identified.\" Patient 9: \"It felt like getting away with something. Like we pulled off a heist.\" from Onc_Patient 9 Script\n\u201cDIAGNOSIS: A. RIGHT BREAST, LUMPECTOMY: No residual invasive carcinoma (Complete Pathologic Response). \u25cf No residual DCIS\u201d from \u201cPath.pdf\u201d\n\u201cClinical stage from 1/13/2021: Stage IIIA (cT3, cN1, cM0, G3, ER-, PR-, HER2+) - Unsigned   CHIEF COMPLAINT: Here to discuss management of right breast cancer  HISTORY OF PRESENT ILLNESS::Leiann Severt is a 36 y.o. female who presented with breast abnormality on the following: physical exam on the date of 12/22/2020\u201d from from Source: Tab - CLINICAL NOTES, Note type - Progress Note, Column - D, Row - 14. \n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Onc_Patient 9 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_6a64386568b442e182b08f4bd2e27828"
+          },
+          {
+            "name": "Path.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_6a64386568b442e182b08f4bd2e27828"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c4e72a0d74d44030a3aeaff18a58c5fa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d2249c6d441b4d6ab39bff67f1787dca",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (numerical)"
+        ],
+        "criteria": "Assigns 1 point to the patient's ER-negative tumor marker in the Neo-Bioscore. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has an ER negative tumor which corresponds to 1 point. See \u2018tumor marker\u2019 in Table 1 on page 15 of JAMA Oncol. 2016 July 01; 2(7): 929\u2013936. doi:10.1001/jamaoncol.2015.6478.\n\u201cCLINICAL HISTORY: -year-old female with Stage IIIA (cT3 N1 M0) Invasive Ductal Carcinoma of the Right Breast. Status post neoadjuvant chemotherapy (TCHP regimen). Pre-treatment biopsy: ER-/PR-/HER2+, Grade 3.\u201c from \u201cPath.pdf\u201d\n\u201cClinical stage from 1/13/2021: Stage IIIA (cT3, cN1, cM0, G3, ER-, PR-, HER2+) - Unsigned   CHIEF COMPLAINT: Here to discuss management of right breast cancer  HISTORY OF PRESENT ILLNESS::Leiann Severt is a 36 y.o. female who presented with breast abnormality on the following: physical exam on the date of 12/22/2020\u201d from from Source: Tab - CLINICAL NOTES, Note type - Progress Note, Column - D, Row - 14. \n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Path.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_6a64386568b442e182b08f4bd2e27828"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1f04294bf24b4ff8baaab638fcec674c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d2249c6d441b4d6ab39bff67f1787dca",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (numerical)"
+        ],
+        "criteria": "Assigns 1 point to the patient's grade 3 tumor in the Neo-Bioscore. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has a Grade 3 tumor, which corresponds to 1 point. See \u2018tumor marker\u2019 in Table 1 on page 15 of JAMA Oncol. 2016 July 01; 2(7): 929\u2013936. doi:10.1001/jamaoncol.2015.6478.\r\n\u201cCLINICAL HISTORY: -year-old female with Stage IIIA (cT3 N1 M0) Invasive Ductal Carcinoma of the Right Breast. Status post neoadjuvant chemotherapy (TCHP regimen). Pre-treatment biopsy: ER-/PR-/HER2+, Grade 3.\u201c from \u201cPath.pdf\u201d\r\n\u201cClinical stage from 1/13/2021: Stage IIIA (cT3, cN1, cM0, G3, ER-, PR-, HER2+) - Unsigned   CHIEF COMPLAINT: Here to discuss management of right breast cancer  HISTORY OF PRESENT ILLNESS::Leiann Severt is a 36 y.o. female who presented with breast abnormality on the following: physical exam on the date of 12/22/2020\u201d from from Source: Tab - CLINICAL NOTES, Note type - Progress Note, Column - D, Row - 14. \r",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Path.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_6a64386568b442e182b08f4bd2e27828"
+          }
+        ]
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6e6816971bdb4e1f874e306aed55fbad",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d2249c6d441b4d6ab39bff67f1787dca",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (numerical)"
+        ],
+        "criteria": "Assigns 0 points to the patient's HER2-positive (ERBB2-positive) tumor marker in the Neo-Bioscore. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": " The patient has HER2-positive (ERBB2-positive), which corresponds to 0 points. See \u2018tumor marker\u2019 in Table 1 on page 15 of JAMA Oncol. 2016 July 01; 2(7): 929\u2013936. doi:10.1001/jamaoncol.2015.6478.\n\u201cCLINICAL HISTORY: -year-old female with Stage IIIA (cT3 N1 M0) Invasive Ductal Carcinoma of the Right Breast. Status post neoadjuvant chemotherapy (TCHP regimen). Pre-treatment biopsy: ER-/PR-/HER2+, Grade 3.\u201c from \u201cPath.pdf\u201d\n\u201cClinical stage from 1/13/2021: Stage IIIA (cT3, cN1, cM0, G3, ER-, PR-, HER2+) - Unsigned   CHIEF COMPLAINT: Here to discuss management of right breast cancer  HISTORY OF PRESENT ILLNESS::Leiann Severt is a 36 y.o. female who presented with breast abnormality on the following: physical exam on the date of 12/22/2020\u201d from from Source: Tab - CLINICAL NOTES, Note type - Progress Note, Column - D, Row - 14. \n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Path.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_6a64386568b442e182b08f4bd2e27828"
+          }
+        ]
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6e71907093934b73b1906b86253e23d9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d2249c6d441b4d6ab39bff67f1787dca",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the patient has a total Neo-Bioscore of 3 (acceptable range 2.97 to 3.03).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Clinical Stage IIIA - 1 point\nPathological Stage - 0 points\nER status: Tumor Marker - ER negative - 1 point\nGrade 3 - 1 point \nHER2 positive - 0 points\nTotal Neo-Bioscore = 1 + 0+ 1 +1 + 0 = 3\nSee \u2018Table 2\u2019 on page 16 of JAMA Oncol. 2016 July 01; 2(7): 929\u2013936. doi:10.1001/jamaoncol.2015.6478.\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bda1fa3a0d7b4d129f0ea8ba292ef5c6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d2249c6d441b4d6ab39bff67f1787dca",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Reasoning (numerical)"
+        ],
+        "criteria": "Concludes that the patient has a 93% 5-year disease free survival.\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "A score of 3 corresponds to a 93% 5-year disease free survival according to \u2018Table 2\u2019 on page 16 of JAMA Oncol. 2016 July 01; 2(7): 929\u2013936. doi:10.1001/jamaoncol.2015.6478.\n \u201cPatient 9: \"That\u2019s actually why I wanted to ask you... now that we have some distance from it. I\u2019ve been reading about the '5-year disease-specific survival.' Since we did get that complete response back then, where does that put me now?\" from Onc_Patient 9 Script\n\n\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Onc_Patient 9 Script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_6a64386568b442e182b08f4bd2e27828"
+          }
+        ]
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

@@ -1,0 +1,298 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_1f50b8062c3742d28dfdbadbcfd687b7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_870ab8b227b34f1aaf5a308a126ca1a1",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has right upper-quadrant abdominal pain.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the Cards_Patient 14 script, the patient presents with recurrent right upper quadrant (RUQ) pain and nausea after eating. This is consistent with biliary colic. \n \n Cards_Patient 14 script.pdf:\n \"Doctor: Okay, tell me more about what\u2019s been bothering you.\n Patient: I keep getting this pain under my right ribs. It comes and goes, but it\u2019s been happening more often. Sometimes it spreads into my back. I feel nauseated a lot, especially after eating.\n Doctor: How long has this been going on?\n Patient: Months and months, really.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 14.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_57e08520e81047b484751dfbac9377d3"
+          }
+        ]
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_35913ea32d0942bd934dd592b492bb8f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_870ab8b227b34f1aaf5a308a126ca1a1",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient experiences nausea after eating. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the Cards_Patient 14 script, the patient presents with recurrent right upper quadrant (RUQ) pain and nausea after eating. This is consistent with biliary colic. \n \n Cards_Patient 14 script.pdf:\n \"Doctor: Okay, tell me more about what\u2019s been bothering you.\n Patient: I keep getting this pain under my right ribs. It comes and goes, but it\u2019s been happening more often. Sometimes it spreads into my back. I feel nauseated a lot, especially after eating.\n Doctor: How long has this been going on?\n Patient: Months and months, really.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 14.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_57e08520e81047b484751dfbac9377d3"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4c5625f57a5b42288e743384e9078df6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_870ab8b227b34f1aaf5a308a126ca1a1",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient\u2019s symptoms are consistent with biliary colic.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "As per the Cards_Patient 14 script, the patient presents with recurrent right upper quadrant (RUQ) pain and nausea after eating. This is consistent with biliary colic. \n \n Cards_Patient 14 script.pdf:\n \"Doctor: Okay, tell me more about what\u2019s been bothering you.\n Patient: I keep getting this pain under my right ribs. It comes and goes, but it\u2019s been happening more often. Sometimes it spreads into my back. I feel nauseated a lot, especially after eating.\n Doctor: How long has this been going on?\n Patient: Months and months, really.\"\n \n \"Biliary colic is described as crampy post-prandial right upper quadrant or epigastric pain radiating to the back or scapula, especially following a high-fat meal, often accompanied by nausea and vomiting.\"\n https://www.ncbi.nlm.nih.gov/books/NBK459370/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 14.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_57e08520e81047b484751dfbac9377d3"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_41f3219d83634498bb6db0b13b04e349",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_870ab8b227b34f1aaf5a308a126ca1a1",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient had a prior cholecystectomy.\t",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The clinical notes confirm the patient had a cholecystectomy in 2020. \n \n \"Past Surgical History: ...CHOLECYSTECTOMY N/A 03/05/2020 Procedure: LAPAROSCOPIC CHOLECYSTECTOMY ERAS PATHWAY\"\n CLINICALNOTES - Progress Notes - Column D - Row 165",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ac2b1328b88443a885a73e979820cb44",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_870ab8b227b34f1aaf5a308a126ca1a1",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that the patient likely has post-cholecystectomy syndrome (PCS).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has symptoms of biliary colic and a previous cholecystectomy, which indicates they have post-cholecystectomy syndrome. \n \n \"Post-cholecystectomy syndrome (PCS) is the term used to describe the persistence of biliary colic or right upper quadrant abdominal pain with a variety of gastrointestinal symptoms similar to those in patients with cholecystitis prior to cholecystectomy.\"\n https://www.ncbi.nlm.nih.gov/books/NBK539902/\n CLINICALNOTES - Progress Notes - Column D - Row 165",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_775eb6a608d04d119073eb3ac88df966",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_870ab8b227b34f1aaf5a308a126ca1a1",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the common bile duct (CBD) measures 10 mm on the patient\u2019s ultrasound.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the Cards_Patient 14 ultrasound.pdf: \"The common bile duct measures up to 10 mm in diameter. No echogenic intraluminal calculi are identified. No acoustic shadowing. No intrahepatic ductal dilatation is seen.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 14 ultrasound.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_57e08520e81047b484751dfbac9377d3"
+          }
+        ]
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e5dd6a0be75449c1a8c24b18a85acdab",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_870ab8b227b34f1aaf5a308a126ca1a1",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that the 10 mm CBD is within normal range after cholecystectomy.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the Cards_Patient 14 ultrasound.pdf: \"The common bile duct measures up to 10 mm in diameter. No echogenic intraluminal calculi are identified. No acoustic shadowing. No intrahepatic ductal dilatation is seen.\"\n\n\"An abdominal ultrasound is a quick, inexpensive and noninvasive method to evaluate the hepatobiliary system, pancreas, and surrounding areas. Common bile duct (CBD) dilation of up to 10mm is normal, while dilation exceeding 10mm, in most cases, is diagnostic of obstruction distally suggestive of retained stone, CBD stricture, or ampullary stenosis.\"\n https://www.ncbi.nlm.nih.gov/books/NBK539902/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 14 ultrasound.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_57e08520e81047b484751dfbac9377d3"
+          }
+        ]
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bbcbf2b3091846c29666374cd3f7ee50",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_870ab8b227b34f1aaf5a308a126ca1a1",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that no CBD stones are visualized on ultrasound.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From the Cards_Patient 14 ultrasound.pdf: \"The common bile duct measures up to 10 mm in diameter. No echogenic intraluminal calculi are identified. No acoustic shadowing. No intrahepatic ductal dilatation is seen.\"",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 14 ultrasound.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_57e08520e81047b484751dfbac9377d3"
+          }
+        ]
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b6b48fce2e544f31a3e4637a60c075e5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_870ab8b227b34f1aaf5a308a126ca1a1",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient is more likely to have a functional cause of PCS.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Post-cholecystectomy syndrome (PCS) can have both organic and functional causes. The patient's symptoms are chronic and non-progressive, and the abdominal ultrasound did not show a structural abnormality. The most likely organic cause is a retained CBD stone; however, this is less likely given the normal CBD dilation (a 10 mm CBD is within the normal range post-cholecystectomy) and the absence of visible stones. In the absence of features suggesting organic pathology, the most likely cause is functional. \n \n \"Post-cholecystectomy syndrome may result from organic or functional diseases of the gastrointestinal tract.. biliary etiologies known to cause post-cholecystectomy syndrome include such as bile salt-induced diarrhea, retained calculi, bile leak, biliary strictures, cystic duct remnant, stenosis, and dyskinesia of the sphincter of Oddi.\"\n https://www.ncbi.nlm.nih.gov/books/NBK539902/\n CLINICALNOTES - Progress Notes - Column D - Row 165",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards_Patient 14 ultrasound.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_57e08520e81047b484751dfbac9377d3"
+          }
+        ]
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b11a69fdc9224ae2b699175cbef0be54",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_870ab8b227b34f1aaf5a308a126ca1a1",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that sphincter of Oddi dysfunction is a common functional cause of PCS.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Post-cholecystectomy pain refers to the subsequent development of recurrent episodes of abdominal pain in patients who have had cholecystectomy [1,2]. This pain occurs in 10\u201320% of post-cholecystectomy patients... Sphincter of Oddi dysfunction (SOD) is another important cause of post-cholecystectomy pain that is defined as an abnormality of either the biliary and/or pancreatic sphincter causing intermittent or fixed obstruction to the flow of bile or pancreatic juice, associated with episodes of biliary-type pain, recurrent pancreatitis, elevated liver enzymes, or ductal dilatation [6,7,8,9,10]. Among those 10\u201320% of patients undergoing cholecystectomy who experience post-cholecystectomy biliary pain, 9\u201351% meet the diagnostic criteria for SOD [3,11]. Overall, patients with previous cholecystectomy are predisposed to SOD [11,12] and about 1.5% of patients develop SOD after cholecystectomy\"\n https://pmc.ncbi.nlm.nih.gov/articles/PMC10381482/\n \n \"SO dyskinesia is related to a functional disturbance in muscular tone control causing an intermittent biliary obstruction.\"\n https://pmc.ncbi.nlm.nih.gov/articles/PMC10381482/",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_627da8deaff84def9a4665d164bf8216",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_870ab8b227b34f1aaf5a308a126ca1a1",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Concludes sphincter of Oddi dysfunction as the single most likely diagnosis for the patient\u2019s presentation.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has chronic and recurrent biliary colic, and likely post-cholecystectomy syndrome. In the absence of evidence that there is a structural cause through both the nature of the symptoms and imaging findings, the patient's presentation is consistent with sphincter of Oddi dysfunction. This is a diagnosis of exclusion, and the other causes of post-cholecystectomy syndrome such as a retained CBD stone should still be excluded before formalizing the diagnosis.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

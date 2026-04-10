@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Assume the following changes to the RMBS and SLAB merger model\n- % cash consideration is 27%\n- advisory fees are 1.00%\n- update the Bidder's EV/EBITDA Multiple to the average of the 1) Weighted Average EV/EBITDA multiple used in the ONTO Merger Analysis, 2) Weighted Average EV/EBITDA multiple used in the MTSI Merger Analysis, and 3) RMBS' EV to Operating Cash Flow multiple as of 12/31/2024 \n\nOutput a 2x2 table for Pro Forma Combined Equity Value, rounded to the nearest whole number in thousands, where\n- the two rows are SLAB's net debt as equal to and double 2016 balance sheet net debt, defined as short-term debt plus long-term debt less cash and cash equivalents\n- the two columns are the updated Bidder's EV/EBITDA Multiple increased by the Bid Premium and double the Bid Premium"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States Pro Forma Combined Equity Value at 100% of 2016 net debt and the bid... (ver_62c25472cb34461a81b40b4e42adce38)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Pro Forma Combined Equity Value at 100% of 2016 net debt and the bid premium on top of the updated EV/EBITDA multiple is $12,643,355 thousand (acceptable range 199 to 203)."
+        }
+      ]
+    },
+    {
+      "name": "States Pro Forma Combined Equity Value at 100% of 2016 net debt and double the... (ver_8a10fd806ddc41ce9b6289cef8061999)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Pro Forma Combined Equity Value at 100% of 2016 net debt and double the bid premium on top of the updated EV/EBITDA multiple is $14,973,649 thousand (acceptable range 199 to 203)."
+        }
+      ]
+    },
+    {
+      "name": "States Pro Forma Combined Equity Value at 200% of 2016 net debt and the bid... (ver_2e7a78c5208a4d5f9203f53c3db8d37d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Pro Forma Combined Equity Value at 200% of 2016 net debt and the bid premium on top of the updated EV/EBITDA multiple is $12,712,647 thousand (acceptable range 199 to 203)."
+        }
+      ]
+    },
+    {
+      "name": "States Pro Forma Combined Equity Value at 200% of 2016 net debt and double the... (ver_ec9591122c3a4e25ab1a62340058b9da)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Pro Forma Combined Equity Value at 200% of 2016 net debt and double the bid premium on top of the updated EV/EBITDA multiple is $15,042,941 thousand (acceptable range 199 to 203)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world248-rl-04-c43af550"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_c43af5506d30478f9d2bfb1af4b0c398",
+    "task_name": "World248_RL_04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_4c4f60bd051f4508986f3bb06f28a2ca",
+        "golden_text_response": "Pro Forma Combined Equity Value at 100% of 2016 net debt and the bid premium on top of the updated EV/EBITDA multiple is $12,643,355 thousand\nPro Forma Combined Equity Value at 100% of 2016 net debt and double the bid premium on top of the updated EV/EBITDA multiple is $14,973,649 thousand\nPro Forma Combined Equity Value at 200% of 2016 net debt and the bid premium on top of the updated EV/EBITDA multiple is $12,712,647 thousand\nPro Forma Combined Equity Value at 200% of 2016 net debt and double the bid premium on top of the updated EV/EBITDA multiple is $15,042,941 thousand",
+        "golden_file_responses": "snap_1918e515ecf64635b3a4e5922e7769e6"
+      }
+    ]
+  }
+}

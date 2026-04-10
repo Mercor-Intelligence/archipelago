@@ -1,0 +1,257 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_33b6e1f82667405f9913aab021fec904",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_882d1e11ae5c4d9abad0c3242f2d7895",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that an Aortic Dissection Detection Risk Score should be calculated.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "According to a clinical policy published in July 2025 by the American College of Emergency Physicians, \"In adult patients who have\nan AoD detection risk score (ADD-RS) of 1 or less (low risk) and a highly sensitive D-dimer of less than 500 ng/mL FEU, emergency physicians can exclude acute nontraumatic AoD without obtaining advanced imaging (ie, CTA, MRI, or TEE)\". [https://doi.org/10.1016/j.annemergmed.2025.04.002]",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f3673da60954426788e4bd2a65e026e8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_882d1e11ae5c4d9abad0c3242f2d7895",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient scores 0 points for not having any \"high-risk conditions\" component of the Aortic Dissection Detection Risk Score.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": " A comprehensive review of the clinical notes of the chart does not reveal Marfan syndrome, family history of aortic disease, known aortic valve disease, recent aortic manipulation, or known TAA. Therefore, the patient scores 0 for any high risk condition component . \n\n\"Any high risk condition Marfan syndrome, family history of aortic disease, known aortic valve disease, recent aortic manipulation, or known TAA - If Yes - 1 Point\" [https://www.mdcalc.com/calc/4060/aortic-dissection-detection-risk-score-add-rs]. ",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5a96b9c685154a22b899664f39ea1ef8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_882d1e11ae5c4d9abad0c3242f2d7895",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's chest pain was described as severe.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "According to the attached AI scribe conversation (AI Scribe Conversation Cards_Patient 10.pdf), \"She states the chest pain is severe and \u201c10/10\u201d.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d9dd3a6dd61c4df392ee1737c84a12b1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_882d1e11ae5c4d9abad0c3242f2d7895",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient scores 1 point for having a \"high-risk pain feature\" component of the Aortic Dissection Detection Risk Score.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "According to MDCalc, \"Any high risk pain feature\" is defined as \"Chest, back, or abdominal pain described as abrupt onset, severe intensity, or ripping/tearing\", so the patient scores 1 point for this component of the Aortic Dissection Detection Risk Score. [https://www.mdcalc.com/calc/4060/aortic-dissection-detection-risk-score-add-rs]",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_640441cb957e4619b77fdcff58409201",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_882d1e11ae5c4d9abad0c3242f2d7895",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient does not have any evidence of a perfusion deficit noted on physical exam.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "According to the attached AI scribe conversation (AI Scribe Conversation Cards_Patient 10.pdf), the resident's report of the exam states \"Normal, she is a little hypertensive at 158/78, pulse 88. The rest are normal. She has equal blood pressures in her upper arms, pulses are present in all 4 extremities. Lungs clear and no murmurs. A little bit of epigastric discomfort, but not really tender. She told me she just ate\". This implies that her neurological exam is normal, so no focal neuro deficit. There is no pulse deficit or systolic BP differential. ",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bac2669d4f1f4df6b2d64d4619b0e500",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_882d1e11ae5c4d9abad0c3242f2d7895",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient does not have a new aortic insufficiency murmur.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "According to the attached AI scribe conversation (AI Scribe Conversation Cards_Patient 10.pdf), the resident's report of the exam states \"Normal, she is a little hypertensive at 158/78, pulse 88. The rest are normal. She has equal blood pressures in her upper arms, pulses are present in all 4 extremities. Lungs clear and no murmurs. A little bit of epigastric discomfort, but not really tender. She told me she just ate\".",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_46be1054633043bd93d689cd6a42c02c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_882d1e11ae5c4d9abad0c3242f2d7895",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient does not have any evidence of shock.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Based on her presentation, exam, and vital signs there is no evidence of shock. According to the attached AI scribe conversation (AI Scribe Conversation Cards_Patient 10.pdf), the resident's report of the exam states \"Normal, she is a little hypertensive at 158/78, pulse 88. The rest are normal. She has equal blood pressures in her upper arms, pulses are present in all 4 extremities. Lungs clear and no murmurs. A little bit of epigastric discomfort, but not really tender. She told me she just ate\".",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6391f766b0f0433daab9d42e10b4a61e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_882d1e11ae5c4d9abad0c3242f2d7895",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient scores 0 points for not having any \"high-risk exam features\" component of the Aortic Dissection Detection Risk Score.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "According to MDCalc, the patient scores 0 points for this component of the Aortic Dissection Detection Risk Score for not having \"Any high risk exam feature\" defined as \"Evidence of perfusion deficit (pulse deficit, systolic BP differential, or focal neuro deficit plus pain), new aortic insufficiency murmur (with pain), hypotension/shock\". https://www.mdcalc.com/calc/4060/aortic-dissection-detection-risk-score-add-rs",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d1e5f5fcc4114ff29e03a94c43cad259",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_882d1e11ae5c4d9abad0c3242f2d7895",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient scores 1 point on the Aortic Dissection Detection Risk Score.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Adding up the three components of this score, the patient scores a total of only 1 point for having a high-risk pain feature. https://www.mdcalc.com/calc/4060/aortic-dissection-detection-risk-score-add-rs",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0eeb798bf671463abcc567c947d5e31d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_882d1e11ae5c4d9abad0c3242f2d7895",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient should have a D-dimer ordered.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "According to a clinical policy published in July 2025 by the American College of Emergency Physicians, \"In adult patients who have\nan AoD detection risk score (ADD-RS) of 1 or less (low risk) and a highly sensitive D-dimer of less than 500 ng/mL FEU, emergency physicians can exclude acute nontraumatic AoD without obtaining advanced imaging (ie, CTA, MRI, or TEE)\". [https://doi.org/10.1016/j.annemergmed.2025.04.002]. \n\nAdditionally, review of the patient's labs (lab-report-penny-vespa.pdf), show that this test was not previously ordered.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e51ebc79b5c04f8790d936bb371d580c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_882d1e11ae5c4d9abad0c3242f2d7895",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient does not need Computed Tomography Angiography (CTA) if the D-dimer is less than 500 ng/mL. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Both the emergency medicine resident and the admitting resident should be explained the ACEP clinical policy, which would provide safe and cost-effective care for this patient. The Aortic Dissection Detection Risk Score should be calculated with them, and a D-dimer should be ordered. If the D-dimer is negative, then aortic dissection should be considered to be ruled out. If the D-dimer is positive, the patient will need a CTA to rule out dissection.\n\nAccording to a clinical policy published in July 2025 by the American College of Emergency Physicians, \"In adult patients who have\nan AoD detection risk score (ADD-RS) of 1 or less (low risk) and a highly sensitive D-dimer of less than 500 ng/mL FEU, emergency physicians can exclude acute nontraumatic AoD without obtaining advanced imaging (ie, CTA, MRI, or TEE)\". [https://doi.org/10.1016/j.annemergmed.2025.04.002]",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_33cdd95a0c604edaacf93e4e2d543986",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_882d1e11ae5c4d9abad0c3242f2d7895",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that a non-ST elevation myocardial infarction is the more likely diagnosis.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is important to note, because both the resident and attending physician feel that there is a better explanation for her presentation (NSTEMI) than the much rarer diagnosis of aortic dissection. Therefore, a score of 1 or less on the risk score PLUS a negative D-dimer should rule out aortic dissection in this patient. \n\n\"Resident: I started her on heparin intravenous for the Non-STEMI protocol. She is pain-free now. Attending: Yeah, the trops went up a tiny bit. Probably a good idea\" from the AI scribe conversation (AI Scribe Conversation Cards_Patient 10.pdf). Review of the labs show an 8-point increase in her repeat high-sensitivity troponin (lab-report-pennyvespa.pdf), which indicates ischemia. Additionally, in 2015 she had a cardiac catheterization that showed several areas of 40% or less blockages that could have progressed over the past 10-years. [Clinical Notes- CV Procedure - Column D - Row 10].\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

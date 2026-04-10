@@ -1,0 +1,238 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 7.xlsx” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-------\n\nOnc Patient 7 is presented to the oncology clinic for follow-up. Based on the most current guideline and clinical trial as of December 2025, what is the most appropriate next treatment option? What is the dosing and frequency for this treatment? Explain your reasoning."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient has non-small cell lung cancer. (ver_2bb34d79b7694f0c880814c2506c3ec6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has non-small cell lung cancer."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's cancer is metastatic. (ver_1e228d3533b347e2bd3f94d96236b7fa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's cancer is metastatic."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's cancer has an EGFR exon 20 insertion mutation. (ver_828ac19779334c99aba2b0ddba97e752)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's cancer has an EGFR exon 20 insertion mutation."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient previously received platinum-based chemotherapy. (ver_db4239715ed94f5caaeb0b870da00585)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient previously received platinum-based chemotherapy."
+        }
+      ]
+    },
+    {
+      "name": "States that the most appropriate next treatment option for this patient is... (ver_b262be6345214ad5825ce4371de20f00)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the most appropriate next treatment option for this patient is sunvozertinib."
+        }
+      ]
+    },
+    {
+      "name": "States that sunvozertinib is dosed orally. (ver_431d83266b7041719eaa143d4b9a9606)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that sunvozertinib is dosed orally."
+        }
+      ]
+    },
+    {
+      "name": "States that sunvozertinib is dosed once daily. (ver_d5247c3e93df4cf5b2dd1a0c13752ebf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that sunvozertinib is dosed once daily."
+        }
+      ]
+    },
+    {
+      "name": "States that sunvozertinib is dosed at 200 mg. (ver_2fdf07d2e15c44c587f8732a90fd5228)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that sunvozertinib is dosed at 200 mg."
+        }
+      ]
+    },
+    {
+      "name": "States that sunvozertinib is taken with food. (ver_1847ccb25d9a4ac88fccd9dcfa4e800c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that sunvozertinib is taken with food."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-onc-patient-7-nsclc-david-r-30d2ab02"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_30d2ab025f7f41a3b0b6253150f99982",
+    "task_name": "Labs_Image_AI Scribe_Onc_Patient_7_ NSCLC - David R",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_9b69b70fad194efbbf680a1549ef1ddb",
+        "golden_text_response": "The patient has experienced a recurrence of her lung cancer. Her medical record indicates she was previously diagnosed with non-small cell lung cancer, suggesting this is a recurrence of the disease. She has already been treated with platinum-based chemotherapy, and laboratory tests show an EGFR exon 20 insertion mutation. Sunvozertinib, a kinase inhibitor, is approved for treating adults with locally advanced or metastatic non-small cell lung cancer (NSCLC) harboring this mutation, especially if the disease has progressed after platinum-based treatment. The patient is eligible for this therapy, administered at 200 mg orally once daily with food. ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

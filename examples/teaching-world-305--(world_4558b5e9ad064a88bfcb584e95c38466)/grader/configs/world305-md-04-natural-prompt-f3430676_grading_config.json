@@ -1,0 +1,191 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_6e7ba1c9eb4b4880bed915c296bddc41",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f343067635ed4117b32389080ffee343",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that a state standard in the updated lesson plan document (\"RevisedL4plan.docx\") is: CC.1.3.8.A \"Determine a theme or central idea of a text and analyze its development over the course of the text, including its relationship to the characters, setting, and plot; provide an objective summary of the text\"",
+        "modality": "Free text",
+        "negative_criteria": "Adds standards other than CC.1.3.8.A, CC.1.3.8.B, CC.1.3.8.C, CC.1.3.8.D, CC.1.3.8.F, CC.1.3.8.J, CC.1.3.8.K to the State Standards box.",
+        "expected_file_type": "Word Documents (.docx, .doc)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0980b0e4d00044369d4ca41e9c946c16",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f343067635ed4117b32389080ffee343",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that a state standard in the updated lesson plan document (\"RevisedL4plan.docx\") is: CC.1.3.8.B \"Cite the textual evidence that most strongly supports an analysis of what the text says explicitly, as well as inferences, conclusions, and/or generalizations drawn from the text\"",
+        "modality": "Free text",
+        "expected_file_type": "Word Documents (.docx, .doc)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_544d1044b88c41d7b16b19387a1f24aa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f343067635ed4117b32389080ffee343",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that a state standard in the updated lesson plan document (\"RevisedL4plan.docx\") is: CC.1.3.8.C \"Analyze how particular lines of dialogue or incidents in a story or drama propel the action, reveal aspects of a character, or provoke a decision\"",
+        "modality": "Free text",
+        "expected_file_type": "Word Documents (.docx, .doc)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_42f0d75fc4c4478da4454047f51eddaa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f343067635ed4117b32389080ffee343",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that a state standard in the updated lesson plan document (\"RevisedL4plan.docx\") is: CC.1.3.8.D \"Analyze how differences in the points of view of the characters and the audience or reader (e.g., created through the use of dramatic irony) create such effects as suspense or humor\"",
+        "modality": "Free text",
+        "expected_file_type": "Word Documents (.docx, .doc)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b0e73908ee6844d099c7449e9df94da4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f343067635ed4117b32389080ffee343",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that a state standard in the updated lesson plan document (\"RevisedL4plan.docx\") is: CC.1.3.8.F \"Analyze the influence of the words and phrases in a text including figurative and connotative meanings and how they shape meaning and tone\"",
+        "modality": "Free text",
+        "expected_file_type": "Word Documents (.docx, .doc)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_872f443393bb475c92a4eac0eb8bfbae",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f343067635ed4117b32389080ffee343",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that a state standard in the updated lesson plan document (\"RevisedL4plan.docx\") is: CC.1.3.8.J \"Acquire and use accurately grade-appropriate general academic and domain-specific  words and phrases; gather vocabulary knowledge when considering a word or phrase important to comprehension or expression\"",
+        "modality": "Free text",
+        "expected_file_type": "Word Documents (.docx, .doc)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_41e366e7ce8f461a92f7232f6ecf3cc1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f343067635ed4117b32389080ffee343",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that a state standard in the updated lesson plan document (\"RevisedL4plan.docx\") is: CC.1.3.8.K \"Read and comprehend literary fiction on grade level, reading independently and proficiently\"",
+        "modality": "Free text",
+        "expected_file_type": "Word Documents (.docx, .doc)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_86f722b1474948f3babb540e2582897b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f343067635ed4117b32389080ffee343",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Style / formatting"
+        ],
+        "weight": 1,
+        "criteria": "Creates a new document named \"RevisedL4plan.docx\" which is identical to the L4 lesson plan document (\"L4 Lesson plan.docx\") except for the contents of the box titled \"State standards:\".",
+        "autogen_source": null,
+        "expected_file_type": "Word Documents (.docx, .doc)",
+        "criteria_explanation": "Slightly stacking, but this is checking for the exact output specified in the prompt as a single evaluation.\n\nPrompt: \"Update the L4 lesson plan to add the Grade 8 state literature standards...Do not make any other modifications to the plan. Output the updated lesson plan as a new document called \"RevisedL4plan.docx\".\"",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Lessons/Lesson 4/L4 Lesson plan.docx",
+            "index": null,
+            "source": "world",
+            "snapshotId": "snap_bebca1298bd04ba3a95356e6da5a6fc6"
+          }
+        ]
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

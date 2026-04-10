@@ -1,0 +1,40 @@
+{
+  "mcpServers": {
+    "calendar": {
+      "transport": "http",
+      "url": "http://localhost:8100/mcp/"
+    },
+    "chat": {
+      "transport": "http",
+      "url": "http://localhost:8101/mcp/"
+    },
+    "code_execution": {
+      "transport": "http",
+      "url": "http://localhost:8102/mcp/"
+    },
+    "excel": {
+      "transport": "http",
+      "url": "http://localhost:8103/mcp/"
+    },
+    "filesystem": {
+      "transport": "http",
+      "url": "http://localhost:8104/mcp/"
+    },
+    "mail": {
+      "transport": "http",
+      "url": "http://localhost:8105/mcp/"
+    },
+    "pdfs": {
+      "transport": "http",
+      "url": "http://localhost:8106/mcp/"
+    },
+    "powerpoint": {
+      "transport": "http",
+      "url": "http://localhost:8107/mcp/"
+    },
+    "word": {
+      "transport": "http",
+      "url": "http://localhost:8108/mcp/"
+    }
+  }
+}

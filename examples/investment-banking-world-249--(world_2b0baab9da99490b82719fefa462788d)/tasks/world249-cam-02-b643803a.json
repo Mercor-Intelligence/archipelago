@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Take the average EBITDA for SPGI for the last eight quarters as of 2025-09-30 and annualize it for use as the terminal year EBITDA value in the \"Terminal value - EBITDA multiple approach\" section in the DCF model. Calculate the updated enterprise value and state it in thousands, rounded to the nearest whole number, in your reply. Assume the final enterprise value takes into consideration of both stage 1 and stage 2."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States Enterprise value is $109,244,757 thousand (acceptable range... (ver_4df8445ba6674d069d82b07900de0495)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Enterprise value is $109,244,757 thousand (acceptable range $108,152,309 to $110,337,205)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world249-cam-02-b643803a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_b643803ab1794ab69887198c6bbea6c5",
+    "task_name": "World249_Cam_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_b3eb157ff66d4c46aecc906ed9963f9b",
+        "golden_text_response": "Enterprise value is $109,244,757 thousand.",
+        "golden_file_responses": "snap_69858edb0e394c8b81c3cb0cd9efa3a1"
+      }
+    ]
+  }
+}

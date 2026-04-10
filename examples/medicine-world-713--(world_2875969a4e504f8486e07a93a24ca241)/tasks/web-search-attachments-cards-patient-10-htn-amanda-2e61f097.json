@@ -1,0 +1,261 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 10” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\nPatient 10 presents to the clinic for her initial visit at this clinic.\n\nVitals:  \nBP 138/90 mmHg, manually taken\nPulse 82 bpm\nTemp 36.9 C (98.5 F) Oral   \nResp 18  bpm\nSpO2 98% on RA  \nHt 5 ft   \nWt 123 lb\n\nBy comparing the vital signs from this visit to the most recent visit, what is the single most likely diagnosis that should be ruled out? What is the single most important lab test to rule out this diagnosis?\n\nAnswers should align with the most current clinical guidelines as of January 10, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient has a history of hypertension. (ver_f5c405512d504672be3b77f0adf5441b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has a history of hypertension."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's blood pressure is elevated at today's clinic visit... (ver_9e614bb7b8744c2196ba8ce32d4dfbba)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's blood pressure is elevated at today's clinic visit compared with the most recent visit."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient is taking three antihypertensive medications. (ver_4fdebb8a11074f80add7cdb12a6e1145)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient is taking three antihypertensive medications."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has resistant hypertension. (ver_139b9668af11474d912adb2ccffff681)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has resistant hypertension."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's lab results show a normal potassium level. (ver_5b56fec4d1de406c80b65c04e34e0a79)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's lab results show a normal potassium level."
+        }
+      ]
+    },
+    {
+      "name": "Utilizes the 2025 American College of Cardiology/American Heart Association... (ver_8907efe9bdc84bfb86f4af15bb7fbf2b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Utilizes the 2025 American College of Cardiology/American Heart Association joint committee clinical practice guidelines on hypertension."
+        }
+      ]
+    },
+    {
+      "name": "States that screening for primary aldosteronism in adults with resistant... (ver_d05e2725364f47ff8d2d2d5392025aeb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that screening for primary aldosteronism in adults with resistant hypertension."
+        }
+      ]
+    },
+    {
+      "name": "States that screening for primary aldosteronism is recommended regardless of... (ver_f1ae678e57014e9d9a047dff57958cff)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that screening for primary aldosteronism is recommended regardless of potassium status."
+        }
+      ]
+    },
+    {
+      "name": "States that primary aldosteronism is the single most likely diagnosis to be... (ver_616f5d66810642e188f71fb31eaf5163)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that primary aldosteronism is the single most likely diagnosis to be ruled out."
+        }
+      ]
+    },
+    {
+      "name": "States that the single most important laboratory test to rule out primary... (ver_de9f7759682342daa43b2494b7764b4d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the single most important laboratory test to rule out primary aldosteronism is a plasma aldosterone-to-renin ratio."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-cards-patient-10-htn-amanda-2e61f097"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_2e61f097261d4f73a528ed3561b230e9",
+    "task_name": "Web Search_Attachments_Cards Patient 10 - HTN - Amanda",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_017e5b6c3e654315b23cfad92536b84e",
+        "golden_text_response": "The patient has a history of hypertension, and their blood pressure was found to be elevated at today's clinic visit compared to the most recent one. They are currently taking three antihypertensive medications and have resistant hypertension. Laboratory results show a normal potassium level. The assessment utilizes the 2025 American College of Cardiology/American Heart Association joint committee clinical practice guidelines on hypertension. It is recommended to screen for primary aldosteronism in adults with resistant hypertension, regardless of potassium status, as primary aldosteronism is the most likely diagnosis to be ruled out. The most important laboratory test for this purpose is the plasma aldosterone-to-renin ratio.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

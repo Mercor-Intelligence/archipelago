@@ -1,0 +1,290 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_bdf2d295ad844eb4a28f189e54095907",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d0dcb092678c453780bcc896a49ab8fd",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Lists CC.1.2.8.E as one of the lowest performing standards",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1bdb3971f8ee4485aad9e36549085381",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d0dcb092678c453780bcc896a49ab8fd",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Lists CC.1.4.8.E as one of the lowest performing standards",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c6cf503d34b648c7a7f5e9bbf3025033",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d0dcb092678c453780bcc896a49ab8fd",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Lists CC.1.4.8.P as one of the lowest performing standards",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e0fc382b297d464b9c3f06ad09e10f24",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d0dcb092678c453780bcc896a49ab8fd",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Lists CC.1.5.8.D as one of the lowest performing standards",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_23bffbe5c7024ef6a938a8e6206bbef0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d0dcb092678c453780bcc896a49ab8fd",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Lists CC.1.5.8.G as one of the lowest performing standards",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c1e3b9a9d16e4b83aa8fc489d384f771",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d0dcb092678c453780bcc896a49ab8fd",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States Mason's points are 44.3 below the class average for standard CC.1.2.8.E",
+        "modality": "Free text",
+        "negative_criteria": "Identifies Mason's points below class average for standard CC.1.2.8.E as a number other than 44.3.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d411ffb2e27c42119d989f9d2a965475",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d0dcb092678c453780bcc896a49ab8fd",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States Mason's points are 43.3 below the class average for standard CC.1.4.8.E",
+        "modality": "Free text",
+        "negative_criteria": "Identifies Mason's points below class average for standard CC.1.4.8.E a a number other than 43.3.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9c6cabca9fdb4abd824c326eac1821c9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d0dcb092678c453780bcc896a49ab8fd",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States Mason's points are 43.1 below the class average for standard CC.1.4.8.P",
+        "modality": "Free text",
+        "negative_criteria": "Identifies Mason's points below class average for standard CC.1.4.8.P as a number other than 43.1.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4d081627a97d4999ace58d5c78ec35c7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d0dcb092678c453780bcc896a49ab8fd",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States Mason's points are 44.6 below the class average for standard CC.1.5.8.D",
+        "modality": "Free text",
+        "negative_criteria": "Identifies Mason's points below class average for standard CC.1.5.8.D as a number other than 44.6.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7401acc215e54afda8dfe00d14c61147",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d0dcb092678c453780bcc896a49ab8fd",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States Mason's points are 43.4 below the class average for standard CC.1.5.8.G",
+        "modality": "Free text",
+        "negative_criteria": "Identifies Mason's points below class average for standard CC.1.5.8.G as a number other than 43.4.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6c2c47cd112e4b4a9581c22ca3806c61",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d0dcb092678c453780bcc896a49ab8fd",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States domain code CC.1.5 is the lowest performing domain category",
+        "modality": "Free text",
+        "negative_criteria": "Identifies a domain code other than 1.5 as Mason's lowest performing domain category.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b6e8f398bca54f17ac34dfa863131c80",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d0dcb092678c453780bcc896a49ab8fd",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States \"Speaking & Listening\" is the domain title for the domain code CC.1.5",
+        "modality": "Free text",
+        "negative_criteria": "Includes a title other than Speaking & Listening next to the identified domain.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b14cddd81aeb47dabb550271d73cd8c9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d0dcb092678c453780bcc896a49ab8fd",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the difference between Mason's average and the class average for the CC.1.5 domain is 38.2",
+        "modality": "Free text",
+        "negative_criteria": "States the difference between Mason's average and the class average for the CC.1.5 domain is something other than 38.2.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

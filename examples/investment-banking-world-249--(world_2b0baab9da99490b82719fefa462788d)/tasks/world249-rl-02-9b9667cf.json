@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Update the S&P Global DCF model with the following\n- risk-free rate to the 5-year treasury rate as of 1/6/2026\n- tax rate to 19% in all projection years\n- subscription revenue growth 2030 is updated to the figure from 2023 minus 100 basis points\n\nOutput the average equity value from the perpetuity and EBITDA methods rounded to the nearest whole number in millions. Then, repeat the analysis but instead update the subscription revenue growth in 2030 to the figure from 2024 minus 100 basis points."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States average equity value using the new assumptions and revenue growth from... (ver_dd8e6da829c14ccbb36d4476cb81149a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States average equity value using the new assumptions and revenue growth from 2023 minus 100 basis points is $139,328 million (acceptable range $137,935 to $140,721)."
+        }
+      ]
+    },
+    {
+      "name": "States average equity value using the new assumptions and revenue growth from... (ver_5a419580fe604ae9a7d1bd72713a4003)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States average equity value using the new assumptions and revenue growth from 2024 minus 100 basis points is $134,245 million (acceptable range $132,903 to $135,587)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world249-rl-02-9b9667cf"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_9b9667cffa5548ad84c4a5410d06edd7",
+    "task_name": "World249_RL_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_91d62adedfb643548c6b5d76e4a5b7c1",
+        "golden_text_response": "Average equity value using the new assumptions and revenue growth from 2023 minus 100 basis points is $139,328 million\nAverage equity value using the new assumptions and revenue growth from 2024 minus 100 basis points is $134,245 million",
+        "golden_file_responses": "snap_ab99007e13014aaa896ae113229eaad8"
+      }
+    ]
+  }
+}

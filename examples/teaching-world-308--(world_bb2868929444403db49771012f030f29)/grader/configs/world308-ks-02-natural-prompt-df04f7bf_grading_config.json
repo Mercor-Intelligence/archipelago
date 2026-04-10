@@ -1,0 +1,464 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_5b546d83103c40f3bee70dba9cac639a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_df04f7bf10ca412196456ea815d4b0a0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides the College Board explanation for \"Accuracy\" as \"These scoring guidelines require that students demonstrate historically defensible content knowledge. Given the timed nature of the exam, responses may contain errors that do not detract from\ntheir overall quality, as long as the historical content used to advance the argument is accurate.\"",
+        "modality": "Free text",
+        "negative_criteria": "Provides the College Board explanation for \"Accuracy\" dissimilar to \"These scoring guidelines require that students demonstrate historically defensible content knowledge. Given the timed nature of the exam, responses may contain errors that do not detract from their overall quality, as long as the historical content used to advance the argument is accurate.\".",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Rubrics/SI_ap25_us-history-set-2_Scoring_Guidelines.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f6e00ee3632d48679da1abcd6d0c07eb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_df04f7bf10ca412196456ea815d4b0a0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides the College Board explanation for \"Clarity\" as \"Exam responses should be considered first drafts and thus may contain grammatical errors. Those errors will not be counted against a student unless they obscure the successful demonstration of the content knowledge, skills, and practices described below.\"",
+        "modality": "Free text",
+        "negative_criteria": "Provides the College Board explanation for \"Clarity\" dissimilar to \"Exam responses should be considered first drafts and thus may contain grammatical errors. Those errors will not be counted against a student unless they obscure the successful demonstration of the content knowledge, skills, and practices described below.\".",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Rubrics/SI_ap25_us-history-set-2_Scoring_Guidelines.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d67f30b382ef47d18ca3ac3c0a2a62bf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_df04f7bf10ca412196456ea815d4b0a0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides the College Board explanation for \"Describe\" as \"Provide the relevant characteristics of a specified topic. Description requires more than simply mentioning an isolated term.\"",
+        "modality": "Free text",
+        "negative_criteria": "Provides the College Board explanation for \"Describe\" dissimilar to \"Provide the relevant characteristics of a specified topic. Description requires more than simply mentioning an isolated term.\".",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Rubrics/SI_ap25_us-history-set-2_Scoring_Guidelines.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_926d3a0b80444979af2462e7ea053e91",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_df04f7bf10ca412196456ea815d4b0a0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides the College Board explanation for \"Explain\" as \"The College Board explains Explain as: Provide information about how or why a historical development or process occurs or how or why a relationship exists.\"",
+        "modality": "Free text",
+        "negative_criteria": "Provides the College Board explanation for \"Explain\" dissimilar to \"The College Board explains Explain as: Provide information about how or why a historical development or process occurs or how or why a relationship exists.\".",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Rubrics/SI_ap25_us-history-set-2_Scoring_Guidelines.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_66f40e5d016e4187b9ab11ba49214428",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_df04f7bf10ca412196456ea815d4b0a0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides \"One economic development from 1865 to 1900 was the industrialization of the Gilded Age. During the time there was a mass building of factories and railroads that allowed for the fast production of goods. This would lead to the mass consumption and change in consumer culture that would lead to the expansion of the American economy.\", as an Accuracy student writing sample with a score of 2 or higher",
+        "modality": "Free text",
+        "negative_criteria": "Provides a student sample with a score lower than 2 or other than \"One economic development from 1865 to 1900 was the industrialization of the Gilded Age. During the time there was a mass building of factories and railroads that allowed for the fast production of goods. This would lead to the mass consumption and change in consumer culture that would lead to the expansion of the American economy.\",  from Student Work Samples/KS - APush Student Sample Writing and Commentary.pdf illustrating Accuracy.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Student Work Samples/KS - APush Student Sample Writing and Commentary.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ebba32111e71409d9881e1f61ef6f921",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_df04f7bf10ca412196456ea815d4b0a0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Displays the student overall score of 2 out of 3 for the Accuracy writing sample (acceptable range 1.98 to 2.02)",
+        "modality": "Free text",
+        "negative_criteria": "Provides a score other than 2/3 the student overall writing score.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a4fb6cae2ae1445fa553e1cab5d07743",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_df04f7bf10ca412196456ea815d4b0a0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides the College Board commentary or explanatory note on the Accuracy writing sample, such as the response \"earned 1 point by accurately describing industrialization, with the mass building of factories and railroads, as an economic development from 1865 to 1900\"",
+        "modality": "Free text",
+        "negative_criteria": "Provides the College Board commentary or explanatory note on the Accuracy writing sample, dissimilar to \"The response earned 1 point by accurately explaining the Great Depression as a development that contributed to the establishment of the New Deal programs from 1900 to 1940.\".",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Student Work Samples/KS - APush Student Sample Writing and Commentary.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_955e5a88eb2f45aea59aec8133d3280a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_df04f7bf10ca412196456ea815d4b0a0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides \"One historical devoplment that contributed to government involment in the economy was the Great Depression. This caused a massive crash in the US economy. Leading to unemployment rates sky rocketing, lower wages, worsened living conditions. FDR's New Deal was a series of federal government programs that helped out the economy. For exmaple the Glass-Stegall Act put regulations on the banking industry and the FDIC was about insuring money that Americans had put into banks if they collapsed. Along with the AAA which helped farmers and regulated the agricultural industry. All these government programs created by FDR's New Deal were all government programs used to help lift and economy out of the Great Depression and contributed to government involement in the economy.\" as a student sample with a score of 2 or higher illustrating Clarity (acceptable range 1.98 to 2.02)",
+        "modality": "Free text",
+        "negative_criteria": "Provides a student sample with a score lower than 2 or other than  \"One historical devoplment that contributed to government involment in the economy was the Great Depression. This caused a massive crash in the US economy. Leading to unemployment rates sky rocketing, lower wages, worsened living conditions. FDR's New Deal was a series of federal government programs that helped out the economy. For exmaple the Glass-Stegall Act put regulations on the banking industry and the FDIC was about insuring money that Americans had put into banks if they collapsed. Along with the AAA which helped farmers and regulated the agricultural industry. All these government programs created by FDR's New Deal were all government programs used to help lift and economy out of the Great Depression and contributed to government involement in the economy.\" from Student Work Samples/KS - APush Student Sample Writing and Commentary.pdf illustrating Clarity.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Student Work Samples/KS - APush Student Sample Writing and Commentary.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b3843d4baa52464d8d2369a73aec7bb4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_df04f7bf10ca412196456ea815d4b0a0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides the student overall score of 3/3 for the Clarity writing sample (acceptable range 2.97 to 3.03)",
+        "modality": "Free text",
+        "negative_criteria": "Provides a score other than 3/3  for the student overall writing score.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Student Work Samples/KS - APush Student Sample Writing and Commentary.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0f2d7e30d20f4a9fa0c9a5261f459603",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_df04f7bf10ca412196456ea815d4b0a0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides the College Board commentary or explanatory note on the Clarity writing sample, such as \"This sample contains several spelling errors (\"devoplment,\" \"involment\"), however, because the meaning is still clear, the student earned full points.\"",
+        "modality": "Free text",
+        "negative_criteria": "Provides the College Board commentary or explanatory note on a writing sample other than Clarity or dissimilar to \"This sample contains several spelling errors (\"devoplment,\" \"involment\"), however, because the meaning is still clear, the student earned full points.\".",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Student Work Samples/KS - APush Student Sample Writing and Commentary.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 17,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c30447c144ed42bc961580f6d0337a71",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_df04f7bf10ca412196456ea815d4b0a0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides \"One economic development between 1865-1900 was the Gilded Age and the expansion of\nmonoplies in the railroad, oil, steel, and manufacturing industries. These monoplies created a big\nchange in migration from rural to urban centers and how was hired not just men, but women, and\nimmagranst as well.\" as a Describe student sample with a score of 2 or higher",
+        "modality": "Free text",
+        "negative_criteria": "Provides a student sample with a score lower than 2 or other than \"One economic development between 1865-1900 was the Gilded Age and the expansion of\nmonoplies in the railroad, oil, steel, and manufacturing industries. These monoplies created a big\nchange in migration from rural to urban centers and how was hired not just men, but women, and\nimmagranst as well.\" from Student Work Samples/KS - APush Student Sample Writing and Commentary.pdf illustrating Describe.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Student Work Samples/KS - APush Student Sample Writing and Commentary.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 19,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_80dd6bf85bde4563bd6c44d9524d43fe",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_df04f7bf10ca412196456ea815d4b0a0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides the student overall score of 3/3 for the Describe writing sample (acceptable range 2.97 to 3.03)",
+        "modality": "Free text",
+        "negative_criteria": "Provides a score other than 3/3 for the students overall writing score.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Student Work Samples/KS - APush Student Sample Writing and Commentary.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 20,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8102539d3ec74ec582d143af840a4a72",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_df04f7bf10ca412196456ea815d4b0a0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides the College Board commentary or explanatory note on the Describe writing sample, such as \"The response earned 1 point by describing the expansion of industry and urbanization from 1865 to 1900 through the growth of monopolies and migration.\"",
+        "modality": "Free text",
+        "negative_criteria": "Provides the College Board commentary or explanatory note on a writing sample other than Describe or dissimilar to \"The response earned 1 point by describing the expansion of industry and urbanization from 1865 to 1900 through the growth of monopolies and migration.\".",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Student Work Samples/KS - APush Student Sample Writing and Commentary.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 21,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ffcd0ab331974ea681867294ae650d15",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_df04f7bf10ca412196456ea815d4b0a0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides \"One historical devoplment that contributed to government involment in the economy was the Great Depression...FDR's New Deal was a series of federal government programs that helped out the economy. For exmaple the Glass-Stegall Act put regulations on the banking industry and the FDIC was about insuring money that Americans had put into banks if they collapsed.\" as an Explain student sample with a score of 2 or higher (acceptable range 1.98 to 2.02)",
+        "modality": "Free text",
+        "negative_criteria": "Provides a student sample with a score lower than 2 or other than \"One historical devoplment that contributed to government involment in the economy was the Great Depression...FDR's New Deal was a series of federal government programs that helped out the economy. For exmaple the Glass-Stegall Act put regulations on the banking industry and the FDIC was about insuring money that Americans had put into banks if they collapsed.\" from Student Work Samples/KS - APush Student Sample Writing and Commentary.pdf illustrating Explain.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Student Work Samples/KS - APush Student Sample Writing and Commentary.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 23,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a29c2bc305c1446090a5ff6465d0be0e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_df04f7bf10ca412196456ea815d4b0a0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides the student overall score of 2/3 for the Explain writing sample (acceptable range 1.98 to 2.02)",
+        "modality": "Free text",
+        "negative_criteria": "Provides a score other than 2/3 for the students overall writing score.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Student Work Samples/KS - APush Student Sample Writing and Commentary.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 24,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_437c7ed350c04dd489d63c07ed3e828f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_df04f7bf10ca412196456ea815d4b0a0",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides the College Board commentary or explanatory note for the Explain writing sample such as \"by accurately explaining the Great Depression as a development that contributed to the establishment of the New Deal programs from 1900 to 1940\"",
+        "modality": "Free text",
+        "negative_criteria": "Provides the College Board commentary or explanatory note on a writing sample other than Explain or dissimilar to such as \"The response earned 1 point by accurately explaining the Great Depression as a development that contributed to the establishment of the New Deal programs from 1900 to 1940.\".",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Student Work Samples/KS - APush Student Sample Writing and Commentary.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 25,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    },
+    {
+      "eval_config_id": "72d7d96a-9d94-4a38-bbe3-96c08ded727c",
+      "eval_config_name": "Content Length Check Verifier",
+      "eval_defn_id": "content_length_check",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

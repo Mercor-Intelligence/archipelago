@@ -1,0 +1,343 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_bef0e7ecf0884142a7cf3756d323c7ff",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5826b8b3a55249a98391bee6c7344f5a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Includes all students that scored 85% or better in the final exam, including Kai O'Neill, Lucas DeLuca, Jasmine Fisher, Mateo Snyder, Aaliyah Hoffman, Diego Hoover, Wyatt Zimmerman, Emma Miller, Caleb Kowalski, Hannah Martin, Carter Taylor, Lily Weaver, Ella Clark",
+        "modality": "Free text",
+        "negative_criteria": "Includes any student name other than Kai O'Neill, Lucas DeLuca, Jasmine Fisher, Mateo Snyder, Aaliyah Hoffman, Diego Hoover, Wyatt Zimmerman, Emma Miller, Caleb Kowalski, Hannah Martin, Carter Taylor, Lily Weaver, Ella Clark.",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Grade Book.xlsx",
+            "source": "task",
+            "snapshotId": "snap_32f2a3b9a3ae46edad0d1a17484e80f7"
+          }
+        ]
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c97c77bc540341919345eeb8d38ea89e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5826b8b3a55249a98391bee6c7344f5a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes no more than three students that scored between 90% and 95% in the final exam in group 1",
+        "modality": "Free text",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Grade Book.xlsx",
+            "source": "task",
+            "snapshotId": "snap_32f2a3b9a3ae46edad0d1a17484e80f7"
+          }
+        ]
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1dd3b204789342ca9f77b431d9a2d975",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5826b8b3a55249a98391bee6c7344f5a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes no more than three students that scored between 90% and 95% in the final exam in group 3",
+        "modality": "Free text",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Grade Book.xlsx",
+            "source": "task",
+            "snapshotId": "snap_32f2a3b9a3ae46edad0d1a17484e80f7"
+          }
+        ]
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ba96e93ebeff4e7f9d8df49f0ac7e21a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5826b8b3a55249a98391bee6c7344f5a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes no more than three students that scored between 90% and 95% in the final exam in group 2",
+        "modality": "Free text",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Grade Book.xlsx",
+            "source": "task",
+            "snapshotId": "snap_32f2a3b9a3ae46edad0d1a17484e80f7"
+          }
+        ]
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_007f08ee2c5441a5982f40da786aa763",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5826b8b3a55249a98391bee6c7344f5a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes at least one student who scored between 90-95% in the final exam in group 1",
+        "modality": "Free text",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Grade Book.xlsx",
+            "source": "task",
+            "snapshotId": "snap_32f2a3b9a3ae46edad0d1a17484e80f7"
+          }
+        ]
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1f2418b2fec6406c8dc9af8181aa3dcc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5826b8b3a55249a98391bee6c7344f5a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes at least one student who scored between 90-95% in the final exam in group 2",
+        "modality": "Free text",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Grade Book.xlsx",
+            "source": "task",
+            "snapshotId": "snap_32f2a3b9a3ae46edad0d1a17484e80f7"
+          }
+        ]
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_904987b47b89408daacd2513bf83e391",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5826b8b3a55249a98391bee6c7344f5a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes at least one student who scored between 90-95% in the final exam in group 3",
+        "modality": "Free text",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Grade Book.xlsx",
+            "source": "task",
+            "snapshotId": "snap_32f2a3b9a3ae46edad0d1a17484e80f7"
+          }
+        ]
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3e80bfbefd964e1b918fe69c793edd91",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5826b8b3a55249a98391bee6c7344f5a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes at least one student who scored between 85-89% in the final exam in group 1",
+        "modality": "Free text",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Grade Book.xlsx",
+            "source": "task",
+            "snapshotId": "snap_32f2a3b9a3ae46edad0d1a17484e80f7"
+          }
+        ]
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ac14e0b54d044240b757550bb67fea38",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5826b8b3a55249a98391bee6c7344f5a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes at least one student who scored between 85-89% in the final exam in group 3",
+        "modality": "Free text",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Grade Book.xlsx",
+            "source": "task",
+            "snapshotId": "snap_32f2a3b9a3ae46edad0d1a17484e80f7"
+          }
+        ]
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c571e73c578943c9bd43df26c0696820",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5826b8b3a55249a98391bee6c7344f5a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes at least one student who scored between 85-89% in the final exam in group 2",
+        "modality": "Free text",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Grade Book.xlsx",
+            "source": "task",
+            "snapshotId": "snap_32f2a3b9a3ae46edad0d1a17484e80f7"
+          }
+        ]
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a021ddbc12d04739bd42a36ab63fe909",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5826b8b3a55249a98391bee6c7344f5a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes no more than 6 students in group 1",
+        "modality": "Free text",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 18,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_14697b207cd042e6b7a5be64394169a0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5826b8b3a55249a98391bee6c7344f5a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes no more than 6 students in group 2",
+        "modality": "Free text",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 19,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5b99ebbde4bd4a11abc0230b95a1d95d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5826b8b3a55249a98391bee6c7344f5a",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes no more than 6 students in group 3",
+        "modality": "Free text",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 20,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

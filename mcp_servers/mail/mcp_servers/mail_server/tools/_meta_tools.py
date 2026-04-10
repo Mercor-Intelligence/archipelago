@@ -2,9 +2,9 @@
 
 from typing import Any, Literal
 
-from mcp_schema import FlatBaseModel, OutputBaseModel
+from mcp_schema import GeminiBaseModel
 from models.mail import ForwardMailInput, ReplyMailInput, SearchMailInput, SendMailInput
-from pydantic import ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 # Import existing tools for delegation
 from tools.forward_mail import forward_mail as _forward_mail
@@ -18,7 +18,7 @@ from utils.config import DEFAULT_LIST_LIMIT
 
 
 # ============ Help Response ============
-class ActionInfo(OutputBaseModel):
+class ActionInfo(BaseModel):
     """Information about an action."""
 
     model_config = ConfigDict(extra="forbid")
@@ -35,7 +35,7 @@ class ActionInfo(OutputBaseModel):
     )
 
 
-class HelpResponse(OutputBaseModel):
+class HelpResponse(BaseModel):
     """Help response listing available actions."""
 
     model_config = ConfigDict(extra="forbid")
@@ -50,7 +50,7 @@ class HelpResponse(OutputBaseModel):
 
 
 # ============ Result Models ============
-class SendResult(OutputBaseModel):
+class SendResult(BaseModel):
     """Result from send/reply/forward mail operations."""
 
     model_config = ConfigDict(extra="forbid")
@@ -74,7 +74,7 @@ class SendResult(OutputBaseModel):
     )
 
 
-class MailDetailsResult(OutputBaseModel):
+class MailDetailsResult(BaseModel):
     """Result from reading a mail."""
 
     model_config = ConfigDict(extra="forbid")
@@ -84,7 +84,7 @@ class MailDetailsResult(OutputBaseModel):
     )
 
 
-class MailSummaryItem(OutputBaseModel):
+class MailSummaryItem(BaseModel):
     """Summary of a single mail for list/search results."""
 
     model_config = ConfigDict(extra="forbid")
@@ -105,7 +105,7 @@ class MailSummaryItem(OutputBaseModel):
     )
 
 
-class MailListResult(OutputBaseModel):
+class MailListResult(BaseModel):
     """Result from listing or searching mails."""
 
     model_config = ConfigDict(extra="forbid")
@@ -129,7 +129,7 @@ class MailListResult(OutputBaseModel):
 
 
 # ============ Input Model ============
-class MailInput(FlatBaseModel):
+class MailInput(GeminiBaseModel):
     """Input for mail meta-tool."""
 
     model_config = ConfigDict(extra="forbid")
@@ -248,7 +248,7 @@ class MailInput(FlatBaseModel):
 
 
 # ============ Output Model ============
-class MailOutput(OutputBaseModel):
+class MailOutput(BaseModel):
     """Output for mail meta-tool."""
 
     model_config = ConfigDict(extra="forbid")
@@ -783,7 +783,7 @@ async def mail(request: MailInput) -> MailOutput:
 
 
 # ============ Schema Tool ============
-class SchemaInput(FlatBaseModel):
+class SchemaInput(GeminiBaseModel):
     """Input for schema introspection."""
 
     model_config = ConfigDict(extra="forbid")
@@ -793,7 +793,7 @@ class SchemaInput(FlatBaseModel):
     )
 
 
-class SchemaOutput(OutputBaseModel):
+class SchemaOutput(BaseModel):
     """Output for schema introspection."""
 
     model_config = ConfigDict(extra="forbid")
@@ -807,7 +807,7 @@ class SchemaOutput(OutputBaseModel):
     )
 
 
-SCHEMAS: dict[str, type[FlatBaseModel | OutputBaseModel]] = {
+SCHEMAS: dict[str, type[GeminiBaseModel | BaseModel]] = {
     "input": MailInput,
     "output": MailOutput,
     "SendResult": SendResult,

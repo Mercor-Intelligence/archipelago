@@ -1,0 +1,121 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_d8c94c26432642e8a3d22bdb12ec9e3b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0ed5820b2772457db0569e94cd461751",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total number of High-Usage Respondents is 16 ",
+        "negative_criteria": "States that the total number of High-Usage Respondents is a number other than 16 ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5a1a151e74aa479f8bb606d1fcf0d85b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0ed5820b2772457db0569e94cd461751",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the High-Usage respondents' NPS is 19",
+        "negative_criteria": "States a High-Usage respondent's NSP different than 19.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4602a574d97f41dd8d3415bf348e3218",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0ed5820b2772457db0569e94cd461751",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "States NPS isn't high enough to pursue turning the mine into a data center",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8d7b483418294e81a55067d53fb9a6f1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0ed5820b2772457db0569e94cd461751",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the minimum number of High-Usage respondents that would need to switch from Passives to Promoters to reach the minimum NPS score is 5",
+        "negative_criteria": "States that the minimum number of High-Usage respondents that would need to switch from Passives to Promoters to reach the minimum NPS score is a number other than 5\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7d12ee880aa74746a6275cb59931d6c0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0ed5820b2772457db0569e94cd461751",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the increase of Promoter respondents is 83% (acceptable range 82% to 84%)",
+        "negative_criteria": "States that the increase in the number of Promoters is a number other than 83%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

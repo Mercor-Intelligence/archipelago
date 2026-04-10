@@ -1,0 +1,95 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_c49424a359df4b16aaa4987ef461ae9a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b5b8b475f1ed48fbb20df7cc5a0ad5b6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the correlation for the variable pair with the strongest positive correlation is 0.0188 (acceptable range 0.0186 to 0.0190)",
+        "modality": "Free text",
+        "negative_criteria": "States that the correlation for the variable pair with the strongest positive correlation is any value other than 0.0188",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Variable 1\tVariable 2\tCorrelation\tZ score\nQ1\tRevised Q12\t0.002629496468\t0.2694709597\nQ2\tRevised Q12\t-0.01251808474\t-1.108313186\nQ3\tRevised Q12\t-0.01147713361\t-1.01363101\nQ4\tRevised Q12\t0.008117507514\t0.76864601\nQ5\tRevised Q12\t0.00984845264\t0.9260882259\nQ6\tRevised Q12\t-0.003691523977\t-0.3054724346\nQ7\tRevised Q12\t-0.01054291943\t-0.9286573444\nQ8\tRevised Q12\t0.005084491732\t0.4927708718\nQ9\tRevised Q12\t-0.008484878437\t-0.7414633489\nQ10\tRevised Q12\t0.00007900802294\t0.03748523896\nQ11\tRevised Q12\t-0.0067193925\t-0.5808793916\nQ1\tRevised Q13\t0.01794979837\t1.662965325\nQ2\tRevised Q13\t0.01035255484\t0.9719400359\nQ3\tRevised Q13\t0.009798412137\t0.9215366734\nQ4\tRevised Q13\t-0.02617325993\t-2.350352006\nQ5\tRevised Q13\t-0.005024355627\t-0.4267032959\nQ6\tRevised Q13\t-0.0007863021901\t-0.04122110209\nQ7\tRevised Q13\t0.004683111367\t0.4562623695\nQ8\tRevised Q13\t-0.01699582276\t-1.515596459\nQ9\tRevised Q13\t0.002287892097\t0.2383995246\nQ10\tRevised Q13\t0.005450413107\t0.5260541177\nQ11\tRevised Q13\t0.01880409857\t1.740670225\n\nHere, Revised Q12 refers to the age groups, and Revised Q13 refers to the Salary Groups. Based on the table above, the strongest positive correlation is between Q11 and Revised Q13 with a value of 0.018804. Rounding to 4 decimal places as per instructions from the prompt to 0.0188",
+        "expected_change_type": "any",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_aafd4c4288b74f61bb25045652d5f8f4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b5b8b475f1ed48fbb20df7cc5a0ad5b6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the correlation for the variable pair with the strongest negative correlation is -0.0262 (acceptable range -0.0265 to -0.0259)",
+        "modality": "Free text",
+        "negative_criteria": "States that the correlation for the variable pair with the strongest negative correlation is any value other than -0.0262",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Variable 1\tVariable 2\tCorrelation\tZ score\nQ1\tRevised Q12\t0.002629496468\t0.2694709597\nQ2\tRevised Q12\t-0.01251808474\t-1.108313186\nQ3\tRevised Q12\t-0.01147713361\t-1.01363101\nQ4\tRevised Q12\t0.008117507514\t0.76864601\nQ5\tRevised Q12\t0.00984845264\t0.9260882259\nQ6\tRevised Q12\t-0.003691523977\t-0.3054724346\nQ7\tRevised Q12\t-0.01054291943\t-0.9286573444\nQ8\tRevised Q12\t0.005084491732\t0.4927708718\nQ9\tRevised Q12\t-0.008484878437\t-0.7414633489\nQ10\tRevised Q12\t0.00007900802294\t0.03748523896\nQ11\tRevised Q12\t-0.0067193925\t-0.5808793916\nQ1\tRevised Q13\t0.01794979837\t1.662965325\nQ2\tRevised Q13\t0.01035255484\t0.9719400359\nQ3\tRevised Q13\t0.009798412137\t0.9215366734\nQ4\tRevised Q13\t-0.02617325993\t-2.350352006\nQ5\tRevised Q13\t-0.005024355627\t-0.4267032959\nQ6\tRevised Q13\t-0.0007863021901\t-0.04122110209\nQ7\tRevised Q13\t0.004683111367\t0.4562623695\nQ8\tRevised Q13\t-0.01699582276\t-1.515596459\nQ9\tRevised Q13\t0.002287892097\t0.2383995246\nQ10\tRevised Q13\t0.005450413107\t0.5260541177\nQ11\tRevised Q13\t0.01880409857\t1.740670225\n\nHere, Revised Q12 refers to the age groups, and Revised Q13 refers to the Salary Groups. Based on the table above, the strongest negative correlation is between Q4 and Revised Q13 = -0.026173. Rounding to 4 decimal places as per instructions from the prompt to -0.0262",
+        "expected_change_type": "any",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_191df59d02a74adf90898033154d65a8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_b5b8b475f1ed48fbb20df7cc5a0ad5b6",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the z-score for the pair that has the highest absolute z-score is -2.4103 (acceptable range -2.4344 to -2.3862)",
+        "modality": "Free text",
+        "negative_criteria": "States that the z-score for the pair that has the highest absolute z-score is any value other than -2.4103",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Variable 1\tVariable 2\tCorrelation\tZ score\nQ1\tRevised Q12\t0.00288617592\t0.2518235519\nQ2\tRevised Q12\t-0.01205803386\t-1.116765027\nQ3\tRevised Q12\t-0.008945725131\t-0.831740242\nQ4\tRevised Q12\t0.006983954265\t0.6270975025\nQ5\tRevised Q12\t0.01222428093\t1.107005863\nQ6\tRevised Q12\t-0.002954219631\t-0.2830390313\nQ7\tRevised Q12\t-0.008490718147\t-0.7900707679\nQ8\tRevised Q12\t0.007428520193\t0.6678107861\nQ9\tRevised Q12\t-0.007522796983\t-0.7014286871\nQ10\tRevised Q12\t0.0008813597663\t0.06822277737\nQ11\tRevised Q12\t-0.00787036949\t-0.7332593272\nQ1\tRevised Q13\t0.01799639946\t1.635615647\nQ2\tRevised Q13\t0.01031231696\t0.9319084785\nQ3\tRevised Q13\t0.009774841622\t0.8826865646\nQ4\tRevised Q13\t-0.02618264168\t-2.410294577\nQ5\tRevised Q13\t-0.005059687623\t-0.4758574868\nQ6\tRevised Q13\t-0.0007569070146\t-0.08180945844\nQ7\tRevised Q13\t0.00469752161\t0.4177063293\nQ8\tRevised Q13\t-0.01696634163\t-1.566267146\nQ9\tRevised Q13\t0.002339817171\t0.2017880964\nQ10\tRevised Q13\t0.005486471404\t0.4899582378\nQ11\tRevised Q13\t0.01879670939\t1.708907916\n\nHere, Revised Q12 refers to the age groups, and Revised Q13 refers to the Salary Groups. Based on the table above, the highest absolute z-score is between Q11 and Revised Q13 with a z-score of 1.708907. Rounding to 4 decimal places as per instructions from the prompt to 1.7089",
+        "expected_change_type": "any",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

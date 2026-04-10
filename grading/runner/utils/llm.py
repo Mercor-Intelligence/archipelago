@@ -19,6 +19,7 @@ from litellm.exceptions import (
 from litellm.files.main import ModelResponse
 from pydantic import BaseModel
 
+import runner.utils.litellm_patches  # noqa: F401
 from runner.utils.decorators import with_concurrency_limit, with_retry
 from runner.utils.settings import get_settings
 

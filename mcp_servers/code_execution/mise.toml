@@ -1,0 +1,79 @@
+[env._.python.venv]
+path = ".venv"
+create = true
+
+[tools]
+uv = "0.6.10"
+python = "3.13"
+
+[tasks.format]
+run = "ruff format ."
+description = "Format code"
+
+[tasks.build]
+run = "echo 'No build step required for Python MCP server'"
+description = "Build the project (no-op for pure Python)"
+depends = ["install"]
+
+[tasks.install]
+run = """
+# Install system dependencies (gcc for sandbox library, poppler-utils for PDF processing)
+apt-get update -qq && apt-get install -y -qq gcc libc6-dev poppler-utils python3-pip python-is-python3
+
+# Compile and install the LD_PRELOAD sandbox library
+# This replaces proot for sandboxing user code execution
+# Install to /app/lib/ so it gets copied in Docker multi-stage builds (only /app/ is copied to runtime)
+mkdir -p /app/lib
+gcc -shared -fPIC -O2 -o /app/lib/sandbox_fs.so mcp_servers/code_execution_server/sandbox_fs.c -ldl -lpthread
+chmod 755 /app/lib/sandbox_fs.so
+
+# Disable PEP 668 externally-managed check (allows pip install without --break-system-packages)
+rm -f /usr/lib/python3*/EXTERNALLY-MANAGED
+
+# Create pip alias (Debian only provides pip3)
+ln -sf /usr/bin/pip3 /usr/local/bin/pip
+
+# Build conditional groups string
+GROUPS=""
+[ "$INSTALL_MEDICINE" = "true" ] && GROUPS="$GROUPS --group medicine"
+[ "$INSTALL_SCICOMP" = "true" ] && GROUPS="$GROUPS --group scicomp"
+
+# Install to venv for MCP server
+uv sync --all-extras$GROUPS
+
+# Mirror venv packages to system Python for user code execution
+# This allows agents to use python3/python with all pre-installed packages
+uv export --no-dev --no-hashes$GROUPS > /tmp/requirements.txt
+
+# Filter: remove editable installs, project itself, pip (conflicts with Debian-managed pip), and any non-requirements lines
+grep -v '^-e ' /tmp/requirements.txt | grep -v '^mercor-rls-code-execution' | grep -v '^Resolved ' | grep -v '^pip=' > /tmp/requirements_filtered.txt
+
+# Install packages to SYSTEM Python (not venv Python)
+# Must use absolute path because mise/uv activates the venv, making python3 point to .venv
+/usr/bin/python3 -m pip install --break-system-packages -q -r /tmp/requirements_filtered.txt
+
+rm /tmp/requirements.txt /tmp/requirements_filtered.txt
+"""
+description = "Install dependencies and compile sandbox library"
+
+[tasks.lint]
+run = "ruff check ."
+description = "Run linter"
+
+[tasks.test]
+run = "pytest"
+description = "Run tests"
+
+[tasks.typecheck]
+run = "basedpyright"
+description = "Run type checker"
+
+[tasks.start]
+run = "cd mcp_servers/code_execution_server && uv run --no-sync python main.py"
+description = "Start the MCP server"
+depends = ["populate"]
+
+[tasks.populate]
+run = "echo 'No data to populate'"
+description = "Populate data (no-op for this service)"
+depends = ["build"]

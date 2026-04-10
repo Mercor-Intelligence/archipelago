@@ -1,0 +1,399 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using Happy hospital’s doctors’ capacity for 2025 and assuming it remains constant, state the total capacity across all six states (the original five states plus Wisconsin) by increasing the five state total by 50%. In your calculations, assume that the doctor pool is shared and travel does not reduce maximum annual capacity.\n\nCalculate Wisconsin’s unutilized available room hours per month for specialized/quiet rooms using the latest clinic utilization file, and convert these hours into annual room capacity, assuming (a) each patient requires 20 sessions per year, (b) each session uses the mean 2025 session length in minutes for Wisconsin from the attached session sample file, and (c) a patient is fully cured after 20 sessions and does not return.\n\nState the expected number of TRD patients in 2026 and 2027 for Wisconsin using the Serviceable Obtainable Market TRD patient metrics and growth rate in the latest financial model.\n\nState the number of TRD patients treated in Illinois for each of the two target years (2026 and 2027). Assume that every year the hospital treats maximum number of TRD patients possible, honouring all the bottleneck constraints.\n\nState the total maximum number of TRD patients that can be treated with ketamine in Illinois, in 2026 and 2027. \n\nRound all results to 2 decimal places.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "State the total capacity of the doctors in Happy Hospital in 6 states... (ver_bc74fb0fcaf043228dbd0d698d511d75)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State the total capacity of the doctors in Happy Hospital in 6 states (original 5 + Wisconsin) is 3600.00 patients (acceptable range 356 to 364)."
+        }
+      ]
+    },
+    {
+      "name": "State the total capacity of the doctors in Happy Hospital in 6 states... (ver_bc74fb0fcaf043228dbd0d698d511d75)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State the total capacity of the doctors in Happy Hospital in 6 states (original 5 + Wisconsin) is any other number than 3600 patients."
+        }
+      ]
+    },
+    {
+      "name": "State that the annual room capacity in Wisconsin is 382.14 patients... (ver_5b7ed9140b83458ebcc5fa9fe652d8e1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the annual room capacity in Wisconsin is 382.14 patients (acceptable range 378.32 to 385.96)."
+        }
+      ]
+    },
+    {
+      "name": "State that total room capacity in Wisconsin annually is any other number than... (ver_5b7ed9140b83458ebcc5fa9fe652d8e1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that total room capacity in Wisconsin annually is any other number than 382.14 patients."
+        }
+      ]
+    },
+    {
+      "name": "State that the number of patients with TRD that we expect in Happy Hospital in... (ver_4f9b536a80b7411f9920c824e1d25625)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the number of patients with TRD that we expect in Happy Hospital in 2026 in Wisconsin is 845.88 (acceptable range 837.42 to 854.34)."
+        }
+      ]
+    },
+    {
+      "name": "State that the number of patients with TRD that we expect in Happy Hospital in... (ver_4f9b536a80b7411f9920c824e1d25625)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the number of patients with TRD that we expect in Happy Hospital in 2026 in Wisconsin is any other number than 845.88."
+        }
+      ]
+    },
+    {
+      "name": "State that the number of patients with TRD that we expect in Happy Hospital in... (ver_b4b24829c02e45448913fd3c9315f238)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the number of patients with TRD that we expect in Happy Hospital in 2027 in Wisconsin is 896.63 (acceptable range 887.66 to 905.60)."
+        }
+      ]
+    },
+    {
+      "name": "State that the number of patients with TRD that we expect in Happy Hospital in... (ver_b4b24829c02e45448913fd3c9315f238)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the number of patients with TRD that we expect in Happy Hospital in 2027 in Wisconsin is a value other than 896.63."
+        }
+      ]
+    },
+    {
+      "name": "State that the number of TRD patients that will be treated with ketamine in... (ver_3e905ec76bd64f3397609b1fad306633)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the number of TRD patients that will be treated with ketamine in 2026 in Illinois is 537.60 (acceptable range 532.22 to 542.98)."
+        }
+      ]
+    },
+    {
+      "name": "State that the number of TRD patients that will be treated with ketamine in... (ver_3e905ec76bd64f3397609b1fad306633)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the number of TRD patients that will be treated with ketamine in 2026 in Illinois is any other number than 537.60."
+        }
+      ]
+    },
+    {
+      "name": "State that the number of TRD patients that will be treated with ketamine in... (ver_42e3af08c23943128a7174672e3ad4f8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the number of TRD patients that will be treated with ketamine in 2027 in Illinois is 537.60 (acceptable range 532.22 to 542.98)."
+        }
+      ]
+    },
+    {
+      "name": "State that the number of TRD patients that will be treated with ketamine in... (ver_42e3af08c23943128a7174672e3ad4f8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "State that the number of TRD patients that will be treated with ketamine in 2027 in Illinois is any other number than 537.60."
+        }
+      ]
+    },
+    {
+      "name": "States that the maximum number of TRD patients that can be treated with... (ver_315aa6363073458abf58403609ad87c0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the maximum number of TRD patients that can be treated with ketamine in 2026 is 2570.94 (acceptable range 254 to 260)."
+        }
+      ]
+    },
+    {
+      "name": "States that the maximum number of TRD patients that can be treated with... (ver_315aa6363073458abf58403609ad87c0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the maximum number of TRD patients that can be treated with ketamine in 2026 is any other number than 2570.94."
+        }
+      ]
+    },
+    {
+      "name": "States that the maximum number of TRD patients that can be treated with... (ver_242125896fe4413fa3025d627c339a95)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the maximum number of TRD patients that can be treated with ketamine in 2027 is 2569.05 (acceptable range 253 to 259)."
+        }
+      ]
+    },
+    {
+      "name": "States that the maximum number of TRD patients that can be treated with... (ver_242125896fe4413fa3025d627c339a95)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the maximum number of TRD patients that can be treated with ketamine in 2027 is any other number than 2569.05."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-07z2a6dd-d997b23c"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_d997b23ceb4141f791d9116243a32231",
+    "task_name": "Task 07z2a6dd",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_084ce3c8f9c84003bedd13273ee0467d",
+        "golden_text_response": "- Total capacity of the doctors in Happy Hospital in 6 states (original 5 + Wisconsin): 3600 patients\n- Total room capacity in Wisconsin: 382.14 patients\n- Number of patients with TRD that we expect in Happy Hospital in 2026 in Wisconsin: 845.88 \n- Number of patients with TRD that we expect in Happy Hospital in 2027 in Wisconsin: 896.63\n- Number of TRD patients that will be treated with ketamine in 2026 in Illinois: 537.60\n- Number of TRD patients that will be treated with ketamine in 2027 in Illinois: 537.60\n- Maximum number of TRD patients that can be treated with ketamine In 2026: 2570.94\n- Maximum number of TRD patients that can be treated with ketamine In 2026: 2569.05",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

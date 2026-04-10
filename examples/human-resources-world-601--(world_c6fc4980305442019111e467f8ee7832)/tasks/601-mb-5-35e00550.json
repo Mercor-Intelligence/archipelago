@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Refer to the Bamboo_employees data file. We're restructuring the Finance team. Look at everyone who reports directly to the VP of Finance on the roster, regardless of their status. Any of those managers who don't have direct reports of their own need to go, effective immediately. Update their status in BambooHR and replace each one with a Finance Analyst hired from the market. The new analysts should be split evenly among the managers who are staying. After the replacements, use whatever salary budget was freed up to hire additional Finance Analysts. Price each new hire at the current average pay rate across our Finance Analysts on the roster and distribute these additional hires evenly among the remaining managers too. Keep going until the team's total salary spend doesn't exceed what it was before the restructuring. \nPlease state how many managers to terminate, and state how many Finance Analysts to hire.\nOnce you've made the changes in BambooHR, tell me the percentage change in the average span of control across the Finance team's managers (not including the VP). Provide your full report in the console and round to no decimals. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "The % change of the average manager's span of control in Finance team is 900%... (ver_a7be671be9964484946099eda2f5a446)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The % change of the average manager's span of control in Finance team is 900% (acceptable range 891% to 909%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of Finance Analysts to hire is 6. (ver_d7a994f693684c46aeed6479f6870896)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of Finance Analysts to hire is 6."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of managers to terminate is 3. (ver_9a9e975d7b874e5c9850f27486c8b09c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of managers to terminate is 3."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh 601-mb-5-35e00550"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_35e00550fd214b58a7609f44cc2fae8f",
+    "task_name": "601 - MB_5",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_a1eba908c33548189672c68c9f87d751",
+        "golden_text_response": "The number of managers to terminate is 3.\nThe number of Finance Analysts to hire is 6.\n\nThe % change of the average manager's span of control in Finance team is 900%",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

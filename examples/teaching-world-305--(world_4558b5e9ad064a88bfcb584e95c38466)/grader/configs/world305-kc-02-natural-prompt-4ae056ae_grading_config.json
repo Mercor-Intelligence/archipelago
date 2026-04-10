@@ -1,0 +1,359 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_b15ccfc049314c6aaa84f9bdf14eb7e8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4ae056aebf82479fb81de002b918535f",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States two responses on question 9 are incorrect",
+        "modality": "Free text",
+        "negative_criteria": "States a number other than 2 responses on question 9 are incorrect.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The summary must state each incorrect question. This question required multiple responses. Two of those responses were incorrect.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ff734d075f8f4037b506ea9f8f0f7834",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4ae056aebf82479fb81de002b918535f",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the error of Question 9 as an error in interpretation",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Must identify why the student got each incorrect question wrong. The question requires students to interpret the characters socio-economic status in the text.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7ad4ae5431c64b7294e70c2107103db8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4ae056aebf82479fb81de002b918535f",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States Question 16 as incorrect",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The summary must state each incorrect question.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cdaa368f47604cfabd3d209bd9611216",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4ae056aebf82479fb81de002b918535f",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the error of Question 16 as not paying attention to detail in the question",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Must identify why the student got each incorrect question wrong. The question asks for \"all that apply\". Multiple responses are required to be correct.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0380a4bd04424e0f97a1125efde40d95",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4ae056aebf82479fb81de002b918535f",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States Question 26 as incorrect",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The summary must state each incorrect question.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1c730ca0c92a48908dfe40a58ce45272",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4ae056aebf82479fb81de002b918535f",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the error of Question 26 as not paying attention to detail in the question",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Must identify why the student got each incorrect question wrong. The question asks for \"all that apply\". Multiple responses are required to be correct.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_728dc371c9aa42ac92e38d3bebf910bf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4ae056aebf82479fb81de002b918535f",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States Question 19 as incorrect",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The summary must state each incorrect question.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_45a7bae3394e4e16813e2b41c42a5109",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4ae056aebf82479fb81de002b918535f",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the error of Question 19 as an error in reading comprehension",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Must identify why the student got each incorrect question wrong. This question asks for recalling details of the text.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b4e9d0cba46546f38cd28bafb3d9dd63",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4ae056aebf82479fb81de002b918535f",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States Question 24 as incorrect",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The summary must state each incorrect question.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cb69d8d619184482bd0997644e4a6b34",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4ae056aebf82479fb81de002b918535f",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the error of Question 24 as error of character details",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Must identify why the student got each incorrect question wrong. This question asks to match character details to each character.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 17,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_23d1ba05520f4b50bcf1aaf2749fa72f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4ae056aebf82479fb81de002b918535f",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States Question 29 as incorrect",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The summary must state each incorrect question",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 18,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9a1207864fc841db87223785a8585fc8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4ae056aebf82479fb81de002b918535f",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the error of Question 29 as incomplete",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Must identify why the student got each incorrect question wrong. This is an open-ended question requiring the student to write. The student's response does not answer the question.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 19,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_553953eca0a44146b65bf584c1099140",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4ae056aebf82479fb81de002b918535f",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States Question 30 as incorrect",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The summary must state each incorrect question.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 20,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_228c6c112d134f96a4028950fc64f7ac",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4ae056aebf82479fb81de002b918535f",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the error of Question 30 as incomplete",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Must identify why the student got each incorrect question wrong. This is an open-ended question requiring the student to write. The student's response does not answer the question.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 21,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2f1f3a1179c34107a6f255f4d9059641",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4ae056aebf82479fb81de002b918535f",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States Question 31 as incorrect",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "The summary must state each incorrect question.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 22,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_592e5ad989834f94b973637da9f0b975",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4ae056aebf82479fb81de002b918535f",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the error of Question 31 as incomplete",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Must identify why the student got each incorrect question wrong. This is an open-ended question requiring the student to write. The student's response does not answer the question.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 23,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

@@ -1,0 +1,73 @@
+[arco]
+source = "foundry_app"
+name = "USPTO"
+version = "1.0.0"
+
+[arco.env.host]
+REPO_URL = "https://github.com/Mercor-Intelligence/mercor-uspto.git"
+
+[arco.env.build]
+STATE_LOCATION = "/.apps_data/uspto"
+
+[arco.env.runtime]
+MCP_TRANSPORT = "http"
+MCP_PORT = "5000"
+APP_FS_ROOT = "/filesystem"
+HAS_STATE = "true"
+STATE_LOCATION = "/.apps_data/uspto"
+USPTO_API_KEY = "akjchwpywjkhepbjizjzsjhpukwwut"
+USPTO_ONLINE_MODE = "true"
+
+[arco.secrets.host]
+GITHUB_TOKEN = "RLS_GITHUB_READ_TOKEN"
+
+[arco.secrets.build]
+
+# Error injection scenarios for Dynamic Friction testing
+[[arco.injected_errors.scenarios]]
+name = "rate_limit"
+description = "Simulates API rate limiting"
+error_type = "rate_limit"
+error_message = "Rate limit exceeded. Please retry after {retry_after} seconds."
+affected_tools = ["*"]
+frequency = 0.0
+
+[[arco.injected_errors.scenarios]]
+name = "timeout"
+description = "Simulates request timeout"
+error_type = "timeout"
+error_message = "Request timed out after {timeout} seconds."
+affected_tools = ["*"]
+frequency = 0.0
+
+[[arco.injected_errors.scenarios]]
+name = "server_error"
+description = "Simulates internal server error"
+error_type = "server_error"
+error_message = "Internal server error. Please try again later."
+affected_tools = ["*"]
+frequency = 0.0
+
+[[arco.injected_errors.scenarios]]
+name = "invalid_input"
+description = "Simulates invalid input validation error"
+error_type = "validation_error"
+error_message = "Invalid input: {details}"
+affected_tools = ["*"]
+frequency = 0.0
+
+[[arco.injected_errors.scenarios]]
+name = "auth_expired"
+description = "Simulates authentication token expiration"
+error_type = "auth_error"
+error_message = "Authentication token has expired. Please re-authenticate."
+affected_tools = ["*"]
+frequency = 0.0
+
+[[arco.injected_errors.scenarios]]
+name = "service_unavailable"
+description = "Simulates service temporarily unavailable"
+error_type = "service_unavailable"
+error_message = "Service temporarily unavailable. Please try again in a few minutes."
+affected_tools = ["*"]
+frequency = 0.0

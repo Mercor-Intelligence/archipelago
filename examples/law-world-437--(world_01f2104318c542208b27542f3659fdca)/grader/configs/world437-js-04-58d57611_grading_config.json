@@ -1,0 +1,66 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_4a0e16b7649d45eba3e7d80fc2ff17fc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_58d57611943749a0b631f3dfd546f504",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that Anthony Porter contacted OSHA before the expiration of the statutory filing period for his orginal whistleblower complaint",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Under the \"Whistleblower Investigations Manual.pdf\" pursuit of an administratively closed claim must be made by contacting OSHA within 10 days or within the filing period of the claim, whichever is later.  \"Whistleblower Investigations Manual.pdf\" (Page 60). \n\nAnthony Porter filed a complaint under the OSH Act 11(c) (see \"APorter OSHA retaliation complaint 11.6.25.pdf\"). \n\nThe time period for filing an 11(c) complaint is 30 days from an adverse action.  \"Whistleblower Investigations Manual.pdf\" (Page 57). \n\nAnthony Porter Received notice of his termination (adverse action) on November 4, 2025. (see \"APorter OSHA retaliation complaint 11.6.25.pdf\"; also \"APorter Termination Notice 11.4.25.pdf\"). \n\nTherefore, Anthony Porter had until December 4, 2025 to contact OSHA with a desire to pursue his complaint as that is the latter of 10 days after receiving notice of administrative closure and the filing period of his original claim. \n\nAnthony Porter contacted OSHA on December 3, 2025, therefore contacted OSHA with his desire to pursue the complaint in a timely manner.\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_85472409be894634a67a7126f976eb45",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_58d57611943749a0b631f3dfd546f504",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that Anthony Porter's contact with OSHA stating his desire to pursue the complaint was timely",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Under the \"Whistleblower Investigations Manual.pdf\" pursuit of an administratively closed claim must be made by contacting OSHA within 10 days or within the filing period of the claim, whichever is later.  \"Whistleblower Investigations Manual.pdf\" (Page 60). \n\nAnthony Porter filed a complaint under the OSH Act 11(c) (see \"APorter OSHA retaliation complaint 11.6.25.pdf\"). \n\nThe time period for filing an 11(c) complaint is 30 days from an adverse action.  \"Whistleblower Investigations Manual.pdf\" (Page 57). \n\nAnthony Porter Received notice of his termination (adverse action) on November 4, 2025. (see \"APorter OSHA retaliation complaint 11.6.25.pdf\"; also \"APorter Termination Notice 11.4.25.pdf\"). \n\nTherefore, Anthony Porter had until December 4, 2025 to contact OSHA with a desire to pursue his complaint as that is the latter of 10 days after receiving notice of administrative closure and the filing period of his original claim. \n\nAnthony Porter contacted OSHA on December 3, 2025, therefore contacted OSHA with his desire to pursue the complaint in a timely manner.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

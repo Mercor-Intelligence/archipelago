@@ -1,0 +1,401 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_77fca023db264486ab509775375eaeba",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Lists Alan Romero as an answer to task 1",
+        "modality": "Free text",
+        "negative_criteria": "Lists a name other than Alan Romero as an answer to task 1.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b6bbac7af8594377b9f0c1fa86f32974",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that Alan Romero's score is 58% (acceptable range 57% to 59%)",
+        "modality": "Free text",
+        "negative_criteria": "Lists Alan Romero's score as a value other than 58%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_84a02749871b41419715bffce69f5f8a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"contrasted\" as an answer to task 3",
+        "modality": "Free text",
+        "negative_criteria": "Lists a word other than contrasted, depression, division, sub-division, decision, movement, advancement, abolitionist, optimists, transformed, peaceful, unlikely, sharply, fully, fairly, shortly, or hopefully under task 3.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e472e825812a4d72bcb215372f4e77bf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"depression\" as an answer to task 3",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bb8e3d36cc3b42c091dac3b5185b15d1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"sub-division\" as an answer to task 3",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9234cd04ccba4c3fb8ff5e52250127f1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"decision\" as an answer to task 3",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3de57c7e8691491d9116301b861c03b3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"movement\" as an answer to Task 3",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5e7f13eb097f460bb706af507cac0f2e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"advancement\" as an answer to task 3",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_99e152cc4c5b4e04b33cf4f8e43c6994",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"abolitionist\" as an answer to task 3",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9e8f56dee6e948e19e5e2869a80bd994",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"optimists\" as an answer to task 3",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9e1ea9e56d274b27affd5f471b04ec4c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"transformed\" as an answer to Task 3",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_831977e4b8b84eb982a47513b86ff017",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"peaceful\" as an answer to Task 3",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8498c4d156df4a13a6614d51be1e477f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"unlikely\" as an answer to task 3",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8233bf859cf54fcaab2e9db17386cfb3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"sharply\" as an answer to Task 3",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a532cef096f14aa9902e0b8a3ff1fe21",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"fully\" as an answer to Task 3",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ddfccf27366144efb7bc082350fbae22",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"fairly\" as an answer to Task 3",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7fe14d591cb84a298be7a5f6c6995844",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"shortly\" as an answer to Task 3",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_63448f8a9c5446c1aedb81e5e716b45f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_7cc5507e0d2740a395437fbca8145d4c",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"hopefully\" as an answer to task 3",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 17,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    },
+    {
+      "eval_config_id": "72d7d96a-9d94-4a38-bbe3-96c08ded727c",
+      "eval_config_name": "Content Length Check Verifier",
+      "eval_defn_id": "content_length_check",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

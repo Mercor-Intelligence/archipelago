@@ -1,0 +1,66 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_3af164e192404760a99bed8759ae95e9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_165f1cc2677b4d638b4bb480568e9f3f",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that no environmental impact study is required",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Because the city's low income housing requirements of 15% for extremely low income households and 20% for very low income households are not met, the project will not be approved. The CEQA provides an exception where no environmental impact study is required, where the City's requirements for approval are not met.  Under section 15270 of the CEQA, no environmental impact study is required for a project that receives a disapproval by a public agency. (see 2024_CEQA_Statute_and_Guidelines_Handbook.pdf, pp. 298-299) This measure is to prevent a waste of time conducting an impact study on projects that would not be approved.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b914dd6ed66b49bfb0d0328dc070a62f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_165f1cc2677b4d638b4bb480568e9f3f",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": " States that the CEQA statute provides an exception that no environmental impact study is required where the City's requirements for approval are not met",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The area median income is $100,000. According to Cal. Bldg. Indus. Ass'n v. City of San Jose, extremely low income households are those earning no more than 30% of the area median income. Very low income households are those earning no more than. 50% of the area median income. (see Cal. Bldg. Indus. Ass'n v. City of San Jose -- 2015.pdf, pp.10) The City sent a notice to Liverbird indicating the requirements. According to the notice, for apartment communities with 16-25 units, at least 15% of the units are required to be for extremely low income households, and at least 20% of the units are required to be for very low income households. Here, the city's low income housing requirements are not met, where there are only 2 out of 20 units in building that meet the extremely low income category (10%).  Only 2 of the 20 units meet the standard for very low income households (10%).  (see Unit Number-3.docx) Because the city's low income housing requirements of 15% for extremely low income households and 20% for very low income households are not met, the project will not be approved. \n\nUnder section 15270 of the CEQA, no environmental impact study is required for a project that receives a disapproval by a public agency. (see 2024_CEQA_Statute_and_Guidelines_Handbook.pdf, pp. 298-299) This measure is to prevent a waste of time conducting an impact study on projects that would not be approved.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

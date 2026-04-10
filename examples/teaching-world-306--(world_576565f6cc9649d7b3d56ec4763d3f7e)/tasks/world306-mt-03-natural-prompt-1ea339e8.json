@@ -1,0 +1,634 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The district recently decided to use the average grades of student groups file for recalculating the average grades of students with an ELL program. However, there is a condition: the student should have an attendance rate of minimum 90% to date. If an ELL student has maintained minimum 90% attendance rate to date, their average grade in 9th grade biology class will be recalculated by dropping one of the lowest scores. \nCreate a document named Recalculated Student Average Grades. For each individual student in this group, include their names, current attendance rate  (one decimal) from Science class attendance data  and the recalculated average grade, if applicable, in a three column table. When calculating the averages, round the result to the nearest whole number.  If a student does not meet the condition indicate it with a \"DMC\" under the recalculated average grade column. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Identifies Ethan Garcia as an ELL student (ver_f43bfda85cd6487c8cc3171639811d77)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Ethan Garcia as an ELL student."
+        }
+      ]
+    },
+    {
+      "name": "States that a student other than Ethan Garcia, Hyrum Young, Sofia Gomez, Eli... (ver_f43bfda85cd6487c8cc3171639811d77)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that a student other than Ethan Garcia, Hyrum Young, Sofia Gomez, Eli Garcia, or Xander Gomez is an ELL student."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Hyrum Young as an ELL student (ver_3405d6bf95954ceb9b1fd1df5fc3bb74)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Hyrum Young as an ELL student."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Sophia Gomez as an ELL student (ver_f1034fd0c8d14f7a8b6d545e8c6276e9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Sophia Gomez as an ELL student."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Eli Garcia as an ELL student (ver_1dea3313d24a4e0ab8a17d046dab02b1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Eli Garcia as an ELL student."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Xander Gomez as an ELL student (ver_87c711d47db74bbfb6790fce6ad54806)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Xander Gomez as an ELL student."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the attendance rate of Ethan Garcia as 100 (acceptable range 99.0... (ver_6e2561ba4c69404e8d72dc14d7882c28)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the attendance rate of Ethan Garcia as 100 (acceptable range 99.0 to 101)."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the attendance rate of Ethan Garcia as anything other than 100. (ver_6e2561ba4c69404e8d72dc14d7882c28)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the attendance rate of Ethan Garcia as anything other than 100."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the attendance rate of Hyrum Young as 96.7 (acceptable range 95.7... (ver_b724f54313b34a1d94ca8dc26454c39a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the attendance rate of Hyrum Young as 96.7 (acceptable range 95.7 to 97.7)."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the attendance rate of Hyrum Young as anything other than 96.7. (ver_b724f54313b34a1d94ca8dc26454c39a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the attendance rate of Hyrum Young as anything other than 96.7."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the attendance rate of Eli Garcia as 95.6 (acceptable range 94.6 to... (ver_bd3f7a3dfbd84a42ac3a77b23310bb4e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the attendance rate of Eli Garcia as 95.6 (acceptable range 94.6 to 96.6)."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the attendance rate of Eli Garcia as anything other than 95.6. (ver_bd3f7a3dfbd84a42ac3a77b23310bb4e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the attendance rate of Eli Garcia as anything other than 95.6."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the attendance rate of Xander Gomez as 93.3 (acceptable range 92.4... (ver_d020db1fe19a46839984c82bed961218)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the attendance rate of Xander Gomez as 93.3 (acceptable range 92.4 to 94.2)."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the attendance rate of Xander Gomez as anything other than 93.3. (ver_d020db1fe19a46839984c82bed961218)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the attendance rate of Xander Gomez as anything other than 93.3."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the attendance rate of Sophia Gomez as 96.7 (acceptable range 95.7... (ver_f967ecbf382842e391313c4663b487ba)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the attendance rate of Sophia Gomez as 96.7 (acceptable range 95.7 to 97.7)."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the attendance rate of Hyrum Young as anything other than 96.7. (ver_f967ecbf382842e391313c4663b487ba)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the attendance rate of Hyrum Young as anything other than 96.7."
+        }
+      ]
+    },
+    {
+      "name": "Recalculates the new grade average for Ethan Garcia as 75 when rounded to the... (ver_24ed2fed57c04f34bc00ead47afd90c5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recalculates the new grade average for Ethan Garcia as 75 when rounded to the nearest whole number."
+        }
+      ]
+    },
+    {
+      "name": "Recalculates the new grade average for Ethan Garcia as anything other than 75. (ver_24ed2fed57c04f34bc00ead47afd90c5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recalculates the new grade average for Ethan Garcia as anything other than 75."
+        }
+      ]
+    },
+    {
+      "name": "Recalculates the new grade average for Hyrum Young as 67  when rounded to the... (ver_011b51ec46444ff8aa8ce29b5915325a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recalculates the new grade average for Hyrum Young as 67  when rounded to the nearest whole number."
+        }
+      ]
+    },
+    {
+      "name": "Recalculates the new grade average for Hyrum Young as anything other than 67. (ver_011b51ec46444ff8aa8ce29b5915325a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recalculates the new grade average for Hyrum Young as anything other than 67."
+        }
+      ]
+    },
+    {
+      "name": "Recalculates the new grade average for Sophia Gomez as 91 when rounded to the... (ver_e87597f623f5493ca1f301c764233a42)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recalculates the new grade average for Sophia Gomez as 91 when rounded to the nearest whole number."
+        }
+      ]
+    },
+    {
+      "name": "Recalculates the new grade average for Sophia Gomez as anything other than 91. (ver_e87597f623f5493ca1f301c764233a42)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recalculates the new grade average for Sophia Gomez as anything other than 91."
+        }
+      ]
+    },
+    {
+      "name": "Recalculates the new grade average for Eli Garcia as 82 when rounded to the... (ver_729fd57ffd3b430ab1fe401a4bc2b944)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recalculates the new grade average for Eli Garcia as 82 when rounded to the nearest whole number."
+        }
+      ]
+    },
+    {
+      "name": "Recalculates the new grade average for Eli Garcia as anything other than 82. (ver_729fd57ffd3b430ab1fe401a4bc2b944)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recalculates the new grade average for Eli Garcia as anything other than 82."
+        }
+      ]
+    },
+    {
+      "name": "Recalculates the new grade average for Xander Gomez as 81 when rounded to the... (ver_823d418a49df4f14abb921f2c924a7db)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recalculates the new grade average for Xander Gomez as 81 when rounded to the nearest whole number."
+        }
+      ]
+    },
+    {
+      "name": "Recalculates the new grade average for Xander Gomez as anything other than 81. (ver_823d418a49df4f14abb921f2c924a7db)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recalculates the new grade average for Xander Gomez as anything other than 81."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world306-mt-03-natural-prompt-1ea339e8"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_576565f6cc9649d7b3d56ec4763d3f7e",
+    "world_name": "Teaching World 306",
+    "task_id": "task_1ea339e89b0c4da0a55e686c257f0bd6",
+    "task_name": "World306_mt_03 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_df1e352db2ad4f75a6fb0e6bf42a1bdb",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_c3776e1fe6814a40821d20e8aba1096c"
+      },
+      {
+        "golden_response_id": "gold_245abade3dcf454fa1822f3b9c62c346",
+        "golden_text_response": "The response is a spreadsheet with the requested data. It is attached below. ",
+        "golden_file_responses": "snap_c3776e1fe6814a40821d20e8aba1096c"
+      }
+    ]
+  }
+}

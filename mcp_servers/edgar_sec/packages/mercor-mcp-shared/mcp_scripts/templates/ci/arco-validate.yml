@@ -1,0 +1,38 @@
+name: Validate ArCo
+
+on:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate ArCo
+        run: |
+          MISE_TOML=$(cat mise.toml | jq -Rs .)
+          ARCO_TOML=$(cat arco.toml | jq -Rs .)
+
+          RESULT=$(curl -s -w "\n%{http_code}" -X POST "https://api.studio.mercor.com/arco/validate" \
+            -H "Content-Type: application/json" \
+            -d "{\"mise_toml\": ${MISE_TOML}, \"arco_toml\": ${ARCO_TOML}}")
+
+          HTTP_CODE=$(echo "$RESULT" | tail -n1)
+          BODY=$(echo "$RESULT" | sed '$d')
+
+          echo "$BODY" | jq .
+
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "ArCo validation failed with HTTP $HTTP_CODE"
+            exit 1
+          fi
+
+          if echo "$BODY" | jq -e '.valid == false' > /dev/null; then
+            echo "ArCo validation failed:"
+            echo "$BODY" | jq -r '.errors[]'
+            exit 1
+          fi
+
+          echo "ArCo validation passed"
+

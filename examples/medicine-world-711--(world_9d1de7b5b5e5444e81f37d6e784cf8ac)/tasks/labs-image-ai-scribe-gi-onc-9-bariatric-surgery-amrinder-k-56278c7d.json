@@ -1,0 +1,284 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 9” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\nPatient 9 presents to the clinic for a follow-up visit with their primary care physician. Based on the most recent guideline as of December 2025, what do you recommend regarding this patient’s request, as discussed?"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the BMI threshold to consider bariatric surgery is adjusted based... (ver_4995da480ee0445cae8f4e7bbd43f84d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the BMI threshold to consider bariatric surgery is adjusted based on race."
+        }
+      ]
+    },
+    {
+      "name": "States that the BMI threshold to consider bariatric surgery in the Asian... (ver_144dff77006c43d799e8b6b13ce2a7dc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the BMI threshold to consider bariatric surgery in the Asian population is ≥27.5 kg/m2."
+        }
+      ]
+    },
+    {
+      "name": "States that the bariatric surgery is recommended for Asian patients with... (ver_8f559c453b2f4d7ab00b6648c737971e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the bariatric surgery is recommended for Asian patients with BMI≥27.5 kg/m2 and uncontrolled diabetes."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient’s race is Asian. (ver_0134ede491ee46cdb10f10106b752930)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient’s race is Asian."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient’s BMI is 27.62 kg/m2 (acceptable range 27.34 to 27.90). (ver_1dc5360b02d146b98c770dd7db9992a4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient’s BMI is 27.62 kg/m2 (acceptable range 27.34 to 27.90)."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has diabetes. (ver_81b190c37753490c92abd95cd4fc171f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has diabetes."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's recent HbA1c is 9.2 (acceptable range 9.1 to 9.3). (ver_7603cbafa6c747c1aa29de5ccb00d0e5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's recent HbA1c is 9.2 (acceptable range 9.1 to 9.3)."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient is adherent to diabetic medication. (ver_a5ca52550eef43498abcce216fd55761)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient is adherent to diabetic medication."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's diabetes is uncontrolled despite adherence to... (ver_8f1739a78ea74539a361047ac23759b9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's diabetes is uncontrolled despite adherence to diabetic medication."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient requests an opinion about bariatric surgery. (ver_43712485810a4854a9d13b84d58cf80e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient requests an opinion about bariatric surgery."
+        }
+      ]
+    },
+    {
+      "name": "Concludes that the bariatric surgery should be recommended for this patient. (ver_cf852115320c43588403cf3a84a28694)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Concludes that the bariatric surgery should be recommended for this patient."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-gi-onc-9-bariatric-surgery-amrinder-k-56278c7d"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_56278c7d5ec4471294a9558e9f7d6ac9",
+    "task_name": "Labs_Image_AI Scribe_GI Onc 9 - Bariatric Surgery - Amrinder K",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_aefed09369b54c0f833b4d2315405826",
+        "golden_text_response": "This patient is an appropriate candidate for bariatric surgery. BMI is 27.62 kg/m2, and the patient is Asian, meeting the lower BMI threshold used for Asian patients in major guidelines. Her body mass index (BMI) of 27.62 kg/m2 is below the accepted eligibility threshold. Her latest HbA1c is 9.2, indicating inadequate control of her diabetes. The patient is adherent to diabetic medication. Therefore, the patient's diabetes is uncontrolled despite adherence to diabetic medication. The latest American Society for Metabolic and Bariatric Surgery (ASMBS) guidelines from 2022 recommend bariatric surgery if BMI is ≥27.5 kg/m2 in Asian Americans with uncontrolled diabetes. ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

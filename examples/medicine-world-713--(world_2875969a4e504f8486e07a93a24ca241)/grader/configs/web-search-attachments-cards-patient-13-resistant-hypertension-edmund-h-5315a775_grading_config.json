@@ -1,0 +1,312 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_63de0d24b10d4f669e7836181463fcd8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5315a775a5a64e1fb1974b0474b528db",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has a history of hypertension.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from the chart the patient's prior history. \"Essential (primary) hypertension\n\" Tab-Diagnoses, Column-I, Row-295.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_efe5436e340a4f9da4c5b270136eadce",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5315a775a5a64e1fb1974b0474b528db",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient's blood pressure is uncontrolled despite medications.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from the script. \"Physician: Oh yes It was high today. The nurse recorded it at 150/80\nPatient: Yes I thought it was high too but when I went to the emergency department they said it didn\u2019t need to be lowered there.\" \n\nThe prompt also states that the patient has failed and is not able to tolerate multiple antihypertensives, and clearly states that he has failed first line antihypertensives.\n\n\"Table 4. Categories of Blood Pressure in Adults* SBP BP Category Normal Elevated Hypertension Stage 1 Stage 2 <120 mm Hg 120 to 129 mm Hg 130 to 139 mm Hg \u2265140 mm Hg DBP and and or or <80 mm Hg <80 mm Hg 80 to 89 mm Hg \u226590 mm Hg\" https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_10a891f302084cbfa4a95af069dab759",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5315a775a5a64e1fb1974b0474b528db",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's renal function is above the cutoff for antihypertensives",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient's renal function appears acceptable, with a normal creatinine and potassium. This does not limit his choices of antihypertensives further. \nHis calculated eGFR is 59ml/min/1.73m\u00b2, which is more than 45, not limiting his choices as per the guidelines as well (which holds 45ml/min/1.73m\u00b2 as a cut off for antihypertensives choice in resistant hypertension).",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7ebc451fc8c7478fa0f2929fe5546325",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5315a775a5a64e1fb1974b0474b528db",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Utilizes the 2025 American College of Cardiology/American Heart Association joint committee clinical practice guidelines on hypertension.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"2025 AHA/ACC/AANP/AAPA/ABC/ACCP/ACPM/AGS/AMA/ASPC/NMA/PCNA/SGIM Guideline for the Prevention, Detection, Evaluation and Management of High Blood Pressure in Adults: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines\n\nThe \u201c2025 AHA/ACC/AANP/AAPA/ABC/ACCP/ACPM/AGS/AMA/ASPC/NMA/PCNA/SGIM Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults\u201d retires and replaces the \u201c2017 ACC/AHA/AAPA/ABC/ACPM/AGS/APhA/ASH/ASPC/NMA/PCNA Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults.\u201d\"\n\nhttps://www.ahajournals.org/doi/10.1161/CIR.0000000000001356",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5772580c1399482d8ad5e5c11461fa57",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5315a775a5a64e1fb1974b0474b528db",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes that mineralocorticoid receptor antagonist (MRA) therapy is recommended where first-line antihypertensive therapy has failed.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"In adults with uncontrolled resistant hypertension despite optimal treatment with first-line antihypertensive therapy (ie, a combination of ACEi or ARB plus CCB and thiazide-like diuretic [chlorthalidone or indapamide] and with an eGFR of \u226545 mL/min/1.73 m2), addition of a MRA is recommended to control BP.6\" https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4734bfdd950c4679a371886964ef855b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5315a775a5a64e1fb1974b0474b528db",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the patient does not tolerate MRA.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from the prompt. \"Spironolactone, amiloride, and eplerenone are not tolerated.\" - where Spironolactone and eplerenone are MRAs",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_96b3820005484feab35cdf5dd908560b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5315a775a5a64e1fb1974b0474b528db",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States amiloride is an option when MRA is not tolerated.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\" In adults with uncontrolled resistant hypertension who cannot tolerate or have contraindications to MRA, the addition of one of the following agents or classes\u2014 amiloride, BBs, alpha-blockers, central sympatholytic drugs, dual endothelin receptor antagonists, or direct vasodilators\u2014is reasonable to control BP. \" https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_99386dcc713341b691f22197ac9b0bf2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5315a775a5a64e1fb1974b0474b528db",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the patient does not tolerate amiloride.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from the prompt. \"Spironolactone, amiloride, and eplerenone are not tolerated.\"",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6c062b708814480090fe21d22939bbf5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5315a775a5a64e1fb1974b0474b528db",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States beta blockers are an option when MRA is not tolerated.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\" In adults with uncontrolled resistant hypertension who cannot tolerate or have contraindications to MRA, the addition of one of the following agents or classes\u2014 amiloride, BBs, alpha-blockers, central sympatholytic drugs, dual endothelin receptor antagonists, or direct vasodilators\u2014is reasonable to control BP. \" https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001357",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fd8a118e3e534dadaaea1a86727fe2de",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5315a775a5a64e1fb1974b0474b528db",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States alpha blockers are an option when MRA is not tolerated.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\" In adults with uncontrolled resistant hypertension who cannot tolerate or have contraindications to MRA, the addition of one of the following agents or classes\u2014 amiloride, BBs, alpha-blockers, central sympatholytic drugs, dual endothelin receptor antagonists, or direct vasodilators\u2014is reasonable to control BP. \" https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001358",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a8f1a3b13c334e26ac7ac034c8b8786d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5315a775a5a64e1fb1974b0474b528db",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States central sympatholytic drugs are an option when MRA is not tolerated.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\" In adults with uncontrolled resistant hypertension who cannot tolerate or have contraindications to MRA, the addition of one of the following agents or classes\u2014 amiloride, BBs, alpha-blockers, central sympatholytic drugs, dual endothelin receptor antagonists, or direct vasodilators\u2014is reasonable to control BP. \" https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001359",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_eb0738bf2efe4cbebf97213c45eb87a4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5315a775a5a64e1fb1974b0474b528db",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States dual endothelin receptor antagonists are an option when MRA is not tolerated.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\" In adults with uncontrolled resistant hypertension who cannot tolerate or have contraindications to MRA, the addition of one of the following agents or classes\u2014 amiloride, BBs, alpha-blockers, central sympatholytic drugs, dual endothelin receptor antagonists, or direct vasodilators\u2014is reasonable to control BP. \" https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001360",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e7a9670d2f2d4b79b6932bdeec20f43b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5315a775a5a64e1fb1974b0474b528db",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States direct vasodilators are an option when MRA is not tolerated.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\" In adults with uncontrolled resistant hypertension who cannot tolerate or have contraindications to MRA, the addition of one of the following agents or classes\u2014 amiloride, BBs, alpha-blockers, central sympatholytic drugs, dual endothelin receptor antagonists, or direct vasodilators\u2014is reasonable to control BP. \" https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001361",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0524398df1ca47118996bb3d2fba66b7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5315a775a5a64e1fb1974b0474b528db",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Recognizes the patient is taking a beta blocker.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is from the chart  \"metoprolol tartrate (LOPRESSOR) 25 MG tablet Take 25 mg by mouth daily\"\n\" Tab-Clinical Notes, Note type- Progress Note, Column-D, Row-185, Section Current Outpatient Medications. \"Metoprolol is in a class of medications called beta blockers.\"https://medlineplus.gov/druginfo/meds/a682864.html",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5fcb802196434fc18ef571c645a2e124",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5315a775a5a64e1fb1974b0474b528db",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the patient can be offered either of the following:alpha blockers, central sympatholytic drugs, dual endothelin receptor antagonists, or direct vasodilators.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\" In adults with uncontrolled resistant hypertension who cannot tolerate or have contraindications to MRA, the addition of one of the following agents or classes\u2014 amiloride, BBs, alpha-blockers, central sympatholytic drugs, dual endothelin receptor antagonists, or direct vasodilators\u2014is reasonable to control BP. \" https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001361 Since the patient is already on a beta blocker, other agents or classes should be tried.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

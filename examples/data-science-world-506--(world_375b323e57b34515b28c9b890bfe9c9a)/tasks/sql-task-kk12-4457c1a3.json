@@ -1,0 +1,261 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "You have access to tables, subscribers, subscriber_plans, device_purchases, and payment_transactions. I want you to perform an analysis for subscribers who do not use gmail and were born in or after the year 1990. Assign subscribers into cohorts named 'Cohort X - Year Y', where X indicates the registration quarter number and Y indicates the registration year. Also, please only include subscribers that applied the family, summer, upgrade, or black promo codes. If a subscriber has multiple promo codes, use the most recent one applied. For each subscriber, calculate the % down payment of the device price they paid using their most recent device purchase. The device price should be calculated by subtracting the trade in value from the device full price. Then, only for subscribers whose account status is active, including those that have not purchased a device (treated as 0% down payment), calculate the median of % down payment by cohort name. If device price is zero or negative, treat % down payment as 0%. Output a table showing the top 5 cohorts and its corresponding median of % down payment, ranked by median of % down payment in descending order. Output all values to two decimal places. Please use only SQLite queries to complete this entire analysis throughout all of its steps. Include your full SQLite query used for analysis as well as the requested results in the final output."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States Cohort 1 - Year 2025 as the cohort with the highest median of % down... (ver_571fca01a2f64f728699d8f05d4351e5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Cohort 1 - Year 2025 as the cohort with the highest median of % down payment."
+        }
+      ]
+    },
+    {
+      "name": "States Cohort 4 - Year 2025 as the cohort with the second highest median of %... (ver_6a657679c2f4402fbf48c3ea18a541f5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Cohort 4 - Year 2025 as the cohort with the second highest median of % down payment."
+        }
+      ]
+    },
+    {
+      "name": "States Cohort 4 - Year 2023 as the cohort with the third highest median of %... (ver_ccf5100a1f0f458089d86a636bae9cad)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Cohort 4 - Year 2023 as the cohort with the third highest median of % down payment."
+        }
+      ]
+    },
+    {
+      "name": "States Cohort 2 - Year 2024 as the cohort with the fourth highest median of %... (ver_ae9400b0e45e4e569ea69ae0511a1546)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Cohort 2 - Year 2024 as the cohort with the fourth highest median of % down payment."
+        }
+      ]
+    },
+    {
+      "name": "States Cohort 3 - Year 2025 as the cohort with the fifth highest median of %... (ver_fe2d708a72674b6182bc30ea61a7e94b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Cohort 3 - Year 2025 as the cohort with the fifth highest median of % down payment."
+        }
+      ]
+    },
+    {
+      "name": "Computes median of % down payment for Cohort 1 - Year 2025 as 100.00 (+/- 0.02). (ver_60c1fce057b54d2b8f11431f9452e2ee)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes median of % down payment for Cohort 1 - Year 2025 as 100.00 (+/- 0.02)."
+        }
+      ]
+    },
+    {
+      "name": "Computes median of % down payment for Cohort 4 - Year 2025 as 100.00 (+/- 0.02). (ver_8127743907e644739657c92cf13aea5b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes median of % down payment for Cohort 4 - Year 2025 as 100.00 (+/- 0.02)."
+        }
+      ]
+    },
+    {
+      "name": "Computes median of % down payment for Cohort 4 - Year 2023 as 24.12 (+/- 0.02). (ver_2f9e7a65914c4640b01656618b4bb75f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes median of % down payment for Cohort 4 - Year 2023 as 24.12 (+/- 0.02)."
+        }
+      ]
+    },
+    {
+      "name": "Computes median of % down payment for Cohort 2 - Year 2024 as 18.85 (+/- 0.02). (ver_66167b4019aa45b0aa73ed017f5051df)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes median of % down payment for Cohort 2 - Year 2024 as 18.85 (+/- 0.02)."
+        }
+      ]
+    },
+    {
+      "name": "Computes median of % down payment for Cohort 3 - Year 2025 as 17.30 (+/- 0.02). (ver_3390050325e74ebaa6861971162dcc29)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes median of % down payment for Cohort 3 - Year 2025 as 17.30 (+/- 0.02)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sql-task-kk12-4457c1a3"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_4457c1a36d214bda94bd772a21641ba9",
+    "task_name": "SQL - Task KK12",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_30f29456a9e34ee7b9f46f9fb0ee8e90",
+        "golden_text_response": "The output is as follows:\ncohort_name     median_pct_down_payment\nCohort 1 - Year 2025     100.00\nCohort 4 - Year 2025     100.00\nCohort 4 - Year 2023     24.12\nCohort 2 - Year 2024     18.85\nCohort 3 - Year 2025     17.30\n\nThe SQL query for the output is as follows:\n```\nWITH latest_promo AS (\n  SELECT subscriber_id,\n         promo_code_applied,\n         CASE\n           WHEN lower(promo_code_applied) LIKE 'family%'  THEN 'family'\n           WHEN lower(promo_code_applied) LIKE 'summer%'  THEN 'summer'\n           WHEN lower(promo_code_applied) LIKE 'upgrade%' THEN 'upgrade'\n           WHEN lower(promo_code_applied) LIKE 'black%'   THEN 'black'\n         END AS promo_group\n  FROM (\n    SELECT sp.*,\n           ROW_NUMBER() OVER (\n             PARTITION BY sp.subscriber_id\n             ORDER BY date(sp.activation_date) DESC, sp.subscription_id DESC\n           ) AS rn\n    FROM subscriber_plans sp\n    WHERE sp.promo_code_applied IS NOT NULL\n  ) t\n  WHERE rn = 1\n),\neligible_subscribers AS (\n  SELECT\n    s.subscriber_id,\n    s.account_status,\n    s.email,\n    s.date_of_birth,\n    s.registration_date,\n    lp.promo_code_applied,\n    lp.promo_group,\n    ('Cohort ' ||\n      CASE\n        WHEN CAST(strftime('%m', s.registration_date) AS INTEGER) BETWEEN 1 AND 3  THEN 1\n        WHEN CAST(strftime('%m', s.registration_date) AS INTEGER) BETWEEN 4 AND 6  THEN 2\n        WHEN CAST(strftime('%m', s.registration_date) AS INTEGER) BETWEEN 7 AND 9  THEN 3\n        WHEN CAST(strftime('%m', s.registration_date) AS INTEGER) BETWEEN 10 AND 12 THEN 4\n      END\n     || ' - Year ' || strftime('%Y', s.registration_date)\n    ) AS cohort_name\n  FROM subscribers s\n  JOIN latest_promo lp\n    ON lp.subscriber_id = s.subscriber_id\n  WHERE s.email NOT LIKE '%@gmail.com'\n    AND CAST(strftime('%Y', s.date_of_birth) AS INTEGER) >= 1990\n    AND lp.promo_group IN ('family','summer','upgrade','black')\n),\nlatest_device AS (\n  SELECT subscriber_id,\n         full_price,\n         down_payment,\n         trade_in_value\n  FROM (\n    SELECT dp.*,\n           ROW_NUMBER() OVER (\n             PARTITION BY dp.subscriber_id\n             ORDER BY date(dp.purchase_date) DESC, dp.purchase_id DESC\n           ) AS rn\n    FROM device_purchases dp\n  ) t\n  WHERE rn = 1\n),\nsubscriber_down_payment AS (\n  SELECT\n    es.cohort_name,\n    es.subscriber_id,\n    es.account_status,\n    CASE\n      WHEN ld.subscriber_id IS NULL THEN 0.0\n      WHEN (COALESCE(ld.full_price,0.0) - COALESCE(ld.trade_in_value,0.0)) <= 0 THEN 0.0\n      ELSE\n        (COALESCE(ld.down_payment,0.0) * 100.0) /\n        (COALESCE(ld.full_price,0.0) - COALESCE(ld.trade_in_value,0.0))\n    END AS pct_down_payment\n  FROM eligible_subscribers es\n  LEFT JOIN latest_device ld\n    ON ld.subscriber_id = es.subscriber_id\n),\nactive_only AS (\n  SELECT cohort_name, subscriber_id, pct_down_payment\n  FROM subscriber_down_payment\n  WHERE account_status = 'active'\n),\nranked AS (\n  SELECT\n    cohort_name,\n    pct_down_payment,\n    ROW_NUMBER() OVER (PARTITION BY cohort_name ORDER BY pct_down_payment) AS rn_asc,\n    COUNT(*) OVER (PARTITION BY cohort_name) AS cnt\n  FROM active_only\n),\nmedians AS (\n  SELECT\n    cohort_name,\n    CASE\n      WHEN cnt % 2 = 1 THEN\n        MAX(CASE WHEN rn_asc = (cnt + 1) / 2 THEN pct_down_payment END)\n      ELSE\n        (\n          MAX(CASE WHEN rn_asc = (cnt / 2) THEN pct_down_payment END) +\n          MAX(CASE WHEN rn_asc = (cnt / 2) + 1 THEN pct_down_payment END)\n        ) / 2.0\n    END AS median_pct_down_payment\n  FROM ranked\n  GROUP BY cohort_name, cnt\n)\nSELECT\n  cohort_name,\n  ROUND(median_pct_down_payment, 2) AS median_pct_down_payment\nFROM medians\nORDER BY median_pct_down_payment DESC, cohort_name\nLIMIT 5;\n```\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Make the following changes to the DCF model\n- Assume that the SPGI share price is instead the closing share price as of 1/6/2026\n- Subscription revenue in 2026 is the average of the three preceding years. Subsequent years in the projection period add 100 incremental basis points to the growth rate per year\n- Non-subscription / transaction revenue grows at 80% of the subscription revenue growth rate every year\n- Non-transaction and other revenue streams grow at 50% of the subscription revenue growth rate every year\n- beta is 1.25\n\nOutput the following:\n- total revenue in 2030 rounded to the nearest whole number in million\n- equity value per share, rounded to two decimal places, via the perpetuity method"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States 2030 revenue is $22,569 million (acceptable range $22,343 to $22,795) (ver_f29752f9c1e746f599565427a2cd6afc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States 2030 revenue is $22,569 million (acceptable range $22,343 to $22,795)."
+        }
+      ]
+    },
+    {
+      "name": "States equity value per share via perpetuity method is $356.90 (acceptable... (ver_845556fbab8d41a38f6b2057e1fe3ec0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States equity value per share via perpetuity method is $356.90 (acceptable range $353.33 to $360.47)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world249-rl-01-3ddd2f53"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_3ddd2f53e2bf4e7b864519ebac94b386",
+    "task_name": "World249_RL_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_0cdf19e324ea421bb6d74f75e07c549b",
+        "golden_text_response": "2030 revenue is $22,569 million\nEquity value per share via perpetuity method is $356.90",
+        "golden_file_responses": "snap_ff844169bb3d4e819b492b2145da1beb"
+      }
+    ]
+  }
+}

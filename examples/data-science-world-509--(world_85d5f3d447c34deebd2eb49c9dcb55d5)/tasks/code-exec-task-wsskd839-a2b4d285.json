@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The 02_Risk_Calculation_Logic_v2_final.py file provides details on the timing and scope of macro-economic stress events that have long-lasting effects on the PD_Probability (macro shocks). Identify variable interest borrowers who were impacted by at least two macro shocks and their respective latest two macro shocks. Being impacted is defined as having an active loan with positive balance during the shock start month. For each identified borrower and their two macro shocks, x is the month of the first shock and y is the month of the second. Filter for borrowers whose loan was of \"D - High Risk\" or \"F - Distressed\" risk grade in month x. If multiple loans exist, the borrower qualifies if any loan is D/F in month x. Extract records from enriched_loan_data.csv for the selected borrowers from month x to month y-1 (inclusive). In enriched_loan_data.csv, each borrower has continuous monthly records. Report number of unique borrowers in the data extraction. Calculate for each borrower Compound Monthly Growth Rate (CMGR) of the Expected Loss (EL). CMGR = (end value / start value)^(1/n) - 1, where n is months elapsed. So if start is '2023-12' and end is '2024-03', then n = 3. Identify the top 10 critical exposure borrowers from the image Top 10 Critical Exposures (Watchlist).png. For the top 10 critical exposure borrowers, report mean, minimum, maximum and standard deviation of the CMGR of EL in percentage and rounded to two decimal points. If any of the top 10 critical exposure borrowers are not in the extracted dataset, drop them from the aforementioned calculations. Provide Python codes along with the results."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports the number of unique borrowers in the extraction as exactly 1082. (ver_d5834d41ffa4423380bf5fd5ab4dccb4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the number of unique borrowers in the extraction as exactly 1082."
+        }
+      ]
+    },
+    {
+      "name": "Reports the mean of the CMGR of EL for the top critical exposure borrowers as... (ver_b4509a4dc63e4b45b0ce4c1e9cb603df)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the mean of the CMGR of EL for the top critical exposure borrowers as -1.23% +/- 0.05%."
+        }
+      ]
+    },
+    {
+      "name": "Reports the min of the CMGR of EL for the top critical exposure borrowers as... (ver_7ffcd96ae00c44eda2fe612d997da71d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the min of the CMGR of EL for the top critical exposure borrowers as -8.17% +/- 0.05%."
+        }
+      ]
+    },
+    {
+      "name": "Reports the max of the CMGR of EL for the top critical exposure borrowers as... (ver_97d3e107090048fb8bcb451b6c14ab69)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the max of the CMGR of EL for the top critical exposure borrowers as 4.46% +/- 0.05%."
+        }
+      ]
+    },
+    {
+      "name": "Reports the standard deviation of the CMGR of EL for the top critical exposure... (ver_09c75b85c37146749f0d55395d8e2834)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the standard deviation of the CMGR of EL for the top critical exposure borrowers is: 3.31% +/- 0.05%."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh code-exec-task-wsskd839-a2b4d285"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_a2b4d285d4ea471a8f27f2d7934baa93",
+    "task_name": "Code Exec - Task wsskd839",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_fefc7248c23449fdb71af94ad199a144",
+        "golden_text_response": "number of unique borrowers in the extraction: 1082\nthe mean of the CMGR of EL for the top critical exposure borrowers is: -1.23%\nthe min of the CMGR of EL for the top critical exposure borrowers is: -8.17%\nthe max of the CMGR of EL for the top critical exposure borrowers is: 4.46%\nthe standard deviation of the CMGR of EL for the top critical exposure borrowers is: 3.31%\n\n```\nimport pandas as pd\n\ndf = pd.read_csv(\n    \"3.Analysis/Preprocessed datasets/enriched_loan_data.csv\",\n)\n\n\n# all loan records have postive balance\nassert df[df.Current_Balance<=0].shape[0]==0\n\n\n# from 02_Risk_Calculation_Logic_v2_final.py\n# Construction Sector experienced three macro shocks, '2023-10-01', '2024-01-01' and '2024-06-01'\n# based on the prompt, extract from '2024-01' to '2024-05' for Construction borrowers\n# other sectors experienced two macro shocks, '2023-10-01' and '2024-06-01'\n# extract from '2023-10' to '2024-05' for borrowers from other sectors\ndf = df.loc[\n    (\n        (df.NAICS_Sector == \"Construction\")\n        & (df.Interest_Type == \"Variable\")\n        & (df.Month_Key >= \"2024-01\")\n        & (df.Month_Key <= \"2024-05\")\n    )\n    | (\n        (df.NAICS_Sector != \"Construction\")\n        & (df.Interest_Type == \"Variable\")\n        & (df.Month_Key >= \"2023-10\")\n        & (df.Month_Key <= \"2024-05\")\n    )\n]\n\n\n# filter for borrowers with \"D - High Risk\" or \"F - Distressed\" risk grade in month X\ndf_mthX = df.loc[\n    ((df.NAICS_Sector == \"Construction\") & (df.Month_Key == \"2024-01\"))\n    | ((df.NAICS_Sector != \"Construction\") & (df.Month_Key == \"2023-10\"))\n]\n\nfinalBorrowerList = (\n    df_mthX.loc[\n        df_mthX.Internal_Risk_Grade.isin([\"D - High Risk\", \"F - Distressed\"]),\n        \"Borrower_ID\",\n    ]\n    .unique()\n    .tolist()\n)\n\ndf = df[df.Borrower_ID.isin(finalBorrowerList)]\n\n\nprint(f'number of unique borrowers in the extraction: {df.Borrower_ID.nunique()}')\n\n\ndf_start = df.loc[\n    ((df.NAICS_Sector == \"Construction\") & (df.Month_Key == \"2024-01\"))\n    | ((df.NAICS_Sector != \"Construction\") & (df.Month_Key == \"2023-10\")),\n    [\n        \"Loan_ID\",\n        \"Borrower_ID\",\n        \"Borrower_Name\",\n        \"NAICS_Sector\",\n        \"Origination_Credit_Score\",\n        \"Current_Balance\",\n        \"Expected_Loss_Amount\"\n    ],\n]\n\ndf_end = df.loc[\n    df.Month_Key == \"2024-05\",\n    [\n        \"Loan_ID\",\n        \"Borrower_ID\",\n        \"Borrower_Name\",\n        \"NAICS_Sector\",\n        \"Origination_Credit_Score\",\n        \"Current_Balance\",\n        \"Expected_Loss_Amount\"\n    ],\n]\n\ndf_CMGR = df_start.merge(\n    df_end,\n    on=[\"Loan_ID\", \"Borrower_ID\", \"Borrower_Name\", \"NAICS_Sector\", \"Origination_Credit_Score\"],\n    how=\"left\",\n    suffixes=(\"_start\", \"_end\"),\n)\n\n# for Construction sector borrowers, 4 month period between '2024-01' and '2024-05'\n# for other borrowers, 7 month period between '2023-10' and '2024-05'\ndf_CMGR[\"Period_Month\"] = df_CMGR[\"NAICS_Sector\"].apply(\n    lambda x: 4 if x == \"Construction\" else 7\n)\n\n\n# Calculate Compound Monthly Growth Rate (CMGR)\ndf_CMGR[\"Balance_CMGR\"] = (\n    df_CMGR.Current_Balance_end / df_CMGR.Current_Balance_start\n) ** (1 / df_CMGR.Period_Month) - 1\n\ndf_CMGR[\"EL_CMGR\"] = (\n    df_CMGR.Expected_Loss_Amount_end / df_CMGR.Expected_Loss_Amount_start\n) ** (1 / df_CMGR.Period_Month) - 1\n\n\ntopExposureBorrowers = [\n    \"Company_11076_Retail\",\n    \"Company_13566_Retail\",\n    \"Company_10921_Retail\",\n    \"Company_12289_Retail\",\n    \"Company_11737_Retail\",\n    \"Company_13732_Retail\",\n    \"Company_13724_Retail\",\n    \"Company_11747_Retail\",\n    \"Company_10930_Retail\",\n    \"Company_11067_Retail\",\n]\n\n\n# actually all top 10 critical exposure borrowers are in the data extraction\ndf_CMGR_topExposure = df_CMGR.loc[df_CMGR.Borrower_Name.isin(topExposureBorrowers)]\ndf_CMGR_topExposure.shape\n\n\nprint(\n    f\"the mean of the CMGR of EL for the top critical exposure borrowers is: {df_CMGR_topExposure['EL_CMGR'].mean():.2%}\"\n)\nprint(\n    f\"the min of the CMGR of EL for the top critical exposure borrowers is: {df_CMGR_topExposure['EL_CMGR'].min():.2%}\"\n)\nprint(\n    f\"the max of the CMGR of EL for the top critical exposure borrowers is: {df_CMGR_topExposure['EL_CMGR'].max():.2%}\"\n)\nprint(\n    f\"the standard deviation of the CMGR of EL for the top critical exposure borrowers is: {df_CMGR_topExposure['EL_CMGR'].std():.2%}\"\n)\n\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

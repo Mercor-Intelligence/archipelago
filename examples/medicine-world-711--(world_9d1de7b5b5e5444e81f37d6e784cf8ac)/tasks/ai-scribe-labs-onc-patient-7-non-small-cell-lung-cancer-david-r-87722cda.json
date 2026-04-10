@@ -1,0 +1,399 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 7” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nBased on the patient's chart, labs, and conversation with the physician, what is the most appropriate next treatment? What are the dosing and frequency? Explain your reasoning."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient has non-small cell lung cancer. (ver_0bbffd586c324daabf2a508178f60b04)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has non-small cell lung cancer."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's cancer is metastatic. (ver_9ed413a0e12f466fa75277ae76102bd5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's cancer is metastatic."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has brain metastasis. (ver_d469aaa5fb1641e793def33899c63419)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has brain metastasis."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's cancer has an EGFR Exon 19 deletion. (ver_2ba5210760e343c9abe082b428009049)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's cancer has an EGFR Exon 19 deletion."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has not received systemic therapy. (ver_8685e3a4da1f4425a5c3f6655d83a761)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has not received systemic therapy."
+        }
+      ]
+    },
+    {
+      "name": "States that the most appropriate next treatment option is a combination of... (ver_54cdddf09c7b497fb40214860b737d49)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the most appropriate next treatment option is a combination of lazertinib and amivantamab."
+        }
+      ]
+    },
+    {
+      "name": "States that lazertinib is dosed daily. (ver_33a58db20d694c9dbe53533c516a7315)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that lazertinib is dosed daily."
+        }
+      ]
+    },
+    {
+      "name": "States that lazertinib is dosed orally. (ver_86d163dacf284262bbe6cdaa205d7b96)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that lazertinib is dosed orally."
+        }
+      ]
+    },
+    {
+      "name": "States that lazertinib is dosed at 240 mg. (ver_c8049686e43b47dba53f8027234920d0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that lazertinib is dosed at 240 mg."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient weighs 50 kg. (ver_91eee439cd92494b90fabbae99012452)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient weighs 50 kg."
+        }
+      ]
+    },
+    {
+      "name": "States that amivantamab is dosed intravenously. (ver_8f37585a00754ed0887d091aa1b9bda7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that amivantamab is dosed intravenously."
+        }
+      ]
+    },
+    {
+      "name": "States that the first dose of amivantamab is 350 mg. (ver_58c870f6a9414423a92a4315f9d786ec)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the first dose of amivantamab is 350 mg."
+        }
+      ]
+    },
+    {
+      "name": "States that the second dose of amivantamab is delivered the day after the... (ver_76a50e3b26bb4267891df3cb0392f34b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the second dose of amivantamab is delivered the day after the first dose."
+        }
+      ]
+    },
+    {
+      "name": "States that the second dose of amivantamab is 700 mg. (ver_13fb62f69d9047e5a50973fed0cadacf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the second dose of amivantamab is 700 mg."
+        }
+      ]
+    },
+    {
+      "name": "States that amivantamab is delivered weekly after the second dose. (ver_15cbef1b6de44a8d8ed149c9c46bb80e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that amivantamab is delivered weekly after the second dose."
+        }
+      ]
+    },
+    {
+      "name": "States the weekly dose of amivantamab is 1050 mg after the second dose. (ver_14f8b3cc55bd44eeb396f7157f905712)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the weekly dose of amivantamab is 1050 mg after the second dose."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh ai-scribe-labs-onc-patient-7-non-small-cell-lung-cancer-david-r-87722cda"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_87722cdac681467fbf8d3fe2d64f18eb",
+    "task_name": "AI Scribe/Labs - Onc Patient 7 - Non-Small Cell Lung Cancer - David R",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_194c1358496446568083613b880756d1",
+        "golden_text_response": "The patient has suffered a recurrence of her most recent form of cancer, which is non-small cell lung cancer. She has not yet received any systemic treatment for this diagnosis of cancer, and her cancer is metastatic, including a new spot in the brain. Labs confirm this cancer has an EGFR exon 19 deletion. Therefore, the recommended first-line treatment option is a combination of lazertinib and amivantamab. Lazertinib is dosed at 240 mg orally daily. The patient's most recent weight shows that she weighs 1792 ounces, or about 50 kg. Therefore, her dosing of amivantamab is 350 mg IV on day 1, 700 mg IV on day 2, and then 1050 mg IV weekly thereafter.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

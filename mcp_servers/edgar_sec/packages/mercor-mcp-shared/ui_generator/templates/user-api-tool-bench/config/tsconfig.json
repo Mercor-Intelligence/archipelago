@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "preserveSymlinks": true,
+    "paths": {
+      "@/*": ["./*"],
+      "@mcp-shared/*": ["./node_modules/.mcp-shared-placeholder/components/*"],
+      "@mcp-shared-base/*": ["./node_modules/.mcp-shared-placeholder/components/*"],
+      "@mcp-shared-lib/*": ["./node_modules/.mcp-shared-placeholder/lib/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Calculate the total enterprise value (TEV) using the terminal value – growth in perpetuity approach for S&P Global (consolidated entity) under the following assumptions:\n•\tExtend the DCF model to a 6‑year forecast by projecting Year 2031 using the same assumptions and operating drivers applied in the prior forecast years.\n•\tIncrease the assumed debt balance to 30,000.\n•\tApply the mid-year convention\n•\tSet the risk‑free rate equal to the 1‑month U.S. Treasury yield as of December 31, 2025.\n\nPresent the result in USD millions, rounded to the nearest dollar."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that Total Enterprise value (EV) - growth in perpetuity approach is... (ver_553b7d86f06a4604862c33ea4b6bc197)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Total Enterprise value (EV) - growth in perpetuity approach is $177,861 million (acceptable range $176,082 to $179,640)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world249-sk-task02-0848a821"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_0848a82111e14cb2a39b57d96b3e8dda",
+    "task_name": "World249_SK_Task02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c369dead3c9440b9b5894c897d439ec7",
+        "golden_text_response": "Total Enterprise value (EV) - growth in perpetuity approach is $177,861 million",
+        "golden_file_responses": "snap_b2341c9668fe49eb843c3bb7e247db94"
+      }
+    ]
+  }
+}

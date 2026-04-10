@@ -1,0 +1,245 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_07f9f44f439d44e2ba29a8789af3465c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_339d16bc92a046938382e557962d950e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes \"To (Student's Full Name)'s Parent\" as the salutation",
+        "modality": "Free text",
+        "negative_criteria": "Includes something other than \"To (Student's Full Name)'s Parent\" as the salutation.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_93c3fb0b1c9d4b9eb51571ee6746f76c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_339d16bc92a046938382e557962d950e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Uses a placeholder for the student's number of absences",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_77c8bb9d92c74017bbb069e7b25bdf26",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_339d16bc92a046938382e557962d950e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes a placeholder for a physical signature",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1b2f6f16510d40958224578303d264b8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_339d16bc92a046938382e557962d950e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Uses a placeholder for the student's name",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c994dca3905a4e36882982058bc039cc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_339d16bc92a046938382e557962d950e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes the date 02/15/2025",
+        "modality": "Free text",
+        "negative_criteria": "Includes a date other than 02/15/2025 in the header.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0949f60fd5be4f148af9274d79bfd6a6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_339d16bc92a046938382e557962d950e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes \"AP US History Attendance Policy\" as the subject line",
+        "modality": "Free text",
+        "negative_criteria": "Includes something other than \"AP US History Attendance Policy\" as the header's subject line.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1552009c8804462398c01315f9d4188c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_339d16bc92a046938382e557962d950e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes the teacher's name, \"Mr Limas\"",
+        "modality": "Free text",
+        "negative_criteria": "Includes a name other than \"Mr Limas\" in the closing of the letter.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_83df7c393775475b8a5420a69e26a99a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_339d16bc92a046938382e557962d950e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the reason for the letter as the student's repeated absences in AP US History class",
+        "modality": "Free text",
+        "negative_criteria": "States a reason for the letter other than the student's repeated absences in APUSH class.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cf917de6b8784ddfb956b7cb45119796",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_339d16bc92a046938382e557962d950e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Notes that Arizona's Truancy Policy requires parents to first be notified by both a letter and a phone call",
+        "modality": "Free text",
+        "negative_criteria": "Notes that Arizona's Truancy Policy requires something other than that parents first be notified by both a letter and phone call.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_366ca7c62e064b48aee91427ac827b74",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_339d16bc92a046938382e557962d950e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides a reminder to please contact the school if the student is going to be absent for any legitimate reason (e.g., medical appointments, illnesses, etc.)",
+        "modality": "Free text",
+        "negative_criteria": "Provides a reminder to contact the school for something other than the student being absent for any legitimate reasons (e.g., medical appointments, illnesses, etc.).",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    },
+    {
+      "eval_config_id": "72d7d96a-9d94-4a38-bbe3-96c08ded727c",
+      "eval_config_name": "Content Length Check Verifier",
+      "eval_defn_id": "content_length_check",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

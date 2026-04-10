@@ -1,0 +1,138 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_586a373ca9ad4669809e0c35accf5dbf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15db32fbfd8049eeaa065b051a83b73a",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Assigns 1 point for clinical stage IIIA in the MD Anderson Neoadjuvant Therapy Outcomes Score (CPS+EG Score). ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient was diagnosed with clinical stage IIIA which corresponds to 1 point via the MD Anderson Neoadjuvant Therapy Outcomes Score (CPS+EG Score). See \u2018clinical stage\u2019 in Table 1 on page 15 of JAMA Oncol. 2016 July 01; 2(7): 929\u2013936. doi:10.1001/jamaoncol.2015.6478.\nhttps://jamanetwork.com/journals/jamaoncology/fullarticle/2504172\n\n\u201cClinical stage from 1/13/2021: Stage IIIA (cT3, cN1, cM0, G3, ER-, PR-, HER2+) - Unsigned   CHIEF COMPLAINT: Here to discuss management of right breast cancer  HISTORY OF PRESENT ILLNESS::Leiann Severt is a 36 y.o. female who presented with breast abnormality on the following: physical exam on the date of 12/22/2020\u201d from Source: Tab - CLINICAL NOTES, Note type - Progress Note, Column - D, Row - 14. \n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_74049657d05e4d68a11f616721c5b63e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15db32fbfd8049eeaa065b051a83b73a",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "Assigns 0 points for pathological stage 0 in the MD Anderson Neoadjuvant Therapy Outcomes Score (CPS+EG Score). ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient was diagnosed with pathological stage 0 which corresponds to 0 points via the MD Anderson Neoadjuvant Therapy Outcomes Score (CPS+EG Score). The patient has a complete pathological response based on the pathology from the lumpectomy which is Stage 0. See \u2018pathological  stage\u2019 in Table 1 on page 15 of JAMA Oncol. 2016 July 01; 2(7): 929\u2013936. doi:10.1001/jamaoncol.2015.6478.\nhttps://jamanetwork.com/journals/jamaoncology/fullarticle/2504172\n\n \u201cSurvivorship Doctor: \"And instead, you got the 'Complete Pathologic Response.' I was just reading the surgeon's note again. It was definitive. When they went in, the tumor bed in your right breast was just scar tissue. The lymph nodes were clear. There were no cancer cells identified.\" Patient 9: \"It felt like getting away with something. Like we pulled off a heist.\" from Onc_Patient 9 Script\n\n\u201cDIAGNOSIS: A. RIGHT BREAST, LUMPECTOMY: No residual invasive carcinoma (Complete Pathologic Response). \u25cf No residual DCIS\u201d from \u201cPath.pdf\u201d\n\u201cClinical stage from 1/13/2021: Stage IIIA (cT3, cN1, cM0, G3, ER-, PR-, HER2+) - Unsigned   CHIEF COMPLAINT: Here to discuss management of right breast cancer  HISTORY OF PRESENT ILLNESS::Leiann Severt is a 36 y.o. female who presented with breast abnormality on the following: physical exam on the date of 12/22/2020\u201d from from Source: Tab - CLINICAL NOTES, Note type - Progress Note, Column - D, Row - 14. \n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b8fc8b65b17b4638b909f376c05fdda3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15db32fbfd8049eeaa065b051a83b73a",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "Assigns 1 point for ER negative tumor marker in the MD Anderson Neoadjuvant Therapy Outcomes Score (CPS+EG Score). ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has an ER negative tumor which corresponds to 1 point. See \u2018tumor marker\u2019 in Table 1 on page 15 of JAMA Oncol. 2016 July 01; 2(7): 929\u2013936. doi:10.1001/jamaoncol.2015.6478.\nhttps://jamanetwork.com/journals/jamaoncology/fullarticle/2504172\n  \n\u201cClinical stage from 1/13/2021: Stage IIIA (cT3, cN1, cM0, G3, ER-, PR-, HER2+) - Unsigned   CHIEF COMPLAINT: Here to discuss management of right breast cancer  HISTORY OF PRESENT ILLNESS::Leiann Severt is a 36 y.o. female who presented with breast abnormality on the following: physical exam on the date of 12/22/2020\u201d from from Source: Tab - CLINICAL NOTES, Note type - Progress Note, Column - D, Row - 14. \n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_15f52c8d7ab246bfbd317d571cb29179",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15db32fbfd8049eeaa065b051a83b73a",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "Assigns 1 point for nuclear Grade 3 tumor in the MD Anderson Neoadjuvant Therapy Outcomes Score (CPS+EG Score). ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has a Grade 3 tumor, which corresponds to 1 point. See \u2018tumor marker\u2019 in Table 1 on page 15 of JAMA Oncol. 2016 July 01; 2(7): 929\u2013936. doi:10.1001/jamaoncol.2015.6478.\nhttps://jamanetwork.com/journals/jamaoncology/fullarticle/2504172\n  \n\u201cClinical stage from 1/13/2021: Stage IIIA (cT3, cN1, cM0, G3, ER-, PR-, HER2+) - Unsigned   CHIEF COMPLAINT: Here to discuss management of right breast cancer  HISTORY OF PRESENT ILLNESS::Leiann Severt is a 36 y.o. female who presented with breast abnormality on the following: physical exam on the date of 12/22/2020\u201d from from Source: Tab - CLINICAL NOTES, Note type - Progress Note, Column - D, Row - 14. \n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d9de6234461d40119f15a41f19d23956",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15db32fbfd8049eeaa065b051a83b73a",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the patient has a total MD Anderson Neoadjuvant Therapy Outcomes Score (CPS+EG Score) of 3 (acceptable range 2.97 to 3.03).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Clinical Stage IIIA - 1 point\nPathological Stage - 0 point\nER status: Tumor Marker - ER negative - 1 point\nGrade 3 - 1 point \n\nTotal MD Anderson Neoadjuvant Therapy Outcomes Score (CPS+EG Score) = 1 + 0 + 1 +1 = 3\nSee \u2018Table 2\u2019 on page 16 of JAMA Oncol. 2016 July 01; 2(7): 929\u2013936. doi:10.1001/jamaoncol.2015.6478.\nhttps://jamanetwork.com/journals/jamaoncology/fullarticle/2504172",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a1dd72afd2614f199a1831e0491c79e6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_15db32fbfd8049eeaa065b051a83b73a",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "criteria": "Concludes that the patient has an 87% 5-year distant metastasis disease free survival.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "A score of 3 corresponds to a 87% 5-year disease free survival according to \u2018Table 2\u2019 on page 16 of JAMA Oncol. 2016 July 01; 2(7): 929\u2013936. doi:10.1001/jamaoncol.2015.6478.\nhttps://jamanetwork.com/journals/jamaoncology/fullarticle/2504172\n\n \u201cPatient 9: \"That\u2019s actually why I wanted to ask you... now that we have some distance from it. I\u2019ve been reading about the '5-year disease-specific survival.' Since we did get that complete response back then, where does that put me now?\" from Onc_Patient 9 Script\n\n\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

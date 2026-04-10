@@ -1,0 +1,315 @@
+# Candidate Management Workflow
+# Demonstrates: Reset DB -> Create users -> Create candidates -> Search -> Update -> Tag -> Reject
+#
+# Tools exercised:
+# - Login (recruiter)
+# - Reset State (Admin)
+# - Create User (Users)
+# - List Users (Users)
+# - Get User (Users)
+# - Create Candidate (Candidates)
+# - Search Candidates (Candidates)
+# - Get Candidate (Candidates)
+# - Update Candidate (Candidates)
+# - Add Tag (Candidates)
+# - Create Job (Jobs)
+# - List Jobs (Jobs)
+# - Update Job (Jobs)
+# - Create Application (Applications)
+# - List Applications (Applications)
+# - Reject Application (Applications)
+
+url: http://localhost:3000
+
+output: screenshots
+
+defaults:
+  server: greenhouse-greenhouse
+
+steps:
+  # Step 1: Initial view
+  - TakeScreenshot
+
+  # Step 2: Login as Recruiter
+  - Login:
+      persona: recruiter
+      screenshot_params:
+        element: *tool_panel
+        max_height: 600
+
+  # Step 3: Reset database
+  - SelectTool:
+      tool: reset_state
+      category: Admin
+  - Wait: 500
+  - FillToolParam:
+      params:
+        confirm: true
+        clear_users: false
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 400
+
+  # Step 4: Create a new system user
+  - SelectTool:
+      tool: users_create
+      category: Users
+  - Wait: 500
+  - FillToolParam:
+      params:
+        first_name: Dana
+        last_name: Park
+        email: dana.park@company.com
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 700
+
+  # Step 5: Execute user creation
+  - ExecuteTool:
+      capture:
+        new_user_id: $.id
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 600
+
+  # Step 6: List all users
+  - SelectTool:
+      tool: users_list
+      category: Users
+  - Wait: 500
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 7: Get user details
+  - SelectTool:
+      tool: users_get
+      category: Users
+  - Wait: 500
+  - FillToolParam:
+      params:
+        user_id: 5
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 700
+
+  # Setup: Create two candidates for search testing
+  - SelectTool:
+      tool: candidates_create
+      category: Candidates
+  - Wait: 500
+  - FillToolParam:
+      params:
+        first_name: James
+        last_name: Rivera
+        company: Google
+        title: Senior Software Engineer
+  - FillListItems:
+      param: email_addresses
+      items:
+        - value: james.rivera@example.com
+          type: personal
+  - ExecuteTool:
+      capture:
+        candidate_1_id: $.id
+  - Wait: 1000
+
+  - SelectTool:
+      tool: candidates_create
+      category: Candidates
+  - Wait: 500
+  - FillToolParam:
+      params:
+        first_name: Priya
+        last_name: Sharma
+        company: Meta
+        title: Engineering Manager
+  - FillListItems:
+      param: email_addresses
+      items:
+        - value: priya.sharma@example.com
+          type: personal
+  - ExecuteTool:
+      capture:
+        candidate_2_id: $.id
+  - Wait: 1000
+
+  # Step 8: Search candidates by name
+  - SelectTool:
+      tool: candidates_search
+      category: Candidates
+  - Wait: 500
+  - FillToolParam:
+      params:
+        name: Rivera
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 700
+
+  # Step 9: View search results
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 10: Get full candidate profile
+  - SelectTool:
+      tool: candidates_get
+      category: Candidates
+  - Wait: 500
+  - FillToolParam:
+      params:
+        candidate_id: "{{ candidate_1_id }}"
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800
+
+  # Step 11: Update candidate details
+  - SelectTool:
+      tool: candidates_update
+      category: Candidates
+  - Wait: 500
+  - FillToolParam:
+      params:
+        candidate_id: "{{ candidate_1_id }}"
+        title: Staff Software Engineer
+        company: Google Cloud
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 700
+
+  # Step 12: Execute update
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 700
+
+  # Step 13: Add tag to candidate
+  - SelectTool:
+      tool: candidates_add_tag
+      category: Candidates
+  - Wait: 500
+  - FillToolParam:
+      params:
+        candidate_id: "{{ candidate_1_id }}"
+        tag: senior-backend
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 600
+
+  # Step 14: Create a job
+  - SelectTool:
+      tool: jobs_create
+      category: Jobs
+  - Wait: 500
+  - FillToolParam:
+      params:
+        name: Platform Engineer
+        status: open
+  - ExecuteTool:
+      capture:
+        job_id: $.id
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 700
+
+  # Step 15: List all open jobs
+  - SelectTool:
+      tool: jobs_list
+      category: Jobs
+  - Wait: 500
+  - FillToolParam:
+      params:
+        status: open
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 16: Update the job
+  - SelectTool:
+      tool: jobs_update
+      category: Jobs
+  - Wait: 500
+  - FillToolParam:
+      params:
+        job_id: "{{ job_id }}"
+        notes: Updated requirements - must have Kubernetes experience
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 700
+
+  # Step 17: Create application
+  - SelectTool:
+      tool: applications_create
+      category: Applications
+  - Wait: 500
+  - FillToolParam:
+      params:
+        candidate_id: "{{ candidate_2_id }}"
+        job_id: "{{ job_id }}"
+  - ExecuteTool:
+      capture:
+        app_id: $.id
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 700
+
+  # Step 18: List applications for the job
+  - SelectTool:
+      tool: applications_list
+      category: Applications
+  - Wait: 500
+  - FillToolParam:
+      params:
+        job_id: "{{ job_id }}"
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 800
+
+  # Step 19: Reject the application
+  - SelectTool:
+      tool: applications_reject
+      category: Applications
+  - Wait: 500
+  - FillToolParam:
+      params:
+        application_id: "{{ app_id }}"
+        notes: Role requires more Kubernetes experience than candidate currently has
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 700
+
+  # Step 20: Execute rejection
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800

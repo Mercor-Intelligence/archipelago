@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the Tax Exposure Model and Remediation Plan, calculate the total cash outflow at remediation completion assuming penalties are fully abated under reasonable cause but interest accrues from original due dates through the remediation target date of March 15, 2025. Use the 8% IRS underpayment rate. Apply daily compounding per IRC §6622 using actual calendar days elapsed between dates, but per company policy use a flat 365-day divisor for the daily rate (i.e., daily rate = 8%/365 regardless of leap years). Report the total: Tax Due + Accrued Interest. Round to two decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the total is $5,644,513.56 (acceptable range $5,588,068.42 to... (ver_a2b98247598648d794735f846b88f054)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the total is $5,644,513.56 (acceptable range $5,588,068.42 to $5,700,958.70)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh accounting-world-801-km-2-ab2eda71"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_ab2eda7104c1445eae94d55bc1f5493b",
+    "task_name": "Accounting World 801 - KM_2",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_0fe16b4057ce4edeba315b488ae150e7",
+        "golden_text_response": "$5,644,513.56",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

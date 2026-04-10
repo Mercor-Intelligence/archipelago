@@ -1,0 +1,353 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 7” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nOnc Patient 7 comes to the oncology clinic for a follow-up visit with the oncologist. Based on the attached report, patient chart, and conversation with the physician, what is the most appropriate next treatment option? What are the dosing and frequency? What diagnoses in the patient's medical history could be a cause for concern, given the patient's treatment? What is the recommended monitoring and management? Explain your reasoning.\n\nAnswers should be in line with the most recent clinical guidelines as of January 9, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient has been diagnosed with a diffuse midline glioma. (ver_5d305c7b0a284046ba0ee1a88b78adaf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has been diagnosed with a diffuse midline glioma."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's cancer is H3K27M positive. (ver_f0a3014988a3446da3c7dfa07fbbcca6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's cancer is H3K27M positive."
+        }
+      ]
+    },
+    {
+      "name": "States that the most appropriate next treatment option is dordaviprone. (ver_87bf66f16ca74c03aa768c290679e793)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the most appropriate next treatment option is dordaviprone."
+        }
+      ]
+    },
+    {
+      "name": "States that dordaviprone is dosed at 625 mg. (ver_de9d8caf2cc4425e856978d7e77e938e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that dordaviprone is dosed at 625 mg."
+        }
+      ]
+    },
+    {
+      "name": "States that dordaviprone is dosed weekly. (ver_e000fb37ab414a54a3ed1adbd15bf2c7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that dordaviprone is dosed weekly."
+        }
+      ]
+    },
+    {
+      "name": "States that dordaviprone carries a risk of QT prolongation. (ver_8f29055c2bf7440ebcfdd3e36353f914)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that dordaviprone carries a risk of QT prolongation."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has heart failure. (ver_2469fb13c08e497fb4fe4ce3b567508f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has heart failure."
+        }
+      ]
+    },
+    {
+      "name": "States that heart failure can increase the patient's risk of QT prolongation. (ver_ea59b8825f924569b2072b173c356a14)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that heart failure can increase the patient's risk of QT prolongation."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient should be managed with serial electrocardiograms (ECG). (ver_55dc8ed92fde4b928eaaaf7106f136be)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient should be managed with serial electrocardiograms (ECG)."
+        }
+      ]
+    },
+    {
+      "name": "States that dordaviprone should be interrupted if the patient's QT interval is... (ver_a59cf655fd9146b28ec0ea7ea50e1cf2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that dordaviprone should be interrupted if the patient's QT interval is greater than 500 ms."
+        }
+      ]
+    },
+    {
+      "name": "States that dordaviprone should be interrupted if the patient's QT increases... (ver_9c071520350e443f9a0f1fc298a63dcd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that dordaviprone should be interrupted if the patient's QT increases more than 60 ms above baseline."
+        }
+      ]
+    },
+    {
+      "name": "States that dordaviprone should be resumed once the patient's QT returns to... (ver_6c8b537317c143ff985ca097b091ecc1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that dordaviprone should be resumed once the patient's QT returns to baseline."
+        }
+      ]
+    },
+    {
+      "name": "States that dordaviprone should be resumed once the patient's QT drops below... (ver_e13025e3ee93445f86ec9d31abc2b0f3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that dordaviprone should be resumed once the patient's QT drops below or equal to 480 ms."
+        }
+      ]
+    },
+    {
+      "name": "States that, if interrupted, dordaviprone should be resumed at a reduced dose. (ver_d552dc87b4894038a01402ee3a0d33fa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that, if interrupted, dordaviprone should be resumed at a reduced dose."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-onc-patient-7-diffuse-midline-glioma-david-r-86df5826"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_86df58262e634945b104c4f282ba3e6a",
+    "task_name": "Web Search_Attachments_Onc Patient 7 - Diffuse Midline Glioma - David R",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_ce4054a13db943e0b50756e3d141a00d",
+        "golden_text_response": "The patient comes to the oncology clinic to discuss a new primary tumor. The patient is diagnosed with a diffuse midline glioma. Lab testing shows the patient is positive for an H3 K27M mutation. The patient has already had radiation therapy, but the patient's disease is progressing. Therefore, the most appropriate next treatment option is dordaviprone, which is dosed at 625 mg orally once weekly. Dordaviprone carries a known, significant risk of QT prolongation. The patient carries a diagnosis of known heart failure, which can increase the risk of QT prolongation. This patient should be monitored with serial ECGs. If the patient's QT is found to be greater than 500 ms or if it increases more than 60 ms from baseline, dordaviprone should be stopped. Then, once the QT returns to baseline or drops below 480 ms, dordaviprone should be resumed at a reduced dose.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

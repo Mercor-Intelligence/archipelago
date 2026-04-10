@@ -1,0 +1,365 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_92f6dd020fd644e6a4ed94545e141501",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f0fdf21bbc02416fa9827bf0c5b50dd5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"-ous\" as one of the morphemes on the slide of morphemes most commonly missed by students",
+        "modality": "Free text",
+        "negative_criteria": "Lists something other than \"-ous\", \"-ion\", \"-ment\", \"-ity\", or \"-ness\" as one of the morphemes on the slide of morphemes most commonly missed by students.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": "This is requested in the prompt.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dc3ad6dad6c943a481c678038edb0259",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f0fdf21bbc02416fa9827bf0c5b50dd5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates that the morpheme \"-ous\" was missed by 40 students",
+        "modality": "Free text",
+        "negative_criteria": "Calculates that the morpheme \"-ous\" was missed by something other than 40 students.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": "A part of the prompt",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dcaa571e17084e7daf931846b9beece3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f0fdf21bbc02416fa9827bf0c5b50dd5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"-ion\" as one of the morphemes on the slide of morphemes most commonly missed by students",
+        "modality": "Free text",
+        "negative_criteria": "Lists something other than \"-ous\", \"-ion\", \"-ment\", \"-ity\", or \"-ness\" as one of the morphemes on the slide of morphemes most commonly missed by students.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": "Identified as a requirement in the prompt.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c9ff04c8a0b9484da37b3e58000c51b2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f0fdf21bbc02416fa9827bf0c5b50dd5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates that the morpheme \"-ion\" was missed by 39 students",
+        "modality": "Free text",
+        "negative_criteria": "Calculates that the morpheme \"-ion\" was missed by something other than 39 students.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": "Requested in the prompt.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_256fb218f907443389c12698c2aefa71",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f0fdf21bbc02416fa9827bf0c5b50dd5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Lists \"-ment\" as one of the morphemes on the slide of morphemes most commonly missed by students",
+        "modality": "Free text",
+        "negative_criteria": "Lists something other than \"-ous\", \"-ion\", \"-ment\", \"-ity\", or \"-ness\" as one of the morphemes on the slide of morphemes most commonly missed by students.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": "Requested in the prompt.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_746e260d757149e993ecd29b574c10e5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f0fdf21bbc02416fa9827bf0c5b50dd5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates that the morpheme \"-ment\" was missed by 38 students",
+        "modality": "Free text",
+        "negative_criteria": "Calculates that the morpheme \"-ment\" was missed by something other than 38 students.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": "Requested in the prompt.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f85272af4fcd4fee8dc1baa8084e0e82",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f0fdf21bbc02416fa9827bf0c5b50dd5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Creates a slide for the morpheme \"-ous\"",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": "Requested in prompt.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_57c41f3f70b64ae8a6462518de917a85",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f0fdf21bbc02416fa9827bf0c5b50dd5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Defines \"-ous\" as \"full of\" on the slide for the morpheme \"-ous\"",
+        "modality": "Free text",
+        "negative_criteria": "Defines \"-ous\" as something other than \"full of\" on the slide for the morpheme \"-ous\".",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": "From the prompt.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5505c6fb2783416b9cad8ae3e09159c1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f0fdf21bbc02416fa9827bf0c5b50dd5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes an example of a word containing the morpheme \"-ous\" on the slide for the morpheme \"-ous\", such as \"dangerous\" or \"joyous\"",
+        "modality": "Free text",
+        "negative_criteria": "Includes examples of words containing a morpheme other than \"-ous\" on the slide for the morpheme \"-ous\".",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": "From the prompt.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cb7e416881f041c29163d49ebd63c989",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f0fdf21bbc02416fa9827bf0c5b50dd5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Creates a slide for the morpheme \"-ion\"",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": "From the prompt.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 17,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9eb36bf18c2e41fa8ab96ec2dad0390e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f0fdf21bbc02416fa9827bf0c5b50dd5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Defines \"-ion\" as \"process of\" on the slide for the morpheme \"-ion\"",
+        "modality": "Free text",
+        "negative_criteria": "Defines \"-ion\" as something other than \"process of\" on the slide for the morpheme \"-ion\".",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": "From the prompt.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 18,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_58f8ff3db88d4e64a52558d63df7cb40",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f0fdf21bbc02416fa9827bf0c5b50dd5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes an example of a word containing the morpheme \"-ion\" on the slide for the morpheme \"-ion\", such as \"celebration\" or \"creation\"",
+        "modality": "Free text",
+        "negative_criteria": "Includes an example of a word containing a morpheme other than \"-ion\" on the slide for the morpheme \"-ion\".",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": "From the prompt.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 19,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b26dabb1c1a04f03824ac824ef9585c1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f0fdf21bbc02416fa9827bf0c5b50dd5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Creates a slide for the morpheme \"-ment\"",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": "Requested in the prompt.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 20,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5e108549470d4807be850a15e0464b6c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f0fdf21bbc02416fa9827bf0c5b50dd5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Defines \"-ment\" as \"state of\" or \"result of\" on the slide for the morpheme \"-ment\"",
+        "modality": "Free text",
+        "negative_criteria": "Defines \"-ment\" as something other than \"state of\" or \"result of\" on the slide for the morpheme \"-ment\".",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": "Requested from the prompt.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 21,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6e94ec73f09f467fbd1d661335266939",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f0fdf21bbc02416fa9827bf0c5b50dd5",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes an example of a word containing the morpheme \"-ment\" on the slide for the morpheme \"-ment\", such as \"development\" or \"movement\"",
+        "modality": "Free text",
+        "negative_criteria": "Includes an example of a word containing a morpheme other than \"-ment\" on the slide for the morpheme \"-ment\".",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "criteria_explanation": "From the prompt.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 22,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    },
+    {
+      "eval_config_id": "72d7d96a-9d94-4a38-bbe3-96c08ded727c",
+      "eval_config_name": "Content Length Check Verifier",
+      "eval_defn_id": "content_length_check",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

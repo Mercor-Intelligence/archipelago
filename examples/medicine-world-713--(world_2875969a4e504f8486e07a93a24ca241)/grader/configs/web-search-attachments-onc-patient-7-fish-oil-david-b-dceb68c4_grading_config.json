@@ -1,0 +1,248 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_f9b2a24a1c634408a97e08836641b175",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dceb68c44df84a0780589ae659217b63",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies that the patient has a history of Chronic Kidney Disease (CKD).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This criterion provided a relevant background medical history that is required for further understanding of the prompt. The patient has a history of CKD that has now progressed to dialysis-dependent end-stage renal disease, which requires maintenance dialysis. \n\nExcel file Onc_Patient 7.xlsx Sheet CLINICALNOTES Column D, Row 43 - \"Chief Complaint: SOB  HPI: MARCILE FUQUAY is a 76 y.o. female with medical history significant of hypertension, hyperlipidemia, diabetes mellitus, COPD on 2 L oxygen, right upper lobe bronchus cancer, rheumatoid arthritis, tobacco abuse, CKD stage IIIa, who presents with shortness breath.   Pt has confusion and is a poor historian.  Not sure about her baseline mental status.  I have tried to call her two sons without success.  History is limited.\"",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6b3afb3a5c8e41f29e941ee91b2817ad",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dceb68c44df84a0780589ae659217b63",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies that the patient has a persistently depressed eGFR of 6-8 ml/min/1.73m2.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient's new baseline eGFR also placed them in the new-dialysis start range, and it is important to their medication planning. \n\nPrompt: \"Patient 7 presents to their nephrology appointment for an initial new patient visit to discuss their most recent hospitalization for shortness of breath. The hospitalization required emergent dialysis due to severe pulmonary edema that would not respond to diuretics. They were found to have a new baseline eGFR 7.2 (5.7) mL/min/1.73 m(2) and are scheduled for AV fistula creation in the next month.\"",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bd6c5e418e7a4d37852fd5331f7f1f12",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dceb68c44df84a0780589ae659217b63",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies that the patient has an elevated creatinine of 5.2 mg/dl (acceptable range 5.1 to 5.3).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The elevated creatinine provided further evidence of renal failure; however, it is less relevant given the new HD. The normal labs with the elevated creatinine are expected for someone tolerating dialysis well. \n\nOnc_Patient 7 Labs DDB.pdf - \"Creatinine 5.2 mg/dl\"",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ce6b0d86f27c4ad88bc66dac0f389693",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dceb68c44df84a0780589ae659217b63",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient meets criteria for ongoing renal replacement therapy.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Indications for Dialysis - Dialysis has two main functions: solute clearance (waste removal) and ultrafiltration (volume removal). The mnemonic \u201cAEIOU\u201d includes the major indications for dialysis: Acidosis: if severe (pH <7.2) and refractory to HCO3 OR unable to give HCO3 due to volume overload. Electrolytes: usually hyperkalemia >6.5mmol/L OR lower with ECG changes. Temporize with calcium gluconate IV, D50+10units IV insulin, beta-agonist nebulizers, loop diuretic (if not ESRD and hypervolemic or euvolemic) and HCO3 (if pH <7.2).Ingestions: lithium or ethylene glycol.\nOverload: pulmonary edema that cannot be temporized with nitrates and large doses of loop diuretics (e.g., furosemide 160\u2013200mg IV). Uremia: symptomatic with encephalopathy, pericarditis, neuropathy, seizures, platelet dysfunction with severe bleeding, and intractable nausea/vomiting. While it is axiomatic that one should not delay renal support until the development of these conditions, there is little trial evidence that early intervention improves clinical outcomes (patient survival and kidney recovery) in AKI.\"\nhttps://hospitalhandbook.ucsf.edu/07-indications-dialysis/07-indications-dialysis",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4d63b2c9950c4b7c8eed66b5e96d0e31",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dceb68c44df84a0780589ae659217b63",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies that the patient has a history of peripheral vascular disease.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Excel file Onc_Patient 7.xlsx Sheet CLINICALNOTES Column D, Row 246 - \"Assessment & Plan:   1. Atherosclerosis of native artery of lower extremity with rest pain, unspecified laterality Tallahassee Memorial Hospital) Patient is doing  well mostly following femoral endarterectomy.  We have some slightly open areas we will use mupirocin ointment.  Sutures were removed and patient tolerated well.  Patient return to the office in 4 weeks with noninvasive studies as well as to evaluate his wounds.  The patient likely has some distal disease in the left lower extremity.  This will likely need to be treated at some point in time however we will let her groin wounds heal before it progresses to that point. \"",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1a0518ea19234c4aac1cad73d17f7803",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dceb68c44df84a0780589ae659217b63",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies that the patient has evidence of moderate multivessel coronary artery calcification.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Onc_Patient 7 Cardiac DDB.pdf - \"IMPRESSION: Moderate coronary artery calcification with multivessel calcified atherosclerotic plaque, resulting in mild to moderate luminal narrowing, most notable in the proximal to mid LAD. No definite high-grade (>70%) coronary stenosis was identified on this examination. Findings may be compatible with chronic coronary atherosclerotic disease. Clinical correlation is recommended.\"",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_86e8ec6071fd4af0bd276d8d5283f39d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dceb68c44df84a0780589ae659217b63",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has multiple high-risk cardiovascular features.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Atherosclerotic cardiovascular disease, otherwise known as ASCVD, is caused by plaque buildup in arterial walls and refers to conditions that include: Coronary Heart Disease (CHD), such as myocardial infarction, angina, and coronary artery stenosis. Cerebrovascular disease, such as a transient ischemic attack, ischemic stroke, and carotid artery stenosis.  Peripheral artery disease, such as claudication. Aortic atherosclerotic disease, such as abdominal aortic aneurysm and descending thoracic aneurysm. Currently, ASCVD- related conditions remain the leading cause of morbidity and mortality globally.\"\n\nhttps://www.heart.org/en/professional/quality-improvement/ascvd#:~:text=Atherosclerotic%20cardiovascular%20disease%2C%20otherwise%20known,angina%2C%20and%20coronary%20artery%20stenosis.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8205ad5c42a64604996a5d48442703e5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dceb68c44df84a0780589ae659217b63",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the additional medication now recommended is omega-3 fatty acid (fish oil).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"This multicenter, double-blinded, randomized trial involving 1228 participants treated with maintenance hemodialysis showed that the rate of serious cardiovascular events was approximately 40% lower (hazard ratio, 0.57; 95% CI, 0.47 to 0.70; P<0.001) among those who received 4 g of n\u22123 polyunsaturated fatty acids daily than among those who received a placebo. In the fish-oil group, the effects on the rates of the secondary end points, including the composite of all nonfatal cardiovascular events (nonfatal myocardial infarction, peripheral vascular disease leading to amputation, and nonfatal stroke) and death from any cause,  were in the same direction as the effect on the rate of all serious cardiovascular events (the primary end point). The benefits associated with supplementation with n\u22123 fatty acids appeared to be consistent among participants with or without a history of cardiovascular events. The rate of all serious cardiovascular events among the participants in the fish-oil group who had a previous cardiovascular event (0.43 per 1000 patient-days) appeared to be similar to that among the placebo recipients who had not had a previous cardiovascular event (0.45 per 1000 patient-days).\"\n\nLok CE, Farkouh M, Hemmelgarn BR, Moist LM, Polkinghorne KR, Tomlinson G, Tam P, Tonelli M, Udell JA; PISCES Investigators. Fish-Oil Supplementation and Cardiovascular Events in Patients Receiving Hemodialysis. N Engl J Med. 2026 Jan 8;394(2):128-137. doi: 10.1056/NEJMoa2513032. Epub 2025 Nov 7. PMID: 41201837.\n\n\n\"Fish oil supplements for patients on maintenance dialysis (November 2025) - Patients on dialysis are at high risk of cardiovascular (CV) morbidity and mortality. In a trial in which over 1200 patients on maintenance hemodialysis were randomly assigned to either high-dose fish oil supplementation or placebo, the rate of serious CV events (ie, CV death, nonfatal myocardial infarction, nonfatal stroke, and peripheral vascular disease leading to amputation) was lower in the fish oil group during 3.5 years of follow-up (0.31 versus 0.61 per 1000 patient-days) [5]. The benefit in patients without a history of CV disease (approximately two-thirds of the study population) was similar to that in patients with such a history. However, fish oil did not lead to a statistically significant reduction in all-cause mortality. Based on these data, we now suggest fish oil supplements for patients on maintenance dialysis. (See \"Secondary prevention of cardiovascular disease in end-stage kidney disease (dialysis)\", section on 'Fish oil'.)\"\n\nhttps://sso.uptodate.com/contents/whats-new-in-nephrology-and-hypertension",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1c3338bb18014af8b162169b144bf110",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dceb68c44df84a0780589ae659217b63",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies that omega-3 fatty acid is indicated for patients receiving maintenance dialysis.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"This multicenter, double-blinded, randomized trial involving 1228 participants treated with maintenance hemodialysis showed that the rate of serious cardiovascular events was approximately 40% lower (hazard ratio, 0.57; 95% CI, 0.47 to 0.70; P<0.001) among those who received 4 g of n\u22123 polyunsaturated fatty acids daily than among those who received a placebo. In the fish-oil group, the effects on the rates of the secondary end points, including the composite of all nonfatal cardiovascular events (nonfatal myocardial infarction, peripheral vascular disease leading to amputation, and nonfatal stroke) and death from any cause,  were in the same direction as the effect on the rate of all serious cardiovascular events (the primary end point). The benefits associated with supplementation with n\u22123 fatty acids appeared to be consistent among participants with or without a history of cardiovascular events. The rate of all serious cardiovascular events among the participants in the fish-oil group who had a previous cardiovascular event (0.43 per 1000 patient-days) appeared to be similar to that among the placebo recipients who had not had a previous cardiovascular event (0.45 per 1000 patient-days).\"\n\nLok CE, Farkouh M, Hemmelgarn BR, Moist LM, Polkinghorne KR, Tomlinson G, Tam P, Tonelli M, Udell JA; PISCES Investigators. Fish-Oil Supplementation and Cardiovascular Events in Patients Receiving Hemodialysis. N Engl J Med. 2026 Jan 8;394(2):128-137. doi: 10.1056/NEJMoa2513032. Epub 2025 Nov 7. PMID: 41201837.\n\n\n\"Fish oil supplements for patients on maintenance dialysis (November 2025) - Patients on dialysis are at high risk of cardiovascular (CV) morbidity and mortality. In a trial in which over 1200 patients on maintenance hemodialysis were randomly assigned to either high-dose fish oil supplementation or placebo, the rate of serious CV events (ie, CV death, nonfatal myocardial infarction, nonfatal stroke, and peripheral vascular disease leading to amputation) was lower in the fish oil group during 3.5 years of follow-up (0.31 versus 0.61 per 1000 patient-days) [5]. The benefit in patients without a history of CV disease (approximately two-thirds of the study population) was similar to that in patients with such a history. However, fish oil did not lead to a statistically significant reduction in all-cause mortality. Based on these data, we now suggest fish oil supplements for patients on maintenance dialysis. (See \"Secondary prevention of cardiovascular disease in end-stage kidney disease (dialysis)\", section on 'Fish oil'.)\"\n\nhttps://sso.uptodate.com/contents/whats-new-in-nephrology-and-hypertension",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4092a4aed2974709801f1d6fa70c943c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_dceb68c44df84a0780589ae659217b63",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies that omega-3 fatty acid is indicated for dialysis-dependent patients with significant atherosclerotic burden.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"This multicenter, double-blinded, randomized trial involving 1228 participants treated with maintenance hemodialysis showed that the rate of serious cardiovascular events was approximately 40% lower (hazard ratio, 0.57; 95% CI, 0.47 to 0.70; P<0.001) among those who received 4 g of n\u22123 polyunsaturated fatty acids daily than among those who received a placebo. In the fish-oil group, the effects on the rates of the secondary end points, including the composite of all nonfatal cardiovascular events (nonfatal myocardial infarction, peripheral vascular disease leading to amputation, and nonfatal stroke) and death from any cause,  were in the same direction as the effect on the rate of all serious cardiovascular events (the primary end point). The benefits associated with supplementation with n\u22123 fatty acids appeared to be consistent among participants with or without a history of cardiovascular events. The rate of all serious cardiovascular events among the participants in the fish-oil group who had a previous cardiovascular event (0.43 per 1000 patient-days) appeared to be similar to that among the placebo recipients who had not had a previous cardiovascular event (0.45 per 1000 patient-days).\"\n\nLok CE, Farkouh M, Hemmelgarn BR, Moist LM, Polkinghorne KR, Tomlinson G, Tam P, Tonelli M, Udell JA; PISCES Investigators. Fish-Oil Supplementation and Cardiovascular Events in Patients Receiving Hemodialysis. N Engl J Med. 2026 Jan 8;394(2):128-137. doi: 10.1056/NEJMoa2513032. Epub 2025 Nov 7. PMID: 41201837.\n\n\n\"Fish oil supplements for patients on maintenance dialysis (November 2025) - Patients on dialysis are at high risk of cardiovascular (CV) morbidity and mortality. In a trial in which over 1200 patients on maintenance hemodialysis were randomly assigned to either high-dose fish oil supplementation or placebo, the rate of serious CV events (ie, CV death, nonfatal myocardial infarction, nonfatal stroke, and peripheral vascular disease leading to amputation) was lower in the fish oil group during 3.5 years of follow-up (0.31 versus 0.61 per 1000 patient-days) [5]. The benefit in patients without a history of CV disease (approximately two-thirds of the study population) was similar to that in patients with such a history. However, fish oil did not lead to a statistically significant reduction in all-cause mortality. Based on these data, we now suggest fish oil supplements for patients on maintenance dialysis. (See \"Secondary prevention of cardiovascular disease in end-stage kidney disease (dialysis)\", section on 'Fish oil'.)\"\n\nhttps://sso.uptodate.com/contents/whats-new-in-nephrology-and-hypertension",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

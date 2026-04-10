@@ -1,0 +1,106 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_d21d209a528a496dbd9edd31ab5fb9c1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d607acb73512486a8786e41de4fca492",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the Total Instructional Days for Unit 2 is 20",
+        "modality": "Free text",
+        "negative_criteria": "",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_91dd7104a1cb47d08cf0f80ba04a8ff3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d607acb73512486a8786e41de4fca492",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the number of pages of reading left for the novel is 140 (acceptable range 139 to 141)",
+        "modality": "Free text",
+        "negative_criteria": "",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_def1e017a4a446f884dae3e720244b8b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d607acb73512486a8786e41de4fca492",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the number of pages of reading per instructional day is 7 (acceptable range 6.9 to 7.1)",
+        "modality": "Free text",
+        "negative_criteria": "",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_971d0094d21f4e1c8425aaa90958a602",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d607acb73512486a8786e41de4fca492",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the Unit END date is 12/02/2025 (acceptable range 11.9 to 12.1)",
+        "modality": "Free text",
+        "negative_criteria": "",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

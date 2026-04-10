@@ -1,0 +1,236 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_7364d5c960764ca3b78a233ead1fef5c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_105b69e18f5c42ebb947df271b05c47b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that one of the top 3 departments is \"Clinical Ops\"",
+        "modality": "Free text",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2170d3e5eb3c47c886f620a9999e1bc1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_105b69e18f5c42ebb947df271b05c47b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that one of the top 3 departments is \"IT\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fa9a70f697bb47b7a1eab81cd83e4f24",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_105b69e18f5c42ebb947df271b05c47b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that one of the top 3 departments is \"Training\"",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_22af73a63b554f7ab51b7b27f353529b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_105b69e18f5c42ebb947df271b05c47b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the number of weeks expected to be spent by \"Clinical Ops\" is 11 (acceptable range 10.9 to 11.1)",
+        "modality": "Free text",
+        "negative_criteria": "States that the number of weeks expected to be spent by \"Clinical Ops\" is a value other than 11",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_797f05ae3f334db0b66f1649f5c08a77",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_105b69e18f5c42ebb947df271b05c47b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the number of weeks expected to be spent by \"IT\" is 5",
+        "modality": "Free text",
+        "negative_criteria": "States that the number of weeks expected to be spent by \"IT\" is a value other than 5",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_661dc3cac952461ebb0b83639c3df923",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_105b69e18f5c42ebb947df271b05c47b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the number of weeks expected to be spent by \"Training\" is 4",
+        "modality": "Free text",
+        "negative_criteria": "States that the number of weeks expected to be spent by \"Training\" is a value other than 4",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_dad64645444c41e09ff8f917b1761c82",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_105b69e18f5c42ebb947df271b05c47b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the number of \"High\" probability risks associated with \"Clinical Ops\" is 3 (acceptable range 2.97 to 3.03)",
+        "modality": "Free text",
+        "negative_criteria": "States that the number of \"High\" probability risks associated with \"Clinical Ops\" is a value other than 3",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c9b6ac9088db43d68aa7529358bdfa36",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_105b69e18f5c42ebb947df271b05c47b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the number of \"High\" probability risks associated with \"IT\" is 2",
+        "modality": "Free text",
+        "negative_criteria": "States that the number of \"High\" probability risks associated with \"IT\" is a number other than 2",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fc2e76c4ef6541beb3b8519d5804d2f3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_105b69e18f5c42ebb947df271b05c47b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the number of \"High\" probability risks associated with \"Training\" is 1",
+        "modality": "Free text",
+        "negative_criteria": "States that the number of \"High\" probability risks associated with \"Training\" is a value other than 1",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4a51c65fbbbf424d8c7945f6603b6f0e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_105b69e18f5c42ebb947df271b05c47b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the client should implement the strategy.",
+        "modality": "Free text",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

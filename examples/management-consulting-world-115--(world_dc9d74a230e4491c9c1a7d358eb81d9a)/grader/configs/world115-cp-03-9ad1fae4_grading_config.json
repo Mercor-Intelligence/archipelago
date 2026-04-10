@@ -1,0 +1,212 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_61fd5a2304b045c8a24ce8c56828bd28",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9ad1fae42e6c4f749e111f62ebc7e930",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Scenario 1 Year 13 Free Cash Flow value is $2,341.53 (acceptable range $2,318.11 to $2,364.95)",
+        "negative_criteria": "States that the 25% Contingency model Year 13 Free Cash Flow value is any number other than $2,342",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e63508a314f64c699efcd03419f2bc31",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9ad1fae42e6c4f749e111f62ebc7e930",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Scenario 1 Year 20 Free Cash Flow value is -$72,587.43 (acceptable range $-73,313.30 to $-71,861.56)",
+        "negative_criteria": "States that the 25% Contingency model Year 20 Free Cash Flow value is any number other than -$72,587",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0c09d77f02f84e219f5f9775fe8d8ef6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9ad1fae42e6c4f749e111f62ebc7e930",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Scenario 1 Year 30 Free Cash Flow value is -$189,663.93 (acceptable range $-191,560.57 to $-187,767.29)",
+        "negative_criteria": "States that the 25% Contingency model Year 30 Free Cash Flow value is any number other than -$189,664",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a0cf164923c04e908c23f52414d0c099",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9ad1fae42e6c4f749e111f62ebc7e930",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Scenario 1 NPV value is $564,484,825.47 (acceptable range $558,839,977.22 to $570,129,673.72)",
+        "negative_criteria": "States that the 25% Contingency model NPV value is any number other than $564,484,825.47",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3cc87150658f42a4b433f0dcd582838d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9ad1fae42e6c4f749e111f62ebc7e930",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Scenario 1 IRR value is -23.75% (acceptable range -23.99% to -23.51%)",
+        "negative_criteria": "States that the 25% Contingency model IRR value is any number other than -23.75% ",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4fca646211c54fbbbb3ed0ba0e56dd97",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9ad1fae42e6c4f749e111f62ebc7e930",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Scenario 2 Year 11 Free Cash Flow value is -$23,415.30 (acceptable range $-23,649.45 to $-23,181.15)",
+        "negative_criteria": "States that the 40% Contingency model Year 11 Free Cash Flow value is any number other than -$23,415",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_89f15218294448e89db8b17bec7e1d87",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9ad1fae42e6c4f749e111f62ebc7e930",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Scenario 2 Year 18 Free Cash Flow value is -$84,295.08 (acceptable range $-85,138.03 to $-83,452.13)",
+        "negative_criteria": "States that the 40% Contingency model Year 18 Free Cash Flow value is any number other than -$84,295",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4ebb816d772d420495a8a01dbbd8ca57",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9ad1fae42e6c4f749e111f62ebc7e930",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Scenario 2 Year 26 Free Cash Flow value is -$177,956.28 (acceptable range $-179,735.84 to $-176,176.72)",
+        "negative_criteria": "States that the 40% Contingency model Year 26 Free Cash Flow value is any number other than -$177,956",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_eda7248f9b874bf2bd74a82f857f33c0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9ad1fae42e6c4f749e111f62ebc7e930",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Scenario 2 NPV value is $137,602,403.45 (acceptable range $136,226,379.42 to $138,978,427.48)",
+        "negative_criteria": "States that the 40% Contingency model NPV value is any number other than $137,602,403.45",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c582fec3240447298748a70c1fdc4810",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_9ad1fae42e6c4f749e111f62ebc7e930",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Scenario 2 IRR value is -14.94% (acceptable range -15.09% to -14.79%)",
+        "negative_criteria": "States that the 40% Contingency model IRR value is any number other than -14.94%",
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

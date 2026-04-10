@@ -1,0 +1,231 @@
+name: MCP Server Stage Tracker
+
+on:
+  # Run daily at 9 AM EST (14:00 UTC)
+  # schedule:
+  #   - cron: '0 14 * * *'
+
+  # Allow manual trigger from Actions tab
+  workflow_dispatch:
+
+# Ensure only one stage tracker runs at a time
+concurrency:
+  group: stage-tracker-${{ github.ref }}
+  cancel-in-progress: false
+
+# Environment variables to specify which server to analyze
+env:
+  MCP_SERVER_NAME: {{SERVER_NAME}}  # Change this to match your server directory name in mcp_servers/
+  DOMAIN: {{DOMAIN}}  # Domain category for this server
+
+jobs:
+  analyze-server:
+    name: Analyze MCP Server Stage
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Analyze MCP Server Stage
+        id: analyze
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          #!/bin/bash
+          set -euo pipefail
+
+          SERVER="${MCP_SERVER_NAME}"
+
+          echo "Analyzing $SERVER..."
+
+          # Verify server directory exists
+          if [ ! -d "mcp_servers/$SERVER" ]; then
+            echo "ERROR: Server directory 'mcp_servers/$SERVER' not found"
+            echo "Please update the MCP_SERVER_NAME environment variable in the workflow file"
+            exit 1
+          fi
+
+          # Load prompt from file
+          STAGE_PROMPT=$(cat .github/workflows/prompts/stage_determination.txt)
+
+          # Collect server context using dedicated script
+          echo "Collecting server context..."
+          if ! CONTEXT=$(bash scripts/ci/collect_server_context.sh "$SERVER" 2>&1); then
+            echo "ERROR: Failed to collect server context"
+            echo "$CONTEXT"
+            exit 1
+          fi
+          echo "Context collected successfully"
+
+          # Build full prompt (using printf to avoid YAML issues)
+          FULL_PROMPT=$(printf "%s\n\nCONTEXT PROVIDED:\n%s" "$STAGE_PROMPT" "$CONTEXT")
+
+          # Call Claude to determine stage (expects JSON output)
+          # Capture both stdout and stderr to debug Claude responses
+          # Temporarily disable set -e to capture exit code properly
+          set +e
+          CLAUDE_OUTPUT=$(echo "$FULL_PROMPT" | claude --print 2>&1)
+          CLAUDE_EXIT_CODE=$?
+          set -e
+
+          # Show what Claude responded (for debugging)
+          echo "=== Claude Response for $SERVER ==="
+          echo "$CLAUDE_OUTPUT"
+          echo "=== End Claude Response ==="
+          echo ""
+
+          # Check exit code first (primary validation)
+          if [ $CLAUDE_EXIT_CODE -ne 0 ]; then
+            echo "ERROR: Claude CLI failed with exit code $CLAUDE_EXIT_CODE"
+
+            # Provide helpful context based on error message
+            if echo "$CLAUDE_OUTPUT" | grep -qi "credit balance is too low"; then
+              echo "Credit balance is too low. Please add credits to your Anthropic account."
+            elif echo "$CLAUDE_OUTPUT" | grep -qi "api key"; then
+              echo "ANTHROPIC_API_KEY is not set or is invalid."
+            elif echo "$CLAUDE_OUTPUT" | grep -qi "authentication\|unauthorized"; then
+              echo "Authentication failed. Please check ANTHROPIC_API_KEY secret."
+            fi
+
+            exit 1
+          fi
+
+          # Extract JSON from Claude's response
+          # Try 1: Extract from markdown code block (```json ... ```)
+          if echo "$CLAUDE_OUTPUT" | grep -q '```json'; then
+            echo "Extracting JSON from markdown code block..."
+            STAGE_JSON=$(echo "$CLAUDE_OUTPUT" | sed -n '/```json/,/```/p' | sed '1d;$d')
+          # Try 2: Use Python JSON decoder (handles all other cases)
+          else
+            echo "Extracting JSON using Python decoder..."
+            STAGE_JSON=$(echo "$CLAUDE_OUTPUT" | python3 scripts/ci/extract_json.py)
+          fi
+
+          # Validate JSON structure before saving
+          if [ -z "$STAGE_JSON" ]; then
+            echo "WARNING: No JSON found in Claude response for $SERVER, using error fallback"
+            STAGE_JSON='{"stage":1,"tool_completion_pct":null,"flags":["no_json_found"],"stage_checks":{"foundation_complete":false,"tools_implemented":false,"ui_exists":false,"meta_tools_exist":false,"wiki_created":false,"guide_json_exists":false},"rationale":"No valid JSON object found in Claude response"}'
+          elif ! echo "$STAGE_JSON" | jq empty 2>/dev/null; then
+            echo "WARNING: Invalid JSON response from Claude for $SERVER, using error fallback"
+            STAGE_JSON='{"stage":1,"tool_completion_pct":null,"flags":["invalid_response"],"stage_checks":{"foundation_complete":false,"tools_implemented":false,"ui_exists":false,"meta_tools_exist":false,"wiki_created":false,"guide_json_exists":false},"rationale":"Invalid JSON response from Claude API"}'
+          else
+            # Validate required fields exist (check presence, not truthiness)
+            REQUIRED_FIELDS=("stage" "tool_completion_pct" "flags" "stage_checks" "rationale")
+            MISSING_FIELDS=""
+            for field in "${REQUIRED_FIELDS[@]}"; do
+              if ! echo "$STAGE_JSON" | jq -e "has(\"$field\")" >/dev/null 2>&1; then
+                MISSING_FIELDS="$MISSING_FIELDS $field"
+              fi
+            done
+
+            if [ -n "$MISSING_FIELDS" ]; then
+              echo "WARNING: Missing required fields for $SERVER:$MISSING_FIELDS, using error fallback"
+              STAGE_JSON='{"stage":1,"tool_completion_pct":null,"flags":["missing_fields"],"stage_checks":{"foundation_complete":false,"tools_implemented":false,"ui_exists":false,"meta_tools_exist":false,"wiki_created":false,"guide_json_exists":false},"rationale":"Claude response missing required fields:'"$MISSING_FIELDS"'"}'
+            fi
+          fi
+
+          # Extract stage number for logging
+          STAGE=$(echo "$STAGE_JSON" | jq -r '.stage // 1')
+
+          # Save to artifact file
+          mkdir -p artifacts
+          echo "$STAGE_JSON" > "artifacts/stage-analysis.json"
+
+          echo "$SERVER Stage $STAGE (saved to artifact)"
+
+      - name: Upload stage analysis artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage-analysis
+          path: artifacts/stage-analysis.json
+          retention-days: 90
+
+
+  consolidate-results:
+    name: Generate status.json
+    runs-on: ubuntu-latest
+    needs: analyze-server
+
+    steps:
+      - name: Download stage analysis artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: stage-analysis
+          path: artifacts/
+
+      - name: Generate status.json
+        run: |
+          #!/bin/bash
+          set -euo pipefail
+
+          echo "Generating status.json..."
+
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          SERVER_NAME="${MCP_SERVER_NAME}"
+          DOMAIN="${DOMAIN}"
+
+          # Read the stage analysis
+          STAGE_DATA=$(cat artifacts/stage-analysis.json)
+
+          # Validate JSON
+          if ! echo "$STAGE_DATA" | jq empty 2>/dev/null; then
+            echo "ERROR: Invalid JSON in stage-analysis.json"
+            exit 1
+          fi
+
+          # Create status.json with metadata using jq (prevents variable expansion issues)
+          jq -n \
+            --arg server_name "$SERVER_NAME" \
+            --arg domain "$DOMAIN" \
+            --arg last_updated "$TIMESTAMP" \
+            --argjson stage_data "$STAGE_DATA" \
+            '{
+              server_name: $server_name,
+              domain: $domain,
+              last_updated: $last_updated,
+              stage_data: $stage_data
+            }' > status.json
+
+          # Validate final JSON
+          if ! jq empty status.json 2>/dev/null; then
+            echo "ERROR: Generated status.json is invalid"
+            exit 1
+          fi
+
+          echo "Generated status.json:"
+          jq '.' status.json
+
+      - name: Upload status.json artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: status
+          path: status.json
+          retention-days: 90
+
+      - name: Create summary
+        if: always()
+        run: |
+          echo "## MCP Server Stage Tracker Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ -f "status.json" ]; then
+            STAGE=$(jq -r '.stage_data.stage' status.json)
+            RATIONALE=$(jq -r '.stage_data.rationale' status.json)
+
+            echo "**Stage Analysis Complete**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Server:** ${MCP_SERVER_NAME}" >> $GITHUB_STEP_SUMMARY
+            echo "**Current Stage:** $STAGE" >> $GITHUB_STEP_SUMMARY
+            echo "**Rationale:** $RATIONALE" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**Status generation failed**" >> $GITHUB_STEP_SUMMARY
+          fi

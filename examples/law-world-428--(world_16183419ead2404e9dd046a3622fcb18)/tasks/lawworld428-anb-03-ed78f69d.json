@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Liverbird Development Co. has engaged the City to determine if the City's property at 1141 Crenshaw is a suitable location for a mixed-use building with retail shops and apartments. Liverbird requires the city's approval. Does the City need to conduct an environmental impact study before giving Liverbird approval? "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the CEQA statute provides that feasibility and planning studies... (ver_4db473525e6a4d2f912b600aaf0f78c5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the CEQA statute provides that feasibility and planning studies are a statutory exemption where the municipality does not need to complete an environmental impact study."
+        }
+      ]
+    },
+    {
+      "name": "States that the City is not required to conduct an environmental impact study... (ver_35943dc80d4941a3a43659a7a3631604)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the City is not required to conduct an environmental impact study prior to approval of Liverbird's request."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh lawworld428-anb-03-ed78f69d"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_ed78f69de8a8483f93eb3d492a91273a",
+    "task_name": "LawWorld428_ANB_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_aa9c92a5e4ee435093ddae2d3d66738a",
+        "golden_text_response": "Under the section 15262 of the CEQA statute, dealing with feasibility and planning studies, the City does not need to conduct an environmental impact study prior to approving Liverbird's request to determine if 1141 Crenshaw is a suitable location for a mixed-use building (see 2024_CEQA_Statute_and_Guidelines_Handbook.pdf, p.296). The CEQA provides feasibility and planning studies as a statutory exemption where the municipality does not need to complete an environmental impact study.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

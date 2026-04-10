@@ -1,0 +1,496 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Utilizing final weighted grades for students in Team 2 and Team 5 for the most recent quarter, identify the two students from each team with the lowest grade. For these four students, provide their name, overall grade, and attendance rate.\nCreate a new document for the response. Round the overall grade & attendance to the nearest tenth. Classify \"Case Study,\" \"Historical Rat Study,\" and \"A Letter from Lamarck to Darwin\" as Classwork/Homework, and \"Hawksbeard Garden Experiment,\" \"Rat Modeling Investigation,\" \"Exploring Juncos' Environment,\" and \"Evolving Creatures Lb\" as Lab Reports/Projects."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Includes student McKay Jensen in the document (ver_221f88e8e4494de7b5ad7f8e4ad7c778)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes student McKay Jensen in the document."
+        }
+      ]
+    },
+    {
+      "name": "Includes 61.7% as the grade average for McKay Jensen in the document (ver_6156e03aca1e43efbd36ff5662201899)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes 61.7% as the grade average for McKay Jensen in the document."
+        }
+      ]
+    },
+    {
+      "name": "Includes something other than 61.7% as the grade average for McKay Jensen in... (ver_6156e03aca1e43efbd36ff5662201899)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes something other than 61.7% as the grade average for McKay Jensen in the documen."
+        }
+      ]
+    },
+    {
+      "name": "Includes 80% as the Attendance Rate for McKay Jensen in the document (ver_6ed9fad113f64f64ad0b00b17f1e78af)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes 80% as the Attendance Rate for McKay Jensen in the document."
+        }
+      ]
+    },
+    {
+      "name": "Includes a value other than 80% as the Attendance Rate for McKay Jensen in the... (ver_6ed9fad113f64f64ad0b00b17f1e78af)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a value other than 80% as the Attendance Rate for McKay Jensen in the document."
+        }
+      ]
+    },
+    {
+      "name": "Includes student Kenadee Sorensen in the document (ver_7e23fd61d094423eb81e1071d20854d0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes student Kenadee Sorensen in the document."
+        }
+      ]
+    },
+    {
+      "name": "Includes 72.0% as the grade average for Kenadee Sorensen in the document (ver_6735d838e7984f41af435a6dfe3bd376)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes 72.0% as the grade average for Kenadee Sorensen in the document."
+        }
+      ]
+    },
+    {
+      "name": "Includes something other than 72.0% as the grade average for Kenadee Sorensen... (ver_6735d838e7984f41af435a6dfe3bd376)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes something other than 72.0% as the grade average for Kenadee Sorensen in the document."
+        }
+      ]
+    },
+    {
+      "name": "Includes 94.4% as the Attendance Rate for Kenadee Sorensen in the document (ver_f138018c23ed4766b633f3182e15bab3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes 94.4% as the Attendance Rate for Kenadee Sorensen in the document."
+        }
+      ]
+    },
+    {
+      "name": "Includes a value other than 94.4% as the Attendance Rate for Kenadee Sorensen... (ver_f138018c23ed4766b633f3182e15bab3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a value other than 94.4% as the Attendance Rate for Kenadee Sorensen in the document."
+        }
+      ]
+    },
+    {
+      "name": "Includes student Brigham Powell in the document (ver_e26bbbabe6a74b02b0935111a2a460cd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes student Brigham Powell in the document."
+        }
+      ]
+    },
+    {
+      "name": "Includes 66.5% as the grade average for Brigham Powell in the document (ver_9e17864a6d0a4a2183616c1f1eb5b5a4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes 66.5% as the grade average for Brigham Powell in the document."
+        }
+      ]
+    },
+    {
+      "name": "Includes something other than 66.5% as the grade average for Brigham Powell in... (ver_9e17864a6d0a4a2183616c1f1eb5b5a4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes something other than 66.5% as the grade average for Brigham Powell in the document."
+        }
+      ]
+    },
+    {
+      "name": "Includes 94.4% as the Attendance Rate for Brigham Powell in the document (ver_20416525f9c14194a595886afd926a1b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes 94.4% as the Attendance Rate for Brigham Powell in the document."
+        }
+      ]
+    },
+    {
+      "name": "Includes a value other than 94.4% as the Attendance Rate for Brigham Powell in... (ver_20416525f9c14194a595886afd926a1b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a value other than 94.4% as the Attendance Rate for Brigham Powell in the document."
+        }
+      ]
+    },
+    {
+      "name": "Includes student Phoebe Evans in the document (ver_c368cc6c56384b009650b29cd98c5968)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes student Phoebe Evans in the document."
+        }
+      ]
+    },
+    {
+      "name": "Includes 70.4% as the grade average for Phoebe Evans in the document (ver_6b591d35149b422a823171d6f2f2f767)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes 70.4% as the grade average for Phoebe Evans in the document."
+        }
+      ]
+    },
+    {
+      "name": "Includes something other than 70.4% as the grade average for Phoebe Evans in... (ver_6b591d35149b422a823171d6f2f2f767)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes something other than 70.4% as the grade average for Phoebe Evans in the document."
+        }
+      ]
+    },
+    {
+      "name": "Includes 96.7% as the Attendance Rate for Phoebe Evans in the document (ver_6c9fb43b9d3b4cf2bc7be0aa9f6d167e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes 96.7% as the Attendance Rate for Phoebe Evans in the document."
+        }
+      ]
+    },
+    {
+      "name": "Includes a value other than 96.7% as the Attendance Rate for Phoebe Evans in... (ver_6c9fb43b9d3b4cf2bc7be0aa9f6d167e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Includes a value other than 96.7% as the Attendance Rate for Phoebe Evans in the document."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-306-rc-02-natural-prompt-f50757c0"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_576565f6cc9649d7b3d56ec4763d3f7e",
+    "world_name": "Teaching World 306",
+    "task_id": "task_f50757c06e114350bc37559227d03a0e",
+    "task_name": "world 306_rc_02 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_191700137f274382bdad0b885f7cf4a9",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_2d83202c57bb4677a84f4cff6e3ce433"
+      },
+      {
+        "golden_response_id": "gold_52ab6ac986a6470fb5ce7a1727a33159",
+        "golden_text_response": "See attached document",
+        "golden_file_responses": "snap_2d83202c57bb4677a84f4cff6e3ce433"
+      }
+    ]
+  }
+}

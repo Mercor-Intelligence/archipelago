@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "SingleSignal is starting to implement our future state Customer Success organization from the recent workforce and hiring pipeline assessment. Effective immediately, the CS department will be divided into two divisions, with the VP of Customer Experience leading both. The HR team also created an initial future state organization design. \n\nDo the following using the attached CS Department Future State file and BambooHR employee data for the realigned team:\n1) Create the new Divisions in Bamboo as listed in the future state - State the number of new Divisions created.\n2) Move the employees to their new Division in the system - State the number of employees you've updated Division information for.\n3) State the average span of control for the new divisions once the future state is fully implemented.\n\nWe aren't focused on L2, so ignore the VP of Customer Experience in any calculations. Put your final answer in the console, rounded to two decimals for span of control and rounded to nearest integer otherwise."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of new Divisions created in BambooHR is 2 (acceptable... (ver_b6f37e22c7ab4a6ca8d829d73e75a59d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of new Divisions created in BambooHR is 2 (acceptable range 1.98 to 2.02)."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of employees with Division information being updated is... (ver_d717f35fa18c4dc4ae9dd0fae293b11e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of employees with Division information being updated is 25 (acceptable range 24.8 to 25.2)."
+        }
+      ]
+    },
+    {
+      "name": "States the the average span of control in the Industry Solutions division once... (ver_01bd0d54fd164d5ebb74bf6d3d1719c5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the the average span of control in the Industry Solutions division once the future state organization is fully implemented is 3.20 (acceptable range 3.17 to 3.23)."
+        }
+      ]
+    },
+    {
+      "name": "States the the average span of control in the Public Sector division once the... (ver_0f95e76115654276a2450c404cf3be62)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the the average span of control in the Public Sector division once the future state organization is fully implemented is 2.67 (acceptable range 2.64 to 2.70)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world601-cl-08-13382d0e"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_13382d0e3109444191eab5d5c86eba6c",
+    "task_name": "World601_CL_08",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_6ba8f019113d4e6f85cefcf22f5e048b",
+        "golden_text_response": "1) The number of new Divisions created in BambooHR is 2\n2) The number of employees with Division information being updated is 25\n\n3) Average Span for Customer Success Divisions (excluding VP of Customer Experience:\nIndustry Solutions: 3.20\nPublic Sector: 2.67",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

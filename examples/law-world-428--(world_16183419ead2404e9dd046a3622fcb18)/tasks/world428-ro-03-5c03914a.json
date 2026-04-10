@@ -1,0 +1,238 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Based on the attached progress report request spreadsheet, determine if each of these requests from the City of San Dimas to Liverbird are valid under the redevelopment negotiating agreement. Create a new column in the spreadsheet that states either yes or no for each of the requests. Then create a second column that provides specific citations for each answer."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States yes in cell D2 (ver_3242eb02484648828134857b42c3140e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States yes in cell D2."
+        }
+      ]
+    },
+    {
+      "name": "States no in cell D3 (ver_6f7a1d26dc7e452eb14e661883ae2a6a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States no in cell D3."
+        }
+      ]
+    },
+    {
+      "name": "States no in cell D4 (ver_7be402943fa8438b94b313bcd9c215af)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States no in cell D4."
+        }
+      ]
+    },
+    {
+      "name": "States no in cell D5 (ver_da03117120cb4246a63133d9892b67fa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States no in cell D5."
+        }
+      ]
+    },
+    {
+      "name": "States section 6.7 of the Final ENA in cell E2 (ver_27a7d8012134473497b4b4c9edb51e91)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States section 6.7 of the Final ENA in cell E2."
+        }
+      ]
+    },
+    {
+      "name": "States section 18 of the Final ENA in cell E2 (ver_5908c25667e84fb1aba8b5a5339ab62b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States section 18 of the Final ENA in cell E2."
+        }
+      ]
+    },
+    {
+      "name": "States section 6.7 of the Final ENA in cell E3 (ver_458f9b885b6c4f09a6797ae48a3ca26e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States section 6.7 of the Final ENA in cell E3."
+        }
+      ]
+    },
+    {
+      "name": "States section 18 of the Final ENA in cell E4 (ver_cf4c4128b6ee4148abc14ec3f9660d0b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States section 18 of the Final ENA in cell E4."
+        }
+      ]
+    },
+    {
+      "name": "States section 18 of the Final ENA in cell E5 (ver_a0ef674c600f4170bb256c2d87c263f8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States section 18 of the Final ENA in cell E5."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world428-ro-03-5c03914a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_16183419ead2404e9dd046a3622fcb18",
+    "world_name": "Law World 428",
+    "task_id": "task_5c03914ae4314c95bbd9dae598eae47c",
+    "task_name": "World428_RO_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_1a37a14f901843af9d4df1b8c215d782",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_f55841b2b1fb4db68e5dc0517be333b0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "We need to optimize the administrative workforce. I need you to upload employee_workforce_master data to Bamboo and reduce total salary spend by at least 30% (but once reached don't lay off anyone else) in each administrative department (except for executive leadership, which should be resized to match the updated org structure attached and apply the same tenure-based prioritization to determine who is retained)? Please prioritize the lay off of the employees with the shortest tenure at the company and just state how many employees were laid off in the console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that based on reducing total salary spend by at least 30% in each... (ver_fa0727e179474f0393f013c4a1807ee6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on reducing total salary spend by at least 30% in each administrative department (prioritizing shortest tenure) and resizing Executive Leadership to new executive org structure, the total number of employees laid off is 314."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh 602-mb-1-294bea69"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_294bea690f794ff795e297ee6752654d",
+    "task_name": "602 - MB_1",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_2ad52cd600364b89986fcec49f0eb239",
+        "golden_text_response": "Based on reducing total salary spend by at least 30% in each administrative department (prioritizing shortest tenure) and resizing Executive Leadership to new executive org structure, the total number of employees laid off is 314.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

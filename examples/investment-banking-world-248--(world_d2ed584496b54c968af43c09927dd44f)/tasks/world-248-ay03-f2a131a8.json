@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Revise the MTSI merger analysis in the model as follows:\n1.\tChange % cash consideration to 10%\n2.\tChange % SG&A synergies to 80%\n3.\tChange % Bid Premium to 25%\n4.\tUpdate the share price for RMBS and MTSI to the closing price at 01/07/2026.\nCalculate and output the following:\n1.\t% Value Accretion/(Dilution) to RMBS Shareholders\n2.\t% Value Accretion/(Dilution) to MTSI Shareholders\nRound all % to 2 decimal places.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the % Value Accretion/(Dilution) to RMBS Shareholders is (3.00%) (ver_20919e1d998d4a88992efd76549e7e82)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the % Value Accretion/(Dilution) to RMBS Shareholders is (3.00%)."
+        }
+      ]
+    },
+    {
+      "name": "States the % Value Accretion/(Dilution) to MTSI Shareholders is 9.13%... (ver_6613bdbb48434e6e9dd3d302e5c2bd4f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the % Value Accretion/(Dilution) to MTSI Shareholders is 9.13% (acceptable range 9.04% to 9.22%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-248-ay03-f2a131a8"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_f2a131a8adbd4192a551647acbc2b92e",
+    "task_name": "World 248_AY03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_027e9794824a4d8f826ba707ba0bf49a",
+        "golden_text_response": "1.\t% Value Accretion/(Dilution) to RMBS Shareholders is (3.00%)\n2.\t% Value Accretion/(Dilution) to MTSI Shareholders is 9.13%\n",
+        "golden_file_responses": "snap_219f2fd6a07349fdada2a742543eba4f"
+      }
+    ]
+  }
+}

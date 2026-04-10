@@ -1,0 +1,305 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_12d9bc2ab65a4f8987d1c87a905ab194",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c7bd20fe22b645c8a597b768426e8908",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient\u2019s head CT shows no evidence of intracranial hemorrhage.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The attached radiology report (radiology-report-raymond-finkle.pdf) states \"No hemorrhage\" and \"Normal age-appropriate CT head\".",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "radiology-report-raymond-finkle.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_0aafae5ffdb847cd90aa5a3d5b8f5915"
+          }
+        ]
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d9902d84779c495ea37dada6dacdfaf6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c7bd20fe22b645c8a597b768426e8908",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient\u2019s head CT was performed within 6 hours of the onset of the headache.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The attached AI scribe conversation between the resident and the attending physician (AI Scribe Conversation ED Headache patient.pdf) states \"Today, the headache came on abruptly about 3 hours ago,\" and then states \"Head CT is done and the report should be back any minute\".",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "AI Scribe Conversation ED Headache patient.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_0aafae5ffdb847cd90aa5a3d5b8f5915"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_110c7a46e11a4f7988102534ac7efa70",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c7bd20fe22b645c8a597b768426e8908",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that a normal head CT scan within 6 hours of the onset of the headache precludes the need for a lumbar puncture.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The American College of Emergency Physicians (ACEP) released a policy in 2019 with level B evidence stating that \"Use a normal noncontrast\nhead CT* performed within 6 hours of symptom onset in an ED headache patient with a normal neurologic examination, to rule out nontraumatic SAH\". [https://www.annemergmed.com/article/S0196-0644(19)31168-0/pdf] This policy was later endorsed by The American Headache Society. \"The following commentary on these guidelines is intended to support and expand on these guidelines from the Headache specialists\u2019 perspective, written on behalf of the Refractory, In-patient, Emergency Care section of the American Headache Society\". [https://headachejournal.onlinelibrary.wiley.com/doi/10.1111/head.13744]",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f5ca891bb5d841a8b1f48cb32be3f1eb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c7bd20fe22b645c8a597b768426e8908",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient should not receive a lumbar puncture.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The resident asks the attending if the patient needs a head CT presumably due to the abrupt onset of the headache and it being described as the \"worst headache of his life\u201d. However, applying this ACEP clinical policy to this patient who has a normal neurological examination and a normal head CT scan performed within 6 hours of the onset of the headache, the patient would not require a lumbar puncture to rule out a subarachnoid hemorrhage. This would expose the patient to unnecessary risk and pain. ",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "AI Scribe Conversation ED Headache patient.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_0aafae5ffdb847cd90aa5a3d5b8f5915"
+          },
+          {
+            "name": "radiology-report-raymond-finkle.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_0aafae5ffdb847cd90aa5a3d5b8f5915"
+          }
+        ]
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_09a0bb84ff81475fb596712b19333220",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c7bd20fe22b645c8a597b768426e8908",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Utilizes the 2025 American Headache Society guideline for managing a migraine headache in an emergency setting. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "2025 guideline update to acute treatment of migraine for adults in the emergency department: The American Headache Society evidence assessment of parenteral pharmacotherapies.\nhttps://pubmed.ncbi.nlm.nih.gov/41321235/",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_412ed51e100f4ac5b053f421867d15ce",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c7bd20fe22b645c8a597b768426e8908",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that prochlorperazine intravenous is one of the Level A evidence for managing a migraine headache.  ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Prochlorperazine IV and GONB (a greater occipital nerve block) must be offered to eligible adults presenting to the ED with a migraine attack for treatment of headache requiring parenteral therapy (level A \u2013 must offer) in those without contraindications, while hydromorphone IV must not be offered (level A \u2013 must not offer)\" is from \"2025 guideline update to acute treatment of migraine for adults in the emergency department: The American Headache Society evidence assessment of parenteral pharmacotherapies\". [https://headachejournal.onlinelibrary.wiley.com/doi/epdf/10.1111/head.70016]",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e80715bd525e41b8b130bdcada7db94a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c7bd20fe22b645c8a597b768426e8908",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that a greater occipital nerve block is one of the Level A evidence for managing a migraine headache. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Prochlorperazine IV and GONB (a greater occipital nerve block) must be offered to eligible adults presenting to the ED with a migraine attack for treatment of headache requiring parenteral therapy (level A \u2013 must offer) in those without contraindications, while hydromorphone IV must not be offered (level A \u2013 must not offer)\" is from \"2025 guideline update to acute treatment of migraine for adults in the emergency department: The American Headache Society evidence assessment of parenteral pharmacotherapies\". [https://headachejournal.onlinelibrary.wiley.com/doi/epdf/10.1111/head.70016]",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_708274ed21ae435ab188bf321dbaabb1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c7bd20fe22b645c8a597b768426e8908",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies that Level A evidence is a must-offer recommendation.  ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Prochlorperazine IV and GONB (a greater occipital nerve block) must be offered to eligible adults presenting to the ED with a migraine attack for treatment of headache requiring parenteral therapy (level A \u2013 must offer) in those without contraindications, while hydromorphone IV must not be offered (level A \u2013 must not offer)\" is from \"2025 guideline update to acute treatment of migraine for adults in the emergency department: The American Headache Society evidence assessment of parenteral pharmacotherapies\". [https://headachejournal.onlinelibrary.wiley.com/doi/epdf/10.1111/head.70016]",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5bc21e5b3c6d407c83af308a21c55ab9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c7bd20fe22b645c8a597b768426e8908",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has already received IV prochlorperazine.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The attached AI script (AI Scribe Conversation ED Headache patient.pdf) states that \"I have given him my normal headache cocktail of fluids, Compazine and Benadryl\". Prochlorperazine is the generic name of Compazine.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "AI Scribe Conversation ED Headache patient.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_0aafae5ffdb847cd90aa5a3d5b8f5915"
+          }
+        ]
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7df87156ba6146f18118511f04ad3f4a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c7bd20fe22b645c8a597b768426e8908",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that this patient has no contraindications to the administration of a greater occipital nerve block.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Review of the patient's chart (Cards_Patient 14), shows that the patient has no allergies to local anesthetics such as bupivacaine or lidocaine. \"Allergies  Allergen Reactions Statins Other (See Comments)   Causes muscle cramps.   Pneumococcal Vaccines   UNSPECIFIED REACTION\". [CLINICALNOTES - H&P - Column D - Row 140] \n\nAdditionally, although not an absolute contraindication to performing an occipital nerve block, the patient was discontinued from apixaban in one of the last notes in the chart, which will reduce the risk of bleeding. \"History of atrial fibrillation-patient is status post Maze procedure with clipping of his left atrial appendage.  He remains in sinus rhythm after amiodarone was discontinued.  Will discontinue apixaban\". [CLINICALNOTES - Progress Notes - Column D - Row 165]",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_abbd007cdbdb49a5acba8aec678036f6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c7bd20fe22b645c8a597b768426e8908",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the single best remaining treatment for the patient\u2019s migraine headache should be a greater occipital nerve block.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient had already received prochlorperazine; therefore, the only remaining treatment that has level A evidence is a greater occipital nerve block. There are no contraindications to this procedure noted in the patient's chart. ",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

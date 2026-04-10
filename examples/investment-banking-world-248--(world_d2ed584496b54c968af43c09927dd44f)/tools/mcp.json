@@ -1,0 +1,56 @@
+{
+  "mcpServers": {
+    "bloomberg": {
+      "transport": "http",
+      "url": "http://localhost:8100/mcp/"
+    },
+    "calendar": {
+      "transport": "http",
+      "url": "http://localhost:8101/mcp/"
+    },
+    "chat": {
+      "transport": "http",
+      "url": "http://localhost:8102/mcp/"
+    },
+    "code_execution": {
+      "transport": "http",
+      "url": "http://localhost:8103/mcp/"
+    },
+    "edgar_sec": {
+      "transport": "http",
+      "url": "http://localhost:8104/mcp/"
+    },
+    "excel": {
+      "transport": "http",
+      "url": "http://localhost:8105/mcp/"
+    },
+    "filesystem": {
+      "transport": "http",
+      "url": "http://localhost:8106/mcp/"
+    },
+    "fmp": {
+      "transport": "http",
+      "url": "http://localhost:8107/mcp/"
+    },
+    "mail": {
+      "transport": "http",
+      "url": "http://localhost:8108/mcp/"
+    },
+    "pdfs": {
+      "transport": "http",
+      "url": "http://localhost:8109/mcp/"
+    },
+    "powerpoint": {
+      "transport": "http",
+      "url": "http://localhost:8110/mcp/"
+    },
+    "terrapin": {
+      "transport": "http",
+      "url": "http://localhost:8111/mcp/"
+    },
+    "word": {
+      "transport": "http",
+      "url": "http://localhost:8112/mcp/"
+    }
+  }
+}

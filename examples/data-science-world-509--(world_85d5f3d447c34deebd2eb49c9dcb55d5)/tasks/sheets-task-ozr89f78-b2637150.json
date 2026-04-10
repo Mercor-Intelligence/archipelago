@@ -1,0 +1,376 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "I am interested in learning more about the small set of borrowers with the highest critical exposure. Save the data from 'risk_integrated_data.csv' as an Excel file and use this to perform the rest of the analysis. Using the Excel file, first identify the top borrower for each industry with the single highest individual expected loss amount record (a.k.a. critical exposure). Do not aggregate or average the expected loss amounts per borrower.\n\nNext, create a new worksheet called 'Final' where for each of the aforementioned borrowers, report their change in liquid cash (new - old) from the earliest available month to the latest available month, relative to each borrower, rounded to 3 decimal places. Liquid cash, in this scenario, is calculated as the current balance - real world asset amount. Finally, in the same worksheet 'Final', make a recommendation of which one borrower should should be removed from future loans based on the largest decrease in liquid cash (most negative change).\n\nFor each top critical exposure borrower by industry, only report the change in liquid cash and recommendation of company to remove from future loans. Create any helper worksheets as needed and make sure to use Excel formulas (not hard-coded values) so results automatically update if any of the underlying data changes."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Identifies Company_13127_Manufacturing as the top critical exposure borrower... (ver_16c75ec58c7a431fadb5b709e45495ea)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Company_13127_Manufacturing as the top critical exposure borrower for the Manufacturing industry."
+        }
+      ]
+    },
+    {
+      "name": "Reports Company_13127_Manufacturing has a change in liquid cash of... (ver_cca12cac8d13483f8b4800792d879e2f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Company_13127_Manufacturing has a change in liquid cash of -422,860.635 +/- 100."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Company_13087_Logistics as the top critical exposure borrower for... (ver_90aeef3ad0a545778f266359c7ba4c63)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Company_13087_Logistics as the top critical exposure borrower for the Logisitics industry."
+        }
+      ]
+    },
+    {
+      "name": "Reports Company_13087_Logistics has a change in liquid cash of -349,280.845... (ver_b1f1ecd2270e404c9b2c09aba5bbccbe)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Company_13087_Logistics has a change in liquid cash of -349,280.845 +/- 100."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Company_12291_Retail as the top critical exposure borrower for the... (ver_87c2c1c416bf4ed3b38ba19880ab6875)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Company_12291_Retail as the top critical exposure borrower for the Retail industry."
+        }
+      ]
+    },
+    {
+      "name": "Reports Company_12291_Retail has a change in liquid cash of -425,633.400 +/- 100 (ver_61395e3b5e7c4e34a6f6d8cda19c9228)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Company_12291_Retail has a change in liquid cash of -425,633.400 +/- 100."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Company_12613_Healthcare as the top critical exposure borrower for... (ver_a1aa18b1a3c346b3aa13078426b7ca66)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Company_12613_Healthcare as the top critical exposure borrower for the Healthcare industry."
+        }
+      ]
+    },
+    {
+      "name": "Reports Company_12613_Healthcare has a change in liquid cash of -412,774.388... (ver_e283276e21f8400aba6a0cdf53e32182)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Company_12613_Healthcare has a change in liquid cash of -412,774.388 +/- 100."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Company_13312_Hospitality as the top critical exposure borrower for... (ver_ccc44fe1c18a4eb1928bc82647857660)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Company_13312_Hospitality as the top critical exposure borrower for the Hospitality industry."
+        }
+      ]
+    },
+    {
+      "name": "Reports Company_13312_Hospitality has a change in liquid cash of -407,631.905... (ver_8003bc8ebfbc4d7a95efbb1a0add3759)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Company_13312_Hospitality has a change in liquid cash of -407,631.905 +/- 100 (acceptable range -411,708.224 to -403,555.586)."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Company_10419_Technology as the top critical exposure borrower for... (ver_aae0559785f144ea82c581bd60d45ee6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Company_10419_Technology as the top critical exposure borrower for the Technology industry."
+        }
+      ]
+    },
+    {
+      "name": "Reports Company_10419_Technology has a change in liquid cash of -411,802.005... (ver_9ba81817efa94ead80d8a86f21491f51)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Company_10419_Technology has a change in liquid cash of -411,802.005 +/- 100."
+        }
+      ]
+    },
+    {
+      "name": "Identifies Company_10572_Construction as the top critical exposure borrower... (ver_4d701277d2d84faabd9580b627c9ea2a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies Company_10572_Construction as the top critical exposure borrower for the Construction industry."
+        }
+      ]
+    },
+    {
+      "name": "Reports Company_10572_Construction has a change in liquid cash of 0 +/- 100 (ver_9f0c6019a21246bf87f76920559f2c9b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports Company_10572_Construction has a change in liquid cash of 0 +/- 100."
+        }
+      ]
+    },
+    {
+      "name": "Reports the company to remove from future loans as Company_12291_Retail. (ver_2043b73312104973b576c730803b8387)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the company to remove from future loans as Company_12291_Retail."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sheets-task-ozr89f78-b2637150"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_b2637150dde0427dad5514b0afee84bf",
+    "task_name": "Sheets - Task ozr89f78",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_621425c11aae4001bc55af02d194850d",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_8fd12e15dba74452a29bd41aa0f76514"
+      }
+    ]
+  }
+}

@@ -3,8 +3,8 @@ from datetime import datetime
 from re import Pattern
 from typing import ClassVar, Literal
 
-from mcp_schema import FlatBaseModel, OutputBaseModel
-from pydantic import ConfigDict, Field, field_validator, model_validator
+from mcp_schema import GeminiBaseModel
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 from utils.config import (
     DEFAULT_LIST_LIMIT,
     MAX_DESCRIPTION_LENGTH,
@@ -14,7 +14,7 @@ from utils.config import (
 )
 
 
-class CalendarEventAttendee(OutputBaseModel):
+class CalendarEventAttendee(BaseModel):
     """Model for an event attendee."""
 
     model_config = ConfigDict(extra="forbid")
@@ -46,7 +46,7 @@ class CalendarEventAttendee(OutputBaseModel):
         return value
 
 
-class CalendarEventReminder(OutputBaseModel):
+class CalendarEventReminder(BaseModel):
     """Model for an event reminder override."""
 
     model_config = ConfigDict(extra="forbid")
@@ -62,7 +62,7 @@ class CalendarEventReminder(OutputBaseModel):
     )
 
 
-class CalendarEventDateTime(OutputBaseModel):
+class CalendarEventDateTime(BaseModel):
     """Model for event date/time."""
 
     model_config = ConfigDict(extra="forbid")
@@ -114,7 +114,7 @@ class CalendarEventDateTime(OutputBaseModel):
             ) from e
 
 
-class CalendarEventReminders(OutputBaseModel):
+class CalendarEventReminders(BaseModel):
     """Model for event reminders."""
 
     model_config = ConfigDict(extra="forbid")
@@ -129,7 +129,7 @@ class CalendarEventReminders(OutputBaseModel):
     )
 
 
-class CalendarOutputEvent(OutputBaseModel):
+class CalendarOutputEvent(BaseModel):
     """Output model for a complete calendar event (standard JSON Schema for jsonschema.validate)."""
 
     model_config = ConfigDict(extra="forbid")
@@ -266,7 +266,7 @@ class CalendarOutputEvent(OutputBaseModel):
         return "\n".join(lines)
 
 
-class CalendarInputEvent(FlatBaseModel):
+class CalendarInputEvent(GeminiBaseModel):
     """Input model for a complete calendar event (flattened for Gemini function calling)."""
 
     model_config = ConfigDict(extra="forbid")
@@ -324,7 +324,7 @@ class CalendarInputEvent(FlatBaseModel):
 CalendarEvent = CalendarOutputEvent
 
 
-class CreateEventInput(FlatBaseModel):
+class CreateEventInput(GeminiBaseModel):
     """Input model for creating a calendar event."""
 
     model_config = ConfigDict(extra="forbid")
@@ -394,7 +394,7 @@ class CreateEventInput(FlatBaseModel):
         return value
 
 
-class UpdateEventInput(FlatBaseModel):
+class UpdateEventInput(GeminiBaseModel):
     """Input model for updating a calendar event."""
 
     model_config = ConfigDict(extra="forbid")
@@ -467,7 +467,7 @@ class UpdateEventInput(FlatBaseModel):
         return value
 
 
-class EventSummary(OutputBaseModel):
+class EventSummary(BaseModel):
     """Summary model for listing events."""
 
     model_config = ConfigDict(extra="ignore")
@@ -500,7 +500,7 @@ class EventSummary(OutputBaseModel):
         )
 
 
-class EventResponse(OutputBaseModel):
+class EventResponse(BaseModel):
     """Response model for event operations."""
 
     model_config = ConfigDict(extra="forbid")
@@ -537,7 +537,7 @@ class EventResponse(OutputBaseModel):
         return f"{self.message} (Event ID: {self.event_id})"
 
 
-class CreateEventRequest(FlatBaseModel):
+class CreateEventRequest(GeminiBaseModel):
     """Request model for creating an event (wraps CreateEventInput)."""
 
     model_config = ConfigDict(extra="forbid")
@@ -607,7 +607,7 @@ class CreateEventRequest(FlatBaseModel):
         return value
 
 
-class UpdateEventRequest(FlatBaseModel):
+class UpdateEventRequest(GeminiBaseModel):
     """Request model for updating an event."""
 
     model_config = ConfigDict(extra="forbid")
@@ -684,7 +684,7 @@ class UpdateEventRequest(FlatBaseModel):
         return value
 
 
-class ReadEventRequest(FlatBaseModel):
+class ReadEventRequest(GeminiBaseModel):
     """Request model for reading an event."""
 
     model_config = ConfigDict(extra="forbid")
@@ -695,7 +695,7 @@ class ReadEventRequest(FlatBaseModel):
     )
 
 
-class DeleteEventRequest(FlatBaseModel):
+class DeleteEventRequest(GeminiBaseModel):
     """Request model for deleting an event."""
 
     model_config = ConfigDict(extra="forbid")
@@ -706,7 +706,7 @@ class DeleteEventRequest(FlatBaseModel):
     )
 
 
-class ListEventsRequest(FlatBaseModel):
+class ListEventsRequest(GeminiBaseModel):
     """Request model for listing events."""
 
     model_config = ConfigDict(extra="forbid")
@@ -724,7 +724,7 @@ class ListEventsRequest(FlatBaseModel):
     )
 
 
-class EventListResponse(OutputBaseModel):
+class EventListResponse(BaseModel):
     """Response model for listing events."""
 
     model_config = ConfigDict(extra="forbid")

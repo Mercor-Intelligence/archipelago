@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "For S&P Global DCF, use the lowest analyst estimates for both revenue and EBIT for each year from 2025 to 2029 projections.\n\nIn 2025, increase the tax rate by 2 percentage points relative to FY2024. Keep it constant through 2029 and increase it by an additional 50bps in 2030.\nDerive 2030 Revenue and Operating Profit using a 3-year weighted average. \n\nFor the revenue, assign a weight of 80% to 2025 which is the first year. The second year will account for 3/5 of the remaining weight, and the third year will account for the rest.\n\nFor operating profit, assign a weight of 65% to the most recent year. The second year will account for 2/3 of the remaining weight, and the third year will account for the rest.\n\nFor the terminal growth rate, set the long-term growth rate equal to 65% of the 5-year revenue CAGR (2025-2030). \n\nWhat are the Implied Enterprise value and implied Equity value per share using the growth in perpetuity method?\n\nOutput your results rounded to the nearest unit for the enterprise value in $ millions, and to 2 decimal places in $ for the per share output."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the Implied Enterprise Value using the growth in perpetuity method is... (ver_355bd9b72e53410a9a41b7f511791245)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Implied Enterprise Value using the growth in perpetuity method is $133,893 million (acceptable range $132,554 to $135,232)."
+        }
+      ]
+    },
+    {
+      "name": "States the Implied Equity Value per share using the growth in perpetuity... (ver_99e675d466cd4a488e52d3fae328ba28)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Implied Equity Value per share using the growth in perpetuity method is $405.68 (acceptable range $401.62 to $409.74)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world249-tr-01-4283f847"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_4283f847311144ecb89f504d93048cd9",
+    "task_name": "World249_TR_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_891ed086b18e454e87acf33397dc29de",
+        "golden_text_response": "The Implied Enterprise Value using the growth in perpetuity method is $133,893 million.\nThe Implied Equity Value per Share using the growth in perpetuity method is $405.68.",
+        "golden_file_responses": "snap_d78c3c3b8a934f9eae47dd0a6f808e37"
+      }
+    ]
+  }
+}

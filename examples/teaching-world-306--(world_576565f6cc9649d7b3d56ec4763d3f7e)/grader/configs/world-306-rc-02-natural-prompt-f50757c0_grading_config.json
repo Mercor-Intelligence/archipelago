@@ -1,0 +1,286 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_221f88e8e4494de7b5ad7f8e4ad7c778",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f50757c06e114350bc37559227d03a0e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes student McKay Jensen in the document",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6156e03aca1e43efbd36ff5662201899",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f50757c06e114350bc37559227d03a0e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes 61.7% as the grade average for McKay Jensen in the document",
+        "modality": "Free text",
+        "negative_criteria": "Includes something other than 61.7% as the grade average for McKay Jensen in the documen.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6ed9fad113f64f64ad0b00b17f1e78af",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f50757c06e114350bc37559227d03a0e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes 80% as the Attendance Rate for McKay Jensen in the document",
+        "modality": "Free text",
+        "negative_criteria": "Includes a value other than 80% as the Attendance Rate for McKay Jensen in the document.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Rosters-absences /Science Class Attendance Rate.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7e23fd61d094423eb81e1071d20854d0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f50757c06e114350bc37559227d03a0e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes student Kenadee Sorensen in the document",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6735d838e7984f41af435a6dfe3bd376",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f50757c06e114350bc37559227d03a0e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes 72.0% as the grade average for Kenadee Sorensen in the document",
+        "modality": "Free text",
+        "negative_criteria": "Includes something other than 72.0% as the grade average for Kenadee Sorensen in the document.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f138018c23ed4766b633f3182e15bab3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f50757c06e114350bc37559227d03a0e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes 94.4% as the Attendance Rate for Kenadee Sorensen in the document",
+        "modality": "Free text",
+        "negative_criteria": "Includes a value other than 94.4% as the Attendance Rate for Kenadee Sorensen in the document.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e26bbbabe6a74b02b0935111a2a460cd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f50757c06e114350bc37559227d03a0e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes student Brigham Powell in the document",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9e17864a6d0a4a2183616c1f1eb5b5a4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f50757c06e114350bc37559227d03a0e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes 66.5% as the grade average for Brigham Powell in the document",
+        "modality": "Free text",
+        "negative_criteria": "Includes something other than 66.5% as the grade average for Brigham Powell in the document.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_20416525f9c14194a595886afd926a1b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f50757c06e114350bc37559227d03a0e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes 94.4% as the Attendance Rate for Brigham Powell in the document",
+        "modality": "Free text",
+        "negative_criteria": "Includes a value other than 94.4% as the Attendance Rate for Brigham Powell in the document.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 18,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c368cc6c56384b009650b29cd98c5968",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f50757c06e114350bc37559227d03a0e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes student Phoebe Evans in the document",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 19,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6b591d35149b422a823171d6f2f2f767",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f50757c06e114350bc37559227d03a0e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Includes 70.4% as the grade average for Phoebe Evans in the document",
+        "modality": "Free text",
+        "negative_criteria": "Includes something other than 70.4% as the grade average for Phoebe Evans in the document.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 22,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6c9fb43b9d3b4cf2bc7be0aa9f6d167e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f50757c06e114350bc37559227d03a0e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes 96.7% as the Attendance Rate for Phoebe Evans in the document",
+        "modality": "Free text",
+        "negative_criteria": "Includes a value other than 96.7% as the Attendance Rate for Phoebe Evans in the document.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 24,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

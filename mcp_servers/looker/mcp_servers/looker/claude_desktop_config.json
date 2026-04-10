@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "looker": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/absolute/path/to/mercor-looker/mcp_servers/looker",
+        "run",
+        "python",
+        "main.py"
+      ],
+      "env": {
+        "LOOKER_MODE": "offline"
+      }
+    }
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use the survey file to identify which of the following columns had the largest sum of values: 'Cost of server', 'Server network breadth', 'Technical / Stack Requirements', 'Cybersecurity/Reliability', 'Server Scalability', or 'Brand reputation/trust'. Return the name of that criteria and its total sum.\n\nNext, analyze the latest survey data for pain points to identify which of the following columns had the largest sum of values: 'Rising costs', 'Poor accessibility (slow/lagging)', 'Limited server network', 'Weak customer service', 'Cybersecurity issues/breaches', 'Lack of transparency in billing', and 'Other'. Return the name of the pain point with the highest total and its sum.\n\nFinally, analyze the 'Most Influential Factor' column to identify which specific value was selected most often. Return the name of that influential factor and the count of respondents who chose it.\n\nAll responses should be presented as whole numbers and provided directly in the console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the sum of Cost of Service values is 27 (ver_be67f873c24b43c9ad75125d2da5741c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the sum of Cost of Service values is 27."
+        }
+      ]
+    },
+    {
+      "name": "States that the criteria with the highest sum of respondents is Cost of Server (ver_4facb5d1f368450eb590f13046ef6578)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the criteria with the highest sum of respondents is Cost of Server."
+        }
+      ]
+    },
+    {
+      "name": "States that the sum of Weak customer service values is 28 (ver_c315f86c6ed348c0921bec9b5e940e8f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the sum of Weak customer service values is 28."
+        }
+      ]
+    },
+    {
+      "name": "States that the total sum for Weak customer service respondents is any value... (ver_c315f86c6ed348c0921bec9b5e940e8f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total sum for Weak customer service respondents is any value other than 28."
+        }
+      ]
+    },
+    {
+      "name": "States that the most mentioned pain point for respondents is Weak Customer... (ver_826ad6221d0d46abb1b8c531c2ab3aa5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the most mentioned pain point for respondents is Weak Customer Service."
+        }
+      ]
+    },
+    {
+      "name": "States that total mentioning Scalability as most important factor is 14 (ver_06b656a4c53f4c88aafeda1f1948d0cf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that total mentioning Scalability as most important factor is 14."
+        }
+      ]
+    },
+    {
+      "name": "States that total mentioning Scalability as most important factor is any value... (ver_06b656a4c53f4c88aafeda1f1948d0cf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that total mentioning Scalability as most important factor is any value other than 14."
+        }
+      ]
+    },
+    {
+      "name": "States that the most mentioned most important factor for respondents is... (ver_09ff87f0394745c79ab60014a4012080)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the most mentioned most important factor for respondents is Scalability."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-115-hlv-task-02-aa331b35"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_aa331b351b064a4cbb96ef842b347a4b",
+    "task_name": "World 115_HLV_Task 02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_7785a71a5b564ffd981f0c2025d55c5d",
+        "golden_text_response": "For Criteria: \nThe criteria with the highest sum of values is Cost of server, with a sum of 27.\n\nFor Pain Points:\nThe pain point with the highest sum of values is Weak customer servic,e with a sum of 28.\n\nFor important factor:\nThe most frequently mentioned most important factor is Scalability, with a count of 14.",
+        "golden_file_responses": "snap_7e08cf92aca6491bab88fbc87a245790"
+      }
+    ]
+  }
+}

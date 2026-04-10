@@ -1,0 +1,127 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_f5049f3842e841f89c29c72962f648ca",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_30a69d599965476887ccb65b28a0fcea",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": " Reports total amount invoiced as 122578 (strict threshold)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "When aggregating invoice amounts at the invoice level for postpaid subscribers with at least 5 invoices in 2024-2025, the correct total invoiced amount is this number.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1685b3ed78a044ed835a3695a263b08e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_30a69d599965476887ccb65b28a0fcea",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports total amount paid as 102704.05 (+/- 0.05)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "When aggregating payments at the invoice level to avoid double-counting multiple payments per invoice for postpaid subscribers with at least 5 invoices in 2024-2025, the correct total paid amount is this number.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e3ff4dc275884c7ca3e9421e2215c56e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_30a69d599965476887ccb65b28a0fcea",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports overall payment rate as 83.8 (+/- 0.05)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "When computing the payment rate as total paid divided by total invoiced using invoice-level aggregated payment data for postpaid subscribers with at least 5 invoices in 2024-2025, the correct percentage is this number.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b483e7a977f4487ebef52b996782d9b5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_30a69d599965476887ccb65b28a0fcea",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports average payment coverage ratio as 0.8 (+/- 0.05)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "When computing per-subscriber coverage ratios from invoice-level aggregated payment data and then averaging across postpaid subscribers with at least 5 invoices in 2024-2025, the correct average ratio is this number.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8f622eadd0434d13b97331933680fb69",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_30a69d599965476887ccb65b28a0fcea",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports count of distinct qualifying subscribers as 312 (strict threshold) (acceptable range 309 to 315)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "When identifying postpaid subscribers with at least 5 invoices during 2024-2025, the correct count of distinct subscribers meeting this criterion is this number.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

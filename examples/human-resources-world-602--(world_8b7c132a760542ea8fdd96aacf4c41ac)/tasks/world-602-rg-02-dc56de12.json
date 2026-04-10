@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "In the Greenhouse application, we are working to clean up the data in our database. There are many ghost applications that haven't been closed since the last financial year. Using the Get Application List Tool, can you identify the number of active applications still in the system that were created on or after 2nd Oct 2024 and whose last activity was on or before 31st March 2025?\n\nOnce identified, move those applications to the rejected stage. Once completed, again using the Get Application List Tool, identify the total number of active applications remaining whose last activity was on or before 31st March 2025.\n\nPlease report your answer directly in console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of active applications still in the system that were... (ver_2787ac4846284de39eb56c12df3d28f5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of active applications still in the system that were created on or after 2md Oct 2024 and whose last activity was on or before 31st March 2025 is 100."
+        }
+      ]
+    },
+    {
+      "name": "States that following the cleanup, the total number of active applications... (ver_8e18e51646ae4447b34ab1b8a252267b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that following the cleanup, the total number of active applications remaining whose last activity was on or before 31st March 2025 is 38."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-602-rg-02-dc56de12"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_dc56de120da94d0eb4e32b8a35ce6f9b",
+    "task_name": "World 602_RG_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f55ada3c58c3417d9268d697ee0c533e",
+        "golden_text_response": "The number of active applications still in the system that were created on or after 2md Oct 2024 and whose last activity was on or before 31st March 2025 is 100.\n\nFollowing the cleanup, the total number of active applications remaining whose last activity was on or before 31st March 2025 is 38.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

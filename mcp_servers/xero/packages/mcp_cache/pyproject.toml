@@ -1,0 +1,16 @@
+[project]
+name = "mcp-cache"
+version = "0.1.0"
+description = "HTTP caching middleware for MCP servers"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx",
+    "loguru",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["mcp_cache*"]

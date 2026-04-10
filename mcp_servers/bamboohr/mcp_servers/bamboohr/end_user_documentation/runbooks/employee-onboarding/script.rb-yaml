@@ -1,0 +1,142 @@
+# Employee Onboarding Workflow
+# Demonstrates: Reset DB -> Create employee -> Create type/policy -> Assign policy -> View directory
+#
+# Tools exercised:
+# - Login (Admin)
+# - Reset Database (Admin)
+# - Create Employee (Employees)
+# - Create Type (Time Off)
+# - Create Policy (Time Off)
+# - Assign Policy (Time Off)
+# - Get Directory (Directory)
+
+url: http://localhost:3000
+
+output: screenshots
+
+defaults:
+  server: bamboohr
+
+steps:
+  # Step 1: Initial view
+  - TakeScreenshot
+
+  # Step 2: Login as HR Admin
+  - Login:
+      persona: hr_admin
+      screenshot_params:
+        element: *tool_panel
+        max_height: 600
+
+  # Step 3: Reset database to clean state
+  - SelectTool:
+      tool: bamboo_reset_state
+      category: Admin
+  - Wait: 500
+  - FillToolParam:
+      params:
+        confirm: true
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 400
+
+  # Step 4: Create new employee
+  - SelectTool:
+      tool: bamboo_employees_create
+      category: Employees
+  - Wait: 500
+  - FillToolParam:
+      params:
+        firstName: Sarah
+        lastName: Johnson
+        workEmail: sarah.johnson@acme.com
+        department: Engineering
+        jobTitle: Software Engineer
+        hireDate: "2025-01-27"
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 900
+
+  # Step 5: Execute employee creation
+  - ExecuteTool:
+      capture:
+        employee_id: $.id
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 500
+
+  # Step 6: Create a time-off type (Vacation)
+  - SelectTool:
+      tool: bamboo_time_off_create_type
+      category: Time Off
+  - Wait: 500
+  - FillToolParam:
+      params:
+        name: Vacation
+        color: "#4CAF50"
+        paid: true
+  - ExecuteTool:
+      capture:
+        type_id: $.id
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 600
+
+  # Step 7: Create a time-off policy
+  - SelectTool:
+      tool: bamboo_time_off_create_policy
+      category: Time Off
+  - Wait: 500
+  - FillToolParam:
+      params:
+        name: Standard Vacation
+        typeId: "{{ type_id }}"
+  - ExecuteTool:
+      capture:
+        policy_id: $.id
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 600
+
+  # Step 8: Assign policy to employee
+  - SelectTool:
+      tool: bamboo_time_off_assign_policy
+      category: Time Off
+  - Wait: 500
+  - FillToolParam:
+      params:
+        employeeId: "{{ employee_id }}"
+  - FillListItems:
+      param: policies
+      items:
+        - timeOffPolicyId: "{{ policy_id }}"
+          accrualStartDate: "2025-01-27"
+  - TakeScreenshot:
+      element: *tool_panel
+      max_height: 700
+
+  # Step 9: Execute policy assignment
+  - ExecuteTool
+  - Wait: 1500
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 600
+
+  # Step 10: Verify in directory
+  - SelectTool:
+      tool: bamboo_employees_get_directory
+      category: Directory
+  - Wait: 500
+  - ExecuteTool
+  - Wait: 1000
+  - TakeScreenshot:
+      element: *tool_panel
+      scroll_to: bottom
+      max_height: 800

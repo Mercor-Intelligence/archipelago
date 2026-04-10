@@ -1,0 +1,307 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 10” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nThe patient's lab work is attached.\nThe attached AI scribe conversation is between a PGY-2 Emergency Resident who is presenting her case to the Attending Emergency Medicine Physician.\n\nBased on the patient's chart and lab work, what is the best response to guide the resident in the attached AI scribe conversation? Answers should be in line with the most recent clinical guidelines as of January 9, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that an Aortic Dissection Detection Risk Score should be calculated. (ver_33b6e1f82667405f9913aab021fec904)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that an Aortic Dissection Detection Risk Score should be calculated."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient scores 0 points for not having any \"high-risk... (ver_f3673da60954426788e4bd2a65e026e8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient scores 0 points for not having any \"high-risk conditions\" component of the Aortic Dissection Detection Risk Score."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's chest pain was described as severe. (ver_5a96b9c685154a22b899664f39ea1ef8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's chest pain was described as severe."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient scores 1 point for having a \"high-risk pain feature\"... (ver_d9dd3a6dd61c4df392ee1737c84a12b1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient scores 1 point for having a \"high-risk pain feature\" component of the Aortic Dissection Detection Risk Score."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient does not have any evidence of a perfusion deficit... (ver_640441cb957e4619b77fdcff58409201)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient does not have any evidence of a perfusion deficit noted on physical exam."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient does not have a new aortic insufficiency murmur. (ver_bac2669d4f1f4df6b2d64d4619b0e500)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient does not have a new aortic insufficiency murmur."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient does not have any evidence of shock. (ver_46be1054633043bd93d689cd6a42c02c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient does not have any evidence of shock."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient scores 0 points for not having any \"high-risk exam... (ver_6391f766b0f0433daab9d42e10b4a61e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient scores 0 points for not having any \"high-risk exam features\" component of the Aortic Dissection Detection Risk Score."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient scores 1 point on the Aortic Dissection Detection Risk... (ver_d1e5f5fcc4114ff29e03a94c43cad259)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient scores 1 point on the Aortic Dissection Detection Risk Score."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient should have a D-dimer ordered. (ver_0eeb798bf671463abcc567c947d5e31d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient should have a D-dimer ordered."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient does not need Computed Tomography Angiography (CTA) if... (ver_e51ebc79b5c04f8790d936bb371d580c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient does not need Computed Tomography Angiography (CTA) if the D-dimer is less than 500 ng/mL."
+        }
+      ]
+    },
+    {
+      "name": "States that a non-ST elevation myocardial infarction is the more likely... (ver_33cdd95a0c604edaacf93e4e2d543986)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that a non-ST elevation myocardial infarction is the more likely diagnosis."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-cards-patient-10-dissection-workup-larry-e-882d1e11"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_882d1e11ae5c4d9abad0c3242f2d7895",
+    "task_name": "Web Search_Attachments_Cards_Patient 10 - Dissection workup - Larry E",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_e01bcf675dcb4a4a946ad914e77f6e8b",
+        "golden_text_response": "Based on a Clinical Policy published by the American College of Emergency Physicians (ACEP) in July 2025, an Aortic Dissection Detection Risk Score can be calculated and if the score is equal to or less than 1, then the next best step is to proceed to D-dimer testing. The policy states that if the D-dimer is less than 500 ng/mL, then to consider stopping evaluation for dissection. Therefore, in order to best use resources (minimizing radiation exposure, time and cost), an Aortic Dissection Risk Score should be checked and if one or less, the next best test to be ordered should be a D-dimer.\n\nAccording to both MDCalc and the ACEP Clinical Policy the patient scores a 1 for the Aortic Dissection Detection Risk Score, only earning one point for having a high-risk pain feature. She did not score any points for having a high-risk condition or physical exam finding. She has severe chest pain but does not have a new aortic insufficiency murmur or any evidence of shock.\n\nAdditionally, the patient has a more likely diagnosis than aortic dissection, NSTEMI or Acute Coronary Syndrome (ACS). The patient had an 8-point increase in her high-sensitivity troponin, she is pain-free after aspirin and nitroglycerin (unlikely if she was having an acute aortic dissection), and in 2015 she had a cardiac catheterization that showed several areas of 40% or less blockages that could have progressed over the past 10-years.\n\nTherefore, the attending physician should help the resident calculate the Aortic Dissection Detection Risk Score, which would be 1. Then, advise the resident to check a D-dimer and if negative, presume that an aortic dissection has been ruled out and forego another CTA of the chest. This should be explained to the admitting resident as well.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

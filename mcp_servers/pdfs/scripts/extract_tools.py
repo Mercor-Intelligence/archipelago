@@ -7,9 +7,7 @@ from pathlib import Path
 # Set environment variables to ensure successful startup and individual tool extraction
 # These must be set BEFORE importing main modules
 
-# Force individual tools (not meta-tools)
-os.environ["GUI_ENABLED"] = "true"
-os.environ["USE_INDIVIDUAL_TOOLS"] = "true"
+# GUI_ENABLED and USE_INDIVIDUAL_TOOLS are set per-pass in main()
 
 # Set offline mode for all services to avoid API key requirements
 os.environ["OFFLINE_MODE"] = "true"
@@ -97,10 +95,28 @@ async def extract_from_server(server_path: str):
 
 
 async def main():
+    # Pass 1: Extract individual tools
+    os.environ["GUI_ENABLED"] = "true"
+    os.environ["USE_INDIVIDUAL_TOOLS"] = "true"
+
     for server_name in sorted(server_dirs):
         server_path = str(mcp_servers_path / server_name)
         tools = await extract_from_server(server_path)
         result.extend(tools)
+
+    individual_names = {t["name"] for t in result}
+
+    # Pass 2: Extract meta tools (only add tools not already in the individual set)
+    os.environ["GUI_ENABLED"] = "false"
+    os.environ.pop("USE_INDIVIDUAL_TOOLS", None)
+
+    for server_name in sorted(server_dirs):
+        server_path = str(mcp_servers_path / server_name)
+        tools = await extract_from_server(server_path)
+        for tool in tools:
+            if tool["name"] not in individual_names:
+                tool["metadata"] = {"is_meta_tool": True}
+                result.append(tool)
 
     print(json.dumps(result))
 

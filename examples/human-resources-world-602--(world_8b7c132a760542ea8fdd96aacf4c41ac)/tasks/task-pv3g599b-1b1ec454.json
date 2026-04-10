@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the \"Greenhouse - Jobs.csv\" file, determine the average number of days it has taken to close a position. Present your answer as a console message rounded to days."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the average number of days taken to close a position is 92. (ver_225e14a419144038ac0c38cfef22ef4f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the average number of days taken to close a position is 92."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-pv3g599b-1b1ec454"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_1b1ec454fec64cb9aefa97928db069de",
+    "task_name": "Task pv3g599b",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_74d9dec5d77f480fa7f0f79aa79faf97",
+        "golden_text_response": "Average number of days taken to close a position: 92",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

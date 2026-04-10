@@ -1,0 +1,171 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_ebef42514ae24402a2ac0538c7e08d4c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f47ff7eb31e940d5990d06fd7ff5829c",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that Sweetmarch Build Partners will not be able to successfully file a counterclaim to recover the $75,000 it paid to SteelTreeSolutions under California Business and Professions Code section 7068.2.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt indicates that STS was a corporation that had duly issued Class A & Class B contractor licenses that were valid from January 1, 2023 until January 1, 2027.  The prompt also indicates that Robert Jones is the qualifying individual and responsible managing officer. Robert Jones was actively involved with STS' work until he left the country on September 5, 2025 at which point he stopped being involved in the business.\n\nUnder California Business and Professions Code 7068.2 \"if the qualifier is disassociated from the licensed entity, the entity has 90 days to replace the qualifier. If the qualifier is not replaced, the contractor's license issued to the entity is automatically replaced.\" White v. Cridlebaugh - unlicensed contractor case.pdf Page 11. \n\nAdditionally, California Business and Professions Code 7031(b) provides that \"a person who utilizes the services of an unlicensed contractor may bring an action in any court of competent jurisdiction in this state to recover all compensation paid to the unlicensed contractor for performance of any act or contract.\"  White v. Cridlebaugh - unlicensed contractor case.pdf at Page 14. \n\nHere, Robert Jones was disassociated from STS on September 5, 2025.  At that point STS had 90 days to replace the qualifier (Robert Jones).  STS's license was suspended 90 days after it failed to replace the qualifier under section 7068.2.  The license would therefore have been suspended on December 4, 2025. STS would therefore have had an active license between September 5, 2025 and October 5, 2025 when the work was performed. Accordingly, SBP will not be able to recover the $75,000 it paid to STS under California Business and Professions Code section 7068.2.\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7c8a38244d35411a84d0c6d106a7f0ab",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f47ff7eb31e940d5990d06fd7ff5829c",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States any of the following: (1) that Sweetmarch Build Partners can file the counterclaim if SteelTreeSolutions was an unlicensed contractor and (2) that Sweetmarch Build Partners' counterclaim is governed by California Business and Professions Code 7031(b).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "California Business and Professions Code 7031(b) provides that \"a person who utilizes the services of an unlicensed contractor may bring an action in any court of competent jurisdiction in this state to recover all compensation paid to the unlicensed contractor for performance of any act or contract.\"  White v. Cridlebaugh - unlicensed contractor case.pdf at Page 14. ",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6b049ee3f83b4f9f809c364c06279c07",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f47ff7eb31e940d5990d06fd7ff5829c",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that a contractor's license is automatically replaced if all of the following conditions are met: (1) the qualifier is disassociated from the licensed entity; and (2) the entity did not replace the disassociated qualifer after 90 days from the qualifier's disassociation.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "the question is whether STS lost its license by virtue of California Business and Professions Code 7068.2 \"if the qualifier is disassociated from the licensed entity, the entity has 90 days to replace the qualifier. If the qualifier is not replaced, the contractor's license issued to the entity is automatically replaced.\" White v. Cridlebaugh - unlicensed contractor case.pdf at Page 11.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c258619d052f4e5b82500f31ed42e291",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f47ff7eb31e940d5990d06fd7ff5829c",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that SteelTreeSolutions did not replace the qualifer (Robert Jones).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From Prompt,\n\nRobert Jones is the qualified individual and responsible managing officer, who certified that he owned 30% of STS. SBP never spoke with Robert Jones during their engagement with STS.  SBP has also learned that Robert Jones was actively involved in STS's work until he moved to another country.\n\nHe moved in September 5, 2025.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fb45fb1e32f449dda94fd947b362a8ef",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f47ff7eb31e940d5990d06fd7ff5829c",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that Robert Jones disassociated from SteelTreeSolutions on September 5, 2025.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "When he left the country.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9b6b726c377f4988840360077913648f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f47ff7eb31e940d5990d06fd7ff5829c",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that SteelTreeSolutions' license would have been suspended on December 4, 2025.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b375ce1539c24c898a848ba01524dd8b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_f47ff7eb31e940d5990d06fd7ff5829c",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that SteelTreeSolutions was a licensed contractor at the time it performed the $75,000 of work for Sweetmarch Build Partners.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt indicates that STS was a corporation that had duly issued Class A & Class B contractor licenses that were valid from January 1, 2023 until January 1, 2027.  The prompt also indicates that Robert Jones is the qualifying individual and responsible managing officer. Robert Jones was actively involved with STS' work until he left the country on September 5, 2025 at which point he stopped being involved in the business.\n\nUnder California Business and Professions Code 7068.2 \"if the qualifier is disassociated from the licensed entity, the entity has 90 days to replace the qualifier. If the qualifier is not replaced, the contractor's license issued to the entity is automatically replaced.\" White v. Cridlebaugh - unlicensed contractor case.pdf Page 11. \n\nAdditionally, California Business and Professions Code 7031(b) provides that \"a person who utilizes the services of an unlicensed contractor may bring an action in any court of competent jurisdiction in this state to recover all compensation paid to the unlicensed contractor for performance of any act or contract.\"  White v. Cridlebaugh - unlicensed contractor case.pdf at Page 14. \n\nHere, Robert Jones was disassociated from STS on September 5, 2025.  At that point STS had 90 days to replace the qualifier (Robert Jones).  STS's license was suspended 90 days after it failed to replace the qualifier under section 7068.2.  The license would therefore have been suspended on December 4, 2025. STS would therefore have had an active license between September 5, 2025 and October 5, 2025 when the work was performed. Accordingly, SBP will not be able to recover the $75,000 it paid to STS under California Business and Professions Code section 7068.2.\n\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

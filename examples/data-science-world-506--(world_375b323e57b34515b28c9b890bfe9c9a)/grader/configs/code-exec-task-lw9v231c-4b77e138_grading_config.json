@@ -1,0 +1,211 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_f42b541d7e6f453fb26f6e9a6cf18341",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4b77e13847464312a7156a09de40fc9c",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the sum of old system balance (round the sum to the nearest integer) is -1217 +/- 5 for migration year 2022.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report the sum of old system balance (round the sum to the nearest integer) for the migration year 2022 and 2023 separately",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e73fd670d218437ea0821ee4970d7975",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4b77e13847464312a7156a09de40fc9c",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the number of unique legacy accounts is 59 for the migration year 2022.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report the number of unique legacy accounts for the migration year 2022 and 2023 separately.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4c1b28a4d26d4319adb47297a234000b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4b77e13847464312a7156a09de40fc9c",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the number of unique legacy accounts that required manual intervention according to notes is 16 for the migration year 2022.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report the number of unique legacy accounts that required manual intervention according to notes for the migration year 2022 and 2023 separately. ",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c0eb88eb734946a5b9202de61b2894e9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4b77e13847464312a7156a09de40fc9c",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the sum of old system balance (round the sum to the nearest integer) is -1392 +/- 5 for migration year 2023.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report the sum of old system balance (round the sum to the nearest integer) for the migration year 2022 and 2023 separately",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_41d0dab459f2426c8ad04aed18e7c398",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4b77e13847464312a7156a09de40fc9c",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the number of unique legacy accounts is 60 for the migration year 2023.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report the number of unique legacy accounts for the migration year 2022 and 2023 separately.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ec6804a230d648a7a77e644afa07d64c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4b77e13847464312a7156a09de40fc9c",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the number of unique legacy accounts that required manual intervention according to notes is 22 for the migration year 2023.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report the number of unique legacy accounts that required manual intervention according to notes for the migration year 2022 and 2023 separately. ",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_00b249ed2aa0406ab9b3fffdfa48eb6a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4b77e13847464312a7156a09de40fc9c",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the number of complaints from Cohort X is 14",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report number of complaints lodged, the resolution rate (% value rounded to one decimal point) of these complaints (with resolution of resolved), and the number of complaints specifically related to billing errors for Cohort X after migration date.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7bfe3ea19a734a39bf3caed5d51309ce",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4b77e13847464312a7156a09de40fc9c",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the complaints resolution rate is 42.9% +/- 0.5%\n",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report number of complaints lodged, the resolution rate (% value rounded to one decimal point) of these complaints (with resolution of resolved), and the number of complaints specifically related to billing errors for Cohort X after migration date.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e50a183d2228499c95cae2a1c4310e2d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4b77e13847464312a7156a09de40fc9c",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Report the number of complaints specifically related to billing errors is 6",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requests to report number of complaints lodged, the resolution rate (% value rounded to one decimal point) of these complaints (with resolution of resolved), and the number of complaints specifically related to billing errors for Cohort X after migration date.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

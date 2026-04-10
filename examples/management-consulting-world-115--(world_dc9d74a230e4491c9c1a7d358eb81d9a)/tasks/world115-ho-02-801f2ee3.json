@@ -1,0 +1,445 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the transcript from the expert interview with Sarah McKenzie perform the following tasks:\n\nCalculate how much Laurentian Resources Inc. saved by converting the mine to a data center instead of closing the mine as a percentage of total mine closing costs, excluding perpetual monitoring costs. Round to the nearest percent.\n\nAssume the projected payback period is at the midpoint of the expert-stated range. Assume annual revenue is the midpoint of the expert-given range of the total annual revenue generated from converting the mine. State the projected payback period, in years, and state the annual revenue in $CAD millions, rounded to the nearest million.\n\nCalculate the percent of annual revenue that comes from the Bitcoin mining partner and calculate the percent of annual revenue that comes from the HPC partner. List out your answers to the nearest percent. Then, calculate how much annual revenue comes from battery storage. Assume that battery storage makes up all of the remaining revenue after accounting for Bitcoin mining partner and HPC partner revenue. List out in $CAD millions, rounded to one decimal place.\n\nAssuming the exchange rate is $1 USD to $1.40 CAD, convert the following to USD, round to the nearest USD dollar, and state the cost of the data center conversion, the estimated cost of closing the mine instead of converting it (excluding perpetual monitoring costs). \nFinally, state the total annual revenue generated from the mine conversion.\n\n\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the amount Laurentian Resources Inc. saved by converting the mine into... (ver_b86f4b500e3a48698bead8f99b2e073a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the amount Laurentian Resources Inc. saved by converting the mine into a data center is 4% (acceptable range 3.96% to 4.04%)."
+        }
+      ]
+    },
+    {
+      "name": "States the amount Laurentian Resources Inc. saved by converting the mine into... (ver_b86f4b500e3a48698bead8f99b2e073a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the amount Laurentian Resources Inc. saved by converting the mine into a data center is a number other than 4%."
+        }
+      ]
+    },
+    {
+      "name": "States the payback period is 10 years (ver_51a26348ea52400e9651b434b72cb2a3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the payback period is 10 years."
+        }
+      ]
+    },
+    {
+      "name": "States the payback period is a number other than 10 years (ver_51a26348ea52400e9651b434b72cb2a3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the payback period is a number other than 10 years."
+        }
+      ]
+    },
+    {
+      "name": "States annual revenue is CAD $13 Million (acceptable range $12.9 to $13.1) (ver_f7f8548fadbf4ed1a6697362d5f69503)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States annual revenue is CAD $13 Million (acceptable range $12.9 to $13.1)."
+        }
+      ]
+    },
+    {
+      "name": "States annual revenue is a number other than CAD $13 Million (ver_f7f8548fadbf4ed1a6697362d5f69503)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States annual revenue is a number other than CAD $13 Million."
+        }
+      ]
+    },
+    {
+      "name": "States Bitcoin mining partner revenue is 35% (acceptable range 34.6% to 35.4%) (ver_1ecc834620a14cb89190d1297d0c5677)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Bitcoin mining partner revenue is 35% (acceptable range 34.6% to 35.4%)."
+        }
+      ]
+    },
+    {
+      "name": "States Bitcoin mining partner revenue is a number other than 35% (ver_1ecc834620a14cb89190d1297d0c5677)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Bitcoin mining partner revenue is a number other than 35%."
+        }
+      ]
+    },
+    {
+      "name": "States HPC partner revenue is 25% (acceptable range 24.8% to 25.2%) (ver_ced650edada64caeacfca8055520c766)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States HPC partner revenue is 25% (acceptable range 24.8% to 25.2%)."
+        }
+      ]
+    },
+    {
+      "name": "States HPC partner revenue is a number other than 25% (ver_ced650edada64caeacfca8055520c766)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States HPC partner revenue is a number other than 25%."
+        }
+      ]
+    },
+    {
+      "name": "States battery storage revenue is CAD $5.3 Million (acceptable range $5.2 to... (ver_030443c7532a45318fec35f84d4f1430)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States battery storage revenue is CAD $5.3 Million (acceptable range $5.2 to $5.4)."
+        }
+      ]
+    },
+    {
+      "name": "States battery storage revenue is a number other than CAD $5.3 Million (ver_030443c7532a45318fec35f84d4f1430)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States battery storage revenue is a number other than CAD $5.3 Million."
+        }
+      ]
+    },
+    {
+      "name": "States cost of converting mine to a data center in USD is $92,857,143... (ver_0152a325bf8a4e2d964c92ba1d337919)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States cost of converting mine to a data center in USD is $92,857,143 (acceptable range $91,928,572 to $93,785,714)."
+        }
+      ]
+    },
+    {
+      "name": "States cost of converting mine to a data center in USD is $92,857,143 (ver_0152a325bf8a4e2d964c92ba1d337919)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States cost of converting mine to a data center in USD is $92,857,143."
+        }
+      ]
+    },
+    {
+      "name": "States cost of mine closure in USD is $96,428,571 (acceptable range... (ver_900d6ec7bbbf41b4bf7fa2ffae09a374)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States cost of mine closure in USD is $96,428,571 (acceptable range $95,464,285 to $97,392,857)."
+        }
+      ]
+    },
+    {
+      "name": "States cost of mine closure in USD is a number other than $96,428,571 (ver_900d6ec7bbbf41b4bf7fa2ffae09a374)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States cost of mine closure in USD is a number other than $96,428,571."
+        }
+      ]
+    },
+    {
+      "name": "States total annual revenue in USD is $9,285,714 (acceptable range $9,192,857... (ver_ccd717a2b2ab4adfb1e0c19c7d834b36)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States total annual revenue in USD is $9,285,714 (acceptable range $9,192,857 to $9,378,571)."
+        }
+      ]
+    },
+    {
+      "name": "States total annual revenue in USD is a number other than $9,285,714 (ver_ccd717a2b2ab4adfb1e0c19c7d834b36)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States total annual revenue in USD is a number other than $9,285,714."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world115-ho-02-801f2ee3"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_801f2ee386cc46bf9ce1b3bbc6936ca3",
+    "task_name": "world115_HO_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f6ac654146e74975baa738e60d293e88",
+        "golden_text_response": "Savings: 4%\n\nPayback period: 10 years\nAnnual Revenue: CAD $13 Million\n\nBitcoin mining partner revenue: 35%\nHPC partner revenue: 25%\nBattery storage revenue: CAD $5.3 Million\n\nCost of Data Center in USD: $92,857,143\nCost of Mine Closure in USD: $96,428,571\nTotal Annual Revenue in USD: $9,285,714\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

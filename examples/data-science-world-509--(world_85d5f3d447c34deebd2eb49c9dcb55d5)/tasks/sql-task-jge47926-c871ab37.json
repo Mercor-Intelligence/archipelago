@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "I want to assess how macro indicators differ across risk regimes. First, identify two inflection points (A/B share collapse or D/F share expand to ~60%) from the chart in 1.11.2026 Habor Capital Final.pdf, then combine three source SQL tables: macro_economic_labor_rates, macro_economic_inflation_prices, and macro_economic_activity_markets (normalizing their date formats into a common Month_Key). Use the two inflection points to label Risk_period: baseline (before the first inflection), low risk collapse (from the first inflection through the month before the second), and high risk expand (from the second inflection onward). Finally, report eta‑squared (effect size) for five focus indicators (Unemployment_Rate, CPI_Inflation, Fed_Funds_Rate, TenY_Treasury_Yield, Retail_Sales_Growth) using between‑group vs total variance. Round all reported values in two decimals. Perform the analysis in SQLite and include both the SQLite script and the results. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports the eta‑squared (effect size) for Unemployment_Rate as 0.85 (+/-0.02) (ver_236f5b72bfcf4c6686b732e83b0e8655)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the eta‑squared (effect size) for Unemployment_Rate as 0.85 (+/-0.02)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the eta‑squared (effect size) for CPI_Inflation as 0.86 (+/-0.02). (ver_95eb78d804a449598959a7b2f1bca468)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the eta‑squared (effect size) for CPI_Inflation as 0.86 (+/-0.02)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the eta‑squared (effect size) for Fed_Funds_Rate as 0.42 (+/-0.02). (ver_7f30aeeb21c94d6d9b139e11b80de2a8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the eta‑squared (effect size) for Fed_Funds_Rate as 0.42 (+/-0.02)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the eta‑squared (effect size) for TenY_Treasury_Yield as 0.62 (+/-0.02). (ver_df20b2d583c14c77a0760e907e594b92)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the eta‑squared (effect size) for TenY_Treasury_Yield as 0.62 (+/-0.02)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the eta‑squared (effect size) for Retail_Sales_Growth as 0.89 (+/-0.02). (ver_a685d625ec704e058e7675dc653af023)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the eta‑squared (effect size) for Retail_Sales_Growth as 0.89 (+/-0.02)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sql-task-jge47926-c871ab37"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_c871ab377d984cbcb2dfa4319de9536e",
+    "task_name": "SQL - Task jge47926",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_710ba5bc71754fc0aebb51f469aa7466",
+        "golden_text_response": "\n\neta_squared_unemployment |      eta_squared_cpi | eta_squared_fed_funds |    eta_squared_ten_y | eta_squared_retail_sales\n-------------------------------------------------------------------------------------------------------------------------\n                0.85                         |                 0.86           |                 0.42                 |                 0.62            |               0.89\n\n\n```\n-- Clean, combine three source tables, then compute eta-squared by risk period\n\nWITH\n-- Normalize labor table Month_Date -> Month_Key (YYYY-MM)\nlabor_clean AS (\n  SELECT\n    SUBSTR(Month_Date, 1, 7) AS Month_Key,\n    Prime_Rate,\n    Unemployment_Rate,\n    Fed_Funds_Rate\n  FROM macro_economic_labor_rates\n),\n\n-- Normalize inflation table Month_Label -> Month_Key (YYYY-MM)\ninflation_clean AS (\n  SELECT\n    CASE SUBSTR(Month_Label, 1, 3)\n      WHEN 'Jan' THEN SUBSTR(Month_Label, 5, 4) || '-01'\n      WHEN 'Feb' THEN SUBSTR(Month_Label, 5, 4) || '-02'\n      WHEN 'Mar' THEN SUBSTR(Month_Label, 5, 4) || '-03'\n      WHEN 'Apr' THEN SUBSTR(Month_Label, 5, 4) || '-04'\n      WHEN 'May' THEN SUBSTR(Month_Label, 5, 4) || '-05'\n      WHEN 'Jun' THEN SUBSTR(Month_Label, 5, 4) || '-06'\n      WHEN 'Jul' THEN SUBSTR(Month_Label, 5, 4) || '-07'\n      WHEN 'Aug' THEN SUBSTR(Month_Label, 5, 4) || '-08'\n      WHEN 'Sep' THEN SUBSTR(Month_Label, 5, 4) || '-09'\n      WHEN 'Oct' THEN SUBSTR(Month_Label, 5, 4) || '-10'\n      WHEN 'Nov' THEN SUBSTR(Month_Label, 5, 4) || '-11'\n      WHEN 'Dec' THEN SUBSTR(Month_Label, 5, 4) || '-12'\n    END AS Month_Key,\n    CPI_Inflation,\n    PPI_Inflation\n  FROM macro_economic_inflation_prices\n),\n\n-- Normalize activity table Month_Period -> Month_Key (YYYY-MM)\nactivity_clean AS (\n  SELECT\n    REPLACE(Month_Period, '/', '-') AS Month_Key,\n    TenY_Treasury_Yield,\n    Retail_Sales_Growth,\n    Consumer_Confidence,\n    Housing_Starts_Index,\n    Industrial_Production_Growth\n  FROM macro_economic_activity_markets\n),\n\n-- Join all cleaned sources on Month_Key\nmacro_all AS (\n  SELECT\n    l.Month_Key,\n    l.Prime_Rate,\n    l.Unemployment_Rate,\n    i.CPI_Inflation,\n    i.PPI_Inflation,\n    l.Fed_Funds_Rate,\n    a.TenY_Treasury_Yield,\n    a.Retail_Sales_Growth,\n    a.Consumer_Confidence,\n    a.Housing_Starts_Index,\n    a.Industrial_Production_Growth\n  FROM labor_clean l\n  JOIN inflation_clean i ON i.Month_Key = l.Month_Key\n  JOIN activity_clean a ON a.Month_Key = l.Month_Key\n),\n\n-- Apply risk period labels and select focus indicators\nmacro_with_risk AS (\n  SELECT\n    Month_Key,\n    CASE\n      WHEN Month_Key < '2023-10' THEN 'baseline'\n      WHEN Month_Key < '2024-06' THEN 'low risk collapse'\n      ELSE 'high risk expand'\n    END AS Risk_period,\n    Unemployment_Rate,\n    CPI_Inflation,\n    Fed_Funds_Rate,\n    TenY_Treasury_Yield,\n    Retail_Sales_Growth\n  FROM macro_all\n),\n\n-- Compute global means for eta-squared\noverall AS (\n  SELECT\n    AVG(Unemployment_Rate) AS mean_unemp,\n    AVG(CPI_Inflation) AS mean_cpi,\n    AVG(Fed_Funds_Rate) AS mean_ffr,\n    AVG(TenY_Treasury_Yield) AS mean_10y,\n    AVG(Retail_Sales_Growth) AS mean_retail\n  FROM macro_with_risk\n),\n\n-- Compute group means and within-group variance components\ngroup_stats AS (\n  SELECT\n    Risk_period,\n    COUNT(*) AS n,\n    AVG(Unemployment_Rate) AS grp_unemp,\n    AVG(CPI_Inflation) AS grp_cpi,\n    AVG(Fed_Funds_Rate) AS grp_ffr,\n    AVG(TenY_Treasury_Yield) AS grp_10y,\n    AVG(Retail_Sales_Growth) AS grp_retail,\n    AVG((Unemployment_Rate - (SELECT mean_unemp FROM overall)) *\n        (Unemployment_Rate - (SELECT mean_unemp FROM overall))) AS var_unemp,\n    AVG((CPI_Inflation - (SELECT mean_cpi FROM overall)) *\n        (CPI_Inflation - (SELECT mean_cpi FROM overall))) AS var_cpi,\n    AVG((Fed_Funds_Rate - (SELECT mean_ffr FROM overall)) *\n        (Fed_Funds_Rate - (SELECT mean_ffr FROM overall))) AS var_ffr,\n    AVG((TenY_Treasury_Yield - (SELECT mean_10y FROM overall)) *\n        (TenY_Treasury_Yield - (SELECT mean_10y FROM overall))) AS var_10y,\n    AVG((Retail_Sales_Growth - (SELECT mean_retail FROM overall)) *\n        (Retail_Sales_Growth - (SELECT mean_retail FROM overall))) AS var_retail\n  FROM macro_with_risk\n  GROUP BY Risk_period\n),\n\n-- Sum of squares between groups\nss_between AS (\n  SELECT\n    SUM(n * (grp_unemp - (SELECT mean_unemp FROM overall)) *\n            (grp_unemp - (SELECT mean_unemp FROM overall))) AS ssb_unemp,\n    SUM(n * (grp_cpi - (SELECT mean_cpi FROM overall)) *\n            (grp_cpi - (SELECT mean_cpi FROM overall))) AS ssb_cpi,\n    SUM(n * (grp_ffr - (SELECT mean_ffr FROM overall)) *\n            (grp_ffr - (SELECT mean_ffr FROM overall))) AS ssb_ffr,\n    SUM(n * (grp_10y - (SELECT mean_10y FROM overall)) *\n            (grp_10y - (SELECT mean_10y FROM overall))) AS ssb_10y,\n    SUM(n * (grp_retail - (SELECT mean_retail FROM overall)) *\n            (grp_retail - (SELECT mean_retail FROM overall))) AS ssb_retail\n  FROM group_stats\n),\n\n-- Total sum of squares\nss_total AS (\n  SELECT\n    SUM(n * var_unemp) AS sst_unemp,\n    SUM(n * var_cpi) AS sst_cpi,\n    SUM(n * var_ffr) AS sst_ffr,\n    SUM(n * var_10y) AS sst_10y,\n    SUM(n * var_retail) AS sst_retail\n  FROM group_stats\n)\n\n-- Final eta-squared (rounded) for five indicators\nSELECT\n  ROUND(ssb_unemp / NULLIF(sst_unemp, 0), 2) AS eta_squared_unemployment,\n  ROUND(ssb_cpi / NULLIF(sst_cpi, 0), 2) AS eta_squared_cpi,\n  ROUND(ssb_ffr / NULLIF(sst_ffr, 0), 2) AS eta_squared_fed_funds,\n  ROUND(ssb_10y / NULLIF(sst_10y, 0), 2) AS eta_squared_ten_y,\n  ROUND(ssb_retail / NULLIF(sst_retail, 0), 2) AS eta_squared_retail_sales\nFROM ss_between, ss_total;\n\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

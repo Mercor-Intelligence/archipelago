@@ -1,0 +1,38 @@
+{
+  "name": "{{ project_name }}",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "resolve-paths": "mkdir -p node_modules/.cache && uv run python -m ui_generator.resolve_paths > node_modules/.cache/mcp-paths.json",
+    "predev": "npm run resolve-paths",
+    "prebuild": "npm run resolve-paths",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "jspdf": "^2.5.2",
+    "github-markdown-css": "^5.8.1",
+    "mermaid": "^11.12.2",
+    "next": "^14.2.0",
+    "papaparse": "^5.4.1",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-markdown": "^10.1.0",
+    "react-syntax-highlighter": "^15.6.1",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/papaparse": "^5.3.14",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.0.0"
+  }
+}

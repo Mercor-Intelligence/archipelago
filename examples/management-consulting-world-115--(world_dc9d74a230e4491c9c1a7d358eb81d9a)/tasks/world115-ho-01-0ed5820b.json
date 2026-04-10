@@ -1,0 +1,238 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "ResourceCo wants to calculate a Net Promoter Score (NPS), using respondents' answers to the key survey question \"How interested would you be in selecting a data center in a former mine...?\" If the NPS is at least 50, ResourceCo can pursue turning the mine into a data center. \n\nNote that NPS is defined as: (% Promoters - % Detractors) x 100\nWith respect to the key survey question, each respondent is assigned a category as follows:\nPromoters are defined as respondents who responded \"Very interested\" or \"Somewhat interested\"\nDetractors are defined as respondents who responded \"Somewhat uninterested\" or \"Not at all interested\"\nPassives are defined as respondents who responded with any other response\n\nUsing the survey data, state the total number of High-Usage respondents, assuming High-Usage respondents must have an average data need of at least 250TB and an annual decision cycle.\nCalculate the High-Usage respondents' NPS and state whether or not it is high enough to pursue turning the mine into a data center. \n\nIf the NPS is not high enough, assume ResourceCo will persuade High-Usage respondents in the Passive category to switch over to Promoters. Assume no other changes to the set of High-Usage respondents. Calculate the minimum number of Passives that would need to switch over to Promoters to reach the minimum required NPS to pursue the data center. Round to the nearest whole number. Calculate the percent increase of Promoter respondents from the original amount of Promoters. Round to the nearest whole percent.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the total number of High-Usage Respondents is 16 (ver_d8c94c26432642e8a3d22bdb12ec9e3b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of High-Usage Respondents is 16."
+        }
+      ]
+    },
+    {
+      "name": "States that the total number of High-Usage Respondents is a number other than... (ver_d8c94c26432642e8a3d22bdb12ec9e3b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of High-Usage Respondents is a number other than 16."
+        }
+      ]
+    },
+    {
+      "name": "States the High-Usage respondents' NPS is 19 (ver_5a1a151e74aa479f8bb606d1fcf0d85b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the High-Usage respondents' NPS is 19."
+        }
+      ]
+    },
+    {
+      "name": "States a High-Usage respondent's NSP different than 19. (ver_5a1a151e74aa479f8bb606d1fcf0d85b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States a High-Usage respondent's NSP different than 19."
+        }
+      ]
+    },
+    {
+      "name": "States NPS isn't high enough to pursue turning the mine into a data center (ver_4602a574d97f41dd8d3415bf348e3218)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States NPS isn't high enough to pursue turning the mine into a data center."
+        }
+      ]
+    },
+    {
+      "name": "States that the minimum number of High-Usage respondents that would need to... (ver_8d7b483418294e81a55067d53fb9a6f1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the minimum number of High-Usage respondents that would need to switch from Passives to Promoters to reach the minimum NPS score is 5."
+        }
+      ]
+    },
+    {
+      "name": "States that the minimum number of High-Usage respondents that would need to... (ver_8d7b483418294e81a55067d53fb9a6f1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the minimum number of High-Usage respondents that would need to switch from Passives to Promoters to reach the minimum NPS score is a number other than 5."
+        }
+      ]
+    },
+    {
+      "name": "States that the increase of Promoter respondents is 83% (acceptable range 82%... (ver_7d12ee880aa74746a6275cb59931d6c0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the increase of Promoter respondents is 83% (acceptable range 82% to 84%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the increase in the number of Promoters is a number other than 83% (ver_7d12ee880aa74746a6275cb59931d6c0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the increase in the number of Promoters is a number other than 83%."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world115-ho-01-0ed5820b"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_0ed5820b2772457db0569e94cd461751",
+    "task_name": "world115_HO_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_462498998a724f2ab7cad3e49dd3f5d8",
+        "golden_text_response": "Total number of High-Usage respondents: 16\nHigh-Usage respondents' NPS: 19\nNPS isn't high enough to pursue turning the mine into a data center.\nMinimum number of Passives that would need to switch over to Promoters to reach the minimum required NPS to pursue the data center: 5\nPercent increase of Promoter respondents:83%.\n\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

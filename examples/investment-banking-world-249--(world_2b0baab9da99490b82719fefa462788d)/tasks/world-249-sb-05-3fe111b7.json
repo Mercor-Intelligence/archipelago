@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the model, calculate the Enterprise Value for RemainCo under the following assumptions.\n\nAssumptions:\n\n1) Risk-free rate as the 5 year treasury rate as of 1/7/2026. \n2) Using the comps, focus on the Core SPGI peers comps and take out any company that has an Enterprise Value below $30 billion. Use the remaining comps to calculate the median 2025E EV/EBITDA multiple.\n3) Use the new comps median EBITDA multiple in the model to calculate the Enterprise Value using the EBITDA multiple approach. \n4) Round to two decimals and present data in $ millions."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States RemainCo Enterprise Value is $151,072.88 million (acceptable range... (ver_3aa9681e9cdd4a2393f2c242408889e4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States RemainCo Enterprise Value is $151,072.88 million (acceptable range $149,562.15 to $152,583.61)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-249-sb-05-3fe111b7"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_3fe111b7115542289a348a3cebbbba05",
+    "task_name": "World 249 SB 05",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_832f1324a9234f73b56525b4cfd9f562",
+        "golden_text_response": "RemainCo Enterprise Value: $151,072.88 million\n",
+        "golden_file_responses": "snap_48517e4a5b4d43b0b35a9100a51f5ca9"
+      }
+    ]
+  }
+}

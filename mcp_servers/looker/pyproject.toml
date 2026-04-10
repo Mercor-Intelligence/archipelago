@@ -1,0 +1,97 @@
+[project]
+name = "mercor-looker"
+version = "0.1.0"
+description = "Looker MCP Server"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp-schema",
+    "fastmcp",
+    "loguru",
+    "asyncer",
+    "pydantic>=2.0",
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "sqlparse>=0.5.0",
+    "matplotlib>=3.10.7",
+    "duckdb>=1.4.3",
+    "mercor-mcp-shared",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.23.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.6.0",
+    "pre-commit>=3.0.0",
+    "pyyaml>=6.0",  # For OpenAPI YAML generation
+]
+database = [
+    "duckdb>=1.0.0",  # Embedded database with PostgreSQL-compatible SQL syntax
+    "pandas>=2.0",  # For robust CSV parsing with BOM/encoding handling
+]
+config = [
+    "pydantic-settings>=2.0",
+    "python-dotenv>=1.0.0",
+]
+auth = [
+    "starlette>=0.27.0",  # Required for auth_server HTTP endpoints
+    "httpx>=0.24.0",  # For testing auth endpoints
+    "respx>=0.20.0",  # For mocking HTTP requests in tests
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mcp_servers*"]
+namespaces = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+exclude = ["verifier_configs"]  # Synced from rl-studio, uses different linting standards
+
+[tool.ruff.lint]
+# Enable: pyflakes, pycodestyle, isort, pep8-naming, pyupgrade
+select = ["F", "E", "W", "I", "N", "UP"]
+ignore = [
+    "N802",  # Allow do_GET, do_POST, etc. (required by http.server)
+    "E402",  # Allow module imports not at top (test files need to modify sys.path first)
+]
+# Allow long lines in meta-tools files for detailed field descriptions
+per-file-ignores = { "mcp_servers/**/tools/_meta_tools.py" = ["E501"] }
+# Allow auto-fix for all enabled rules (when `--fix` is provided)
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.basedpyright]
+exclude = ["scripts"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+norecursedirs = ["utils", ".git", ".ruff_cache", "__pycache__", "mcp_servers", "packages"]
+asyncio_mode = "auto"
+
+[dependency-groups]
+dev = [
+    "aiohttp>=3.13.2",
+    "pre-commit>=4.3.0",
+    "pytest>=8.4.2",
+    "pytest-asyncio>=1.2.0",
+    "pytest-httpx>=0.35.0",
+    "respx>=0.22.0",
+    "ruff>=0.14.11",
+]
+
+[tool.uv.sources]
+fastmcp = { git = "https://github.com/jlowin/fastmcp.git", rev = "bc2f601" }
+mercor-mcp-shared = { path = "packages/mercor-mcp-shared" }

@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "You have access to the enriched_loan_updated table which has information on the loan quality by loan IDs. I want you to use the definitions in the \"Executive Documentation - Harbor Capital Risk Dashboard.docx\" document to determine loan health by focusing only on section 3 and ignore the rest. Use the definition and threshold/rule columns to compute columns Expected Loss, VP Approval (Yes/No), Internal Risk Grade, and Delinquency Bucket. A few clarifications for you, Exposure indicates the Current_Balance column, PD indicates the PD_Probability column, and LGD indicates the LGD_Factor column. However, put the following a higher priority than the document's definitions: if the Days Past Due is greater than 0, the Internal Risk Grade should be F, and also if the Internal Risk Grade is not A, then VP approval is required. Then, also multiply the PD and Expected Loss columns to compute the PD_Loss for each loan. For only loans where Internal Risk Grade is F and Delinquency Bucket is Watch, output the median and the average expected loss, total number of loans that require VP approval, average credit score, and average interest rate . For this analysis, please ignore the loans with current balance less than 1,000,000 or Fixed interest type. Please note the Sectors and Year stated in the Executive summary of \"1.11.2026 Habor Capital Final.pdf\" document. Filter only the loans with Sector and Month_Key Year of the noted.\nEnsure that all values are rounded to the nearest whole number for all metrics except average interest rate, which should be to 3 decimal places. Please write and execute the analysis using SQLite, and include the final query used for analysis and the results in your output."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Computes the median of Expected Loss as 622,509 +/- 10. (ver_15a74eb786094eddbd4952f3112f36e5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes the median of Expected Loss as 622,509 +/- 10."
+        }
+      ]
+    },
+    {
+      "name": "Computes the average of Expected Loss as 711,233 +/- 10. (ver_975943c882664f2e94839924e6e7ad62)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes the average of Expected Loss as 711,233 +/- 10."
+        }
+      ]
+    },
+    {
+      "name": "Computes the number of loans needing VP approvals as exactly 54 (acceptable... (ver_5ed15859c2d14ee08db1fa6343da987c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes the number of loans needing VP approvals as exactly 54 (acceptable range 53 to 55)."
+        }
+      ]
+    },
+    {
+      "name": "Computes the average credit score as exactly 659 +/- 1 (acceptable range 652... (ver_9dd77e51c22d43528b01e7151824dd18)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes the average credit score as exactly 659 +/- 1 (acceptable range 652 to 666)."
+        }
+      ]
+    },
+    {
+      "name": "Computes the average interest rate as 9.518 (+/- 0.005) (ver_27a3c7e49d794c418f85a5d021760adb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Computes the average interest rate as 9.518 (+/- 0.005)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sql-kk09-3101ffbb"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_3101ffbb058749ccb84bd2ffe46db071",
+    "task_name": "SQL - KK09",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d0027abd35814b408b2abd55dc81bd29",
+        "golden_text_response": "The output is as follows:\nThe median of expected loss is 622,509.\nThe average of expected loss is 711,233.\nThe number of loans needing VP approvals is 54.\nThe average credit score is 659.\nThe average interest rate is 9.518.\n\nThe SQL query for the analysis is as follows:\n\"\"\"\nWITH base AS (\n  SELECT\n    Loan_ID,\n    CAST(Current_Balance AS REAL) AS Current_Balance,\n    Interest_Type,\n    CAST(Interest_Rate AS REAL) AS Interest_Rate,\n    CAST(Days_Past_Due AS INTEGER) AS Days_Past_Due,\n    Region,\n    NAICS_Sector,\n    CAST(Origination_Credit_Score AS REAL) AS Origination_Credit_Score,\n    CAST(PD_Probability AS REAL) AS PD_Probability,\n    CAST(LGD_Factor AS REAL) AS LGD_Factor,\n    Month_Key\n  FROM enriched_loan_updated\n  WHERE CAST(Current_Balance AS REAL) >= 1000000\n    AND COALESCE(Interest_Type,'') <> 'Fixed'\n    AND NAICS_Sector IN ('Construction','Retail')\n    AND SUBSTR(CAST(Month_Key AS TEXT), 1, 4) = '2023'\n),\nregion_totals AS (\n  SELECT Region, SUM(Current_Balance) AS region_balance\n  FROM base\n  GROUP BY Region\n),\nportfolio_total AS (\n  SELECT SUM(region_balance) AS total_balance FROM region_totals\n),\nscored AS (\n  SELECT\n    b.Loan_ID,\n    b.Region,\n    b.Current_Balance AS Exposure,\n    b.PD_Probability AS PD,\n    b.LGD_Factor AS LGD,\n    b.Interest_Rate,\n    b.Origination_Credit_Score,\n    b.Days_Past_Due,\n    (b.Current_Balance * b.PD_Probability * b.LGD_Factor) AS Expected_Loss,\n    CASE\n      WHEN b.Days_Past_Due > 0 THEN 'F'\n      WHEN b.PD_Probability > 0.40 THEN 'F'\n      WHEN b.PD_Probability > 0.20 THEN 'D'\n      WHEN b.PD_Probability < 0.03 THEN 'A'\n      ELSE NULL\n    END AS Internal_Risk_Grade,\n    CASE\n      WHEN b.Days_Past_Due = 0 THEN 'Current'\n      WHEN b.Days_Past_Due BETWEEN 1 AND 30 THEN 'Watch'\n      WHEN b.Days_Past_Due >= 90 THEN 'Non-Accrual'\n      ELSE 'Other'\n    END AS Delinquency_Bucket,\n    CASE\n      WHEN (rt.region_balance * 1.0) / pt.total_balance > 0.25 THEN 'Breach'\n      ELSE 'OK'\n    END AS Concentration_Risk\n  FROM base b\n  JOIN region_totals rt ON rt.Region = b.Region\n  CROSS JOIN portfolio_total pt\n),\nfinalized AS (\n  SELECT\n    *,\n    CASE\n      WHEN COALESCE(Internal_Risk_Grade,'') <> 'A' THEN 'Yes'\n      WHEN Expected_Loss > 1000000 THEN 'Yes'\n      ELSE 'No'\n    END AS VP_Approval,\n    (PD * Expected_Loss) AS PD_Loss\n  FROM scored\n),\ntarget AS (\n  SELECT *\n  FROM finalized\n  WHERE Internal_Risk_Grade = 'F'\n    AND Delinquency_Bucket = 'Watch'\n),\nordered AS (\n  SELECT\n    Expected_Loss,\n    ROW_NUMBER() OVER (ORDER BY Expected_Loss) AS rn,\n    COUNT(*) OVER () AS cnt\n  FROM target\n),\nmedian_calc AS (\n  SELECT AVG(Expected_Loss) AS median_expected_loss\n  FROM ordered\n  WHERE rn IN (\n    CAST((cnt + 1) / 2 AS INT),\n    CAST((cnt + 2) / 2 AS INT)\n  )\n)\nSELECT\n  CAST(ROUND(median_calc.median_expected_loss, 0) AS INTEGER) AS median_expected_loss,\n  CAST(ROUND(AVG(t.Expected_Loss), 0) AS INTEGER) AS avg_expected_loss,\n  SUM(CASE WHEN t.VP_Approval = 'Yes' THEN 1 ELSE 0 END) AS vp_approval_loans,\n  CAST(ROUND(AVG(t.Origination_Credit_Score), 0) AS INTEGER) AS avg_credit_score,\n  ROUND(AVG(t.Interest_Rate), 3) AS avg_interest_rate\nFROM target t\nCROSS JOIN median_calc;\n\n\"\"\"",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

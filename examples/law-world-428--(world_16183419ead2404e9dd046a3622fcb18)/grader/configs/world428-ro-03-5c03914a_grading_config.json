@@ -1,0 +1,220 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_3242eb02484648828134857b42c3140e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5c03914ae4314c95bbd9dae598eae47c",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States yes in cell D2",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Pursuant to Section 6.7 of the Final Exclusive Negotiating Agreement, the City may, upon reasonable notice, request from Liverbird, progress reports about the project, but not more than once per month.\n\nNotice is defined under Section 18 of the Final ENA, which states that notice must be in writing and either personally served or sent by certified mail specifically to Annalise Keating at the work address listed.\n\nThis request was personally served on Annalise for the first time that month. This is a valid request.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6f7a1d26dc7e452eb14e661883ae2a6a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5c03914ae4314c95bbd9dae598eae47c",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States no in cell D3",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Pursuant to Section 6.7 of the Final Exclusive Negotiating Agreement, the City may, upon reasonable notice, request from Liverbird, progress reports about the project, but not more than once per month.\n\nNotice is defined under Section 18 of the Final ENA, which states that notice must be in writing and either personally served or sent by certified mail specifically to Annalise Keating at the work address listed.\n\nA valid request was already sent to Annalise in November. Under Section 6.7 only one request can be sent per month, so this request is not valid.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7be402943fa8438b94b313bcd9c215af",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5c03914ae4314c95bbd9dae598eae47c",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States no in cell D4",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Pursuant to Section 6.7 of the Final Exclusive Negotiating Agreement, the City may, upon reasonable notice, request from Liverbird, progress reports about the project, but not more than once per month.\n\nNotice is defined under Section 18 of the Final ENA, which states that notice must be in writing and either personally served or sent by certified mail specifically to Annalise Keating at the work address listed.\n\nThe request must be delivered to Annalise only pursuant to Section 18 of ENA. This request was delivered to Victoria Keating. Thus, this is not a valid request.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_da03117120cb4246a63133d9892b67fa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5c03914ae4314c95bbd9dae598eae47c",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States no in cell D5",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Pursuant to Section 6.7 of the Final Exclusive Negotiating Agreement, the City may, upon reasonable notice, request from Liverbird, progress reports about the project, but not more than once per month.\n\nNotice is defined under Section 18 of the Final ENA, which states that notice must be in writing and either personally served or sent by certified mail specifically to Annalise Keating at the work address listed.\n\nThe request must be delivered to Annalise only pursuant to Section 18 of ENA. This request was delivered to Samuel Keating. Thus, this is not a valid request.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_27a7d8012134473497b4b4c9edb51e91",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5c03914ae4314c95bbd9dae598eae47c",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States section 6.7 of the Final ENA in cell E2",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Pursuant to Section 6.7 of the Final Exclusive Negotiating Agreement, the City may, upon reasonable notice, request from Liverbird, progress reports about the project, but not more than once per month.\n\nNotice is defined under Section 18 of the Final ENA, which states that notice must be in writing and either personally served or sent by certified mail specifically to Annalise Keating at the work address listed.\n\nThis request was personally served on Annalise for the first time that month. This is a valid request.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5908c25667e84fb1aba8b5a5339ab62b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5c03914ae4314c95bbd9dae598eae47c",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States section 18 of the Final ENA in cell E2",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Pursuant to Section 6.7 of the Final Exclusive Negotiating Agreement, the City may, upon reasonable notice, request from Liverbird, progress reports about the project, but not more than once per month.\n\nNotice is defined under Section 18 of the Final ENA, which states that notice must be in writing and either personally served or sent by certified mail specifically to Annalise Keating at the work address listed.\n\nThis request was personally served on Annalise for the first time that month. This is a valid request.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_458f9b885b6c4f09a6797ae48a3ca26e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5c03914ae4314c95bbd9dae598eae47c",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States section 6.7 of the Final ENA in cell E3",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Pursuant to Section 6.7 of the Final Exclusive Negotiating Agreement, the City may, upon reasonable notice, request from Liverbird, progress reports about the project, but not more than once per month.\n\nA valid request was already sent to Annalise in November. Under Section 6.7 only one request can be sent per month, so this request is not valid.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cf4c4128b6ee4148abc14ec3f9660d0b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5c03914ae4314c95bbd9dae598eae47c",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States section 18 of the Final ENA in cell E4",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Notice is defined under Section 18 of the Final ENA, which states that notice must be in writing and either personally served or sent by certified mail specifically to Annalise Keating at the work address listed.\n\nThe request must be delivered to Annalise only pursuant to Section 18 of ENA. This request was delivered to Victoria Keating. Thus, this is not a valid request.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a0ef674c600f4170bb256c2d87c263f8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5c03914ae4314c95bbd9dae598eae47c",
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States section 18 of the Final ENA in cell E5",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Spreadsheets (.xlsx, .xls, .xlsm)",
+        "criteria_explanation": "Notice is defined under Section 18 of the Final ENA, which states that notice must be in writing and either personally served or sent by certified mail specifically to Annalise Keating at the work address listed.\n\nThe request must be delivered to Annalise only pursuant to Section 18 of ENA. This request was delivered to Samuel Keating. Thus, this is not a valid request.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "7a9a6201-e5c9-46b1-b9d3-00d12eed0a5a",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

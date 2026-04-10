@@ -1,0 +1,147 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_be22852f40f748ed9a955ba7f5bbb74a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_db0d06f3ef1447b188be40c4dc4b6358",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Includes CC.1.3.8.F as the state standard number",
+        "modality": "Free text",
+        "negative_criteria": "Includes a number other than CC.1.3.8.F as the standard number.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cf5db89e2cb74646bbcc293070f49675",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_db0d06f3ef1447b188be40c4dc4b6358",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the state standard description is \"Analyze the influence of the words and phrases in a text including figurative and connotative meanings and how they shape meaning and tone\"",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e0944bd3a8b54aacbb6104a5ab1bf271",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_db0d06f3ef1447b188be40c4dc4b6358",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States \u201cuntil you climb into his skin and walk around in it\" verbatim in the question",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6cc212d8351243048b8ecce7dbb76914",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_db0d06f3ef1447b188be40c4dc4b6358",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Includes a request to provide the meaning of the quote in the question",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_03622fc4c95045cc841c25f5261cead4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_db0d06f3ef1447b188be40c4dc4b6358",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the quote is in chapter 3 in the novel",
+        "modality": "Free text",
+        "negative_criteria": "Provides a statement that the quote \u201cuntil you climb into his skin and walk around in it\u201d is in a chapter other than 3 in the novel.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Must scan the text to find the quote in chapter 3.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fe66e465ee5b4792a257e8326a66804d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_db0d06f3ef1447b188be40c4dc4b6358",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the quote is on page 30 in the novel",
+        "modality": "Free text",
+        "negative_criteria": "States that the quote \u201cuntil you climb into his skin and walk around in it\u201d is on a page other than 30 in the novel.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Page numbers not given on doc text.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

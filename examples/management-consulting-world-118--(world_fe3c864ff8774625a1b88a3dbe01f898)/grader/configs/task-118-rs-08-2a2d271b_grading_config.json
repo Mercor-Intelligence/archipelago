@@ -1,0 +1,176 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_66642cef2093496e8a707fad359b4686",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2a2d271b4e1241b1ad667870e8b9ec9e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the expected payroll expense in year 2030 for IL is $615,148,849 (acceptable range $608,997,361 to $621,300,337)",
+        "negative_criteria": "States that the expected payroll expense in year 2030 for IL is a value other than $615,148,849",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fa5f24743a8449a899b7dc53a42db122",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2a2d271b4e1241b1ad667870e8b9ec9e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the expected payroll expense in year 2030 for MN is $301,035,829 (acceptable range $298,025,471 to $304,046,187)",
+        "negative_criteria": "States that the expected payroll expense in year 2030 for MN is a value other than $301,035,829",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b216d72c9100413f91c09113b7f9c951",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2a2d271b4e1241b1ad667870e8b9ec9e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the expected payroll expense in year 2030 for WI is $344,774,416 (acceptable range $341,326,672 to $348,222,160)",
+        "negative_criteria": "States that the expected payroll expense in year 2030 for WI is a value other than $344,774,416",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_04923a4d72914ea98a492c068b2fff51",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2a2d271b4e1241b1ad667870e8b9ec9e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the expected payroll expense in year 2030 for OH is $489,642,934 (acceptable range $484,746,505 to $494,539,363)",
+        "negative_criteria": "States that the expected payroll expense in year 2030 for OH is a value other than $489,642,934",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0fa4e6926bd0406d91f5e4f6c4cff4d6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2a2d271b4e1241b1ad667870e8b9ec9e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the expected payroll expense in year 2030 for MO is $304,230,042 (acceptable range $301,187,742 to $307,272,342)",
+        "negative_criteria": "States that the expected payroll expense in year 2030 for MO is a value other than $304,230,042",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7319ee9db76c4a4a882f6e1ea683955a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2a2d271b4e1241b1ad667870e8b9ec9e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the expected payroll expense in year 2030 for IN is $409,583,946 (acceptable range $405,488,107 to $413,679,785)",
+        "negative_criteria": "States that the expected payroll expense in year 2030 for IN is a value other than $409,583,946",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_397f5915b45646ce9bde64ea76b280c5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2a2d271b4e1241b1ad667870e8b9ec9e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the expected payroll expense in year 2030 for MI is $453,321,939 (acceptable range $448,788,720 to $457,855,158)",
+        "negative_criteria": "States that the expected payroll expense in year 2030 for MI is a value other than $453,321,939",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c24c830bcda5407b8900d823150bdb82",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2a2d271b4e1241b1ad667870e8b9ec9e",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the expected total payroll expense for the firm in year 2030 is $2,917,737,955 (acceptable range $2,888,560,575 to $2,946,915,335)",
+        "negative_criteria": "States that the expected total payroll expense for the firm in year 2030 is a value other than $2,917,737,955",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

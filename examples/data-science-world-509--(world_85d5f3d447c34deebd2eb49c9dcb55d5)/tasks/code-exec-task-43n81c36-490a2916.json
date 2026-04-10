@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Review 1.11.2026 Habor Capital Final.pdf. Use page 6 to identify the two largest inflection windows (biggest month-to-month jumps in Variable loan losses) and treat each window as a pair (both the month of the jump and the one before). Report the two inflection windows.\nThen use enriched_loan_data.csv. For only the second inflection window (chronologically), compute the total Expected_Loss_Amount for Variable loans in both months, report the variable rate loss change (dollars and percent) across the window, and report how much of the total portfolio expected loss change across the window is explained by variable rate loans (as a percent contribution). Round dollars to 0 decimals and percentages to two decimals, and include the Python code used."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Identifies the first inflection window as spanning from 2023-09 to 2023-10. (ver_e3b9bd00da454db4b140beb02f0cdad6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the first inflection window as spanning from 2023-09 to 2023-10."
+        }
+      ]
+    },
+    {
+      "name": "Identifies the second inflection window as spanning from 2024-05 to 2024-06. (ver_52a18d19c1e143e0aef476e80b6beca2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies the second inflection window as spanning from 2024-05 to 2024-06."
+        }
+      ]
+    },
+    {
+      "name": "Reports that the variable loss change in dollars is $461291139 +/- $100. (ver_6cb2be34b1a14be0958a737ff885f6b9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that the variable loss change in dollars is $461291139 +/- $100."
+        }
+      ]
+    },
+    {
+      "name": "Reports the variable loss change in percent is 59.87% (+/- 0.05%) (ver_7ed2d5842389436aa2aea80830075a10)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the variable loss change in percent is 59.87% (+/- 0.05%)."
+        }
+      ]
+    },
+    {
+      "name": "Reports that the total portfolio expected loss change across the window is... (ver_1382ae747fad438d93afcb78fb134ab9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports that the total portfolio expected loss change across the window is explained by variable rate loans is 100.83% (+/- 0.05%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh code-exec-task-43n81c36-490a2916"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_490a29161fb5417ca751524297b5b4da",
+    "task_name": "Code Exec - Task 43n81c36",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f50773851bbc481abec9230d960cf972",
+        "golden_text_response": "first window: 2023-09->2023-10\nsecond window: 2024-05->2024-06\nvariable_loss_change_usd: 461291139\nvariable_loss_change_pct: 59.87\nvariable_explains_total_change_pct: 100.83\n\n```\nimport pandas as pd\n#  identified from PDF '1.11.2026 Habor Capital Final.pdf' page 6\nm4, m5 = \"2023-09\", \"2023-10\"\nm0, m1 = \"2024-05\", \"2024-06\"\n\ndf = pd.read_csv(\"enriched_loan_data.csv\")\ndf[\"Report_Date\"] = pd.to_datetime(df[\"Report_Date\"])\ndf[\"Month_Key\"] = df[\"Report_Date\"].dt.to_period(\"M\").astype(str)\n\nitype = df[\"Interest_Type\"].astype(str).str.lower()\ndf[\"is_variable\"] = itype.str.contains(\"variable\")\ndf[\"is_fixed\"] = itype.str.contains(\"fixed\")\n\nmonthly_tot = df.groupby(\"Month_Key\")[\"Expected_Loss_Amount\"].sum().rename(\"total_el\")\nmonthly_var = df[df[\"is_variable\"]].groupby(\"Month_Key\")[\"Expected_Loss_Amount\"].sum().rename(\"var_el\")\nmonthly_fix = df[df[\"is_fixed\"]].groupby(\"Month_Key\")[\"Expected_Loss_Amount\"].sum().rename(\"fix_el\")\n\nmonthly = pd.concat([monthly_tot, monthly_var, monthly_fix], axis=1).fillna(0.0).reset_index()\n\nrow0 = monthly[monthly[\"Month_Key\"] == m0].iloc[0]\nrow1 = monthly[monthly[\"Month_Key\"] == m1].iloc[0]\n\nvar0, var1 = float(row0[\"var_el\"]), float(row1[\"var_el\"])\nfix0, fix1 = float(row0[\"fix_el\"]), float(row1[\"fix_el\"])\ntot0, tot1 = float(row0[\"total_el\"]), float(row1[\"total_el\"])\n\nvar_change = var1 - var0\nvar_change_pct = (var_change / var0) * 100\n\ntotal_change = tot1 - tot0\nvar_contrib_pct = (var_change / total_change) * 100\n\nprint(\"first window:\", f\"{m4}->{m5}\")\nprint(\"second window:\", f\"{m0}->{m1}\")\nprint(f\"variable_loss_change_usd: {var_change:.0f}\")\nprint(f\"variable_loss_change_pct: {var_change_pct:.2f}\")\nprint(f\"variable_explains_total_change_pct: {var_contrib_pct:.2f}\")\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

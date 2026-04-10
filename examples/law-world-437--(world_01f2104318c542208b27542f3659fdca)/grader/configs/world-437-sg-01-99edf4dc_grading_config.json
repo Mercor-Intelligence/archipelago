@@ -1,0 +1,88 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_65c869dc283a4760859bc0ff2e7c1738",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_99edf4dce27d429d9661f38811b32200",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that an inspector should have reasonably known that Certificate A did not exist at the time of the inspection because Certificate A's metadata appears later than the documented weld completion date",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Forensic review has shown that the metadata of Weld Certificates A and B were \"altered and backdated\" on October 17, two days after the October 15 collapse. This indicates that after the September 1 or 15 inspections, there may have been post hoc editing or creation of documents. More specifically, Certificate A\u2019s metadata appears later than the documented weld completion date. Timeline Cross Reference.docx indicates that Certificate A was possibly backdated. The inspector thus should have noticed this document never existed and wasn't logged at the time it was allegedly created. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_05f2547bb0d2408db664a25a2c92ed95",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_99edf4dce27d429d9661f38811b32200",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that Certificate B could have existed at the time of the inspection",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Forensic review has shown that the metadata of Weld Certificates A and B were \"altered and backdated\" on October 17, two days after the October 15 collapse. This indicates that after the September 1 or 15 inspections, there may have been post hoc editing or creation of documents. More specifically, Certificate A\u2019s metadata appears later than the documented weld completion date. Timeline Cross Reference.docx indicates that Certificate A was possibly backdated, but that Certificate B was stamped out of date with the wrong sequence number.  Certificate B likely existed and was later modified. The inspector should have at least incorporated data from Certificate B, but only what was on the certificate at that time and not later changed. \n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_eee869cbea5f4c0b828c16c3d287d91c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_99edf4dce27d429d9661f38811b32200",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the inspector's report could only incorporate information from Weld Certificate B that wasn't later altered",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Forensic review has shown that the metadata of Weld Certificates A and B were \"altered and backdated\" on October 17, two days after the October 15 collapse. This indicates that after the September 1 or 15 inspections, there may have been post hoc editing or creation of documents. More specifically, Certificate A\u2019s metadata appears later than the documented weld completion date. Timeline Cross Reference.docx indicates that Certificate A was possibly backdated, but that Certificate B was stamped out of date with the wrong sequence number. If certificate B was altered after the fact, slightly or significantly, the inspector would not have noted the changed information. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

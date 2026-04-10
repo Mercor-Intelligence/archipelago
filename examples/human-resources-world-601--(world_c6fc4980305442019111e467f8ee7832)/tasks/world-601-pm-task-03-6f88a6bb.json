@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "As part of the annual compensation cycle, Finance has approved a merit increase budget equal to 2.8% of total annual payroll for active employees. Merit increases on existing salaries should be determined based on compa ratio and performance rating, as per attached Merit Increase Matrix (Merit Increase.pdf). Use Employee Roster_Enhanced.xlsx.\n\nIf the total calculated merit increases exceed the approved budget, apply a uniform scaling factor across all employees to ensure total payouts equal the budget. Do not round intermediate calculations. Round final values to 1 decimal place.\n\nShare in console: Total revised salary payout post merit increase for each job level. Review the files in the filesystem."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that revised salary payout post merit increase for IC1 is $5,627,276.5... (ver_72f6eb8d5e9a4a6f87dc2c30b5164812)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that revised salary payout post merit increase for IC1 is $5,627,276.5 (acceptable range $5,571,003.7 to $5,683,549.3)."
+        }
+      ]
+    },
+    {
+      "name": "States that revised salary payout post merit increase for IC2 is $9,033,714.8... (ver_667bd83b723048c79bb54e6b5b70c7ce)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that revised salary payout post merit increase for IC2 is $9,033,714.8 (acceptable range $8,943,377.7 to $9,124,051.9)."
+        }
+      ]
+    },
+    {
+      "name": "States that revised salary payout post merit increase for IC3 is $6,921,330.9... (ver_ad68f6c427b544159ea82dbe2e754fc6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that revised salary payout post merit increase for IC3 is $6,921,330.9 (acceptable range $6,852,117.6 to $6,990,544.2)."
+        }
+      ]
+    },
+    {
+      "name": "States that revised salary payout post merit increase for Lead is $3,873,588.1... (ver_65ab99e9c3624e76b7557c7e5e8a5909)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that revised salary payout post merit increase for Lead is $3,873,588.1 (acceptable range $3,834,852.2 to $3,912,324.0)."
+        }
+      ]
+    },
+    {
+      "name": "States that revised salary payout post merit increase for Manager is... (ver_2a4816a6a86049b788c41b54d80642d5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that revised salary payout post merit increase for Manager is $2,670,660.9 (acceptable range $2,643,954.3 to $2,697,367.5)."
+        }
+      ]
+    },
+    {
+      "name": "States that revised salary payout post merit increase for Senior is... (ver_dcf96edba14b49f29f9021366153b07b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that revised salary payout post merit increase for Senior is $7,817,448.9 (acceptable range $7,739,274.4 to $7,895,623.4)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-601-pm-task-03-6f88a6bb"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_6f88a6bbfd99403ebc0ae278f707f37d",
+    "task_name": "World 601_PM_Task 03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_6915046e59544f26bf816f39a35b6080",
+        "golden_text_response": "1. Revised salary payout post merit increase for IC1 is $5,627,276.5\n2. Revised salary payout post merit increase for IC2 is $9,033,714.8 \n3. Revised salary payout post merit increase for IC3 is $6,921,330.9 \n4. Revised salary payout post merit increase for Lead is $3,873,588.1 \n5. Revised salary payout post merit increase for Manager is $2,670,660.9 \n6. Revised salary payout post merit increase for Senior is $7,817,448.9 ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

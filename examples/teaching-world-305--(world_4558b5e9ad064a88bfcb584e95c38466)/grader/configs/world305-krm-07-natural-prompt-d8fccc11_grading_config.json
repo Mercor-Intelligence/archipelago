@@ -1,0 +1,363 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_4f623dcb78a642078642237ccbb4bc3c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d8fccc11cb8d42c5a836f3faf9592377",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists the word 'intelligent' in the message",
+        "modality": "Free text",
+        "negative_criteria": "Includes a word other than intelligent, headstrong, outspoken, innocent, intolerant, discovers, cruel, violent, necessary, response, intolerance, understand, origins, dignity, anger, foundation, or narrator.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9212f72f364a4c6c977bb0c53511d46b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d8fccc11cb8d42c5a836f3faf9592377",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists the word 'innocent' in the message",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0865b22c378c4f40a9e7c842dd355d67",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d8fccc11cb8d42c5a836f3faf9592377",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists 'intolerant' in the message",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f2753d00633948c99678b6d61d7d63c2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d8fccc11cb8d42c5a836f3faf9592377",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists 'discovers' in the message",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d6abe39d17524a9687dcc31b0e18307c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d8fccc11cb8d42c5a836f3faf9592377",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists 'cruel' in the message",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e2dfcdf15bb449eab7571ba4d2bf6119",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d8fccc11cb8d42c5a836f3faf9592377",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists 'violent' in the message",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f4214d243e944b8d876b423e1bc87e8f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d8fccc11cb8d42c5a836f3faf9592377",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists 'necessary' in the message",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5155fb6c2434450493a261d467ad78a3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d8fccc11cb8d42c5a836f3faf9592377",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists 'response' in the message",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8ada378687254f4894abb94c6ac45e4e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d8fccc11cb8d42c5a836f3faf9592377",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists 'intolerance' in the message",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4435e52a82ae4c7296d6d6034ec56235",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d8fccc11cb8d42c5a836f3faf9592377",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists 'understand' in the message",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d0e9d4ba926c4d95a48d2a967e746341",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d8fccc11cb8d42c5a836f3faf9592377",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists 'origins' in the message",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_842f3ac2f87f4b00833138437343980c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d8fccc11cb8d42c5a836f3faf9592377",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists 'dignity' in the message",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e83869776d224ddaa647c73fca660472",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d8fccc11cb8d42c5a836f3faf9592377",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists 'anger' in the message",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9c63afe8b62a49e1ab98e432084f751a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d8fccc11cb8d42c5a836f3faf9592377",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists 'foundation' in the message",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cce6a091044541e68f0b279572c16043",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d8fccc11cb8d42c5a836f3faf9592377",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists the word 'headstrong' in the message",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ba948200434e409296c1307232382c4d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d8fccc11cb8d42c5a836f3faf9592377",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists the word 'outspoken' in the response",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 15,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_54d394a809d841d98a3a0d8b9ab7d9b2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d8fccc11cb8d42c5a836f3faf9592377",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Lists the word 'narrator' in the message",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

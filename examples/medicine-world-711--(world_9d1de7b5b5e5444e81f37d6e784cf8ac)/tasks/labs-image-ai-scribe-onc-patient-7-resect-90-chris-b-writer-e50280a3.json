@@ -1,0 +1,330 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “ONC_PATIENT 7” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n------\n\nFor the purpose of this scenario, please assume that the date of birth of the patient is January 1, 1930.\n\nA patient previously treated for lung cancer has had recent surgery following changes on a surveillance CT scan. She is seen in the multidisciplinary clinic several weeks later with her partner, on the 5th of January, 2026.\n\nAccording to the RESECT-90 criteria, please calculate the patient's 90-day mortality risk as a percentage to the nearest 10th decimal place, and explain your rationale."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient is 96 years old (acceptable range 95 to 97). (ver_259bf8506e4d4d49a69ead7400977479)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient is 96 years old (acceptable range 95 to 97)."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient is female. (ver_d90d295e9e73411bb9ce3483eef92159)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient is female."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has an ECOG performance score of 2 (acceptable range... (ver_b0c1358e4bec426faebc94f7da571d5e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has an ECOG performance score of 2 (acceptable range 1.98 to 2.02)."
+        }
+      ]
+    },
+    {
+      "name": "States the patient has a predicted diffusion capacity of the lungs for carbon... (ver_d887dc76d0f3423d91d44e45469528f3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient has a predicted diffusion capacity of the lungs for carbon monoxide (DLCO) percentage of 45% (acceptable range 44.6% to 45.4%)."
+        }
+      ]
+    },
+    {
+      "name": "States the patient has a body mass index (BMI) of 22.6 (acceptable range 22.4... (ver_d781f893f23b4bdf8aae876b2ea908a9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient has a body mass index (BMI) of 22.6 (acceptable range 22.4 to 22.8)."
+        }
+      ]
+    },
+    {
+      "name": "States the patient has a creatinine of 141 μmol/L (acceptable range 140 to 142). (ver_f5bd3ee6419645348db36a729821e0aa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient has a creatinine of 141 μmol/L (acceptable range 140 to 142)."
+        }
+      ]
+    },
+    {
+      "name": "States the patient has anemia. (ver_65a9532d4af64234a57d2be25fa3c6e5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient has anemia."
+        }
+      ]
+    },
+    {
+      "name": "States the patient has an arrhythmia. (ver_3f7d1e0e78db4070976aac5dd63326a4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient has an arrhythmia."
+        }
+      ]
+    },
+    {
+      "name": "States the patient has had a right-sided resection. (ver_9f4dd0920f0b454e8fc5015969c6dc63)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient has had a right-sided resection."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has had 3 bronchopulmonary segments resected. (ver_4a543ee27bd949348b32ab14a3fba506)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has had 3 bronchopulmonary segments resected."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient did not have a thoracotomy. (ver_681e52cd42fb4a958feb5657c4190c9c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient did not have a thoracotomy."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has a malignancy. (ver_65c91e62475a4050affc3ec3cab11613)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has a malignancy."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has a 90-day mortality risk between 25.2% and 26.2%... (ver_f0822b166762460cb59a002ffc3d6f42)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has a 90-day mortality risk between 25.2% and 26.2% per the RESECT-90 Score."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-onc-patient-7-resect-90-chris-b-writer-e50280a3"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_e50280a3051343b0b1faba85befd88e8",
+    "task_name": "Labs_Image_AI Scribe_ONC Patient 7 - RESECT-90 - Chris B Writer",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_3a69f4075df04f059d12807887094056",
+        "golden_text_response": "For the RESECT-90 score, the following clinical parameters exist for the calculation:\n\nThe patient is 96 years old.\nThe patient is female.\nThe patient has an ECOG performance score of 2.\nThe patient has a predicted diffusion capacity of the lung for carbon monoxide percentage of 45%.\nThe patient has a body mass index of 22.6 kg/m^2 (calculated from weight 50.8 kg, height 1.499 m)\nThe patient has a creatinine of 141 μmol/L.\nThe patient has anemia.\nThe patient has an arrhythmia (atrial fibrillation).\nThe patient has had a right-sided resection.\nThe patient has had 3 bronchopulmonary segments resected.\nThe patient had thoracoscopic surgery, not an open thoracotomy.\nThe patient has a malignancy.\n\nBased on this information, the patient has a 90-day mortality of 25.6%.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

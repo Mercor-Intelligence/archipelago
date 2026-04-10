@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Calculate using the model the difference between the implied share price for S&P Global from the DCF valuation (using the growth-in-perpetuity method to determine terminal value) and S&P Global’s closing share price as of 12/31/2025, under the following assumptions:\n•\tHold subscription revenue growth constant at 10.0% from 2026 through 2030.\n•\tSet the risk‑free rate equal to the 1‑month U.S. Treasury yield as of December 31, 2025.\n\nPresent the result in USD, rounded to the nearest dollar."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that difference between the implied share price from the DCF valuation... (ver_6a32692cec8d4953957c327af810a9f5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that difference between the implied share price from the DCF valuation (using the growth-in-perpetuity method to determine terminal value) and S&P Global’s closing share price as of 12/31/2025 is ($20) (acceptable range 11.9 to 12.1)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world249-sk-task01-b069dd82"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_b069dd82780a488ca4725e5f1d3aae48",
+    "task_name": "World249_SK_Task01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d9a2d3a91770411ea26d1920095818ce",
+        "golden_text_response": "Difference between the implied share price from the DCF valuation (using the growth-in-perpetuity method to determine terminal value) and S&P Global’s closing share price as of 12/31/2025 is ($20).",
+        "golden_file_responses": "snap_a9de4cd7229647c4963f4c90ae2bc67b"
+      }
+    ]
+  }
+}

@@ -1,0 +1,404 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Create a slide deck for vocabulary words in alphabetical order: santero, gesso, pigments, varnish, and charcoal. On each vocabulary slide, provide the part of speech of the word and the definition.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Identifies charcoal as a noun (ver_bd273e160d014ae09dc29feb8db44a6e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies charcoal as a noun."
+        }
+      ]
+    },
+    {
+      "name": "Identifies charcoal as any other part of speech besides a noun. (ver_bd273e160d014ae09dc29feb8db44a6e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies charcoal as any other part of speech besides a noun."
+        }
+      ]
+    },
+    {
+      "name": "Defines charcoal as the solid, black form of carbon made by burning wood or... (ver_a3676e90074748e38bd9df8a02a72d0f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Defines charcoal as the solid, black form of carbon made by burning wood or other matter in a space with very little oxygen."
+        }
+      ]
+    },
+    {
+      "name": "Identifies gesso as a noun (ver_27fa64f1f0ba4c428c9b598454d488a6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies gesso as a noun."
+        }
+      ]
+    },
+    {
+      "name": "Identifies gesso as any other part of speech besides a noun. (ver_27fa64f1f0ba4c428c9b598454d488a6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies gesso as any other part of speech besides a noun."
+        }
+      ]
+    },
+    {
+      "name": "Provides a definition of gesso as a hard compound of plaster of Paris or... (ver_c88169fe0fe64515baa1c3c41d7ed9e3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides a definition of gesso as a hard compound of plaster of Paris or whiting in glue, used in sculpture or as a base for gilding or painting on wood."
+        }
+      ]
+    },
+    {
+      "name": "Identifies pigments as a noun (ver_f748fe67f6b44016af4f8bb0a7a45ebe)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies pigments as a noun."
+        }
+      ]
+    },
+    {
+      "name": "Identifies pigments as any other part of speech besides a noun. (ver_f748fe67f6b44016af4f8bb0a7a45ebe)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies pigments as any other part of speech besides a noun."
+        }
+      ]
+    },
+    {
+      "name": "Provides a definition of pigments as solid, powdery substances that are... (ver_c271b01e42114885bec41735bb17137b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides a definition of pigments as solid, powdery substances that are suspended in a binder to create paint and provide its color."
+        }
+      ]
+    },
+    {
+      "name": "Identifies santero as a noun (ver_953bd8924f8d4389bbc9e8d7291b3cef)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies santero as a noun."
+        }
+      ]
+    },
+    {
+      "name": "Identifies santero as any other part of speech besides a noun. (ver_953bd8924f8d4389bbc9e8d7291b3cef)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies santero as any other part of speech besides a noun."
+        }
+      ]
+    },
+    {
+      "name": "Provides a definition of santero as a person who makes religious images (ver_78d7fcfea7a5492e8c26bb42e38c6935)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides a definition of santero as a person who makes religious images."
+        }
+      ]
+    },
+    {
+      "name": "Identifies varnish as a noun (ver_40d4c39bf2a748cfabe5f3754fad1c59)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies varnish as a noun."
+        }
+      ]
+    },
+    {
+      "name": "Identifies varnish as any other part of speech besides a noun. (ver_40d4c39bf2a748cfabe5f3754fad1c59)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies varnish as any other part of speech besides a noun."
+        }
+      ]
+    },
+    {
+      "name": "Provides a definition for varnish as a clear, shiny shield for wood that... (ver_46b8997c7972482aa8abdffd4c0c41b6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Provides a definition for varnish as a clear, shiny shield for wood that protects it from scratches and spills."
+        }
+      ]
+    },
+    {
+      "name": "Orders the new slides as follows: charcoal, gesso, pigments, santero, varnish (ver_6d6d1bd831574c08bf18f46ad1d3f0f4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Orders the new slides as follows: charcoal, gesso, pigments, santero, varnish."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world308-ks-01-natural-prompt-4a79b881"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_bb2868929444403db49771012f030f29",
+    "world_name": "Teaching World 308",
+    "task_id": "task_4a79b88119dd4d61a0aa7f50cb349409",
+    "task_name": "world308-ks-01 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_8fa46c37d1e04173b6934e3924200db2",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_e47fb0e212d6413496099a780cbca61e"
+      },
+      {
+        "golden_response_id": "gold_d289d578da7d497182e9b61077ed9833",
+        "golden_text_response": "\nSee file",
+        "golden_file_responses": "snap_e47fb0e212d6413496099a780cbca61e"
+      }
+    ]
+  }
+}

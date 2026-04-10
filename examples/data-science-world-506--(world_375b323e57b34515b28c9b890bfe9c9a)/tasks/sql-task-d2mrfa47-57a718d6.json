@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "I want to understand the relationship between plan data allowance and actual data consumption for prepaid and postpaid subscriptions separately. Calculate the average daily data consumption (MB) for subscribers on low (<=10GB), mid (10-80GB), and unlimited plans during 2025 by account_type. Plans should be active at the time of use, and days where the usage was zero should be excluded. Use the tables subscribers for account_type, subscriber_plans for active plans, subscription_plans for plan attributes, and data_usage_daily for usage data. Please provide SQLite code to perform this analysis and report the averages to 2 decimals."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Determines the average daily usage for Low data, postpaid plans to be... (ver_b02896a65b2647d8bcaf1b076b62cfaf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Determines the average daily usage for Low data, postpaid plans to be 3390.87MB +/- 0.05MB."
+        }
+      ]
+    },
+    {
+      "name": "Determines the average daily usage for Low data usage, prepaid plans to be... (ver_c040d0d5553d43db8d2444fd3b62bc57)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Determines the average daily usage for Low data usage, prepaid plans to be 3162.86MB +/- 0.05MB."
+        }
+      ]
+    },
+    {
+      "name": "Determines the average daily usage for Mid data usage, postpaid plans to be... (ver_c8bf1f34456841bfb30f232580b27821)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Determines the average daily usage for Mid data usage, postpaid plans to be 3188.51MB +/- 0.05MB."
+        }
+      ]
+    },
+    {
+      "name": "Determines the average daily usage for Unlimited data usage, postpaid plans to... (ver_3287a4b68fed4f639ca884d90407bdf8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Determines the average daily usage for Unlimited data usage, postpaid plans to be 3027.62MB +/- 0.05MB."
+        }
+      ]
+    },
+    {
+      "name": "Determines the average daily usage for Unlimited data usage, prepaid plans to... (ver_05628647b3a048cc98817b5961907899)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Determines the average daily usage for Unlimited data usage, prepaid plans to be 3732.38MB +/- 0.05MB."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh sql-task-d2mrfa47-57a718d6"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_375b323e57b34515b28c9b890bfe9c9a",
+    "world_name": "Data Science World 506",
+    "task_id": "task_57a718d6e3d445e98facba0df12beb38",
+    "task_name": "SQL - Task d2mrfa47",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_b484357b089747df8f7b457990f5e9c0",
+        "golden_text_response": "plan_type account_type  avg_data_consumed_mb\n      Low     postpaid               3390.87\n      Low      prepaid               3162.86\n      Mid     postpaid               3188.51\nUnlimited     postpaid               3027.62\nUnlimited      prepaid               3732.38\n\n```sql\nWITH merged AS (\n  SELECT\n    d.subscriber_id,\n    d.usage_date,\n    d.data_consumed_mb,\n    s.account_type,\n    sp.activation_date,\n    sp.contract_end_date,\n    p.data_allowance_gb\n  FROM data_usage_daily d\n  JOIN subscribers s ON s.subscriber_id = d.subscriber_id\n  JOIN subscriber_plans sp ON sp.subscriber_id = d.subscriber_id\n  JOIN subscription_plans p ON p.plan_id = sp.plan_id\n  WHERE\n    d.usage_date BETWEEN '2025-01-01' AND '2025-12-31'\n    AND d.usage_date >= sp.activation_date\n    AND ((d.usage_date <= sp.contract_end_date) OR (sp.contract_end_date IS NULL))\n    AND d.data_consumed_mb > 0\n  ),\n\nclassified AS (\n  SELECT\n    subscriber_id,\n    account_type,\n    data_consumed_mb,\n    CASE\n      WHEN data_allowance_gb = 'unlimited' THEN 'Unlimited'\n      WHEN CAST(data_allowance_gb as REAL) <= 10 THEN 'Low'\n      WHEN CAST(data_allowance_gb as REAL) > 10 AND CAST(data_allowance_gb as REAL) <= 80 THEN 'Mid'\n      ELSE NULL\n    END AS plan_type\n  FROM merged\n  )\n  \nSELECT \n  plan_type,\n  account_type,\n  ROUND(AVG(data_consumed_mb), 2) AS avg_data_consumed_mb\nFROM classified\nWHERE\n  plan_type IS NOT NULL\nGROUP BY plan_type, account_type;\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

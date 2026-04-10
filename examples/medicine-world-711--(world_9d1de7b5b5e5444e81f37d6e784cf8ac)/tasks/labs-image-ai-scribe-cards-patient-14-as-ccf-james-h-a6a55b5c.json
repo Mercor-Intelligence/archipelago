@@ -1,0 +1,353 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 14” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n----\n\nA 78-year-old gentleman presents to the emergency department with shortness of breath. \n\nHis observations are as follows:\nHeart rate - 77 bpm\nBlood pressure - 110/60 mmHg\nOxygen saturations - 98% on room air\nRespiratory rate - 16 bpm\ntemperature - 36.5 degrees C\n\nThe gentleman was started on an ACE inhibitor, but it was stopped due to high potassium. He still feels short of breath at times and has a digoxin allergy.He does not tolerate SGLT2 inhibitors.\n\nWhat prognostically beneficial medication for chronic heart failure management is the most appropriate for this patient at this time? Please add the drug dose. Please follow the latest National Institute for Health and Care Excellence (NICE) guidelines."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the symptoms are consistent with heart failure. (ver_a4eb31d26a714b2dab97e1079d62dc52)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the symptoms are consistent with heart failure."
+        }
+      ]
+    },
+    {
+      "name": "States that the symptoms are consistent with aortic stenosis. (ver_c33caccec2654f8cb7b889fa939edef6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the symptoms are consistent with aortic stenosis."
+        }
+      ]
+    },
+    {
+      "name": "States that the ECHO confirms severe aortic stenosis. (ver_1cc62ad5ca694947aad1187494fe3643)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the ECHO confirms severe aortic stenosis."
+        }
+      ]
+    },
+    {
+      "name": "States that the ECHO confirms systolic heart failure. (ver_0c894f31a746472faf41f744d6ae1d3c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the ECHO confirms systolic heart failure."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient developed hyperkalemia while being on an ACE inhibitor. (ver_fc9c8ba5217348c3b75d753dcf29a0aa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient developed hyperkalemia while being on an ACE inhibitor."
+        }
+      ]
+    },
+    {
+      "name": "States that second-line therapy should be considered. (ver_7243eaacac604849a77a66f83a0d0627)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that second-line therapy should be considered."
+        }
+      ]
+    },
+    {
+      "name": "States that digoxin is ruled out due to documented allergy. (ver_966d828de3a54b95a9f0b3ed1cb9da7b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that digoxin is ruled out due to documented allergy."
+        }
+      ]
+    },
+    {
+      "name": "States that mineralocorticoid receptor antagonist (MRA) is contraindicated in... (ver_eebda5ca720e4344bee3b2b1ef487ad9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that mineralocorticoid receptor antagonist (MRA) is contraindicated in the setting of hyperkalemia."
+        }
+      ]
+    },
+    {
+      "name": "States that hydralazine-nitrate dual therapy is contraindicated in severe... (ver_c41286593c8a490ab38995ec24bc7a83)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that hydralazine-nitrate dual therapy is contraindicated in severe aortic stenosis."
+        }
+      ]
+    },
+    {
+      "name": "States that hydralazine-nitrate dual therapy  can be used in severe aortic... (ver_c41286593c8a490ab38995ec24bc7a83)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that hydralazine-nitrate dual therapy  can be used in severe aortic stenosis."
+        }
+      ]
+    },
+    {
+      "name": "States that angiotensin receptor blockers (ARBs) are contraindicated in the... (ver_3084f5cc13204dac9b8ad13706295700)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that angiotensin receptor blockers (ARBs) are contraindicated in the setting of hyperkalemia."
+        }
+      ]
+    },
+    {
+      "name": "States that angiotensin receptor neprolysin inhibitors (ARNIs) are... (ver_66b63a548afd45dab6b19d95c75fa5e2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that angiotensin receptor neprolysin inhibitors (ARNIs) are contraindicated in the setting of hyperkalemia."
+        }
+      ]
+    },
+    {
+      "name": "States that Ivabradine is the most appropriate medication for this patient at... (ver_92091cc3314d4527a92b0d3b862be1e6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Ivabradine is the most appropriate medication for this patient at this time."
+        }
+      ]
+    },
+    {
+      "name": "States that the starting dose would be 2.5mg twice daily. (ver_7cf61d29dd7a468b8afa1e060ee95652)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the starting dose would be 2.5mg twice daily."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-cards-patient-14-as-ccf-james-h-a6a55b5c"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_a6a55b5cf99b4ce38f32dcbae144402f",
+    "task_name": "Labs_Image_AI Scribe_Cards_Patient 14 -AS + CCF - James H",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_7445466b5d6f4fa8b2aea27d61c19357",
+        "golden_text_response": "The patient has symptoms such as shortness of breath, fatigue and swelling in the legs which all suggest heart failure. Echo confirms severe aortic stenosis with symptomatic heart failure. Since he still remains symptomatic despite the first line therapy, other options are considered. This is reccomended by NICE guidelines NG106. Options include:\nDigoxin is excluded due to allergy and Angiotensin receptor blockers (ARBs)/ Angiotensin receptor neprolysin inhibitors(ARNIs)/Mineralocorticoid receptor antagonist (MRAs) are limited by hyperkalemia on ACE (Angiotension concerting enzyme) inhibitor. Hydralazine and nitrate therapy is avoided in severe aortic stenosis and would likely worsen hypotension. Ivabradine would be the best choice, given his heart rate is > 75 bpm and sinus, also his ejection is <35%. The starting dose would be 2.5 mg twice daily for two weeks.\n\n\n\n\n\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

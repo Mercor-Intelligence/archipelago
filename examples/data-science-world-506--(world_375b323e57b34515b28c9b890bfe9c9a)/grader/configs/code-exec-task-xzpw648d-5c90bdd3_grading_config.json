@@ -1,0 +1,136 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_d1374904f3ec4cf8ad0d50ecddab8406",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5c90bdd338c141a8bb0d302de251225d",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the second highest outage month as 2023-08.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The second highest outage month is specifically requested in the prompt.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0155ed4c63e541948a202c26d5f1e0b2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5c90bdd338c141a8bb0d302de251225d",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the adjusted total outage minutes value for 2023-08 as 5419.16 +/- 0.01",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Total outage minutes value is specifically requested in the prompt for the 3 months with the highest number of total outage minutes.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cb5540decb994fb782866f8c09592d38",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5c90bdd338c141a8bb0d302de251225d",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the adjusted total outage minutes value for 2025-05 as 4884.77 +/- 0.01",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Total outage minutes value is specifically requested in the prompt for the 3 months with the highest number of total outage minutes.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1e585bc6a83f47e4b35c204eae74a077",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5c90bdd338c141a8bb0d302de251225d",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the third highest outage month as 2025-05.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The third highest outage month is specifically requested in the prompt.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_36c7582a2e394d37b2f1393eb5826c37",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5c90bdd338c141a8bb0d302de251225d",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the adjusted average outage minutes value for 2023-08 as 387.08 +/- 0.01",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Adjusted average outage minutes value is specifically requested in the prompt for the 3 months with the highest number of total outage minutes.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4b537a13b63346fcb2e323c7bb03de9d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_5c90bdd338c141a8bb0d302de251225d",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies the adjusted average outage minutes value for 2025-05 as 325.65 +/- 0.01",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Adjusted average outage minutes value is specifically requested in the prompt for the 3 months with the highest number of total outage minutes.",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_4a088acf90434e7799331c34a99f2b65",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6c9e39e263784978a5bfdf85acf961c8",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the percentage point difference between the proportion of applicants from the East Coast in the benchmark data versus our existing pipeline data is 4.87% (acceptable range 4.82% to 4.92%)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_49ccd4e2e4e44160a285a5cf102eb2cf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6c9e39e263784978a5bfdf85acf961c8",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the percentage point difference between the proportion of applicants from the West Coast in the benchmark data versus our existing pipeline data is -22.67% (acceptable range -22.90% to -22.44%)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e772bd9eeeb94494a42fb0dbbd05b6d4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6c9e39e263784978a5bfdf85acf961c8",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the percentage point difference between the proportion of applicants from the South in the benchmark data versus our existing pipeline data is -4.20% (acceptable range -4.24% to -4.16%)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ca04af55cfd6497ea57d768b2cb18d97",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6c9e39e263784978a5bfdf85acf961c8",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the percentage point difference between the proportion of applicants from the Midwest in the benchmark data versus our existing pipeline data is 8.58% (acceptable range 8.49% to 8.67%)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b79eff129cbb4d4bbc7f50752d388d3d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6c9e39e263784978a5bfdf85acf961c8",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the percentage point difference between the proportion of applicants from the West in the benchmark data versus our existing pipeline data is 9.51% (acceptable range 9.41% to 9.61%)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a07fa9f6820b4e97822f95a1c1d41847",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_6c9e39e263784978a5bfdf85acf961c8",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the percentage point difference between the proportion of applicants from the Northeast in the benchmark data versus our existing pipeline data is 3.92% (acceptable range 3.88% to 3.96%)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

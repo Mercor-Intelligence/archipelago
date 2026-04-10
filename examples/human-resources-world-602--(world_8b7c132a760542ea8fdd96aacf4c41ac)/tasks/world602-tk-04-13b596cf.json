@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Can you determine the FY 26 benefit-cost ratio of filling the vacancies by Service Line based on marginal revenue over marginal cost?\n\nAssume there is a 5% inflation increase from FY 25 to FY 26 for price per unit volume and personnel related costs. Also, the cohort size of the vacancy will impact onboarding/ training efficiency and hence unit productivity FY 26 as follows:\n- More than 20 vacancies: 70% efficiency\n- 10 to 20 vacancies (inclusive): 80% efficiency\n- Fewer than 10 vacancies: 90% efficiency\n\nRefer to the following files in the filesystem for the corresponding data:\n•\tLakeshore_Financial_Statements_FY2024-2025 Updated.xlsx – Use the departmental P&L as the source of truth for the financial data\n•\tService_Line_Volumes.xlsx – Use the volume summary as the source of truth for volume data\n•\tCost_to_Fill_By_Service_Line.csv - Only include service lines that have cost to fill data.\n\nPlease state in the console the service line with the highest FY 26 benefit-cost ratio and the value. State the final answer in two decimal places and do not round intermediate calculations. Please provide a full report of your analysis in the console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the highest FY 26 benefit-cost ratio is 3.27 (acceptable range... (ver_bcfaa61a941c4032be2e52b9b3c29d16)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the highest FY 26 benefit-cost ratio is 3.27 (acceptable range 3.24 to 3.30)."
+        }
+      ]
+    },
+    {
+      "name": "States that the service line with the highest FY 26 benefit-cost ratio is... (ver_f39f246e3bb04039a8a65a4828162f6e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the service line with the highest FY 26 benefit-cost ratio is Women and Infants."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world602-tk-04-13b596cf"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_13b596cf1d704bb48b99533b0c9a6e39",
+    "task_name": "World602_TK_04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_04c5caa8bb304d84a94613e97a8956b5",
+        "golden_text_response": "The service line with the highest FY 26 benefit-cost ratio is Women and Infants. The value is 3.27.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

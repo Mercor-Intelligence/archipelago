@@ -1,0 +1,264 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_a7810c44d9104475a2d256575e4ca6b1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_eb57ea8fa48749cebf2510ff9cf578c2",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the draft email indicates that Anthony Porter failed to enforce the work stop directive dated October 5, 2025",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "A review of the email reveals that it states that Anthony Porter failed to enforce the work stop directive dated October 5, 2025.  This was presumably done to try to bolster SBP's claim that he was fired for cause.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_73d63db0ef2d4563a62b98cdb2c40a16",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_eb57ea8fa48749cebf2510ff9cf578c2",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the work stop directive dated October 5, 2025 was not addressed to Anthony Porter",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The Stop Work Directive was sent to Steel Tree Solutions on October 5, 2025.  The email is only addressed to Steel Tree Solutions and not to Anthony Porter.  ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ae924f4c34024b77a9b20a797dd186ca",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_eb57ea8fa48749cebf2510ff9cf578c2",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that there is no record in the personnel file that Mr. Porter received the work stop directive",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "There are no mentions or claims in Anthony Porter's personnel file stating that he received or acknowledged receipt of the stop work order.  SBP is making a claim in its email to OSHA that Anthony Porter ignored the work stop directive.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_75664e432f474d8681249f5adaabd3b3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_eb57ea8fa48749cebf2510ff9cf578c2",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that there is no record in the communications map that Mr. Porter received the work stop directive",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The communications maps outlines key conversations in the case.  There are no mentions or claims in the communications map stating that Anthony Porter received or acknowledged receipt of the stop work order.  SBP is making a claim in its email to OSHA that Anthony Porter ignored the work stop directive.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2db0c8863da74136a2262017be0ccfa2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_eb57ea8fa48749cebf2510ff9cf578c2",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that if SBP makes a claim to OSHA that is not supported by the evidence, it could damage SBP\u2019s credibility with OSHA",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "SBP claims in its email that Anthony Porter ignored a work stop directive.  That claim is not supported by the personnel file or the communications map.  If SBP makes an unsupported claim to OSHA, it would be detrimental to SWP's credibility and negatively impact the case.  ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9ef501033dd743f0bb1dc64f37262ad8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_eb57ea8fa48749cebf2510ff9cf578c2",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that Mr. Porter\u2019s failure to enforce the work stop directive dated October 5, 2025 is not mentioned in his November 3, 2025 Performance Review",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Anthony Porter received a performance review dated November 3, 2025.  It mentions his work ethic decline, communication failures, and lack of initiative.  It does not mention failure to follow the stop work directive, which is being claimed in the response letter to OSHA.  When evaluating whether the termination is for cause or retaliatory, it is important to look at stated factors for Anthony Porter's termination at the time of and before his termination.  ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9406043431ac46ab9c6bf5892a3cf6a5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_eb57ea8fa48749cebf2510ff9cf578c2",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that Mr. Porter\u2019s failure to enforce the work stop directive dated October 5, 2025 is not mentioned in his November 4, 2025 Notice of Termination",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Anthony Porter received a Notice of Termination dated November 4, 2025.  It does not mention failure to follow the stop work directive, which is being claimed in the response letter to OSHA.  When evaluating whether the termination is for cause or retaliatory, it is important to look at stated factors for Anthony Porter's termination at the time of and before his termination.  ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ad5509ed5f374d089a14df2c22464931",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_eb57ea8fa48749cebf2510ff9cf578c2",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that SBP only cited Porter\u2019s failure to enforce the work-stop after Porter filed a retaliation complaint with OSHA",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Anthony Porter received a Notice of Termination dated November 4, 2025.  It does not mention failure to follow the stop work directive, which is being claimed in the response letter to OSHA.  When evaluating whether the termination is for cause or retaliatory, it is important to look at stated factors for Anthony Porter's termination at the time of and before his termination.  Because it was not mentioned as a factor at the time of termination and is only being mentioned now after Anthony Porter filed a whistleblowing complaint, it appears to be contrived reason for firing only made up after the fact, known as a post-hoc justification or pretext.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3ef4252aa9ce49299805c983732f8607",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_eb57ea8fa48749cebf2510ff9cf578c2",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that because the failure to enforce the work-stop was omitted during the performance review and termination process, it appears to be a post-hoc justification designed to hide a retaliatory motive",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Takes the facts that the failure to enforce the SWO was not mentioned in either the performance review or notice of termination, but was mentioned in the draft OSHA response, to conclude that it is a post-hoc justification and therefore retaliation.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8c05cff7893242a2b76c5eb581b757ab",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_eb57ea8fa48749cebf2510ff9cf578c2",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that an admission of a post hoc justification for firing could damage SBP\u2019s credibility with OSHA",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Because SBP claiming in the email to OSHA that Anthony Porter violated  the work stop directive, it was not mentioned as a factor at the time of termination in his November 3, 2025 Performance Review or in his November 4, 2025 Notice of Termination.  If it is a new reason for firing which was not listed as a reason for filing at the time of termination, it appears to be contrived reason for firing only made up after the fact, known as a post-hoc justification or pretext. Including a reason for termination in the letter to OSHA that is a pretext would damage SBP's credibility with OSHA in the retaliation claim and would be detrimental to SWP's position.  ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_fd62722181be4407ba9579b5c1d59b31",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_eb57ea8fa48749cebf2510ff9cf578c2",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that the draft email is not sufficient for SBP\u2019s defense against Anthony Porter\u2019s retaliation claim",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The draft email indicates that Anthony Porter failed to enforce the work stop directive dated October 5, 2025, but the record does not contain proof that Anthony Porter knew about the directive.  It would be a false claim and would damage SBP's position.  Additionally, Mr. Porter\u2019s failure to enforce the work stop directive dated October 5, 2025 is not mentioned as a factor for his termination at the time of, or before, his termination.  It is thus a post hoc justification or pretext.  Using a pretext for firing in the response email to OSHA would damage SBP's position.  The draft email is thus not sufficient and may harm SBP\u2019s defense against Anthony Porter\u2019s retaliation claim.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

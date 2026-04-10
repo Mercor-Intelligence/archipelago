@@ -1,4 +1,5 @@
 from .docx_to_images.main import docx_to_images
+from .docx_to_pdf.main import docx_to_pdf
 from .docx_to_text.main import docx_to_text
 from .models import (
     ArtifactTransformationDefn,
@@ -10,9 +11,12 @@ from .native.main import native_extraction
 from .pdf_to_images.main import pdf_to_images
 from .pdf_to_text.main import pdf_to_text
 from .pptx_to_images.main import pptx_to_images
+from .pptx_to_pdf.main import pptx_to_pdf
 from .pptx_to_text.main import pptx_to_text
 from .spreadsheet_to_images.main import spreadsheet_to_images
+from .spreadsheet_to_pdf.main import spreadsheet_to_pdf
 from .spreadsheet_to_text.main import spreadsheet_to_text
+from .spreadsheet_to_text_formulas.main import spreadsheet_to_text_formulas
 
 # @apg_transformation_registry:start
 TRANSFORMATION_REGISTRY: dict[ArtifactTransformationId, ArtifactTransformationDefn] = {
@@ -46,6 +50,12 @@ TRANSFORMATION_REGISTRY: dict[ArtifactTransformationId, ArtifactTransformationDe
         output_representation=OutputRepresentation.TO_IMAGES,
         transformation_impl=docx_to_images,
     ),
+    ArtifactTransformationId.DOCX_TO_PDF: ArtifactTransformationDefn(
+        transformation_id=ArtifactTransformationId.DOCX_TO_PDF,
+        input_family=InputFileFamily.DOCX,
+        output_representation=OutputRepresentation.TO_PDF,
+        transformation_impl=docx_to_pdf,
+    ),
     ArtifactTransformationId.DOCX_NATIVE: ArtifactTransformationDefn(
         transformation_id=ArtifactTransformationId.DOCX_NATIVE,
         input_family=InputFileFamily.DOCX,
@@ -64,6 +74,12 @@ TRANSFORMATION_REGISTRY: dict[ArtifactTransformationId, ArtifactTransformationDe
         output_representation=OutputRepresentation.TO_IMAGES,
         transformation_impl=pptx_to_images,
     ),
+    ArtifactTransformationId.PPTX_TO_PDF: ArtifactTransformationDefn(
+        transformation_id=ArtifactTransformationId.PPTX_TO_PDF,
+        input_family=InputFileFamily.PPTX,
+        output_representation=OutputRepresentation.TO_PDF,
+        transformation_impl=pptx_to_pdf,
+    ),
     ArtifactTransformationId.PPTX_NATIVE: ArtifactTransformationDefn(
         transformation_id=ArtifactTransformationId.PPTX_NATIVE,
         input_family=InputFileFamily.PPTX,
@@ -81,6 +97,18 @@ TRANSFORMATION_REGISTRY: dict[ArtifactTransformationId, ArtifactTransformationDe
         input_family=InputFileFamily.SPREADSHEET,
         output_representation=OutputRepresentation.TO_IMAGES,
         transformation_impl=spreadsheet_to_images,
+    ),
+    ArtifactTransformationId.SPREADSHEET_TO_PDF: ArtifactTransformationDefn(
+        transformation_id=ArtifactTransformationId.SPREADSHEET_TO_PDF,
+        input_family=InputFileFamily.SPREADSHEET,
+        output_representation=OutputRepresentation.TO_PDF,
+        transformation_impl=spreadsheet_to_pdf,
+    ),
+    ArtifactTransformationId.SPREADSHEET_TO_TEXT_FORMULAS: ArtifactTransformationDefn(
+        transformation_id=ArtifactTransformationId.SPREADSHEET_TO_TEXT_FORMULAS,
+        input_family=InputFileFamily.SPREADSHEET,
+        output_representation=OutputRepresentation.TO_TEXT_FORMULAS,
+        transformation_impl=spreadsheet_to_text_formulas,
     ),
     ArtifactTransformationId.SPREADSHEET_NATIVE: ArtifactTransformationDefn(
         transformation_id=ArtifactTransformationId.SPREADSHEET_NATIVE,

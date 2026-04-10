@@ -1,0 +1,232 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_01ebb17356d24e548920bb19b4b185b5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4984d3312f954139966cc48e49209926",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Inputs Mason in place of [Person] throughout the progress report",
+        "modality": "Free text",
+        "negative_criteria": "Inputs something other than Mason for [Person] throughout the letter.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_654b7d9421d54f5c88e4b248eb9a2766",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4984d3312f954139966cc48e49209926",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Inputs 123-456-789 in place of [Phone] in the progress report",
+        "modality": "Free text",
+        "negative_criteria": "Inputs something other than 123-456-789 in place of [Phone] in the progress report.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7464460a02b640458449289f003387ed",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4984d3312f954139966cc48e49209926",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Inputs mrsA@email.com in place of [Email] in the progress report",
+        "modality": "Free text",
+        "negative_criteria": "Inputs something other than mrsA@email in place of [Email] in the progress report.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_94e739c89147474280b7610924c5abd9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4984d3312f954139966cc48e49209926",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Inputs 'Specific Learning Disability (Dyslexia)' in place of [Primary Disability Category] in the progress report",
+        "modality": "Free text",
+        "negative_criteria": "Inputs something other than 'Specific Learning Disability (Dyslexia)' in place of [Primary Disability Category] in the progress report.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7dc5b1a8389b476d912a86093b572fd3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4984d3312f954139966cc48e49209926",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Inputs 67.0% in place of [Assessment Average] in the progress report",
+        "modality": "Free text",
+        "negative_criteria": "Inputs a number other than 67.0% in place of [Assessment Average] in the IEP progress report.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c660a9c604ae4c69b67dcf43866be07e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4984d3312f954139966cc48e49209926",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Inputs 62.6% in place of [Quiz Average] in the progress report",
+        "modality": "Free text",
+        "negative_criteria": "Inputs a number other than 62.6% in place of [Quiz Average] in the progress report.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3a722d7dcd244cea8919934b794de885",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4984d3312f954139966cc48e49209926",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Inputs 66.1% in place of [Classwork & Practice Average] in the progress report",
+        "modality": "Free text",
+        "negative_criteria": "Inputs a number other than 66.1% in place of [Classwork & Practice Average] in the progress report.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_464c899afde94fb992d69a4cdafeb6ac",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4984d3312f954139966cc48e49209926",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Inputs 63.6% in place of [Homework & Independent Reading Average] in the progress report",
+        "modality": "Free text",
+        "negative_criteria": "Inputs a number other than 63.6% in place of [Homework & Independent Reading Average] in the progress report.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_aebc6b404ab041cab1cb8af7e7279a0a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4984d3312f954139966cc48e49209926",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Inputs 72.5% in place of [Participation & Preparedness Average] in the progress report",
+        "modality": "Free text",
+        "negative_criteria": "Inputs a number other than 72.5% in place of [Participation & Preparedness Average] in the progress report.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2462c5bda051451685f323d1a3ce32ee",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4984d3312f954139966cc48e49209926",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Inputs 66.4% in place of [Trimester 2 Average] in the progress report",
+        "modality": "Free text",
+        "negative_criteria": "Inputs a number other than 66.4% in place of [Trimester 2 Average] in the progress report.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "ba06983f-1e62-4f7c-b3cf-39d8eb7443e6",
+    "scoring_config_name": "w/o negatives",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

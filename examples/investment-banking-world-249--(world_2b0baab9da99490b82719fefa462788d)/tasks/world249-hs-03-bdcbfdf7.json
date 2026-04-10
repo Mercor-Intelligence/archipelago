@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Please run a new scenario in the DCF model using the following adjustments:\n\n1. Replace SPGI's EV/EBITDA multiple with the Core SPGI Peers average EV/EBITDA multiple, using the following dates: 2024-12-31 for MCO, MORN, MSCI, RELX, and VRSK; and 2025-08-31 for FDS.\n2. Update the SPGI and RemainCo EV/EBITDA multiples with this new average.\n\nPlease return the projected Enterprise Values for SPGI and RemainCo in 2026. All monetary results must be displayed in USD millions, rounded to two decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States Enterprise Values for SPGI is $177,695.56M (acceptable range... (ver_32bdc14dc47940d483f2683751e135cc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Enterprise Values for SPGI is $177,695.56M (acceptable range $175,918.60 to $179,472.52)."
+        }
+      ]
+    },
+    {
+      "name": "States Enterprise Values for RemainCo is $134,941.42M (acceptable range... (ver_1a7a2292bd7440d2b7dbad448afc5cac)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States Enterprise Values for RemainCo is $134,941.42M (acceptable range $133,592.01 to $136,290.83)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world249-hs-03-bdcbfdf7"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_bdcbfdf72cdb4e95803c7689b01abdc0",
+    "task_name": "World249-HS-03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_63faae69f6f04285a63384c2a79b5d7d",
+        "golden_text_response": "Enterprise Values for SPGI is $177,695.56M\nEnterprise Values for RemainCo is $134,941.42M\n",
+        "golden_file_responses": "snap_e911533e5cf74196843fdd146b88b340"
+      }
+    ]
+  }
+}

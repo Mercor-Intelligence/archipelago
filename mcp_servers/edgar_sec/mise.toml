@@ -1,0 +1,43 @@
+[env._.python.venv]
+path = ".venv"
+create = true
+
+[tools]
+uv = "0.6.10"
+python = "3.13"
+
+[tasks.install]
+run = "uv sync --all-extras"
+description = "Install dependencies"
+
+[tasks.test]
+run = "pytest"
+description = "Run tests"
+
+[tasks.typecheck]
+run = "echo 'No typecheck configured'"
+description = "Run type checker"
+
+[tasks.lint]
+run = "ruff check ."
+description = "Run linter"
+
+[tasks.format]
+run = "ruff format ."
+description = "Format code"
+
+[tasks.start]
+run = "cd mcp_servers/edgar_sec && uv run --no-sync python main.py"
+description = "Start the MCP server"
+depends = ["install"]
+
+[tasks.build]
+run = "echo 'No build step required for Python MCP server'"
+description = "Build the project (no-op for pure Python)"
+
+[tasks.populate]
+run = """
+mkdir -p "${STATE_LOCATION}" data && count=$(ls "${STATE_LOCATION}"/*.zip 2>/dev/null | wc -l) && if [ "$count" -gt 1 ]; then echo "Error: expected at most 1 .zip file but found $count" >&2; exit 1; elif [ "$count" -eq 1 ]; then cp "${STATE_LOCATION}"/*.zip data/edgar_offline.zip; fi && if [ -f data/edgar_offline.zip ]; then python -m zipfile -e data/edgar_offline.zip ./offline_data && echo "Extracted edgar_offline.zip to ./offline_data/"; fi
+"""
+description = "Copy EDGAR offline data from state storage and extract into place"
+depends = ["build"]

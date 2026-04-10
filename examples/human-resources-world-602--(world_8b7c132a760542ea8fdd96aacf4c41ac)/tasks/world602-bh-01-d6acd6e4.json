@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The FY 2025 service line P&L in the \"Lakeshore_Financial_Statements_FY2024-2025 Updated.xlsx\" file shows our current financials, but we think the underlying department-level headcounts, vacancies, and salaries in that file are off. Cross-reference the workforce analytics data in the \"Workforce_Analytics Updated.xlsx\" file, which contains the correct figures, and update the underlying department-level figures in the \"Lakeshore_Financial_Statements_FY2024-2025 Updated.xlsx\" accordingly. Note that some of the department names may not be consistent across the two files. Let me know how the FY 2025 service line totals change, specifically:\n\n1) Identify the service line with the largest positive change in salary costs, and state the change in salary costs of this service line (rounded to the nearest dollar).\n2) Identify the service line with the largest negative change in salary costs, and state the change in salary costs of this service line (rounded to the nearest dollar).\n3) Calculate the change in average salary for Critical Care and Pediatrics individually (rounded to the nearest dollar).\n\nOutput your results in console. Do not round intermediate steps."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that based on the updated FY 2025 salary costs, the service line with... (ver_a45dc289744a40fcb01a6eafd67b221e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on the updated FY 2025 salary costs, the service line with the largest positive change in salary costs is Support Services."
+        }
+      ]
+    },
+    {
+      "name": "States that based on the updated FY 2025 salary costs, the change in total... (ver_4dd6b1e69c1b46c98f8629f7059b762d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on the updated FY 2025 salary costs, the change in total salary costs for Support Services is $9,439,668 (acceptable range $9,345,271 to $9,534,065)."
+        }
+      ]
+    },
+    {
+      "name": "States that based on the updated FY 2025 salary costs, the service line with... (ver_d51aa9498c244abc956489add81cd113)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on the updated FY 2025 salary costs, the service line with the largest negative change in salary costs is Surgical Services."
+        }
+      ]
+    },
+    {
+      "name": "States that based on the updated FY 2025 salary costs, the change in total... (ver_23789d1ad6e4492b8ddb735d908ab29f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on the updated FY 2025 salary costs, the change in total salary costs for Surgical Services is -$10,045,771 (acceptable range $-10,146,229 to $-9,945,313.3)."
+        }
+      ]
+    },
+    {
+      "name": "States that based on the updated FY 2025 salary costs, the change in average... (ver_9e996ba6083144ecb2b2c6edf3ac2d29)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on the updated FY 2025 salary costs, the change in average salary for Critical Care is $11,347 (acceptable range $11,234 to $11,460)."
+        }
+      ]
+    },
+    {
+      "name": "States that based on the updated FY 2025 salary costs, the change in average... (ver_11b9dc2d3e754b368dd289467d712a32)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on the updated FY 2025 salary costs, the change in average salary for Pediatrics is $17,989 (acceptable range $17,809 to $18,169)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world602-bh-01-d6acd6e4"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_d6acd6e4a2274a628d06679ce31ba8b0",
+    "task_name": "World602_BH_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f6125e5631db471d9d09e0024649c683",
+        "golden_text_response": "Based on the updated FY 2025 salary costs:\n\n1) Largest positive change in salary costs: Support Services, $9,439,668\n2) Largest negative change in salary costs: Surgical Services, -$10,045,771\n3) Change in average salary for Critical Care: $11,347, change in average salary for Pediatrics: $17,989",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

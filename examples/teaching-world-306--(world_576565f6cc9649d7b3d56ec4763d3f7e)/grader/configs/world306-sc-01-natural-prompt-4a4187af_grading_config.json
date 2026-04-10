@@ -1,0 +1,445 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_c2fc592746c64e88ba8b669810e85e1c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a4187af9cb64d3eb3ec6f3529cd3edf",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Ellie Jackson as one of the top 5 Team 1 students for the Chapter 4 exam",
+        "modality": "Free text",
+        "negative_criteria": "Identifies any student in team 1 class other than the top 5 for grades on the chapter 4 exam.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Ellie Jackson is in class team 1 and made a 94 on the Chapter 4 exam.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Gradebook /9th Grade Biology Grades.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_43f298949037465d85bb59b1981f6766",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a4187af9cb64d3eb3ec6f3529cd3edf",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Carter Robinson as one of the top 5 Team 1 students for the Chapter 4 exam",
+        "modality": "Free text",
+        "negative_criteria": "Identifies any student in team 1 class other than the top 5 for grades on the chapter 4 exam.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Carter Robinson is in class team 1 and made a 91 on the Chapter 4 exam.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Gradebook /9th Grade Biology Grades.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_05f1fbb665f04f29b5e7c34b2118d22e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a4187af9cb64d3eb3ec6f3529cd3edf",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Noah Taylor as one of the top 5 Team 1 students for the Chapter 4 exam",
+        "modality": "Free text",
+        "negative_criteria": "Identifies any student in team 1 class other than the top 5 for grades on the chapter 4 exam.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Carter Robinson is in class team 1 and made a 91 on the Chapter 4 exam.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Gradebook /9th Grade Biology Grades.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a44a0b3b478b4fcb82010469e10b857d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a4187af9cb64d3eb3ec6f3529cd3edf",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies McKenna Rodgers as one of the top 5 Team 1 students for the Chapter 4 exam",
+        "modality": "Free text",
+        "negative_criteria": "Identifies any student in team 1 class other than the top 5 for grades on the chapter 4 exam.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "McKenna Rodgers is in class team 1 and made a 95 on the chapter 4 exam.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Gradebook /9th Grade Biology Grades.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1e69ed1c9fb045ba810920a17513511f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a4187af9cb64d3eb3ec6f3529cd3edf",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies Emma Anderson as one of the top 5 Team 1 students for the Chapter 4 exam",
+        "modality": "Free text",
+        "negative_criteria": "Identifies any student in team 1 class other than the top 5 for grades on the chapter 4 exam.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Emma Anderson is in class team 1 and made a 91 on the chapter 4 exam.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Gradebook /9th Grade Biology Grades.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_85afe80249024d4ab419b9ab4692af84",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a4187af9cb64d3eb3ec6f3529cd3edf",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the weighted average grade for Emma Anderson to be 87.32 +/- 0.01",
+        "modality": "Free text",
+        "negative_criteria": "Calculates the weighted average grade for Emma Anderson to be anything other than 87.31.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Uses the categories and grades to calculate the average.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Gradebook /9th Grade Biology Grades.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          },
+          {
+            "name": "Syllabus/Syllubus 9th grade Biology.pdf",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f63d2e11ce194e2cb5c5142e93c839bc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a4187af9cb64d3eb3ec6f3529cd3edf",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the weighted average grade for Ellie Jackson to be 72.15 +/- 0.01",
+        "modality": "Free text",
+        "negative_criteria": "Calculates the weighted average grade for Ellie Jackson to be anything other than 72.15.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Uses the categories and grades to calculate the weighted average grade.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Gradebook /9th Grade Biology Grades.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          },
+          {
+            "name": "Syllabus/Syllubus 9th grade Biology.pdf",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_509df5adceca43e2916f856553cacac6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a4187af9cb64d3eb3ec6f3529cd3edf",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the weighted average grade for Carter Robinson to be 77.84 +/- 0.01",
+        "modality": "Free text",
+        "negative_criteria": "Calculates the weighted average grade for Carter Robinson to be anything other than 77.84.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Uses the categories and grades to calculate the weighted average grade.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Gradebook /9th Grade Biology Grades.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          },
+          {
+            "name": "Syllabus/Syllubus 9th grade Biology.pdf",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_92585b8657a5468fafacb0b57f7ab684",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a4187af9cb64d3eb3ec6f3529cd3edf",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the weighted average grade for Noah Taylor to be 75.88 +/- 0.01",
+        "modality": "Free text",
+        "negative_criteria": "Calculates the weighted average for Noah Taylor to be anything other than 75.88.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Uses the categories and grades to calculate the weighted average grade.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Gradebook /9th Grade Biology Grades.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          },
+          {
+            "name": "Syllabus/Syllubus 9th grade Biology.pdf",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1bec132d6d7e478daf4289082c462d17",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a4187af9cb64d3eb3ec6f3529cd3edf",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the weighted average grade for McKenna Rodgers to be 86.82 +/- 0.01",
+        "modality": "Free text",
+        "negative_criteria": "Calculates the weighted average grade to be anything but 86.81.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Uses the categories and grades to calculate the weighted average grade.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Gradebook /9th Grade Biology Grades.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          },
+          {
+            "name": "Syllabus/Syllubus 9th grade Biology.pdf",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cae87b24ddcf4edb9ccf81e54b62dd31",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a4187af9cb64d3eb3ec6f3529cd3edf",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Bolds Easton Jackson",
+        "modality": "Free text",
+        "negative_criteria": "Identifies any student from team 2, 4, or 5.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Determined that only Team 3 and 4 were same level classes and then calculated the exam 4 test average to find that team 3 was the highest and that Easton Jackson had the highest test grade in team 3.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Gradebook /9th Grade Biology Grades.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9a673370cac742ef8b680e9078897c51",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a4187af9cb64d3eb3ec6f3529cd3edf",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the weighted average grade for Easton Jackson as 75.23 +/- 0.01",
+        "modality": "Free text",
+        "negative_criteria": "Calculates the weighted average grade for Easton Jackson as anything other than 75.23.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "criteria_explanation": "Uses the categories and grades to calculate the weighted average grade.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Gradebook /9th Grade Biology Grades.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          },
+          {
+            "name": "Syllabus/Syllubus 9th grade Biology.pdf",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_38d0d74a59da4c27a0a8dd9426f2e540",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a4187af9cb64d3eb3ec6f3529cd3edf",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Organizes the students using the weighted average grade from highest to lowest: Emma Anderson, McKenna Rodgers, Carter Robinson, Noah Taylor, Easton Jackson, Ellie Jackson",
+        "modality": "Free text",
+        "negative_criteria": "Organizes the students using any other order than weighted average grade from highest to lowest.",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c046cb5301f844bca2d3b3b1732b9a58",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a4187af9cb64d3eb3ec6f3529cd3edf",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Includes the student ID for each student",
+        "modality": "Free text",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Gradebook /9th Grade Biology Grades.xlsx",
+            "source": "world",
+            "snapshotId": "snap_ba094e09ac1940f1b142ba94c6c9a4e7"
+          }
+        ]
+      },
+      "verifier_index": 16,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

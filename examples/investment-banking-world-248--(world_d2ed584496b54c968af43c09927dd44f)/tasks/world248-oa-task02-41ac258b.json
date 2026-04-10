@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Make the following changes to the RMBS vs ONTO analysis in the model\n1.\tUpdate the % cash consideration to 20%\n2.\tUpdate the % Bid Premium to 5%\n3.\tUpdate the % SG&A Synergies to 50%\n4.\tAdjust ONTO’s share price prior to acquisition such that its implied EV/Sales multiple is equal to the average EV/Sales multiple of the following peers; KLAC, NVMI and CAMT. Use their enterprise value and TTM Revenue as of September 30, 2025 for the computation\n5.\tCalculate the following\ni.\t% Value Accretion/(Dilution) to RMBS shareholders\nii.\t% Value Accretion/(Dilution) to ONTO shareholders\nReport both values in % and to two decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the % Value Accretion/(Dilution) to RMBS Shareholders is 12.72%... (ver_b143fad3d7944ffcb511f1ae4869c190)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the % Value Accretion/(Dilution) to RMBS Shareholders is 12.72% (acceptable range 12.59% to 12.85%)."
+        }
+      ]
+    },
+    {
+      "name": "States the % Value Accretion/(Dilution) to ONTO Shareholders is 15.69%... (ver_196fe0a2900742ddb29aeaa0ec7f4446)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the % Value Accretion/(Dilution) to ONTO Shareholders is 15.69% (acceptable range 15.53% to 15.85%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world248-oa-task02-41ac258b"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_41ac258bb952414fa7654beff3f5c655",
+    "task_name": "World248_OA_Task02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_309040bd730d4f108bdabd4fdd21c2ee",
+        "golden_text_response": "% Value Accretion/(Dilution) to RMBS Shareholders: 12.72%\n% Value Accretion/(Dilution) to ONTO Shareholders: 15.69%",
+        "golden_file_responses": "snap_456097786c434a0b8f224d38cbfacda5"
+      }
+    ]
+  }
+}

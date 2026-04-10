@@ -1,0 +1,147 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_218bb5efcedf46e88f407eb01f04f774",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_59c2f9182d2f45de90aec6d2f7e65a68",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the ratio of the highest absolute z-score to the second-highest z-score for extended_returns is 1.0169 (acceptable range 1.0067 to 1.0271)",
+        "modality": "Free text",
+        "negative_criteria": "States that the ratio of the highest absolute z-score to the second-highest z-score for extended_returns is any value other than 1.0169",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c2b7f89463204a2390d8db60b7862b12",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_59c2f9182d2f45de90aec6d2f7e65a68",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the ratio of the highest absolute z-score to the second-highest z-score for extended_warranty is 1.0758 (acceptable range 1.0650 to 1.0866)",
+        "modality": "Free text",
+        "negative_criteria": "States that the ratio of the highest absolute z-score to the second-highest z-score for extended_warranty is any value other than 1.0758",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1db15285e47845dbb4c8336333de1b97",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_59c2f9182d2f45de90aec6d2f7e65a68",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the ratio of the highest absolute z-score to the second-highest z-score for insurance_protection is 1.1649 (acceptable range 1.1533 to 1.1765)",
+        "modality": "Free text",
+        "negative_criteria": "States that the ratio of the highest absolute z-score to the second-highest z-score for insurance_protection is any value other than 1.1649",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6b7a555f659644e2b7d9a6ad83eb5f93",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_59c2f9182d2f45de90aec6d2f7e65a68",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the percentile of Texas's z-score for extended_returns is 4.1000 (acceptable range 4.0590 to 4.1410)",
+        "modality": "Free text",
+        "negative_criteria": "States that the percentile of Texas's z-score for extended_returns is any value other than 4.1000",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Used the percentile rank formula to calculate the percentile for Texas. Please refer to the calculation sheet for more clarification.",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7f7cd431ed7b4514a2e4ce03830323c1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_59c2f9182d2f45de90aec6d2f7e65a68",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the percentile of Texas's z-score for extended_warranty is 65.3000 (acceptable range 64.6470 to 65.9530)",
+        "modality": "Free text",
+        "negative_criteria": "States that the percentile of Texas's z-score for extended_warranty is any value other than 65.3000",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_727dec40e1674a2eabca8a5473e0adf5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_59c2f9182d2f45de90aec6d2f7e65a68",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the percentile of Texas's z-score for insurance_protection is 2.0000 (acceptable range 1.9800 to 2.0200)",
+        "modality": "Free text",
+        "negative_criteria": "States that the percentile of Texas's z-score for insurance_protection is any value other than 2.0000",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

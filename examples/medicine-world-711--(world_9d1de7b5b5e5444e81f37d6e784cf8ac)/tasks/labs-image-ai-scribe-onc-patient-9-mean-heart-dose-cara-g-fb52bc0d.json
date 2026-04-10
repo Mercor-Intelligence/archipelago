@@ -1,0 +1,284 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 9” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nThe patient is a 61-year-old female with a past medical history of well-controlled hypertension, diabetes mellitus type 2 with recent hemoglobin A1C of 6.2, and breast cancer (in remission) who presents to the emergency department with a chief complaint of shortness of breath. See script for more details of the patient's history of present illness. Assume her medical history and current medications are the same as the last cardiology note. Vital signs are notable for blood pressure 148/84, pulse 70, temperature 97.3, oxygen saturation 91% on room air. D-dimer is 387 ng/mL. Echocardiogram was done with results attached.\n\n1. What in the patient's history of cancer treatment most likely led to this presentation?\n\n2.\tBased on the patient's history of radiation therapy, use the study by Holt et al., \"Estimated Doses to the Heart, Lungs and Oesophagus and Risks From Typical UK Radiotherapy for Early Breast Cancer During 2015-2023\" to determine the mean heart dose of radiation. Use this information to determine the approximate increase in the risk of a major cardiac event for this patient."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient has at least 1 of the following signs or symptoms of... (ver_9ad430117a5d4e49920ba19830fb6b4c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has at least 1 of the following signs or symptoms of heart failure: dyspnea, fatigue, hypoxia."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's echocardiogram shows reduced ejection fraction. (ver_82f1de613b0c4383a5fda988f02450cc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's echocardiogram shows reduced ejection fraction."
+        }
+      ]
+    },
+    {
+      "name": "States the patient's clinical presentation is suggestive of heart failure with... (ver_1fa15efa94774868b2b4e032cd8eea13)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient's clinical presentation is suggestive of heart failure with reduced ejection fraction."
+        }
+      ]
+    },
+    {
+      "name": "States the patient has a history of treatment with at least one HER2-targeted... (ver_ac59e240b02b49a2a57290dadb944ac0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient has a history of treatment with at least one HER2-targeted medication: Trastuzumab, pertuzumab."
+        }
+      ]
+    },
+    {
+      "name": "States that HER2-targeted medications (trastuzumab and pertuzumab) increase... (ver_c8ca3c6354764898ad977f4b995de1b1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that HER2-targeted medications (trastuzumab and pertuzumab) increase the risk of systolic dysfunction."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's treatment with HER2-targeted medications was... (ver_dcd0006b3a694d7cb282b1f094f9dfb8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's treatment with HER2-targeted medications was completed 4 years prior to presentation."
+        }
+      ]
+    },
+    {
+      "name": "States that breast cancer patients with history of treatment with trastuzumab... (ver_86f1ef66452c42de90eb3907e6fcc06e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that breast cancer patients with history of treatment with trastuzumab have an increased risk of cardiovascular disease up to 10 years after treatment."
+        }
+      ]
+    },
+    {
+      "name": "States that history of treatment with HER2-targeted medications (trastuzumab,... (ver_f82a6262ca8f44fe9cb11d92cd615334)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that history of treatment with HER2-targeted medications (trastuzumab, pertuzumab) likely led to the patient's clinical presentation."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has a history of radiation therapy to her right... (ver_d5caa622e96349c69641521daeab2973)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has a history of radiation therapy to her right supraclavicular nodes."
+        }
+      ]
+    },
+    {
+      "name": "States that among female patients with breast cancer, major cardiac events... (ver_3071092a71ed4d4aa39c44003b281329)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that among female patients with breast cancer, major cardiac events increase by 7.4% per radiation Gray unit of mean heart dose."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's history of radiation therapy increases her risk of... (ver_18c349e8d4ea45f791bba7bc8ab7efdc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's history of radiation therapy increases her risk of major cardiac events by 8.88% (acceptable range is 8.5% to 9%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-onc-patient-9-mean-heart-dose-cara-g-fb52bc0d"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_fb52bc0d83c94af1b3b4dc4954cc6d5d",
+    "task_name": "Labs_Image_AI Scribe_Onc Patient 9 - Mean Heart Dose - Cara G",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_cf69049d025749a6b24eb2f67570e355",
+        "golden_text_response": "1. What in the patient's history of cancer treatment most likely led to this presentation?\n\n This clinical presentation, dyspnea on exertion, fatigue, and hypoxia, with echocardiogram showing moderately to severely reduced ejection fraction, is suggestive of heart failure with reduced ejection fraction (systolic dysfunction). Treatment with HER2-targeted medications (trastuzumab and pertuzumab) is known to have a risk of cardiomyopathy causing systolic dysfunction, so this is the most likely cause of the patient's presentation. The patient's clinical presentation is occurring 4 years after treatment with HER2-targeted medications completed (completed January 2022 and echocardiogram was done January 2026). Breast cancer patients with history of treatment with trastuzumab have an increased risk of cardiovascular disease up to 10 years after treatment.\n\n2.\tBased on the patient's history of radiation therapy, use the study by Holt et al., \"Estimated Doses to the Heart, Lungs and Oesophagus and Risks From Typical UK Radiotherapy for Early Breast Cancer During 2015-2023\" to determine the mean heart dose of radiation. Use this information to determine the approximate increase in the risk of a major cardiac event for this patient. \n\nUsing the referenced study, based on the patient having a history of right-sided breast cancer with radiation therapy to her right breast and right supraclavicular nodes, the average mean heart dose is 1.2 Gray (Gy). It has been demonstrated that among female patients with breast cancer, major cardiac events increase by 7.4% per radiation Gray unit of mean heart dose, irrespective of preexisting cardiovascular risk factors. Based on an estimation of an average mean heart dose of 1.2 Gy, the radiation the patient received increased her risk of a major cardiac event by 8.8% (~9%).",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

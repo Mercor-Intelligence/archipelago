@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the Audited Redwood Components Tax model and the payments document in Xero, calculate the revised ratios for 2023 making the below adjustments. \n\n- Referencing the payments document, the accounts receivables payment in first quarter of 2024 were excluded from 2023 gross revenue even though these were earned in 2023 but received in first quarter of 2024. To bring the 2023 Trial Balance Summary in the model in line with the matching concept, calculate and state in the console the revised Gross Revenue.\n- Referencing the payments document, the Accounts payables payments in the last quarter of 2023 were included in the cost of goods sold. However, they were pre-payments for the next year. To bring the 2023 Trial Balance Summary in the model in line with the matching concept, calculate and state in the console the revised cost of goods sold.\n\nAlso, please state the following revised ratios for 2023 in the console. \n- Gross Profit Margin. \n- EBIT Margin. \n\nPresent monetary values in $. Round all values to two decimals."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the revised Gross Revenue for 2023 is $285,604,382.17 (acceptable... (ver_2d4e217888434b96ac5a9daf698855fb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the revised Gross Revenue for 2023 is $285,604,382.17 (acceptable range $282,748,338.35 to $288,460,425.99)."
+        }
+      ]
+    },
+    {
+      "name": "States that the revised cost of goods sold for 2023 is $181,891,005.64... (ver_0b593b47dd3d4b96aa528a7d81e021f0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the revised cost of goods sold for 2023 is $181,891,005.64 (acceptable range $180,072,095.58 to $183,709,915.70)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Gross Profit Margin for 2023 is 35.34% (acceptable range... (ver_cd8a3299e9dd4eb299ef2eef2dcc8a9a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Gross Profit Margin for 2023 is 35.34% (acceptable range 34.99% to 35.69%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the EBIT Margin for 2023 is 15.07% (acceptable range 14.92% to... (ver_0bdd1b3ff4e2424fa0055e781ed8e0e8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the EBIT Margin for 2023 is 15.07% (acceptable range 14.92% to 15.22%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-801-smn-03-f2bb83b1"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_f2bb83b1365e48e58509bcecc96a2768",
+    "task_name": "World 801_SMN_03",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_6310ec2dde604e5ea62b36388ac7185a",
+        "golden_text_response": "1. The revised Gross Revenue for 2023 is $285,604,382.17. \n2. The revised cost of goods sold for 2023 is $181,891,005.64.\n3. The Gross Profit Margin for 2023 is 35.34%. \n4. The EBIT Margin for 2023 is 15.07%. \n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

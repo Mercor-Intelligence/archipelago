@@ -1,0 +1,970 @@
+{
+  "count": 241,
+  "statusCodeBag": [
+    {
+      "applicationStatusCode": 1,
+      "applicationStatusDescriptionText": "Missassigned Application Number"
+    },
+    {
+      "applicationStatusCode": 3,
+      "applicationStatusDescriptionText": "Proceedings Terminated"
+    },
+    {
+      "applicationStatusCode": 11,
+      "applicationStatusDescriptionText": "Hague Application under International Review"
+    },
+    {
+      "applicationStatusCode": 12,
+      "applicationStatusDescriptionText": "Pre-Exam Transmittal Review Complete (Hague)"
+    },
+    {
+      "applicationStatusCode": 16,
+      "applicationStatusDescriptionText": "Waiting for LR clearance"
+    },
+    {
+      "applicationStatusCode": 17,
+      "applicationStatusDescriptionText": "Sent to Classification contractor"
+    },
+    {
+      "applicationStatusCode": 18,
+      "applicationStatusDescriptionText": "Application Returned back to Preexam"
+    },
+    {
+      "applicationStatusCode": 19,
+      "applicationStatusDescriptionText": "Application Undergoing Preexam Processing"
+    },
+    {
+      "applicationStatusCode": 20,
+      "applicationStatusDescriptionText": "Application Dispatched from Preexam, Not Yet Docketed"
+    },
+    {
+      "applicationStatusCode": 21,
+      "applicationStatusDescriptionText": "Lost Image Document Mailed"
+    },
+    {
+      "applicationStatusCode": 25,
+      "applicationStatusDescriptionText": "TSS review complete"
+    },
+    {
+      "applicationStatusCode": 27,
+      "applicationStatusDescriptionText": "UNDOCKETED TRACK 1"
+    },
+    {
+      "applicationStatusCode": 28,
+      "applicationStatusDescriptionText": "Rocket Docket PREX"
+    },
+    {
+      "applicationStatusCode": 29,
+      "applicationStatusDescriptionText": "Queue Mass Docket"
+    },
+    {
+      "applicationStatusCode": 30,
+      "applicationStatusDescriptionText": "Docketed New Case - Ready for Examination"
+    },
+    {
+      "applicationStatusCode": 31,
+      "applicationStatusDescriptionText": "AWAITING RESPONSE FOR INFORMALITY, FEE DEFICIENCY OR CRF ACTION"
+    },
+    {
+      "applicationStatusCode": 37,
+      "applicationStatusDescriptionText": "Special New"
+    },
+    {
+      "applicationStatusCode": 38,
+      "applicationStatusDescriptionText": "Rocket Docket"
+    },
+    {
+      "applicationStatusCode": 39,
+      "applicationStatusDescriptionText": "Special New (Pilot)"
+    },
+    {
+      "applicationStatusCode": 40,
+      "applicationStatusDescriptionText": "Non Final Action Counted, Not Yet Mailed"
+    },
+    {
+      "applicationStatusCode": 41,
+      "applicationStatusDescriptionText": "Non Final Action Mailed"
+    },
+    {
+      "applicationStatusCode": 50,
+      "applicationStatusDescriptionText": "Ex parte Quayle Action Counted, Not Yet Mailed"
+    },
+    {
+      "applicationStatusCode": 51,
+      "applicationStatusDescriptionText": "Ex parte Quayle Action Mailed"
+    },
+    {
+      "applicationStatusCode": 60,
+      "applicationStatusDescriptionText": "Final Rejection Counted, Not Yet Mailed"
+    },
+    {
+      "applicationStatusCode": 61,
+      "applicationStatusDescriptionText": "Final Rejection Mailed"
+    },
+    {
+      "applicationStatusCode": 66,
+      "applicationStatusDescriptionText": "Withdrawn Abandonment, awaiting examiner action"
+    },
+    {
+      "applicationStatusCode": 71,
+      "applicationStatusDescriptionText": "Response to Non-Final Office Action Entered and Forwarded to Examiner"
+    },
+    {
+      "applicationStatusCode": 72,
+      "applicationStatusDescriptionText": "Response to Non-Final Office Action Held Non-Responsive / Informal"
+    },
+    {
+      "applicationStatusCode": 77,
+      "applicationStatusDescriptionText": "Response to Ex parte Quayle Action Entered and Forwarded to Examiner"
+    },
+    {
+      "applicationStatusCode": 78,
+      "applicationStatusDescriptionText": "Response to Ex parte Quayle Action Held Non-Responsive / Informal"
+    },
+    {
+      "applicationStatusCode": 80,
+      "applicationStatusDescriptionText": "Response after Final Action Forwarded to Examiner"
+    },
+    {
+      "applicationStatusCode": 81,
+      "applicationStatusDescriptionText": "Response to Final Office Action Held Non-Responsive / Informal"
+    },
+    {
+      "applicationStatusCode": 82,
+      "applicationStatusDescriptionText": "Advisory Action Counted, Not Yet Mailed"
+    },
+    {
+      "applicationStatusCode": 83,
+      "applicationStatusDescriptionText": "Advisory Action Mailed"
+    },
+    {
+      "applicationStatusCode": 89,
+      "applicationStatusDescriptionText": "Allowance Counted"
+    },
+    {
+      "applicationStatusCode": 90,
+      "applicationStatusDescriptionText": "Allowed -- Notice of Allowance Not Yet Mailed"
+    },
+    {
+      "applicationStatusCode": 91,
+      "applicationStatusDescriptionText": "Withdraw from issue awaiting action"
+    },
+    {
+      "applicationStatusCode": 92,
+      "applicationStatusDescriptionText": "Allowed -- Notice of Allowance Mailed -- Issue Revision Completed"
+    },
+    {
+      "applicationStatusCode": 93,
+      "applicationStatusDescriptionText": "Notice of Allowance Mailed -- Application Received in Office of Publications"
+    },
+    {
+      "applicationStatusCode": 94,
+      "applicationStatusDescriptionText": "Publications -- Issue Fee Payment Received"
+    },
+    {
+      "applicationStatusCode": 95,
+      "applicationStatusDescriptionText": "Publications -- Issue Fee Payment Verified"
+    },
+    {
+      "applicationStatusCode": 97,
+      "applicationStatusDescriptionText": "Defensive Publication / SIR Awaiting Publication"
+    },
+    {
+      "applicationStatusCode": 98,
+      "applicationStatusDescriptionText": "Awaiting TC Resp., Issue Fee Not Paid"
+    },
+    {
+      "applicationStatusCode": 99,
+      "applicationStatusDescriptionText": "Awaiting TC Resp, Issue Fee Payment Received"
+    },
+    {
+      "applicationStatusCode": 100,
+      "applicationStatusDescriptionText": "Awaiting TC Resp, Issue Fee Payment Verified"
+    },
+    {
+      "applicationStatusCode": 116,
+      "applicationStatusDescriptionText": "Appeal Ready for Review"
+    },
+    {
+      "applicationStatusCode": 118,
+      "applicationStatusDescriptionText": "Appeal order return from TC"
+    },
+    {
+      "applicationStatusCode": 119,
+      "applicationStatusDescriptionText": "TC Return of Appeal"
+    },
+    {
+      "applicationStatusCode": 120,
+      "applicationStatusDescriptionText": "Notice of Appeal Filed"
+    },
+    {
+      "applicationStatusCode": 121,
+      "applicationStatusDescriptionText": "Appeal Brief (or Supplemental Brief) Entered and Forwarded to Examiner"
+    },
+    {
+      "applicationStatusCode": 122,
+      "applicationStatusDescriptionText": "Examiner's Answer to Appeal Brief Counted"
+    },
+    {
+      "applicationStatusCode": 123,
+      "applicationStatusDescriptionText": "Examiner's Answer to Appeal Brief Mailed"
+    },
+    {
+      "applicationStatusCode": 124,
+      "applicationStatusDescriptionText": "On Appeal -- Awaiting Decision by the Board of Appeals"
+    },
+    {
+      "applicationStatusCode": 125,
+      "applicationStatusDescriptionText": "Remand to Examiner from Board of Appeals"
+    },
+    {
+      "applicationStatusCode": 126,
+      "applicationStatusDescriptionText": "On Remand to Examiner -- Examiner's Response Counted"
+    },
+    {
+      "applicationStatusCode": 127,
+      "applicationStatusDescriptionText": "Amendment after notice of appeal"
+    },
+    {
+      "applicationStatusCode": 128,
+      "applicationStatusDescriptionText": "Reply Brief (or Supplemental Reply Brief) Forwarded to Examiner"
+    },
+    {
+      "applicationStatusCode": 129,
+      "applicationStatusDescriptionText": "Examiner's Answer to Reply Brief Counted"
+    },
+    {
+      "applicationStatusCode": 130,
+      "applicationStatusDescriptionText": "Examiner's Answer to Reply Brief or Response to Remand Mailed"
+    },
+    {
+      "applicationStatusCode": 131,
+      "applicationStatusDescriptionText": "Reply Brief (or Supplemental Reply Brief) Filed - Not Entered"
+    },
+    {
+      "applicationStatusCode": 132,
+      "applicationStatusDescriptionText": "Appeal Awaiting BPAI Docketing"
+    },
+    {
+      "applicationStatusCode": 133,
+      "applicationStatusDescriptionText": "Reply Brief filed and forwarded to BPAI"
+    },
+    {
+      "applicationStatusCode": 135,
+      "applicationStatusDescriptionText": "Board of Appeals Decision Rendered"
+    },
+    {
+      "applicationStatusCode": 136,
+      "applicationStatusDescriptionText": "Amendment / Argument after Board of Appeals Decision"
+    },
+    {
+      "applicationStatusCode": 137,
+      "applicationStatusDescriptionText": "Board of Appeals Decision -- Remand to Examiner under 37 CFR 41.50(b) or (d)"
+    },
+    {
+      "applicationStatusCode": 139,
+      "applicationStatusDescriptionText": "Appeal Dismissed / Withdrawn"
+    },
+    {
+      "applicationStatusCode": 140,
+      "applicationStatusDescriptionText": "Prosecution Suspended"
+    },
+    {
+      "applicationStatusCode": 143,
+      "applicationStatusDescriptionText": "Request Reconsideration after Board of Appeals Decision"
+    },
+    {
+      "applicationStatusCode": 144,
+      "applicationStatusDescriptionText": "Board of Appeals Decision Rendered after Request for Reconsideration"
+    },
+    {
+      "applicationStatusCode": 146,
+      "applicationStatusDescriptionText": "BPAI decision awaiting appeal"
+    },
+    {
+      "applicationStatusCode": 148,
+      "applicationStatusDescriptionText": "Application Sealed by L&R"
+    },
+    {
+      "applicationStatusCode": 149,
+      "applicationStatusDescriptionText": "BPAI RETURN BEFORE APPEAL "
+    },
+    {
+      "applicationStatusCode": 150,
+      "applicationStatusDescriptionText": "Patented Case"
+    },
+    {
+      "applicationStatusCode": 151,
+      "applicationStatusDescriptionText": "Patented File - (Old Case Added for File Tracking Purposes)"
+    },
+    {
+      "applicationStatusCode": 159,
+      "applicationStatusDescriptionText": "Provisional Application Expired"
+    },
+    {
+      "applicationStatusCode": 160,
+      "applicationStatusDescriptionText": "Abandoned  --  Incomplete Application (Pre-examination)"
+    },
+    {
+      "applicationStatusCode": 161,
+      "applicationStatusDescriptionText": "Abandoned  --  Failure to Respond to an Office Action"
+    },
+    {
+      "applicationStatusCode": 162,
+      "applicationStatusDescriptionText": "Expressly Abandoned  --  During Publication Process"
+    },
+    {
+      "applicationStatusCode": 163,
+      "applicationStatusDescriptionText": "Abandoned  --  After Examiner's Answer or Board of Appeals Decision"
+    },
+    {
+      "applicationStatusCode": 164,
+      "applicationStatusDescriptionText": "Abandoned  --  Failure to Pay Issue Fee"
+    },
+    {
+      "applicationStatusCode": 165,
+      "applicationStatusDescriptionText": "ABANDONED - RESTORED"
+    },
+    {
+      "applicationStatusCode": 166,
+      "applicationStatusDescriptionText": "Abandoned  --  File-Wrapper-Continuation Parent Application"
+    },
+    {
+      "applicationStatusCode": 167,
+      "applicationStatusDescriptionText": "Abandonment for Failure to Correct Drawings/Oath/NonPub Request"
+    },
+    {
+      "applicationStatusCode": 168,
+      "applicationStatusDescriptionText": "Expressly Abandoned  --  During Examination"
+    },
+    {
+      "applicationStatusCode": 169,
+      "applicationStatusDescriptionText": "Abandoned  --  Incomplete (Filing Date Under Rule 53 (b) - PreExam)"
+    },
+    {
+      "applicationStatusCode": 170,
+      "applicationStatusDescriptionText": "Renounced-International design application designating the U.S. renounced under the Hague Agreement"
+    },
+    {
+      "applicationStatusCode": 171,
+      "applicationStatusDescriptionText": "Cancelled Under Hague Agreement"
+    },
+    {
+      "applicationStatusCode": 172,
+      "applicationStatusDescriptionText": "Interference -- Initial Memorandum"
+    },
+    {
+      "applicationStatusCode": 174,
+      "applicationStatusDescriptionText": "Interference -- Declared by Board of Interferences"
+    },
+    {
+      "applicationStatusCode": 180,
+      "applicationStatusDescriptionText": "Interference -- Decision on Priority Rendered by Board of Interferences"
+    },
+    {
+      "applicationStatusCode": 181,
+      "applicationStatusDescriptionText": "Interference-Dispatch to Examiner"
+    },
+    {
+      "applicationStatusCode": 182,
+      "applicationStatusDescriptionText": "Interference -- Dissolved by BPAI before Decision on Priority"
+    },
+    {
+      "applicationStatusCode": 195,
+      "applicationStatusDescriptionText": "Application Involved in Court Proceedings"
+    },
+    {
+      "applicationStatusCode": 197,
+      "applicationStatusDescriptionText": "Court Proceedings Terminated"
+    },
+    {
+      "applicationStatusCode": 201,
+      "applicationStatusDescriptionText": "Pre-PALM Application Added to Data Base"
+    },
+    {
+      "applicationStatusCode": 218,
+      "applicationStatusDescriptionText": "RO PROCESSING COMPLETED-PLACED IN STORAGE "
+    },
+    {
+      "applicationStatusCode": 221,
+      "applicationStatusDescriptionText": "International Application Withdrawn"
+    },
+    {
+      "applicationStatusCode": 250,
+      "applicationStatusDescriptionText": "Patent Expired Due to NonPayment of Maintenance Fees Under 37 CFR 1.362"
+    },
+    {
+      "applicationStatusCode": 251,
+      "applicationStatusDescriptionText": "PCT - Receipt of IPE Demand"
+    },
+    {
+      "applicationStatusCode": 252,
+      "applicationStatusDescriptionText": "PCT \u2013 Foreign Search Report and Written Opinion Pending/Received"
+    },
+    {
+      "applicationStatusCode": 254,
+      "applicationStatusDescriptionText": "PCT - Formal Demand Recorded"
+    },
+    {
+      "applicationStatusCode": 256,
+      "applicationStatusDescriptionText": "PCT - Chapter 2 Application Docketed to Examiner"
+    },
+    {
+      "applicationStatusCode": 258,
+      "applicationStatusDescriptionText": "PCT - Unity of Invention Action"
+    },
+    {
+      "applicationStatusCode": 259,
+      "applicationStatusDescriptionText": "259 Form 405 Mailed"
+    },
+    {
+      "applicationStatusCode": 260,
+      "applicationStatusDescriptionText": "PCT - Application Ready for IPE Opinion"
+    },
+    {
+      "applicationStatusCode": 264,
+      "applicationStatusDescriptionText": "PCT - IPE Opinion (408)"
+    },
+    {
+      "applicationStatusCode": 265,
+      "applicationStatusDescriptionText": "PCT - IPE Opinion (408) Mailed"
+    },
+    {
+      "applicationStatusCode": 266,
+      "applicationStatusDescriptionText": "PCT - Ready for IPER or second IPE opinion"
+    },
+    {
+      "applicationStatusCode": 271,
+      "applicationStatusDescriptionText": "PCT - IPE Report (409) Count"
+    },
+    {
+      "applicationStatusCode": 275,
+      "applicationStatusDescriptionText": "PCT - IPER (International Preliminary Examination Report) 409-416 Mailed"
+    },
+    {
+      "applicationStatusCode": 280,
+      "applicationStatusDescriptionText": "Demand Withdrawn"
+    },
+    {
+      "applicationStatusCode": 310,
+      "applicationStatusDescriptionText": "Pre-Interview Communication Counted, Not Mailed"
+    },
+    {
+      "applicationStatusCode": 311,
+      "applicationStatusDescriptionText": "Pre-Interview Communication Mailed "
+    },
+    {
+      "applicationStatusCode": 333,
+      "applicationStatusDescriptionText": "File Jacket Destroyed by L&R"
+    },
+    {
+      "applicationStatusCode": 404,
+      "applicationStatusDescriptionText": "Reexam Request Incomplete"
+    },
+    {
+      "applicationStatusCode": 406,
+      "applicationStatusDescriptionText": "Receipt of Orig or Corrected Ex Parte Reexam Request\r\n"
+    },
+    {
+      "applicationStatusCode": 407,
+      "applicationStatusDescriptionText": "Reexam -- Commissioner Initiated Order in Preprocessing"
+    },
+    {
+      "applicationStatusCode": 408,
+      "applicationStatusDescriptionText": "Incomplete Ex Parte Reexam (Filing Date Vacated)"
+    },
+    {
+      "applicationStatusCode": 409,
+      "applicationStatusDescriptionText": "Preprocessing Terminated--Ex Parte Reexam"
+    },
+    {
+      "applicationStatusCode": 410,
+      "applicationStatusDescriptionText": "Reexam Preprocessing Completed -- Released to Assigned GAU"
+    },
+    {
+      "applicationStatusCode": 412,
+      "applicationStatusDescriptionText": "Reexam Assigned to Examiner for Determination"
+    },
+    {
+      "applicationStatusCode": 414,
+      "applicationStatusDescriptionText": "Determination - Reexamination Ordered"
+    },
+    {
+      "applicationStatusCode": 416,
+      "applicationStatusDescriptionText": "Request for Reexamination Denied"
+    },
+    {
+      "applicationStatusCode": 418,
+      "applicationStatusDescriptionText": "Petition Received RE: Denial of Reexamination Request"
+    },
+    {
+      "applicationStatusCode": 420,
+      "applicationStatusDescriptionText": "Reexam Terminated -- Request Denied in Group"
+    },
+    {
+      "applicationStatusCode": 421,
+      "applicationStatusDescriptionText": "REEXAM TERMINATED - Decision"
+    },
+    {
+      "applicationStatusCode": 422,
+      "applicationStatusDescriptionText": "Reexam Terminated -- Previous Order Vacated"
+    },
+    {
+      "applicationStatusCode": 423,
+      "applicationStatusDescriptionText": "Non-Final Action Mailed"
+    },
+    {
+      "applicationStatusCode": 424,
+      "applicationStatusDescriptionText": "Response after Non-Final Action Entered (or Ready for Examiner Action)"
+    },
+    {
+      "applicationStatusCode": 425,
+      "applicationStatusDescriptionText": "Final Action Mailed"
+    },
+    {
+      "applicationStatusCode": 426,
+      "applicationStatusDescriptionText": "Response after Final Action Received"
+    },
+    {
+      "applicationStatusCode": 427,
+      "applicationStatusDescriptionText": "Withdrawal / Dismissal of Appeal"
+    },
+    {
+      "applicationStatusCode": 428,
+      "applicationStatusDescriptionText": "Advisory Action Mailed"
+    },
+    {
+      "applicationStatusCode": 429,
+      "applicationStatusDescriptionText": "Reexamination Suspended"
+    },
+    {
+      "applicationStatusCode": 430,
+      "applicationStatusDescriptionText": "Reexam -- Timely Owner's Statement Received in Response to Order"
+    },
+    {
+      "applicationStatusCode": 432,
+      "applicationStatusDescriptionText": "Notice of Appeal Filed"
+    },
+    {
+      "applicationStatusCode": 433,
+      "applicationStatusDescriptionText": "Appeal Brief Filed (or Remand from Board) - Awaiting Examiner Action"
+    },
+    {
+      "applicationStatusCode": 434,
+      "applicationStatusDescriptionText": "Defective Appeal Brief"
+    },
+    {
+      "applicationStatusCode": 435,
+      "applicationStatusDescriptionText": "Examiner's Answer Mailed"
+    },
+    {
+      "applicationStatusCode": 436,
+      "applicationStatusDescriptionText": "Reexam -- Request Ready for Ex Parte Action"
+    },
+    {
+      "applicationStatusCode": 437,
+      "applicationStatusDescriptionText": "Reply Brief Filed"
+    },
+    {
+      "applicationStatusCode": 438,
+      "applicationStatusDescriptionText": "Advisory of Reply Brief Status Mailed"
+    },
+    {
+      "applicationStatusCode": 439,
+      "applicationStatusDescriptionText": "Reexamination forwarded to Board for Decision on Appeal"
+    },
+    {
+      "applicationStatusCode": 440,
+      "applicationStatusDescriptionText": "Decision on Appeal Rendered by Board"
+    },
+    {
+      "applicationStatusCode": 441,
+      "applicationStatusDescriptionText": "Request for Reconsideration after BPAI Decision"
+    },
+    {
+      "applicationStatusCode": 442,
+      "applicationStatusDescriptionText": "Interference Communication - Initial Memo"
+    },
+    {
+      "applicationStatusCode": 443,
+      "applicationStatusDescriptionText": "BPAI decision on rehearing - Decision is new decision"
+    },
+    {
+      "applicationStatusCode": 444,
+      "applicationStatusDescriptionText": "BPAI decision on rehearing - Decision is final and appealable\r\n"
+    },
+    {
+      "applicationStatusCode": 445,
+      "applicationStatusDescriptionText": "CAFC Decision Remanded to PTAB"
+    },
+    {
+      "applicationStatusCode": 450,
+      "applicationStatusDescriptionText": "Reexam Terminated -- Notice of Intent to Issue a Reexamination Certificate Mailed"
+    },
+    {
+      "applicationStatusCode": 451,
+      "applicationStatusDescriptionText": "Reexam returned to TC for correction/completion  "
+    },
+    {
+      "applicationStatusCode": 452,
+      "applicationStatusDescriptionText": "Reexam Terminated -- In Publications for Issue of a Certificate"
+    },
+    {
+      "applicationStatusCode": 454,
+      "applicationStatusDescriptionText": "Reexamination Certificate Issued"
+    },
+    {
+      "applicationStatusCode": 499,
+      "applicationStatusDescriptionText": "AFTER APPEAL DECISION"
+    },
+    {
+      "applicationStatusCode": 551,
+      "applicationStatusDescriptionText": "PCT - Dispatch to TC Chapter I case"
+    },
+    {
+      "applicationStatusCode": 552,
+      "applicationStatusDescriptionText": "PCT - Docketed Chapter 1 Case"
+    },
+    {
+      "applicationStatusCode": 554,
+      "applicationStatusDescriptionText": "PCT - ISA Form for Miscellaneous Action Entered"
+    },
+    {
+      "applicationStatusCode": 555,
+      "applicationStatusDescriptionText": "PCT - ISA Form Mailed"
+    },
+    {
+      "applicationStatusCode": 556,
+      "applicationStatusDescriptionText": "PCT - Response to PCT ISA Form Entered"
+    },
+    {
+      "applicationStatusCode": 558,
+      "applicationStatusDescriptionText": "Search report counted"
+    },
+    {
+      "applicationStatusCode": 560,
+      "applicationStatusDescriptionText": "PCT Search report ready for mailing"
+    },
+    {
+      "applicationStatusCode": 566,
+      "applicationStatusDescriptionText": "PCT - International Search Report Mailed to IB"
+    },
+    {
+      "applicationStatusCode": 568,
+      "applicationStatusDescriptionText": "PCT - ISA Form 203 Submitted to PCT ISA"
+    },
+    {
+      "applicationStatusCode": 569,
+      "applicationStatusDescriptionText": "PCT - ISA Form 203 Mailed, Non-Establishment of Search Report"
+    },
+    {
+      "applicationStatusCode": 604,
+      "applicationStatusDescriptionText": "Incomplete/Noncompliant SE Request"
+    },
+    {
+      "applicationStatusCode": 606,
+      "applicationStatusDescriptionText": "Supplemental Examination Request Filed"
+    },
+    {
+      "applicationStatusCode": 608,
+      "applicationStatusDescriptionText": "Filing date vacated"
+    },
+    {
+      "applicationStatusCode": 609,
+      "applicationStatusDescriptionText": "Termination of SE Request (No Filing Date)"
+    },
+    {
+      "applicationStatusCode": 610,
+      "applicationStatusDescriptionText": "Filing Date Assigned  SE  ready for Docketing"
+    },
+    {
+      "applicationStatusCode": 612,
+      "applicationStatusDescriptionText": "Docketed New SE -- Ready For Examination"
+    },
+    {
+      "applicationStatusCode": 614,
+      "applicationStatusDescriptionText": "Reexam Ordered Based on Supplemental Examination"
+    },
+    {
+      "applicationStatusCode": 650,
+      "applicationStatusDescriptionText": "SE ready for Pubs Processing -- Certificate in IFW"
+    },
+    {
+      "applicationStatusCode": 652,
+      "applicationStatusDescriptionText": "Supplemental Examination Forwarded to Pubs (NO SNQ)"
+    },
+    {
+      "applicationStatusCode": 653,
+      "applicationStatusDescriptionText": "Supplemental Examination Certificate (No SNQ)"
+    },
+    {
+      "applicationStatusCode": 660,
+      "applicationStatusDescriptionText": "Ready for Reexam -- Certificate in IFW"
+    },
+    {
+      "applicationStatusCode": 662,
+      "applicationStatusDescriptionText": "Supplemental Examination Forwarded to Pubs (Yes SNQ)"
+    },
+    {
+      "applicationStatusCode": 670,
+      "applicationStatusDescriptionText": "Intent to Issue Certificate based on Supplemental Exam"
+    },
+    {
+      "applicationStatusCode": 680,
+      "applicationStatusDescriptionText": "Reexamination SE Certificate"
+    },
+    {
+      "applicationStatusCode": 804,
+      "applicationStatusDescriptionText": "Notice of incomplete reexam request received but no filing date accorded "
+    },
+    {
+      "applicationStatusCode": 806,
+      "applicationStatusDescriptionText": "Receipt of Orig or Corrected Inter Partes Reexam Request"
+    },
+    {
+      "applicationStatusCode": 808,
+      "applicationStatusDescriptionText": "Notification of incomplete inter partes reexam request (filing date accorded)"
+    },
+    {
+      "applicationStatusCode": 809,
+      "applicationStatusDescriptionText": "Preprocessing Terminated--Inter Partes Reexam"
+    },
+    {
+      "applicationStatusCode": 810,
+      "applicationStatusDescriptionText": "Completion of pre-processing - released to TC"
+    },
+    {
+      "applicationStatusCode": 812,
+      "applicationStatusDescriptionText": "Case docketed to examiner"
+    },
+    {
+      "applicationStatusCode": 814,
+      "applicationStatusDescriptionText": "Reexamination ordered"
+    },
+    {
+      "applicationStatusCode": 816,
+      "applicationStatusDescriptionText": "Request for reexamination denied"
+    },
+    {
+      "applicationStatusCode": 818,
+      "applicationStatusDescriptionText": "Petition received re: Denial of a request for reexamination"
+    },
+    {
+      "applicationStatusCode": 820,
+      "applicationStatusDescriptionText": "Decision on Petition Denied, Reexam Request Denied, Terminated"
+    },
+    {
+      "applicationStatusCode": 822,
+      "applicationStatusDescriptionText": "Decision vacating reexam "
+    },
+    {
+      "applicationStatusCode": 823,
+      "applicationStatusDescriptionText": "Non-final action mailed"
+    },
+    {
+      "applicationStatusCode": 824,
+      "applicationStatusDescriptionText": "Informal response / amendment after non-final action"
+    },
+    {
+      "applicationStatusCode": 825,
+      "applicationStatusDescriptionText": "Response after non-final action - owner - timely"
+    },
+    {
+      "applicationStatusCode": 826,
+      "applicationStatusDescriptionText": "Comments after non-final action - requester- timely"
+    },
+    {
+      "applicationStatusCode": 827,
+      "applicationStatusDescriptionText": "Ready for examiner action after response/comments after nonfinal"
+    },
+    {
+      "applicationStatusCode": 830,
+      "applicationStatusDescriptionText": "Action closing prosecution (non-final)"
+    },
+    {
+      "applicationStatusCode": 833,
+      "applicationStatusDescriptionText": "Comments after action closing prosecution - owner - timely"
+    },
+    {
+      "applicationStatusCode": 834,
+      "applicationStatusDescriptionText": "Comments after action closing prosecution - requester - timely"
+    },
+    {
+      "applicationStatusCode": 837,
+      "applicationStatusDescriptionText": "Ready for examiner action after owner/requester comments periods after ACP"
+    },
+    {
+      "applicationStatusCode": 840,
+      "applicationStatusDescriptionText": "Right of appeal notice (final)"
+    },
+    {
+      "applicationStatusCode": 841,
+      "applicationStatusDescriptionText": "Notice of Appeal - owner"
+    },
+    {
+      "applicationStatusCode": 842,
+      "applicationStatusDescriptionText": "Notice of Appeal - requester"
+    },
+    {
+      "applicationStatusCode": 843,
+      "applicationStatusDescriptionText": "Notice of Cross Appeal - owner"
+    },
+    {
+      "applicationStatusCode": 844,
+      "applicationStatusDescriptionText": "Notice of Cross Appeal - requester"
+    },
+    {
+      "applicationStatusCode": 845,
+      "applicationStatusDescriptionText": "Appeal brief - owner"
+    },
+    {
+      "applicationStatusCode": 846,
+      "applicationStatusDescriptionText": "Appeal brief - requester"
+    },
+    {
+      "applicationStatusCode": 847,
+      "applicationStatusDescriptionText": "Respondent brief - owner"
+    },
+    {
+      "applicationStatusCode": 848,
+      "applicationStatusDescriptionText": "Respondent brief - requester"
+    },
+    {
+      "applicationStatusCode": 849,
+      "applicationStatusDescriptionText": "Defective brief filed"
+    },
+    {
+      "applicationStatusCode": 850,
+      "applicationStatusDescriptionText": "Notice of Intent to Issue Reexam Certificate"
+    },
+    {
+      "applicationStatusCode": 852,
+      "applicationStatusDescriptionText": "Terminated; released to Publications for issuance of Reexam Certificate"
+    },
+    {
+      "applicationStatusCode": 854,
+      "applicationStatusDescriptionText": "Reexamination Certificate issued"
+    },
+    {
+      "applicationStatusCode": 857,
+      "applicationStatusDescriptionText": "Ready for examiner action after owner/requester N/AP and appropriate briefs "
+    },
+    {
+      "applicationStatusCode": 859,
+      "applicationStatusDescriptionText": "Withdrawal of appeal"
+    },
+    {
+      "applicationStatusCode": 860,
+      "applicationStatusDescriptionText": "Examiner's answer"
+    },
+    {
+      "applicationStatusCode": 861,
+      "applicationStatusDescriptionText": "Rebuttal brief - owner"
+    },
+    {
+      "applicationStatusCode": 862,
+      "applicationStatusDescriptionText": "Rebuttal brief - requester"
+    },
+    {
+      "applicationStatusCode": 864,
+      "applicationStatusDescriptionText": "Ready for examiner action after owner/requester rebuttal briefs"
+    },
+    {
+      "applicationStatusCode": 865,
+      "applicationStatusDescriptionText": "Supplemental examiner's answer to appeal brief"
+    },
+    {
+      "applicationStatusCode": 866,
+      "applicationStatusDescriptionText": "Second supplemental examiner's answer to appeal brief"
+    },
+    {
+      "applicationStatusCode": 870,
+      "applicationStatusDescriptionText": "Appealed case awaiting BPAI decision"
+    },
+    {
+      "applicationStatusCode": 871,
+      "applicationStatusDescriptionText": "Oral hearing request - requester"
+    },
+    {
+      "applicationStatusCode": 872,
+      "applicationStatusDescriptionText": "Oral hearing request - owner"
+    },
+    {
+      "applicationStatusCode": 873,
+      "applicationStatusDescriptionText": "BPAI decision: New ground of rejection (R. 1.977(b))"
+    },
+    {
+      "applicationStatusCode": 874,
+      "applicationStatusDescriptionText": "BPAI decision: Remand to examiner (R. 1.977(d))"
+    },
+    {
+      "applicationStatusCode": 877,
+      "applicationStatusDescriptionText": "Patent owner response after BPAI decision with new ground of rejection (R. 1.977(b))"
+    },
+    {
+      "applicationStatusCode": 878,
+      "applicationStatusDescriptionText": "Requester comments on owner response after BPAI decsn. with new ground of rej. (R. 1.977(c))"
+    },
+    {
+      "applicationStatusCode": 879,
+      "applicationStatusDescriptionText": "Ready for examiner action after BPAI decision"
+    },
+    {
+      "applicationStatusCode": 880,
+      "applicationStatusDescriptionText": "Examiner's determination on resp/comments aft BPAI decsn w new ground of rej (R. 1.977(d))"
+    },
+    {
+      "applicationStatusCode": 881,
+      "applicationStatusDescriptionText": "Owner comments on exmnr's determination aft BPAI decsn w new ground of rej (R. 1.977(e))"
+    },
+    {
+      "applicationStatusCode": 882,
+      "applicationStatusDescriptionText": "Requester comments on exmnr's determination aft BPAI decsn w new ground of rej (R. 1.977(e))"
+    },
+    {
+      "applicationStatusCode": 883,
+      "applicationStatusDescriptionText": "Owner reply to req comments on exmnr's determ aft BPAI decsn w new ground of rej (R. 1.977(e))"
+    },
+    {
+      "applicationStatusCode": 884,
+      "applicationStatusDescriptionText": "Requester reply to owner reply on exmnr's determ aft BPAI decsn w new ground of rej (R. 1.977(e))"
+    },
+    {
+      "applicationStatusCode": 885,
+      "applicationStatusDescriptionText": "New BPAI decision after BPAI decision with new ground of rej (R. 1.977(f))"
+    },
+    {
+      "applicationStatusCode": 886,
+      "applicationStatusDescriptionText": "New BPAI decsn aft BPAI decsn w new ground of rej (R. 1.977(f)): new ground of rej"
+    },
+    {
+      "applicationStatusCode": 887,
+      "applicationStatusDescriptionText": "Patent owner request for rehearing after BPAI decision (R. 1.979(a)) - timely"
+    },
+    {
+      "applicationStatusCode": 888,
+      "applicationStatusDescriptionText": "Requester request for rehearing  after BPAI decision (R. 1.979(a)) - timely"
+    },
+    {
+      "applicationStatusCode": 889,
+      "applicationStatusDescriptionText": "Patent Owner Comments on Request for Rehearing after Board Decision (R.41.79(c)) - timely"
+    },
+    {
+      "applicationStatusCode": 890,
+      "applicationStatusDescriptionText": "Requester Comments on Request for Rehearing after Board Decision (R.41.79(c)) - timely"
+    },
+    {
+      "applicationStatusCode": 891,
+      "applicationStatusDescriptionText": "BPAI decision on rehearing (R. 1.979(c)) - Decision is new decision"
+    },
+    {
+      "applicationStatusCode": 892,
+      "applicationStatusDescriptionText": "BPAI decision on rehearing - Decision is final and appealable"
+    },
+    {
+      "applicationStatusCode": 899,
+      "applicationStatusDescriptionText": "AFTER APPEAL DECISION"
+    }
+  ],
+  "version": "2026-01-07"
+}

@@ -1,0 +1,238 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 9” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n------\n\nPatient 9 presents to the clinic for a visit with their primary care doctor. In addition to the other symptoms, she has been getting painful soft tissue swelling. \n\nAttached PDF file has the conversation between Patient-Physician encounter. \n\nWhat is the most likely underlying cause of her bleeding tendency? What confirmatory test should be ordered to support this diagnosis?"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the patient has new onset mucosal bleeding. (ver_d728914fb4ea47fd967786a0ff3324a0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient has new onset mucosal bleeding."
+        }
+      ]
+    },
+    {
+      "name": "States that mucocutaneous bleeding is a feature of acquired hemophilia A. (ver_14041b71b26c44d28b25d1cc8daf68e6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that mucocutaneous bleeding is a feature of acquired hemophilia A."
+        }
+      ]
+    },
+    {
+      "name": "States the patient’s soft tissue swelling could be from acquired hemophilia A. (ver_8c4d99279db3434fadb5b71f64744665)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient’s soft tissue swelling could be from acquired hemophilia A."
+        }
+      ]
+    },
+    {
+      "name": "Stats the patient has prolonged activated partial prothrombin time (aPTT). (ver_3b5917d2277a49d6bde216d2a31de123)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Stats the patient has prolonged activated partial prothrombin time (aPTT)."
+        }
+      ]
+    },
+    {
+      "name": "States that prolonged aPTT is seen in acquired hemophilia A. (ver_5df0c6c8d08d4fc0a9c4cf44f1a66244)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that prolonged aPTT is seen in acquired hemophilia A."
+        }
+      ]
+    },
+    {
+      "name": "States the patient has breast cancer. (ver_958d6336cf9046cc8e355b50d01e7b5f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient has breast cancer."
+        }
+      ]
+    },
+    {
+      "name": "States that breast cancer is associated with acquired hemophilia A. (ver_4c8106ff37ec4a62ae94e8c83ce32405)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that breast cancer is associated with acquired hemophilia A."
+        }
+      ]
+    },
+    {
+      "name": "States the most likely underlying cause of her bleeding tendency is acquired... (ver_36633eb870aa4fa1927791f13c128aa1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the most likely underlying cause of her bleeding tendency is acquired hemophilia A."
+        }
+      ]
+    },
+    {
+      "name": "States the confirmatory test to support this diagnosis is factor VIII... (ver_363752dfb7d34f1685bf866c1976b7e3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the confirmatory test to support this diagnosis is factor VIII inhibitor assay."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-hemo-onc-9-acquired-hemophilia-a-amrinder-k-c0b11a83"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_c0b11a83a2cc4277b53c60ff9868746d",
+    "task_name": "Labs_Image_AI Scribe_Hemo Onc 9 - Acquired Hemophilia A - Amrinder K",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_1a398777fece409493f5f0725ef6d76b",
+        "golden_text_response": "What is the most likely underlying cause of her bleeding tendency? \n\nAcquired hemophilia A is the most likely cause of the patient’s bleeding. It typically causes a new-onset, severe bleeding, manifested by painful soft-tissue swelling and bleeding into soft tissue and muscle.  This patient also has mucocutaneous bleeding, such as gingival bleeding and easy bruising, which is also a feature of acquired hemophilia.  The coagulation profile shows normal PT with prolonged aPTT, which is consistent with hemophilia A. This disorder is due to the development of an acquired factor VIII inhibitor, which can occur in older adults and can be paraneoplastic, associated with breast cancer.\n\nWhat confirmatory test should be ordered to support this diagnosis? \n\nThe confirmatory test to support this diagnosis is a factor VIII inhibitor assay. \n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

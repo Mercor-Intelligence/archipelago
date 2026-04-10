@@ -1,0 +1,319 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_d0b9a8d26d3a4289a9c2045e37ea478e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_926ea317e698402795c649f8d4aea0b3",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that new onset back pain in a patient with a history of breast cancer can indicate spinal metastasis.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The script (Onc_Patient 9 script2.pdf) includes back pain complaint: \"Doctor, I\u2019ve been having some aching back pain for the past month.\"\n\n\"Spinal metastases are common in cancer, but they cause spinal cord compression only when they extend from the bone into the epidural space (Figure 2A). Aching back pain and tenderness on percussion over the affected site are typical and may precede neurologic features by several weeks. Pain may be worse when the patient is supine and causes awakening from sleep.\" -https://www.nejm.org/doi/full/10.1056/NEJMra1516539?utm_source=openevidence\n\nBiopsy of right breast mass and right lymph node on date of 12/31/2020 showed invasive ductal carcinoma and a positive lymph node.  \"ER status: negative; PR status negative, Her2 status positive; Grade 3.\"\n [CLINICALNOTES], Note type - [H&P], Column - [D], Row - [14]",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_736e7acd016b452a9d42f63f59419b32",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_926ea317e698402795c649f8d4aea0b3",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States there are sclerotic lesions on the T8 and T10 vertebrae in the thoracic spine X-ray.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"There are subtle areas of increased sclerosis involving the T8 and T10 vertebral bodies without associated cortical destruction. Pedicles are partially visualized and appear mildly asymmetric at T10. No acute fracture is identified.\" - attached X-ray (Onc_Patient 9 spine2.pdf)",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_05c50db36b274d05b394aaaedc35f6f7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_926ea317e698402795c649f8d4aea0b3",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that there is increased FDG uptake in the T8 and T10 vertebrae on the PET scan.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Osseous Structures: \nThere is mildly increased FDG uptake within the T8 and T10 vertebral bodies, with SUV values \nonly slightly above background marrow activity. Corresponding CT images demonstrate subtle \nsclerotic changes at these levels without cortical destruction, expansile lesion, or associated soft \ntissue mass.\" - attached PET scan (Onc_Patient 9 pet.pdf)",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a1ffbe2bc5e747d78ad6046bfbc84a60",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_926ea317e698402795c649f8d4aea0b3",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the imaging results are suspicious for bony metastases from breast cancer in the T8 and T10 vertebrae.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"8F]FDG-PET is an important tool for the diagnosis of early osseous metastatic disease because increased glucose metabolism in neoplastic cells can become evident in even the earliest cases of bone marrow infiltration.\" - https://www.ajnr.org/content/43/3/332\n\n\"For patients presenting with metastatic disease, the appearance of the lesions may help to guide the search for a primary. Some helpful patterns include lytic and sclerotic lesions, \"expanded\" lesions, \"pseudosarcomatous\" lesions, acral lesions, and soft tissue ossification.\" -https://pubmed.ncbi.nlm.nih.gov/9362427/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7ca87f6784844a79a17a3abcdfc671df",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_926ea317e698402795c649f8d4aea0b3",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient likely has stage IV metastatic breast cancer.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Stage 4 breast cancer is advanced breast cancer that has metastasized, or spread, from the original location in the breast to other organs of the body, such as the bones, lungs, liver, or brain. Stage 4 breast cancer is also called metastatic breast cancer or breast cancer recurrence.\" -https://www.nationalbreastcancer.org/breast-cancer-stage-4/",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9b721052847141e7a9c5fa4a10201cfb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_926ea317e698402795c649f8d4aea0b3",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's current age is 60 (acceptable range 59 to 61).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. DOB 1/1/65 in attached X-ray and PET scan\n2. Dates of imaging 1/5/25 and 1/7/25\n3. Age is an input for the nomogram. -https://www.mdcalc.com/calc/10492/nomogram-breast-cancer-brain-metastasis#when-to-use",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8de8faadd6d34ef28978fdf02a5dfdfe",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_926ea317e698402795c649f8d4aea0b3",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the histologic grade of the patient's breast cancer is 3 (acceptable range 2.97 to 3.03).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. Biopsy of right breast mass and right lymph node on date of 12/31/2020 showed invasive ductal carcinoma and a positive lymph node.  \"ER status: negative; PR status negative, Her2 status positive; Grade 3.\"\n [CLINICALNOTES], Note type - [H&P], Column - [D], Row - [14]\n\n2. Histologic grade is an input for the nomogram. -https://www.mdcalc.com/calc/10492/nomogram-breast-cancer-brain-metastasis#when-to-use",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e45ae6d9c7c6438ebb7867c3a3c3ca5b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_926ea317e698402795c649f8d4aea0b3",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the patient's breast cancer receptor status is HER2+.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. Biopsy of right breast mass and right lymph node on date of 12/31/2020 showed invasive ductal carcinoma and a positive lymph node.  ER status: negative; PR status negative, Her2 status positive; Grade 3.  \n [CLINICALNOTES], Note type - [H&P], Column - [D], Row - [14]\n\n2. Receptor status is an input for the nomogram. -https://www.mdcalc.com/calc/10492/nomogram-breast-cancer-brain-metastasis",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4b77eb485e5f4af785af1c54d901956a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_926ea317e698402795c649f8d4aea0b3",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the patient's breast cancer diagnosis date is 12/31/20 (acceptable range 11.9 to 12.1).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. Biopsy of right breast mass and right lymph node on date of 12/31/2020 showed invasive ductal carcinoma and a positive lymph node.  ER status: negative; PR status negative, Her2 status positive; Grade 3.  \n [CLINICALNOTES], Note type - [H&P], Column - [D], Row - [14]\n\n2. This information will be used to determine delay between diagnosis and first metastasis, which is required for the nomogram. -https://www.mdcalc.com/calc/10492/nomogram-breast-cancer-brain-metastasis#when-to-use",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_96688533e3104df7bc6f656bc68bfec9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_926ea317e698402795c649f8d4aea0b3",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the patient's date of first breast cancer metastasis is 1/5/25 (acceptable range 0.99 to 1.0).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. Date of attached spine X-ray 1/5/2025. \n2. This information will be used to determine delay between diagnosis and first metastasis, which is required for the nomogram. -https://www.mdcalc.com/calc/10492/nomogram-breast-cancer-brain-metastasis#when-to-use",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_982b999866f944f1b532373b6d184fd2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_926ea317e698402795c649f8d4aea0b3",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the delay between the patient's breast cancer diagnosis and first metastasis is 60 months (acceptable range 59 to 61).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Delay between diagnosis and first metastasis is required for the nomogram. \n-https://www.mdcalc.com/calc/10492/nomogram-breast-cancer-brain-metastasis#when-to-use\n\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cb57771ee1cf427c80c0350262ae3720",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_926ea317e698402795c649f8d4aea0b3",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)",
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States the number of non-brain metastatic sites is 1 (acceptable range 0.99 to 1.0).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. The attached PET scan (Onc_Patient 9 pet.pdf) shows spine mets and no others listed.\n\n2. Number of non brain metastatic sites is an input for the nomogram. -https://www.mdcalc.com/calc/10492/nomogram-breast-cancer-brain-metastasis",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_18004c02d18647d4b2ac6c9358256275",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_926ea317e698402795c649f8d4aea0b3",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States the probability of brain metastasis in this patient is 15% (acceptable range 14.8% to 15.2%).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This is an output of the nomogram when all components are present. \n-https://www.mdcalc.com/calc/10492/nomogram-breast-cancer-brain-metastasis",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

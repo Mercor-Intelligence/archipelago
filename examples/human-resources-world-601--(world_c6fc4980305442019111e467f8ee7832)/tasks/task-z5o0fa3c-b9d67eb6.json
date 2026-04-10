@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The company is moving towards standardizing our salary payment schedules to monthly, and HR needs to prepare all amendments to applicable employee agreements. To get a sense of the workload, determine how many employees need to be transitioned, and what percentage of total they represent (rounded to two decimal places).\n\nAdditionally, calculate the total monthly amount that would be affected (as dollars, rounded to the nearest dollar), on average per month. Refer to the \"Employee Roster_Enhanced.xlsx\" file in the filesystem and present your answer as a console message."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of employees that would be affected by the payment... (ver_55a5cf5a5f434b30a5ebccdb47fc4d39)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of employees that would be affected by the payment schedule standardization is 186 (acceptable range 184 to 188)."
+        }
+      ]
+    },
+    {
+      "name": "States that the percentage of the workforce being affected by the payment... (ver_6e556e8cc2d84e309d5d9778fd068361)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the percentage of the workforce being affected by the payment schedule standardization is 82.67% (acceptable range 81.84% to 83.50%)."
+        }
+      ]
+    },
+    {
+      "name": "States that the total monthly amount that would be affected is $2,397,083... (ver_9c805f278c074fa48310a91f6cbb8e40)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total monthly amount that would be affected is $2,397,083 (acceptable range $2,373,112 to $2,421,054)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-z5o0fa3c-b9d67eb6"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_b9d67eb65c53497193582d1c93c1aace",
+    "task_name": "Task z5o0fa3c",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_13d5f5e1962c442fb22318aa78088734",
+        "golden_text_response": "The number of employees that would be affected by the payment schedule standardization is 186\nThe percentage of the workforce being affected by the payment schedule standardization is 82.67%\nThe total monthly amount that would be affected is $2,397,083",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

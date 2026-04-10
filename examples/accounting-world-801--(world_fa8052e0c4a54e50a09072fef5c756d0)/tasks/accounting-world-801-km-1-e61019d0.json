@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Calculate the IRS underpayment interest on Redwood's 2021 combined federal and state tax deficiency from the original due date (April 15, 2022) to the anticipated payment date (March 15, 2025). The applicable IRS underpayment rate is 8% per annum. Apply daily compounding per IRC §6622 using actual calendar days elapsed between dates, but per company policy use a flat 365-day divisor for the daily rate (i.e., daily rate = 8%/365 regardless of leap years). Report the interest amount only. Round to two decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the interest amount is $867,391.60 (acceptable range $858,717.68 to... (ver_1ec39bff9a46427b82a6bf6e59621050)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the interest amount is $867,391.60 (acceptable range $858,717.68 to $876,065.52)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh accounting-world-801-km-1-e61019d0"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fa8052e0c4a54e50a09072fef5c756d0",
+    "world_name": "Accounting World 801",
+    "task_id": "task_e61019d0d8584085a1adc28737808843",
+    "task_name": "Accounting World 801 - KM_1",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_1c14936fff8848249dbc1e4fc571562e",
+        "golden_text_response": "$867,391.60",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

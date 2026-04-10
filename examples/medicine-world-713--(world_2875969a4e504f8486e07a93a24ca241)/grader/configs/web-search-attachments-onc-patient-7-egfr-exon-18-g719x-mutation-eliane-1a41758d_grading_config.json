@@ -1,0 +1,346 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_49e3f78d25284bd1b5b3f44ae1285da0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a41758da78a4bcc87282464f1edc22f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has a history of stage I non-small cell lung cancer (NSCLC).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has a history of stage I non-small cell lung cancer (NSCLC) and is now status post radiotherapy. \n\n\u201c47 y.o. female presents to the clinic today for 1 month follow-up status post SBRT to her right upper lobe for stage I non-small cell lung cancer.  REFERRING PROVIDER: Dion Body, MD  HPI: Patient is a 53 year old female now at 1 month having completed SBRT to her right upper lobe for stage I non-small cell lung cancers.  Seen today in routine follow-up she is doing well.  She specifically denies cough hemoptysis or chest tightness.  She is having no dysphagia..  She has a CT scan of her chest with contrast scheduled for April.  COMPLICATIONS OF TREATMENT: none\u201c \n--from openemr chart Onc_Patient 7: Tab - CLINICALNOTES, Note type - Progress Note, Column - D, Row - 33\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9ff70c8bae8e4900abd18b82dae5e7dc",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a41758da78a4bcc87282464f1edc22f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient previously received EGFR tyrosine kinase inhibitors.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient had a tissue sample taken last time and mentioned that the biopsy reports look \u2018identical\u2019, which implies that the same EGFR mutation is known. EGFR mutations are treated with EGFR tyrosine kinase inhibitors, which are given orally. When she refers to the 'pill' she took in the past, she was taking an EGFR tyrosine kinase inhibitor. \n\u201cPatient 7: Absolutely, they even biopsied it while I was there which was so nice and efficient. The last time this happened, it took them forever to get a tissue sample. But overall, the reports almost look identical. Doctor: What do you mean by \u2018last time\u2019? Patient 7: Well\u2026 I know I stopped seeing you for a while because my insurance changed and I had to go to a different hospital but last year they found a spot in my chest and I started some systemic therapy, some pill and then also chemo, and had been doing great\u2026. Until now.\u201d \n--from \u2018Onc_Patient 7 script.pdf\u2019",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Onc_Patient 7 script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9bd4c0f77feb4f0185c3225e3cf9e8c9"
+          },
+          {
+            "name": "Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9bd4c0f77feb4f0185c3225e3cf9e8c9"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2c4bdd6351614e94b6e3e9bc26631ea0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a41758da78a4bcc87282464f1edc22f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient previously received platinum-based chemotherapy.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient had a tissue sample taken last time, with a similar biopsy result this time, which led to some sort of \u2018systemic therapy\u2019 that included a 'pill and some chemo'. Patients with EGFR mutations who are on EGFR tyrosine kinase inhibitors and chemotherapy are referred to platinum-based chemotherapy. \n\n--\u201cPatient 7: Well\u2026 I know I stopped seeing you for a while because my insurance changed and I had to go to a different hospital but last year they found a spot in my chest and I started some systemic therapy, some pill and then also chemo, and had been doing great\u2026. Until now.\u201d \n-from \u2018Onc_Patient 7 script.pdf\u2019\n\n\"Datopotamab deruxtecan-dlnk (Dato-DXd; Datroway) was added as a preferred second-line regimen for patients with EGFR-mutated NSCLC following disease progression on frontline therapy with osimertinib (Tagrisso) plus chemotherapy.\" \nfrom https://www.onclive.com/view/experts-unpack-the-most-notable-nccn-guideline-changes-heading-into-2026\n\n\"NSCL-21\nFirst-Line Therapy\nEGFR mutation discovered prior to first-line systemic therapy\nThe following regimens moved from Other Recommended to Preferred\n(Carboplatin or Cisplatin)/Osimertinib/Pemetrexed (nonsquamous) (category 1)\" from https://www.nccn.org/professionals/physician_gls/pdf/nscl.pdf",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9bd4c0f77feb4f0185c3225e3cf9e8c9"
+          },
+          {
+            "name": "Onc_Patient 7 script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9bd4c0f77feb4f0185c3225e3cf9e8c9"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_37604d2c0bbd49f5bfd5cb9367c8f8c6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a41758da78a4bcc87282464f1edc22f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient now has metastatic disease.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient went on vacation and then developed a cough that led to imaging which revealed metastatic disease in her left axilla and brain.\n\u201cPatient 7: I was able to go to Banf National park but I developed a really bad cough and some bloody mucus. I went to the emergency room and they did a chest CT scan and found a new thing in my left arm pit.\u201d \n--from Onc_Patient 7 script.pdf.\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Onc_Patient 7 script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9bd4c0f77feb4f0185c3225e3cf9e8c9"
+          }
+        ]
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_618a415bd04c4ee7868dcd0901daf8b7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a41758da78a4bcc87282464f1edc22f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient\u2019s lymph node biopsy shows a recurrence of NSCLC.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient\u2019s biopsy shows adenocarcinoma, consistent with a lung origin. Given her history of NSCLC, we can safely assume this is a recurrence of the same cancer. \u201cA. LEFT AXILLARY LYMPH NODE, CORE BIOPSY: METASTATIC ADENOCARCINOMA. See Comment for immunohistochemical profile. COMMENT: The tumor cells are positive for TTF-1 (strong, diffuse) and Napsin A, consistent with lung origin. GATA-3 shows focal, weak staining. Mammaglobin and GCDFP-15 are negative. Estrogen Receptor (ER) and Progesterone Receptor (PR) are negative.\u201d from \u2018Labs.pdf\u2019",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9bd4c0f77feb4f0185c3225e3cf9e8c9"
+          }
+        ]
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e511c9ad2803471486b4680852a9c573",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a41758da78a4bcc87282464f1edc22f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient\u2019s lymph node biopsy shows an EGFR Exon 18 G719A mutation.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. The patient was found to have a G719A mutation. G719A is one specific variant within the G719X category used by NCCN. \u201cAdditionally, the sample is positive for a missense mutation in EGFR Exon 18 (c.2156G>C, p.G719A, VAF 28%).\u201d from \u2018Labs.pdf\u2019\n\n2. The \"X\" in G719X is a wildcard notation indicating that any amino acid substitution at codon 719 (which normally encodes glycine) is included. The most common G719X variants are:\nG719A (glycine \u2192 alanine)\nG719S (glycine \u2192 serine)\nG719C (glycine \u2192 cysteine)\nSo when NCCN guidelines refer to G719X as an actionable uncommon EGFR mutation responsive to afatinib or osimertinib, your patient's G719A falls directly under that recommendation.\n\u201cMutations in exon 18 are detected in 3.6% (14) of all the mutations and G719X (where X indicates the substitution of the glycine residue for A, S, C, and D) mutations account for the majority of them.\u201d \n--from https://aacrjournals.org/clincancerres/article/21/23/5305/262467/EGFR-Exon-18-Mutations-in-Lung-Cancer-Molecular\n\n\"G719A is classified as an Exon 18 mutation because the genetic codon (719) underwent the substitution (in this case alanine replaced glycine). This substitution occurs within the 18th exon of the EGFR gene. \n\u201cMutations in exon 18 are detected in 3.6% (14) of all the mutations and G719X (where X indicates the substitution of the glycine residue for A, S, C, and D) mutations account for the majority of them.\u201d \n--from https://aacrjournals.org/clincancerres/article/21/23/5305/262467/EGFR-Exon-18-Mutations-in-Lung-Cancer-Molecular\n\"",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9bd4c0f77feb4f0185c3225e3cf9e8c9"
+          }
+        ]
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6f502da49d8b445188bde9bdbf77fbfa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a41758da78a4bcc87282464f1edc22f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Recommends datopotamab deruxtecan-dlnk as the next best systemic therapy option for this patient.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Because this patient has a \u2018pill and chemo\u2019 regimen (EGFR tyrosine kinase inhibitor and platinum-based chemotherapy) and now has progression of recurrent NSCLC, the patient should be given datopotamab deruxtecan-dlnk. The NCCN guidelines from January 2026 now list datopotamab deruxtecan-dlink as a subsequent therapy option for those with G719X.\n-Datopotamab deruxtecan-dlnk (Dato-DXd) was added to the NCCN Guidelines for Non-Small Cell Lung Cancer (NSCLC) on November 6, 2025, with the release of Version 1.2026. This update followed the FDA's accelerated approval of the drug for this indication in June 2025.\n\u201cEGFR S768I, L861Q, and/or G719X \u2023 Datopotamab deruxtecan-dlnk (nonsquamous) added as a subsequent therapy option\u201d On page 16 of https://www.nccn.org/professionals/physician_gls/pdf/nscl.pdf\n-\u201cDatopotamab deruxtecan-dlnk (Dato-DXd; Datroway) was added as a preferred second-line regimen for patients with EGFR-mutated NSCLC following disease progression on frontline therapy with osimertinib (Tagrisso) plus chemotherapy.\u201d from https://www.onclive.com/view/experts-unpack-the-most-notable-nccn-guideline-changes-heading-into-2026\n\n\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Labs.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9bd4c0f77feb4f0185c3225e3cf9e8c9"
+          },
+          {
+            "name": "Onc_Patient 7 script.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_9bd4c0f77feb4f0185c3225e3cf9e8c9"
+          }
+        ]
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_92e1cc7bad8249d7ac7cb1d5289f5ba6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a41758da78a4bcc87282464f1edc22f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the route of administration of datopotamab deruxtecan-dlnk is intravenous infusion.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Datopotamab deruxtecan-dlnk is adminstered intravenously as an infusion. \n\"For intravenous infusion only. Do not administer as an intravenous push or bolus\"\n--https://daiichisankyo.us/prescribing-information-portlet/getPIContent?productName=Datroway&inline=true",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e84f8685968549d99a23423909df7c95",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a41758da78a4bcc87282464f1edc22f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the recommended dosing of datopotamab deruxtecan-dlnk is 6 mg/kg (acceptable range 5.9 to 6.1).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The recommended dosase of datopotamab deruxtecan-dlink is 6 mg/kg. \n\"Patients received Dato-DXd 6 mg/kg once every 3 weeks.\" from https://pmc.ncbi.nlm.nih.gov/articles/PMC11949215/\n\"2.2 Recommended Dosage\nThe recommended dosage of DATROWAY is 6 mg/kg (up to a maximum of 540 mg for patients \u226590 kg) administered as an intravenous infusion once every 3 weeks (21-day cycle) until disease progression or unacceptable toxicity\" from https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3b43c810e27d4e2db579159743f4486f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a41758da78a4bcc87282464f1edc22f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient\u2019s current weight is 106.2 lb or 48.2 kg (acceptable range 105.1 to 107.3).",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient's weight is 106.2 lbs. 1 lb = 0.453\n106.2 x 0.453 = 48.2 kg \n\n\u201cWeight: 106.2 lb \u201c from Source: Tab - CLINICAL NOTES, Note type - Progress Note, Column - D, Row - 221\n\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6015a01467db4ff48dc0712ed8e5dc94",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a41758da78a4bcc87282464f1edc22f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates that the patient dosing of datopotamab deruxtecan-dlnk is 289.2 mg. (acceptable range 283.4 - 295.0 mg)",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The recommended dosage for datopotamab deruxtecan-dlnk is 6 mg/kg intravenously. Because the patient weight 106.2 lbs (approx 48.2 kg).\nDosage Calculation for This Patient\nPatient weight: 106.2 lbs = 48.2 kg\nDose calculation: 48.2 kg \u00d7 6 mg/kg = 289.2 mg per infusion\n[289.2 x .02 = 5.78 --> range of 289.2 +/- 5.78 --> range of 283.4 to 295]\n\n\"Patients received Dato-DXd 6 mg/kg once every 3 weeks.\" from https://pmc.ncbi.nlm.nih.gov/articles/PMC11949215/\n\"2.2 Recommended Dosage\nThe recommended dosage of DATROWAY is 6 mg/kg (up to a maximum of 540 mg for patients \u226590 kg) administered as an intravenous infusion once every 3 weeks (21-day cycle) until disease progression or unacceptable toxicity\" from https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2bded2acc1d842ceb530ce1c55ceadf6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a41758da78a4bcc87282464f1edc22f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that infusion of datopotamab deruxtecan-dlnk occurs every 3 weeks or 21 days.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Recommended frequency is once every three weeks (or 21 days). \"2.2 Recommended Dosage\nThe recommended dosage of DATROWAY is 6 mg/kg (up to a maximum of 540 mg for patients \u226590 kg) administered as an intravenous infusion once every 3 weeks (21-day cycle) until disease progression or unacceptable toxicity\" \n--from https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?",
+        "is_primary_objective": true
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_004c672c734f4833a5ee5a1276335cdb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_1a41758da78a4bcc87282464f1edc22f",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the most common reason for dose reduction is stomatitis.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The most common side effect is stomatitis and also happens to be the most common cause of a dose reduction. \n\"Dose reductions of DATROWAY due to an adverse reaction occurred in 23% of patients. Adverse reactions which required dose reduction in >1% of patients included stomatitis (13%), fatigue (3.1%), nausea (2.5%), and weight decrease (1.9%)\" \n-see page 5 of 9 at https://daiichisankyo.us/prescribing-information-portlet/getPIContent?productName=Datroway&inline=true",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

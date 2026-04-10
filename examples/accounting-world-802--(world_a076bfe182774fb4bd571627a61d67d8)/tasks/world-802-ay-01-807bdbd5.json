@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the Q4 2024 information in Ironclad Accrued Expenses Support 123124.xlsx and the attached available historic accrued expenses (Q1&Q2&Q4 2023 and Q2 2024), forecast total accrued expenses in Q4 2025. Use least squared linear regression (OLS). For the time variable, use the actual quarter number where Q1 2023 = 1, Q2 2023 = 2, Q3 2023 =3, etc. \n\nDo not round intermediate calculations. Round final value to two decimal places. Respond as a message in console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that based on the Q4 2024 information in Ironclad's accrued expenses... (ver_f5f85f2442a14402a58fac5575416070)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that based on the Q4 2024 information in Ironclad's accrued expenses support and the available historic accrued expenses (Q1&Q2&Q4 2023 and Q2 2024), the forecasted total accrued expenses in Q4 2025 is $12,792,263.07 (acceptable range $12,664,340.44 to $12,920,185.70)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-802-ay-01-807bdbd5"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_a076bfe182774fb4bd571627a61d67d8",
+    "world_name": "Accounting World 802",
+    "task_id": "task_807bdbd57acc4636ac2ab340a38f422b",
+    "task_name": "World_802_AY_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_5c7d638a0ac845928e14f7dba7229a8a",
+        "golden_text_response": "Based on the Q4 2024 information in Ironclad's accrued expenses support and the available historic accrued expenses (Q1&Q2&Q4 2023 and Q2 2024), the forecasted total accrued expenses in Q4 2025 is $12,792,263.07.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

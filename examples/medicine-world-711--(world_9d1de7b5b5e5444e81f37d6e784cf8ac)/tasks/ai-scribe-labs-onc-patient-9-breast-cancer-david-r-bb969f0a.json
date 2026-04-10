@@ -1,0 +1,261 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 9” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n--------\n\nThe patient comes to the oncology follow-up clinic to discuss the next treatment option. Based on the patient's chart, labs, and conversation with the oncologist, what is the most appropriate next treatment option? What is the dosing and frequency? Explain your reasoning. Answer should be in line with the most recent medical recommendations as of January 7, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the patient has been diagnosed with breast cancer. (ver_dfe0882e98144c269b1923f89cd8cc0c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has been diagnosed with breast cancer."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's breast cancer is metastatic. (ver_b97a96d64e664546abc1e558c8d67ebc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's breast cancer is metastatic."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has already had endocrine therapy. (ver_2e94146719e548d39c0d8aaaec228ae0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has already had endocrine therapy."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's cancer has an ESR1 mutation. (ver_594a033903684939b32811818836b43f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's cancer has an ESR1 mutation."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient's cancer is HER2 negative. (ver_1ee960d6d0724e85b838c9933cc7d849)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient's cancer is HER2 negative."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient does not want elacestrant. (ver_14379a526a0742db819ede4320fc43d2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient does not want elacestrant."
+        }
+      ]
+    },
+    {
+      "name": "States that the most appropriate next treatment option is imlunestrant. (ver_a70b385777d94e3d9266c71c096e0c9f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the most appropriate next treatment option is imlunestrant."
+        }
+      ]
+    },
+    {
+      "name": "States that imlunestrant is dosed orally. (ver_be80fac532474d43832b23d228eec9eb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that imlunestrant is dosed orally."
+        }
+      ]
+    },
+    {
+      "name": "States that imlunestrant is taken once daily. (ver_324fca12bc3d4042b3250419b232babc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that imlunestrant is taken once daily."
+        }
+      ]
+    },
+    {
+      "name": "States that imlunestrant is dosed at 400 mg. (ver_f2a89d4453b1460fb43950b7d7fb3d67)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that imlunestrant is dosed at 400 mg."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh ai-scribe-labs-onc-patient-9-breast-cancer-david-r-bb969f0a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_bb969f0aa187414b897305923be8ab53",
+    "task_name": "AI Scribe/Labs - Onc Patient 9 - Breast Cancer - David R",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c356888da5384c15811b70d15e876371",
+        "golden_text_response": "Based on the patient's chart, labs, and conversation with the oncologist, what is the most appropriate next treatment option? What is the dosing and frequency? Explain your reasoning.\n\nThe patient has suffered a recurrence of breast cancer. The patient's breast cancer is metastatic and has progressed on aromatase inhibitor + CDK4/6 therapy, then again on fulvestrant. The patient does not want elacestrant due to vomiting she could not tolerate. The patient's labs show an ESR1 mutation. This implies an estrogen receptor (ER) positive mutation, given that ESR1 is tied to the estrogen receptor. The labs also show the patient is HER2 negative. The next, best treatment option is imlunestrant. Imlunestrant is indicated for the treatment of adults with ER-positive, HER2-negative, ESR1-mutated advanced or metastatic breast cancer with disease progression following at least one line of endocrine therapy. The patient matches all indications for this medication. The recommended dosage is 400 mg orally once daily.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

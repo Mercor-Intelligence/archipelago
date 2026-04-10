@@ -1,0 +1,263 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_bd273e160d014ae09dc29feb8db44a6e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a79b88119dd4d61a0aa7f50cb349409",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies charcoal as a noun",
+        "modality": "Free text",
+        "negative_criteria": "Identifies charcoal as any other part of speech besides a noun.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a3676e90074748e38bd9df8a02a72d0f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a79b88119dd4d61a0aa7f50cb349409",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Defines charcoal as the solid, black form of carbon made by burning wood or other matter in a space with very little oxygen",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_27fa64f1f0ba4c428c9b598454d488a6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a79b88119dd4d61a0aa7f50cb349409",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies gesso as a noun",
+        "modality": "Free text",
+        "negative_criteria": "Identifies gesso as any other part of speech besides a noun.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c88169fe0fe64515baa1c3c41d7ed9e3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a79b88119dd4d61a0aa7f50cb349409",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides a definition of gesso as a hard compound of plaster of Paris or whiting in glue, used in sculpture or as a base for gilding or painting on wood",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f748fe67f6b44016af4f8bb0a7a45ebe",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a79b88119dd4d61a0aa7f50cb349409",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies pigments as a noun",
+        "modality": "Free text",
+        "negative_criteria": "Identifies pigments as any other part of speech besides a noun.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c271b01e42114885bec41735bb17137b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a79b88119dd4d61a0aa7f50cb349409",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides a definition of pigments as solid, powdery substances that are suspended in a binder to create paint and provide its color",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_953bd8924f8d4389bbc9e8d7291b3cef",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a79b88119dd4d61a0aa7f50cb349409",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies santero as a noun",
+        "modality": "Free text",
+        "negative_criteria": "Identifies santero as any other part of speech besides a noun.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_78d7fcfea7a5492e8c26bb42e38c6935",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a79b88119dd4d61a0aa7f50cb349409",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides a definition of santero as a person who makes religious images",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_40d4c39bf2a748cfabe5f3754fad1c59",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a79b88119dd4d61a0aa7f50cb349409",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Identifies varnish as a noun",
+        "modality": "Free text",
+        "negative_criteria": "Identifies varnish as any other part of speech besides a noun.",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_46b8997c7972482aa8abdffd4c0c41b6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a79b88119dd4d61a0aa7f50cb349409",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Provides a definition for varnish as a clear, shiny shield for wood that protects it from scratches and spills",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_6d6d1bd831574c08bf18f46ad1d3f0f4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_4a79b88119dd4d61a0aa7f50cb349409",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Orders the new slides as follows: charcoal, gesso, pigments, santero, varnish",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    },
+    {
+      "eval_config_id": "72d7d96a-9d94-4a38-bbe3-96c08ded727c",
+      "eval_config_name": "Content Length Check Verifier",
+      "eval_defn_id": "content_length_check",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

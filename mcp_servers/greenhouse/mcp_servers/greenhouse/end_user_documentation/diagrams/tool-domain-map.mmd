@@ -1,0 +1,46 @@
+flowchart TB
+    subgraph Candidates["Candidates Domain"]
+        C1[candidates_create]
+        C2[candidates_search]
+        C3[candidates_get]
+        C4[candidates_update]
+        C5[candidates_add_note]
+        C6[candidates_add_tag]
+    end
+
+    subgraph Applications["Applications Domain"]
+        A1[applications_create]
+        A2[applications_list]
+        A3[applications_get]
+        A4[applications_advance_stage]
+        A5[applications_hire]
+        A6[applications_reject]
+    end
+
+    subgraph Jobs["Jobs Domain"]
+        J1[jobs_create]
+        J2[jobs_list]
+        J3[jobs_get]
+        J4[jobs_get_stages]
+    end
+
+    subgraph Feedback["Feedback Domain"]
+        F1[feedback_submit]
+        F2[feedback_list]
+    end
+
+    subgraph Support["Support Domains"]
+        U1[users_list]
+        U2[users_get]
+        AC1[activity_get]
+        JB1[jobboard_list_jobs]
+        JB2[jobboard_apply]
+    end
+
+    C1 --> A1
+    J1 --> A1
+    A1 --> A4
+    A4 --> F1
+    A4 --> A5
+    A4 --> A6
+    C3 --> AC1

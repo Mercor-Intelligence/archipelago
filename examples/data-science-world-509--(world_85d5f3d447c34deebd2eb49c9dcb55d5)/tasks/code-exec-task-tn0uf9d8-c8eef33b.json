@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "I want to look at month-to-month movement in delinquency and internal risk grade using the two inflection-point month pairs identified in '1.11.2026 Habor Capital Final.pdf' (page 5). Use enriched_loan_data.csv, derive Report_Month from Report_Date, converting dates to month-end timestamps, and compare consecutive months for each Loan_ID, restricting the analysis to those inflection pairs. For delinquency, define transition counts as the number of loans moving from each Delinquency_Bucket at month t to each bucket at month t+1, and define transition rates as the row-normalized counts (rows sum to 1). Compute overall delinquency roll (worse), cure (better), and stay (no change) rates using ordered delinquency categories from least to most severe: Current < 1-30 Days < 31-90 Days < 90+ Days. Do the same for Internal_Risk_Grade with ordered risk categories from lowest to highest risk: A < B < C < D < F. Include only loans that exist in both months of each pair. Report overall roll/cure/stay rates as percentages by pooling all loan transitions from both month pairs together, then computing the aggregate rates for delinquency and risk grade separately, rounded to two decimals. Within your final output, provide Python code used for analysis along with the requested results."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports the overall roll rate for delinquency as 3.24% (+/-0.1%). (ver_d3f23b2821d44321b392097e868454f1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the overall roll rate for delinquency as 3.24% (+/-0.1%)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the overall cure rate for delinquency as 3.23% (+/-0.1%). (ver_babcc4cc221b47199951d5a9f4359f81)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the overall cure rate for delinquency as 3.23% (+/-0.1%)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the overall stay rate for delinquency as 93.53% (+/-0.1%). (ver_4c61550f121f4ae688ce941746f00525)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the overall stay rate for delinquency as 93.53% (+/-0.1%)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the overall roll rate for internal risk grade as 42.29% (+/-0.1%). (ver_431308926b4a49eb9fbaf5d4d8fb72b3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the overall roll rate for internal risk grade as 42.29% (+/-0.1%)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the overall cure rate for internal risk grade as 1.08% (+/-0.1%). (ver_478cb098d1164aff97f6ba7e9e6e27bb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the overall cure rate for internal risk grade as 1.08% (+/-0.1%)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the overall stay rate for internal risk grade as 56.63% (+/-0.1%). (ver_f42a3fdc5b8a4d24a847d8fa74a281e2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the overall stay rate for internal risk grade as 56.63% (+/-0.1%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh code-exec-task-tn0uf9d8-c8eef33b"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_c8eef33b90454867a32892324be458f2",
+    "task_name": "Code Exec - Task tn0uf9d8",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_6e9ac0d01ddf4be385a1af9ff67c2077",
+        "golden_text_response": "\nDelinquency roll/cure/stay rates (% rounded to 2 decimals):\nroll_rate=3.24%, cure_rate=3.23%, stay_rate=93.53%\n\nInternal risk grade roll/cure/stay rates (% rounded to 2 decimals):\nroll_rate=42.29%, cure_rate=1.08%, stay_rate=56.63%\n\nFirst identify two inflection-point month pairs as '2023-09'-'2023-10' and '2024-05'-'2024-06'\n\n```\nimport numpy as np\nimport pandas as pd\n\n\nFILE_PATH = \"enriched_loan_data.csv\"\n\ndf = pd.read_csv(FILE_PATH)\nrequired = [\"Loan_ID\", \"Report_Date\", \"Delinquency_Bucket\", \"Internal_Risk_Grade\"]\nmissing = [c for c in required if c not in df.columns]\nif missing:\n    raise ValueError(f\"Missing required columns: {missing}\")\n\n# Derive month-end timestamps for consistent monthly alignment.\ndf[\"Report_Month\"] = pd.to_datetime(df[\"Report_Date\"]).dt.to_period(\"M\").dt.to_timestamp(\"M\")\ndf = df.sort_values([\"Loan_ID\", \"Report_Month\"])\n\n# Shift to line up each loan with its next-month state.\ndf[\"Next_Report_Month\"] = df.groupby(\"Loan_ID\")[\"Report_Month\"].shift(-1)\ndf[\"Next_Delinquency_Bucket\"] = df.groupby(\"Loan_ID\")[\"Delinquency_Bucket\"].shift(-1)\ndf[\"Next_Internal_Risk_Grade\"] = df.groupby(\"Loan_ID\")[\"Internal_Risk_Grade\"].shift(-1)\n\n# Keep only true consecutive month transitions.\nmonth_diff = (\n    (df[\"Next_Report_Month\"].dt.to_period(\"M\") - df[\"Report_Month\"].dt.to_period(\"M\"))\n    .apply(lambda p: p.n if pd.notna(p) else np.nan)\n)\ndf = df.loc[month_diff == 1].copy()\n# Restrict to the two inflection-point month pairs.\nallowed_pairs = {\n    (pd.Timestamp(\"2023-09-30\"), pd.Timestamp(\"2023-10-31\")),\n    (pd.Timestamp(\"2024-05-31\"), pd.Timestamp(\"2024-06-30\")),\n}\ndf = df[\n    df[[\"Report_Month\", \"Next_Report_Month\"]]\n    .apply(tuple, axis=1)\n    .isin(allowed_pairs)\n].copy()\n\ndelinquency_order = [\n    v\n    for v in [\"Current\", \"1-30 Days\", \"31-90 Days\", \"90+ Days\"]\n    if v in df[\"Delinquency_Bucket\"].dropna().unique()\n]\nif not delinquency_order:\n    delinquency_order = sorted(df[\"Delinquency_Bucket\"].dropna().unique().tolist())\n\nif pd.api.types.is_numeric_dtype(df[\"Internal_Risk_Grade\"]):\n    risk_order = sorted(df[\"Internal_Risk_Grade\"].dropna().unique().tolist())\nelse:\n    risk_order = [\n        \"A - Low Risk\",\n        \"B - Moderate\",\n        \"C - Elevated\",\n        \"D - High Risk\",\n        \"F - Distressed\",\n    ]\n\ndf[\"Delinquency_Bucket\"] = pd.Categorical(\n    df[\"Delinquency_Bucket\"], categories=delinquency_order, ordered=True\n)\ndf[\"Next_Delinquency_Bucket\"] = pd.Categorical(\n    df[\"Next_Delinquency_Bucket\"], categories=delinquency_order, ordered=True\n)\ndf[\"Internal_Risk_Grade\"] = pd.Categorical(\n    df[\"Internal_Risk_Grade\"], categories=risk_order, ordered=True\n)\ndf[\"Next_Internal_Risk_Grade\"] = pd.Categorical(\n    df[\"Next_Internal_Risk_Grade\"], categories=risk_order, ordered=True\n)\n\n# Compute roll/cure/stay based on ordered category movement.\ndel_from = df[\"Delinquency_Bucket\"].cat.codes\ndel_to = df[\"Next_Delinquency_Bucket\"].cat.codes\nvalid = (del_from >= 0) & (del_to >= 0)\ndel_from = del_from[valid]\ndel_to = del_to[valid]\ndel_total = len(del_from)\nif del_total == 0:\n    delinquency_roll = {\"total\": 0, \"roll_rate\": np.nan, \"cure_rate\": np.nan, \"stay_rate\": np.nan}\nelse:\n    delinquency_roll = {\n        \"total\": int(del_total),\n        \"roll_rate\": (del_to > del_from).sum() / del_total,\n        \"cure_rate\": (del_to < del_from).sum() / del_total,\n        \"stay_rate\": (del_to == del_from).sum() / del_total,\n    }\n\nrisk_from = df[\"Internal_Risk_Grade\"].cat.codes\nrisk_to = df[\"Next_Internal_Risk_Grade\"].cat.codes\nvalid = (risk_from >= 0) & (risk_to >= 0)\nrisk_from = risk_from[valid]\nrisk_to = risk_to[valid]\nrisk_total = len(risk_from)\nif risk_total == 0:\n    risk_roll = {\"total\": 0, \"roll_rate\": np.nan, \"cure_rate\": np.nan, \"stay_rate\": np.nan}\nelse:\n    risk_roll = {\n        \"total\": int(risk_total),\n        \"roll_rate\": (risk_to > risk_from).sum() / risk_total,\n        \"cure_rate\": (risk_to < risk_from).sum() / risk_total,\n        \"stay_rate\": (risk_to == risk_from).sum() / risk_total,\n    }\n\ndelinquency_roll_rounded = {\n    k: round(v * 100, 2) if isinstance(v, float) and np.isfinite(v) else v\n    for k, v in delinquency_roll.items()\n}\nrisk_roll_rounded = {\n    k: round(v * 100, 2) if isinstance(v, float) and np.isfinite(v) else v\n    for k, v in risk_roll.items()\n}\n\nprint(\"Delinquency roll/cure/stay rates (% rounded to 2 decimals):\")\nprint(\n    f\"roll_rate={delinquency_roll_rounded['roll_rate']}%, \"\n    f\"cure_rate={delinquency_roll_rounded['cure_rate']}%, \"\n    f\"stay_rate={delinquency_roll_rounded['stay_rate']}%\"\n)\n\nprint(\"\\nInternal risk grade roll/cure/stay rates (% rounded to 2 decimals):\")\nprint(\n    f\"roll_rate={risk_roll_rounded['roll_rate']}%, \"\n    f\"cure_rate={risk_roll_rounded['cure_rate']}%, \"\n    f\"stay_rate={risk_roll_rounded['stay_rate']}%\"\n)\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

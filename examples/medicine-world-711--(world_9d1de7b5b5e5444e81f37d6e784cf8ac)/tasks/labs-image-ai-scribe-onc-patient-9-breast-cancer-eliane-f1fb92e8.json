@@ -1,0 +1,238 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 9” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nPrompt: \nThe patient presents to her oncologist for follow-up. Reference files \"Onc_Patient 9\", \"Onc_Patient 9 script.pdf\", and \"MRI.pdf\" What is her SINS score? What is the next best step in management? Provide clinical reasoning."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Assigns 1 point for the spinal location category of the Spinal Instability... (ver_920785a3c6af4b1481b0353b8ca87f20)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 1 point for the spinal location category of the Spinal Instability Neoplastic Scale (SINS) Score."
+        }
+      ]
+    },
+    {
+      "name": "Assigns 1 point for the presence of mechanical pain in the Spinal Instability... (ver_e952b30dd4d8465f9b537a2892bfc0ed)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 1 point for the presence of mechanical pain in the Spinal Instability Neoplastic Scale (SINS) Score."
+        }
+      ]
+    },
+    {
+      "name": "Assigns 2 points for the quality of the bone lesion in the Spinal Instability... (ver_53b5fcbb6bc144f08a2e42dfba895d61)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 2 points for the quality of the bone lesion in the Spinal Instability Neoplastic Scale (SINS) Score."
+        }
+      ]
+    },
+    {
+      "name": "Assigns 0 points for radiographic spinal alignment category of the Spinal... (ver_2be53af29b144317ba898d491fd0b4ff)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 0 points for radiographic spinal alignment category of the Spinal Instability Neoplastic Scale (SINS) Score."
+        }
+      ]
+    },
+    {
+      "name": "Assigns 1 point for greater than 50% involvement of the vetebral body without... (ver_73c513707fca47488cf1b2ac1ba6809e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 1 point for greater than 50% involvement of the vetebral body without collapse in the Spinal Instability Neoplastic Scale (SINS) Score."
+        }
+      ]
+    },
+    {
+      "name": "Assigns 0 points for absence of posterolateral involvement in the Spinal... (ver_ddeb7e3ff66546f495b374b8f5cb2316)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Assigns 0 points for absence of posterolateral involvement in the Spinal Instability Neoplastic Scale (SINS) Score."
+        }
+      ]
+    },
+    {
+      "name": "States that the patient has a Spinal Instability Neoplastic Scale (SINS) Score... (ver_f0f36171cf6e4702a55a0672c35b0160)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the patient has a Spinal Instability Neoplastic Scale (SINS) Score of 5 (acceptable range 4.95 to 5.05)."
+        }
+      ]
+    },
+    {
+      "name": "States patient has a stable spinal stability score in the Spinal Instability... (ver_5c00902c66074744a9033e248a25ec6c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States patient has a stable spinal stability score in the Spinal Instability Neoplastic Scale (SINS) Score."
+        }
+      ]
+    },
+    {
+      "name": "Concludes that the patient should be seen by a radiation oncologist to discuss... (ver_2137f67d0dc54022a048b0ae3619d07a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Concludes that the patient should be seen by a radiation oncologist to discuss palliaitve radiotherapy as next best step in management."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-onc-patient-9-breast-cancer-eliane-f1fb92e8"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_f1fb92e85ef7443caf3eca34e6cf820b",
+    "task_name": "Labs_Image_AI Scribe_Onc Patient 9 - Breast Cancer - Eliane",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_84ac520beb8a44789e540ed2e1f72cfc",
+        "golden_text_response": "Spinal location: Semiridig (T3-T10) +1 points\nPresence of mechanical pain: No (occasional pain but not mechanical) +1 points\nBone lesion quality: Lytic +2 points\nRadiographic spinal alignment: Normal Alignment 0 points\nVertebral body collapse: No collapse with >50% body involved +1 points\nPosterolateral involvement of spinal elements:  0 points\nSINS score = total of 5 points (stable spinal stability)\n\nThe patient should be seen by a radiation oncologist to discuss palliaitve radiotherapy.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

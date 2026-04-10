@@ -1,0 +1,242 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_73a4339cb63f4cf5a31d7d4f32bddadb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3f9b160386f0466a9497908829502a2d",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Company_10921_Retail is assigned to cluster 0.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm watch list borrower Company_10921_Retail is correctly assigned to cluster 0.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e8398e93469c456d9d941d925511ab4d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3f9b160386f0466a9497908829502a2d",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Company_10930_Retail is assigned to cluster 0.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm watch list  borrower Company_10930_Retail is correctly assigned to cluster 0.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f9b8daf60b7f4ccaadec1fedcf820b56",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3f9b160386f0466a9497908829502a2d",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Company_11067_Retail is assigned to cluster 4.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm watch list borrower Company_11067_Retail is correctly assigned to cluster 4.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_387e1d53c5954c6381c465fdbfd55db0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3f9b160386f0466a9497908829502a2d",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Company_11076_Retail is assigned to cluster 2.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm watch list borrower Company_11076_Retail is correctly assigned to cluster 2.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_20605dca5c374b479e0e567b991007f7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3f9b160386f0466a9497908829502a2d",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Company_11737_Retail is assigned to cluster 3.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm watch list borrower Company_11737_Retail is correctly assigned to cluster 3.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a118381004384791b7fa7520f679239f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3f9b160386f0466a9497908829502a2d",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Company_11747_Retail is assigned to cluster 4.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm watch list borrower Company_11747_Retail is correctly assigned to cluster 4.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_993c3c6f58f84dc6ad7043655496bbfd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3f9b160386f0466a9497908829502a2d",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Company_12289_Retail is assigned to cluster 3.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm watch list borrower Company_12289_Retail is correctly assigned to cluster 3.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9cbf8256bbdb47eb8dbbd5293cab0f95",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3f9b160386f0466a9497908829502a2d",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Company_13566_Retail is assigned to cluster 2.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm watchlist borrower Company_13566_Retail is correctly assigned to cluster 2.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_895dee40e50543a99b4dbb24b40320e0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3f9b160386f0466a9497908829502a2d",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Company_13724_Retail is assigned to cluster 2.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm watch list borrower Company_13724_Retail is correctly assigned to cluster 2.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bb8b37fdf8dd498298432e008efef162",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_3f9b160386f0466a9497908829502a2d",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports Company_13732_Retail is assigned to cluster 0.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Confirm watch list borrower Company_13732_Retail is correctly assigned to cluster 0.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "eval_config_name": "Output LLM",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "4658aec9-7eeb-4c9b-84c2-5464345e345f",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

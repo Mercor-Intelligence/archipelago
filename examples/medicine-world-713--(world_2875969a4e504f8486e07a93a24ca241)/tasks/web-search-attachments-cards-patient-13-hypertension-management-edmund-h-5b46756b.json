@@ -1,0 +1,330 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Cards_Patient 13” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n----\n\nPatient 13 visits her clinic appointment on January 10, 2026 for a routine check up in Los Angeles, California. \n\nThe patient reports they are taking losartan and lisinopril that were started a few months ago by an urgent care doctor.\nWhat is the most recent clinical guideline that should be used to address the patient's blood pressure? What is a Class of Recommendation (COR) 1 recommended changes, if any, that should be made to the patient's blood pressure medications based on their stage of hypertension?\nProvide an explanation.\n\nAnswers should be in line with the most recent clinical guidelines as of January 11, 2026."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Recognizes the blood pressure at the clinic visit is 150/80 mmHg (acceptable... (ver_e6ac8377622e438ca14523ca5cc89cf0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the blood pressure at the clinic visit is 150/80 mmHg (acceptable range 148 to 152)."
+        }
+      ]
+    },
+    {
+      "name": "States that combined angiotensin-converting enzyme inhibitor (ACEi) therapy... (ver_8c2ab7dd5cce4f14abfd0b88f2fd2bdc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that combined angiotensin-converting enzyme inhibitor (ACEi) therapy with angiotensin receptor blocker (ARB) therapy increases risk of renal failure."
+        }
+      ]
+    },
+    {
+      "name": "States that combined ACEi therapy with ARB therapy increases risk of... (ver_6ab95e090d844abcba0f99683208c23d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that combined ACEi therapy with ARB therapy increases risk of hyperkalemia."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes that concurrent use of lisinopril with losartan is not recommended. (ver_c1992536b2134fbc9d053242d619e8a3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes that concurrent use of lisinopril with losartan is not recommended."
+        }
+      ]
+    },
+    {
+      "name": "Identifies that the most recent laboratory results show normal renal function. (ver_302596b51893461d9d2accd1cae8f914)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies that the most recent laboratory results show normal renal function."
+        }
+      ]
+    },
+    {
+      "name": "Identifies that the most recent laboratory results show no evidence of... (ver_a178604af2fe41318a74b419e2a2d1d9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Identifies that the most recent laboratory results show no evidence of hyperkalemia."
+        }
+      ]
+    },
+    {
+      "name": "Utilizes the blood pressure guidelines from American Heart Association or... (ver_3137bb8c97574d90a492c487668f177b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Utilizes the blood pressure guidelines from American Heart Association or American College of Cardiology in 2025."
+        }
+      ]
+    },
+    {
+      "name": "Recognizes the patient has stage II hypertension. (ver_c4c5fd39d34a492ba4e0ec5ebfdc12bd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recognizes the patient has stage II hypertension."
+        }
+      ]
+    },
+    {
+      "name": "States stage II hypertension is treated with two first-line antihypertensive... (ver_c107a8e8758943e99b06937bd086f833)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States stage II hypertension is treated with two first-line antihypertensive agents."
+        }
+      ]
+    },
+    {
+      "name": "States the two first-line antihypertensive agents must be from different... (ver_2fde971b31eb4499a031d8293ab7e08b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the two first-line antihypertensive agents must be from different medication classes."
+        }
+      ]
+    },
+    {
+      "name": "States the two first-line antihypertensive agents should preferably be in a... (ver_1e6d3be5876a4dcf89d953722b634a37)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the two first-line antihypertensive agents should preferably be in a single-pill combination."
+        }
+      ]
+    },
+    {
+      "name": "States first-line antihypertensives as either: thiazide-type diuretics,... (ver_d44d285a9170411cb4fe754475cae9dc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States first-line antihypertensives as either: thiazide-type diuretics, long-acting dihydropyridine calcium-channel blockers, ACEi or ARB."
+        }
+      ]
+    },
+    {
+      "name": "Recommends initiation of a single-pill combination antihypertensive regimen as... (ver_a052393db0bb441e96418264cbda0809)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Recommends initiation of a single-pill combination antihypertensive regimen as the best next step."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh web-search-attachments-cards-patient-13-hypertension-management-edmund-h-5b46756b"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2875969a4e504f8486e07a93a24ca241",
+    "world_name": "Medicine World 713",
+    "task_id": "task_5b46756b61f9446495a33e2e3f5ac31b",
+    "task_name": "Web Search_Attachments_Cards_Patient 13 -Hypertension Management- Edmund H",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_4a58affd475d4f508dc94f1fba7e5bf2",
+        "golden_text_response": "From the patient's chart, the patient has a history of hypertension. The blood pressure today is 150/80 mm Hg per the script. The patient is taking lisinopril and losartan. Combining these medications is not recommended and they can cause renal failure and hyperkalemia. The most recent laboratory results do not show any elevated creatinine or hyperkalemia. According to the 2025 American Heart Association, American College of Cardiology, and affiliated societies guideline for the prevention, detection, evaluation, and management of high blood pressure in adults, a blood pressure of 150/80 mm Hg is classified as Stage 2 hypertension (systolic blood pressure ≥140 mm Hg or diastolic blood pressure ≥90 mm Hg). In adults with Stage 2 hypertension, initiation of antihypertensive drug therapy with two first line agents from different classes, ideally as a single pill combination, is recommended to improve blood pressure control and medication adherence. Thiazide type diuretics, long acting dihydropyridine calcium channel blockers, and angiotensin converting enzyme inhibitors or angiotensin receptor blockers are recommended as first line therapy. Therefore, the best next step is to discontinue both losartan and lisinopril and initiate a single pill combination antihypertensive regimen.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

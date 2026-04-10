@@ -1,0 +1,193 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_e2c7fd4342fb4c908ad54ff3dec3fb84",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c784c96e9fa74093987f6c23a65a710b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total nominal cost for vendors 1, 4, and 7 is $4,748,458,644.30 (acceptable range $4,700,974,057.86 to $4,795,943,230.74)",
+        "negative_criteria": "States that the total nominal cost for vendors 1, 4, and 7 is a value other than $4,748,458,644.30 ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f1f1c9b520de4c04805647eb404d9e7c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c784c96e9fa74093987f6c23a65a710b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total nominal cost for vendors 1, 4, and 8 is $4,752,914,894.30 (acceptable range $4,705,385,745.36 to $4,800,444,043.24)",
+        "negative_criteria": "States that the total nominal cost for vendors 1, 4, and 8 is a value other than $4,752,914,894.30  ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_df6c3345f1d942b78cb7d9d06f3a31ec",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c784c96e9fa74093987f6c23a65a710b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total nominal cost for vendors 1, 5, and 7 is $4,753,152,810.00 (acceptable range $4,705,621,281.90 to $4,800,684,338.10)",
+        "negative_criteria": "States that the total nominal cost for vendors 1, 5, and 7 is a value other than $4,753,152,810.00  ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e7fdeef2c3cb4cedbc4af8e7a8f8f392",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c784c96e9fa74093987f6c23a65a710b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total nominal cost for vendors 1, 5, and 8 is $4,757,609,060.00 (acceptable range $4,710,032,969.40 to $4,805,185,150.60)",
+        "negative_criteria": "States that the total nominal cost for vendors 1, 5, and 8 is a value other than $4,757,609,060.00  ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_84ebf659da29415bad4de1238e990e8c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c784c96e9fa74093987f6c23a65a710b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total nominal cost for vendors 2, 4, and 7 is $4,726,526,144.30 (acceptable range $4,679,260,882.86 to $4,773,791,405.74)",
+        "negative_criteria": "States that the total nominal cost for vendors 2, 4, and 7 is a value other than $4,726,526,144.30",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_59a705e9a11b4d21aef5bc714984cd7b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c784c96e9fa74093987f6c23a65a710b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total nominal cost for vendors 2, 4, and 8 is $4,730,982,394.30 (acceptable range $4,683,672,570.36 to $4,778,292,218.24)",
+        "negative_criteria": "States that the total nominal cost for vendors 2, 4, and 8 is a value other than $4,730,982,394.30",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_18c31d55a4d540bbbf95ced7e95a5858",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c784c96e9fa74093987f6c23a65a710b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total nominal cost for vendors 2, 5, and 7 is $4,731,220,310.00 (acceptable range $4,683,908,106.90 to $4,778,532,513.10)",
+        "negative_criteria": "States that the total nominal cost for vendors 2, 5, and 7 is a value other than $4,731,220,310.00",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1d9ae969a34f4f039f775170dfc99104",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c784c96e9fa74093987f6c23a65a710b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the total nominal cost for vendors 2, 5, and 8 is $4,735,676,560.00 (acceptable range $4,688,319,794.40 to $4,783,033,325.60)",
+        "negative_criteria": "States that the total nominal cost for vendors 2, 5, and 8 is a value other than $4,735,676,560.00",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e1eea32591ff4a339af46fbae6768c73",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c784c96e9fa74093987f6c23a65a710b",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that utilizing the combination of vendors 2, 4, and 7 gives the lowest total nominal cost",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 18,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

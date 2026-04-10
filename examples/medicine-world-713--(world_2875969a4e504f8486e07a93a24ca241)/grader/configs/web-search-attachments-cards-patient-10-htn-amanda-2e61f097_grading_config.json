@@ -1,0 +1,260 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_f5c405512d504672be3b77f0adf5441b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2e61f097261d4f73a528ed3561b230e9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has a history of hypertension.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This patient has a history of hypertension for at least ten years \"Hypertension\"   Tab - CLINICALNOTES - Progress Notes - Column D - Row 344",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9e614bb7b8744c2196ba8ce32d4dfbba",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2e61f097261d4f73a528ed3561b230e9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's blood pressure is elevated at today's clinic visit compared with the most recent visit. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "BP 138/90 mmHg in clinic today, per the prompt. The most recent visit on 2018-03-07 shows systolic blood pressure of 117 mmHg. So the patient's blood pressure is elevated today compared to the most recent visit.\n\n\"117.0\"\nFrom Cards_Patient 10: VITALS - J - 11",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4fdebb8a11074f80add7cdb12a6e1145",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2e61f097261d4f73a528ed3561b230e9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient is taking three antihypertensive medications.\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From \"Cards Pt 10 script for Jan 10.pdf\": This patient is already taking a combination of a thiazide and an ACE inhibitor, as well as a beta blocker. She continues to have elevated blood pressure.\n\n\"Let\u2019s first talk a little about your blood pressure medications. Are you still taking the two blood pressure medications that are in your medical records I reviewed? I saw Lopressor and Lotensin HCT.\nPatient: I take two medicines, but can\u2019t remember their names. I think that is them. \nPhysician: Okay, are you taking both of those every day?\nPatient: Yes\"\n\n\"Cards Pt 10 script for Jan 10.pdf\"\n\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Cards Pt 10 script for Jan 10.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_c102955ffc014bad83c2e79bb39ab536"
+          }
+        ]
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_139b9668af11474d912adb2ccffff681",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2e61f097261d4f73a528ed3561b230e9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient has resistant hypertension.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "From \"Cards Pt 10 script for Jan 10.pdf\": This patient is already taking a combination of a thiazide and an ACE inhibitor, as well as a beta blocker. She continues to have elevated blood pressure. At today's visit, her blood pressure remains elevated. Therefore, she has resistant hypertension.\n\n\"Resistant hypertension is defined as BP above goal despite treatment with 3 antihypertensive medications with complementary mechanisms of action, including a diuretic at maximally tolerated doses or BP at goal but requiring \u22654 medications (Figure 8).\"\nhttps://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Cards Pt 10 script for Jan 10.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_c102955ffc014bad83c2e79bb39ab536"
+          }
+        ]
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5b56fec4d1de406c80b65c04e34e0a79",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2e61f097261d4f73a528ed3561b230e9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Statement",
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the patient's lab results show a normal potassium level.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"Potassium 4.4 (3.5-5) mEq/L\"",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "lab-report-patient-10.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_c102955ffc014bad83c2e79bb39ab536"
+          }
+        ]
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8907efe9bdc84bfb86f4af15bb7fbf2b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2e61f097261d4f73a528ed3561b230e9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Utilizes the 2025 American College of Cardiology/American Heart Association joint committee clinical practice guidelines on hypertension.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"2025 AHA/ACC/AANP/AAPA/ABC/ACCP/ACPM/AGS/AMA/ASPC/NMA/PCNA/SGIM Guideline for the Prevention, Detection, Evaluation and Management of High Blood Pressure in Adults: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines\u201d\n\nhttps://www.ahajournals.org/doi/10.1161/CIR.0000000000001356",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d05e2725364f47ff8d2d2d5392025aeb",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2e61f097261d4f73a528ed3561b230e9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that screening for primary aldosteronism in adults with resistant hypertension. ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"In adults with resistant hypertension, screening for primary aldosteronism is recommended regardless of whether hypokalemia is present to increase rates of detection, diagnosis, and specific targeted therapy.\"\nhttps://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f1ae678e57014e9d9a047dff57958cff",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2e61f097261d4f73a528ed3561b230e9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that screening for primary aldosteronism is recommended regardless of potassium status.\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"In adults with resistant hypertension, screening for primary aldosteronism is recommended regardless of whether hypokalemia is present to increase rates of detection, diagnosis, and specific targeted therapy.\"\n\nhttps://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356\n",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_616f5d66810642e188f71fb31eaf5163",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2e61f097261d4f73a528ed3561b230e9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States that primary aldosteronism is the single most likely diagnosis to be ruled out.\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The patient has a history of hypertension, and their blood pressure was found to be elevated at today's clinic visit compared to the most recent one. They are currently taking three antihypertensive medications and have resistant hypertension. Laboratory results show a normal potassium level. The assessment utilizes the 2025 American College of Cardiology/American Heart Association joint committee clinical practice guidelines on hypertension. It is recommended to screen for primary aldosteronism in adults with resistant hypertension, regardless of potassium status, as primary aldosteronism is the most likely diagnosis to be ruled out. Furthermore, primary aldosteronism is listed at an incidence of at 25%, much higher than other potential causes such as renal artery stenosis (5%) and pheochromocytoma (0.6%).\n\nhttps://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true,
+        "artifacts_to_reference": [
+          {
+            "name": "Cards Pt 10 script for Jan 10.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_c102955ffc014bad83c2e79bb39ab536"
+          },
+          {
+            "name": "lab-report-patient-10.pdf",
+            "index": null,
+            "source": "task",
+            "snapshotId": "snap_c102955ffc014bad83c2e79bb39ab536"
+          }
+        ]
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_de9f7759682342daa43b2494b7764b4d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_2e61f097261d4f73a528ed3561b230e9",
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the single most important laboratory test to rule out primary aldosteronism is a plasma aldosterone-to-renin ratio.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "\"The combined interpretation of the plasma aldosterone concentration, renin activity, and aldosterone to renin activity ratio is currently the most accurate and reliable means of screening for primary aldosteronism.\"\n\nhttps://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001356",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "1052db58-3100-4765-8e77-77285d5ac889",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "fa700c55-9f4b-47f3-91a5-d1ebbf49c391",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_234de133c0bb42e1a1bd4b2ba7c2a255",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c5cb8bcb4edd4b9b9c78969ef8e7e10c",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that SteelTreeSolutions does not have an employee/employer relationship with Sweetmarch Building Partners",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Sweetmarch Building Partners and SteelTreeSolutions have a contractor/subcontractor relationship.  In \"Harris v. Atlantic Richfield Co.docx\" the court held that the tort of breach of contract in violation of public policy does not apply outside of the employer/employee relationship and does not apply to commercial contracts. See \"Harris v. Atlantic Richfield Co.docx\" at page 10.  In its opinion the court noted that \"[t]he parties have not cited nor has our research disclosed case law recognizing a Tameny cause of action outside the employment relationship. Several cases suggest such cause of action does not exist.\" See Id. at page 3. The Court also cited \" In this case STS was a subcontractor, not an employee of SBP, therefore STS does not have a valid claim for breach of contract in violation of public policy. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b3cc3545edbb494d90d7ef6dfc2617dd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c5cb8bcb4edd4b9b9c78969ef8e7e10c",
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "verifier_values": {
+        "tags": [
+          "Final Response"
+        ],
+        "weight": 1,
+        "criteria": "States that SteelTreeSolutions does not have a valid claim for breach of contract in violation of public policy",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Sweetmarch Building Partners and SteelTreeSolutions have a contractor/subcontractor relationship.  In \"Harris v. Atlantic Richfield Co.docx\" the court held that the tort of breach of contract in violation of public policy does not apply outside of the employer/employee relationship and does not apply to commercial contracts. See \"Harris v. Atlantic Richfield Co.docx\" at page 10.  In its opinion the court noted that \"[t]he parties have not cited nor has our research disclosed case law recognizing a Tameny cause of action outside the employment relationship. Several cases suggest such cause of action does not exist.\" See Id. at page 3. The Court also cited \" In this case STS was a subcontractor, not an employee of SBP, therefore STS does not have a valid claim for breach of contract in violation of public policy. ",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "49bcdeb6-48a1-43db-ab32-3782d59df181",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "82a31dbc-39ec-4416-8614-5839d1b72e73",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

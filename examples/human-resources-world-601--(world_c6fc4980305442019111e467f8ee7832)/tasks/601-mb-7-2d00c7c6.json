@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "We need to optimize our org structure by laying off some of the managers. The solution needs to follow the below criteria:\n- use list of active employees from Bamboo as a starting point\n- increase average manager's span of control in each department to at least 5 (but once reached, let's not fire anyone else)\n- there needs to be at least 1 manager per department\n- maximize the value created in terms of annual salary savings\n- departments are defined as groups of FTEs reporting to a board member. Board member is a direct report to the CEO. Consider only Managers as those with a direct report to the board member\n\nPlease update the impacted employees' status in Bamboo after the above change. Then state how many managers need to be laid off (integer) and state what is the updated annual budget for all the active FTEs after change (in $, integer) in the console. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of managers that need to be laid off is 19. (ver_8b2088f95624407781edc05b0253b0ce)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of managers that need to be laid off is 19."
+        }
+      ]
+    },
+    {
+      "name": "States that the updated annual budget for all the FTEs after change is... (ver_b3d435cf0a2041478259b57a8422f33e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the updated annual budget for all the FTEs after change is $30,938,000 (acceptable range $30,628,620 to $31,247,380)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh 601-mb-7-2d00c7c6"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_2d00c7c629fb44bcba4eff5ccf911443",
+    "task_name": "601 - MB_7",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_fa336410fb8b4709a9f619376cd1ff23",
+        "golden_text_response": "The number of managers that need to be laid off is 19.\nThe updated annual budget for all the FTEs after change is $30,938,000.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

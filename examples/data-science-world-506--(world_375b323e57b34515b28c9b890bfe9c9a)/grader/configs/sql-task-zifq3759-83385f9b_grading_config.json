@@ -1,0 +1,127 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_3c8937e427f74913b7cf39bbf8f590a3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_83385f9b0cf74102ac101e3ff377f7b2",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the total credit amount as 7700.80 +/- 0.05.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Correctly calculates the total of all eligible credit amounts after parsing formatting",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_aa3eb87929ee4479aaaeb0b73bd35ab2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_83385f9b0cf74102ac101e3ff377f7b2",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the average credit amount (under-contract credits only) as 275.03 +/- 0.05.",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Correctly calculates the average of all eligible credit amounts after parsing formatting.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ef9e9c46bf1b4487967a24ea88525035",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_83385f9b0cf74102ac101e3ff377f7b2",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the maximum single credit amount issued to an under-contract subscriber as 2500.00 +/- 0.05 (acceptable range 248 to 252).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Correctly identifies the highest single eligible credit amount after parsing and cleaning the credit_amount field for under-contract subscribers.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bfd61e610e624f079813ed25bddb7345",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_83385f9b0cf74102ac101e3ff377f7b2",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the minimum credit amount issued to an under-contract subscriber as -50.00 +/- 0.05 (acceptable range -50.50 to -49.50).",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Correctly identifies the lowest single eligible credit amount after parsing and cleaning the credit_amount field for under-contract subscribers.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_284be98c0ead4f598c0c390d93021e50",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_83385f9b0cf74102ac101e3ff377f7b2",
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the standard deviation of credit amounts for under-contract subscribers (using n-1 denominator) as 517.01 +/- 0.05 (acceptable range 511.84 to 522.18)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Correctly calculates the sample standard deviation (using n-1 in the denominator) of all eligible credit amounts after parsing and cleaning the credit_amount field for under-contract subscribers.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "35ee061c-f31e-4a23-82ed-7dd1f35c3267",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "bb864ebd-066d-4af4-a2ea-8f34a87e36f2",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

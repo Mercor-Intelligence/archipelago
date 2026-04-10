@@ -1,0 +1,258 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_6f1c3a636829456882bb7aa11f90d2ab",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0ee6437a81744708ca4bd13ed57ce72",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Style / formatting"
+        ],
+        "weight": 1,
+        "criteria": "Creates a slide with the word \"abhor\"",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1d25f8e3855a470a9d1dd17d05dad421",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0ee6437a81744708ca4bd13ed57ce72",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Indicates that the word \"abhor\" has two morphemes: ab- and -hor",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_aed906e0390e4f7ebb4d15120da9dbd0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0ee6437a81744708ca4bd13ed57ce72",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Indicates \"ab-\" is a bound morpheme",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_55c2f42424214dc7989f93f000384b84",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0ee6437a81744708ca4bd13ed57ce72",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Indicates \"-hor\" is a bound morpheme",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_51741a555012498ba9384e1068bb3754",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0ee6437a81744708ca4bd13ed57ce72",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Style / formatting"
+        ],
+        "weight": 1,
+        "criteria": "Creates a slide with the word \"demeanor\"",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_323db53df6b342ea8baf21d169d56944",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0ee6437a81744708ca4bd13ed57ce72",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Indicates that the word \"demeanor\" has one morpheme",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_76232edc84214d7e8a9fd65f5f82cc60",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0ee6437a81744708ca4bd13ed57ce72",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Indicates that the morpheme \"demeanor\" is a free morpheme",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f79f34c10ff04344b15e487d6f6ec05f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0ee6437a81744708ca4bd13ed57ce72",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Style / formatting"
+        ],
+        "weight": 1,
+        "criteria": "Creates a slide for the word \"irksome\"",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4b2fcac0747141cca2f1abc4f1bcf22b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0ee6437a81744708ca4bd13ed57ce72",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Indicates that the word \"irksome\" has two morphemes: irk- and -some",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_67b259e0ffa644488b3de946f65a9ef1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0ee6437a81744708ca4bd13ed57ce72",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Indicates that \"irk\" is a free morpheme",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_cecb7e23a6b44ccd81db6836657ecef1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c0ee6437a81744708ca4bd13ed57ce72",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Indicates that \"-some\" is a free morpheme",
+        "modality": "Free text",
+        "expected_file_type": "Presentations (.pptx, .ppt)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    },
+    {
+      "eval_config_id": "72d7d96a-9d94-4a38-bbe3-96c08ded727c",
+      "eval_config_name": "Content Length Check Verifier",
+      "eval_defn_id": "content_length_check",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

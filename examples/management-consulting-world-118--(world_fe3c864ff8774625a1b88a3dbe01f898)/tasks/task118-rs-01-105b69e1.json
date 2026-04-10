@@ -1,0 +1,399 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "1. What are the top 3 departments (i.e., Owners) by greatest total number of calendar weeks with at least 1 planned task for that department in phase 1? For each of these departments, (i) how many total calendar weeks is the department expected to be working on at least 1 task in phase 1; (ii) how many high-probability risks does the department have across all phases? Use the Phased Rollout Roadmap for (i) and Risks & Mitigations file for (ii). \n\n2. For the purposes of this question, consider only the 3 departments identified in Question 1. If the client increases bonuses for each department, the total number of calendar weeks on any task (\"Active Weeks\") is reduced by 25%. For each department, this improvement leads to cost savings of $250 per Active Week. The client would pay a total of $1,000 in one-time costs. Should the client implement this bonus strategy? Assume the strategy should be implemented if at least the total expected savings exceed total expected costs.\n\nRound final answers to the nearest whole number. Report final answers directly in the console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that one of the top 3 departments is \"Clinical Ops\" (ver_7364d5c960764ca3b78a233ead1fef5c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the top 3 departments is \"Clinical Ops\"."
+        }
+      ]
+    },
+    {
+      "name": "States that one of the top 3 departments is \"IT\" (ver_2170d3e5eb3c47c886f620a9999e1bc1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the top 3 departments is \"IT\"."
+        }
+      ]
+    },
+    {
+      "name": "States that one of the top 3 departments is \"Training\" (ver_fa9a70f697bb47b7a1eab81cd83e4f24)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the top 3 departments is \"Training\"."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of weeks expected to be spent by \"Clinical Ops\" is 11... (ver_22af73a63b554f7ab51b7b27f353529b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of weeks expected to be spent by \"Clinical Ops\" is 11 (acceptable range 10.9 to 11.1)."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of weeks expected to be spent by \"Clinical Ops\" is a... (ver_22af73a63b554f7ab51b7b27f353529b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of weeks expected to be spent by \"Clinical Ops\" is a value other than 11."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of weeks expected to be spent by \"IT\" is 5 (ver_797f05ae3f334db0b66f1649f5c08a77)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of weeks expected to be spent by \"IT\" is 5."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of weeks expected to be spent by \"IT\" is a value other... (ver_797f05ae3f334db0b66f1649f5c08a77)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of weeks expected to be spent by \"IT\" is a value other than 5."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of weeks expected to be spent by \"Training\" is 4 (ver_661dc3cac952461ebb0b83639c3df923)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of weeks expected to be spent by \"Training\" is 4."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of weeks expected to be spent by \"Training\" is a value... (ver_661dc3cac952461ebb0b83639c3df923)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of weeks expected to be spent by \"Training\" is a value other than 4."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of \"High\" probability risks associated with \"Clinical... (ver_dad64645444c41e09ff8f917b1761c82)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of \"High\" probability risks associated with \"Clinical Ops\" is 3 (acceptable range 2.97 to 3.03)."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of \"High\" probability risks associated with \"Clinical... (ver_dad64645444c41e09ff8f917b1761c82)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of \"High\" probability risks associated with \"Clinical Ops\" is a value other than 3."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of \"High\" probability risks associated with \"IT\" is 2 (ver_c9b6ac9088db43d68aa7529358bdfa36)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of \"High\" probability risks associated with \"IT\" is 2."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of \"High\" probability risks associated with \"IT\" is a... (ver_c9b6ac9088db43d68aa7529358bdfa36)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of \"High\" probability risks associated with \"IT\" is a number other than 2."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of \"High\" probability risks associated with \"Training\"... (ver_fc2e76c4ef6541beb3b8519d5804d2f3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of \"High\" probability risks associated with \"Training\" is 1."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of \"High\" probability risks associated with \"Training\"... (ver_fc2e76c4ef6541beb3b8519d5804d2f3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of \"High\" probability risks associated with \"Training\" is a value other than 1."
+        }
+      ]
+    },
+    {
+      "name": "States that the client should implement the strategy. (ver_4a51c65fbbbf424d8c7945f6603b6f0e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the client should implement the strategy."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task118-rs-01-105b69e1"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_105b69e18f5c42ebb947df271b05c47b",
+    "task_name": "Task118_RS_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_c6217f66359d44f198643cbedfb0317c",
+        "golden_text_response": "1)\n\n(i)   Clinical Ops - 11 weeks\n       IT\t- 5 weeks\n       Training\t- 4 weeks\n\n(ii) Clinical Ops\t- 3\n      IT\t- 2\n      Training\t- 1\n\n2. Yes, they should implement the strategy.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

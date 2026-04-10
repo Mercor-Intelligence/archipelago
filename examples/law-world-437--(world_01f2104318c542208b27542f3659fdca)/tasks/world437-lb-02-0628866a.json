@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Based on Anthony Porter's personnel file and the available legal research, what is SBP's strongest argument in defense of a lawsuit by Anthony Porter under Section 11(c) of the Occupational Safety and Health Act (OSH Act), 29 U.S.C. §660(c)?      \n "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that SBP's strongest argument is that there is no private right of... (ver_77daa6f1ab94436fa48fc4b76db171e3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that SBP's strongest argument is that there is no private right of action under section 11(c) of OSHA."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world437-lb-02-0628866a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_0628866a64014b768fca48fbe529bbf0",
+    "task_name": "World437_LB_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_98ecba5ae18c4f50aa4bd115d32c4656",
+        "golden_text_response": "SBP's strongest argument is that there is no private right of action under section 11(c) of OSHA.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

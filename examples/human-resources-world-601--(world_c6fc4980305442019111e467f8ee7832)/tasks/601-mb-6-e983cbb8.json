@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Single Signal is merging with Double Signal. We need to merge our product teams. We think that Double Signal's product team has a better org structure (please see it attached) than ours. Can you please update our list of employees in Bamboo by:\n- adding all ex-Double Signal's product team members\n- assigning all relevant Single Signal's product managers with their teams to the relevant ex-Double Signal's Directors\n- reducing some of Single Signal's managers (prioritize laying off the most expensive ones) to achieve at least the average managers’ span of control on the level of ex-Double Signal's product team had before the merger (once this level is reached, please do not reduce anymore)\n\nPlease state how many managers to be laid off (integer), and state how much of a post-merger value creation we achieved from that optimization on an annual basis (in $, integer) in the console. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of managers to be laid off is 8. (ver_0a187ebddbdd4624b946563adc1ae846)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of managers to be laid off is 8."
+        }
+      ]
+    },
+    {
+      "name": "States that the post-merger value creation achieved from the optimization on... (ver_0d78041e89b4430b8256d4b9747c5d7e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the post-merger value creation achieved from the optimization on an annual basis is $1,535,000.0 (acceptable range $1,519,650.0 to $1,550,350.0)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh 601-mb-6-e983cbb8"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_e983cbb8c2b444f6bbff87569e40f6eb",
+    "task_name": "601 - MB_6",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_72c2eb27f8aa4d07a2dd287b35bcacbc",
+        "golden_text_response": "The number of managers to be laid off is 8.\n\nThe post-merger value creation achieved from the optimization on an annual basis is $1,535,000\n\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

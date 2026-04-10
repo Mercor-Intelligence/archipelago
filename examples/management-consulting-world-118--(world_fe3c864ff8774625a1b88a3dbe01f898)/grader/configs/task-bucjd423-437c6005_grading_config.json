@@ -1,0 +1,168 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_26bdfab5b1754841a4e9ebf0200a2bf2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_437c60053ae64a01b6c0c8a36157b736",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the states that offer the lowest potential ROI is Michigan",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ef352645d79d4c35ad7372739256b28d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_437c60053ae64a01b6c0c8a36157b736",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the states that offer the lowest potential ROI is Ohio ",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_57c2ac53c1de47e3b84625e85c92a90d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_437c60053ae64a01b6c0c8a36157b736",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the state where all the facilities in the state will be brought to readiness with the $140,000 investment is Wisconsin",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_9ec212b3f1964f0bb029c99f66c30805",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_437c60053ae64a01b6c0c8a36157b736",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the state where all the facilities in the state will be brought to readiness with the $140,000 investment is Missouri",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a44afdc1a07c4f22b05af38a5e0f3f98",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_437c60053ae64a01b6c0c8a36157b736",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the state that still has facilities not meeting readiness after all the usable $140,000 investment has been made is Michigan",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c1d175f9a94f44be8125585ba29dc870",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_437c60053ae64a01b6c0c8a36157b736",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the state that still has facilities not meeting readiness after all the usable $140,000 investment has been made is Minnesota",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_af0ffb952dd74d3681f5b90d5edf8db1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_437c60053ae64a01b6c0c8a36157b736",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the state that still has facilities not meeting readiness after all the usable $140,000 investment has been made is Ohio",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_c286f30932bb42bb8080b3e8536450c5",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_437c60053ae64a01b6c0c8a36157b736",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the state that still has facilities not meeting readiness after all the usable $140,000 investment has been made is Indiana",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

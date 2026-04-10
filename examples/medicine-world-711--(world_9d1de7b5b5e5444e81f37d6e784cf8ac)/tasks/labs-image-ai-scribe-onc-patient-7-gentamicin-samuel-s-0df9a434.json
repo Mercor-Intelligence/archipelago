@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 7” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n-----\n\nThe patient is hospitalized for shortness of breath within a few weeks of the most recent office visit and develops severe gram-negative pneumonia. The hospitalist is considering a few antibiotic choices, which he discusses with the patient (Script E4.pdf). What is the appropriate dose of the antibiotic that the hospitalist favors? Use the dosing described in the Hartford Nomogram. Use the most recent documented patient weight. Calculate using actual body weight and extended-interval dosing."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the physician prefers gentamicin in this patient. (ver_0b343317e3364b779e93c3f147fff7d2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the physician prefers gentamicin in this patient."
+        }
+      ]
+    },
+    {
+      "name": "Notes the patient's most recent documented weight from the chart is 50.8 kg... (ver_7fbe5231c9f6478baade450a1999e36f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Notes the patient's most recent documented weight from the chart is 50.8 kg (acceptable range 50.3 to 51.3)."
+        }
+      ]
+    },
+    {
+      "name": "States extended-interval dosing for gentamicin is dependent upon renal function. (ver_bd4e3e4d42e149cd86d76305dcb9b08a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States extended-interval dosing for gentamicin is dependent upon renal function."
+        }
+      ]
+    },
+    {
+      "name": "States the frequency of gentamicin would be once daily in this patient. (ver_e0971d58a12c424699b10893a42cbd74)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the frequency of gentamicin would be once daily in this patient."
+        }
+      ]
+    },
+    {
+      "name": "States the patient should be given a gentamicin dose of 7 mg/kg (acceptable... (ver_a491adc2942947308b84ab80e98fe91f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient should be given a gentamicin dose of 7 mg/kg (acceptable range 6.9 to 7.1)."
+        }
+      ]
+    },
+    {
+      "name": "Calculates the daily dose of gentamicin for this patient as 348.5-362.7 mg. (ver_54c8d40f00d649a599633caf3508b236)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Calculates the daily dose of gentamicin for this patient as 348.5-362.7 mg."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh labs-image-ai-scribe-onc-patient-7-gentamicin-samuel-s-0df9a434"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_0df9a434a1254225ba9a2e2b9bc5a80c",
+    "task_name": "Labs_Image_AI Scribe_Onc_Patient 7 - Gentamicin - Samuel S",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_1cee4ec03f8d4452b6a8d92ae4b82007",
+        "golden_text_response": "1. What is the appropriate dose of the antibiotic that the hospitalist favors? Use the dosing described in the Hartford Nomogram. Use the most recent documented patient weight. Calculate using actual body weight and extended-interval dosing.\n\nThe hospitalist favors the antibiotic that does not change the QT interval. Of the two classes the hospitalist discusses in the script, the aminoglycoside gentamicin is less likely to affect the QT interval. Therefore, the hospitalist favors gentamicin. \n\nThe patient's most recent weight in the chart is 112 lb (50.8 kg). Extended interval dosing is dependent upon the renal function of the patient. The patient's eGFR is within normal range (labs given in the attachment); the frequency of extended interval dosing for the patient would be once daily. \n\nThe dose calculation is weight x 7 mg/kg. 50.8 kg x 7 mg/kg = 355.6 mg (range of 348.5-362.7 mg) dosed every 24 hours.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

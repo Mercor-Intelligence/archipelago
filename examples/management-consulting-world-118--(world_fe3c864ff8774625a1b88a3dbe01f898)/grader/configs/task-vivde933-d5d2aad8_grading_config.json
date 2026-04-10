@@ -1,0 +1,203 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_49a2d783d4194703a60bf6834b97e20c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d5d2aad8ed7745cf9e4bd42950526286",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "State that the new per session price in Michigan in 2026 for ketamine TRD treatment is $400 (acceptable range $396 to $404)",
+        "negative_criteria": "State that the new per session price in Michigan in 2026 for ketamine TRD treatment is any other value than $400.4",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Mean price per session in Michigan in 2025 is 400.43. This can be calculated by filtering the \"Ketamine_TRD_session_sample_4.xslx\" file column C by \"Michigan\" and column B by 2025 dates. The highest lower integer is 400\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ff168868bf9c4b7285e04afd72fecbb2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d5d2aad8ed7745cf9e4bd42950526286",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "State that the updated COGS for 2026 are ($17,149,248) (acceptable range $16,977,756 to $17,320,740)",
+        "negative_criteria": "State that the updated COGS for 2026 are any other value than ($17,149,248)",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": " (4,815,360)+ (5,253,120)+ (1,532,160)+ (1,225,728)+ (3,830,400)+ (328,320)+ (164,160)= (17,149,248)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0163de8d0a4e4e488fb231afa6cae8ab",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d5d2aad8ed7745cf9e4bd42950526286",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "State that the updated Gross Profit for 2026 is $4,011,811 (acceptable range $3,971,693 to $4,051,929)",
+        "negative_criteria": "State that the updated Gross Profit for 2026 is any value other than $4,011,811\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": " 21,161,059.2 + (17,149,248) =  4,011,811\n\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ee10ee10aa7f42c6ad39499e090f301d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d5d2aad8ed7745cf9e4bd42950526286",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "State that the updated Gross Margin for 2026 is 19% (acceptable range 18.8% to 19.2%)",
+        "negative_criteria": "State that the updated Gross Margin for 2026 is any value other than 19%\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": " 4,011,811.20  /  21,161,059.20 =18.96% = 19%",
+        "is_primary_objective": true
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a49d55d771914494afdfed29deb61533",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d5d2aad8ed7745cf9e4bd42950526286",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "State that the updated SG&A for 2026 is ($2,539,327) (acceptable range $2,513,934 to $2,564,720)",
+        "negative_criteria": "State that the updated SG&A for 2026 is any value other than ($2,539,327)\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": " (846,442.37)+(740,637.07)+(423,221.18)+(529,026.48)= (2,539,327.1) = ($2,539,327)\n\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f25237b17a7645cebb11286adeab74f7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d5d2aad8ed7745cf9e4bd42950526286",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "State that the updated EBIT for 2026 is $1,472,484 (acceptable range $1,457,759 to $1,487,209)",
+        "negative_criteria": "State that the updated EBIT for 2026 is any value other than $1,472,484",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": " 4,011,811.2 + (2,539,327.1) = 1,472,484\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_1a7edeb3b24141a0b8f3b4c14059687b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d5d2aad8ed7745cf9e4bd42950526286",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "State that the updated EBIT margin for 2026 is 7% (acceptable range 6.9% to 7.1%)",
+        "negative_criteria": "State that the updated EBIT margin for 2026 is any other value than 7%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": " 1,472,484.10 / 21,161,059.20 =6.96% = 7%\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_207d8ce0e78a4a108d18f2ba6e9e1144",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d5d2aad8ed7745cf9e4bd42950526286",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "State that the updated EBITDA for 2026 is $1,636,644 (acceptable range $1,620,278 to $1,653,010)",
+        "negative_criteria": "State that the updated EBITDA for 2026 is any value other than $1,636,644\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "164,160 of training amortization (specified in prompt to be the only depreciation and amortization) needs to be added back to 1,472,484.1 EBIT\n\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 13,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e2c1081fe13648daba774342e727815e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_d5d2aad8ed7745cf9e4bd42950526286",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "State that the updated EBITDA margin for 2026 is 8% (acceptable range 7.9% to 8.1%)",
+        "negative_criteria": "State that the updated EBITSA margin for 2026 is any value other than 8%\n",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": " 1,636,644.10  / 21,161,059.20 = 7.73% = 8%\n\n",
+        "is_primary_objective": true
+      },
+      "verifier_index": 14,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

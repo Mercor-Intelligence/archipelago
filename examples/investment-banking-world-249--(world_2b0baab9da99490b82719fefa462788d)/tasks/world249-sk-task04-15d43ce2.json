@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Calculate in the model the 2030E net income attributable to S&P Global (consolidated entity) under the following assumptions:\n•\tApply the midyear convention.\n•\tApply 5.0% annual amortization of the outstanding beginning-of-year debt balance for the Senior Notes due 2033 for each forecast year 2026 through 2030.\n•\tCompute interest expense on the average of the beginning and ending debt balances for each year, multiplied by the applicable interest rate.\n•\tSet the interest rate for the Senior Notes due 2033 equal to the 1‑month U.S. Treasury yield as of December 31, 2025 plus a 2.0% pricing spread.\n•\tSwitch the Senior Notes due 2037 to PIK interest payments.\n\nPresent the result in USD millions, rounded to the nearest dollar."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that 2030E net income attributable to S&P Global (consolidated entity)... (ver_76cd2cbb60c8477d9386229847b22f3b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that 2030E net income attributable to S&P Global (consolidated entity) is $4,855 million (acceptable range $4,806 to $4,904)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world249-sk-task04-15d43ce2"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_2b0baab9da99490b82719fefa462788d",
+    "world_name": "Investment Banking World 249",
+    "task_id": "task_15d43ce20d71480c981a576bad2de4a2",
+    "task_name": "World249_SK_Task04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_e7dea8fb1bc248f68ef90b710d8d1d20",
+        "golden_text_response": "2030E net income attributable to S&P Global (consolidated entity) is $4,855 million",
+        "golden_file_responses": "snap_2e1dcccf1f0842718549a4d879bcaafe"
+      }
+    ]
+  }
+}

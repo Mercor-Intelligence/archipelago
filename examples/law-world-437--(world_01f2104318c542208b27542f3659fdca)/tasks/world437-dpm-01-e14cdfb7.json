@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Can you evaluate whether OSHA would need to be notified of the injuries from the event reported in the OSHA incident notice? The event resulted in a finger removal procedure on October 18, 2025. If yes, evaluate whether the incident notice was sufficient. Draft a message with your answer and explain your reasoning.    \n "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that OSHA does not need to be notified of the injuries from the incident (ver_237a6558809a4f18867ef20b784c4cd9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that OSHA does not need to be notified of the injuries from the incident."
+        }
+      ]
+    },
+    {
+      "name": "States that OSHA notice is required when any of the following occur as a... (ver_a58a3e6a092443febb6111d827936e36)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that OSHA notice is required when any of the following occur as a result of a work-related incident: death, in-patient hospitalization, amputation, or loss of an eye."
+        }
+      ]
+    },
+    {
+      "name": "States that for an amputation you must only report the event to OSHA if it... (ver_27ebc2d11c814b4c809ab3b10c0be89d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that for an amputation you must only report the event to OSHA if it occurs within twenty-four (24) hours of the work-related incident."
+        }
+      ]
+    },
+    {
+      "name": "States that the amputation occurred more than 24 hours after the October 15,... (ver_53f2bfb4bcf14fbb994f67dd569029a7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the amputation occurred more than 24 hours after the October 15, 2025 incident."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world437-dpm-01-e14cdfb7"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_01f2104318c542208b27542f3659fdca",
+    "world_name": "Law World 437",
+    "task_id": "task_e14cdfb7524d4edcaf83465e66bb7460",
+    "task_name": "World437_DPM_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_431d9103f0264ab297cef960ed9ddffe",
+        "golden_text_response": "No, OSHA does not need to be notified of the injuries from this incident.\n\nUnder 29 CFR 1904.39(a), employers must report work-related incidents to OSHA only when they result in: (1) the death of an employee; (2) in-patient hospitalization of one or more employees; (3) an employee's amputation; or (4) an employee's loss of an eye.\n\nHowever, the reporting obligation for amputations is subject to an important time limitation. Under 29 CFR 1904.39(b)(6), for an in-patient hospitalization, amputation, or loss of an eye, you must only report the event to OSHA if it occurs within twenty-four (24) hours of the work-related incident. \n\nHere, the work-related incident occurred on October 15, 2025 at 14:42. The finger removal procedure (amputation) did not occur until October 18, 2025. The procedure was more than 24 hours after the incident. Because the amputation occurred outside the 24-hour window, it is not a reportable event under 29 CFR 1904.39.\nTherefore, no additional OSHA notification is required for the injuries from this event.\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

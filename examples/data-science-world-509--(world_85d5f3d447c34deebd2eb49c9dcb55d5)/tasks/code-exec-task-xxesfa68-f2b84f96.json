@@ -1,0 +1,146 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Help me create a forecasting-ready dataset from 'enriched_loan_data.csv' (available in your environment) for monthly credit-risk forecasting using Python. Read the file, promote the header, and standardize column names to snake_case. Parse Month_Key with pd.to_datetime, drop invalid rows, and normalize it to month-end timestamps. \nBuild a monthly panel at the Month_Key + NAICS_Sector grain. For each sector and month, aggregate:\n- Sums for Current_Balance, Expected_Loss_Amount, and RWA_Amount.\n- Distinct counts for Loan_ID.\n- Delinquent balance as Current_Balance where Days_Past_Due > 0, then compute Delinquency_Rate = Delinquent_Balance / Total_Balance.\n- Expected loss rate as Expected_Loss_Amount / Total_Balance.\n- Balance-weighted averages for Interest_Rate, PD_Probability, LGD_Factor, and Regulatory_Risk_Weight using Current_Balance as the weight (numerator = sum of metric * balance, denominator = sum of balance).\n- Simple monthly averages for Prime_Rate, Unemployment_Rate, and CPI_Inflation.\n\nHandle missing months by filling gaps per NAICS_Sector only within that sector's observed date range. Use zero-filling for all amount and count metrics, but use forward-fill (ffill) for macro fields and internal rate components to ensure continuity before feature engineering. Create lag features at 1, 3, 6, and 12 months for the aggregated metrics, the balance-weighted numerator components (e.g., Interest_Rate * Current_Balance), and the macro fields. Do not create lags for the final weighted-average rate metrics themselves.\n\nCreate rolling features over 3, 6, and 12-month windows maintaining point-in-time integrity for each observation. For amount metrics, compute rolling sums. For rate metrics, recompute rolling rates as rolling_sum(numerator) / rolling_sum(denominator) for the same window. This applies to Delinquency_Rate, Expected_Loss_Rate, and all weighted rate features.\n\nConstruct the final dataset with only Month_Key, NAICS_Sector, and the lag/rolling feature columns (exclude the original aggregated metrics). Report the total number of rolling features created, counting each final sum, mean, or rate column as one feature, do not count any temporary rolling sums used as numerators or denominators for the rate calculations. From the final dataset, report the 12-month rolling sums of loan count (as an integer) and expected loss amount (in $bn, rounded to three decimals), and report the 12-month rolling averages of Expected_Loss_Rate and Delinquency_Rate (rounded to three decimals) on 2024-12-31 for NAICS_Sector = Construction. Within the final output, provide the Python code along with the requested results."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports 39 rolling features were created in the final dataset (exact threshold). (ver_832b9c3b939841db99f29a6d619b8a43)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports 39 rolling features were created in the final dataset (exact threshold)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the 12 months rolling loan count on 2024-12-31 for Construction sector... (ver_534fb613c8704f6a91c92265d89be809)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the 12 months rolling loan count on 2024-12-31 for Construction sector as 10140 +/- 100."
+        }
+      ]
+    },
+    {
+      "name": "Reports the 12 months rolling expected loss amount on 2024-12-31 for... (ver_32ff39e311da4ff49fe1fc262ab89c1b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the 12 months rolling expected loss amount on 2024-12-31 for Construction sector as $5.404bn (+/-0.250bn)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the 12 months rolling expected loss rate on 2024-12-31 for... (ver_fd96ef16dd6146a4988111e35f428e86)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the 12 months rolling expected loss rate on 2024-12-31 for Construction sector as 0.286 (+/-0.010)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the 12 months rolling delinquency rate on 2024-12-31 for Construction... (ver_b60e1f2c1d4c45cdad6078b732fc23e0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the 12 months rolling delinquency rate on 2024-12-31 for Construction sector as 0.122 (+/-0.010)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh code-exec-task-xxesfa68-f2b84f96"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_f2b84f9692c34f0e82823e6361bc09ff",
+    "task_name": "Code Exec - Task xxesfa68",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_f54b0f43cba945c097ca9bac88ef42f0",
+        "golden_text_response": "Rolling feature count (sums/means only): 39\nConstruction 2024-12-31 rolling metrics (12m):\nloan_count_roll_12m: 10140\nexpected_loss_amount_roll_12m_bn: 5.404\nexpected_loss_rate_roll_12m: 0.286\ndelinquency_rate_roll_12m: 0.122\n\n```python\nimport pandas as pd\n\nINPUT_PATH = \"enriched_loan_data.csv\"\n\nROLL_WINDOWS = [3, 6, 12]\nLAG_MONTHS = [1, 3, 6, 12]\n\ndf = pd.read_csv(INPUT_PATH)\ndf.columns = [\n    c.strip().replace(\" \", \"_\").replace(\"-\", \"_\").replace(\"/\", \"_\").lower()\n    for c in df.columns\n]\n\n# Month_key is the modeling grain; coerce to month-end timestamps.\ndf[\"month_key\"] = pd.to_datetime(df[\"month_key\"], errors=\"coerce\")\ndf = df.dropna(subset=[\"month_key\"])\ndf[\"month_key\"] = df[\"month_key\"].dt.to_period(\"M\").dt.to_timestamp(\"M\")\n\n# Base numerators for balance-weighted averages.\ndf[\"interest_rate_wt\"] = df[\"interest_rate\"] * df[\"current_balance\"]\ndf[\"pd_probability_wt\"] = df[\"pd_probability\"] * df[\"current_balance\"]\ndf[\"lgd_factor_wt\"] = df[\"lgd_factor\"] * df[\"current_balance\"]\ndf[\"regulatory_risk_weight_wt\"] = (\n    df[\"regulatory_risk_weight\"] * df[\"current_balance\"]\n)\n\ndf[\"delinquent_balance\"] = df[\"current_balance\"].where(\n    df[\"days_past_due\"] > 0, 0.0\n)\n\nagg = (\n    df.groupby([\"month_key\", \"naics_sector\"], as_index=False)\n    .agg(\n        total_balance=(\"current_balance\", \"sum\"),\n        expected_loss_amount=(\"expected_loss_amount\", \"sum\"),\n        rwa_amount=(\"rwa_amount\", \"sum\"),\n        loan_count=(\"loan_id\", \"nunique\"),\n        delinquent_balance=(\"delinquent_balance\", \"sum\"),\n        interest_rate_wt=(\"interest_rate_wt\", \"sum\"),\n        pd_probability_wt=(\"pd_probability_wt\", \"sum\"),\n        lgd_factor_wt=(\"lgd_factor_wt\", \"sum\"),\n        regulatory_risk_weight_wt=(\"regulatory_risk_weight_wt\", \"sum\"),\n        prime_rate=(\"prime_rate\", \"mean\"),\n        unemployment_rate=(\"unemployment_rate\", \"mean\"),\n        cpi_inflation=(\"cpi_inflation\", \"mean\"),\n    )\n    .sort_values([\"naics_sector\", \"month_key\"])\n    .reset_index(drop=True)\n)\n\n# Fill missing months per NAICS sector.\nfull_frames = []\nfor sector, grp in agg.groupby(\"naics_sector\"):\n    grp = grp.set_index(\"month_key\").sort_index()\n    month_index = pd.date_range(\n        start=grp.index.min(), end=grp.index.max(), freq=\"ME\"\n    )\n    grp = grp.reindex(month_index)\n    grp[\"naics_sector\"] = sector\n    full_frames.append(grp)\n\npanel = pd.concat(full_frames).reset_index().rename(columns={\"index\": \"month_key\"})\n\n# TARGETED IMPUTATION: Zeros for amounts/counts, ffill for macro/rates\namt_cnt_cols = [\n    \"total_balance\", \"expected_loss_amount\", \"rwa_amount\", \"loan_count\", \n    \"delinquent_balance\", \"interest_rate_wt\", \"pd_probability_wt\", \n    \"lgd_factor_wt\", \"regulatory_risk_weight_wt\"\n]\nmacro_cols = [\"prime_rate\", \"unemployment_rate\", \"cpi_inflation\"]\n\npanel[amt_cnt_cols] = panel[amt_cnt_cols].fillna(0.0)\npanel[macro_cols] = panel.groupby(\"naics_sector\")[macro_cols].ffill()\n\n# Rolling sums for amount metrics.\nrolling_feature_cols = []\namount_cols = [\"total_balance\", \"expected_loss_amount\", \"rwa_amount\", \"loan_count\"]\nfor window in ROLL_WINDOWS:\n    for col in amount_cols:\n        out_col = f\"{col}_roll_{window}m\"\n        panel[out_col] = (\n            panel.groupby(\"naics_sector\")[col]\n            .shift(1)\n            .rolling(window, min_periods=1)\n            .sum()\n            .reset_index(level=0, drop=True)\n        )\n        rolling_feature_cols.append(out_col)\n\n    # Rolling sums for denominators and weighted numerators.\n    denom_col = f\"total_balance_roll_{window}m\"\n    panel[denom_col] = (\n        panel.groupby(\"naics_sector\")[\"total_balance\"]\n        .shift(1)\n        .rolling(window, min_periods=1)\n        .sum()\n        .reset_index(level=0, drop=True)\n    )\n    delinq_num = (\n        panel.groupby(\"naics_sector\")[\"delinquent_balance\"]\n        .shift(1)\n        .rolling(window, min_periods=1)\n        .sum()\n        .reset_index(level=0, drop=True)\n    )\n    exp_loss_num = (\n        panel.groupby(\"naics_sector\")[\"expected_loss_amount\"]\n        .shift(1)\n        .rolling(window, min_periods=1)\n        .sum()\n        .reset_index(level=0, drop=True)\n    )\n    interest_num = (\n        panel.groupby(\"naics_sector\")[\"interest_rate_wt\"]\n        .shift(1)\n        .rolling(window, min_periods=1)\n        .sum()\n        .reset_index(level=0, drop=True)\n    )\n    pd_num = (\n        panel.groupby(\"naics_sector\")[\"pd_probability_wt\"]\n        .shift(1)\n        .rolling(window, min_periods=1)\n        .sum()\n        .reset_index(level=0, drop=True)\n    )\n    lgd_num = (\n        panel.groupby(\"naics_sector\")[\"lgd_factor_wt\"]\n        .shift(1)\n        .rolling(window, min_periods=1)\n        .sum()\n        .reset_index(level=0, drop=True)\n    )\n    reg_num = (\n        panel.groupby(\"naics_sector\")[\"regulatory_risk_weight_wt\"]\n        .shift(1)\n        .rolling(window, min_periods=1)\n        .sum()\n        .reset_index(level=0, drop=True)\n    )\n\n    panel[f\"delinquency_rate_roll_{window}m\"] = delinq_num / panel[denom_col]\n    panel[f\"expected_loss_rate_roll_{window}m\"] = exp_loss_num / panel[denom_col]\n    panel[f\"interest_rate_wavg_roll_{window}m\"] = interest_num / panel[denom_col]\n    panel[f\"pd_probability_wavg_roll_{window}m\"] = pd_num / panel[denom_col]\n    panel[f\"lgd_factor_wavg_roll_{window}m\"] = lgd_num / panel[denom_col]\n    panel[f\"regulatory_risk_weight_wavg_roll_{window}m\"] = (\n        reg_num / panel[denom_col]\n    )\n    rolling_feature_cols.extend(\n        [\n            f\"delinquency_rate_roll_{window}m\",\n            f\"expected_loss_rate_roll_{window}m\",\n            f\"interest_rate_wavg_roll_{window}m\",\n            f\"pd_probability_wavg_roll_{window}m\",\n            f\"lgd_factor_wavg_roll_{window}m\",\n            f\"regulatory_risk_weight_wavg_roll_{window}m\",\n        ]\n    )\n\n    # Rolling means for macro metrics.\n    for col in [\"prime_rate\", \"unemployment_rate\", \"cpi_inflation\"]:\n        out_col = f\"{col}_roll_{window}m\"\n        panel[out_col] = (\n            panel.groupby(\"naics_sector\")[col]\n            .shift(1)\n            .rolling(window, min_periods=1)\n            .mean()\n            .reset_index(level=0, drop=True)\n        )\n        rolling_feature_cols.append(out_col)\n\n# Create lag features after shift.\nlag_cols = amount_cols + [\n    \"delinquent_balance\",\n    \"interest_rate_wt\",\n    \"pd_probability_wt\",\n    \"lgd_factor_wt\",\n    \"regulatory_risk_weight_wt\",\n    \"prime_rate\",\n    \"unemployment_rate\",\n    \"cpi_inflation\",\n]\nlag_features = {}\nfor lag in LAG_MONTHS:\n    for col in lag_cols:\n        lag_features[f\"{col}_lag_{lag}m\"] = (\n            panel.groupby(\"naics_sector\")[col].shift(lag)\n        )\npanel = pd.concat([panel, pd.DataFrame(lag_features)], axis=1)\n\noutput_cols = [\"month_key\", \"naics_sector\"] + rolling_feature_cols + list(\n    lag_features.keys()\n)\noutput_df = panel[output_cols].copy()\n\nrolling_feature_count = len(rolling_feature_cols)\nprint(f\"Rolling feature count (sums/means only): {rolling_feature_count}\")\n\ntarget_date = pd.Timestamp(\"2024-12-31\")\ntarget = output_df[\n    (output_df[\"naics_sector\"] == \"Construction\")\n    & (output_df[\"month_key\"] == target_date)\n]\nif not target.empty:\n    loan_count = int(round(target[\"loan_count_roll_12m\"].iloc[0]))\n    expected_loss_bn = (\n        target[\"expected_loss_amount_roll_12m\"].iloc[0] / 1_000_000_000\n    )\n    expected_loss_rate = target[\"expected_loss_rate_roll_12m\"].iloc[0]\n    delinquency_rate = target[\"delinquency_rate_roll_12m\"].iloc[0]\n    print(\"Construction 2024-12-31 rolling metrics (12m):\")\n    print(f\"loan_count_roll_12m: {loan_count:d}\")\n    print(f\"expected_loss_amount_roll_12m_bn: {expected_loss_bn:.3f}\")\n    print(f\"expected_loss_rate_roll_12m: {expected_loss_rate:.3f}\")\n    print(f\"delinquency_rate_roll_12m: {delinquency_rate:.3f}\")\nelse:\n    print(\"No data found for Construction on 2024-12-31.\")\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

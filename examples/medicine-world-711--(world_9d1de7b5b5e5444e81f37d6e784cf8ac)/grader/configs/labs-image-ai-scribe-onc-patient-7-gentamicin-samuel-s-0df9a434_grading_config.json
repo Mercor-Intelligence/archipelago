@@ -1,0 +1,160 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_0b343317e3364b779e93c3f147fff7d2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0df9a434a1254225ba9a2e2b9bc5a80c",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the physician prefers gentamicin in this patient.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. The physician favors the antibiotic that does not cause QT prolongation. This information is found in the script (Script E4.pdf): \"But I want to stay away from anything that prolongs the QT.\"\n\n2. Gentamicin is not listed among drugs that cause QTc prolongation. \n-https://www.ncbi.nlm.nih.gov/books/NBK534864/\n-See table 1: https://pmc.ncbi.nlm.nih.gov/articles/PMC3653016/\n\n3. Ciprofloxacin is listed among drugs that cause QTc prolongation. \n-https://www.ncbi.nlm.nih.gov/books/NBK534864/\n-See table 1: https://pmc.ncbi.nlm.nih.gov/articles/PMC3653016/\n",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7fbe5231c9f6478baade450a1999e36f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0df9a434a1254225ba9a2e2b9bc5a80c",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "Notes the patient's most recent documented weight from the chart is 50.8 kg (acceptable range 50.3 to 51.3).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "This information is found in the patient's chart (\"Onc_Patient 7\"): \"112 lb (50.8 kg)\"\n-Clinical notes tab, row 247, Column D",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bd4e3e4d42e149cd86d76305dcb9b08a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0df9a434a1254225ba9a2e2b9bc5a80c",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States extended-interval dosing for gentamicin is dependent upon renal function.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Renal function affects frequency of gentamicin dosing: \"Every 24 hours for those with normal renal function and longer for those with renal dysfunction.\" \nhttps://www.uptodate.com/contents/dosing-and-administration-of-parenteral-aminoglycosides",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e0971d58a12c424699b10893a42cbd74",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0df9a434a1254225ba9a2e2b9bc5a80c",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the frequency of gentamicin would be once daily in this patient. ",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "1. The patient has normal renal function. This information is extracted from attached lab report (Lab A.pdf): \"eGFR 102 mL/min/1.73\"\n\n2. The frequency of gentamicin dosing for patients with normal renal function is once daily. \n\"Extended-interval aminoglycoside therapy (also known as once-daily aminoglycosides, single daily aminoglycoside dosing, consolidated or high-dose aminoglycoside therapy) utilizes a higher weight-based dose administered at an extended interval (every 24 hours for those with normal renal function and longer for those with renal dysfunction).\" -https://www.uptodate.com/contents/dosing-and-administration-of-parenteral-aminoglycosides",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_a491adc2942947308b84ab80e98fe91f",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0df9a434a1254225ba9a2e2b9bc5a80c",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)",
+          "Statement"
+        ],
+        "weight": 1,
+        "criteria": "States the patient should be given a gentamicin dose of 7 mg/kg (acceptable range 6.9 to 7.1).",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "7 mg/kg is the dose referenced in the Hartford Nomogram that is recommended for the patient's pneumonia. \n--From the attached script:\n\"Doctor: This time is worse, we call it severe. We grade your pneumonia for its severity. Your\nx-ray, your labs, your presentation. We want to prevent it from worsening, so we need to use\nthe right drugs.\"\n--From the prompt:\n\"The patient is hospitalized for shortness of breath within a few weeks of the most recent office visit and develops severe gram-negative pneumonia. \"\n\n1. \"The Hartford Nomogram method utilizes high-dose, once daily dosing to optimize the peak/MIC ratio in most clinical situations by administering a dose of 7mg/kg of either gentamicin or tobramycin.\" -https://med.stanford.edu/content/dam/sm/bugsanddrugs/documents/antimicrobial-dosing-protocols/SHC-Aminoglycoside-Dosing-Guide.pdf\n2. \"High-dose extended dosing strategy: Other infecions (exclude CF)\t7 mg/kg IV q24h\" -https://idmp.ucsf.edu/content/gentamicin",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_54c8d40f00d649a599633caf3508b236",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_0df9a434a1254225ba9a2e2b9bc5a80c",
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the daily dose of gentamicin for this patient as 348.5-362.7 mg.",
+        "autogen_source": null,
+        "negative_criteria": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The dose calculation is weight x 7 mg/kg. 50.8 kg x 7 mg/kg = 355.6 mg dosed every 24 hours.\n1. \"The Hartford Nomogram method utilizes high-dose, once daily dosing to optimize the peak/MIC ratio in most clinical situations by administering a dose of 7mg/kg of either gentamicin or tobramycin.\" -https://med.stanford.edu/content/dam/sm/bugsanddrugs/documents/antimicrobial-dosing-protocols/SHC-Aminoglycoside-Dosing-Guide.pdf\n2. \"7 mg/kg IV q24h\" -https://idmp.ucsf.edu/content/gentamicin\n\nAnswer given with a 2% margin of error.",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "2fc383fa-615a-4718-b27e-efaa2b9da167",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "c6d000a2-925f-48f6-91d9-5c7b53896961",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "universal_penalty_cap": 0,
+      "universal_total_negative_points": 0
+    }
+  }
+}

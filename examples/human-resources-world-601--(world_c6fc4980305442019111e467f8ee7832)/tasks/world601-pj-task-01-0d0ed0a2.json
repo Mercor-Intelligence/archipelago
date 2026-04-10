@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "For promotions effective January 1, 2025, identify all fast-track promotions based on the defined guideline for minimum tenure required for promotion (attached). Using the salary data from Employee Roster_Enhanced.xlsx (assume these salaries are applicable for year 2025) and salary increments awarded at the time of promotions from Promotions_effective_1Jan2025.xlsx, calculate the total annual cost savings for 2025 under a scenario where fast-track promotions were not allowed and affected employees instead receive a standard 5% salary hike effective January 1, 2025.\n\nReport the final answer (in USD) in a sheet rounded to one decimal place. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the total annual cost savings for 2025 under a scenario where... (ver_ea53ddea2af8467c9e0c751b9f6ac16e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total annual cost savings for 2025 under a scenario where fast-track promotions were not allowed and affected employees instead receive a standard 5% salary hike (effective January 1, 2025) is $105,026.4 (acceptable range $103,976.1 to $106,076.7)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world601-pj-task-01-0d0ed0a2"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_0d0ed0a295a14c76a323b431731391a8",
+    "task_name": "World601_PJ_Task 01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_a7a15cf417bf43269af4d9b49099a553",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_af418ca20e8d44e382ae2af6eccf40ec"
+      }
+    ]
+  }
+}

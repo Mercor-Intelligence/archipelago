@@ -1,0 +1,263 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_4a45dda7d62a4abb93e15de81f27040e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caff5e4231d94df6bfefa36f1a4bb49d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the percentage of respondents using Digital Realty Trust is 32.00% (acceptable range 31.68% to 32.32%)",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ab23285b47814ee8b304e42712895a10",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caff5e4231d94df6bfefa36f1a4bb49d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the percentage of respondents using Equinix is 24.00% (acceptable range 23.76% to 24.24%)",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_820c2cda5881425594df4e39cdf318e7",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caff5e4231d94df6bfefa36f1a4bb49d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the percentage of respondents using Iron Mountain is 16.00% (acceptable range 15.84% to 16.16%)",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_bbabb762fe0447c0a97e9bebc191945d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caff5e4231d94df6bfefa36f1a4bb49d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the percentage of respondents using CyrusOne is 22.00% (acceptable range 21.78% to 22.22%)",
+        "negative_criteria": "States the percentage of respondents using CyrusOne is a value other than 22.00%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "CyrusOne - Customer composition (%) is calculated by dividing the number of survey respondents who selected Digital Realty Trust by the total number of respondents. The answer should be represented as % as per prompt guidelines.\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_d95580031efa4fe299ad9c2a214d41b3",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caff5e4231d94df6bfefa36f1a4bb49d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the percentage of respondents using In-House is 6.00% (acceptable range 5.94% to 6.06%)",
+        "negative_criteria": "States the percentage of respondents using In-House is a value other than 6.00%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "In-House - Customer composition (%) is calculated by dividing the number of survey respondents who selected Digital Realty Trust by the total number of respondents. The answer should be represented as % as per prompt guidelines.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_98a58d33a2384c79b659fcd41fd96ef1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caff5e4231d94df6bfefa36f1a4bb49d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the leading data center provider (by respondent share) is Digital Realty Trust",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Determine the provider with the highest market share by locating the maximum value in the percentage column and returning the corresponding name from the provider column. It matches the highest percentage to its row and extracts the provider name at that position.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_8e339a4553b74d05ab7df66d750f457d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caff5e4231d94df6bfefa36f1a4bb49d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the most frequently selected \"most influential factor\" among respondents who use the leading data center provider is scalability",
+        "negative_criteria": "",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Calculate by determining the Most Influential Factor column to include only rows where the Current Data Center Provider matches the leading provider, then use a frequency formula Mode to identify which reason appears most often. This reveals the top decision driver among customers of the provider with the highest Customer composition.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_489142c1204543c185b7b5632245bf22",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caff5e4231d94df6bfefa36f1a4bb49d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the Overall average switching likelihood is 2.96 (acceptable range 2.93 to 2.99)",
+        "negative_criteria": "States the Overall average switching likelihood is any other number other than 2.96",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Overall average switching likelihood is calculated as the average of Switching Likelihood. The answer should be represented in two decimal places as per prompt guidelines.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e04d2ae9623d43cd87e141850ab00aa1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caff5e4231d94df6bfefa36f1a4bb49d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the percent of respondents with high switching propensity is 38.00% (acceptable range 37.62% to 38.38%)",
+        "negative_criteria": "States the percent of respondents with high switching propensity is a value other than 38.00%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "High Switching (i.e., 4 or 5) \u2013 Percentage (%) is calculated by dividing the number of respondents with a switching likelihood score of 4 or 5 by the total number of respondents.The answer should be represented as % as per prompt guidelines.\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_72742eb5cc7844ca811517fb18860756",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caff5e4231d94df6bfefa36f1a4bb49d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the Average Switching Likelihood for respondents in the Public sector is 3.14 (acceptable range 3.11 to 3.17)",
+        "negative_criteria": "States the Average Switching Likelihood for respondents in the Public sector is any other number other than 3.14",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Average Switching Likelihood \u2013 Public Sector is calculated by averaging the values in the Switching Likelihood column only for rows where the Sector column  indicates a public sector respondent. The answer should be represented in two decimal places as per prompt guidelines.\n",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 10,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_04d1305536494d70987fe499eaba4e2d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caff5e4231d94df6bfefa36f1a4bb49d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the Average Switching Likelihood for respondents in the Private sector is 3.03 (acceptable range 3.00 to 3.06)",
+        "negative_criteria": "States the Average Switching Likelihood for respondents in the Private sector is a value other than 3.03",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "Average Switching Likelihood - Private Sector is calculated by averaging the values in the Switching Likelihood column  only for rows where the Sector column indicates a private sector respondent.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 11,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_592e14d7911f484b905efc820140dbfd",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_caff5e4231d94df6bfefa36f1a4bb49d",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States the Average Switching Likelihood for respondents in the Other sector is 2.00 (acceptable range 1.98 to 2.02)",
+        "negative_criteria": "States the Average Switching Likelihood for respondents in the Other sector is a value other than 2.00",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 12,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

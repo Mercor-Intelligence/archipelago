@@ -1,0 +1,238 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using Dim_Borrower_Master.csv, create a dataset with a risky_borrower column that labels the top 10 critical exposures as 1 and all other borrowers as 0. You need to identify the top 10 critical exposures from 1.11.2026 Habor Capital Final.pdf. Keep only borrowers whose sector matches any of the sectors of the top 10 exposures. For Origination_Credit_Score, Years_in_Business, and Annual_Revenue, test normality (Shapiro for n<=5000, D'Agostino for larger). If both groups are normal (p>0.05), use a t‑test (Welch if Levene indicates unequal variances (p<=0.05)). If normality fails (either group p<=0.05), use Mann‑Whitney U. Report on the statistical significance of the difference in means of Origination_Credit_Score, Years_in_Business, and Annual_Revenue between risky borrowers and non-risky borrowers, using t-test if both groups are normal and Mann-Whitney U test otherwise, rounding all values to two decimals. Provide the Python code for this task along with the results."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports the mean of origination credit score for risky group as 609.60 (+/-0.10) (ver_e9bc24c3d46945abb5c575fde5fc3f13)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the mean of origination credit score for risky group as 609.60 (+/-0.10)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the mean of origination credit score for non-risky group as 670.27... (ver_85f1ae65c5964aa5a9d4cc0e4e805714)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the mean of origination credit score for non-risky group as 670.27 (+/-0.10) ."
+        }
+      ]
+    },
+    {
+      "name": "Reports the mean of years in business for risky group as 14.00 (+/-0.10). (ver_dbce75b3dc084f869a9463b556639b2d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the mean of years in business for risky group as 14.00 (+/-0.10)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the mean of years in business for non-risky group as 13.05 (+/-0.10). (ver_7bc94a896e7f41658b75f17d8d2c523e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the mean of years in business for non-risky group as 13.05 (+/-0.10)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the mean of annual revenue for risky group correctly calculated as... (ver_0611bd52f6aa4fb3a8b52ef4fd79791e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the mean of annual revenue for risky group correctly calculated as 24328537.00 (+/-0.10)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the mean of annual revenue for non-risky group correctly calculated as... (ver_7c5722b5f33542f5aedf6ad9aa159dde)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the mean of annual revenue for non-risky group correctly calculated as 24322805.03 (+/-0.10)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the p-value for origination credit score between risky and non-risky... (ver_1cac0b6ac3024b98a51b4bcff4d7e159)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the p-value for origination credit score between risky and non-risky groups as 0.00 (+/-0.01)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the p-value for years in business between risky and non-risky groups... (ver_957953192bc1405db8491f1bc3107a10)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the p-value for years in business between risky and non-risky groups correctly calculated as 0.64 (+/-0.01)."
+        }
+      ]
+    },
+    {
+      "name": "Reports the p-value for annual revenue between risky and non-risky groups as... (ver_22b1641c8fba4aef9527ed49994c1455)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the p-value for annual revenue between risky and non-risky groups as 0.98 (+/-0.01)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh code-exec-task-cb0l8e13-4383a836"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_4383a836fec6470883f51f60f3b74e4e",
+    "task_name": "Code Exec - Task cb0l8e13",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_0f7ac7fce6fc4850911964cccb7b2953",
+        "golden_text_response": "Reported statistics (rounded to 2 decimals):\n                metric                 risky_mean  non_risky_mean         p_value\nOrigination_Credit_Score       609.60             670.27                   0.00\n       Years_in_Business           14.00               13.05                       0.64\n          Annual_Revenue      24328537.00       24322805.03          0.98\n\nFirst, identify the top 10 borrowers in expected loss amount from '1.11.2026 Habor Capital Final.pdf'.\n\n```python\nimport numpy as np\nimport pandas as pd\nfrom scipy import stats\n\nBORROWER_PATH = \"Dim_Borrower_Master.csv\"\n\nTOP10_INPUT = [\n    \"Company_11076_Retail\",\n    \"Company_13566_Retail\",\n    \"Company_10921_Retail\",\n    \"Company_12289_Retail\",\n    \"Company_11737_Retail\",\n    \"Company_13732_Retail\",\n    \"Company_13724_Retail\",\n    \"Company_11747_Retail\",\n    \"Company_10930_Retail\",\n    \"Company_11067_Retail\",\n]\n\nMETRICS = [\"Origination_Credit_Score\", \"Years_in_Business\", \"Annual_Revenue\"]\n\nborrowers = pd.read_csv(BORROWER_PATH)\n\nborrowers = borrowers.copy()\n\n# Resolve user-provided identifiers to Borrower_ID values.\nvalues = [str(v).strip() for v in TOP10_INPUT if str(v).strip()]\nborrower_ids = set(borrowers[\"Borrower_ID\"].dropna().astype(str))\nborrower_names = set(borrowers[\"Borrower_Name\"].dropna().astype(str))\n\ntop_ids = set()\nfor value in values:\n    if value in borrower_ids:\n        top_ids.add(value)\n        continue\n    if value.isdigit() and f\"B-{value}\" in borrower_ids:\n        top_ids.add(f\"B-{value}\")\n        continue\n    if value in borrower_names:\n        match = borrowers.loc[borrowers[\"Borrower_Name\"] == value, \"Borrower_ID\"]\n        top_ids.update(match.dropna().astype(str).tolist())\n\n# Label risky borrowers and restrict to top-sector peers.\nborrowers[\"risky_borrower\"] = borrowers[\"Borrower_ID\"].isin(top_ids).astype(int)\n\ntop_sectors = sorted(\n    borrowers.loc[borrowers[\"Borrower_ID\"].isin(top_ids), \"NAICS_Sector\"]\n    .dropna()\n    .unique()\n    .tolist()\n)\nborrowers_filtered = borrowers[borrowers[\"NAICS_Sector\"].isin(top_sectors)].copy()\n\n# Compare risky vs non-risky groups with distribution-aware tests.\nresults = []\nfor metric in METRICS:\n    grp_risky = (\n        borrowers_filtered.loc[borrowers_filtered[\"risky_borrower\"] == 1, metric]\n        .dropna()\n        .astype(float)\n    )\n    grp_non = (\n        borrowers_filtered.loc[borrowers_filtered[\"risky_borrower\"] == 0, metric]\n        .dropna()\n        .astype(float)\n    )\n\n    if len(grp_risky) < 3 or len(grp_non) < 3:\n        test_name = \"Insufficient data\"\n        test_stat = float(\"nan\")\n        p_value = float(\"nan\")\n        p_norm_risky = float(\"nan\")\n        p_norm_non = float(\"nan\")\n        p_levene = float(\"nan\")\n    else:\n        p_norm_risky = (\n            stats.shapiro(grp_risky).pvalue\n            if len(grp_risky) <= 5000\n            else stats.normaltest(grp_risky).pvalue\n        )\n        p_norm_non = (\n            stats.shapiro(grp_non).pvalue\n            if len(grp_non) <= 5000\n            else stats.normaltest(grp_non).pvalue\n        )\n        normal_risky = bool(p_norm_risky > 0.05)\n        normal_non = bool(p_norm_non > 0.05)\n\n        if normal_risky and normal_non:\n            p_levene = stats.levene(grp_risky, grp_non).pvalue\n            equal_var = bool(p_levene > 0.05)\n            test_name = \"t-test\" if equal_var else \"Welch t-test\"\n            test_stat, p_value = stats.ttest_ind(\n                grp_risky, grp_non, equal_var=equal_var\n            )\n        else:\n            test_name = \"Mann-Whitney U\"\n            test_stat, p_value = stats.mannwhitneyu(\n                grp_risky, grp_non, alternative=\"two-sided\"\n            )\n            p_levene = float(\"nan\")\n\n    risky_mean = grp_risky.mean() if len(grp_risky) else float(\"nan\")\n    non_risky_mean = grp_non.mean() if len(grp_non) else float(\"nan\")\n    results.append(\n        {\n            \"metric\": metric,\n            \"risky_mean\": round(risky_mean, 2) if np.isfinite(risky_mean) else risky_mean,\n            \"non_risky_mean\": round(non_risky_mean, 2)\n            if np.isfinite(non_risky_mean)\n            else non_risky_mean,\n            \"p_value\": round(p_value, 2) if np.isfinite(p_value) else p_value,\n        }\n    )\n\nresults_df = pd.DataFrame(results)\n\n# Format reported values to two decimals (keep NaN as string).\nresults_df[\"risky_mean\"] = [\n    f\"{v:.2f}\" if np.isfinite(v) else \"nan\" for v in results_df[\"risky_mean\"].to_list()\n]\nresults_df[\"non_risky_mean\"] = [\n    f\"{v:.2f}\" if np.isfinite(v) else \"nan\"\n    for v in results_df[\"non_risky_mean\"].to_list()\n]\nresults_df[\"p_value\"] = [\n    f\"{v:.2f}\" if np.isfinite(v) else \"nan\" for v in results_df[\"p_value\"].to_list()\n]\n\n# Report summary to stdout only.\nprint(\"Reported statistics (rounded to 2 decimals):\")\nprint(results_df.to_string(index=False))\n```",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

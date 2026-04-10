@@ -1,0 +1,84 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_a0588f6554cf4c6aa97c0a52be73b3cf",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bc5a347254974e7bbdb6b28540c6efe7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the state with the lowest average Total Discharges  in \"065 - INTRACRANIAL HEMORRHAGE OR CEREBRAL INFARCTION W CC\" DRG is Wisconsin",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_02756837ff7c46f09307166371aea7c2",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bc5a347254974e7bbdb6b28540c6efe7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the Provider Name with the highest Average Total Payments is UNIVERSITY OF ILLINOIS HOSPITAL",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_f0801d7395c845bbaa0b7ec11ac8e4aa",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_bc5a347254974e7bbdb6b28540c6efe7",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "criteria": "States that the average of the remaining Average Total Payments for the 6 states is $8,956.37 (acceptable range $8,866.81 to $9,045.93)",
+        "negative_criteria": "States that the average of the remaining Average Total Payments for the 6 states is a value other than $8,956.37",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

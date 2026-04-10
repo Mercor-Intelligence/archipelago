@@ -1,0 +1,13 @@
+# Generated environment variables file
+
+# Server API Keys
+{% for server in servers %}
+{% if server.auth_type == 'api_key' %}
+{{ server.name | upper }}_API_KEY=your-{{ server.name }}-api-key-here
+{% elif server.auth_type == 'oauth2' %}
+{{ server.name | upper }}_CLIENT_ID=your-{{ server.name }}-client-id
+{{ server.name | upper }}_CLIENT_SECRET=your-{{ server.name }}-client-secret
+{{ server.name | upper }}_ACCESS_TOKEN=your-{{ server.name }}-access-token
+{% endif %}
+{% endfor %}
+

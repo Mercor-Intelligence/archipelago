@@ -1,0 +1,155 @@
+version: "1.0"
+project_name: "tableau"
+
+servers:
+  - name: tableau
+    display_name: "Tableau"
+    description: "Tableau MCP Server for managing sites, users, projects, workbooks, views, datasources, and permissions"
+    tools_module: "mcp_servers.tableau.tools"
+    base_url: "http://localhost:8000"
+    requires_auth: false
+
+categories:
+  - name: "Sites"
+    description: "Manage Tableau sites and instances"
+    servers: [tableau]
+
+  - name: "Users"
+    description: "User management and CRUD operations"
+    servers: [tableau]
+
+  - name: "Projects"
+    description: "Project management and organization"
+    servers: [tableau]
+
+  - name: "Workbooks"
+    description: "Workbook management, publishing, and connections"
+    servers: [tableau]
+
+  - name: "Views"
+    description: "View queries, metadata, and image export"
+    servers: [tableau]
+
+  - name: "Datasources"
+    description: "Datasource management and connections"
+    servers: [tableau]
+
+  - name: "Groups"
+    description: "Group management and membership"
+    servers: [tableau]
+
+  - name: "Permissions"
+    description: "Permission management for resources"
+    servers: [tableau]
+
+  - name: "Visualization"
+    description: "CSV upload, shelf configuration, and chart generation"
+    servers: [tableau]
+
+tool_overrides:
+  # Site tools
+  - tool: "tableau.tableau_list_sites"
+    category: "Sites"
+
+  # User tools
+  - tool: "tableau.tableau_create_user"
+    category: "Users"
+  - tool: "tableau.tableau_list_users"
+    category: "Users"
+  - tool: "tableau.tableau_get_user"
+    category: "Users"
+  - tool: "tableau.tableau_update_user"
+    category: "Users"
+  - tool: "tableau.tableau_delete_user"
+    category: "Users"
+
+  # Project tools
+  - tool: "tableau.tableau_create_project"
+    category: "Projects"
+  - tool: "tableau.tableau_list_projects"
+    category: "Projects"
+  - tool: "tableau.tableau_get_project"
+    category: "Projects"
+  - tool: "tableau.tableau_update_project"
+    category: "Projects"
+  - tool: "tableau.tableau_delete_project"
+    category: "Projects"
+
+  # Workbook tools
+  - tool: "tableau.tableau_create_workbook"
+    category: "Workbooks"
+  - tool: "tableau.tableau_list_workbooks"
+    category: "Workbooks"
+  - tool: "tableau.tableau_get_workbook"
+    category: "Workbooks"
+  - tool: "tableau.tableau_update_workbook"
+    category: "Workbooks"
+  - tool: "tableau.tableau_delete_workbook"
+    category: "Workbooks"
+  - tool: "tableau.tableau_publish_workbook"
+    category: "Workbooks"
+
+  # Connection tools (grouped under Workbooks)
+  - tool: "tableau.tableau_create_workbook_connection"
+    category: "Workbooks"
+  - tool: "tableau.tableau_list_workbook_connections"
+    category: "Workbooks"
+  - tool: "tableau.tableau_delete_workbook_connection"
+    category: "Workbooks"
+
+  # View tools
+  - tool: "tableau.tableau_list_views"
+    category: "Views"
+  - tool: "tableau.tableau_get_view"
+    category: "Views"
+  - tool: "tableau.tableau_get_view_metadata"
+    category: "Views"
+  - tool: "tableau.tableau_query_view_data_to_file"
+    category: "Views"
+  - tool: "tableau.tableau_query_view_image"
+    category: "Views"
+
+  # Datasource tools
+  - tool: "tableau.tableau_create_datasource"
+    category: "Datasources"
+  - tool: "tableau.tableau_list_datasources"
+    category: "Datasources"
+  - tool: "tableau.tableau_get_datasource"
+    category: "Datasources"
+  - tool: "tableau.tableau_update_datasource"
+    category: "Datasources"
+  - tool: "tableau.tableau_delete_datasource"
+    category: "Datasources"
+
+  # Group tools
+  - tool: "tableau.tableau_create_group"
+    category: "Groups"
+  - tool: "tableau.tableau_list_groups"
+    category: "Groups"
+  - tool: "tableau.tableau_add_user_to_group"
+    category: "Groups"
+  - tool: "tableau.tableau_remove_user_from_group"
+    category: "Groups"
+
+  # Permission tools
+  - tool: "tableau.tableau_grant_permission"
+    category: "Permissions"
+  - tool: "tableau.tableau_list_permissions"
+    category: "Permissions"
+  - tool: "tableau.tableau_revoke_permission"
+    category: "Permissions"
+
+  # Visualization tools
+  - tool: "tableau.tableau_upload_csv"
+    category: "Visualization"
+  - tool: "tableau.tableau_get_sheets"
+    category: "Visualization"
+  - tool: "tableau.tableau_list_fields"
+    category: "Visualization"
+  - tool: "tableau.tableau_configure_shelf"
+    category: "Visualization"
+  - tool: "tableau.tableau_create_visualization"
+    category: "Visualization"
+  - tool: "tableau.tableau_create_sheet"
+    category: "Visualization"
+

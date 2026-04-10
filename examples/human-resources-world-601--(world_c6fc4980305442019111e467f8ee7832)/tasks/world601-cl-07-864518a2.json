@@ -1,0 +1,238 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "SingleSignal will be implementing the future state Sales organization from the Executive Recommendations and we need to start analyzing the budget for the new division and understand leveling for external hiring needs.\n\nOur Chief Revenue Officer, Erin Hughes, recently met with her senior team to assess the current team's skills and capabilities against the proposed future state sales organization. They aligned on how the team would be re-organized against the new future Divisions by color coding the current Sales Department org charts in 'SingleSignal – Sales Department Re-org.pptx'.\n\nDo the following using 'SingleSignal – Sales Department Re-org.pptx' and BambooHR employee data for the realigned team:\n1) Create the new departments in Bamboo as listed in the re-org. - State the number of new departments created.\n2) Move the employees to the new department in the system. - State the number of employees you've updated department information for.\n3) State the total employee salaries for each new division for the re-aligned Sales department organization.\n4) State the average span of control for L3 and for L4 levels in the Sales organization using their current levels in the org charts.\n\nIgnore the CRO in the calculations for salary and span of control. Put your final answer in the console, rounded to the nearest dollar for salaries and rounded to 1 decimal otherwise."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of new departments created in BambooHR is 5.0... (ver_6e7efcac13844068883b1ec2a551023f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of new departments created in BambooHR is 5.0 (acceptable range 4.95 to 5.05)."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of employees with department information being updated... (ver_1d140bd37877423381d0891d32123fd7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of employees with department information being updated is 27.0 (acceptable range 26.7 to 27.3)."
+        }
+      ]
+    },
+    {
+      "name": "States the total employee salaries in the new Revenue Operations division is... (ver_5a560e49fe2c428a8c3ef39c9ad0b3eb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the total employee salaries in the new Revenue Operations division is $484,000 (acceptable range $479,160 to $488,840)."
+        }
+      ]
+    },
+    {
+      "name": "States the total employee salaries in the new GTM Enablement division is... (ver_da9455c2d1864e8897b33c33b12be3fc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the total employee salaries in the new GTM Enablement division is $245,000 (acceptable range $242,550 to $247,450)."
+        }
+      ]
+    },
+    {
+      "name": "States the total employee salaries in the new Sales Engineering division is... (ver_6468bab4f2934403bba8ef52facf8a1c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the total employee salaries in the new Sales Engineering division is $514,000 (acceptable range $508,860 to $519,140)."
+        }
+      ]
+    },
+    {
+      "name": "States the total employee salaries in the new Sales (Enterprise) division is... (ver_a0120db8c253401cadcbd4c7fc040923)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the total employee salaries in the new Sales (Enterprise) division is $644,000 (acceptable range $637,560 to $650,440)."
+        }
+      ]
+    },
+    {
+      "name": "States the total employee salaries in the new Sales (Mid Market) division is... (ver_33c0accdca05464084e9edb749c1fa5b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the total employee salaries in the new Sales (Mid Market) division is $2,792,000 (acceptable range $2,764,080 to $2,819,920)."
+        }
+      ]
+    },
+    {
+      "name": "States the average span of control for L3 in the Sales organization is 2.7... (ver_f03ff0cbe7744ae39f4fdc95b75821e1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average span of control for L3 in the Sales organization is 2.7 (acceptable range 2.67 to 2.73)."
+        }
+      ]
+    },
+    {
+      "name": "States the average span of control for L4 in the Sales organization is 2.0... (ver_1c9f58e061564d1285e447dd0a4a9e60)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the average span of control for L4 in the Sales organization is 2.0 (acceptable range 1.98 to 2.02)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world601-cl-07-864518a2"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_864518a2a36642feb9f650604b1ab987",
+    "task_name": "World601_CL_07",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_5f5a4ce3cdd34a90901a2a6abd1c497f",
+        "golden_text_response": "1) The number of new departments created in BambooHR is 5.0\n2) The number of employees with department information being updated is 27.0\n\n3) Total Employee Salaries for Each New Division:\nGTM Enablement $245,000\nRevenue Ops $484,000\nSales Engineering $514,000\nSales (Enterprise) $644,000\nSales (Mid Market)\t$2,792,000\n\n4) Average Span for L3 and L4 Levels (Sales Organization):\nAverage L3 Span: 2.7\nAverage L4 Span: 2.0",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

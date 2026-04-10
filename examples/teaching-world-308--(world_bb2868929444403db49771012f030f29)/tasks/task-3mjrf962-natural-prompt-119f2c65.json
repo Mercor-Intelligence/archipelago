@@ -1,0 +1,376 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Identify and list each set of end-of-line rhyming words, the rhyme scheme, alliteration, allusion, imagery, repetition, hyperboles, and personification in the poem \"The Butterfly\". If there are no relevant examples of the requested literary device in the poem, respond “No examples.”"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Lists rhyming word pair:  (high, good-bye) (ver_e0ce8dc9622d441ba2b061a195ae95ca)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists rhyming word pair:  (high, good-bye)."
+        }
+      ]
+    },
+    {
+      "name": "Lists \"No example\" for the rhyme scheme (ver_775d00a6a9374085921b980e930d6b8b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists \"No example\" for the rhyme scheme."
+        }
+      ]
+    },
+    {
+      "name": "Lists this example for alliteration:\n\"Perhaps if the sun’s tears would sing... (ver_7e3c0bd5dd5a4de9a80db66b84225979)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists this example for alliteration:\n\"Perhaps if the sun’s tears would sing against a white stone . . .\"."
+        }
+      ]
+    },
+    {
+      "name": "Lists this example of allusion:\n\"Penned up inside this ghetto\" (ver_98d2f45a3de041bab0a744a70b818ec0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists this example of allusion:\n\"Penned up inside this ghetto\"."
+        }
+      ]
+    },
+    {
+      "name": "Lists this example of imagery:\n\"So richly, brightly, dazzingly, yellow.\" (ver_8c158f59a0144bf1b0f13206243c783f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists this example of imagery:\n\"So richly, brightly, dazzingly, yellow.\"."
+        }
+      ]
+    },
+    {
+      "name": "Lists this example of repetition: \n\"The last, the very last,\" (ver_94d0ba6151214d0db3f6179b06898087)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists this example of repetition: \n\"The last, the very last,\"."
+        }
+      ]
+    },
+    {
+      "name": "Lists this example of repetition: \n\"Such, such a yellow\" (ver_ebc2b31f744e472abdcf3f32bda7980f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists this example of repetition: \n\"Such, such a yellow\"."
+        }
+      ]
+    },
+    {
+      "name": "Lists this example of hyperbole:\n\"So richly, brightly, dazzingly yellow.... (ver_2cd1f485477e42ed8127f8dcf7c02b35)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists this example of hyperbole:\n\"So richly, brightly, dazzingly yellow. Perhaps if the sun’s tears would sing against a white stone. \"."
+        }
+      ]
+    },
+    {
+      "name": "Lists this example of personification: \n\"Perhaps if the sun’s tears would sing... (ver_be7e783dfecc4c5fba47b118e619b206)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists this example of personification: \n\"Perhaps if the sun’s tears would sing . . .\"."
+        }
+      ]
+    },
+    {
+      "name": "Lists this example of allusion:  \"In the ghetto\" (ver_7d0eaa7ad73c4c1cbdb0ccde1e9e59bc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists this example of allusion:  \"In the ghetto\"."
+        }
+      ]
+    },
+    {
+      "name": "Lists this example of imagery:\n\"And the white chestnut branches in the court.\" (ver_247d9ad914ca4ee0978dcff9e2fa6af4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists this example of imagery:\n\"And the white chestnut branches in the court.\"."
+        }
+      ]
+    },
+    {
+      "name": "Lists this example of imagery:\n\"Perhaps if the sun's tears would sing against... (ver_d42edcf826fc48e58f905c2ad5e6a04c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists this example of imagery:\n\"Perhaps if the sun's tears would sing against a white stone\"."
+        }
+      ]
+    },
+    {
+      "name": "Lists this example of imagery:\n\"The dandelions call to me\" (ver_f481a1b11ec64798a0c016a1cce941a8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists this example of imagery:\n\"The dandelions call to me\"."
+        }
+      ]
+    },
+    {
+      "name": "Lists this example of personification: \n\"It went away I’m sure because it... (ver_c3b81c8b629d4d7f9cde206545587232)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists this example of personification: \n\"It went away I’m sure because it wished to kiss the world good-bye.\"."
+        }
+      ]
+    },
+    {
+      "name": "Lists this example of personification: \n\"The dandelions call to me... \" (ver_ea3a742a9f5748618deecb3c644b6f4b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Lists this example of personification: \n\"The dandelions call to me... \"."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-3mjrf962-natural-prompt-119f2c65"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_bb2868929444403db49771012f030f29",
+    "world_name": "Teaching World 308",
+    "task_id": "task_119f2c658dab4627b164bfde54cf6727",
+    "task_name": "Task 3mjrf962 [Natural prompt]",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_2e791e2f41d94116928d467954f64c7f",
+        "golden_text_response": "Rhyming word pairs:  (high, good-bye)\n\nRhyme Scheme:  No examples.\n\nAlliteration examples: \nPerhaps if the sun’s tears would sing against a white stone . . .\n\nAllusion examples:\nPenned up inside this ghetto\nIn the ghetto\n\nImagery examples:\nSo richly, brightly, dazzingly, yellow.\nPerhaps if the sun's tears would sing against a white stone\nThe dandelions call to me\nAnd the white chestnut branches in the court.\n\nRepetition examples:\nThe last, the very last,\nSuch, such a  yellow\nFor seven weeks I’ve lived in here, /But I have found what I love here\n\nHyperbole examples:\nSo richly, brightly, dazzingly yellow. Perhaps if the sun’s tears would sing against a white stone. \n\nPersonification examples:\nPerhaps if the sun’s tears would sing\"\nIt went away I’m sure because it wished to kiss the world good-bye.\nThe dandelions call to me\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

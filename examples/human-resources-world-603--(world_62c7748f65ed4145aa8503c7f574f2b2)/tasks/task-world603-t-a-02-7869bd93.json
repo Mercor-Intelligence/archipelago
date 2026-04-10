@@ -1,0 +1,169 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "The Board has updated its selection objective. Merchandising strategy and Brand revitalization will now take precedence over all other metrics for this hire. Candidates with stronger combined evidence in the normalized scores in these two dimensions must rank higher, regardless of their final weighted score.\nIn cases where candidates are tied on these two dimensions, final weighted scores will be used to break the tie.\n\nUse the attached metric data, along with the Executive Candidate Comparison Matrix and the Final Candidate Recommendation document.\nCreate a new final scorecard for the top 8 candidates that includes the following evaluation dimensions and weights: Merchandising Strategy (25%), Brand Revitalization (25%), Digital / Product Growth (20%), Operational Execution (20%), Cultural Fit (10%). Use the updated Cultural Fit scores for each candidate.\n\nNormalize all metrics using min-max method independently and column-wise prior to weighting, then calculate the final weighted score for each candidate.\nPlease answer the following:\n\n1. Which candidate should be recommended to proceed with an offer under the board's updated selection objective and what is their final weighted score?\n2. Which of the candidates should be the silver medalist and what is their final weighted score?\n3. Which of the candidates should be the first backup after the silver medalist and what is their final weighted score?\n\nDo not round intermediate calculations. Round the final answers to 2 decimal places. Provide your response as a message in the console.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the candidate to be recommended to proceed with an offer under the... (ver_a048a0cb4af54b63b3bc461a526cada0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the candidate to be recommended to proceed with an offer under the board's updated selection objective is Gregory Martin."
+        }
+      ]
+    },
+    {
+      "name": "States that the final weighted score for Gregory Martin is 0.85 (acceptable... (ver_ed352162a33d4288803c1dc400b2c7a9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the final weighted score for Gregory Martin is 0.85 (acceptable range 0.84 to 0.86)."
+        }
+      ]
+    },
+    {
+      "name": "States that the Silver medalist is Matthew Walker (ver_ccf577fc9bf349a898c42b7a7f227827)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the Silver medalist is Matthew Walker."
+        }
+      ]
+    },
+    {
+      "name": "States that the final weighted score for Matthew Walker is 0.75 (acceptable... (ver_91c2ce5ebca14a0fbde5d1eeab393adf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the final weighted score for Matthew Walker is 0.75 (acceptable range 0.74 to 0.76)."
+        }
+      ]
+    },
+    {
+      "name": "States that the first backup to the silver medalist candidate is Patricia Wilson (ver_87a803740c3c486591e6a0aedc4f9e6d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the first backup to the silver medalist candidate is Patricia Wilson."
+        }
+      ]
+    },
+    {
+      "name": "States that the final weighted score for Patricia Wilson is 0.58 (acceptable... (ver_b412361cb8e548af8706e08c0ab7a96b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the final weighted score for Patricia Wilson is 0.58 (acceptable range 0.57 to 0.59)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-world603-t-a-02-7869bd93"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_7869bd933bce4bc7977dc4bdd5ca1098",
+    "task_name": "Task_World603_T_A_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_5b51339ad80642bb8e55908fc90f815b",
+        "golden_text_response": "1. The candidate to be recommended to proceed with an offer under the board's updated selection objective is Gregory Martin: 0.85\n2. The Silver medalist is Matthew Walker: 0.75\n3. The First backup candidates is Patricia Wilson: 0.58",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

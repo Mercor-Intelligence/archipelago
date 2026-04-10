@@ -1,0 +1,18 @@
+/** @type {import('next').NextConfig} */
+const isExport = process.env.BUILD_MODE !== 'local';
+
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  images: {
+    unoptimized: true,
+  },
+  ...(isExport && {
+    output: 'export',
+    distDir: 'out',
+    basePath: '/ui/{{ project_name }}',
+    assetPrefix: '/ui/{{ project_name }}',
+  }),
+}
+
+module.exports = nextConfig

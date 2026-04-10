@@ -1,0 +1,117 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_d5834d41ffa4423380bf5fd5ab4dccb4",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a2b4d285d4ea471a8f27f2d7934baa93",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the number of unique borrowers in the extraction as exactly 1082.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requested to report number of unique borrowers in the extraction",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_b4509a4dc63e4b45b0ce4c1e9cb603df",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a2b4d285d4ea471a8f27f2d7934baa93",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the mean of the CMGR of EL for the top critical exposure borrowers as -1.23% +/- 0.05%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requested to report the mean of the CMGR of EL for the top critical exposure borrowers from Top 10 Critical Exposures (Watchlist).png",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7ffcd96ae00c44eda2fe612d997da71d",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a2b4d285d4ea471a8f27f2d7934baa93",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the min of the CMGR of EL for the top critical exposure borrowers as -8.17% +/- 0.05%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requested to report the min of the CMGR of EL for the top critical exposure borrowers from Top 10 Critical Exposures (Watchlist).png",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_97d3e107090048fb8bcb451b6c14ab69",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a2b4d285d4ea471a8f27f2d7934baa93",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the max of the CMGR of EL for the top critical exposure borrowers as 4.46% +/- 0.05%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requested to report the max of the CMGR of EL for the top critical exposure borrowers from Top 10 Critical Exposures (Watchlist).png",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_09c75b85c37146749f0d55395d8e2834",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_a2b4d285d4ea471a8f27f2d7934baa93",
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Reports the standard deviation of the CMGR of EL for the top critical exposure borrowers is: 3.31% +/- 0.05%",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "The prompt requested to report the standard deviation of the CMGR of EL for the top critical exposure borrowers from Top 10 Critical Exposures (Watchlist).png",
+        "is_primary_objective": "true"
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "f5d31b52-75ce-4b65-aa62-20e7f2b6144c",
+      "eval_config_name": "Output LLM",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "4658aec9-7eeb-4c9b-84c2-5464345e345f",
+    "scoring_config_name": "Default Scoring",
+    "scoring_defn_id": "apex_v1_grade_score",
+    "scoring_config_values": {}
+  }
+}

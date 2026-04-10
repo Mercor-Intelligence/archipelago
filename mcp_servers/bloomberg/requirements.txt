@@ -1,0 +1,23 @@
+# Core MCP dependencies
+fastmcp
+loguru
+asyncer
+
+# Bloomberg Historical Data dependencies
+fastapi>=0.100.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+uvicorn>=0.23.0
+sse-starlette>=1.6.0
+
+# Data dependencies
+yfinance>=0.2.0
+pandas>=2.0.0
+pytz>=2023.3
+
+# Testing dependencies
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.0.0
+httpx>=0.28.1
+pytest-env>=1.2.0

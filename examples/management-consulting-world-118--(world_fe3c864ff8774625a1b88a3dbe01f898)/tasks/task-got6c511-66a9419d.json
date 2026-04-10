@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Facilities meeting readiness increased by 25% in IL and10% in IN, to 10 in MO and by 3 in OH, with the rest unchanged. Leadership approved a $140,000 investment to rapidly bring non-ready facilities to readiness, prioritized by potential ROI\nUse the updated analysis of the Facilities requirements for these: \n\n1. Which state offers the highest ROI if the investment funds are used entirely to bring its non-ready facilities to readiness?\n2. If hospital funds are applied sequentially by descending ROI, how many states can fully upgrade all unready facilities before the remaining budget can no longer fund even one facility in the next state?\n\nAssume per-facility readiness costs of $25k for states with average scores <3.4, $27k for 3.5, and $26.5k for >3.7, otherwise use $23k. Stop when the remaining budget can’t fund one additional unready facility in ROI order\nAssume that the target net profit per facility after being brought to readiness in any state is $150,000.\nIf ROI ties occur, prioritize the state whose total readiness cost can be fully covered by the remaining budget.\n\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the state with the highest ROI is Wisconsin (ver_17119c753b3b4da9a5c34b0f5c94be09)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the state with the highest ROI is Wisconsin."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of states where all the facilities can be brought to... (ver_0c322a65660e419a881c816b798221dd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of states where all the facilities can be brought to readiness is 2."
+        }
+      ]
+    },
+    {
+      "name": "States that the number of states where all the facilities can be brought to... (ver_0c322a65660e419a881c816b798221dd)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": -1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of states where all the facilities can be brought to readiness is a value other than 2."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh task-got6c511-66a9419d"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_fe3c864ff8774625a1b88a3dbe01f898",
+    "world_name": "Management Consulting World 118",
+    "task_id": "task_66a9419df8a64f6ebc38d34c172ccaab",
+    "task_name": "Task got6c511",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_31bd973d65e548de9d07ef10e0150ae0",
+        "golden_text_response": "1. State that offers the highest ROI if part of the investment funds were used entirely to prepare its facilities not meeting readiness is Wisconsin\n\n2. Facilities that can be brought to readiness in 2 states\n",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

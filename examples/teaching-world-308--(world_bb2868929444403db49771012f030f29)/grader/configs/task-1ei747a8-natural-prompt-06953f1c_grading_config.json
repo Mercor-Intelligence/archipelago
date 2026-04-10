@@ -1,0 +1,145 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_a67d01c846114afdbf173206e242aa95",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_06953f1c8ad7439ba5c4e35e564aa0bb",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Replaces all words of more than three syllables in learning objectives A-G with words of three syllables or less",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Unit Planning/Unit 1 APUSH Key Concepts.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_e89f4b50a4cf4c28943a32293e84edce",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_06953f1c8ad7439ba5c4e35e564aa0bb",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Does not make any changes to the wording of learning objectives A-G outside of replacement of words with more than three syllables",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": [
+          {
+            "name": "Unit Planning/Unit 1 APUSH Key Concepts.pdf",
+            "source": "world",
+            "snapshotId": "snap_6df1f166a8e142ba8aec7d6278df5588"
+          }
+        ]
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_854d6129379e4561bf1633dd0aacc9b1",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_06953f1c8ad7439ba5c4e35e564aa0bb",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States all text in size 14 or larger font throughout",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7842dd0ec1734d2d9587b80b4a3f65b8",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_06953f1c8ad7439ba5c4e35e564aa0bb",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the learning objectives have been adapted to include only words of up to three syllables or fewer when possible",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_86793b02053041fdb758f487c919eb01",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_06953f1c8ad7439ba5c4e35e564aa0bb",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "States that the learning objectives have been presented in size 14 or larger font",
+        "expected_file_type": "Text Documents (.docx, .doc, .txt)",
+        "is_primary_objective": "true",
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    },
+    {
+      "eval_config_id": "72d7d96a-9d94-4a38-bbe3-96c08ded727c",
+      "eval_config_name": "Content Length Check Verifier",
+      "eval_defn_id": "content_length_check",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

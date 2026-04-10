@@ -1,0 +1,238 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Use file “Onc_Patient 7” to access the entire medical history / record for the patient. Please use the patient tab as the source of truth for all demographic information. Disregard patient identifiers (Name, Age, DOB, MRN) found within the text of the clinicalnotes tab as they have been shifted for de-identification purposes\n\n---\n\nOnc Patient 7 comes to the oncology clinic for a follow-up visit. Based on the patient's chart, conversation with the doctor, and investigations, what is the most appropriate next treatment option? What is the dosing and frequency? Explain your reasoning."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the patient has non-small cell lung cancer. (ver_aa0191795c654e8a9cf51a233ae0b9c0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient has non-small cell lung cancer."
+        }
+      ]
+    },
+    {
+      "name": "States the patient's cancer is metastatic. (ver_868f227b8d3c48fda9d3540d55beb0cf)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient's cancer is metastatic."
+        }
+      ]
+    },
+    {
+      "name": "States the patient's cancer has a ROS1 mutation. (ver_8a8b41bee208434886a94fb3fabea72e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the patient's cancer has a ROS1 mutation."
+        }
+      ]
+    },
+    {
+      "name": "States that talectrinib is effective against G2032R mutations. (ver_f135484dd8454baaafaf06de5d82f493)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that talectrinib is effective against G2032R mutations."
+        }
+      ]
+    },
+    {
+      "name": "States talectrinib is U.S. Food and Drug Administration (FDA) approved for... (ver_642c451a864a4dbe81d1d9f198010f22)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States talectrinib is U.S. Food and Drug Administration (FDA) approved for metastatic ROS1-positive non-small cell lung cancer."
+        }
+      ]
+    },
+    {
+      "name": "States the most appropriate next treatment option is talectrinib. (ver_0e0ab39173f24dce8e52b1146dcc46ef)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the most appropriate next treatment option is talectrinib."
+        }
+      ]
+    },
+    {
+      "name": "States that talectrinib is dosed once daily. (ver_7c6f121293d840bc8884505fe921b403)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that talectrinib is dosed once daily."
+        }
+      ]
+    },
+    {
+      "name": "States that talectrinib is dosed at 600 mg. (ver_806b4bd3f75544d5b813b03318faf6a6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that talectrinib is dosed at 600 mg."
+        }
+      ]
+    },
+    {
+      "name": "States that talectrinib is dosed orally. (ver_f1c1f606803f43489c2d4a9a5362b391)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that talectrinib is dosed orally."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh ai-scibe-labs-onc-7-non-squamous-nsclc-david-r-d7e8bd95"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_9d1de7b5b5e5444e81f37d6e784cf8ac",
+    "world_name": "Medicine World 711",
+    "task_id": "task_d7e8bd95e2fb425b993d247fd6952c1f",
+    "task_name": "AI Scibe/Labs Onc 7 - Non-Squamous NSCLC - David R",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_d4665f376dbf4ffab9c2f67e3bffdc33",
+        "golden_text_response": "The patient has been diagnosed with non-squamous non-small cell lung cancer. Her disease is metastatic, and she has received platinum-based chemotherapy and immunotherapy already. Lab results show a ROS1 G2032R mutation, making her cancer resistant to first-generation tyrosine-kinase inhibitors. The patient wants to take as few pills as possible. Therefore, the most appropriate next treatment option is talectrinib. Talectrinib is a kinase inhibitor indicated, and U.S. Food and Drug Administration (FDA) approved for the treatment of adult patients with locally advanced or metastatic ROS1-positive non-small cell lung cancer, and it has been shown to be effective against ROS1 G2032R mutations. Talectrinib is given orally at 600 mg daily. ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

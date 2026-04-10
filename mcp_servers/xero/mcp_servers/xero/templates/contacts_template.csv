@@ -1,0 +1,6 @@
+contact_id,name,email_address,contact_status,is_supplier,is_customer,addresses,phones
+cont-001,Acme Corp,contact@acme.com,ACTIVE,false,true,"[]","[]"
+cont-002,TechSupply Inc,sales@techsupply.com,ACTIVE,true,false,"[]","[]"
+cont-003,GlobalTrade Ltd,info@globaltrade.com,ACTIVE,false,true,"[]","[]"
+cont-004,OfficeGoods Co,orders@officegoods.com,ACTIVE,true,false,"[]","[]"
+cont-005,Consulting Services LLC,hello@consulting.com,ACTIVE,false,true,"[]","[]"

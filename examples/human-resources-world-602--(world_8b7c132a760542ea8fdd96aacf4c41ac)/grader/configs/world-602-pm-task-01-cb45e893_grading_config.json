@@ -1,0 +1,190 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_44ddca500d794d2f8224fc7a624b4ae0",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cb45e8934c2c4734b24b03939a1f025e",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of employees in 'stable' quadrant of the 2x2 matrix is 945.00 (acceptable range 935.55 to 954.45)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_7564483cab9048b18f93c59d82f2dc9e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cb45e8934c2c4734b24b03939a1f025e",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of employees in 'light risk' quadrant of the 2x2 matrix is 665.00 (acceptable range 658.35 to 671.65)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_4873977d17f047d0a17b52dcdb732c6c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cb45e8934c2c4734b24b03939a1f025e",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of employees in 'overworked' quadrant of the 2x2 matrix is 1629.00 (acceptable range 160 to 164)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_17820b7301f74dc48cb002123e4e187c",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cb45e8934c2c4734b24b03939a1f025e",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the number of employees in 'critical risk' quadrant of the 2x2 matrix is 1057.00 (acceptable range 104 to 106)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ecaae19a319e4996b5c20db3a6098a54",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cb45e8934c2c4734b24b03939a1f025e",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the total retention bonus payout to employees in 'stable' quadrant of the 2x2 matrix is $0.00",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_2d7c6ce5a7fe490a868b4f6dfeef514a",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cb45e8934c2c4734b24b03939a1f025e",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the total retention bonus payout to employees in 'light risk' quadrant of the 2x2 matrix is $1,656,078.45 (acceptable range $1,639,517.67 to $1,672,639.23)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_5d12534a16ec49429977422c074d70c9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cb45e8934c2c4734b24b03939a1f025e",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the total retention bonus payout to employees in 'overworked' quadrant of the 2x2 matrix is $0.00",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_3aadbb0c4f5c47efb6c95cf1d186428e",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_cb45e8934c2c4734b24b03939a1f025e",
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "States that the total retention bonus payout to employees in 'critical risk' quadrant of the 2x2 matrix is $4,590,077.66 (acceptable range $4,544,176.88 to $4,635,978.44)",
+        "autogen_source": null,
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": null,
+        "is_primary_objective": true,
+        "artifacts_to_reference": null
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "b2ed0dca-92fa-4700-947d-0f08832d3f6f",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "dbabc36e-61e4-4fac-b647-6cf9f48df1ba",
+    "scoring_config_name": "Score w/o negative criteria",
+    "scoring_defn_id": "criteria_level_clamped_average",
+    "scoring_config_values": {}
+  }
+}

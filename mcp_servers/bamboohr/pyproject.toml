@@ -1,0 +1,98 @@
+[project]
+name = "mercor-mcp"
+version = "0.1.0"
+description = "A Python-based framework for rapidly developing Model Context Protocol (MCP) servers"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mercor-mcp-shared",
+    "fastmcp",
+    "loguru",
+    "asyncer",
+    "pydantic>=2.0",
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "click>=8.0.0",
+    "jinja2>=3.0.0",
+    "pyyaml>=6.0",
+    "fastapi>=0.121.2",
+    "uvicorn>=0.38.0",
+    "sqlalchemy[asyncio]>=2.0", # Required for UI generation to import MCP servers with DB
+    "aiosqlite>=0.19.0",        # Required for UI generation to import MCP servers with DB
+    "pandas>=2.0.0",            # Required for UI generation to import MCP servers with db_tools
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.6.0",
+    "pre-commit>=3.0.0",
+    "pyyaml>=6.0",       # For OpenAPI YAML generation
+]
+testing = ["mcp-testing"]
+database = [
+    "sqlalchemy[asyncio]>=2.0",
+    "alembic>=1.13.0",
+    "aiosqlite>=0.19.0",
+    "greenlet>=3.0",            # Required by SQLAlchemy async
+    "pandas>=2.0.0",            # For robust CSV import/export
+]
+config = ["pydantic-settings>=2.0", "python-dotenv>=1.0.0"]
+auth = [
+    "starlette>=0.27.0", # Required for auth_server HTTP endpoints
+    "httpx>=0.24.0",     # For testing auth endpoints
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mcp_servers*", "scripts*"]
+exclude = ["ui*", "wiki*", "packages*", "verifier_configs*", "tests*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = [
+    "verifier_configs",
+    "templates",
+] # Templates contain placeholder names
+
+[tool.ruff.lint]
+# Enable: pyflakes, pycodestyle, isort, pep8-naming, pyupgrade
+select = ["F", "E", "W", "I", "N", "UP"]
+ignore = []
+# Allow auto-fix for all enabled rules (when `--fix` is provided)
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.lint.per-file-ignores]
+# MCP tools use camelCase parameter names to match the API interface
+"mcp_servers/bamboohr/tools/employees.py" = ["N803"]
+# Capture script contains embedded JavaScript strings that exceed line length
+"scripts/capture_bamboohr.py" = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.pytest.ini_options]
+# BambooHR-specific tests
+testpaths = ["mcp_servers/bamboohr/tests"]
+python_files = ["test_*.py", "*_test.py"]
+norecursedirs = ["utils", ".git", ".ruff_cache", "__pycache__"]
+asyncio_mode = "auto"
+pythonpath = ["."]
+
+[tool.uv.sources]
+mercor-mcp-shared = { path = "packages/mercor-mcp-shared" }
+fastmcp = { git = "https://github.com/jlowin/fastmcp.git", rev = "bc2f601" }
+[dependency-groups]
+dev = [
+    "basedpyright>=1.29.0",
+    "pre-commit>=4.3.0",
+    "pytest-httpx>=0.35.0",
+    "ruff>=0.14.3",
+]

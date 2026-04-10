@@ -1,0 +1,243 @@
+{
+  "grading_settings": {
+    "llm_judge_model": "openai/gpt-4o",
+    "llm_judge_extra_args": null
+  },
+  "verifiers": [
+    {
+      "verifier_id": "ver_a1321750735b4ffc974757b0de9746e6",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c1aeb065edbf416cb103443797cbc786",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies student B. Wilson has one of the 10 lowest grade averages",
+        "modality": "Free text",
+        "negative_criteria": "Identifies any other students have one of the 10 lowest grade averages, other than B. Wilson, M. Jensen, A. Taylor, E. Jackson, N. Jensen, E. Jackson, H. Hill, H. Young, L. Wood or E. Fox.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 0,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_358c6c9a289f45c59ec0e5893a934124",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c1aeb065edbf416cb103443797cbc786",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the overall average for B. Wilson as 49.92% (acceptable range 49.42% to 50.42%)",
+        "modality": "Free text",
+        "negative_criteria": "Calculates the overall grade average for B. Wilson as anything other than 49.92%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "B. Wilson's average is 49.92%, the lowest overall.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 1,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_59e1982bf8d74716a6117035d3f73c2b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c1aeb065edbf416cb103443797cbc786",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies student M. Jensen has one of the 10 lowest grade averages",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 2,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_ce46bb083c6347a0adf99ed599dd64e9",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c1aeb065edbf416cb103443797cbc786",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the overall average for M. Jensen as 54.00% (acceptable range 53.46% to 54.54%)",
+        "modality": "Free text",
+        "negative_criteria": "Calculates the overall grade average for M. Jensen as anything other than 54.00%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "M. Jensen listed correctly with 54.00%",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 3,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_21feeb757be44aa9ab4a76d863a70891",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c1aeb065edbf416cb103443797cbc786",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies student A. Taylor has one of the 10 lowest grade averages",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 4,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_edd18c692a02450da5152cf8dc7d5a56",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c1aeb065edbf416cb103443797cbc786",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the overall average for A. Taylor as 54.83% (acceptable range 54.28% to 55.38%)",
+        "modality": "Free text",
+        "negative_criteria": "Calculates the overall grade average for A. Taylor as anything other than 54.83%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "A. Taylor appears correctly with 54.83%.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 5,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_83607b69c8404cb994b9286fa0c15d9b",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c1aeb065edbf416cb103443797cbc786",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies student E. Jackson has one of the 10 lowest grade averages",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 6,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_87b66d4f068b48dda55cbba00e8d89ca",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c1aeb065edbf416cb103443797cbc786",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the overall average for E. Jackson as 55.33% (acceptable range 54.78% to 55.88%)",
+        "modality": "Free text",
+        "negative_criteria": "Calculates the overall grade average for E. Jackson as anything other than 60.25%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "E. Jackson (Easton Jackson) included correctly with 55.33%",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 7,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_0fb79ee88cee4d1fb06203e6d777abbe",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c1aeb065edbf416cb103443797cbc786",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (qualitative)"
+        ],
+        "weight": 1,
+        "criteria": "Identifies student N. Jensen has one of the 10 lowest grade averages",
+        "modality": "Free text",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 8,
+      "verifier_dependencies": []
+    },
+    {
+      "verifier_id": "ver_436d1ce2162144e6950e2e5a583a0323",
+      "verifier_version": 1,
+      "world_id": null,
+      "task_id": "task_c1aeb065edbf416cb103443797cbc786",
+      "eval_config_id": "output_llm",
+      "verifier_values": {
+        "tags": [
+          "Reasoning (numerical)"
+        ],
+        "weight": 1,
+        "criteria": "Calculates the overall average for N. Jensen as 56.75% (acceptable range 56.18% to 57.32%)",
+        "modality": "Free text",
+        "negative_criteria": "Calculates the overall grade average for N. Jensen as anything other than 56.75%.",
+        "expected_file_type": "Final Answer Only (No Files)",
+        "criteria_explanation": "N. Jensen included correctly with 56.75%.",
+        "is_primary_objective": true,
+        "artifacts_to_reference": []
+      },
+      "verifier_index": 9,
+      "verifier_dependencies": []
+    }
+  ],
+  "eval_configs": [
+    {
+      "eval_config_id": "output_llm",
+      "eval_config_name": "Output LLM Verifier",
+      "eval_defn_id": "output_llm",
+      "eval_config_values": {}
+    }
+  ],
+  "scoring_config": {
+    "scoring_config_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_name": "Task Score Unweighted + Universal Penalty",
+    "scoring_defn_id": "task_score_unweighted_and_universal_penalty",
+    "scoring_config_values": {
+      "final_score_floor": 0.0,
+      "final_score_ceiling": 1.0,
+      "undesired_edit_points": 2,
+      "universal_penalty_cap": 0.2,
+      "undesired_creation_points": 2,
+      "undesired_deletion_points": 5,
+      "universal_style_max_points": 10,
+      "universal_total_negative_points": 100,
+      "universal_undesired_changes_max_points": 90
+    }
+  }
+}

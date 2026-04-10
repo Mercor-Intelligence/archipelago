@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Please score all the open jobs using the attached scoring framework. State in the console the number of open jobs with a Weighted Criticality Score greater than 70 as of 2026/01/28?\n\nUse the Greenhouse tool to extract the relevant data. Refer to the Scoring-Framework.docx and Job_Pipeline_Targets.csv in the filesystem for the scoring framework and pipeline target respectively. \n\nPlease provide a full report of your analysis and actions in the console."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of open jobs with a Weighted Criticality Score greater... (ver_eb731b0eaa2d465a8fa164967de0e93e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of open jobs with a Weighted Criticality Score greater than 70 as of 2026/01/28 is 128."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world602-tk-02-ac11a04f"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_8b7c132a760542ea8fdd96aacf4c41ac",
+    "world_name": "Human Resources World 602",
+    "task_id": "task_ac11a04fea5f411a915fce66a38e6f59",
+    "task_name": "World602_TK_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_42a05b105dd442239c99393dc3967be9",
+        "golden_text_response": "The number of open jobs with a Weighted Criticality Score greater than 70 as of 2026/01/28 is 128. ",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

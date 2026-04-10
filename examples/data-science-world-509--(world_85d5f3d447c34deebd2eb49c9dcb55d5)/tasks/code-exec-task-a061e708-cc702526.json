@@ -1,0 +1,330 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "I'm interested in the portfolio share of risk grade migration over time, but specifically for the construction sector comparing the fixed vs. variable rate loan portion of the portfolio. Recreate the plot \"Risk Grade Migration (Portfolio Share).png\" using Python with the following modifications:\n-End of quarter reporting frequency instead of monthly for the x-axis\n-2 panel plot where row 1 is the share of risk grade for fixed rate loans over time, row 2 is same for variable rate loans\n-The share per risk grade should be calculated within the loan type group, not the entire construction portfolio\n\nUse enriched_loan_data.csv for your dataset. Please provide the Python code. For loans graded \"F - Distressed\", report the quarterly difference in share between variable and fixed rate loans (variable - fixed) as percentages rounded to 2 decimals."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "Reports the difference in portfolio share between variable and fixed rate... (ver_a8532c83534d49da9bba3eb2069a68ad)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the difference in portfolio share between variable and fixed rate distressed loans for 2023Q1 to be 0.62% +/- 0.05%."
+        }
+      ]
+    },
+    {
+      "name": "Reports the difference in portfolio share between variable and fixed rate... (ver_8b59c243ce224385b391e5c9f9cf1ba1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the difference in portfolio share between variable and fixed rate distressed loans for 2023Q2 to be 1.17% +/- 0.05%."
+        }
+      ]
+    },
+    {
+      "name": "Reports the difference in portfolio share between variable and fixed rate... (ver_39287e56c5ee4b11bf0e5e752ee3e6dc)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the difference in portfolio share between variable and fixed rate distressed loans for 2023Q3 to be 0.65% +/- 0.05%."
+        }
+      ]
+    },
+    {
+      "name": "Reports the difference in portfolio share between variable and fixed rate... (ver_cfef9c08ee8e438baa784a9dbad85bd0)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the difference in portfolio share between variable and fixed rate distressed loans for 2023Q4 to be 21.77% +/- 0.05%."
+        }
+      ]
+    },
+    {
+      "name": "Reports the difference in portfolio share between variable and fixed rate... (ver_0d9eda7c46474b279e4fdce02f8a17fb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the difference in portfolio share between variable and fixed rate distressed loans for 2024Q1 to be 14.97% +/- 0.05%."
+        }
+      ]
+    },
+    {
+      "name": "Reports the difference in portfolio share between variable and fixed rate... (ver_7e010d5368e94b15be3fa68202a357d3)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the difference in portfolio share between variable and fixed rate distressed loans for 2024Q2 to be 50.57% +/- 0.05%."
+        }
+      ]
+    },
+    {
+      "name": "Reports the difference in portfolio share between variable and fixed rate... (ver_70ee42972d7645afb28286c27c38c84f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the difference in portfolio share between variable and fixed rate distressed loans for 2024Q3 to be 51.88% +/- 0.05%."
+        }
+      ]
+    },
+    {
+      "name": "Reports the difference in portfolio share between variable and fixed rate... (ver_9cfcf3ff830049ec83e7558b78bcc115)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Reports the difference in portfolio share between variable and fixed rate distressed loans for 2024Q4 to be 48.89% +/- 0.05%."
+        }
+      ]
+    },
+    {
+      "name": "Outputs a two-row plot. (ver_87babb3546e44d76b7fc2fc6c10d72bb)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "Outputs a two-row plot."
+        }
+      ]
+    },
+    {
+      "name": "The plot shows the share of risk grades over time for Fixed-rate loans on the... (ver_8ed801971c194f44ab9ae00fa143df7b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The plot shows the share of risk grades over time for Fixed-rate loans on the first row."
+        }
+      ]
+    },
+    {
+      "name": "The plot shows the share of risk grades over time for Variable-rate loans on... (ver_f39a999aff1c4239b62e16a97257ba0f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The plot shows the share of risk grades over time for Variable-rate loans on the second row."
+        }
+      ]
+    },
+    {
+      "name": "The subplot on the first row is a stacked bar chart. (ver_22b09b5095be472a840a4f70ad241d3f)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The subplot on the first row is a stacked bar chart."
+        }
+      ]
+    },
+    {
+      "name": "The subplot on the second row is a stacked bar chart. (ver_1b68101df1b243a18b2221e5f30904d1)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "The subplot on the second row is a stacked bar chart."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh code-exec-task-a061e708-cc702526"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_85d5f3d447c34deebd2eb49c9dcb55d5",
+    "world_name": "Data Science World 509",
+    "task_id": "task_cc7025264a7d448fba6cc2dd41c5808b",
+    "task_name": "Code Exec - Task a061e708",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_af03cb93d04642f6958436eeb69a8352",
+        "golden_text_response": "The difference in portfolio share between variable and fixed rate loans graded F - Distressed is as follows:\nQuarter\n2023Q1     0.62\n2023Q2     1.17\n2023Q3     0.65\n2023Q4    21.77\n2024Q1    14.97\n2024Q2    50.57\n2024Q3    51.88\n2024Q4    48.89\n\n```\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Load data\ndf = pd.read_csv('3.Analysis/Preprocessed datasets/enriched_loan_data.csv')\n\n# Get last report per quarter\ndf['Report_Date'] =  pd.to_datetime(df['Report_Date'])\nreport_dates = df['Report_Date'].unique() # Get unique report dates\nreport_dates = np.sort(report_dates) # Sort because unique() does not guarantee sorting\nreport_dates = pd.to_datetime(report_dates) # Convert to DatetimeIndex for convenience\nfinal_report_dates = report_dates.to_series().groupby(report_dates.to_period('Q')).last()\n\n# Isolate for last report per quarter for construction\ndf = df[(df['NAICS_Sector'] == 'Construction') & (df['Report_Date'].isin(final_report_dates))].copy()\n\ndf['Quarter'] = df['Report_Date'].dt.to_period('Q')\n\n# Agg for portfolio value by loan type, quarter, and risk grade (numerator for share)\nagg = df.groupby(['Interest_Type', 'Quarter', 'Internal_Risk_Grade'])['Current_Balance'].sum().reset_index()\n\n# Agg for portfolio value by loan type and quarter (denominator for share)\ntotals = df.groupby(['Interest_Type', 'Quarter'])['Current_Balance'].sum().reset_index()\nagg = pd.merge(agg, totals, on=['Interest_Type', 'Quarter'])\n\n# Determine share at end of quarter\nagg = agg.rename(columns={\"Current_Balance_x\":\"Total_Group\", \"Current_Balance_y\":\"Total_Portfolio\"})\nagg['Share'] = (agg[\"Total_Group\"]/agg[\"Total_Portfolio\"])\n\n# Pivot for share of portfolio\nagg_fixed = agg[agg['Interest_Type']=='Fixed']\nagg_variable = agg[agg['Interest_Type']=='Variable']\nagg_fixed = agg_fixed.pivot(values='Share', index='Quarter', columns='Internal_Risk_Grade').fillna(0)\nagg_variable = agg_variable.pivot(values='Share', index='Quarter', columns='Internal_Risk_Grade').fillna(0)\nagg_fixed = (100*agg_fixed).round(2)\nagg_variable = (100*agg_variable).round(2)\n\n# Print result\ndiffs = agg_variable['F - Distressed'] - agg_fixed['F - Distressed']\nprint(f\"The difference in portfolio share between variable and fixed rate loans graded F - Distressed is as follows:\")\nprint(diffs)\n\n# Plot\ncolor_map = {\n    'A - Low Risk': 'darkgreen',\n    'B - Moderate': 'palegreen',\n    'C - Elevated': 'gold',\n    'D - High Risk': 'darkorange',\n    'F - Distressed': 'red',\n    }\n\nfig, ax = plt.subplots(2, 1, figsize=(12, 8), sharex=True)\nagg_fixed.plot.bar(stacked=True, color=color_map, ax=ax[0], title='Fixed', ylabel=\"%\")\nagg_variable.plot.bar(stacked=True, color=color_map, ax=ax[1], title='Variable', ylabel=\"%\")\nax[0].legend(loc='upper left', bbox_to_anchor=(1, 1))\nax[1].legend(loc='upper left', bbox_to_anchor=(1, 1))\nfig.suptitle(\"Construction Sector Risk Grade Migration (Portfolio Share) By Loan Type\")\nfig.tight_layout()\n```",
+        "golden_file_responses": "snap_cb982552b1174275bb04647b50c950e9"
+      }
+    ]
+  }
+}

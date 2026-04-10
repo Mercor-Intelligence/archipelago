@@ -1,0 +1,77 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Assume in the RMBS and MTSI scenario in the model, the bid premium is instead the percentage increase in MTSI's closing share price from the first trading day in 2024 to the last. Assume % SG&A Synergies is cut in half and replace the Weighted Average EV/EBITDA Multiple with double RMBS' EV/EBITDA multiple as of 12/31/2024.\n\nWhat is the percentage value accretion/dilution to MTSI shareholders rounded to two decimal places at each of the following cash consideration percentages?\n- 25% cash consideration\n- 75% cash consideration"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the percentage value accretion/dilution to MTSI shareholders in the 25%... (ver_279e3ccc8c464b0abf793fa692a0ea51)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percentage value accretion/dilution to MTSI shareholders in the 25% cash consideration scenario is 34.90% (acceptable range 34.55% to 35.25%)."
+        }
+      ]
+    },
+    {
+      "name": "States the percentage value accretion/dilution to MTSI shareholders in the 75%... (ver_83e071a5e80444639b5596be325c6f33)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the percentage value accretion/dilution to MTSI shareholders in the 75% cash consideration scenario is 38.87% (acceptable range 38.48% to 39.26%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world248-rl-02-5fde80b8"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_5fde80b8072f4139931f46a9d8a2962f",
+    "task_name": "World248_RL_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_7c25109229554a0bbf231ff6d5684c50",
+        "golden_text_response": "The percentage value accretion/dilution to MTSI shareholders in the 25% cash consideration scenario is 34.90%.\nThe percentage value accretion/dilution to MTSI shareholders in the 75% cash consideration scenario is 38.87%.",
+        "golden_file_responses": "snap_f0c526ea75c944d2b50c24d212e58641"
+      }
+    ]
+  }
+}

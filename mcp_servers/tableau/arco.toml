@@ -1,0 +1,59 @@
+[arco]
+source = "foundry_app"
+name = "Tableau"
+version = "1.0.0"
+
+[arco.env.host]
+REPO_URL = "https://github.com/Mercor-Intelligence/mercor-tableau.git"
+
+[arco.env.build]
+TABLEAU_DATABASE_URL = "sqlite+aiosqlite:////.apps_data/tableau/data.db"
+# TO BE DEPRECATED
+DATABASE_URL = "sqlite+aiosqlite:////.apps_data/tableau/data.db"
+STATE_LOCATION = "/.apps_data/tableau"
+
+[arco.env.runtime]
+MCP_TRANSPORT = "http"
+MCP_PORT = "5000"
+HAS_STATE = "true"
+PYTHONPATH = "."
+APP_FS_ROOT = "/filesystem"
+STATE_LOCATION = "/.apps_data/tableau"
+TABLEAU_DATABASE_URL = "sqlite+aiosqlite:////.apps_data/tableau/data.db"
+# TO BE DEPRECATED
+DATABASE_URL = "sqlite+aiosqlite:////.apps_data/tableau/data.db"
+TABLEAU_SITE_ID = "mercor_tableau_mcp"
+TABLEAU_TEST_MODE = "local"
+INTERNET_ENABLED = "false"
+GUI_ENABLED = "true"
+TABLEAU_API_URL = ""
+TABLEAU_MODE = ""
+TABLEAU_API_VERSION = ""
+TABLEAU_AUTH_TOKEN = ""
+TABLEAU_BASE_URL = ""
+TABLEAU_SERVER_URL = ""
+TABLEAU_TOKEN_NAME = ""
+TABLEAU_TOKEN_SECRET = ""
+RLS_GITHUB_READ_TOKEN = ""
+JSON_LOGS = ""
+LOGLEVEL = ""
+LOG_FILE = ""
+MCP_CSV_DIR = ""
+
+[arco.env.runtime.schema.INTERNET_ENABLED]
+type = "bool"
+label = "Internet access"
+description = "Allow the MCP server to make outbound network requests"
+
+[arco.env.runtime.schema.GUI_ENABLED]
+type = "bool"
+label = "GUI mode"
+description = "Enable GUI mode to expose all individual tools instead of consolidated meta-tools"
+
+[arco.secrets.host]
+GITHUB_TOKEN = "RLS_GITHUB_READ_TOKEN"
+
+[arco.secrets.build]
+GITHUB_TOKEN = "RLS_GITHUB_READ_TOKEN"
+
+[arco.secrets.runtime]

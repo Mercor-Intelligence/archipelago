@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Based on Ironclad's Q4 2024 accrued expenses support and the provided account level growth rate information, perform a backward-looking analysis to determine the total accrual expenses in Q4 2023. \n\nRound final value to two decimal places."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the total accrual expenses in Q4 2023 is 11669277.87 (acceptable range... (ver_dbe51a59d83a43e8b51e0dea56a62b16)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the total accrual expenses in Q4 2023 is 11669277.87 (acceptable range 115 to 117)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-802-ay-02-f23b08b0"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_a076bfe182774fb4bd571627a61d67d8",
+    "world_name": "Accounting World 802",
+    "task_id": "task_f23b08b0b46f4c7eb733dff986ae67be",
+    "task_name": "World_802_AY_02",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_1796973cf7aa4f858d96db1615a5fa5e",
+        "golden_text_response": "Based on the Q4 2024 accrued expenses from the support schedule and the account-level YoY growth rates, the total accrual expenses in Q4 2023 is $11,669,277.87.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Make the following changes to the RMBS vs ONTO analysis in the merger model \n1.\tUpdate RMBS Share Price at Acquisition to be its average daily share price between January 2, 2025 and December 31, 2025 (inclusive of start and end dates)\n2.\tUpdate the % cash consideration to 5%\n3.\tUpdate the % Bid Premium to 15%\n4.\tUpdate the % SG&A Synergies to 65%\n5.\tUpdate Advisory Fees to 0.25%\n6.\tAssuming the Proforma income statement is year 0, create a 2 year projection by assuming the following\na.\tAssume revenue growth rate in year 1 is the implied growth rate between RMBS's 9M TTM 2025 revenue and 2024 revenue less 1.5 percentage points. Assume year 2 revenue growth rate is also 1.5 percentage points less than year 1 revenue growth \nb.\tDecrease the current cost of revenue/revenue ratio by 2 percentage points each following year.\nc.\tIncrease SG&A and Other operating expenses by annualized February 2025 – November 2025 CPI growth (assume constant monthly growth rate) for the 2 year forecast period\nd.\tReduce Advisory & financing fees to 0 for the forecast years\ne.\tKeep Net interest income fixed for the 2 years following\nf.\tAssume a tax rate of 24%\n7.\tCalculate the following;\n a. percentage yoy growth in EPS in year 1 and 2\n b. Year 1 and 2 EPS accretion on pre-deal RMBS EPS\n\nShow answers in % to 2 decimal places. "
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the Year 1 EPS growth is 4,636.25% (acceptable range 4,589.89% to... (ver_dd7cf415e4e14b59ae115442bfa8baf8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Year 1 EPS growth is 4,636.25% (acceptable range 4,589.89% to 4,682.61%)."
+        }
+      ]
+    },
+    {
+      "name": "States the Year 2 EPS growth is 36.29% (acceptable range 35.93% to 36.65%) (ver_cb711abfec174a50a7fd0e43be5d24d7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Year 2 EPS growth is 36.29% (acceptable range 35.93% to 36.65%)."
+        }
+      ]
+    },
+    {
+      "name": "States the Year 1 EPS Accretion is 25.19% (acceptable range 24.94% to 25.44%) (ver_149b7e6e63324b05bf5de7798cff0206)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Year 1 EPS Accretion is 25.19% (acceptable range 24.94% to 25.44%)."
+        }
+      ]
+    },
+    {
+      "name": "States the Year 2 EPS Accretion is 70.61% (acceptable range 69.90% to 71.32%) (ver_9af23d1723314818ba40244bc63e3db9)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the Year 2 EPS Accretion is 70.61% (acceptable range 69.90% to 71.32%)."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world248-oa-task05-3483dc81"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_d2ed584496b54c968af43c09927dd44f",
+    "world_name": "Investment Banking World 248",
+    "task_id": "task_3483dc810af34ac9b847f1a9fbe7ee3f",
+    "task_name": "World248_OA_Task05",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_490a0d58522e461b817a684b12db7b51",
+        "golden_text_response": "Year 1 EPS growth: 4,636.25%\nYear 2 EPS growth: 36.29%\nYear 1 EPS Accretion: 25.19%\nYear 2 EPS Accretion: 70.61%",
+        "golden_file_responses": "snap_21994c69bcc8448eb7aed403da26dc75"
+      }
+    ]
+  }
+}

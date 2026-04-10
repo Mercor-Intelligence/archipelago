@@ -1,0 +1,123 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Add the representation regarding open source software from the Synopsys Ansys merger agreement to the CineCorp Asset Purchase Agreement (version dated December 1, 2025). Edit the existing DOCX."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States the definition of Open Source Software from Exhibit A of \"Synopsys... (ver_3ac39630062145bf909228ccea48f0df)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the definition of Open Source Software from Exhibit A of \"Synopsys Ansys merger.pdf\"."
+        }
+      ]
+    },
+    {
+      "name": "States the definition of Software from Exhibit A of \"Synopsys Ansys merger.pdf\". (ver_9a80352835124018ba2c9d171ec5fefa)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the definition of Software from Exhibit A of \"Synopsys Ansys merger.pdf\"."
+        }
+      ]
+    },
+    {
+      "name": "States agreement date of December 1, 2025. (ver_91e01f0262ff458993c302f225e5c3e6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States agreement date of December 1, 2025."
+        }
+      ]
+    },
+    {
+      "name": "States the text from Section 2.8(h) of \"Synopsys Ansys merger.pdf\" with all of... (ver_14672a07e51244cab810558aa097f624)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States the text from Section 2.8(h) of \"Synopsys Ansys merger.pdf\" with all of the following modifications: (1) deletes the text \"on the Company\"; (2) replaces the term \"Acquired Company\" with a reference to the Seller; (3) replaces the term Company Product, Company Software, or Company Material with a reference to the Purchased Assets; and (4) replaces the term \"Intellectual Property Rights\" with \"Intellectual Property\"."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world447-ah-01-5f900faf"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_4e072b1a31f34deb98eaff0c88655009",
+    "world_name": "Law World 447",
+    "task_id": "task_5f900faf506441bead1c188eab3896b4",
+    "task_name": "World447_AH_01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_9557491849f943f0af583ac0bf9c006b",
+        "golden_text_response": "",
+        "golden_file_responses": "snap_5a80aa948146413d95d22069e23bbb65"
+      }
+    ]
+  }
+}

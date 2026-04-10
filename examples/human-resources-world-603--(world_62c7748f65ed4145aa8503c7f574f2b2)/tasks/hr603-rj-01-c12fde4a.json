@@ -1,0 +1,192 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Please upload the organisation hierarchy, along with cost centres, movements, and locations, to Workday using the attached data. \n\nOnce complete, identify the recommended candidate for the COO position and add it to the organisation in CC-001, ORG-01, and JP-EXEC-004. The worker ID for the recommended hire would be WRK-301, and the hire date would be 30 Jan 2026. In addition, the company has hired 4 employees with the same CC and ORG as WRK-004, WRK-005, WRK-016, and WRK-019, respectively, on 30th Jan 2026. Please also create a new position ID.\n\nAfter these hires were completed, the HR department downloaded the list of all active employees and identified several inconsistencies in the data. Please identify all workers with inconsistencies in the attached downloaded worker data, and the name of the recommended COO candidate.\n\nPlease provide all your answers directly in the console. Use the username hr_admin and the password hr_admin for access."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that one of the workers with inconsistencies in the downloaded worker... (ver_00b27f52e9f24179b80f115eb81a3b0b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the workers with inconsistencies in the downloaded worker data is WRK-006."
+        }
+      ]
+    },
+    {
+      "name": "States that one of the workers with inconsistencies in the downloaded worker... (ver_c179270fc31b49268b10d9d91734fec5)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the workers with inconsistencies in the downloaded worker data is WRK-011."
+        }
+      ]
+    },
+    {
+      "name": "States that one of the workers with inconsistencies in the downloaded worker... (ver_17a810982c914b488d3b70182fa69c6a)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the workers with inconsistencies in the downloaded worker data is WRK-021."
+        }
+      ]
+    },
+    {
+      "name": "States that one of the workers with inconsistencies in the downloaded worker... (ver_7b1afafbac7346b885a3ffa133c5101d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the workers with inconsistencies in the downloaded worker data is WRK-033."
+        }
+      ]
+    },
+    {
+      "name": "States that one of the workers with inconsistencies in the downloaded worker... (ver_c650f65c80104bedb6184c6f4a409a0d)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the workers with inconsistencies in the downloaded worker data is WRK-304."
+        }
+      ]
+    },
+    {
+      "name": "States that one of the workers with inconsistencies in the downloaded worker... (ver_0cf6dc6606c449c9b45578e67608623e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that one of the workers with inconsistencies in the downloaded worker data is WRK-301."
+        }
+      ]
+    },
+    {
+      "name": "States that the name of the recommended COO worker is Nikole Walker (ver_b6c64273785c4067b74dcd0168174e75)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the name of the recommended COO worker is Nikole Walker."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh hr603-rj-01-c12fde4a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_62c7748f65ed4145aa8503c7f574f2b2",
+    "world_name": "Human Resources World 603",
+    "task_id": "task_c12fde4a111d4ec59c4d42e4fbcd44f8",
+    "task_name": "HR603_RJ 01",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_b06e2c0c2e574f2db82afe9ceb712c71",
+        "golden_text_response": "Workers with inconsistencies in the downloaded worker data are\n\nWRK-006\nWRK-011\nWRK-021\nWRK-033\nWRK-301\nWRK-304\n\nThe name of the recommended COO worker is Nikole Walker",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+[env._.python.venv]
+path = ".venv"
+create = true
+
+[tools]
+uv = "0.6.10"
+python = "3.13"
+
+[tasks.format]
+run = "ruff format ."
+description = "Format code"
+
+[tasks.build]
+run = "echo 'Build complete (database tables created at runtime by SQLAlchemy)'"
+description = "Build step - no migrations needed, SQLAlchemy creates tables at runtime"
+depends = ["install"]
+
+[tasks.populate]
+# Import CSV data from STATE_LOCATION with fail-fast validation.
+# All output goes to stderr so it appears in RL Studio error messages.
+run = """
+mkdir -p "${STATE_LOCATION}" 2>&1
+
+if [ -d "${STATE_LOCATION}" ] && ls "${STATE_LOCATION}"/*.csv 1>/dev/null 2>&1; then
+  echo "=== Validating CSV files ===" >&2
+  uv run --no-sync python scripts/import_csv_directory.py "${STATE_LOCATION}" --validate-only >&2 || exit 1
+  
+  echo "=== Importing CSV files ===" >&2
+  uv run --no-sync python scripts/import_csv_directory.py "${STATE_LOCATION}" >&2 || exit 1
+else
+  echo "No CSV files to import" >&2
+fi
+"""
+description = "Validate and import CSV data into database (fails fast on invalid data)"
+depends = ["build"]
+
+[tasks.install]
+run = "uv sync --all-extras"
+description = "Install dependencies"
+
+[tasks.lint]
+run = "ruff check ."
+description = "Run linter"
+
+[tasks.test]
+run = "pytest"
+description = "Run tests"
+
+[tasks.typecheck]
+run = "basedpyright"
+description = "Run type checker"
+
+[tasks.start]
+run = "cd mcp_servers/xero && uv run --no-sync python main.py"
+description = "Start the MCP server"
+depends = ["build"]

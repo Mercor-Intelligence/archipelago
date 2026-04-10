@@ -1,0 +1,100 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "To strengthen headcount governance and enforce hiring discipline in Greenhouse, the recruiting team is implementing a hiring cap policy. \n\nIf a Job ID already has 2 or more hired candidates: close the job, and reject all remaining active applications using the Reject Application tool.\n\nFor all other Job IDs, if hired + active ≤ 2, then no action required.If hired + active > 2, then move the active application with the highest overall scorecard recommendation to hired, and reject all other active applications. If multiple active applications have the same highest overall recommendation, retain them as active as an exception.\n\nDo not round intermediate calculations. Round final values to the nearest integer. Share in console:\n1. Total number of hired candidates post all movements\n2. Total number of rejected applications post all movements\n3. Total number of active applications post all movements"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the total number of hired candidates post all movements is 143. (ver_5ec4984a2d8d454ba683531b52073a16)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of hired candidates post all movements is 143."
+        }
+      ]
+    },
+    {
+      "name": "States that the total number of rejected applications post all movements is 108. (ver_c23554c1356c427b8fe3ecfe7529bd1b)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of rejected applications post all movements is 108."
+        }
+      ]
+    },
+    {
+      "name": "States that the total number of active applications post all movements is 49. (ver_09884588fdd548579193132cd57a2e4e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the total number of active applications post all movements is 49."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh world-601-pm-task-04-95285f5a"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_95285f5aecba41ebb545fa53f183800e",
+    "task_name": "World 601_PM_Task 04",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_e9b8a8c5a8164848b58101606b1917e1",
+        "golden_text_response": "1. States that the total number of hired candidates post all movements is 143.\n\n2. States that the total number of rejected applications post all movements is 108.\n\n3. States that the total number of active applications post all movements is 49.",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

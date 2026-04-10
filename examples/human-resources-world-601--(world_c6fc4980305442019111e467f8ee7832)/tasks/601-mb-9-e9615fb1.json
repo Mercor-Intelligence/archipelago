@@ -1,0 +1,54 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "We have noticed that in some of SingleSignal’s branches (and we only have 1 branch in each city we are present) no candidate has received an offer. If most recruitments (individually) for those branches ended with no offer because the candidates withdrew, then let’s replace the recruiter(s) in those branches and send Hannah to lead all the remaining active applications in those branches. Please update the Greenhouse system with the new recruiter, accordingly.\n\nPlease state (in console) how many active candidates, rounded to the nearest integer, you have newly assigned to Hannah, so I can inform her on her new assignment.\n"
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that the number of candidates newly assigned to Hannah is 8 (ver_3c536cafcab44696a2e4e31131a6318c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the number of candidates newly assigned to Hannah is 8."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh 601-mb-9-e9615fb1"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_c6fc4980305442019111e467f8ee7832",
+    "world_name": "Human Resources World 601",
+    "task_id": "task_e9615fb17afe4fdd8caf1bc80a47b069",
+    "task_name": "601 - MB_9",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_ff1f981a6525433d8285eb7f653f5f73",
+        "golden_text_response": "The number of active candidates added to Hannah is 8",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}

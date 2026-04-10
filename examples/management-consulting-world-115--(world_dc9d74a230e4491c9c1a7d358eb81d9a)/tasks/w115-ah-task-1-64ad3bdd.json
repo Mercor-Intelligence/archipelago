@@ -1,0 +1,261 @@
+{
+  "prompt": [
+    {
+      "type": "text",
+      "content": "Using the comparable company analysis spreadsheet (marked vF), the attached financial data for Vale and Royal Gold, and the scoring system file, determine the top 5 companies by aggregate financial efficiency score from the competitive set + ResourceCo (Albemarle, Alcoa, Freeport-McMoran, Hecla Mining Company, Newmont, Royal Gold, Vale, ResourceCo).\n\nThe output should be a console message with the rank and the aggregate financial efficiency score of the top 5 companies by aggregate score."
+    }
+  ],
+  "rubrics": [
+    {
+      "name": "States that Vale's aggregate financial efficiency score is 22 (ver_ff7df023072e4ed29fe38bf7914e3d55)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Vale's aggregate financial efficiency score is 22."
+        }
+      ]
+    },
+    {
+      "name": "States that Royal Gold's aggregate financial efficiency score is 19 (ver_8ef2acebf8d04bedb31d1066a940847c)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Royal Gold's aggregate financial efficiency score is 19."
+        }
+      ]
+    },
+    {
+      "name": "States that Newmont's aggregate financial efficiency score is 18 (ver_3b901fa1e6c1423997abea59b3f909a4)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Newmont's aggregate financial efficiency score is 18."
+        }
+      ]
+    },
+    {
+      "name": "States that ResourceCo's aggregate financial efficiency score is 16 (ver_c205905ce6df4639bee9818d073d720e)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that ResourceCo's aggregate financial efficiency score is 16."
+        }
+      ]
+    },
+    {
+      "name": "States that Freeport-McMoran's aggregate financial efficiency score is 15 (ver_9c148603918045e28b223a2337c1f969)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that Freeport-McMoran's aggregate financial efficiency score is 15."
+        }
+      ]
+    },
+    {
+      "name": "States that the company with the highest aggregate financial efficiency score... (ver_135b23de84f043c5b5a9415b09742a73)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the company with the highest aggregate financial efficiency score is Vale."
+        }
+      ]
+    },
+    {
+      "name": "States that the company with the second-highest aggregate financial efficiency... (ver_66da0fffc2e049aa90b8e45ee41b05e6)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the company with the second-highest aggregate financial efficiency score is Royal Gold."
+        }
+      ]
+    },
+    {
+      "name": "States that the company with the third-highest aggregate financial efficiency... (ver_e572d56e3c24441da5e02aeb8df5fef7)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the company with the third-highest aggregate financial efficiency score is Newmont."
+        }
+      ]
+    },
+    {
+      "name": "States that the company with the fourth-highest aggregate financial efficiency... (ver_f86f2a8f92b64c00b3c0854e2c1208e8)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the company with the fourth-highest aggregate financial efficiency score is ResourceCo."
+        }
+      ]
+    },
+    {
+      "name": "States that the company with the fifth-highest aggregate financial efficiency... (ver_1e9d921068b6415cb4a1f6ac96f704a2)",
+      "weight": 1.0,
+      "score": {
+        "type": "discrete",
+        "outcomes": [
+          {
+            "label": "yes",
+            "score": 1.0
+          },
+          {
+            "label": "no",
+            "score": 0.0
+          }
+        ]
+      },
+      "messages": [
+        {
+          "type": "text",
+          "content": "States that the company with the fifth-highest aggregate financial efficiency score is Freeport-McMoran."
+        }
+      ]
+    }
+  ],
+  "include_files": true,
+  "use_docker": true,
+  "startup": [
+    "/app/tools/start.sh w115-ah-task-1-64ad3bdd"
+  ],
+  "mcp_ports": [
+    8000
+  ],
+  "extra": {
+    "world_id": "world_dc9d74a230e4491c9c1a7d358eb81d9a",
+    "world_name": "Management Consulting World 115",
+    "task_id": "task_64ad3bdd5b01485e9204a40f1483f72d",
+    "task_name": "W115_AH_Task 1",
+    "golden_responses": [
+      {
+        "golden_response_id": "gold_9c5b0793ad9b447bb62c208c475a6825",
+        "golden_text_response": "In order, the top 5 companies in the competitive set by aggregate financial efficiency score (and their scores) are:\n1. Vale: 22\n2. Royal Gold: 19\n3. Newmont: 18\n4. ResourceCo: 16\n5. Freeport-McMoran: 15",
+        "golden_file_responses": null
+      }
+    ]
+  }
+}
