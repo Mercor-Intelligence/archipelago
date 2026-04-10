@@ -10,9 +10,9 @@ from main import mcp  # noqa: E402
 
 
 async def main():
-    tools = await mcp.get_tools()
+    tools = await mcp.list_tools()
     result = []
-    for tool in tools.values():
+    for tool in tools:
         entry = {"name": tool.name, "description": tool.description or ""}
         if hasattr(tool, "parameters") and tool.parameters:
             entry["inputSchema"] = tool.parameters
