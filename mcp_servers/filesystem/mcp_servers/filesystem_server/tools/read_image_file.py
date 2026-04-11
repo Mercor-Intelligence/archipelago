@@ -70,14 +70,25 @@ def read_image_file(
         with open(real_path, "rb") as f:
             image_data = f.read()
 
-        # Determine image format
-        image_format = {
-            "png": "png",
-            "jpg": "jpeg",
-            "jpeg": "jpeg",
-            "gif": "gif",
-            "webp": "webp",
-        }[file_ext]
+        # Detect actual image format from file header (magic bytes) rather than
+        # the extension, since mismatches cause LLM API rejections.
+        if image_data[:8] == b"\x89PNG\r\n\x1a\n":
+            image_format = "png"
+        elif image_data[:3] == b"\xff\xd8\xff":
+            image_format = "jpeg"
+        elif image_data[:6] in (b"GIF87a", b"GIF89a"):
+            image_format = "gif"
+        elif len(image_data) >= 12 and image_data[:4] == b"RIFF" and image_data[8:12] == b"WEBP":
+            image_format = "webp"
+        else:
+            # Fall back to extension-based detection
+            image_format = {
+                "png": "png",
+                "jpg": "jpeg",
+                "jpeg": "jpeg",
+                "gif": "gif",
+                "webp": "webp",
+            }[file_ext]
 
         return Image(data=image_data, format=image_format)
 

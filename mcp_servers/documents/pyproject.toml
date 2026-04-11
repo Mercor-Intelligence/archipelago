@@ -91,3 +91,6 @@ per-file-ignores = { "mcp_servers/**/tools/_meta_tools.py" = ["E501"] }
 
 [tool.uv.sources]
 mcp-schema = { path = "packages/mcp_schema" }
+
+[tool.uv.constraint-dependencies]
+fakeredis = "<2.27"
