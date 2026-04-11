@@ -73,5 +73,5 @@ ignore = [
 [tool.uv.sources]
 mcp-schema = { path = "packages/mcp_schema" }
 
-[tool.uv.constraint-dependencies]
-fakeredis = "<2.27"
+[tool.uv]
+constraint-dependencies = ["fakeredis<2.27"]
