@@ -21,7 +21,7 @@ dependencies = [
     "tomli>=2.0.0",
     
     # LLM providers (via LiteLLM)
-    "litellm>=1.50.0",
+    "litellm==1.83.0",
     
     # Agent runner dependencies
     "pydantic>=2.0.0",
