@@ -1,0 +1,14 @@
+name: Socket Security
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  socket-security:
+    uses: Mercor-Intelligence/.github/.github/workflows/socket-security.yml@main
+    secrets:
+      SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
+
