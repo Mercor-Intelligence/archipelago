@@ -1,0 +1,15 @@
+[
+  {
+    "verifier_id": "ver_001",
+    "verifier_version": 1,
+    "world_id": null,
+    "task_id": "example_task_001",
+    "eval_config_id": "ec_output_llm",
+    "verifier_values": {
+      "criteria": "Test Case 1 was completed: the agent created a Python script that prints hello world and successfully ran it.",
+      "is_primary_objective": true
+    },
+    "verifier_index": 0,
+    "verifier_dependencies": null
+  }
+]

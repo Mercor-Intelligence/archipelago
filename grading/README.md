@@ -144,7 +144,7 @@ The grading runner requires several configuration files. Here's how to create th
 
 ```json
 {
-  "llm_judge_model": "anthropic/claude-3-5-sonnet-20241022",
+  "llm_judge_model": "anthropic/claude-sonnet-4-5-20250929",
   "llm_judge_extra_args": null
 }
 ```

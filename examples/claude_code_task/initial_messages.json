@@ -1,0 +1,6 @@
+[
+  {
+    "role": "user",
+    "content": "Test Case 1 (easy): Create a simple Python script that prints \"hello world\", then run that script. Install Python or dependencies if needed. When done, summarize exactly what you created and what command you ran."
+  }
+]

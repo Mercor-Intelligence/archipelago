@@ -320,6 +320,16 @@ async def llm_judge_eval(input: EvalImplInput) -> VerifierResult:
                 continue
 
             try:
+                # MVP normalization: some models return JSON wrapped in markdown fences.
+                raw_content = raw_content.strip()
+                if raw_content.startswith("```json"):
+                    raw_content = raw_content[7:]
+                elif raw_content.startswith("```"):
+                    raw_content = raw_content[3:]
+                if raw_content.endswith("```"):
+                    raw_content = raw_content[:-3]
+                raw_content = raw_content.strip()
+
                 # Gemini sometimes returns rationale as a dict instead of string
                 # e.g. {"Evidence": ..., "Assessment": ...} - just stringify it
                 try:

@@ -268,7 +268,7 @@ The system automatically:
 ```json
 {
   "grading_run_id": "gr_abc123",
-  "model": "anthropic/claude-3-5-sonnet-20241022",
+  "model": "anthropic/claude-sonnet-4-5-20250929",
   "extra_args": { "temperature": 0.7 },
   "verifiers": [
     {

@@ -1,0 +1,4 @@
+{
+  "llm_judge_model": "anthropic/claude-sonnet-4-5-20250929",
+  "llm_judge_extra_args": null
+}

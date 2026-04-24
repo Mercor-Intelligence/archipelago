@@ -48,6 +48,7 @@ class AgentConfigIds(StrEnum):
 
     LOOP_AGENT = "loop_agent"
     REACT_TOOLBELT_AGENT = "react_toolbelt_agent"
+    CLAUDE_CODE_AGENT = "claude_code_agent"
 
 class AgentStatus(StrEnum):
     """Status of an agent run."""
