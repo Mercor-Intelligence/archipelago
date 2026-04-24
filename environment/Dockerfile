@@ -36,6 +36,9 @@ RUN cd /app/mcp_servers/calendar/mcp_servers/calendar_server && uv sync --all-ex
 # Install: filesystem
 RUN cd /app/mcp_servers/filesystem/mcp_servers/filesystem_server && uv sync --all-extras
 
+# Install: claude_code_filesystem (shares workspace venv with filesystem)
+RUN cd /app/mcp_servers/filesystem/mcp_servers/claude_code_filesystem_server && uv sync --all-extras
+
 # Install: spreadsheets
 RUN cd /app/mcp_servers/spreadsheets/mcp_servers/sheets_server && uv sync --all-extras
 
