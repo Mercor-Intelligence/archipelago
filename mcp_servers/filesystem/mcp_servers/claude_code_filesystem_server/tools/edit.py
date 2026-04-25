@@ -10,29 +10,22 @@ from utils.path_utils import PathTraversalError, resolve_under_root
 def edit(
     file_path: Annotated[
         str,
-        Field(
-            description=(
-                "Absolute path to the file to edit within the sandbox filesystem. Must start with '/'. "
-                "Example: '/src/main.py'."
-            )
-        ),
+        Field(description="The absolute path to the file to modify"),
     ],
     old_string: Annotated[
         str,
-        Field(
-            description=(
-                "The exact string to find in the file. Must appear exactly once — "
-                "if it appears zero or multiple times the edit is rejected. "
-                "Include enough surrounding context to make the match unique."
-            )
-        ),
+        Field(description="The text to replace"),
     ],
     new_string: Annotated[
         str,
-        Field(description="The string to replace old_string with. May be empty to delete the matched text."),
+        Field(description="The text to replace it with (must be different from old_string)"),
     ],
+    replace_all: Annotated[
+        bool,
+        Field(description="Replace all occurrences of old_string (default false)"),
+    ] = False,
 ) -> str:
-    """Find and replace a unique string in a file. old_string must appear exactly once."""
+    """Find and replace a string in a file. By default old_string must appear exactly once."""
     if not file_path.startswith("/"):
         raise ValueError("file_path must start with '/'")
 
@@ -55,13 +48,13 @@ def edit(
     count = content.count(old_string)
     if count == 0:
         raise ValueError(f"old_string not found in {file_path}")
-    if count > 1:
+    if not replace_all and count > 1:
         raise ValueError(
             f"old_string appears {count} times in {file_path}. "
-            "Add more surrounding context to make it unique."
+            "Add more surrounding context to make it unique, or set replace_all=true."
         )
 
-    new_content = content.replace(old_string, new_string, 1)
+    new_content = content.replace(old_string, new_string) if replace_all else content.replace(old_string, new_string, 1)
 
     try:
         with open(resolved, "w", encoding="utf-8") as f:
@@ -69,4 +62,4 @@ def edit(
     except Exception as exc:
         raise RuntimeError(f"Failed to write file: {exc}") from exc
 
-    return f"Replaced 1 occurrence in {file_path}"
+    return f"Replaced {count if replace_all else 1} occurrence(s) in {file_path}"

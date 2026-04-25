@@ -13,7 +13,12 @@ from tools.glob import glob
 from tools.grep import grep
 from tools.ls import ls
 from tools.monitor import monitor
+from tools.multi_edit import multi_edit
+from tools.notebook_edit import notebook_edit
+from tools.notebook_read import notebook_read
 from tools.read import read
+from tools.todo_read import todo_read
+from tools.todo_write import todo_write
 from tools.write import write
 
 mcp = FastMCP(
@@ -34,10 +39,15 @@ mcp.tool(bash)
 mcp.tool(read)
 mcp.tool(write)
 mcp.tool(edit)
+mcp.tool(multi_edit)
 mcp.tool(glob)
 mcp.tool(grep)
 mcp.tool(ls)
 mcp.tool(monitor)
+mcp.tool(notebook_read)
+mcp.tool(notebook_edit)
+mcp.tool(todo_read)
+mcp.tool(todo_write)
 
 if __name__ == "__main__":
     transport = os.getenv("MCP_TRANSPORT", "stdio").lower()

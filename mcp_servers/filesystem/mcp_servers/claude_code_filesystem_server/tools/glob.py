@@ -13,35 +13,35 @@ MAX_RESULTS = 1000
 def glob(
     pattern: Annotated[
         str,
-        Field(
-            description=(
-                "Glob pattern to match file paths. Supports wildcards: '*' (any chars in one segment), "
-                "'**' (any number of path segments, for recursive matching), '?' (single char). "
-                "Examples: '**/*.py' (all Python files), 'docs/*.md' (markdown in docs/), "
-                "'**/test_*.py' (all test files). Pattern is matched against sandbox-relative paths."
-            )
-        ),
+        Field(description="The glob pattern to match files against"),
     ],
     path: Annotated[
-        str,
+        str | None,
         Field(
-            description="Sandbox-relative directory to search in. Default: '/' (sandbox root). Example: '/src'."
+            description=(
+                "The directory to search in. If not specified, the current working directory will be used. "
+                "IMPORTANT: Omit this field to use the default directory. "
+                "DO NOT enter 'undefined' or 'null' - simply omit it for the default behavior. "
+                "Must be a valid directory path if provided."
+            )
         ),
-    ] = "/",
+    ] = None,
 ) -> str:
     """Find files matching a glob pattern. Supports ** for recursive matching."""
-    if not path.startswith("/"):
+    search_path = path if path is not None else "/"
+
+    if not search_path.startswith("/"):
         raise ValueError("path must start with '/'")
 
     try:
-        root = resolve_under_root(path)
+        root = resolve_under_root(search_path)
     except PathTraversalError as exc:
         raise ValueError(str(exc)) from exc
 
     if not os.path.exists(root):
-        return f"[not found: {path}]"
+        return f"[not found: {search_path}]"
     if not os.path.isdir(root):
-        return f"[not a directory: {path}]"
+        return f"[not a directory: {search_path}]"
 
     fs_root = get_fs_root()
     real_fs_root = os.path.realpath(fs_root)
@@ -50,7 +50,6 @@ def glob(
         matches: list[str] = []
         for match in Path(root).glob(pattern):
             real_match = os.path.realpath(match)
-            # Security: skip anything that resolved outside the sandbox
             if not real_match.startswith(real_fs_root + os.sep) and real_match != real_fs_root:
                 continue
             if match.is_file():
@@ -61,7 +60,7 @@ def glob(
         return f"[error: {exc}]"
 
     if not matches:
-        return f"No files matching '{pattern}' found in {path}"
+        return f"No files matching '{pattern}' found in {search_path}"
 
     result = "\n".join(sorted(matches))
     if len(matches) >= MAX_RESULTS:

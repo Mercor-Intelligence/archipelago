@@ -1,104 +1,179 @@
-import fnmatch
-import os
-import re
+import subprocess
 from typing import Annotated
 
 from pydantic import Field
 from utils.decorators import make_async_background
-from utils.path_utils import PathTraversalError, get_fs_root, resolve_under_root, to_sandbox_path
+from utils.path_utils import PathTraversalError, resolve_under_root, to_sandbox_path
 
-MAX_MATCHES = 1000
-MAX_LINE_LEN = 500
+DEFAULT_HEAD_LIMIT = 250
+MAX_OUTPUT = 200_000
+
+
+def _truncate(text: str) -> str:
+    if len(text) <= MAX_OUTPUT:
+        return text
+    return text[:MAX_OUTPUT] + f"\n\n[output truncated — {len(text):,} chars, showing first {MAX_OUTPUT:,}]"
 
 
 @make_async_background
 def grep(
     pattern: Annotated[
         str,
-        Field(
-            description=(
-                "Regular expression pattern to search for in file contents. "
-                "Uses Python re syntax. Examples: 'def main', 'TODO:', r'\\berror\\b' (whole word). "
-                "Case-sensitive by default."
-            )
-        ),
+        Field(description="The regular expression pattern to search for in file contents"),
     ],
     path: Annotated[
+        str | None,
+        Field(
+            description=(
+                "File or directory to search in. Defaults to the sandbox root. "
+                "Example: '/src', '/src/main.py'."
+            )
+        ),
+    ] = None,
+    glob: Annotated[
+        str | None,
+        Field(description="Glob pattern to filter files (e.g. '*.js', '*.{ts,tsx}') - maps to rg --glob"),
+    ] = None,
+    output_mode: Annotated[
         str,
         Field(
-            description="Sandbox-relative directory or file to search in. Default: '/' (search all files). Example: '/src'."
+            description=(
+                "'content' shows matching lines (supports -A/-B/-C context, -n line numbers, head_limit), "
+                "'files_with_matches' shows file paths (supports head_limit), "
+                "'count' shows match counts per file (supports head_limit). "
+                "Defaults to 'files_with_matches'."
+            )
         ),
-    ] = "/",
-    include: Annotated[
-        str,
-        Field(
-            description="Glob pattern to filter which files are searched. Default: '*' (all files). Example: '*.py', '*.{js,ts}'."
-        ),
-    ] = "*",
-    recursive: Annotated[
+    ] = "files_with_matches",
+    B: Annotated[
+        int | None,
+        Field(alias="-B", description="Lines to show before each match (rg -B). Requires output_mode='content'."),
+    ] = None,
+    A: Annotated[
+        int | None,
+        Field(alias="-A", description="Lines to show after each match (rg -A). Requires output_mode='content'."),
+    ] = None,
+    C: Annotated[
+        int | None,
+        Field(alias="-C", description="Alias for context."),
+    ] = None,
+    context: Annotated[
+        int | None,
+        Field(description="Lines before and after each match (rg -C). Requires output_mode='content'."),
+    ] = None,
+    n: Annotated[
         bool,
-        Field(description="Search subdirectories recursively. Default: true."),
+        Field(alias="-n", description="Show line numbers (rg -n). Requires output_mode='content'. Defaults to true."),
     ] = True,
+    i: Annotated[
+        bool,
+        Field(alias="-i", description="Case-insensitive search (rg -i)."),
+    ] = False,
+    type: Annotated[
+        str | None,
+        Field(description="File type filter (rg --type). Common: js, py, rust, go, java, ts."),
+    ] = None,
+    head_limit: Annotated[
+        int,
+        Field(
+            description=(
+                "Limit output to first N lines/entries. Defaults to 250. "
+                "Pass 0 for unlimited (use sparingly)."
+            ),
+            ge=0,
+        ),
+    ] = DEFAULT_HEAD_LIMIT,
+    offset: Annotated[
+        int,
+        Field(description="Skip first N lines/entries before applying head_limit. Defaults to 0.", ge=0),
+    ] = 0,
+    multiline: Annotated[
+        bool,
+        Field(description="Enable multiline mode where . matches newlines (rg -U --multiline-dotall). Default: false."),
+    ] = False,
 ) -> str:
-    """Search for a regex pattern in file contents. Returns file:line:content for each match."""
-    try:
-        regex = re.compile(pattern)
-    except re.error as exc:
-        raise ValueError(f"Invalid regex pattern: {exc}") from exc
+    """Search for a regex pattern in file contents using ripgrep."""
+    if output_mode not in {"content", "files_with_matches", "count"}:
+        raise ValueError(f"output_mode must be 'content', 'files_with_matches', or 'count', got {output_mode!r}")
+
+    search_root = "/"
+    if path is not None:
+        if not path.startswith("/"):
+            raise ValueError("path must start with '/'")
+        try:
+            search_root = to_sandbox_path(resolve_under_root(path))
+        except PathTraversalError as exc:
+            raise ValueError(str(exc)) from exc
 
     try:
-        root = resolve_under_root(path)
+        resolved_path = resolve_under_root(search_root)
     except PathTraversalError as exc:
         raise ValueError(str(exc)) from exc
 
-    if not os.path.exists(root):
-        return f"[not found: {path}]"
+    cmd: list[str] = ["rg", "--no-heading"]
 
-    real_fs_root = os.path.realpath(get_fs_root())
-    matches: list[str] = []
+    if output_mode == "files_with_matches":
+        cmd.append("-l")
+    elif output_mode == "count":
+        cmd.append("-c")
+    # content mode: default rg behaviour
 
-    def search_file(file_path: str) -> None:
-        try:
-            with open(file_path, encoding="utf-8", errors="replace") as f:
-                for lineno, line in enumerate(f, start=1):
-                    if regex.search(line):
-                        display_path = to_sandbox_path(os.path.realpath(file_path))
-                        line_content = line.rstrip("\n")
-                        if len(line_content) > MAX_LINE_LEN:
-                            line_content = line_content[:MAX_LINE_LEN] + "…"
-                        matches.append(f"{display_path}:{lineno}:{line_content}")
-                        if len(matches) >= MAX_MATCHES:
-                            return
-        except (UnicodeDecodeError, PermissionError, IsADirectoryError):
-            pass
+    if i:
+        cmd.append("-i")
+    if multiline:
+        cmd += ["-U", "--multiline-dotall"]
+    if glob:
+        cmd += ["--glob", glob]
+    if type:
+        cmd += ["--type", type]
 
-    if os.path.isfile(root):
-        search_file(root)
-    elif recursive:
-        for dirpath, _dirs, files in os.walk(root, followlinks=False):
-            real_dir = os.path.realpath(dirpath)
-            if not real_dir.startswith(real_fs_root):
-                continue
-            for filename in files:
-                if not fnmatch.fnmatch(filename, include):
-                    continue
-                search_file(os.path.join(dirpath, filename))
-                if len(matches) >= MAX_MATCHES:
-                    break
-            if len(matches) >= MAX_MATCHES:
-                break
-    else:
-        with os.scandir(root) as entries:
-            for entry in entries:
-                if entry.is_file() and fnmatch.fnmatch(entry.name, include):
-                    search_file(entry.path)
-                    if len(matches) >= MAX_MATCHES:
-                        break
+    if output_mode == "content":
+        if n:
+            cmd.append("-n")
+        ctx = C if C is not None else context
+        if ctx is not None:
+            cmd += ["-C", str(ctx)]
+        else:
+            if B is not None:
+                cmd += ["-B", str(B)]
+            if A is not None:
+                cmd += ["-A", str(A)]
 
-    if not matches:
-        return f"No matches for '{pattern}' in {path}"
+    cmd += ["--", pattern, resolved_path]
 
-    result = "\n".join(matches)
-    if len(matches) >= MAX_MATCHES:
-        result += f"\n\n(Results limited to {MAX_MATCHES})"
-    return result
+    try:
+        result = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            timeout=30,
+        )
+    except FileNotFoundError:
+        raise RuntimeError("ripgrep (rg) is not installed in this environment")
+    except subprocess.TimeoutExpired:
+        raise RuntimeError("grep timed out after 30 seconds")
+
+    # rg exits 0 = matches, 1 = no matches, 2 = error
+    if result.returncode == 2:
+        raise RuntimeError(f"rg error: {result.stderr.strip()}")
+
+    raw = result.stdout
+    if not raw.strip():
+        return f"No matches for '{pattern}'"
+
+    lines = raw.splitlines()
+
+    # Replace absolute sandbox paths with sandbox-relative paths in output
+    from utils.path_utils import get_fs_root
+    fs_root = get_fs_root().rstrip("/")
+    display_lines = [
+        line.replace(fs_root, "", 1) if line.startswith(fs_root) else line
+        for line in lines
+    ]
+
+    if offset:
+        display_lines = display_lines[offset:]
+    if head_limit > 0:
+        display_lines = display_lines[:head_limit]
+
+    return _truncate("\n".join(display_lines))

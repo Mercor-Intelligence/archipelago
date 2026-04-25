@@ -5,7 +5,6 @@ from pydantic import Field
 from utils.decorators import make_async_background
 from utils.path_utils import PathTraversalError, resolve_under_root
 
-FS_ROOT = os.getenv("APP_FS_ROOT", "/filesystem")
 MAX_LINES = 2000
 
 
@@ -13,28 +12,29 @@ MAX_LINES = 2000
 def read(
     file_path: Annotated[
         str,
-        Field(
-            description=(
-                "Absolute path to the file within the sandbox filesystem. Must start with '/'. "
-                "Example: '/documents/report.txt' or '/src/main.py'."
-            )
-        ),
+        Field(description="The absolute path to the file to read"),
     ],
     offset: Annotated[
-        int,
+        int | None,
         Field(
-            description="Line number to start reading from (1-indexed). Default: 1 (start of file).",
+            description="The line number to start reading from. Only provide if the file is too large to read at once",
             ge=1,
         ),
-    ] = 1,
+    ] = None,
     limit: Annotated[
-        int,
+        int | None,
         Field(
-            description=f"Maximum number of lines to read. Default: {MAX_LINES}.",
+            description="The number of lines to read. Only provide if the file is too large to read at once.",
             ge=1,
             le=10000,
         ),
-    ] = MAX_LINES,
+    ] = None,
+    pages: Annotated[
+        str | None,
+        Field(
+            description='Page range for PDF files (e.g., "1-5", "3", "10-20"). Only applicable to PDF files. Maximum 20 pages per request.',
+        ),
+    ] = None,
 ) -> str:
     """Read the contents of a file with optional line range. Returns content with line numbers."""
     if not file_path.startswith("/"):
@@ -50,6 +50,9 @@ def read(
     if not os.path.isfile(resolved):
         raise ValueError(f"Not a file: {file_path}")
 
+    effective_offset = offset if offset is not None else 1
+    effective_limit = limit if limit is not None else MAX_LINES
+
     try:
         with open(resolved, encoding="utf-8", errors="replace") as f:
             all_lines = f.readlines()
@@ -57,17 +60,17 @@ def read(
         raise RuntimeError(f"Failed to read file: {exc}") from exc
 
     total = len(all_lines)
-    start = offset - 1  # convert to 0-indexed
-    end = min(start + limit, total)
+    start = effective_offset - 1  # convert to 0-indexed
+    end = min(start + effective_limit, total)
     selected = all_lines[start:end]
 
     lines_out = []
-    for i, line in enumerate(selected, start=offset):
+    for i, line in enumerate(selected, start=effective_offset):
         lines_out.append(f"{i}\t{line}")
 
     result = "".join(lines_out)
 
     if end < total:
-        result += f"\n(showing lines {offset}–{end} of {total}; use offset={end + 1} to read more)"
+        result += f"\n(showing lines {effective_offset}–{end} of {total}; use offset={end + 1} to read more)"
 
     return result

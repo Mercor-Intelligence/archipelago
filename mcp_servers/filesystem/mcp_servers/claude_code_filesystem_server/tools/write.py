@@ -10,17 +10,11 @@ from utils.path_utils import PathTraversalError, resolve_under_root
 def write(
     file_path: Annotated[
         str,
-        Field(
-            description=(
-                "Absolute path for the file to create or overwrite within the sandbox filesystem. "
-                "Must start with '/'. Parent directories are created automatically. "
-                "Example: '/output/report.txt'."
-            )
-        ),
+        Field(description="The absolute path to the file to write (must be absolute, not relative)"),
     ],
     content: Annotated[
         str,
-        Field(description="The full content to write to the file. Overwrites any existing content."),
+        Field(description="The content to write to the file"),
     ],
 ) -> str:
     """Write content to a file, creating it (and any parent directories) if it doesn't exist."""

@@ -7,7 +7,7 @@ from pydantic import Field
 from utils.decorators import make_async_background
 
 FS_ROOT = os.getenv("APP_FS_ROOT", "/filesystem")
-DEFAULT_TIMEOUT = int(os.getenv("BASH_COMMAND_TIMEOUT", "120"))
+_DEFAULT_TIMEOUT_MS = int(os.getenv("BASH_COMMAND_TIMEOUT", "120")) * 1000
 MAX_OUTPUT = 100_000
 
 
@@ -21,26 +21,20 @@ def _truncate(text: str) -> str:
 def bash(
     command: Annotated[
         str,
-        Field(
-            description=(
-                "Shell command to execute inside the sandboxed environment. "
-                "Runs in bash with the working directory set to the sandbox root (APP_FS_ROOT). "
-                "stdout and stderr are both captured and returned. "
-                "Example: 'ls -la', 'python -c \"print(1+1)\"', 'cat /myfile.txt'."
-            )
-        ),
+        Field(description="The command to execute"),
     ],
     timeout: Annotated[
         int,
         Field(
-            description=f"Maximum seconds to wait for the command to complete. Default: {DEFAULT_TIMEOUT}.",
+            description="Optional timeout in milliseconds (max 600000)",
             ge=1,
-            le=600,
+            le=600_000,
         ),
-    ] = DEFAULT_TIMEOUT,
+    ] = _DEFAULT_TIMEOUT_MS,
 ) -> str:
     """Run a shell command in the sandboxed environment. Returns combined stdout and stderr output."""
-    logger.debug(f"bash: {command!r} (timeout={timeout}s)")
+    timeout_s = timeout / 1000
+    logger.debug(f"bash: {command!r} (timeout={timeout_s}s)")
 
     try:
         result = subprocess.run(
@@ -49,11 +43,11 @@ def bash(
             executable="/bin/bash",
             capture_output=True,
             text=True,
-            timeout=timeout,
+            timeout=timeout_s,
             cwd=FS_ROOT,
         )
     except subprocess.TimeoutExpired:
-        return f"Command timed out after {timeout} seconds."
+        return f"Command timed out after {timeout_s}s."
     except Exception as exc:
         return f"System error: {exc}"
 
