@@ -202,7 +202,10 @@ class ClaudeCodeAgent:
         options = ClaudeAgentOptions(
             model=self.model,
             max_turns=self.max_steps,
-            # Non-interactive mode for runner environments.
+            system_prompt={
+                "type": "preset",
+                "preset": "claude_code",
+            },
             permission_mode="bypassPermissions",
             tools=tools,
             disallowed_tools=disallowed_tools,

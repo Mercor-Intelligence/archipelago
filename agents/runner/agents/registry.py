@@ -102,7 +102,7 @@ AGENT_REGISTRY: dict[AgentConfigIds, AgentDefn] = {
                 field_type=TaskFieldType.BOOLEAN,
                 label="Enable Native Web Tools",
                 description="Allow Claude SDK server-side web_search/web_fetch tools in addition to MCP tools",
-                default_value=False,
+                default_value=True,
             ),
         ],
     ),
