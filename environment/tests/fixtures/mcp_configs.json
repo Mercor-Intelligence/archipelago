@@ -171,6 +171,23 @@
       "headers": null,
       "transport": "stdio"
     },
+    "claude_code_filesystem": {
+      "cwd": "/tmp",
+      "env": {
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "claude_code_filesystem_server",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "cd /app/mcp_servers/filesystem/mcp_servers/claude_code_filesystem_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    },
     "documents": {
       "cwd": "/tmp",
       "env": {

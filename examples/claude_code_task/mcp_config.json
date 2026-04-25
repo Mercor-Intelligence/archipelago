@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "claude_code_filesystem": {
+      "transport": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "python",
+        "main.py"
+      ],
+      "cwd": "/app/mcp_servers/filesystem/mcp_servers/claude_code_filesystem_server",
+      "env": {
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "claude_code_filesystem_server",
+        "MCP_TRANSPORT": "stdio"
+      }
+    }
+  }
+}

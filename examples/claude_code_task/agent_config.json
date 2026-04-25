@@ -1,0 +1,9 @@
+{
+  "agent_config_id": "claude_code_agent",
+  "agent_name": "Claude Code Agent",
+  "agent_config_values": {
+    "timeout": 3600,
+    "max_steps": 40,
+    "enable_native_web_tools": true
+  }
+}

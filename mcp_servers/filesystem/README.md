@@ -248,16 +248,51 @@ This repository includes GitHub Actions for ArCo validation:
 ---
 
 
-## Tools
+## MCP Servers
 
-### 1. `list_files`
-
-List files and folders in the given path.
+This workspace contains two MCP servers with different purposes.
 
 ---
 
-### 2. `read_image_file`
+### `filesystem_server`
 
-Read an image file from the filesystem.
+Read-only access to the sandboxed filesystem. Intended for browsing, validating paths, and feeding content to vision or text agents.
+
+**Tools:**
+
+| Tool | Description |
+|------|-------------|
+| `list_files` | List files and folders at a given path |
+| `read_text_file` | Read a text file |
+| `read_image_file` | Read an image file |
+| `search_files` | Search file contents by keyword |
+| `get_file_metadata` | Get size, type, and modification time for a file |
+| `get_directory_tree` | Recursively list a directory as a tree |
 
 ---
+
+### `claude_code_filesystem_server`
+
+Read/write filesystem and shell access, designed to replace Claude Code's built-in `Bash`, `Read`, `Write`, `Edit`, `Glob`, `Grep`, and `LS` tools inside a sandboxed environment. All paths are resolved under `APP_FS_ROOT`.
+
+Use this server when the agent needs to actively modify files or run shell commands, not just read them.
+
+**Tools:**
+
+| Tool | Description |
+|------|-------------|
+| `bash` | Run a shell command in the sandbox. stdout and stderr are captured and returned. Configurable timeout (default 120s, max 600s). |
+| `monitor` | Run a long-running command and stream its output line by line as it arrives. Intended for servers, build watchers, and test runners. Returns all output when the process exits or times out. |
+| `read` | Read a file with line numbers. Supports `offset` and `limit` for paginating large files. |
+| `write` | Write (create or overwrite) a file. Parent directories are created automatically. |
+| `edit` | Find and replace a unique string in a file. `old_string` must appear exactly once. |
+| `glob` | Find files matching a glob pattern. Supports `**` for recursive matching. |
+| `grep` | Search file contents with a regex. Returns `file:line:content` matches. |
+| `ls` | List a directory. Shows name, MIME type, and size for files. |
+
+**Environment variables:**
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `APP_FS_ROOT` | `/filesystem` | Sandbox root — all file paths are resolved under this directory |
+| `BASH_COMMAND_TIMEOUT` | `120` | Default timeout in seconds for `bash` commands |

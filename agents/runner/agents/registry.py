@@ -2,6 +2,7 @@
 Agent registry mapping agent IDs to their implementations and config schemas.
 """
 
+from runner.agents.claude_code_agent.main import run as claude_code_agent_run
 from runner.agents.loop_agent.main import run as loop_agent_run
 from runner.agents.models import AgentConfigIds, AgentDefn, AgentImpl
 from runner.agents.react_toolbelt_agent.main import run as react_toolbelt_agent_run
@@ -71,6 +72,37 @@ AGENT_REGISTRY: dict[AgentConfigIds, AgentDefn] = {
                 default_value=250,
                 min_value=1,
                 max_value=1000,
+            ),
+        ],
+    ),
+    AgentConfigIds.CLAUDE_CODE_AGENT: AgentDefn(
+        agent_config_id=AgentConfigIds.CLAUDE_CODE_AGENT,
+        agent_impl=claude_code_agent_run,
+        agent_config_fields=[
+            TaskFieldSchema(
+                field_id="timeout",
+                field_type=TaskFieldType.NUMBER,
+                label="Timeout (seconds)",
+                description="Maximum time for agent execution",
+                default_value=10800,  # 3 hours
+                min_value=300,  # 5 minutes
+                max_value=28800,  # 8 hours
+            ),
+            TaskFieldSchema(
+                field_id="max_steps",
+                field_type=TaskFieldType.NUMBER,
+                label="Max Steps",
+                description="Maximum number of Claude SDK turns before stopping",
+                default_value=250,
+                min_value=1,
+                max_value=1000,
+            ),
+            TaskFieldSchema(
+                field_id="enable_native_web_tools",
+                field_type=TaskFieldType.BOOLEAN,
+                label="Enable Native Web Tools",
+                description="Allow Claude SDK server-side web_search/web_fetch tools in addition to MCP tools",
+                default_value=True,
             ),
         ],
     ),

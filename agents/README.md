@@ -170,8 +170,8 @@ The agent runner requires several configuration files. Here's how to create them
 
 Available agent IDs:
 - `loop_agent` - Basic tool-calling loop
-- `toolbelt_agent` - Dynamic tool selection
-- `singleshot_agent` - Single LLM call (no tools)
+- `react_toolbelt_agent` - ReAct loop with dynamic toolbelt + todo planning
+- `claude_code_agent` - Claude Agent SDK orchestration with MCP-gateway tool execution
 
 **3. Run the agent:**
 
@@ -181,7 +181,7 @@ uv run python -m runner.main \
   --initial-messages ./initial_messages.json \
   --mcp-gateway-url "http://localhost:8080/mcp/" \
   --agent-config ./agent_config.json \
-  --orchestrator-model "anthropic/claude-3-5-sonnet-20241022" \
+  --orchestrator-model "anthropic/claude-sonnet-4-5-20250929" \
   --output ./trajectory.json
 ```
 

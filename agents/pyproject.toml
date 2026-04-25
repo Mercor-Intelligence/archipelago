@@ -30,6 +30,7 @@ dependencies = [
     "pydantic-settings>=2.11.0",
     "redis>=6.4.0",
     "trafilatura>=1.12.0",
+    "claude-agent-sdk>=0.1.66",
 ]
 
 [dependency-groups]
