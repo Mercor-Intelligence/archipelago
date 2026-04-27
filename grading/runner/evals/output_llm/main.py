@@ -25,6 +25,7 @@ from .utils.log_helpers import (
     log_grader_start,
     log_grader_truncation,
 )
+from .utils.json_utils import strip_json_fences
 from .utils.prompts import (
     GRADING_SYSTEM_PROMPT,
     GRADING_SYSTEM_PROMPT_NO_REFERENCE,
@@ -323,7 +324,7 @@ async def llm_judge_eval(input: EvalImplInput) -> VerifierResult:
                 # Gemini sometimes returns rationale as a dict instead of string
                 # e.g. {"Evidence": ..., "Assessment": ...} - just stringify it
                 try:
-                    raw_json = json.loads(raw_content)
+                    raw_json = json.loads(strip_json_fences(raw_content))
                     if isinstance(raw_json, dict) and isinstance(
                         raw_json.get("rationale"), dict
                     ):
@@ -335,7 +336,7 @@ async def llm_judge_eval(input: EvalImplInput) -> VerifierResult:
                 except json.JSONDecodeError:
                     pass  # Let model_validate_json handle JSON errors
 
-                parsed = GradingResponseSchema.model_validate_json(raw_content)
+                parsed = GradingResponseSchema.model_validate_json(strip_json_fences(raw_content))
                 break
             except ValidationError as e:
                 logger.warning(
