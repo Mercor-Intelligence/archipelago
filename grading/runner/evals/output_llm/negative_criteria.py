@@ -15,6 +15,7 @@ from .utils.log_helpers import (
     log_grader_result,
     log_grader_truncation,
 )
+from .utils.json_utils import strip_json_fences
 from .utils.prompts import (
     GRADING_SYSTEM_PROMPT,
     GRADING_SYSTEM_PROMPT_NO_REFERENCE,
@@ -193,7 +194,7 @@ async def evaluate_negative_criteria(
     neg_raw_content = neg_choices[0].message.content
     if not neg_raw_content:
         raise ValueError("LLM returned empty content for negative criterion")
-    neg_parsed = GradingResponseSchema.model_validate_json(neg_raw_content)
+    neg_parsed = GradingResponseSchema.model_validate_json(strip_json_fences(neg_raw_content))
 
     # Log judge raw response for negative criterion (DEBUG level)
     logger.debug(
