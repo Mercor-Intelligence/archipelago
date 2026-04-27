@@ -2,6 +2,7 @@
 Agent registry mapping agent IDs to their implementations and config schemas.
 """
 
+from runner.agents.echo_agent.main import run as echo_agent_run
 from runner.agents.loop_agent.main import run as loop_agent_run
 from runner.agents.models import AgentConfigIds, AgentDefn, AgentImpl
 from runner.agents.react_toolbelt_agent.main import run as react_toolbelt_agent_run
@@ -73,6 +74,11 @@ AGENT_REGISTRY: dict[AgentConfigIds, AgentDefn] = {
                 max_value=1000,
             ),
         ],
+    ),
+    AgentConfigIds.ECHO_AGENT: AgentDefn(
+        agent_config_id=AgentConfigIds.ECHO_AGENT,
+        agent_impl=echo_agent_run,
+        agent_config_fields=[],
     ),
 }
 

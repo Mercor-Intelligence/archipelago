@@ -43,69 +43,113 @@ An extensible framework for running AI agents against environment sandboxes. Use
 6. Create snapshot and upload to S3
 7. Report results via webhook
 
+## Agent Contract
+
+Every registered agent must satisfy three guarantees:
+
+1. **Implement the run signature**: `async def run(run_input: AgentRunInput) -> AgentTrajectoryOutput`
+2. **Emit a final_answer log on completion**: `logger.bind(message_type="final_answer").info(answer)`
+3. **Be registered in AGENT_REGISTRY** with a matching `AgentConfigIds` enum entry
+
+These guarantees are enforced by `tests/test_final_answer_log.py`.
+
 ## Agent Registry
 
 Agents are registered in `runner/agents/registry.py`. Each agent definition includes:
 
-- `agent_config_id`: Unique identifier (e.g., `loop_agent`)
+- `agent_config_id`: Unique identifier from the `AgentConfigIds` enum (e.g., `AgentConfigIds.LOOP_AGENT`)
 - `agent_impl`: The async function that runs the agent
 - `agent_config_fields`: Schema for configurable parameters
 
+### Available Agents
+
+| ID | Description |
+|----|-------------|
+| `loop_agent` | Basic tool-calling loop. Calls the LLM repeatedly, executing any tool calls, until the LLM returns a response without tool calls. |
+| `react_toolbelt_agent` | ReAct agent with dynamic tool selection (toolbelt), ReSum context summarization, and an explicit `final_answer` tool. This is the agent used in the APEX-Agents benchmark. |
+| `echo_agent` | Reference implementation. Does not call any LLM or connect to MCP. Echoes back the last user message. Useful as a smoke test and copy-paste starting point. |
+
+### Reference Implementation
+
+The `echo_agent` at `runner/agents/echo_agent/` is the simplest possible agent that satisfies the full contract. It runs in O(1) wall time and is the only agent that can be exercised end-to-end in tests without mocking LiteLLM. Start here when building a new agent.
+
 ### Creating a New Agent
 
-1. Add a new ID to `AgentConfigIds` enum in `runner/agents/models.py`:
+1. Add a new ID to `AgentConfigIds` in `runner/agents/models.py`:
 
 ```python
 class AgentConfigIds(StrEnum):
     LOOP_AGENT = "loop_agent"
+    REACT_TOOLBELT_AGENT = "react_toolbelt_agent"
+    ECHO_AGENT = "echo_agent"
     MY_AGENT = "my_agent"  # Add your agent
 ```
 
 2. Create your agent implementation in `runner/agents/my_agent/main.py`:
 
 ```python
-from runner.agents.models import AgentRunInput, AgentTrajectoryOutput, AgentStatus
+import time
 
-async def run(input: AgentRunInput) -> AgentTrajectoryOutput:
+from loguru import logger
+
+from runner.agents.models import (
+    AgentRunInput,
+    AgentStatus,
+    AgentTrajectoryOutput,
+)
+
+
+async def run(run_input: AgentRunInput) -> AgentTrajectoryOutput:
     """Your custom agent implementation."""
-    # Access configuration via input.agent_config_values
-    max_steps = input.agent_config_values.get("max_steps", 100)
-    
-    # Connect to MCP server at input.mcp_gateway_url
+    start = time.time()
+
+    # Access configuration via run_input.agent_config_values
+    max_steps = run_input.agent_config_values.get("max_steps", 100)
+
+    # Connect to MCP server at run_input.mcp_gateway_url
     # Run your agent loop
-    # Return results
-    
+    # ...
+
+    answer = "your final answer"
+
+    # Required: emit the final_answer log
+    logger.bind(message_type="final_answer").info(answer)
+
     return AgentTrajectoryOutput(
-        messages=[...],
+        messages=list(run_input.initial_messages),
         status=AgentStatus.COMPLETED,
-        time_elapsed=elapsed,
+        time_elapsed=time.time() - start,
     )
 ```
 
 3. Register your agent in `runner/agents/registry.py`:
 
 ```python
-from runner.agents.models import AgentConfigIds, AgentDefn
 from runner.agents.my_agent.main import run as my_agent_run
-from runner.models import TaskFieldSchema, TaskFieldType
 
-AGENT_REGISTRY = {
-    # ... existing agents ...
-    AgentConfigIds.MY_AGENT: AgentDefn(
-        agent_config_id=AgentConfigIds.MY_AGENT,
-        agent_impl=my_agent_run,
-        agent_config_fields=[
-            TaskFieldSchema(
-                field_id="max_steps",
-                field_type=TaskFieldType.NUMBER,
-                label="Max Steps",
-                default_value=100,
-            ),
-            # Add more configuration fields...
-        ],
-    ),
-}
+# Add to the existing AGENT_REGISTRY dict:
+AGENT_REGISTRY[AgentConfigIds.MY_AGENT] = AgentDefn(
+    agent_config_id=AgentConfigIds.MY_AGENT,
+    agent_impl=my_agent_run,
+    agent_config_fields=[
+        TaskFieldSchema(
+            field_id="max_steps",
+            field_type=TaskFieldType.NUMBER,
+            label="Max Steps",
+            default_value=100,
+        ),
+    ],
+)
 ```
+
+4. Verify the contract holds:
+
+```bash
+cd agents
+uv run pytest tests/test_final_answer_log.py -v
+```
+
+See also `CONTRIBUTING-AGENTS.md` for a compact checklist.
 
 ## Local Development
 
@@ -115,7 +159,7 @@ AGENT_REGISTRY = {
    cd archipelago/agents
    ```
 
-2. **Set Up Environment Variables:**
+2. **Set up environment variables:**
 
    ```bash
    cp .env.example .env
@@ -126,13 +170,13 @@ AGENT_REGISTRY = {
    - AWS credentials for S3 operations (optional)
    - Redis connection (optional, for logging)
 
-3. **Install Dependencies:**
+3. **Install dependencies:**
 
    ```bash
    uv sync
    ```
 
-4. **Run Locally:**
+4. **Run locally:**
 
    ```bash
    uv run python -m runner.main --help
@@ -140,7 +184,7 @@ AGENT_REGISTRY = {
 
 ### Running an Agent Manually
 
-The agent runner requires several configuration files. Here's how to create them:
+The agent runner requires several configuration files.
 
 **1. Create `initial_messages.json`:**
 
@@ -168,11 +212,6 @@ The agent runner requires several configuration files. Here's how to create them
 }
 ```
 
-Available agent IDs:
-- `loop_agent` - Basic tool-calling loop
-- `toolbelt_agent` - Dynamic tool selection
-- `singleshot_agent` - Single LLM call (no tools)
-
 **3. Run the agent:**
 
 ```bash
@@ -181,40 +220,8 @@ uv run python -m runner.main \
   --initial-messages ./initial_messages.json \
   --mcp-gateway-url "http://localhost:8080/mcp/" \
   --agent-config ./agent_config.json \
-  --orchestrator-model "anthropic/claude-3-5-sonnet-20241022" \
+  --orchestrator-model "anthropic/claude-opus-4-5" \
   --output ./trajectory.json
-```
-
-### Generating Config from Task JSON
-
-If you have an APEX-style task.json, you can extract the config:
-
-```python
-import json
-
-with open("task.json") as f:
-    task = json.load(f)
-
-# Extract agent config
-agent_config = {
-    "agent_config_id": "loop_agent",
-    "agent_name": "Loop Agent", 
-    "agent_config_values": {
-        "timeout": 3600,
-        "max_steps": 50,
-        "tool_call_timeout": 60,
-        "llm_response_timeout": 300
-    }
-}
-
-# Extract initial messages
-initial_messages = task.get("initial_messages", [])
-
-with open("agent_config.json", "w") as f:
-    json.dump(agent_config, f, indent=2)
-
-with open("initial_messages.json", "w") as f:
-    json.dump(initial_messages, f, indent=2)
 ```
 
 ## Data Models
@@ -225,11 +232,13 @@ The input passed to every agent implementation:
 
 - `trajectory_id`: Unique identifier for this run
 - `initial_messages`: Initial system + user messages (LiteLLM format)
-- `mcp_gateway_url`: URL to the environment's MCP gateway
-- `mcp_gateway_auth_token`: Auth token for MCP gateway (None for local)
-- `orchestrator_model`: LLM model to use (e.g., `anthropic/claude-3-5-sonnet`)
+- `mcp_gateway_url`: URL to the environment's MCP gateway (None for agents that do not use MCP)
+- `mcp_gateway_auth_token`: Auth token for MCP gateway (None for local/unauthenticated)
+- `orchestrator_model`: LLM model to use (e.g., `anthropic/claude-opus-4-5`)
 - `orchestrator_extra_args`: Additional LLM arguments (temperature, etc.)
 - `agent_config_values`: Configuration values for this agent type
+- `parent_trajectory_output`: Output from a previous trajectory (for multi-turn continuations, None otherwise)
+- `custom_args`: Arbitrary per-trajectory metadata (None by default)
 
 ### AgentTrajectoryOutput
 
@@ -239,6 +248,7 @@ The output returned by agent implementations:
 - `status`: Final status (`completed`, `failed`, `cancelled`, `error`)
 - `time_elapsed`: Total execution time in seconds
 - `output`: Structured output dict (optional)
+- `usage`: Token usage dict (optional)
 
 ## Logging
 
@@ -262,6 +272,4 @@ from loguru import logger
 logger.bind(message_type="final_answer").info(answer)
 ```
 
-This is used to denote the final response to display to end users.
-
-A test in `tests/test_final_answer_log.py` enforces this requirement for all registered agents.
+This is used to denote the final response to display to end users. The contract is enforced by `tests/test_final_answer_log.py`.
