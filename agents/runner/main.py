@@ -5,6 +5,7 @@ Main orchestrator for running agents.
 import argparse
 import asyncio
 import json
+from pathlib import Path
 from typing import Any, cast
 
 from loguru import logger
@@ -16,6 +17,7 @@ from runner.agents.models import (
     LitellmInputMessage,
 )
 from runner.agents.registry import get_agent_impl
+from runner.manifest import RunManifest
 from runner.models import AgentConfig
 from runner.utils.settings import get_settings
 
@@ -142,8 +144,25 @@ if __name__ == "__main__":
         help="Path to JSON file with custom args (optional)",
     )
     parser.add_argument("--output", type=str, help="Path to save output JSON")
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=None,
+        help="Seed passed to LiteLLM. Best-effort, provider-dependent. "
+        "Captured in run_manifest.json regardless.",
+    )
+    parser.add_argument(
+        "--deterministic",
+        action="store_true",
+        default=False,
+        help="Force temperature=0 in orchestrator_extra_args and require "
+        "--seed. Best-effort determinism. Captured in run_manifest.json.",
+    )
 
     args = parser.parse_args()
+
+    if args.deterministic and args.seed is None:
+        parser.error("--deterministic requires --seed")
 
     with open(args.initial_messages) as f:
         initial_messages = json.load(f)
@@ -168,6 +187,14 @@ if __name__ == "__main__":
 
     auth_token = args.mcp_gateway_auth_token or None
 
+    # Merge seed and deterministic flags into extra_args (preserve existing)
+    if orchestrator_extra_args is None:
+        orchestrator_extra_args = {}
+    if args.seed is not None:
+        orchestrator_extra_args.setdefault("seed", args.seed)
+    if args.deterministic:
+        orchestrator_extra_args["temperature"] = 0
+
     result = asyncio.run(
         main(
             trajectory_id=args.trajectory_id,
@@ -185,3 +212,24 @@ if __name__ == "__main__":
     if args.output:
         with open(args.output, "w") as f:
             f.write(result.model_dump_json(indent=2))
+
+        # Write reproducibility manifest next to trajectory output
+        manifest = RunManifest.from_run_inputs(
+            trajectory_id=args.trajectory_id,
+            agent_config_id=agent_config.agent_config_id,
+            agent_config_values=agent_config.agent_config_values,
+            orchestrator_model=args.orchestrator_model,
+            orchestrator_extra_args=orchestrator_extra_args,
+            seed=args.seed,
+            deterministic=args.deterministic,
+            # TODO: mcp_server_configs not available in CLI scope;
+            # populate when orchestrator exposes them
+            mcp_server_configs=None,
+        )
+        manifest_path = Path(args.output).with_suffix(".manifest.json")
+        manifest.write(manifest_path)
+        logger.info(f"Wrote run manifest to {manifest_path}")
+    else:
+        logger.info(
+            "Manifest skipped: --output not set, nowhere to write sidecar"
+        )

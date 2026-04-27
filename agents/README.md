@@ -265,3 +265,23 @@ logger.bind(message_type="final_answer").info(answer)
 This is used to denote the final response to display to end users.
 
 A test in `tests/test_final_answer_log.py` enforces this requirement for all registered agents.
+
+## Reproducibility
+
+The runner writes a `*.manifest.json` sidecar next to `trajectory.json` capturing every input that affects determinism for that run. This includes the git SHA, model string, full `extra_args`, seed, MCP server config hash, and initial/final snapshot SHA-256 digests when available.
+
+Two flags help with deterministic execution:
+
+- `--seed N` passes a seed to LiteLLM. Whether it is honored is provider-dependent. Anthropic and Gemini accept `seed` via LiteLLM's translation layer but do not guarantee bitwise reproducibility. The seed is captured in the manifest regardless.
+
+- `--deterministic` requires `--seed` and forces `temperature=0` in `orchestrator_extra_args`. Best-effort determinism, not bitwise.
+
+To inspect what was captured for a previous run:
+
+```bash
+cat trajectory.manifest.json | jq .
+```
+
+A `replay` subcommand is provided as a stub at `runner/replay.py`. It validates the manifest and warns if `git_sha` has drifted from current HEAD. Full snapshot-aware replay requires environment-side coordination and is out of scope for this PR. The manifest itself is the primary contribution; the stub is the affordance for future work.
+
+This addresses the use case raised in open issues #4 and #8 where leaderboard reproduction discrepancies are hard to isolate without a record of the inputs that produced a run.
