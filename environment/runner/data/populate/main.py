@@ -51,8 +51,20 @@ async def run_lifecycle_hook(hook: LifecycleHook) -> None:
     stdout, stderr = await proc.communicate()
 
     if proc.returncode != 0:
-        # Use errors='replace' to handle binary output gracefully
-        error_msg = stderr.decode(errors="replace") if stderr else "No error output"
+        # Use errors='replace' to handle binary output gracefully.
+        # Many hooks merge stderr into stdout (e.g. `exec 2>&1` or
+        # `exec > >(tee …) 2>&1`), so check both streams for diagnostics.
+        stderr_text = stderr.decode(errors="replace").strip() if stderr else ""
+        stdout_text = stdout.decode(errors="replace").strip() if stdout else ""
+
+        if stderr_text:
+            error_msg = stderr_text
+        elif stdout_text:
+            # stderr was empty/redirected — fall back to stdout
+            error_msg = stdout_text
+        else:
+            error_msg = "No error output on stdout or stderr"
+
         logger.error(
             f"Lifecycle hook '{hook.name}' failed with exit code {proc.returncode}: {error_msg}"
         )
