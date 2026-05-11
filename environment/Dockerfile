@@ -54,6 +54,21 @@ RUN cd /app/mcp_servers/code/mcp_servers/code_execution_server && export INSTALL
 # Install: pdfs
 RUN cd /app/mcp_servers/pdfs/mcp_servers/pdf_server && uv sync --all-extras
 
+# code_exec.py blocks /app from the agent's sandbox view (see BLOCKED_PATHS in
+# mcp_servers/code/mcp_servers/code_execution_server/tools/code_exec.py), so
+# /app/.venv (where uv installs the MCP server's libs) is invisible at
+# runtime. Without these libs in *system* python the agent burns 10-15 turns
+# on every task rediscovering that pip is absent, numpy/pandas/openpyxl are
+# missing, and finally pointing PYTHONPATH at uv's wheel cache as a
+# workaround. Pre-install the data + IO stack into /usr/lib/python3.13 so
+# /usr/bin/python3 has working imports out of the box.
+RUN uv pip install --system --break-system-packages \
+    numpy pandas openpyxl scipy matplotlib seaborn statsmodels plotly \
+    scikit-learn xgboost duckdb \
+    beautifulsoup4 html5lib \
+    reportlab fpdf2 pypdf pdfplumber python-pptx python-docx \
+    numpy-financial yfinance
+
 ENV PATH=/app/.venv/bin:$PATH UV_SYSTEM_PYTHON=1
 
 # Runtime environment variables
