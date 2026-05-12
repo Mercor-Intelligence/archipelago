@@ -75,12 +75,11 @@ class LoopAgent:
         self.status: AgentStatus = AgentStatus.PENDING
         self._usage_tracker: UsageTracker = UsageTracker()
 
-    async def _initialize_tools(self) -> None:
+    async def _initialize_tools(self, client: Any) -> None:
         """Load available tools from the MCP gateway."""
-        async with self.mcp_client as client:
-            tools: list[ChatCompletionToolParam] = await load_mcp_tools(
-                client.session, format="openai"
-            )  # pyright: ignore[reportAssignmentType]
+        tools: list[ChatCompletionToolParam] = await load_mcp_tools(
+            client.session, format="openai"
+        )  # pyright: ignore[reportAssignmentType]
 
         logger.bind(
             message_type="configure",
@@ -88,7 +87,7 @@ class LoopAgent:
         ).info(f"Loaded {len(tools)} MCP tools")
         self.tools = tools
 
-    async def step(self):
+    async def step(self, client: Any) -> None:
         """Execute a single step of the agent loop."""
         self.current_step += 1
 
@@ -151,99 +150,99 @@ class LoopAgent:
         self.messages.append(response_message)
 
         if tool_calls:
-            deferred_image_messages: list[LitellmInputMessage] = []
-            async with self.mcp_client as client:
-                for tool_call in tool_calls:
-                    name = tool_call.function.name
-
-                    tool_logger = logger.bind(
-                        ref=tool_call.id,
-                        name=name,
-                    )
-
-                    tool_logger.bind(
-                        message_type="tool_call", payload=tool_call.function.arguments
-                    ).info(f"Calling tool {name}")
-
-                    tool_result_logger = tool_logger.bind(message_type="tool_result")
-
-                    try:
-                        call_result = await asyncio.wait_for(
-                            call_openai_tool(client.session, tool_call),
-                            timeout=self.tool_call_timeout,
-                        )
-                    except TimeoutError:
-                        tool_result_logger.error(f"Tool call {name} timed out")
-                        self.messages.append(
-                            LitellmOutputMessage(
-                                role="tool",
-                                tool_call_id=tool_call.id,
-                                name=tool_call.function.name,
-                                content="Tool call timed out",
-                            )
-                        )
-                        continue
-                    except Exception as e:
-                        if is_fatal_mcp_error(e):
-                            tool_result_logger.error(
-                                f"Fatal MCP error, ending run: {repr(e)}"
-                            )
-                            self.messages.append(
-                                LitellmOutputMessage(
-                                    role="tool",
-                                    tool_call_id=tool_call.id,
-                                    name=tool_call.function.name,
-                                    content=f"Fatal error: {e}",
-                                )
-                            )
-                            raise
-                        tool_result_logger.error(
-                            f"Error calling tool {name}: {repr(e)}"
-                        )
-                        self.messages.append(
-                            LitellmOutputMessage(
-                                role="tool",
-                                tool_call_id=tool_call.id,
-                                name=tool_call.function.name,
-                                content=f"Error calling tool: {repr(e)}",
-                            )
-                        )
-                        continue
-
-                    if not call_result.content:
-                        tool_result_logger.error(
-                            f"Call result for {name} is not valid: {call_result.content}"
-                        )
-                        self.messages.append(
-                            LitellmOutputMessage(
-                                role="tool",
-                                tool_call_id=tool_call.id,
-                                name=tool_call.function.name,
-                                content=f"Call result is not valid, received {call_result.content}",
-                            )
-                        )
-                        continue
-
-                    messages = content_blocks_to_messages(
-                        call_result.content,
-                        tool_call.id,
-                        tool_call.function.name or "unknown",
-                        self.model,
-                        deferred_image_messages=deferred_image_messages,
-                    )
-
-                    tool_result_logger.bind(
-                        payload=[result.model_dump() for result in call_result.content],
-                    ).info(f"Tool {name} called successfully")
-
-                    self.messages.extend(messages)
-            self.messages.extend(deferred_image_messages)
+            await self._handle_tool_calls(client, tool_calls)
         else:
             # No tool calls = task complete
             self._finalized = True
             finalize_answer(
                 response_message.content if response_message.content else "No content"
             )
+
+    async def _handle_tool_calls(self, client: Any, tool_calls: list[Any]) -> None:
+        """Execute tool calls using the active MCP session."""
+        deferred_image_messages: list[LitellmInputMessage] = []
+
+        for tool_call in tool_calls:
+            name = tool_call.function.name
+
+            tool_logger = logger.bind(
+                ref=tool_call.id,
+                name=name,
+            )
+
+            tool_logger.bind(
+                message_type="tool_call", payload=tool_call.function.arguments
+            ).info(f"Calling tool {name}")
+
+            tool_result_logger = tool_logger.bind(message_type="tool_result")
+
+            try:
+                call_result = await asyncio.wait_for(
+                    call_openai_tool(client.session, tool_call),
+                    timeout=self.tool_call_timeout,
+                )
+            except TimeoutError:
+                tool_result_logger.error(f"Tool call {name} timed out")
+                self.messages.append(
+                    LitellmOutputMessage(
+                        role="tool",
+                        tool_call_id=tool_call.id,
+                        name=tool_call.function.name,
+                        content="Tool call timed out",
+                    )
+                )
+                continue
+            except Exception as e:
+                if is_fatal_mcp_error(e):
+                    tool_result_logger.error(f"Fatal MCP error, ending run: {repr(e)}")
+                    self.messages.append(
+                        LitellmOutputMessage(
+                            role="tool",
+                            tool_call_id=tool_call.id,
+                            name=tool_call.function.name,
+                            content=f"Fatal error: {e}",
+                        )
+                    )
+                    raise
+                tool_result_logger.error(f"Error calling tool {name}: {repr(e)}")
+                self.messages.append(
+                    LitellmOutputMessage(
+                        role="tool",
+                        tool_call_id=tool_call.id,
+                        name=tool_call.function.name,
+                        content=f"Error calling tool: {repr(e)}",
+                    )
+                )
+                continue
+
+            if not call_result.content:
+                tool_result_logger.error(
+                    f"Call result for {name} is not valid: {call_result.content}"
+                )
+                self.messages.append(
+                    LitellmOutputMessage(
+                        role="tool",
+                        tool_call_id=tool_call.id,
+                        name=tool_call.function.name,
+                        content=f"Call result is not valid, received {call_result.content}",
+                    )
+                )
+                continue
+
+            messages = content_blocks_to_messages(
+                call_result.content,
+                tool_call.id,
+                tool_call.function.name or "unknown",
+                self.model,
+                deferred_image_messages=deferred_image_messages,
+            )
+
+            tool_result_logger.bind(
+                payload=[result.model_dump() for result in call_result.content],
+            ).info(f"Tool {name} called successfully")
+
+            self.messages.extend(messages)
+        self.messages.extend(deferred_image_messages)
 
     def _build_output(self) -> AgentTrajectoryOutput:
         return AgentTrajectoryOutput(
@@ -257,40 +256,45 @@ class LoopAgent:
         """Run the agent loop until completion or timeout."""
         try:
             async with asyncio.timeout(self.timeout):
-                with logger.contextualize(model=self.model):
-                    logger.bind(message_type="configure").info(
-                        f"Starting agent loop with model {self.model}"
-                    )
-
-                    await self._initialize_tools()
-
-                    logger.bind(message_type="configure").info(
-                        "\n".join(
-                            f"{m['role'].capitalize()}: {m.get('content')}"
-                            for m in self.messages
+                async with self.mcp_client as client:
+                    with logger.contextualize(model=self.model):
+                        logger.bind(message_type="configure").info(
+                            f"Starting agent loop with model {self.model}"
                         )
-                    )
 
-                    logger.info("Starting agent loop")
-                    self.start_time = time.time()
-                    self.status = AgentStatus.RUNNING
+                        await self._initialize_tools(client)
 
-                    for i in range(self.max_steps):
-                        if self._finalized:
-                            logger.info(f"Agent loop was finalized after {i + 1} steps")
-                            break
-                        logger.bind(message_type="step").info(f"Starting step {i + 1}")
-                        await self.step()
-
-                    if not self._finalized:
-                        logger.error(
-                            f"Agent loop was not finalized after {self.max_steps} steps"
+                        logger.bind(message_type="configure").info(
+                            "\n".join(
+                                f"{m['role'].capitalize()}: {m.get('content')}"
+                                for m in self.messages
+                            )
                         )
-                        self.status = AgentStatus.FAILED
-                    else:
-                        self.status = AgentStatus.COMPLETED
 
-                    return self._build_output()
+                        logger.info("Starting agent loop")
+                        self.start_time = time.time()
+                        self.status = AgentStatus.RUNNING
+
+                        for i in range(self.max_steps):
+                            if self._finalized:
+                                logger.info(
+                                    f"Agent loop was finalized after {i + 1} steps"
+                                )
+                                break
+                            logger.bind(message_type="step").info(
+                                f"Starting step {i + 1}"
+                            )
+                            await self.step(client)
+
+                        if not self._finalized:
+                            logger.error(
+                                f"Agent loop was not finalized after {self.max_steps} steps"
+                            )
+                            self.status = AgentStatus.FAILED
+                        else:
+                            self.status = AgentStatus.COMPLETED
+
+                        return self._build_output()
 
         except TimeoutError:
             logger.error(f"Agent run timed out after {self.timeout} seconds")
