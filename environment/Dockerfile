@@ -49,7 +49,17 @@ RUN cd /app/mcp_servers/chat/mcp_servers/chat_server && uv sync --all-extras
 RUN cd /app/mcp_servers/presentations/mcp_servers/slides_server && uv sync --all-extras
 
 # Install: code
-RUN cd /app/mcp_servers/code/mcp_servers/code_execution_server && export INSTALL_MEDICINE=false INSTALL_SCICOMP=false && apt-get update -qq && apt-get install -y -qq proot; GROUPS=""; [ "$INSTALL_MEDICINE" = "true" ] && GROUPS="$GROUPS --group medicine"; [ "$INSTALL_SCICOMP" = "true" ] && GROUPS="$GROUPS --group scicomp"; uv sync --all-extras$GROUPS
+RUN mkdir -p /app/lib \
+ && gcc -shared -fPIC -O2 -o /app/lib/sandbox_fs.so /app/mcp_servers/code/mcp_servers/code_execution_server/sandbox_fs.c -ldl -lpthread \
+ && test -f /app/lib/sandbox_fs.so \
+ && cd /app/mcp_servers/code/mcp_servers/code_execution_server \
+ && export INSTALL_MEDICINE=false INSTALL_SCICOMP=false \
+ && apt-get update -qq \
+ && apt-get install -y -qq proot \
+ && GROUPS="" \
+ && [ "$INSTALL_MEDICINE" = "true" ] && GROUPS="$GROUPS --group medicine" || true \
+ && [ "$INSTALL_SCICOMP" = "true" ] && GROUPS="$GROUPS --group scicomp" || true \
+ && uv sync --all-extras$GROUPS
 
 # Install: pdfs
 RUN cd /app/mcp_servers/pdfs/mcp_servers/pdf_server && uv sync --all-extras
