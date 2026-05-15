@@ -7,7 +7,7 @@
 #   ./run.sh
 #
 # Prerequisites:
-#   - Docker running
+#   - Docker running, or Podman with Compose support
 #   - LLM API key set in agents/.env and grading/.env
 #
 

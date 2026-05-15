@@ -38,7 +38,7 @@ This quick start walks you through running a single task end-to-end using the pr
 
 ### Prerequisites
 
-- Docker Desktop
+- Docker Desktop, or Podman with Compose support
 - Python 3.13
 - UV
 - LLM API key (Anthropic, OpenAI, or Gemini)
@@ -86,6 +86,18 @@ cd examples/simple_task
 ```
 
 See [examples/simple_task/README.md](./examples/simple_task/README.md) for a detailed step-by-step walkthrough.
+
+> By default, the example runners use `docker compose`. To use Podman instead:
+>
+> ```bash
+> ARCHIPELAGO_CONTAINER_CLI=podman ./run.sh
+> ```
+>
+> If your system uses a standalone compose wrapper, override the whole compose command:
+>
+> ```bash
+> ARCHIPELAGO_COMPOSE_COMMAND=podman-compose ./run.sh
+> ```
 
 Both scripts will:
 1. Start the environment container

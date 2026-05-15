@@ -7,13 +7,14 @@ Usage:
     ./run.sh
 
 Prerequisites:
-    - Docker running
+    - Docker running, or Podman with Compose support
     - ANTHROPIC_API_KEY or other LLM key set in agents/.env and grading/.env
 """
 
 import io
 import json
 import os
+import shlex
 import subprocess
 import sys
 import tarfile
@@ -35,6 +36,23 @@ AGENTS_DIR = Path(os.environ.get("AGENTS_DIR", ARCHIPELAGO_DIR / "agents"))
 GRADING_DIR = Path(os.environ.get("GRADING_DIR", ARCHIPELAGO_DIR / "grading"))
 
 ENV_URL = os.environ.get("ENV_URL", "http://localhost:8080")
+CONTAINER_CLI = os.environ.get("ARCHIPELAGO_CONTAINER_CLI", "docker")
+COMPOSE_COMMAND = os.environ.get("ARCHIPELAGO_COMPOSE_COMMAND")
+
+
+def compose_cmd(*args: str) -> list[str]:
+    """Build a Docker/Podman Compose command.
+
+    Defaults to `docker compose`, but supports:
+    - ARCHIPELAGO_CONTAINER_CLI=podman -> `podman compose`
+    - ARCHIPELAGO_COMPOSE_COMMAND=podman-compose -> `podman-compose`
+    - ARCHIPELAGO_COMPOSE_COMMAND="docker-compose" -> `docker-compose`
+    """
+    if COMPOSE_COMMAND:
+        return [*shlex.split(COMPOSE_COMMAND), *args]
+    return [CONTAINER_CLI, "compose", *args]
+
+
 
 
 def log(msg: str):
@@ -70,14 +88,14 @@ def start_environment():
     # Always stop and remove existing containers for a fresh start
     log("Stopping any existing environment containers...")
     subprocess.run(
-        ["docker", "compose", "down", "-v"],
+        compose_cmd("down", "-v"),
         cwd=ENVIRONMENT_DIR,
         capture_output=True,
     )
 
     log("Building and starting fresh environment container...")
     result = subprocess.run(
-        ["docker", "compose", "up", "-d", "--build"],
+        compose_cmd("up", "-d", "--build"),
         cwd=ENVIRONMENT_DIR,
     )
     if result.returncode != 0:
@@ -87,7 +105,7 @@ def start_environment():
     log("Waiting for environment to be healthy...")
     if not wait_for_health(ENV_URL):
         # Show logs on failure to help debug
-        subprocess.run(["docker", "compose", "logs"], cwd=ENVIRONMENT_DIR)
+        subprocess.run(compose_cmd("logs"), cwd=ENVIRONMENT_DIR)
         log("ERROR: Environment failed to start")
         sys.exit(1)
 

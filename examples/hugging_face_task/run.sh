@@ -9,7 +9,7 @@
 #   ./run.sh task_abc123        # Run task by ID
 #
 # Prerequisites:
-#   - Docker running
+#   - Docker running, or Podman with Compose support
 #   - LLM API key set in agents/.env
 #
 
