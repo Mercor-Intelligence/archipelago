@@ -94,6 +94,39 @@ Edit `orchestrator_config.json`:
 }
 ```
 
+### Using a Local Ollama Model
+
+To run the benchmark agent against a local Ollama model, start Ollama and pull a model:
+
+```bash
+ollama serve
+ollama pull llama3.1
+```
+
+Then edit `orchestrator_config.json`:
+
+```json
+{
+  "model": "ollama_chat/llama3.1",
+  "extra_args": {
+    "api_base": "http://localhost:11434"
+  }
+}
+```
+
+The Hugging Face benchmark tasks rely heavily on MCP tool calls and can be long-running, so local model quality and tool/function-calling support matter. If Ollama is running somewhere other than `localhost:11434`, set `api_base` to the URL reachable from the shell running `./run.sh`.
+
+Grading is configured separately in `grading_settings.json`. To use Ollama for grading too:
+
+```json
+{
+  "llm_judge_model": "ollama_chat/llama3.1",
+  "llm_judge_extra_args": {
+    "api_base": "http://localhost:11434"
+  }
+}
+```
+
 ### Using Fewer MCP Servers
 
 The default `mcp_config_all_oss_servers.json` starts all 9 servers. For faster startup, you can create a custom config with only the servers your task needs. Check the world description in the HuggingFace dataset to see which apps are required.

@@ -61,6 +61,41 @@ cp grading/.env.example grading/.env
 # The environment/.env can be left as-is for local development
 ```
 
+### Optional: Use a Local Ollama Model
+
+Archipelago uses LiteLLM for model calls, so you can point the examples at a local Ollama server when the selected model is capable enough for the task.
+
+First, start Ollama and pull a model:
+
+```bash
+ollama serve
+ollama pull llama3.1
+```
+
+Then update an example's `orchestrator_config.json`:
+
+```json
+{
+  "model": "ollama_chat/llama3.1",
+  "extra_args": {
+    "api_base": "http://localhost:11434"
+  }
+}
+```
+
+Use a model with reliable tool/function-calling support because Archipelago agents rely on MCP tool calls. If Ollama is not reachable at `localhost:11434` from the shell running Archipelago, update `api_base` to the reachable Ollama URL.
+
+If you also want grading to use a local model, update the example's `grading_settings.json` similarly:
+
+```json
+{
+  "llm_judge_model": "ollama_chat/llama3.1",
+  "llm_judge_extra_args": {
+    "api_base": "http://localhost:11434"
+  }
+}
+```
+
 ### 2. Run an Example
 
 We provide two examples:

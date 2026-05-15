@@ -22,6 +22,39 @@ cd archipelago/examples/simple_task
 GOOGLE_API_KEY=your_key_here ./run.sh
 ```
 
+## Using a Local Ollama Model
+
+To run the agent against a local Ollama model instead of a hosted API model, start Ollama and pull a model:
+
+```bash
+ollama serve
+ollama pull llama3.1
+```
+
+Then edit `orchestrator_config.json`:
+
+```json
+{
+  "model": "ollama_chat/llama3.1",
+  "extra_args": {
+    "api_base": "http://localhost:11434"
+  }
+}
+```
+
+The agent uses MCP tools, so choose an Ollama model with reliable tool/function-calling support. If Ollama is running somewhere other than `localhost:11434`, set `api_base` to the URL reachable from the shell running `./run.sh`.
+
+This example still runs grading after the agent. If `grading_settings.json` is left unchanged, grading will continue using the configured hosted judge model. To grade locally too, update `grading_settings.json`:
+
+```json
+{
+  "llm_judge_model": "ollama_chat/llama3.1",
+  "llm_judge_extra_args": {
+    "api_base": "http://localhost:11434"
+  }
+}
+```
+
 The script will:
 1. Start the environment container (if not already running)
 2. Populate the environment with the world snapshot
