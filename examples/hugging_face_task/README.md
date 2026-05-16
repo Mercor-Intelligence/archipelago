@@ -116,7 +116,15 @@ The default `mcp_config_all_oss_servers.json` starts all 9 servers. For faster s
 
 ### Task not found
 
-The dataset contains 480 tasks indexed 0-479. Use `--task-index` for numeric indices or `--task-id` for specific task IDs.
+The dataset contains 480 tasks indexed 0-479. Pass the task selector as the first positional argument:
+
+```bash
+# Run task at a specific index
+./run.sh 42
+
+# Run task by ID
+./run.sh task_9ba58a6197114140877a1df1754d2993
+```
 
 ### Environment fails to start
 
@@ -128,10 +136,15 @@ lsof -i :8080
 
 ### Agent timeout
 
-For complex tasks, the agent may need more steps. Modify `max_steps` in `main.py`:
-```python
-agent_config = {
-    "agent_config_values": {"timeout": 3600, "max_steps": 100},  # Increase from 50
-    ...
+For complex tasks, the agent may need more steps or a longer timeout. Modify `agent_config.json`:
+
+```json
+{
+  "agent_config_id": "react_toolbelt_agent",
+  "agent_name": "React Toolbelt Agent",
+  "agent_config_values": {
+    "timeout": 3600,
+    "max_steps": 100
+  }
 }
 ```
