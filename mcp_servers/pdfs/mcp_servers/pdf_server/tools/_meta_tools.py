@@ -4,7 +4,6 @@ from typing import Any, Literal
 
 from fastmcp.utilities.types import Image
 from mcp_schema import GeminiBaseModel as BaseModel
-from mcp_schema import OutputBaseModel
 from pydantic import ConfigDict, Field
 
 # Import existing tools for delegation
@@ -62,7 +61,7 @@ def _is_search_error(result: str) -> bool:
 
 
 # ============ Help Response ============
-class ActionInfo(OutputBaseModel):
+class ActionInfo(BaseModel):
     """Information about an action."""
 
     model_config = ConfigDict(extra="forbid")
@@ -80,7 +79,7 @@ class ActionInfo(OutputBaseModel):
     )
 
 
-class HelpResponse(OutputBaseModel):
+class HelpResponse(BaseModel):
     """Help response listing available actions."""
 
     model_config = ConfigDict(extra="forbid")
@@ -99,7 +98,7 @@ class HelpResponse(OutputBaseModel):
 
 
 # ============ Result Models ============
-class CreateResult(OutputBaseModel):
+class CreateResult(BaseModel):
     """Result from creating a PDF."""
 
     model_config = ConfigDict(extra="forbid")
@@ -113,7 +112,7 @@ class CreateResult(OutputBaseModel):
     )
 
 
-class ReadPagesResult(OutputBaseModel):
+class ReadPagesResult(BaseModel):
     """Result from reading PDF pages."""
 
     model_config = ConfigDict(extra="forbid")
@@ -123,7 +122,7 @@ class ReadPagesResult(OutputBaseModel):
     )
 
 
-class SearchResult(OutputBaseModel):
+class SearchResult(BaseModel):
     """Result from searching PDF."""
 
     model_config = ConfigDict(extra="forbid")
@@ -237,7 +236,7 @@ CORRECT: '/report.pdf', '/my_file.pdf'""",
 
 
 # ============ Output Model ============
-class PdfOutput(OutputBaseModel):
+class PdfOutput(BaseModel):
     """Output for pdf meta-tool (non-image actions)."""
 
     model_config = ConfigDict(extra="forbid")
@@ -428,7 +427,7 @@ class SchemaInput(BaseModel):
     )
 
 
-class SchemaOutput(OutputBaseModel):
+class SchemaOutput(BaseModel):
     """Output for schema introspection."""
 
     model_config = ConfigDict(extra="forbid")

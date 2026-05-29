@@ -3,9 +3,11 @@ from typing import Any
 
 from pydantic import BaseModel
 
+
 class ScoringMethodCategory(StrEnum):
     STANDARD = "Standard"
     CUSTOM = "Custom"
+
 
 class ScoringMethodIds(StrEnum):
     TEMPLATE = "template"
@@ -31,6 +33,7 @@ class ScoringMethodIds(StrEnum):
     # verifier and computes a weighted average. Weights are configurable
     # (defaults: Low=1, Medium=3, High=5).
     DIFFICULTY_WEIGHTED_AVERAGE = "difficulty_weighted_average"
+
 
 class ScoringConfig(BaseModel):
     """

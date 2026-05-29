@@ -10,14 +10,18 @@ from main import mcp  # noqa: E402
 
 
 async def main():
-    tools = await mcp.get_tools()
+    tools = await mcp.list_tools()
     result = []
-    for tool in tools.values():
+    for tool in tools:
         entry = {"name": tool.name, "description": tool.description or ""}
-        if hasattr(tool, "parameters") and tool.parameters:
-            entry["inputSchema"] = tool.parameters
-        if hasattr(tool, "output_schema") and tool.output_schema:
-            entry["outputSchema"] = tool.output_schema
+        params = getattr(tool, "inputSchema", None) or getattr(tool, "parameters", None)
+        if params:
+            entry["inputSchema"] = params
+        output = getattr(tool, "outputSchema", None) or getattr(
+            tool, "output_schema", None
+        )
+        if output:
+            entry["outputSchema"] = output
         result.append(entry)
     print(json.dumps(result))
 

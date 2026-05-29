@@ -1,5 +1,6 @@
 from enum import StrEnum
 
+
 class HelperIds(StrEnum):
     TEMPLATE = "template"
     SNAPSHOT_DIFF = "snapshot_diff"
@@ -18,4 +19,3 @@ class HelperIds(StrEnum):
     IF_SYSTEM_STEER_JUDGE_RESULT = "if_system_steer_judge_result"
     USER_SIM_JUDGE_RESULT = "user_sim_judge_result"
     DB_DIFF = "db_diff"
-

@@ -2,7 +2,7 @@
 
 from typing import Any, Literal
 
-from mcp_schema import FlatBaseModel, OutputBaseModel
+from mcp_schema import FlatBaseModel, GeminiBaseModel
 from pydantic import ConfigDict, Field
 
 # Import existing tools for delegation
@@ -43,7 +43,7 @@ from tools.reply_to_thread import (
 
 
 # ============ Help Response ============
-class ActionInfo(OutputBaseModel):
+class ActionInfo(GeminiBaseModel):
     """Information about an action."""
 
     model_config = ConfigDict(extra="forbid")
@@ -52,7 +52,7 @@ class ActionInfo(OutputBaseModel):
     optional_params: list[str]
 
 
-class HelpResponse(OutputBaseModel):
+class HelpResponse(GeminiBaseModel):
     """Help response listing available actions."""
 
     model_config = ConfigDict(extra="forbid")
@@ -62,7 +62,7 @@ class HelpResponse(OutputBaseModel):
 
 
 # ============ Result Models ============
-class ChannelsResult(OutputBaseModel):
+class ChannelsResult(GeminiBaseModel):
     """Result from listing channels."""
 
     model_config = ConfigDict(extra="forbid")
@@ -84,7 +84,7 @@ class ChannelsResult(OutputBaseModel):
     )
 
 
-class HistoryResult(OutputBaseModel):
+class HistoryResult(GeminiBaseModel):
     """Result from getting channel history."""
 
     model_config = ConfigDict(extra="forbid")
@@ -106,7 +106,7 @@ class HistoryResult(OutputBaseModel):
     )
 
 
-class MessageResult(OutputBaseModel):
+class MessageResult(GeminiBaseModel):
     """Result from posting/replying to a message."""
 
     model_config = ConfigDict(extra="forbid")
@@ -128,7 +128,7 @@ class MessageResult(OutputBaseModel):
     )
 
 
-class ReactionResult(OutputBaseModel):
+class ReactionResult(GeminiBaseModel):
     """Result from adding a reaction."""
 
     model_config = ConfigDict(extra="forbid")
@@ -146,7 +146,7 @@ class ReactionResult(OutputBaseModel):
     )
 
 
-class RepliesResult(OutputBaseModel):
+class RepliesResult(GeminiBaseModel):
     """Result from getting thread replies."""
 
     model_config = ConfigDict(extra="forbid")
@@ -164,7 +164,7 @@ class RepliesResult(OutputBaseModel):
     )
 
 
-class UsersResult(OutputBaseModel):
+class UsersResult(GeminiBaseModel):
     """Result from listing users."""
 
     model_config = ConfigDict(extra="forbid")
@@ -182,7 +182,7 @@ class UsersResult(OutputBaseModel):
     )
 
 
-class ProfileResult(OutputBaseModel):
+class ProfileResult(GeminiBaseModel):
     """Result from getting user profile."""
 
     model_config = ConfigDict(extra="forbid")
@@ -192,7 +192,7 @@ class ProfileResult(OutputBaseModel):
     )
 
 
-class DeleteResult(OutputBaseModel):
+class DeleteResult(GeminiBaseModel):
     """Result from deleting a post."""
 
     model_config = ConfigDict(extra="forbid")
@@ -266,7 +266,7 @@ class ChatInput(FlatBaseModel):
 
 
 # ============ Output Model ============
-class ChatOutput(OutputBaseModel):
+class ChatOutput(GeminiBaseModel):
     """Output for chat meta-tool."""
 
     model_config = ConfigDict(extra="forbid")
@@ -593,7 +593,7 @@ class SchemaInput(FlatBaseModel):
     )
 
 
-class SchemaOutput(OutputBaseModel):
+class SchemaOutput(GeminiBaseModel):
     """Output for schema introspection."""
 
     model_config = ConfigDict(extra="forbid")
@@ -607,7 +607,7 @@ class SchemaOutput(OutputBaseModel):
     )
 
 
-SCHEMAS: dict[str, type[FlatBaseModel | OutputBaseModel]] = {
+SCHEMAS: dict[str, type[FlatBaseModel | GeminiBaseModel]] = {
     "input": ChatInput,
     "output": ChatOutput,
     "ChannelsResult": ChannelsResult,

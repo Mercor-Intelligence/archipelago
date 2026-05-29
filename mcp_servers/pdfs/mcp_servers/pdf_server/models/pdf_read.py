@@ -1,4 +1,4 @@
-from mcp_schema import OutputBaseModel as BaseModel
+from mcp_schema import GeminiBaseModel as BaseModel
 from pydantic import ConfigDict, Field
 
 

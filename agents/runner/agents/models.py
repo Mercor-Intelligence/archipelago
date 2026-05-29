@@ -26,11 +26,13 @@ LitellmAnyMessage = (
     LitellmInputMessage | LitellmResponsesInputMessage | LitellmOutputMessage
 )
 
+
 def get_msg_role(msg: LitellmAnyMessage) -> str:
     """Get role from either TypedDict or Pydantic Message."""
     if isinstance(msg, Message):
         return msg.role
     return msg["role"]
+
 
 def get_msg_content(msg: LitellmAnyMessage) -> Any:
     """Get content from either TypedDict or Pydantic Message."""
@@ -38,11 +40,13 @@ def get_msg_content(msg: LitellmAnyMessage) -> Any:
         return msg.content
     return msg.get("content")
 
+
 def get_msg_attr(msg: LitellmAnyMessage, key: str, default: Any = None) -> Any:
     """Get arbitrary attribute from either TypedDict or Pydantic Message."""
     if isinstance(msg, Message):
         return getattr(msg, key, default)
     return msg.get(key, default)
+
 
 def content_to_str(content: Any) -> str:
     """Normalize message content to a string.
@@ -66,11 +70,13 @@ def content_to_str(content: Any) -> str:
         return "\n".join(parts) if parts else ""
     return str(content)
 
+
 class AgentConfigIds(StrEnum):
     """Registry of available agent implementation IDs (e.g., 'loop_agent')."""
 
     LOOP_AGENT = "loop_agent"
     REACT_TOOLBELT_AGENT = "react_toolbelt_agent"
+
 
 class AgentStatus(StrEnum):
     """Status of an agent run."""
@@ -81,6 +87,7 @@ class AgentStatus(StrEnum):
     CANCELLED = "cancelled"
     FAILED = "failed"
     ERROR = "error"
+
 
 class AgentRunInput(BaseModel):
     """Input to an agent implementation."""
@@ -116,6 +123,7 @@ class AgentRunInput(BaseModel):
 
     # Resolved inner agent config (for harness agents that delegate to an agent instance)
     inner_agent_config: dict[str, Any] | None = None
+
 
 class AgentTrajectoryOutput(BaseModel):
     """Output from an agent run"""
@@ -154,7 +162,9 @@ class AgentTrajectoryOutput(BaseModel):
             return messages
         return normalize_messages_for_report(messages)
 
+
 AgentImpl = Callable[[AgentRunInput], Awaitable[AgentTrajectoryOutput]]
+
 
 class AgentDefn(BaseModel):
     """Definition of an agent implementation in the registry."""

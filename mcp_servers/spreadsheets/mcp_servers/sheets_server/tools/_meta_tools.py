@@ -3,7 +3,7 @@
 from typing import Any, Literal
 
 from mcp_schema import GeminiBaseModel as BaseModel
-from pydantic import BaseModel as OutputBaseModel
+from pydantic import BaseModel as PydanticBaseModel
 from pydantic import ConfigDict, Field
 
 # Import existing tools for delegation
@@ -110,7 +110,7 @@ def _parse_tab_name(result: str, fallback_index: int) -> str:
 
 
 # ============ Help Response ============
-class ActionInfo(OutputBaseModel):
+class ActionInfo(PydanticBaseModel):
     """Information about an action."""
 
     model_config = ConfigDict(extra="forbid")
@@ -119,7 +119,7 @@ class ActionInfo(OutputBaseModel):
     optional_params: list[str]
 
 
-class HelpResponse(OutputBaseModel):
+class HelpResponse(PydanticBaseModel):
     """Help response listing available actions."""
 
     model_config = ConfigDict(extra="forbid")
@@ -129,21 +129,21 @@ class HelpResponse(OutputBaseModel):
 
 
 # ============ Result Models ============
-class ReadTabResult(OutputBaseModel):
+class ReadTabResult(PydanticBaseModel):
     """Result from reading a worksheet tab."""
 
     model_config = ConfigDict(extra="forbid")
     raw_output: str = Field(..., description="Formatted table output")
 
 
-class ReadCsvResult(OutputBaseModel):
+class ReadCsvResult(PydanticBaseModel):
     """Result from reading a CSV file."""
 
     model_config = ConfigDict(extra="forbid")
     raw_output: str = Field(..., description="Formatted table output")
 
 
-class CreateResult(OutputBaseModel):
+class CreateResult(PydanticBaseModel):
     """Result from creating a spreadsheet."""
 
     model_config = ConfigDict(extra="forbid")
@@ -152,7 +152,7 @@ class CreateResult(OutputBaseModel):
     sheets_created: int
 
 
-class DeleteResult(OutputBaseModel):
+class DeleteResult(PydanticBaseModel):
     """Result from deleting a file."""
 
     model_config = ConfigDict(extra="forbid")
@@ -160,14 +160,14 @@ class DeleteResult(OutputBaseModel):
     file_path: str
 
 
-class ListTabsResult(OutputBaseModel):
+class ListTabsResult(PydanticBaseModel):
     """Result from listing tabs."""
 
     model_config = ConfigDict(extra="forbid")
     raw_output: str = Field(..., description="Tab listing output")
 
 
-class AddTabResult(OutputBaseModel):
+class AddTabResult(PydanticBaseModel):
     """Result from adding a tab."""
 
     model_config = ConfigDict(extra="forbid")
@@ -177,7 +177,7 @@ class AddTabResult(OutputBaseModel):
     rows_added: int | None = None
 
 
-class DeleteTabResult(OutputBaseModel):
+class DeleteTabResult(PydanticBaseModel):
     """Result from deleting a tab."""
 
     model_config = ConfigDict(extra="forbid")
@@ -187,7 +187,7 @@ class DeleteTabResult(OutputBaseModel):
     file_path: str
 
 
-class EditResult(OutputBaseModel):
+class EditResult(PydanticBaseModel):
     """Result from edit operations."""
 
     model_config = ConfigDict(extra="forbid")
@@ -196,7 +196,7 @@ class EditResult(OutputBaseModel):
     operations_applied: int
 
 
-class ContentResult(OutputBaseModel):
+class ContentResult(PydanticBaseModel):
     """Result from add/delete content operations."""
 
     model_config = ConfigDict(extra="forbid")
@@ -207,14 +207,14 @@ class ContentResult(OutputBaseModel):
     old_value: Any | None = None
 
 
-class ChartResult(OutputBaseModel):
+class ChartResult(PydanticBaseModel):
     """Result from creating a chart."""
 
     model_config = ConfigDict(extra="forbid")
     message: str
 
 
-class FilterTabResult(OutputBaseModel):
+class FilterTabResult(PydanticBaseModel):
     """Result from filtering a worksheet tab."""
 
     model_config = ConfigDict(extra="forbid")
@@ -430,7 +430,7 @@ class SheetsInput(BaseModel):
 
 
 # ============ Output Model ============
-class SheetsOutput(OutputBaseModel):
+class SheetsOutput(PydanticBaseModel):
     """Output for sheets meta-tool."""
 
     model_config = ConfigDict(extra="forbid")
@@ -847,7 +847,7 @@ class SchemaInput(BaseModel):
     )
 
 
-class SchemaOutput(OutputBaseModel):
+class SchemaOutput(PydanticBaseModel):
     """Output for schema introspection."""
 
     model_config = ConfigDict(extra="forbid")
@@ -855,7 +855,7 @@ class SchemaOutput(OutputBaseModel):
     json_schema: dict[str, Any]
 
 
-SCHEMAS: dict[str, type[OutputBaseModel] | type[BaseModel]] = {
+SCHEMAS: dict[str, type[PydanticBaseModel] | type[BaseModel]] = {
     "input": SheetsInput,
     "output": SheetsOutput,
     "ReadTabResult": ReadTabResult,

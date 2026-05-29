@@ -24,6 +24,7 @@ from .task_score_unweighted import task_score_unweighted_scoring
 from .task_score_weighted_sum import task_score_weighted_sum_scoring
 from .template import template_scoring_method
 
+
 class ScoringMethodDefn(BaseModel):
     scoring_method_id: ScoringMethodIds
     scoring_method_name: str
@@ -38,6 +39,7 @@ class ScoringMethodDefn(BaseModel):
     ) = None  # Optional - server doesn't need implementation
     scoring_config_fields: list[TaskFieldSchema]
     scoring_output_fields: list[TaskFieldSchema] | None = None
+
 
 SCORING_METHOD_REGISTRY: dict[ScoringMethodIds, ScoringMethodDefn] = {
     ScoringMethodIds.TEMPLATE: ScoringMethodDefn(

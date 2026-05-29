@@ -4,8 +4,7 @@ from io import StringIO
 from typing import Any
 
 from openpyxl.utils import column_index_from_string, get_column_letter
-from pydantic import BaseModel as OutputBaseModel
-from pydantic import ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 def _format_table_output(
@@ -86,7 +85,7 @@ def _format_table_output(
     return "\n".join(lines)
 
 
-class ReadTabSingleCellResponse(OutputBaseModel):
+class ReadTabSingleCellResponse(BaseModel):
     """Response for reading a single cell."""
 
     model_config = ConfigDict(extra="forbid")
@@ -115,7 +114,7 @@ class ReadTabSingleCellResponse(OutputBaseModel):
         return base
 
 
-class ReadTabRangeResponse(OutputBaseModel):
+class ReadTabRangeResponse(BaseModel):
     """Response for reading a cell range or entire sheet."""
 
     model_config = ConfigDict(extra="forbid")
@@ -209,7 +208,7 @@ class ReadTabRangeResponse(OutputBaseModel):
         return result
 
 
-class WorksheetInfo(OutputBaseModel):
+class WorksheetInfo(BaseModel):
     """Information about a worksheet tab."""
 
     model_config = ConfigDict(extra="forbid")
@@ -228,7 +227,7 @@ class WorksheetInfo(OutputBaseModel):
     )
 
 
-class ListTabsResponse(OutputBaseModel):
+class ListTabsResponse(BaseModel):
     """Response for listing worksheet tabs in a spreadsheet."""
 
     model_config = ConfigDict(extra="forbid")
@@ -245,7 +244,7 @@ class ListTabsResponse(OutputBaseModel):
         return f"{{'worksheets': [{worksheets_str}]}}"
 
 
-class CreateSpreadsheetResponse(OutputBaseModel):
+class CreateSpreadsheetResponse(BaseModel):
     """Response for creating a spreadsheet."""
 
     model_config = ConfigDict(extra="forbid")
@@ -267,7 +266,7 @@ class CreateSpreadsheetResponse(OutputBaseModel):
         return f"{{'status': '{self.status}', 'file_name': '{self.file_name}', 'file_path': '{self.file_path}', 'sheets_created': {self.sheets_created}}}"
 
 
-class EditSpreadsheetResponse(OutputBaseModel):
+class EditSpreadsheetResponse(BaseModel):
     """Response for editing a spreadsheet."""
 
     model_config = ConfigDict(extra="forbid")
@@ -284,7 +283,7 @@ class EditSpreadsheetResponse(OutputBaseModel):
         return f"{{'status': '{self.status}', 'file_path': '{self.file_path}', 'operations_applied': {self.operations_applied}}}"
 
 
-class AddTabResponse(OutputBaseModel):
+class AddTabResponse(BaseModel):
     """Response for adding a tab to a spreadsheet."""
 
     model_config = ConfigDict(extra="forbid")
@@ -307,7 +306,7 @@ class AddTabResponse(OutputBaseModel):
         return base
 
 
-class DeleteTabResponse(OutputBaseModel):
+class DeleteTabResponse(BaseModel):
     """Response for deleting a tab from a spreadsheet."""
 
     model_config = ConfigDict(extra="forbid")
@@ -323,7 +322,7 @@ class DeleteTabResponse(OutputBaseModel):
         return f"{{'status': '{self.status}', 'tab_name': '{self.tab_name}', 'tab_index': {self.tab_index}, 'file_path': '{self.file_path}'}}"
 
 
-class DeleteSpreadsheetResponse(OutputBaseModel):
+class DeleteSpreadsheetResponse(BaseModel):
     """Response for deleting a spreadsheet."""
 
     model_config = ConfigDict(extra="forbid")
@@ -337,7 +336,7 @@ class DeleteSpreadsheetResponse(OutputBaseModel):
         return f"{{'status': '{self.status}', 'file_path': '{self.file_path}'}}"
 
 
-class AddContentTextResponse(OutputBaseModel):
+class AddContentTextResponse(BaseModel):
     """Response for adding content to a cell."""
 
     model_config = ConfigDict(extra="forbid")
@@ -357,7 +356,7 @@ class AddContentTextResponse(OutputBaseModel):
         return f"{{'status': '{self.status}', 'cell': '{self.cell}', 'tab_index': {self.tab_index}, 'file_path': '{self.file_path}'}}"
 
 
-class DeleteContentCellResponse(OutputBaseModel):
+class DeleteContentCellResponse(BaseModel):
     """Response for deleting content from a cell."""
 
     model_config = ConfigDict(extra="forbid")
@@ -385,7 +384,7 @@ class DeleteContentCellResponse(OutputBaseModel):
         return base
 
 
-class ReadCsvResponse(OutputBaseModel):
+class ReadCsvResponse(BaseModel):
     """Response for reading a CSV file."""
 
     model_config = ConfigDict(extra="forbid")
@@ -436,7 +435,7 @@ class ReadCsvResponse(OutputBaseModel):
         return result
 
 
-class FilterTabResponse(OutputBaseModel):
+class FilterTabResponse(BaseModel):
     """Response for filtering a worksheet tab."""
 
     model_config = ConfigDict(extra="forbid")

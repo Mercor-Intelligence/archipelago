@@ -13,26 +13,20 @@ from .adp import (
     adp_journal_entry_eval,
 )
 from .apex_v1_verifier import apex_v1_verifier_eval
-from .artifact_verifier import artifact_verifier_eval
 from .balboa_verifier import balboa_verifier_eval
 from .bamboohr import bamboohr_field_check_eval
-from .browser_verifier import browser_verifier_eval
 from .calendar import calendar_field_check_eval
-from .cli_verifier import cli_verifier_eval
 from .code_data_pluggable_rubric import make_eval_impl as _code_rubric_make_eval_impl
 from .code_execution import code_execution_eval
 from .code_runner_verifier import code_runner_verifier_eval
 from .content_length_check import content_length_check_eval
-from .db_diff_llm import db_diff_llm_eval
 from .db_diff_llm_tools import db_diff_llm_tools_eval
 from .deep_research import deep_research_eval
 from .eightfold import eightfold_field_check_eval
 from .file_diff_check import file_diff_check_eval
 from .freecad import freecad_field_check_eval
-from .golden_file_match import golden_file_match_eval
 from .golden_response_match import golden_response_match_eval
 from .greenhouse import greenhouse_field_check_eval
-from .hle_judge import hle_judge_eval
 from .jenkins import jenkins_field_check_eval
 from .jupiter_excel_content import excel_content_eval as jupiter_excel_content_eval
 from .jupiter_excel_formatting import (
@@ -50,20 +44,14 @@ from .kicad import (
     kicad_routing_completeness_eval,
     kicad_spice_check_eval,
 )
-from .lighthouse_result import lighthouse_result_eval
 from .looker import looker_content_check_eval, looker_field_check_eval
-from .mcq_exact_match.main import mcq_exact_match_eval
-from .mrcr_similarity import mrcr_similarity_eval
 from .openemr import (
     openemr_clinical_verification_eval,
     openemr_field_check_eval,
     openemr_state_check_eval,
 )
 from .output_llm import llm_judge_eval
-from .output_llm_browsing_check import llm_judge_browsing_check_eval
 from .output_llm_multi_representation.main import multi_representation_eval
-from .output_llm_system_steer import llm_judge_system_steer_eval
-from .output_llm_with_system import llm_judge_with_system_eval
 from .page_count_check import page_count_check_eval
 from .pattern_match_check import pattern_match_check_eval
 from .playground_snapshot_verifier import playground_snapshot_verifier_eval
@@ -78,7 +66,6 @@ from .quickbooks import (
 from .response_tool_verifier import response_tool_verifier_eval
 from .sap_onboarding import sap_onboarding_field_check_eval
 from .sap_recruiting import sap_recruiting_field_check_eval
-from .service_verifier.main import service_verifier_eval
 from .spreadsheet_verifier import spreadsheet_verifier_eval
 from .sql_validator import sql_validator_eval
 from .tableau import tableau_field_check_eval
@@ -89,8 +76,6 @@ from .taxjar import (
 from .template import template_eval_run
 from .tool_call_check import tool_call_check_eval
 from .tool_call_llm_check import tool_call_llm_check_eval
-from .trace_verifier import trace_verifier_eval
-from .user_sim_judge import llm_judge_user_sim_eval
 from .workday import workday_field_check_eval
 from .workday_help import workday_help_field_check_eval
 from .xero import (
@@ -102,6 +87,7 @@ EvalImpl = Callable[
     [EvalImplInput],
     Awaitable[VerifierResult],
 ]
+
 
 class EvalDefn(BaseModel):
     eval_id: EvalIds
@@ -116,6 +102,7 @@ class EvalDefn(BaseModel):
     required_modules: list[
         str
     ] = []  # Frontend module_type ids that must be enabled on the world's task page layout
+
 
 # Pre-built eval_impl callables for the two code_data_pluggable_rubric variants.
 # Named module-level vars so the sync_eval_definitions.sh sed regex

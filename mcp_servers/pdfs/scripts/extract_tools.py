@@ -74,14 +74,20 @@ async def extract_from_server(server_path: str):
         mcp_instance = main.mcp
 
         # Extract tools
-        tools = await mcp_instance.get_tools()
+        tools = await mcp_instance.list_tools()
         server_tools = []
-        for tool in tools.values():
+        for tool in tools:
             entry = {"name": tool.name, "description": tool.description or ""}
-            if hasattr(tool, "parameters") and tool.parameters:
-                entry["inputSchema"] = tool.parameters
-            if hasattr(tool, "output_schema") and tool.output_schema:
-                entry["outputSchema"] = tool.output_schema
+            params = getattr(tool, "inputSchema", None) or getattr(
+                tool, "parameters", None
+            )
+            if params:
+                entry["inputSchema"] = params
+            output = getattr(tool, "outputSchema", None) or getattr(
+                tool, "output_schema", None
+            )
+            if output:
+                entry["outputSchema"] = output
             server_tools.append(entry)
         return server_tools
     except Exception as e:

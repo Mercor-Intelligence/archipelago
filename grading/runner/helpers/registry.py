@@ -41,12 +41,14 @@ HelperImplWithContext = Callable[
     Awaitable[Any],
 ]
 
+
 class HelperDefn(BaseModel):
     model_config = ConfigDict(arbitrary_types_allowed=True)
 
     helper_id: HelperIds
     helper_impl: HelperImpl | None = None
     helper_impl_with_context: HelperImplWithContext | None = None
+
 
 HELPER_REGISTRY: dict[HelperIds, HelperDefn] = {
     HelperIds.TEMPLATE: HelperDefn(

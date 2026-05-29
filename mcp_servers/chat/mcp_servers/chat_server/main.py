@@ -81,10 +81,10 @@ else:
 
 async def _flatten_tool_schemas():
     """Flatten all registered tool parameter schemas for Gemini compatibility."""
-    for tool in (await mcp.get_tools()).values():
-        params = getattr(tool, "parameters", None)
+    for tool in await mcp.list_tools():
+        params = getattr(tool, "inputSchema", None) or getattr(tool, "parameters", None)
         if isinstance(params, dict):
-            tool.parameters = flatten_schema(params)
+            tool.inputSchema = flatten_schema(params)
 
 
 _flatten_tool_schemas_task: asyncio.Task[None] | None = None

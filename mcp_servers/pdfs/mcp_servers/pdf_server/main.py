@@ -66,11 +66,15 @@ else:
 
 
 async def _flatten_tool_schemas():
-    for tool in (await mcp.get_tools()).values():
-        if getattr(tool, "parameters", None):
-            tool.parameters = flatten_schema(tool.parameters)
-        if getattr(tool, "output_schema", None):
-            tool.output_schema = flatten_schema(tool.output_schema)
+    for tool in await mcp.list_tools():
+        params = getattr(tool, "inputSchema", None) or getattr(tool, "parameters", None)
+        if params:
+            tool.inputSchema = flatten_schema(params)
+        output = getattr(tool, "outputSchema", None) or getattr(
+            tool, "output_schema", None
+        )
+        if output:
+            tool.outputSchema = flatten_schema(output)
 
 
 _flatten_tool_schemas_task: asyncio.Task[None] | None = None

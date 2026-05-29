@@ -12,9 +12,11 @@ from runner.models import (
     VerifierResult,
 )
 
+
 class EvalType(StrEnum):
     LLM_JUDGE = "llm_judge"
     PROGRAMMATIC = "programmatic"
+
 
 class EvalIds(StrEnum):
     TEMPLATE = "template"
@@ -120,6 +122,7 @@ class EvalIds(StrEnum):
     # DB diff LLM tools judge - tool-augmented evaluation for large database diffs
     DB_DIFF_LLM_TOOLS = "db_diff_llm_tools"
 
+
 class EvalConfig(BaseModel):
     """
     These are attached to the world, and they dictate how a certain eval should be run.
@@ -135,6 +138,7 @@ class EvalConfig(BaseModel):
     eval_config_name: str
     eval_defn_id: EvalIds
     eval_config_values: dict[str, Any]
+
 
 class EvalImplInput(BaseModel):
     initial_snapshot_bytes: io.BytesIO

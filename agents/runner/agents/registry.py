@@ -2,15 +2,12 @@
 Agent registry mapping agent IDs to their implementations and config schemas.
 """
 
-from typing import Any
 
 from runner.agents.loop_agent.main import run as loop_agent_run
 from runner.agents.models import (
     AgentConfigIds,
     AgentDefn,
     AgentImpl,
-    AgentRunInput,
-    AgentTrajectoryOutput,
 )
 from runner.agents.react_toolbelt_agent.main import run as react_toolbelt_agent_run
 from runner.models import TaskFieldSchema, TaskFieldType
@@ -93,6 +90,7 @@ AGENT_REGISTRY: dict[AgentConfigIds, AgentDefn] = {
     ),
 }
 
+
 def get_agent_impl(agent_config_id: str) -> AgentImpl:
     """
     Get the agent implementation function for the given agent config ID.
@@ -121,6 +119,7 @@ def get_agent_impl(agent_config_id: str) -> AgentImpl:
         )
 
     return defn.agent_impl
+
 
 def get_agent_defn(agent_config_id: str) -> AgentDefn:
     """

@@ -4,7 +4,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Annotated
 
 import fitz  # PyMuPDF - much faster than pypdf for text extraction
-from mcp_schema import OutputBaseModel
+from mcp_schema import GeminiBaseModel
 from pydantic import ConfigDict, Field
 from utils.decorators import make_async_background
 from utils.ocr import ocr_available, ocr_page_image
@@ -40,7 +40,7 @@ def _resolve_under_root(path: str) -> tuple[str, str | None]:
     return normalized_path, None
 
 
-class SearchMatch(OutputBaseModel):
+class SearchMatch(GeminiBaseModel):
     """A single search match result."""
 
     model_config = ConfigDict(extra="forbid")
@@ -70,7 +70,7 @@ class SearchMatch(OutputBaseModel):
         return f"[Page {self.page}, Line {self.line}, Chars {self.char_start}-{self.char_end}]: {self.context}"
 
 
-class SearchResult(OutputBaseModel):
+class SearchResult(GeminiBaseModel):
     """Search results for PDF text search."""
 
     model_config = ConfigDict(extra="forbid")
