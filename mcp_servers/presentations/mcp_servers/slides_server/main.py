@@ -81,9 +81,10 @@ async def _flatten_tool_schemas() -> None:
     from mcp_schema import flatten_schema
 
     for tool in await mcp.list_tools():
-        params = getattr(tool, "inputSchema", None) or getattr(tool, "parameters", None)
-        if isinstance(params, dict):
-            tool.inputSchema = flatten_schema(params)
+        if getattr(tool, "parameters", None):
+            tool.parameters = flatten_schema(tool.parameters)
+        elif getattr(tool, "inputSchema", None):
+            tool.inputSchema = flatten_schema(tool.inputSchema)
         output = getattr(tool, "outputSchema", None) or getattr(
             tool, "output_schema", None
         )
