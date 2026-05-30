@@ -237,3 +237,6 @@ class FlatBaseModel(BaseModel):
 
 
 OutputBaseModel = BaseModel
+
+# Alias for compatibility — some repos import GeminiBaseModel
+GeminiBaseModel = FlatBaseModel

@@ -197,3 +197,7 @@ class FlatBaseModel(BaseModel):
     def model_json_schema(cls, **kwargs: Any) -> dict[str, Any]:
         """Generate a flattened JSON schema."""
         return flatten_schema(super().model_json_schema(**kwargs))
+
+
+# Alias for compatibility — some repos import GeminiBaseModel
+GeminiBaseModel = FlatBaseModel
