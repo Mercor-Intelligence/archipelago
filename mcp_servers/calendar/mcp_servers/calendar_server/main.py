@@ -63,8 +63,9 @@ async def _flatten_tool_schemas():
     for tool in tools:
         if getattr(tool, "parameters", None):
             tool.parameters = flatten_schema(tool.parameters)
-        if getattr(tool, "output_schema", None):
-            tool.output_schema = flatten_schema(tool.output_schema)
+        # Note: output schemas are NOT flattened because flatten_schema strips
+        # anyOf patterns for nullable fields, which breaks jsonschema.validate()
+        # in the MCP SDK when tools return null values.
 
 
 try:

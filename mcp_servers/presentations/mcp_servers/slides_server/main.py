@@ -85,11 +85,9 @@ async def _flatten_tool_schemas() -> None:
             tool.parameters = flatten_schema(tool.parameters)
         elif getattr(tool, "inputSchema", None):
             tool.inputSchema = flatten_schema(tool.inputSchema)
-        output = getattr(tool, "outputSchema", None) or getattr(
-            tool, "output_schema", None
-        )
-        if isinstance(output, dict):
-            tool.outputSchema = flatten_schema(output)
+        # Note: output schemas are NOT flattened because flatten_schema strips
+        # anyOf patterns for nullable fields, which breaks jsonschema.validate()
+        # in the MCP SDK when tools return null values.
 
 
 _flatten_tool_schemas_task: asyncio.Task[None] | None = None
