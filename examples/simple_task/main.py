@@ -14,16 +14,16 @@ Prerequisites:
 import io
 import json
 import os
+import shutil
 import subprocess
 import sys
 import tarfile
 import time
 import uuid
 import zipfile
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 
 import requests
-import shutil
 
 # Paths - can be overridden via environment variables
 EXAMPLE_DIR = Path(os.environ.get("EXAMPLE_DIR", Path(__file__).parent))
@@ -39,6 +39,30 @@ ENV_URL = os.environ.get("ENV_URL", "http://localhost:8080")
 
 def log(msg: str):
     print(f"[{time.strftime('%H:%M:%S')}] {msg}", flush=True)
+
+
+def safe_archive_member_path(member_name: str) -> PurePosixPath:
+    """Validate an archive member name and return a safe relative POSIX path."""
+    clean_name = member_name[:-1] if member_name.endswith("/") else member_name
+    if not clean_name:
+        raise ValueError("Archive member path cannot be empty")
+    if "\x00" in clean_name:
+        raise ValueError(f"Archive member path contains a null byte: {member_name!r}")
+    if "\\" in clean_name:
+        raise ValueError(
+            f"Archive member path must use '/' separators only: {member_name!r}"
+        )
+
+    posix_path = PurePosixPath(clean_name)
+    windows_path = PureWindowsPath(clean_name)
+    if posix_path.is_absolute() or windows_path.is_absolute() or windows_path.drive:
+        raise ValueError(f"Archive member path must be relative: {member_name!r}")
+
+    parts = clean_name.split("/")
+    if any(part in ("", ".", "..") for part in parts):
+        raise ValueError(f"Archive member path is not normalized: {member_name!r}")
+
+    return posix_path
 
 
 def wait_for_health(url: str, timeout: int = 120) -> bool:
@@ -103,7 +127,8 @@ def zip_to_tar_gz(zip_path: Path, strip_prefix: str = "filesystem/") -> Path:
     tar_gz_path = zip_path.with_suffix(".tar.gz")
     with zipfile.ZipFile(zip_path, "r") as zf:
         with tarfile.open(tar_gz_path, "w:gz") as tar:
-            for name in zf.namelist():
+            for zip_info in zf.infolist():
+                name = zip_info.filename
                 # Strip the prefix if present
                 new_name = name
                 if strip_prefix and name.startswith(strip_prefix):
@@ -113,16 +138,17 @@ def zip_to_tar_gz(zip_path: Path, strip_prefix: str = "filesystem/") -> Path:
                 if not new_name:
                     continue
 
-                info = tarfile.TarInfo(name=new_name)
+                safe_name = str(safe_archive_member_path(new_name))
+                info = tarfile.TarInfo(name=safe_name)
 
                 # Check if it's a directory (ends with /)
-                if name.endswith("/"):
+                if zip_info.is_dir():
                     info.type = tarfile.DIRTYPE
                     info.mode = 0o755
                     tar.addfile(info)
                 else:
                     # It's a file
-                    data = zf.read(name)
+                    data = zf.read(zip_info)
                     info.size = len(data)
                     info.mode = 0o644
                     tar.addfile(info, io.BytesIO(data))
