@@ -33,18 +33,11 @@ def load_example_module(
                 sys.modules[name] = old_module
 
 
-def load_hugging_face_example():
-    httpx = types.ModuleType("httpx")
-    httpx.RequestError = Exception
-
-    huggingface_hub = types.ModuleType("huggingface_hub")
-    huggingface_hub.hf_hub_download = lambda *args, **kwargs: None
-    huggingface_hub.snapshot_download = lambda *args, **kwargs: None
-
+def load_archive_safety():
     return load_example_module(
-        "examples/hugging_face_task/main.py",
-        "hugging_face_task_main",
-        {"httpx": httpx, "huggingface_hub": huggingface_hub},
+        "examples/archive_safety.py",
+        "archive_safety",
+        {},
     )
 
 
@@ -61,7 +54,7 @@ def load_simple_example():
 
 class ArchiveSafetyTests(unittest.TestCase):
     def test_hugging_face_member_validation_rejects_unsafe_paths(self):
-        module = load_hugging_face_example()
+        module = load_archive_safety()
 
         unsafe_names = [
             "../evil.txt",
@@ -80,7 +73,7 @@ class ArchiveSafetyTests(unittest.TestCase):
                     module.safe_archive_member_path(name)
 
     def test_hugging_face_safe_extract_rejects_traversal_member(self):
-        module = load_hugging_face_example()
+        module = load_archive_safety()
 
         with tempfile.TemporaryDirectory() as tmp:
             outside_path = Path(tmp).parent / f"{Path(tmp).name}_evil.txt"
