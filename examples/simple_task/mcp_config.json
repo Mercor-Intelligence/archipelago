@@ -2,8 +2,10 @@
   "mcpServers": {
     "filesystem_server": {
       "transport": "stdio",
-      "command": "python",
+      "command": "uv",
       "args": [
+        "run",
+        "python",
         "main.py"
       ],
       "cwd": "/app/mcp_servers/filesystem/mcp_servers/filesystem_server",
