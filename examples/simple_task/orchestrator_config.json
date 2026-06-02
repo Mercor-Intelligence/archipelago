@@ -1,4 +1,4 @@
 {
-  "model": "gemini/gemini-3.1-pro-preview",
+  "model": "gpt-5.5",
   "extra_args": {}
 }
