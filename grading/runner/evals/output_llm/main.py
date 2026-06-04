@@ -319,6 +319,19 @@ async def llm_judge_eval(input: EvalImplInput) -> VerifierResult:
                 )
                 continue
 
+            # Some providers (e.g. Anthropic via LiteLLM) ignore the
+            # response_format json_object request and wrap the object in a
+            # ```json … ``` markdown fence, which breaks json.loads /
+            # model_validate_json below. Strip a leading/trailing code fence.
+            stripped = raw_content.strip()
+            if stripped.startswith("```"):
+                stripped = stripped[3:]
+                if stripped[:4].lower() == "json":
+                    stripped = stripped[4:]
+                if stripped.endswith("```"):
+                    stripped = stripped[:-3]
+                raw_content = stripped.strip()
+
             try:
                 # Gemini sometimes returns rationale as a dict instead of string
                 # e.g. {"Evidence": ..., "Assessment": ...} - just stringify it
