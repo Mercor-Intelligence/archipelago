@@ -1,0 +1,145 @@
+{
+  "mcpServers": {
+    "chat": {
+      "cwd": "/tmp",
+      "env": {
+        "HAS_STATE": "true",
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "chat_server",
+        "STATE_LOCATION": "/.apps_data/chat",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "ARCHIPELAGO_DIR=/tmp/archipelago-$SERVER_NAME && if [ ! -d \"$ARCHIPELAGO_DIR/.git\" ]; then git clone --depth 1 https://github.com/Mercor-Intelligence/archipelago.git \"$ARCHIPELAGO_DIR\"; fi && git -C \"$ARCHIPELAGO_DIR\" fetch --depth 1 origin 7bb3656bc11595685fc63fc8e996676647139178 && git -C \"$ARCHIPELAGO_DIR\" checkout --force 7bb3656bc11595685fc63fc8e996676647139178 && cd \"$ARCHIPELAGO_DIR\"/mcp_servers/chat && uv sync --all-extras && cd mcp_servers/chat_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    },
+    "code_execution": {
+      "cwd": "/tmp",
+      "env": {
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "code_execution_server",
+        "USE_INDIVIDUAL_TOOLS": "true",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "apt-get update -qq && apt-get install -y -qq gcc libc6-dev && ARCHIPELAGO_DIR=/tmp/archipelago-$SERVER_NAME && if [ ! -d \"$ARCHIPELAGO_DIR/.git\" ]; then git clone --depth 1 https://github.com/Mercor-Intelligence/archipelago.git \"$ARCHIPELAGO_DIR\"; fi && git -C \"$ARCHIPELAGO_DIR\" fetch --depth 1 origin 7bb3656bc11595685fc63fc8e996676647139178 && git -C \"$ARCHIPELAGO_DIR\" checkout --force 7bb3656bc11595685fc63fc8e996676647139178 && cd \"$ARCHIPELAGO_DIR\"/mcp_servers/code/mcp_servers/code_execution_server && mkdir -p /app/lib && gcc -shared -fPIC -O2 -o /app/lib/sandbox_fs.so sandbox_fs.c -ldl -lpthread && cd \"$ARCHIPELAGO_DIR\"/mcp_servers/code && uv sync --all-extras && cd mcp_servers/code_execution_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    },
+    "spreadsheets": {
+      "cwd": "/tmp",
+      "env": {
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "sheets_server",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "ARCHIPELAGO_DIR=/tmp/archipelago-$SERVER_NAME && if [ ! -d \"$ARCHIPELAGO_DIR/.git\" ]; then git clone --depth 1 https://github.com/Mercor-Intelligence/archipelago.git \"$ARCHIPELAGO_DIR\"; fi && git -C \"$ARCHIPELAGO_DIR\" fetch --depth 1 origin 7bb3656bc11595685fc63fc8e996676647139178 && git -C \"$ARCHIPELAGO_DIR\" checkout --force 7bb3656bc11595685fc63fc8e996676647139178 && cd \"$ARCHIPELAGO_DIR\"/mcp_servers/spreadsheets && uv sync --all-extras && cd mcp_servers/sheets_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    },
+    "filesystem": {
+      "cwd": "/tmp",
+      "env": {
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "filesystem_server",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "ARCHIPELAGO_DIR=/tmp/archipelago-$SERVER_NAME && if [ ! -d \"$ARCHIPELAGO_DIR/.git\" ]; then git clone --depth 1 https://github.com/Mercor-Intelligence/archipelago.git \"$ARCHIPELAGO_DIR\"; fi && git -C \"$ARCHIPELAGO_DIR\" fetch --depth 1 origin 7bb3656bc11595685fc63fc8e996676647139178 && git -C \"$ARCHIPELAGO_DIR\" checkout --force 7bb3656bc11595685fc63fc8e996676647139178 && cd \"$ARCHIPELAGO_DIR\"/mcp_servers/filesystem && uv sync --all-extras && cd mcp_servers/filesystem_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    },
+    "mail": {
+      "cwd": "/tmp",
+      "env": {
+        "HAS_STATE": "true",
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "mail_server",
+        "STATE_LOCATION": "/.apps_data/mail",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "ARCHIPELAGO_DIR=/tmp/archipelago-$SERVER_NAME && if [ ! -d \"$ARCHIPELAGO_DIR/.git\" ]; then git clone --depth 1 https://github.com/Mercor-Intelligence/archipelago.git \"$ARCHIPELAGO_DIR\"; fi && git -C \"$ARCHIPELAGO_DIR\" fetch --depth 1 origin 7bb3656bc11595685fc63fc8e996676647139178 && git -C \"$ARCHIPELAGO_DIR\" checkout --force 7bb3656bc11595685fc63fc8e996676647139178 && cd \"$ARCHIPELAGO_DIR\"/mcp_servers/mail && uv sync --all-extras && cd mcp_servers/mail_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    },
+    "pdfs": {
+      "cwd": "/tmp",
+      "env": {
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "pdf_server",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "ARCHIPELAGO_DIR=/tmp/archipelago-$SERVER_NAME && if [ ! -d \"$ARCHIPELAGO_DIR/.git\" ]; then git clone --depth 1 https://github.com/Mercor-Intelligence/archipelago.git \"$ARCHIPELAGO_DIR\"; fi && git -C \"$ARCHIPELAGO_DIR\" fetch --depth 1 origin 7bb3656bc11595685fc63fc8e996676647139178 && git -C \"$ARCHIPELAGO_DIR\" checkout --force 7bb3656bc11595685fc63fc8e996676647139178 && cd \"$ARCHIPELAGO_DIR\"/mcp_servers/pdfs && uv sync --all-extras && cd mcp_servers/pdf_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    },
+    "presentations": {
+      "cwd": "/tmp",
+      "env": {
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "slides_server",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "ARCHIPELAGO_DIR=/tmp/archipelago-$SERVER_NAME && if [ ! -d \"$ARCHIPELAGO_DIR/.git\" ]; then git clone --depth 1 https://github.com/Mercor-Intelligence/archipelago.git \"$ARCHIPELAGO_DIR\"; fi && git -C \"$ARCHIPELAGO_DIR\" fetch --depth 1 origin 7bb3656bc11595685fc63fc8e996676647139178 && git -C \"$ARCHIPELAGO_DIR\" checkout --force 7bb3656bc11595685fc63fc8e996676647139178 && cd \"$ARCHIPELAGO_DIR\"/mcp_servers/presentations && uv sync --all-extras && cd mcp_servers/slides_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    },
+    "documents": {
+      "cwd": "/tmp",
+      "env": {
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "docs_server",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "url": null,
+      "args": [
+        "-c",
+        "ARCHIPELAGO_DIR=/tmp/archipelago-$SERVER_NAME && if [ ! -d \"$ARCHIPELAGO_DIR/.git\" ]; then git clone --depth 1 https://github.com/Mercor-Intelligence/archipelago.git \"$ARCHIPELAGO_DIR\"; fi && git -C \"$ARCHIPELAGO_DIR\" fetch --depth 1 origin 7bb3656bc11595685fc63fc8e996676647139178 && git -C \"$ARCHIPELAGO_DIR\" checkout --force 7bb3656bc11595685fc63fc8e996676647139178 && cd \"$ARCHIPELAGO_DIR\"/mcp_servers/documents && uv sync --all-extras && cd mcp_servers/docs_server && uv run python main.py"
+      ],
+      "auth": null,
+      "command": "sh",
+      "headers": null,
+      "transport": "stdio"
+    }
+  }
+}
