@@ -30,7 +30,7 @@ dependencies = [
     "tenacity>=9.0.0",
     "datadog-api-client>=2.44.0",
     "pdf2image>=1.17.0",
-    "pypdf>=6.9.2",
+    "pypdf>=6.12.0",
     "pillow==12.2.0",
     "types-aioboto3>=15.2.0",
     "types-aiobotocore[s3]>=2.15.2",
