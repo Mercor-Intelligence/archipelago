@@ -25,7 +25,7 @@ dependencies = [
     "mcp-schema",
     "pydantic-settings>=2.11.0",
     "redis>=6.4.0",
-    "pypdf>=4.0.0",
+    "pypdf>=6.13.3",
     "pymupdf>=1.24.0",
     "pillow>=10.0.0",
     "reportlab>=4.0.0",
