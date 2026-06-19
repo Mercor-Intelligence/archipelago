@@ -33,38 +33,44 @@ _JSON_FENCE_RE = re.compile(
 def _first_balanced_json(text: str) -> str | None:
     """Return the first balanced ``{...}`` or ``[...]`` substring that parses
     as JSON, or ``None`` if there isn't one. Quote-aware so braces inside
-    strings don't throw off the depth count."""
-    start = next((i for i, ch in enumerate(text) if ch in "{["), None)
-    if start is None:
-        return None
-    open_ch = text[start]
-    close_ch = "}" if open_ch == "{" else "]"
-    depth = 0
-    in_str = False
-    escape = False
-    for i in range(start, len(text)):
-        ch = text[i]
-        if in_str:
-            if escape:
-                escape = False
-            elif ch == "\\":
-                escape = True
-            elif ch == '"':
-                in_str = False
+    strings don't throw off the depth count. Keeps scanning past balanced
+    blocks that fail to parse, so harmless balanced braces in a preamble don't
+    hide a valid object that appears later in the response."""
+    n = len(text)
+    i = 0
+    while i < n:
+        open_ch = text[i]
+        if open_ch not in "{[":
+            i += 1
             continue
-        if ch == '"':
-            in_str = True
-        elif ch == open_ch:
-            depth += 1
-        elif ch == close_ch:
-            depth -= 1
-            if depth == 0:
-                candidate = text[start : i + 1]
-                try:
-                    json.loads(candidate)
-                    return candidate
-                except json.JSONDecodeError:
-                    return None
+        close_ch = "}" if open_ch == "{" else "]"
+        depth = 0
+        in_str = False
+        escape = False
+        for j in range(i, n):
+            ch = text[j]
+            if in_str:
+                if escape:
+                    escape = False
+                elif ch == "\\":
+                    escape = True
+                elif ch == '"':
+                    in_str = False
+                continue
+            if ch == '"':
+                in_str = True
+            elif ch == open_ch:
+                depth += 1
+            elif ch == close_ch:
+                depth -= 1
+                if depth == 0:
+                    candidate = text[i : j + 1]
+                    try:
+                        json.loads(candidate)
+                        return candidate
+                    except json.JSONDecodeError:
+                        break  # not valid JSON; resume scanning after this opener
+        i += 1
     return None
 
 
@@ -87,17 +93,24 @@ def extract_json_payload(raw_content: str) -> str:
         return raw_content
     text = raw_content.strip()
 
-    # 1) Strip a surrounding markdown code fence if present.
-    fence = _JSON_FENCE_RE.search(text)
-    if fence:
-        text = fence.group("body").strip()
-
-    # 2) If it already parses, use it as-is.
+    # 1) If the response already parses as JSON, use it verbatim. This has to
+    #    come before fence stripping: a valid payload whose string fields
+    #    contain ``` segments would otherwise be mangled by the fence regex.
     try:
         json.loads(text)
         return text
     except json.JSONDecodeError:
         pass
+
+    # 2) Strip a surrounding markdown code fence and use the body if it parses.
+    fence = _JSON_FENCE_RE.search(text)
+    if fence:
+        body = fence.group("body").strip()
+        try:
+            json.loads(body)
+            return body
+        except json.JSONDecodeError:
+            text = body  # search the unwrapped body for a balanced block below
 
     # 3) Fall back to the first balanced JSON block (handles preamble text).
     block = _first_balanced_json(text)

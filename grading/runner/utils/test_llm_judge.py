@@ -50,6 +50,29 @@ def test_ignores_braces_inside_strings():
     assert _loads(payload) == {"result": 1, "reason": "uses a {placeholder} token"}
 
 
+def test_valid_json_with_backticks_in_field_is_not_mangled():
+    # A well-formed payload whose string field contains a pair of triple
+    # backtick segments must parse verbatim -- fence stripping must not run
+    # before the as-is parse check (regression for the fence-strip bug).
+    payload = json.dumps(
+        {"result": 1, "reason": "use ```json\n{}\n``` for output"}
+    )
+    assert extract_json_payload(payload) == payload
+    assert _loads(payload)["reason"] == "use ```json\n{}\n``` for output"
+
+
+def test_skips_balanced_preamble_braces_before_real_object():
+    # Harmless balanced braces in the preamble must not stop extraction; the
+    # later valid object should still be found.
+    noisy = 'Note: {see appendix} below\n{"result": 0, "reason": "x"}'
+    assert _loads(noisy) == {"result": 0, "reason": "x"}
+
+
+def test_first_balanced_json_skips_unparseable_block():
+    text = '{not: valid} then {"result": 1, "reason": "y"}'
+    assert _first_balanced_json(text) == '{"result": 1, "reason": "y"}'
+
+
 def test_first_balanced_json_returns_none_for_garbage():
     assert _first_balanced_json("no json here at all") is None
 
