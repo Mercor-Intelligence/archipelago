@@ -7,6 +7,7 @@ Provides common patterns for:
 """
 
 import json
+import re
 from typing import Any
 
 from litellm import Choices
@@ -20,6 +21,87 @@ MAX_JSON_RETRIES = 10
 
 # Default timeout for LLM judge calls (1 hour)
 LLM_JUDGE_TIMEOUT = 3600
+
+# Matches a JSON payload wrapped in a markdown code fence, e.g.
+# ```json\n{...}\n``` or ```\n{...}\n```
+_JSON_FENCE_RE = re.compile(
+    r"```(?:json)?\s*\n?(?P<body>.*?)\n?\s*```",
+    re.DOTALL | re.IGNORECASE,
+)
+
+
+def _first_balanced_json(text: str) -> str | None:
+    """Return the first balanced ``{...}`` or ``[...]`` substring that parses
+    as JSON, or ``None`` if there isn't one. Quote-aware so braces inside
+    strings don't throw off the depth count."""
+    start = next((i for i, ch in enumerate(text) if ch in "{["), None)
+    if start is None:
+        return None
+    open_ch = text[start]
+    close_ch = "}" if open_ch == "{" else "]"
+    depth = 0
+    in_str = False
+    escape = False
+    for i in range(start, len(text)):
+        ch = text[i]
+        if in_str:
+            if escape:
+                escape = False
+            elif ch == "\\":
+                escape = True
+            elif ch == '"':
+                in_str = False
+            continue
+        if ch == '"':
+            in_str = True
+        elif ch == open_ch:
+            depth += 1
+        elif ch == close_ch:
+            depth -= 1
+            if depth == 0:
+                candidate = text[start : i + 1]
+                try:
+                    json.loads(candidate)
+                    return candidate
+                except json.JSONDecodeError:
+                    return None
+    return None
+
+
+def extract_json_payload(raw_content: str) -> str:
+    """Best-effort extraction of a JSON payload from an LLM judge response.
+
+    Models intermittently wrap structured output in a markdown code fence
+    (```json ... ```) or prepend a short preamble, which makes
+    ``model_validate_json`` fail even though the JSON itself is well formed.
+    Left unhandled this burns every ``MAX_JSON_RETRIES`` attempt and raises
+    "Invalid JSON after N attempts" (issue #97) -- a grader failure that drops
+    or zeroes an otherwise-gradeable run.
+
+    This strips a surrounding code fence and, failing that, extracts the first
+    balanced JSON object/array so a valid-but-wrapped response parses on the
+    first attempt. The original string is returned unchanged when no cleaner
+    payload is found, so existing validation/retry behaviour is preserved.
+    """
+    if not raw_content:
+        return raw_content
+    text = raw_content.strip()
+
+    # 1) Strip a surrounding markdown code fence if present.
+    fence = _JSON_FENCE_RE.search(text)
+    if fence:
+        text = fence.group("body").strip()
+
+    # 2) If it already parses, use it as-is.
+    try:
+        json.loads(text)
+        return text
+    except json.JSONDecodeError:
+        pass
+
+    # 3) Fall back to the first balanced JSON block (handles preamble text).
+    block = _first_balanced_json(text)
+    return block if block is not None else text
 
 
 class JudgeResponse(BaseModel):
@@ -89,6 +171,9 @@ async def call_llm_judge[T: JudgeResponse](
             continue
 
         try:
+            # Strip code fences / preamble so a valid-but-wrapped response
+            # parses on the first attempt instead of exhausting retries (#97).
+            raw_content = extract_json_payload(raw_content)
             # Handle Gemini quirk where reason may be a dict instead of string
             try:
                 raw_json = json.loads(raw_content)

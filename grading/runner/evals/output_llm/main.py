@@ -36,6 +36,8 @@ from .utils.services.artifact_reference import (
     fetch_artifacts_to_reference,
 )
 from .utils.services.prompt_builder import build_grading_prompt
+from runner.utils.llm_judge import extract_json_payload
+
 from .utils.shared import (
     LLM_JUDGE_TIMEOUT,
     MAX_JSON_RETRIES,
@@ -320,6 +322,9 @@ async def llm_judge_eval(input: EvalImplInput) -> VerifierResult:
                 continue
 
             try:
+                # Strip code fences / preamble so a valid-but-wrapped response
+                # parses on the first attempt instead of exhausting retries (#97).
+                raw_content = extract_json_payload(raw_content)
                 # Gemini sometimes returns rationale as a dict instead of string
                 # e.g. {"Evidence": ..., "Assessment": ...} - just stringify it
                 try:

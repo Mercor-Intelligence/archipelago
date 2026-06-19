@@ -10,6 +10,7 @@ from runner.helpers.models import HelperIds
 from runner.helpers.vca_context import VcaContext
 from runner.models import EvaluationTarget, VerifierResult
 from runner.utils.llm import build_messages, call_llm
+from runner.utils.llm_judge import extract_json_payload
 
 VCA_BEHAVIOR_SYSTEM_PROMPT = """You are grading a Virtual Coworker Agent (VCA), not the Target Agent.
 
@@ -71,6 +72,9 @@ async def vca_behavior_llm_check_eval(input: EvalImplInput) -> VerifierResult:
             )
             continue
         try:
+            # Strip code fences / preamble so a valid-but-wrapped response
+            # parses on the first attempt instead of exhausting retries (#97).
+            raw_content = extract_json_payload(raw_content)
             parsed = VcaBehaviorResponse.model_validate_json(raw_content)
             break
         except ValidationError as e:

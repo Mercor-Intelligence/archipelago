@@ -50,6 +50,7 @@ from runner.evals.output_llm.utils.shared import (
     should_auto_fail_missing_file_type,
 )
 from runner.helpers.models import HelperIds
+from runner.utils.llm_judge import extract_json_payload
 from runner.helpers.snapshot_diff import extract_artifact_changes_from_diff
 from runner.models import VerifierResult
 from runner.utils.llm import build_messages, call_llm
@@ -309,6 +310,9 @@ async def llm_judge_browsing_check_eval(input: EvalImplInput) -> VerifierResult:
                 continue
 
             try:
+                # Strip code fences / preamble so a valid-but-wrapped response
+                # parses on the first attempt instead of exhausting retries (#97).
+                raw_content = extract_json_payload(raw_content)
                 try:
                     raw_json = json.loads(raw_content)
                     if isinstance(raw_json, dict) and isinstance(
