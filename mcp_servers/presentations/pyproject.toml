@@ -20,7 +20,7 @@ dependencies = [
     "litellm==1.83.10",
     "loguru>=0.7.3",
     "mcp-schema",
-    "pydantic-settings>=2.11.0",
+    "pydantic-settings>=2.14.2",
     "redis>=6.4.0",
     "python-pptx>=1.0.2",
     "markitdown[pptx]>=0.1.3",
