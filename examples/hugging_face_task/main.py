@@ -32,6 +32,9 @@ AGENTS_DIR = Path(os.environ.get("AGENTS_DIR", ARCHIPELAGO_DIR / "agents"))
 GRADING_DIR = Path(os.environ.get("GRADING_DIR", ARCHIPELAGO_DIR / "grading"))
 
 ENV_URL = os.environ.get("ENV_URL", "http://localhost:8080")
+COMPOSE_PROJECT_NAME = os.environ.get(
+    "COMPOSE_PROJECT_NAME", "archipelago-environment"
+)
 HF_DATASET = "mercor/apex-agents"
 SUBSYSTEMS = ["filesystem", ".apps_data"]
 
@@ -108,14 +111,62 @@ def start_environment():
         log("Creating empty .env file...")
         env_file.touch()
 
-    log("Stopping any existing environment containers...")
+    log(f"Stopping any existing containers in compose project '{COMPOSE_PROJECT_NAME}'...")
     subprocess.run(
-        ["docker", "compose", "down", "-v"], cwd=ENVIRONMENT_DIR, capture_output=True
+        ["docker", "compose", "-p", COMPOSE_PROJECT_NAME, "down", "-v"],
+        cwd=ENVIRONMENT_DIR,
+        capture_output=True,
     )
 
-    log("Building and starting environment container...")
+    # Fast path: if a prebuilt image named "apex-test-environment:latest" is
+    # already on this VM (pulled by setup_worker.sh or built via
+    # `make build-image`), reuse it via plain `docker run` to skip the long
+    # docker compose build.
+    log("Checking for prebuilt environment image...")
+    inspect = subprocess.run(
+        ["docker", "image", "inspect", "apex-test-environment:latest"],
+        capture_output=True,
+    )
+    if inspect.returncode == 0:
+        log("Found apex-test-environment:latest — starting via docker run (skip build)")
+        container_name = f"{COMPOSE_PROJECT_NAME}-env"
+        # Free up port 8080 by killing any other containers binding to it.
+        subprocess.run(
+            ["bash", "-c",
+             "docker ps --format '{{.ID}} {{.Ports}}' | "
+             "awk '/0\\.0\\.0\\.0:8080->/ {print $1}' | "
+             "xargs -r docker stop"],
+            capture_output=True,
+        )
+        subprocess.run(
+            ["docker", "rm", "-f", container_name],
+            capture_output=True,
+        )
+        # NOTE: do NOT specify --network here — the compose project default
+        # network (e.g. archipelago-warchipelago-eval-worker-1_default) is only
+        # created by `docker compose up`. Using the default bridge network
+        # works for `localhost:8080` access from the host.
+        result = subprocess.run(
+            [
+                "docker", "run", "-d",
+                "--name", container_name,
+                "-p", "8080:8080",
+                "apex-test-environment:latest",
+            ],
+        )
+        if result.returncode != 0:
+            log("ERROR: docker run failed; falling back to compose build")
+        else:
+            log("Waiting for environment to be healthy...")
+            if wait_for_health(ENV_URL):
+                log("Environment started (via prebuilt image)")
+                return
+            log("Prebuilt container unhealthy; falling back to compose build")
+
+    log("Building and starting environment container via docker compose...")
     result = subprocess.run(
-        ["docker", "compose", "up", "-d", "--build"], cwd=ENVIRONMENT_DIR
+        ["docker", "compose", "-p", COMPOSE_PROJECT_NAME, "up", "-d", "--build"],
+        cwd=ENVIRONMENT_DIR,
     )
     if result.returncode != 0:
         log("ERROR: Failed to start environment")
@@ -123,7 +174,10 @@ def start_environment():
 
     log("Waiting for environment to be healthy...")
     if not wait_for_health(ENV_URL):
-        subprocess.run(["docker", "compose", "logs"], cwd=ENVIRONMENT_DIR)
+        subprocess.run(
+            ["docker", "compose", "-p", COMPOSE_PROJECT_NAME, "logs"],
+            cwd=ENVIRONMENT_DIR,
+        )
         log("ERROR: Environment failed to start")
         sys.exit(1)
 
@@ -185,7 +239,9 @@ def main():
 
     trajectory_id = f"hf_{task['task_id']}_{uuid.uuid4().hex[:8]}"
     grading_run_id = f"gr_{uuid.uuid4().hex[:8]}"
-    output_dir = EXAMPLE_DIR / "output" / task["task_id"]
+    output_dir = Path(
+        os.environ.get("ARCHIPELAGO_OUTPUT_DIR", EXAMPLE_DIR / "output" / task["task_id"])
+    )
     output_dir.mkdir(parents=True, exist_ok=True)
 
     log("=" * 60)
@@ -275,8 +331,11 @@ Don't over-explain. Be concise but show your thinking.
     with open(output_dir / "initial_messages.json", "w") as f:
         json.dump(initial_messages, f, indent=2)
 
-    # Load orchestrator config
-    with open(EXAMPLE_DIR / "orchestrator_config.json") as f:
+    # Load orchestrator config (run_single_task.py may override via env)
+    orchestrator_config_path = Path(
+        os.environ.get("ORCHESTRATOR_CONFIG", EXAMPLE_DIR / "orchestrator_config.json")
+    )
+    with open(orchestrator_config_path) as f:
         orchestrator_config = json.load(f)
 
     trajectory_file = output_dir / "trajectory.json"
@@ -296,7 +355,7 @@ Don't over-explain. Be concise but show your thinking.
         "--mcp-gateway-url",
         f"{ENV_URL}/mcp/",
         "--agent-config",
-        str(EXAMPLE_DIR / "agent_config.json"),
+        str(Path(os.environ.get("AGENT_CONFIG", EXAMPLE_DIR / "agent_config.json"))),
         "--orchestrator-model",
         orchestrator_config["model"],
         "--output",
@@ -389,7 +448,20 @@ Don't over-explain. Be concise but show your thinking.
             str(grades_file),
         ]
 
-        result = subprocess.run(grading_cmd, cwd=GRADING_DIR)
+        # Forward proxy / HF env so grading uses the same New API + HF token
+        grading_env = None
+        for env_file in [AGENTS_DIR / ".env"]:
+            if env_file.exists():
+                grading_env = {**os.environ}
+                for line in env_file.read_text().splitlines():
+                    line = line.strip()
+                    if not line or line.startswith("#") or "=" not in line:
+                        continue
+                    k, _, v = line.partition("=")
+                    grading_env[k.strip()] = v.strip()
+                break
+
+        result = subprocess.run(grading_cmd, cwd=GRADING_DIR, env=grading_env)
         if result.returncode != 0:
             log(f"WARNING: Grading exited with code {result.returncode}")
 

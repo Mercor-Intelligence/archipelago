@@ -3,7 +3,10 @@ services:
     build:
       context: ..
       dockerfile: environment/Dockerfile
-    container_name: archipelago-environment
+      secrets:
+        - github_token
+    image: apex-test-environment:latest
+    pull_policy: never
     ports:
       - "8080:8080"
     env_file:
@@ -14,3 +17,7 @@ services:
       timeout: 10s
       retries: 3
       start_period: 10s
+
+secrets:
+  github_token:
+    file: /run/secrets/github_token

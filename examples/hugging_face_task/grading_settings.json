@@ -1,4 +1,4 @@
 {
-  "llm_judge_model": "vertex_ai/gemini-2.5-flash",
+  "llm_judge_model": "gemini-3.1-pro-preview",
   "llm_judge_extra_args": null
 }

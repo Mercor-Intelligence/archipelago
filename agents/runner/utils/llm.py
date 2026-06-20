@@ -1,6 +1,7 @@
 """LLM utilities for agents using LiteLLM."""
 
 from enum import StrEnum
+import json
 from typing import Any
 
 import litellm
@@ -344,6 +345,95 @@ def normalize_assistant_tool_call_content(
     return normalized
 
 
+def _json_stringify_tool_call_arguments(value: Any) -> str:
+    """Return OpenAI-compatible tool-call arguments.
+
+    OpenAI-compatible chat history requires
+    ``tool_calls[].function.arguments`` to be a JSON string. Some proxy/provider
+    paths preserve model-returned arguments as dict/list objects after a tool
+    call succeeds, or as strings that are not valid JSON object text, then
+    reject the next request when that history is sent back. Normalizing before
+    every request keeps the stored history provider agnostic.
+    """
+    if isinstance(value, str):
+        try:
+            parsed = json.loads(value)
+        except json.JSONDecodeError:
+            return json.dumps({"_raw_arguments": value}, ensure_ascii=False)
+        if isinstance(parsed, dict):
+            return value
+        return json.dumps({"_raw_arguments": parsed}, ensure_ascii=False)
+    if isinstance(value, dict):
+        return json.dumps(value, ensure_ascii=False)
+    if value is None:
+        return ""
+    return json.dumps({"_raw_arguments": value}, ensure_ascii=False)
+
+
+def _with_json_string_tool_call_arguments(
+    messages: list[LitellmAnyMessage],
+) -> list[LitellmAnyMessage]:
+    """Coerce assistant tool-call arguments to JSON strings."""
+    normalized: list[LitellmAnyMessage] = []
+    for msg in messages:
+        if isinstance(msg, Message):
+            tool_calls = msg.tool_calls
+            if not tool_calls:
+                normalized.append(msg)
+                continue
+            dumped = msg.model_dump(exclude_none=True)
+            changed = False
+            new_tool_calls = []
+            for tool_call in dumped.get("tool_calls") or []:
+                if not isinstance(tool_call, dict):
+                    new_tool_calls.append(tool_call)
+                    continue
+                fn = tool_call.get("function")
+                if not isinstance(fn, dict) or "arguments" not in fn:
+                    new_tool_calls.append(tool_call)
+                    continue
+                args = fn.get("arguments")
+                fixed_args = _json_stringify_tool_call_arguments(args)
+                if fixed_args != args:
+                    changed = True
+                    tool_call = {
+                        **tool_call,
+                        "function": {**fn, "arguments": fixed_args},
+                    }
+                new_tool_calls.append(tool_call)
+            if changed:
+                dumped["tool_calls"] = new_tool_calls
+                normalized.append(dumped)  # pyright: ignore[reportArgumentType]
+            else:
+                normalized.append(msg)
+            continue
+
+        if isinstance(msg, dict) and msg.get("tool_calls"):
+            changed = False
+            new_tool_calls = []
+            for tool_call in msg.get("tool_calls") or []:
+                if not isinstance(tool_call, dict):
+                    new_tool_calls.append(tool_call)
+                    continue
+                fn = tool_call.get("function")
+                if not isinstance(fn, dict) or "arguments" not in fn:
+                    new_tool_calls.append(tool_call)
+                    continue
+                args = fn.get("arguments")
+                fixed_args = _json_stringify_tool_call_arguments(args)
+                if fixed_args != args:
+                    changed = True
+                    tool_call = {
+                        **tool_call,
+                        "function": {**fn, "arguments": fixed_args},
+                    }
+                new_tool_calls.append(tool_call)
+            if changed:
+                msg = {**msg, "tool_calls": new_tool_calls}
+        normalized.append(msg)
+    return normalized
+
+
 def _with_nonempty_text_content(
     messages: list[LitellmAnyMessage],
 ) -> list[LitellmAnyMessage]:
@@ -498,6 +588,11 @@ def _is_non_retriable_bad_request(e: Exception) -> bool:
         "2000 pixels",
         "exceeds 5 mb",
         "5242880",
+        # Deterministic OpenAI-compatible message validation. Retrying keeps
+        # resending the same malformed tool-call history.
+        "arguments\" parameter",
+        "arguments' parameter",
+        "must be in json format",
     ]
 
     return any(pattern in error_str for pattern in non_retriable_patterns)
@@ -561,6 +656,9 @@ async def generate_response(
         # content with a non-whitespace placeholder so e.g. an empty
         # alternating-role placeholder message does not fail the whole run.
         messages = _with_nonempty_text_content(messages)
+    messages = _with_json_string_tool_call_arguments(
+        normalize_assistant_tool_call_content(messages)
+    )
     cached_messages = _with_cached_last_message(
         _with_cached_system_prompt(messages, model), model
     )
