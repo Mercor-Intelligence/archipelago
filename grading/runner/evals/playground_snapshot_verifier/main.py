@@ -236,6 +236,23 @@ Rows/content in golden but NOT in agent (missing from agent):
     )
 
 
+def _units_requiring_judgement(
+    units: dict[str, Any], file_path_units: set[str]
+) -> list[str]:
+    """Return the units that must be judged rather than skipped as system noise.
+
+    Only database table names are eligible to be skipped as system/infrastructure
+    tables. File-path units are never matched against the table-name patterns, so
+    they are always judged.
+    """
+    return [
+        name
+        for name in units
+        if name in file_path_units
+        or not _is_system_table(name.split(".")[-1] if "." in name else name)
+    ]
+
+
 async def _judge_with_task_context(
     input: EvalImplInput,
     task_prompt: str,
@@ -246,6 +263,9 @@ async def _judge_with_task_context(
 
     # Build all diff units: one per table (for DB files) or one per file (others)
     units: dict[str, tuple[list[str], list[str]]] = {}
+    # Track units keyed by a file path (not a DB table name) so the system-table
+    # classifier in the fast path below is never applied to them.
+    file_path_units: set[str] = set()
 
     for mismatch in diff.mismatches:
         if _is_db_file(mismatch.file_path):
@@ -260,11 +280,13 @@ async def _judge_with_task_context(
                     [mismatch.agent_preview[:2000]],
                     [mismatch.golden_preview[:2000]],
                 )
+                file_path_units.add(mismatch.file_path)
         else:
             units[mismatch.file_path] = (
                 [mismatch.agent_preview[:2000]],
                 [mismatch.golden_preview[:2000]],
             )
+            file_path_units.add(mismatch.file_path)
 
     # Missing/extra files: one unit each
     for path in diff.missing_in_agent:
@@ -287,11 +309,7 @@ async def _judge_with_task_context(
     all_units_summary = "\n".join(all_units_summary_lines)
 
     # Fast path: all units are system tables → skip LLM entirely
-    non_system_units = [
-        name
-        for name in units
-        if not _is_system_table(name.split(".")[-1] if "." in name else name)
-    ]
+    non_system_units = _units_requiring_judgement(units, file_path_units)
     if not non_system_units and not diff.missing_in_agent and not diff.extra_in_agent:
         return PlaygroundSnapshotJudgeResponse(
             result=1,
