@@ -1087,7 +1087,7 @@ wheels = [
 [[package]]
 name = "mercor-mcp-shared"
 version = "3.0.0"
-source = { git = "https://github.com/Mercor-Intelligence/mercor-mcp-shared.git?branch=main#bb79278f61504c4d30d604cca73e304404999984" }
+source = { directory = "packages/mercor-mcp-shared" }
 dependencies = [
     { name = "aiosqlite" },
     { name = "asyncer" },
@@ -1149,7 +1149,7 @@ requires-dist = [
     { name = "httpx", specifier = ">=0.27.0" },
     { name = "litellm", specifier = "==1.83.10" },
     { name = "loguru", specifier = ">=0.7.3" },
-    { name = "mercor-mcp-shared", git = "https://github.com/Mercor-Intelligence/mercor-mcp-shared.git?branch=main" },
+    { name = "mercor-mcp-shared", directory = "packages/mercor-mcp-shared" },
     { name = "pydantic-settings", specifier = ">=2.11.0" },
     { name = "redis", specifier = ">=6.4.0" },
 ]

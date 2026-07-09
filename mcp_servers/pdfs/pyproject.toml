@@ -74,4 +74,4 @@ per-file-ignores = { "mcp_servers/**/tools/_meta_tools.py" = ["E501"] }
 override-dependencies = ["python-dotenv>=1.0.1"]
 
 [tool.uv.sources]
-mercor-mcp-shared = { git = "https://github.com/Mercor-Intelligence/mercor-mcp-shared.git", branch = "main" }
+mercor-mcp-shared = { path = "packages/mercor-mcp-shared" }
