@@ -1,0 +1,123 @@
+[project]
+name = "mercor-mcp-shared"
+version = "3.0.1"
+description = "Shared framework for building MCP servers"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastmcp>=3.2.0",
+    "loguru",
+    "asyncer",
+    "pydantic>=2.0",
+    "click>=8.0.0",
+    "jinja2>=3.0.0",
+    "pyyaml>=6.0",
+    "titlecase>=2.4",
+    "ruamel-yaml>=0.19.1",
+    # Merged from sub-packages:
+    "httpx>=0.27.0",
+    "pandas>=2.0.0",
+    "polars>=1.41",
+    "sqlalchemy[asyncio]>=2.0.0",
+    "aiosqlite>=0.19.0",
+    "python-dotenv>=1.0.0",
+    "lxml>=5.0.0",
+    "requests>=2.28.0",
+    "jsonpath-ng>=1.5.0",
+    # Merged from mcp_testing:
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.6.0",
+    "basedpyright>=1.29.0",
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-httpx>=0.21.0",
+    "respx>=0.20.0",
+    "responses>=0.25.0",
+    "pre-commit>=3.0.0",
+]
+database = [
+    "sqlalchemy[asyncio]>=2.0",
+    "alembic>=1.13.0",
+    "aiosqlite>=0.19.0",
+    "greenlet>=3.0",
+    "pandas>=2.0.0",
+]
+rest = [
+    "fastapi>=0.121.2",
+    "uvicorn>=0.38.0",
+]
+migration = [
+    "ruamel.yaml>=0.18.0",
+]
+
+[project.scripts]
+mcp-ui-gen = "ui_generator.cli.main:cli"
+mcp-ui = "ui_generator.cli.run_ui:run_ui"
+shared-pull = "mcp_scripts.subtree_manager:pull"
+shared-push = "mcp_scripts.subtree_manager:push"
+shared-switch = "mcp_scripts.subtree_manager:switch"
+shared-refresh = "mcp_scripts.subtree_manager:refresh"
+mcp-test = "mcp_testing.cli:main"
+mcp-setup-tests = "mcp_testing.setup_acceptance_tests:main"
+ingest = "data_ingestion.cli:main"
+crawl = "data_ingestion.cli:crawl_main"
+mcp-files = "mcp_files.cli:main"
+check-schema-drift = "mcp_scripts.check_schema_drift:main"
+generate-schema-sql = "mcp_scripts.generate_schema_sql:main"
+
+[build-system]
+requires = ["setuptools>=62.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = [
+    ".",
+    "packages/mcp_auth",
+    "packages/mcp_middleware",
+    "packages/mcp_cache",
+    "packages/mcp_actor",
+    "packages/mcp_schema",
+    "packages/mcp_testing",
+    "packages/mcp_unified_endpoint",
+    "packages/data_ingestion",
+    "packages/mcp_files",
+]
+include = [
+    "ui_generator*", "mcp_scripts*",
+    "mcp_auth*", "mcp_middleware*", "mcp_cache*", "mcp_actor*",
+    "mcp_schema*", "mcp_testing*", "mcp_unified_endpoint*", "data_ingestion*", "mcp_files*",
+]
+
+[tool.setuptools.package-data]
+"ui_generator" = ["templates/**/*", "base-build-spec.yaml"]
+"mcp_scripts" = ["templates/**/*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["templates"]
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I", "N", "UP"]
+fixable = ["ALL"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "packages/*/tests"]
+python_files = ["test_*.py", "*_test.py"]
+asyncio_mode = "auto"
+# Use the importlib-based import mode so sibling sub-packages don't shadow
+# each other via implicit-namespace collection (e.g. an mcp_rest_bridge-style
+# tests/__init__.py putting ``packages/`` on sys.path would otherwise make
+# ``packages/<sibling>/`` resolve as a namespace package instead of the
+# editable install).
+addopts = ["--import-mode=importlib"]
