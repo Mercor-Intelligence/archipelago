@@ -10,7 +10,7 @@ dependencies = [
     "loguru",
     "asyncer",
     "pydantic>=2.0",
-    "pydantic-settings>=2.0",
+    "pydantic-settings>=2.14.2",
     "pytest>=7.0.0",
     "pytest-asyncio>=0.21.0",
     "click>=8.0.0",
@@ -42,7 +42,7 @@ database = [
     "greenlet>=3.0",            # Required by SQLAlchemy async
     "pandas>=2.0.0",            # For robust CSV import/export
 ]
-config = ["pydantic-settings>=2.0", "python-dotenv>=1.0.0"]
+config = ["pydantic-settings>=2.14.2", "python-dotenv>=1.0.0"]
 auth = [
     "starlette>=0.27.0", # Required for auth_server HTTP endpoints
     "httpx>=0.24.0",     # For testing auth endpoints
