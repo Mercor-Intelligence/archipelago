@@ -101,4 +101,4 @@ override-dependencies = ["python-dotenv>=1.0.1"]
 mcp-schema = { path = "packages/mcp_schema" }
 
 [dependency-groups]
-dev = ["litellm==1.83.10"]
+dev = ["litellm==1.84.0"]
