@@ -1,0 +1,17 @@
+# Runtime dependencies required by mcp-auth
+fastmcp
+loguru
+asyncer
+httpx
+starlette
+
+# Testing
+pytest>=7.0
+pytest-asyncio>=0.21.0
+
+# Linting / Static analysis (using repo standard: ruff)
+ruff>=0.6.0
+
+# Build tools
+build>=1.0
+twine>=4.0
