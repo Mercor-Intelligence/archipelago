@@ -1,0 +1,11 @@
+{
+  "name": "mercor-mcp-shared",
+  "version": "0.1.0",
+  "description": "Shared UI components for MCP servers",
+  "private": true,
+  "exports": {
+    "./components/*": "./ui_generator/templates/user-api-tool-bench/components/*",
+    "./styles/*": "./ui_generator/templates/user-api-tool-bench/styles/*",
+    "./lib/*": "./ui_generator/templates/user-api-tool-bench/lib/*"
+  }
+}
