@@ -177,6 +177,7 @@ dependencies = [
     { name = "fastapi" },
     { name = "fastmcp" },
     { name = "httpx" },
+    { name = "jsonpath-ng" },
     { name = "loguru" },
     { name = "pydantic-settings" },
     { name = "uvicorn", extra = ["standard"] },
@@ -208,6 +209,7 @@ requires-dist = [
     { name = "fastapi", specifier = ">=0.121.1" },
     { name = "fastmcp", specifier = ">=3.2.0" },
     { name = "httpx", specifier = ">=0.27.0" },
+    { name = "jsonpath-ng", specifier = ">=1.7.0" },
     { name = "loguru", specifier = ">=0.7.3" },
     { name = "pydantic-settings", specifier = ">=2.11.0" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.38.0" },
@@ -841,6 +843,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz", hash = "sha256:90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe", size = 25843, upload-time = "2022-06-17T18:00:12.224Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/31/b4/b9b800c45527aadd64d5b442f9b932b00648617eb5d63d2c7a6587b7cafc/jmespath-1.0.1-py3-none-any.whl", hash = "sha256:02e2e4cc71b5bcab88332eebf907519190dd9e6e82107fa7f83b1003a6252980", size = 20256, upload-time = "2022-06-17T18:00:10.251Z" },
+]
+
+[[package]]
+name = "jsonpath-ng"
+version = "1.8.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/32/58/250751940d75c8019659e15482d548a4aa3b6ce122c515102a4bfdac50e3/jsonpath_ng-1.8.0.tar.gz", hash = "sha256:54252968134b5e549ea5b872f1df1168bd7defe1a52fed5a358c194e1943ddc3", size = 74513, upload-time = "2026-02-24T14:42:06.182Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/03/99/33c7d78a3fb70d545fd5411ac67a651c81602cc09c9cf0df383733f068c5/jsonpath_ng-1.8.0-py3-none-any.whl", hash = "sha256:b8dde192f8af58d646fc031fac9c99fe4d00326afc4148f1f043c601a8cfe138", size = 67844, upload-time = "2026-02-28T00:53:19.637Z" },
 ]
 
 [[package]]
