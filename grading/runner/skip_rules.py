@@ -83,6 +83,7 @@ def should_skip_verifier_without_transcript(
     eval_defn: EvalDefn,
     *,
     include_transcript_only_evals: bool = True,
+    trajectory_dependent_helpers: set[HelperIds] | None = None,
 ) -> bool:
     """True if a verifier's eval is ungradeable without a transcript.
 
@@ -92,10 +93,21 @@ def should_skip_verifier_without_transcript(
     artifact. validate() passes False to keep its original behavior of skipping
     ONLY helper-dependent verifiers, so misconfigured transcript-only verifiers
     are still surfaced during golden validation.
+
+    ``trajectory_dependent_helpers`` overrides the helper set that makes a
+    verifier trajectory-dependent (default ``TRAJECTORY_DEPENDENT_HELPERS``).
+    validate_no_op() passes a reduced set so FINAL_ANSWER-dependent verifiers
+    still run: the helper returns "" on an empty trajectory, which is the
+    no-op answer itself.
     """
     if include_transcript_only_evals and eval_defn.eval_id in TRANSCRIPT_ONLY_EVALS:
         return True
-    return bool(set(eval_defn.helper_dependencies) & TRAJECTORY_DEPENDENT_HELPERS)
+    dependent = (
+        TRAJECTORY_DEPENDENT_HELPERS
+        if trajectory_dependent_helpers is None
+        else trajectory_dependent_helpers
+    )
+    return bool(set(eval_defn.helper_dependencies) & dependent)
 
 
 def _resolve_eval_defn(
@@ -132,6 +144,7 @@ def partition_verifiers_for_no_transcript(
     message: str,
     dependency_message: str,
     include_transcript_only_evals: bool = True,
+    trajectory_dependent_helpers: set[HelperIds] | None = None,
 ) -> tuple[list[Verifier], dict[str, VerifierResult]]:
     """
     Split verifiers into runnable vs skipped for a no-transcript trajectory.
@@ -141,9 +154,11 @@ def partition_verifiers_for_no_transcript(
     runnable verifiers (original order) and a dict of NEUTRAL skipped
     VerifierResults keyed by verifier_id.
 
-    ``include_transcript_only_evals`` is threaded through to
-    ``should_skip_verifier_without_transcript``: True for main()'s external
-    artifact path, False for validate() (helper-only, original behavior).
+    ``include_transcript_only_evals`` and ``trajectory_dependent_helpers`` are
+    threaded through to ``should_skip_verifier_without_transcript``: (True,
+    default) for main()'s external artifact path, (False, default) for
+    validate() (helper-only, original behavior), (True, reduced set) for
+    validate_no_op().
     """
     verifier_results: dict[str, VerifierResult] = {}
     skipped_ids: set[str] = set()
@@ -170,6 +185,7 @@ def partition_verifiers_for_no_transcript(
             and should_skip_verifier_without_transcript(
                 eval_defn,
                 include_transcript_only_evals=include_transcript_only_evals,
+                trajectory_dependent_helpers=trajectory_dependent_helpers,
             )
         ):
             skipped_ids.add(v.verifier_id)

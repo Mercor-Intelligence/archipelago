@@ -9,6 +9,7 @@ Simplified version of runner/main.py that:
 """
 
 import asyncio
+import io
 from typing import IO, Any
 
 from loguru import logger
@@ -38,7 +39,12 @@ from runner.skip_rules import (
 )
 from runner.utils.dependency_levels import group_by_dependency_level
 
-__all__ = ["TRAJECTORY_DEPENDENT_HELPERS", "validate"]
+__all__ = [
+    "NO_OP_TOLERANT_HELPERS",
+    "TRAJECTORY_DEPENDENT_HELPERS",
+    "validate",
+    "validate_no_op",
+]
 
 
 def _make_empty_trajectory(
@@ -253,3 +259,103 @@ async def validate(
         # while verifiers run; delete them now instead of leaving them to the
         # next run's age sweep.
         cleanup_source_files(helper_results.get(HelperIds.DB_DIFF))
+
+
+# Trajectory-dependent helpers whose degraded value on an empty trajectory is
+# the no-op semantic itself: FINAL_ANSWER returns "" ("the agent said
+# nothing"). The no-op control runs their dependent verifiers (output_llm
+# family, pattern_match_check, ...) instead of skipping them. Helpers that
+# parse live agent state (browser, playwright trace) stay skipped.
+NO_OP_TOLERANT_HELPERS: set[HelperIds] = {HelperIds.FINAL_ANSWER}
+
+
+async def validate_no_op(
+    initial_snapshot_bytes: IO[bytes],
+    verifiers: list[Verifier],
+    eval_configs: list[EvalConfig],
+    grading_settings: GradingSettings,
+    golden_snapshots: list[IO[bytes]] | None = None,
+    task_custom_fields: dict[str, Any] | None = None,
+) -> list[VerifierResult]:
+    """
+    Run verifiers against the no-op end state: the negative control to
+    validate()'s golden check.
+
+    The initial snapshot is used as the "final" snapshot and the final answer
+    is empty, as if the agent did nothing and said nothing. Every verifier is
+    expected to fail this run; one that passes awards credit for doing nothing
+    and cannot separate success from failure. validate() checks that the
+    golden state passes; this checks that doing nothing does not.
+
+    Skip rules differ from validate():
+    - Transcript-only evals are skipped, as on main()'s external-artifact
+      path: several raise on an empty ``trajectory.output``, and grading a
+      transcript that is empty by construction says nothing about the rubric.
+    - Verifiers with an unresolvable ``eval_config_id`` are skipped
+      defensively (same path); the golden validate() leg surfaces those as
+      ERROR results.
+    - FINAL_ANSWER-dependent verifiers are NOT skipped (see
+      ``NO_OP_TOLERANT_HELPERS``): the helper returns "" on an empty
+      trajectory, which is the no-op answer itself.
+
+    A skipped verifier carries a NEUTRAL 0.0 with
+    ``verifier_result_values["skipped"] = True`` — no signal, not a genuine
+    fail.
+
+    Args:
+        initial_snapshot_bytes: World + task initial snapshot (also used as
+            the "final" snapshot)
+        verifiers: Verifiers to evaluate
+        eval_configs: Eval configurations
+        grading_settings: LLM judge model settings
+        golden_snapshots: Optional golden response file snapshots
+        task_custom_fields: Forwarded to the empty trajectory
+
+    Returns:
+        List of VerifierResult for each verifier (expected direction: fail)
+    """
+    runnable, skipped_results = partition_verifiers_for_no_transcript(
+        verifiers,
+        eval_configs,
+        reason="Requires trajectory data (skipped during no-op validation)",
+        dependency_reason="Dependency was skipped during no-op validation",
+        message="Skipped: verifier requires trajectory data",
+        dependency_message="Skipped: dependency requires trajectory data",
+        include_transcript_only_evals=True,
+        trajectory_dependent_helpers=(
+            TRAJECTORY_DEPENDENT_HELPERS - NO_OP_TOLERANT_HELPERS
+        ),
+    )
+    skipped_count = len(skipped_results)
+    if skipped_count:
+        logger.info(
+            f"[VALIDATE:NO-OP] Skipping {skipped_count} trajectory-dependent verifiers"
+        )
+
+    # The partition above already applied this run's skip rules, so validate()
+    # executes the remainder unfiltered against (initial, initial).
+    results: list[VerifierResult] = []
+    if runnable:
+        # Helpers and evals seek/read the initial and final streams
+        # independently, so use two separate buffers rather than aliasing one
+        # stream under both names.
+        try:
+            initial_snapshot_bytes.seek(0)
+        except (OSError, ValueError):
+            pass  # unseekable stream: read from the current position
+        snapshot_data = initial_snapshot_bytes.read()
+        results = await validate(
+            io.BytesIO(snapshot_data),
+            io.BytesIO(snapshot_data),
+            runnable,
+            eval_configs,
+            grading_settings,
+            golden_snapshots=golden_snapshots,
+            skip_trajectory_verifiers=False,
+            task_custom_fields=task_custom_fields,
+        )
+
+    # Return results in original verifier order
+    results_by_id = {r.verifier_id: r for r in results}
+    results_by_id.update(skipped_results)
+    return [results_by_id[v.verifier_id] for v in verifiers]
