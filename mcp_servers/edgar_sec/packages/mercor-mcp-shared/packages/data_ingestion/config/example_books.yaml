@@ -1,0 +1,87 @@
+# Example: Book Catalog XML Ingestion
+#
+# Demonstrates array fields with multiple sub-fields and XPath fallbacks.
+#
+# XML structure:
+#   <library>
+#     <book isbn="978-0-123-45678-9">
+#       <title>Data Processing at Scale</title>
+#       <publication-date>2024-03-15</publication-date>
+#       <page-count>450</page-count>
+#       <authors>
+#         <author>
+#           <first-name>Jane</first-name>
+#           <last-name>Doe</last-name>
+#           <affiliation>MIT</affiliation>
+#         </author>
+#         <author>
+#           <first-name>John</first-name>
+#           <last-name>Smith</last-name>
+#           <affiliation>Stanford</affiliation>
+#         </author>
+#       </authors>
+#       <publisher>
+#         <name>Tech Press</name>
+#         <location>New York</location>
+#       </publisher>
+#     </book>
+#     ...
+#   </library>
+
+source:
+  type: file
+  path: /data/books.xml
+
+extractor:
+  type: xml
+  record_tags: [book]
+
+  fields:
+    # Attribute extraction
+    isbn:
+      xpath: ./@isbn
+      type: string
+      required: true
+
+    # Simple fields
+    title:
+      xpath: ./title
+      type: string
+      required: true
+
+    publication_date:
+      xpath: ./publication-date
+      type: date
+      required: false
+
+    page_count:
+      xpath: ./page-count
+      type: integer
+      required: false
+
+    # Nested element (single value)
+    publisher_name:
+      xpath: ./publisher/name
+      type: string
+      required: false
+
+    publisher_location:
+      xpath: ./publisher/location
+      type: string
+      required: false
+
+    # Array with multiple sub-fields
+    authors:
+      xpath: ./authors/author
+      type: array
+      required: false
+      array_item_fields:
+        first_name:
+          xpath: ./first-name
+        last_name:
+          xpath: ./last-name
+        affiliation:
+          xpath: ./affiliation
+
+pipeline:
+  batch_size: 500
