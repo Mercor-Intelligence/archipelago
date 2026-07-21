@@ -1,0 +1,739 @@
+"""MCP server runner with transport configuration.
+
+Provides a centralized function for running MCP servers with:
+- Transport selection (http/stdio) via MCP_TRANSPORT env var
+- Port configuration via MCP_PORT env var
+- Processing of remaining CLI args for FastMCP
+- Automatic server_info tool registration
+- Automatic authentication setup (via ENABLE_AUTH/DISABLE_AUTH env vars)
+
+Usage:
+    from mcp_middleware import run_server, apply_configurations, ServerConfig
+
+    mcp = FastMCP(name="my-server")
+
+    # Register your tools
+    @mcp.tool()
+    async def my_tool():
+        return "Hello!"
+
+    # Parse args and configure
+    args, remaining = apply_configurations(parser, mcp, configurators)
+
+    # Run server with config - handles server_info and auth setup
+    config = ServerConfig(
+        name="my-server",
+        version="1.0.0",
+        description="My MCP server",
+        features={"persistence": "sqlite"},
+    )
+    run_server(mcp, config=config, remaining_args=remaining)
+"""
+
+import importlib.util
+import inspect
+import logging
+import os
+import re
+import sys
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import TYPE_CHECKING, ForwardRef, Literal, get_args, get_origin, get_type_hints
+
+import yaml
+from mcp_auth import is_auth_configured, setup_auth
+from mcp_auth.services.auth_service import AuthService
+
+from mcp_middleware.server_info import register_server_info_tool
+
+if TYPE_CHECKING:
+    from collections.abc import Sequence
+
+    from fastmcp import FastMCP
+    from sqlalchemy import Engine
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass
+class ServerConfig:
+    """Configuration for server metadata used by run_server.
+
+    This provides server information for the server_info tool response.
+    If not provided to run_server(), metadata is read from the FastMCP instance.
+
+    Attributes:
+        name: Server name (e.g., "greenhouse-mcp")
+        version: Server version (e.g., "1.0.0")
+        description: Human-readable description of the server
+        features: Additional features to include in server_info response
+                 (e.g., {"personas": ["admin"], "persistence": "sqlite"})
+        paginate_tools: Glob patterns for tool names that should be paginated.
+                       Matching is snake_case-token-aware: ``*list*`` matches
+                       ``list_folders`` and ``get_list`` but not ``enlist``.
+                       Tools not matching any pattern are passed through unchanged.
+                       Set to ["*"] to paginate all tools.  Default: ["*list*"].
+        pagination_key: Response key that contains the tool's own pagination
+                       object (e.g., ``"meta"``).  When set, the middleware
+                       extracts ``page``, ``per_page``, and ``total`` from
+                       this object and synthesises a ``_pagination`` block so
+                       the UI can show pagination controls.  Default: None.
+        native_pagination_params: Mapping of semantic role to native parameter
+                       name.  Keys are ``"page"`` and ``"limit"``; values are
+                       the actual parameter names used by the application's
+                       tools.  For example, ``{"page": "start", "limit": "limit"}``
+                       tells the middleware to recognise ``start`` and ``limit``
+                       as native pagination and skip injecting duplicates.
+                       Default: None (detects ``page`` / ``per_page``).
+    """
+
+    name: str
+    version: str
+    description: str = ""
+    features: dict = field(default_factory=dict)
+    paginate_tools: list[str] = field(default_factory=lambda: ["*list*"])
+    pagination_key: str | None = None
+    native_pagination_params: dict[str, str] | None = None
+
+
+# Packages to skip when walking the call stack to find the server code
+_SKIP_PACKAGES = ("/mcp_auth/", "/mcp_middleware/")
+
+# Global storage for server state, set by run_server()
+_server_directory: Path | None = None
+_server_config: ServerConfig | None = None
+
+
+def get_server_directory() -> Path | None:
+    """Get the directory of the server's main module.
+
+    This is set automatically when run_server() is called. It allows
+    mcp_auth and other code to locate files (like users.json) relative
+    to the server code, not the calling middleware.
+
+    Returns:
+        The directory containing the server code, or None if run_server
+        hasn't been called yet.
+    """
+    return _server_directory
+
+
+def get_server_config() -> ServerConfig | None:
+    """Get the server configuration passed to run_server().
+
+    This is set automatically when run_server() is called. It allows
+    tools and other code to access server metadata (name, version, etc.)
+    without circular imports.
+
+    Returns:
+        The ServerConfig passed to run_server(), or None if run_server
+        hasn't been called yet.
+    """
+    return _server_config
+
+
+def _capture_server_directory() -> None:
+    """Capture the server directory from the call stack.
+
+    Walks up the call stack to find the first frame outside mcp_auth
+    and mcp_middleware packages, then stores that directory globally.
+    """
+    global _server_directory
+    frame = inspect.currentframe()
+    try:
+        caller_frame = frame.f_back if frame else None
+        while caller_frame:
+            filename = caller_frame.f_code.co_filename
+            # Skip frames from mcp_auth and mcp_middleware packages
+            if not any(pkg in filename for pkg in _SKIP_PACKAGES):
+                _server_directory = Path(filename).parent
+                logger.debug(f"Server directory: {_server_directory}")
+                return
+            caller_frame = caller_frame.f_back
+    finally:
+        del frame
+
+
+def _get_registered_tools(mcp_instance: "FastMCP") -> list[str]:
+    """Get the list of registered tool names from an MCP instance.
+
+    Args:
+        mcp_instance: The FastMCP instance to query
+
+    Returns:
+        List of registered tool names in registration order, or empty list.
+    """
+    registered_tools: list[str] = []
+    try:
+        import asyncio
+
+        tools = asyncio.run(mcp_instance.list_tools())
+        for tool in tools:
+            registered_tools.append(tool.name)
+    except Exception as e:
+        logger.warning(f"Failed to get registered tools: {e}")
+
+    return registered_tools
+
+
+def _parse_tool_to_category(server_dir: Path) -> dict[str, str]:
+    """Parse tool-to-category mapping from mcp-build-spec.yaml.
+
+    Reads the mcp-build-spec.yaml file and builds a mapping of tool names
+    to their categories from the tool_overrides section.
+
+    Args:
+        server_dir: Directory containing the mcp-build-spec.yaml file
+
+    Returns:
+        Dict mapping tool names to their category names (lowercase),
+        or empty dict if the spec file doesn't exist or can't be parsed.
+
+    Example output:
+        {
+            "greenhouse_candidates_search": "candidates",
+            "greenhouse_candidates_get": "candidates",
+            "greenhouse_applications_list": "applications",
+            ...
+        }
+    """
+    spec_file = server_dir / "mcp-build-spec.yaml"
+    if not spec_file.exists():
+        spec_file = server_dir / "mcp-build-spec.yml"
+        if not spec_file.exists():
+            return {}
+
+    try:
+        with open(spec_file) as f:
+            spec = yaml.safe_load(f)
+    except Exception as e:
+        logger.warning(f"Failed to parse {spec_file}: {e}")
+        return {}
+
+    if not spec or "tool_overrides" not in spec:
+        return {}
+
+    # Build tool name -> category mapping
+    tool_to_category: dict[str, str] = {}
+
+    for override in spec.get("tool_overrides", []):
+        tool_spec = override.get("tool", "")  # e.g., "greenhouse.greenhouse_candidates_search"
+        category = override.get("category", "")
+
+        if not tool_spec or not category:
+            continue
+
+        # Extract the tool name (after the dot)
+        parts = tool_spec.split(".")
+        tool_name = parts[-1] if len(parts) >= 2 else tool_spec
+
+        category_snake = category.lower().replace(" ", "_")
+        tool_to_category[tool_name] = category_snake
+
+    return tool_to_category
+
+
+def _parse_meta_tool_actions(server_dir: Path) -> dict[str, list[str]]:
+    """Parse meta tool actions by introspecting TOOL_SCHEMAS from _meta_tools module.
+
+    Meta tools follow a consistent pattern across all servers:
+    1. A TOOL_SCHEMAS dict mapping tool names to input/output models
+    2. Input models have an `action: Literal[...]` field defining valid actions
+
+    This function imports the _meta_tools module and extracts actions
+    from the Literal type annotation on each input model's action field.
+
+    Args:
+        server_dir: Directory containing the server's tools package
+
+    Returns:
+        Dict mapping meta tool names to lists of their action names,
+        or empty dict if no meta tools are found or can't be parsed.
+
+    Example output:
+        {
+            "greenhouse_candidates": ["help", "search", "get", "create", "update"],
+            "greenhouse_applications": ["help", "list", "get", "create", "advance"],
+            ...
+        }
+    """
+    # Try to import the _meta_tools module from the server's tools package
+    meta_tools_path = server_dir / "tools" / "_meta_tools.py"
+    if not meta_tools_path.exists():
+        return {}
+
+    try:
+        spec = importlib.util.spec_from_file_location("_meta_tools", meta_tools_path)
+        if spec is None or spec.loader is None:
+            return {}
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+    except Exception as e:
+        logger.warning(f"Failed to import _meta_tools module: {e}")
+        return {}
+
+    # Look for TOOL_SCHEMAS dict
+    tool_schemas = getattr(module, "TOOL_SCHEMAS", None)
+    if not tool_schemas or not isinstance(tool_schemas, dict):
+        return {}
+
+    # Extract actions from each meta tool's input model
+    meta_tool_actions: dict[str, list[str]] = {}
+
+    for tool_name, schemas in tool_schemas.items():
+        input_model = schemas.get("input")
+        if input_model is None:
+            continue
+
+        # Get the action field's type annotation
+        try:
+            action_annotation = None
+
+            # First try get_type_hints() which resolves ForwardRef annotations
+            # This requires the module's global namespace for proper resolution
+            try:
+                type_hints = get_type_hints(input_model, globalns=vars(module))
+                action_annotation = type_hints.get("action")
+            except Exception:
+                pass  # Fall back to direct annotation access
+
+            # If get_type_hints failed, try direct access
+            if action_annotation is None:
+                # Pydantic v2: use model_fields
+                if hasattr(input_model, "model_fields"):
+                    action_field = input_model.model_fields.get("action")
+                    if action_field is not None:
+                        action_annotation = action_field.annotation
+                else:
+                    # Pydantic v1 fallback: use __fields__
+                    action_field = input_model.__fields__.get("action")
+                    if action_field is not None:
+                        action_annotation = action_field.outer_type_
+
+            if action_annotation is None:
+                continue
+
+            # Handle ForwardRef by parsing the string if get_type_hints didn't resolve it
+            if isinstance(action_annotation, ForwardRef):
+                # Extract the string from ForwardRef and parse Literal values
+                ref_str = action_annotation.__forward_arg__
+                if ref_str.startswith("Literal["):
+                    # Parse "Literal['a', 'b', 'c']" -> ['a', 'b', 'c']
+                    import ast
+
+                    inner = ref_str[8:-1]  # Remove "Literal[" and "]"
+                    # Parse as a tuple to handle the comma-separated values
+                    try:
+                        parsed = ast.literal_eval(f"({inner},)")
+                        actions = list(parsed)
+                        if actions:
+                            meta_tool_actions[tool_name] = actions
+                    except (ValueError, SyntaxError):
+                        pass
+                continue
+
+            # Extract values from resolved Literal type
+            if get_origin(action_annotation) is Literal:
+                actions = list(get_args(action_annotation))
+                if actions:
+                    meta_tool_actions[tool_name] = actions
+        except Exception as e:
+            logger.warning(f"Failed to extract actions for {tool_name}: {e}")
+            continue
+
+    return meta_tool_actions
+
+
+# A default-user table name must be a plain SQL identifier — it's interpolated
+# into the COUNT(*) probe, so reject anything that isn't ``[A-Za-z_][A-Za-z0-9_]*``.
+_IDENTIFIER_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
+
+
+def require_default_user(
+    engine: "Engine",
+    table: str = "default_users",
+    *,
+    source_glob: "str | Sequence[str] | None" = None,
+) -> None:
+    """Fail at startup unless a default user exists or *can* be seeded.
+
+    Mercor MCP apps simulate an authenticated caller via a single-row
+    "default user" table, seeded during populate from a ``default_user.csv``
+    that ships in the populate package. A default user is mandatory: the auth
+    layer resolves the caller identity from that row.
+
+    The trick that makes a reliable *startup* check possible — regardless of
+    whether populate runs before or after the server starts — is to look at the
+    seed file, not just the table. Three outcomes:
+
+    * **Row present** → satisfied.
+    * **No row, but a file matches ``source_glob``** → populate simply hasn't
+      run yet (or hasn't finished); it *will* produce the row from that file.
+      Not an error — return quietly.
+    * **No row and no file matches** (or no ``source_glob`` was given) →
+      populate has nothing to seed from, so the deployment can *never* produce
+      a default user. Raise :class:`DefaultUserNotConfiguredError` — a real,
+      unrecoverable startup failure.
+
+    A *missing* table is treated identically to an *empty* one.
+
+    Args:
+        engine: SQLAlchemy ``Engine`` connected to the runtime DB.
+        table: Name of the singleton default-user table (default
+            ``"default_users"``). Must be a plain SQL identifier.
+        source_glob: A glob (or list of globs) locating the seed file(s) that
+            populate would import to create the default user — e.g.
+            ``"/.apps_data/zoho/populate/default_user*.csv"``. When any match
+            exists on disk, an empty table is tolerated (populate pending).
+            When ``None``, no seed file can rescue an empty table, so an empty
+            table always raises.
+
+    Raises:
+        DefaultUserNotConfiguredError: No row and no seed file to create one.
+        ValueError: ``table`` is not a valid SQL identifier.
+    """
+    from sqlalchemy import text
+    from sqlalchemy.exc import OperationalError, ProgrammingError
+
+    from mcp_middleware.errors import DefaultUserNotConfiguredError
+
+    if not _IDENTIFIER_RE.match(table):
+        raise ValueError(f"default_user_table must be a plain SQL identifier, got {table!r}")
+
+    try:
+        with engine.connect() as conn:
+            count = conn.execute(text(f'SELECT COUNT(*) FROM "{table}"')).scalar()
+    except (OperationalError, ProgrammingError):
+        # Table doesn't exist yet (populate never ran, or the DB shipped
+        # without it). Same meaning as an empty table: no default user (yet).
+        count = 0
+
+    if count:
+        logger.info("default user present in %r — identity requirement satisfied", table)
+        return
+
+    # No row. Whether that's fatal depends on whether populate has a seed file
+    # to create one from.
+    matched = _default_user_seed_present(source_glob)
+    if matched:
+        logger.info(
+            "no row in %r yet, but seed file present (%s) — populate will create the "
+            "default user; allowing startup",
+            table,
+            matched,
+        )
+        return
+
+    raise DefaultUserNotConfiguredError(table, source_glob=source_glob)
+
+
+def _default_user_seed_present(source_glob: "str | Sequence[str] | None") -> str | None:
+    """Return the first seed file matching ``source_glob``, or None.
+
+    Accepts a single glob string or a sequence of them. Uses :mod:`glob`, so
+    patterns are resolved relative to the process CWD unless absolute. Only
+    files (not directories) count as a usable seed.
+    """
+    if not source_glob:
+        return None
+
+    import glob as _glob
+    import os
+
+    patterns = [source_glob] if isinstance(source_glob, str) else list(source_glob)
+    for pattern in patterns:
+        for match in _glob.glob(pattern):
+            if os.path.isfile(match):
+                return match
+    return None
+
+
+def run_server(
+    mcp_instance: "FastMCP",
+    *,
+    config: ServerConfig | None = None,
+    remaining_args: list[str] | None = None,
+    default_port: int = 5000,
+    default_host: str = "0.0.0.0",
+    http_middleware: list | None = None,
+    engine: "Engine | None" = None,
+    mount_runtime_db_routes: bool = True,
+    default_user_table: str | None = None,
+    default_user_source_glob: "str | Sequence[str] | None" = None,
+) -> None:
+    """Run an MCP server with transport configured via environment variables.
+
+    This function handles:
+    1. Registering the server_info tool (public, returns auth status)
+    2. Setting up authentication via mcp_auth.setup_auth (if ENABLE_AUTH=true)
+    3. Running the server with the configured transport
+
+    Args:
+        mcp_instance: Configured FastMCP instance (tools and middleware already added)
+        config: Server configuration with name, version, description, and features.
+               If provided, these values are used for the server_info tool response.
+               If None, metadata is read from the FastMCP instance attributes.
+        remaining_args: Remaining CLI args to pass to FastMCP (from apply_configurations)
+        default_port: Default port for HTTP transport (default: 5000).
+                     Can be overridden by MCP_PORT env var.
+        default_host: Default host for HTTP transport (default: "0.0.0.0").
+        http_middleware: Optional list of Starlette ``Middleware`` objects
+                     (``starlette.middleware.Middleware``) applied to the HTTP
+                     app, forwarded to FastMCP's ``run(middleware=...)``. Use
+                     for app-level ASGI concerns such as CORS, an ASGI auth
+                     gate, or path normalization. Defaults to None (no extra
+                     HTTP middleware). Ignored on the stdio transport, which
+                     has no HTTP surface.
+        engine: Optional SQLAlchemy ``Engine``. When provided, enables the
+                     runtime-DB routes (``/_internal/checkpoint``) so
+                     out-of-process workers can ask the live server to fold
+                     its WAL before they copy the runtime DB. The engine
+                     MUST be the same instance the server's tool calls
+                     use — checkpointing a second engine misses the frames
+                     pinned by the first.
+        mount_runtime_db_routes: Default ``True``. When ``engine`` is
+                     provided and this flag is True, the shared
+                     ``register_runtime_db_routes(mcp_instance, engine)``
+                     is called automatically. Pass ``False`` to opt out
+                     (e.g. you want to mount the route at a custom path,
+                     or you need to layer auth in front of it). With no
+                     engine, the flag is ignored — there's nothing to
+                     checkpoint.
+        default_user_table: Optional name of the app's single-row
+                     "default user" table (e.g. ``"default_users"``). When
+                     set, ``run_server`` enforces the mandatory default-user
+                     identity at startup via :func:`require_default_user`:
+
+                     * table has a row → OK;
+                     * no row but a seed file matches
+                       ``default_user_source_glob`` → OK (populate hasn't run
+                       yet but *can* create the row);
+                     * no row and no seed file → raise
+                       ``DefaultUserNotConfiguredError`` — a real startup
+                       failure, because populate has nothing to seed from.
+
+                     The seed-file check is what makes one build correct
+                     whether populate runs before or after startup. Requires
+                     ``engine`` (raises ``ValueError`` otherwise). Skipped for
+                     UI generation. Default ``None`` — opt-in, no check.
+        default_user_source_glob: Glob (or list of globs) locating the seed
+                     file(s) populate imports to create the default user —
+                     e.g. ``"/.apps_data/zoho/populate/default_user*.csv"``.
+                     Only meaningful alongside ``default_user_table``. When a
+                     match exists on disk, an empty table is tolerated
+                     (populate pending); when absent, an empty table is a fatal
+                     startup error. Default ``None`` (no seed file can rescue
+                     an empty table, so an empty table always fails).
+
+    Environment Variables:
+        MCP_TRANSPORT: Transport type - "http" (default) or "stdio"
+        MCP_PORT: Port for HTTP transport (default: 5000)
+        ENABLE_AUTH: Set to "true" to enable authentication
+        DISABLE_AUTH: Set to "true" to disable authentication (takes precedence)
+
+    Example:
+        from fastmcp import FastMCP
+        from mcp_middleware import run_server, apply_configurations, ServerConfig
+
+        mcp = FastMCP(name="my-server")
+
+        @mcp.tool()
+        async def my_tool():
+            return "Hello!"
+
+        # Parse args and configure
+        args, remaining = apply_configurations(parser, mcp, configurators)
+
+        # Run server with config
+        config = ServerConfig(
+            name="my-server",
+            version="1.0.0",
+            description="My MCP server",
+            features={"persistence": "sqlite"},
+        )
+        run_server(mcp, config=config, remaining_args=remaining)
+    """
+    # Restrict every file this process subsequently creates to the owner
+    # (0o600 files / 0o700 dirs). Agents running under other OS users were
+    # reading server-owned data — notably the SQLite runtime DBs — out of the
+    # shared temp dir. This umask is the broad safety net that also covers
+    # lazily-created runtime DBs, their -wal/-shm sidecars, logs, and exports;
+    # the runtime_db layer additionally sets explicit modes for the case where
+    # its files are created (at import time) before this runs.
+    os.umask(0o077)
+
+    # Capture server directory from call stack (for locating users.json, etc.)
+    _capture_server_directory()
+    server_dir = get_server_directory()
+
+    # Auto-detect tool info: registered tools, categories, and meta tool actions
+    registered_tools = _get_registered_tools(mcp_instance)
+
+    if server_dir and registered_tools:
+        tool_to_category = _parse_tool_to_category(server_dir)
+        meta_tool_actions = _parse_meta_tool_actions(server_dir)
+
+        if tool_to_category or meta_tool_actions:
+            if config is None:
+                # Create a minimal config with auto-detected data
+                config = ServerConfig(
+                    name=getattr(mcp_instance, "name", "mcp-server"),
+                    version=getattr(mcp_instance, "version", "0.0.0"),
+                    description=getattr(mcp_instance, "instructions", "") or "",
+                    features={},
+                )
+
+            # Pass all tool info to server_info for building the response
+            config.features["registered_tools"] = registered_tools
+            if tool_to_category:
+                config.features["tool_to_category"] = tool_to_category
+                logger.debug("Auto-detected tool categories from build spec")
+            if meta_tool_actions:
+                config.features["meta_tool_actions"] = meta_tool_actions
+                logger.debug(f"Auto-detected meta tool actions: {list(meta_tool_actions.keys())}")
+
+    # Find users.json relative to the server's main module
+    users_file = (server_dir / "users.json") if server_dir else Path("users.json")
+
+    # If auth is configured, create AuthService early to get personas for server_info
+    # We'll pass this same instance to setup_auth later to avoid creating it twice
+    auth_service: AuthService | None = None
+    if is_auth_configured():
+        auth_service = AuthService(users_file)
+        persona_names = list(auth_service.users.keys())
+        if persona_names:
+            if config is None:
+                config = ServerConfig(
+                    name=getattr(mcp_instance, "name", "mcp-server"),
+                    version=getattr(mcp_instance, "version", "0.0.0"),
+                    description=getattr(mcp_instance, "instructions", "") or "",
+                    features={},
+                )
+            config.features["personas"] = persona_names
+            logger.debug(f"Auto-detected personas: {persona_names}")
+
+    # Store config globally for access by tools (e.g., admin tools need version)
+    global _server_config
+    _server_config = config
+
+    # Sanitize Pydantic validation errors so LLM agents see concise messages
+    # instead of verbose strings with documentation URLs.
+    from mcp_middleware.validation_error_sanitizer import ValidationErrorSanitizerMiddleware
+
+    mcp_instance.add_middleware(ValidationErrorSanitizerMiddleware())
+
+    # Add response limiter middleware to paginate large responses automatically.
+    # - on_call_tool: strips page_number, paginates oversized responses
+    # - on_list_tools: injects page_number into schemas for MCP list_tools
+    # - patch_tool_schemas: injects page_number directly into the tool registry
+    #   so list_tools() (used by the UI generator scanner) also sees it
+    from mcp_middleware.response_limiter import ResponseLimiterMiddleware
+
+    paginate_patterns = config.paginate_tools if config else ["*list*"]
+    pagination_key = config.pagination_key if config else None
+    native_pagination_params = config.native_pagination_params if config else None
+    limiter = ResponseLimiterMiddleware(
+        tool_patterns=paginate_patterns,
+        pagination_key=pagination_key,
+        native_pagination_params=native_pagination_params,
+    )
+    mcp_instance.add_middleware(limiter)
+    limiter.patch_tool_schemas(mcp_instance)
+
+    # Flatten tool INPUT schemas for Gemini/LLM compatibility. GeminiBaseModel
+    # only annotates optional fields; the anyOf/$defs collapse must run on the
+    # schema tools/list actually serves. Registered both as on_list_tools
+    # middleware (runtime path) and via patch_tool_schemas (registry/scanner
+    # path); runs after the limiter so injected pagination params are flattened
+    # too.
+    from mcp_middleware.schema_flatten import SchemaFlattenMiddleware
+
+    flattener = SchemaFlattenMiddleware()
+    mcp_instance.add_middleware(flattener)
+    flattener.patch_tool_schemas(mcp_instance)
+
+    # Error injection middleware (auto-detected from per-app config file)
+    # Reads config from /.apps_data/{app}/.config/injected_errors.json
+    from mcp_middleware.injected_errors import setup_error_injection
+
+    try:
+        setup_error_injection(mcp_instance)
+    except Exception as e:
+        logger.warning(f"Error injection setup failed, skipping: {e}")
+
+    # Register server_info tool FIRST (uses @public_tool decorator for auth bypass)
+    # This must happen before setup_auth so AuthGuard discovers it as public
+    register_server_info_tool(mcp_instance, config=config)
+
+    # Set up authentication AFTER server_info is registered
+    # Pass the existing auth_service to avoid creating it twice
+    setup_auth(mcp_instance, users_file=users_file, auth_service=auth_service)
+
+    # default_user_table needs an engine to run its COUNT(*) probe — fail fast
+    # at boot if the caller asked for enforcement without one.
+    if default_user_table and engine is None:
+        raise ValueError(
+            "run_server: default_user_table is set but no engine was provided; "
+            "pass engine=... so the default-user table can be checked."
+        )
+
+    # Mount runtime-DB routes (/_internal/checkpoint, /_internal/enable_db, ...)
+    # when the caller passed an engine. Default ON: the entire point of moving
+    # this to shared is "adopt by upgrading the pin"; apps that go through
+    # run_server should get the safe-snapshot behaviour for free. The
+    # engine-presence check is the right gate: no engine, nothing to
+    # checkpoint, no route. Pass ``mount_runtime_db_routes=False`` to opt out
+    # (custom path / auth-gated route).
+    if engine is not None and mount_runtime_db_routes:
+        from mcp_middleware.runtime_db import register_runtime_db_routes
+
+        register_runtime_db_routes(mcp_instance, engine)
+        logger.info("run_server: mounted /_internal/* runtime DB routes")
+
+    # If we're in UI generation mode, skip starting the server
+    # The UI generator calls main() to trigger tool registration and setup_auth,
+    # but doesn't want the server to actually start. Returning here also skips
+    # the default-user check below — UI generation runs without a populated DB.
+    if os.getenv("MCP_UI_GEN", "").lower() in ("true", "1", "yes"):
+        logger.info("UI generation mode: skipping server start")
+        return
+
+    # Enforce the mandatory default-user identity at startup (opt-in via
+    # default_user_table). The seed-file glob is what makes a single build
+    # correct whether populate runs before or after start:
+    #   * row present                 -> OK;
+    #   * no row but seed file present -> populate pending, will create it -> OK;
+    #   * no row and no seed file      -> raise (real, unrecoverable startup
+    #                                     failure; populate has nothing to seed).
+    # Placed after the MCP_UI_GEN early-return so UI generation is exempt.
+    if default_user_table and engine is not None:
+        require_default_user(engine, default_user_table, source_glob=default_user_source_glob)
+
+    # Pass remaining args to FastMCP (after configurators have processed their args)
+    if remaining_args is not None:
+        sys.argv = [sys.argv[0]] + remaining_args
+
+    transport = os.getenv("MCP_TRANSPORT", "http").lower()
+
+    if transport == "stdio":
+        if http_middleware:
+            logger.debug("http_middleware ignored on stdio transport (no HTTP surface)")
+        logger.info("Starting stdio server")
+        mcp_instance.run(transport="stdio")
+    else:
+        port_str = os.getenv("MCP_PORT", str(default_port))
+        try:
+            port = int(port_str)
+        except ValueError:
+            logger.error(f"Invalid MCP_PORT value: '{port_str}' (must be a number)")
+            sys.exit(1)
+        logger.info(f"Starting HTTP server on {default_host}:{port}")
+        if http_middleware:
+            mcp_instance.run(
+                transport="http",
+                host=default_host,
+                port=port,
+                middleware=http_middleware,
+            )
+        else:
+            mcp_instance.run(transport="http", host=default_host, port=port)

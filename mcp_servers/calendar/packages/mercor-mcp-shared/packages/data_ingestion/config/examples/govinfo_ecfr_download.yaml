@@ -1,0 +1,33 @@
+# Download files from existing ECFR manifest
+#
+# Usage:
+#   1. First run: crawl --config config/examples/govinfo_ecfr_manifest.yaml
+#   2. (Optional) Edit ./output/ecfr/manifest.json to filter files
+#   3. Then run: crawl --config config/examples/govinfo_ecfr_download.yaml
+#
+# Output:
+#   ./output/ecfr/data/*.xml
+
+crawler:
+  input:
+    type: manifest
+    file: "./output/ecfr/manifest.json"
+
+    # HTTP settings for downloading files
+    http:
+      headers:
+        User-Agent: "DataIngestion/1.0"
+      timeout:
+        connect: 10
+        read: 120
+      retry:
+        max_attempts: 3
+        backoff_factor: 0.5
+
+    options:
+      rate_limit:
+        requests_per_second: 2
+
+  output:
+    mode: download
+    directory: "./output/ecfr"
