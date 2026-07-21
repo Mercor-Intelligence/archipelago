@@ -5,7 +5,7 @@ from collections.abc import Generator
 from contextlib import contextmanager
 from contextvars import ContextVar
 from enum import StrEnum
-from typing import Any
+from typing import Any, cast
 
 import litellm
 from litellm.exceptions import (
@@ -92,6 +92,23 @@ def _log_llm_route_once(workload: str | None = None) -> None:
 
 # Default concurrency limit for LLM calls
 LLM_CONCURRENCY_LIMIT = 10
+
+_UNSUPPORTED_OPENAI_MESSAGE_FIELDS = frozenset(
+    {"provider_specific_fields", "reasoning_content", "refusal"}
+)
+
+
+def _strip_unsupported_openai_message_fields(value: Any) -> Any:
+    """Return LiteLLM messages safe for strict OpenAI-compatible endpoints."""
+    if isinstance(value, list | tuple):
+        return [_strip_unsupported_openai_message_fields(item) for item in value]
+    if isinstance(value, dict):
+        return {
+            key: _strip_unsupported_openai_message_fields(item)
+            for key, item in value.items()
+            if key not in _UNSUPPORTED_OPENAI_MESSAGE_FIELDS and item is not None
+        }
+    return value
 
 # Context variable for grading run ID
 grading_run_id_ctx: ContextVar[str | None] = ContextVar("grading_run_id", default=None)
@@ -405,9 +422,13 @@ async def call_llm(
     Returns:
         ModelResponse from LiteLLM
     """
+    sanitized_messages = cast(
+        list[dict[str, Any]],
+        _strip_unsupported_openai_message_fields(messages),
+    )
     kwargs: dict[str, Any] = {
         "model": model,
-        "messages": _with_cached_system_prompt(messages, model),
+        "messages": _with_cached_system_prompt(sanitized_messages, model),
         "timeout": timeout,
         # Outer @with_retry owns retries — pin num_retries=0 so the LiteLLM
         # proxy doesn't retry on top, compounding caller × proxy attempts.

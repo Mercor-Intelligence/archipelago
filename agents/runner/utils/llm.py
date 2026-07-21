@@ -2,7 +2,7 @@
 
 import time
 from enum import StrEnum
-from typing import Any
+from typing import Any, cast
 
 import litellm
 from litellm import acompletion, aresponses
@@ -464,6 +464,50 @@ def _with_cached_last_message(
 
 
 _ANTHROPIC_EMPTY_TEXT_PLACEHOLDER = "[empty]"
+_UNSUPPORTED_OPENAI_MESSAGE_FIELDS = frozenset(
+    {"provider_specific_fields", "reasoning_content", "refusal"}
+)
+
+
+def _strip_unsupported_openai_message_fields(value: Any) -> Any:
+    """Return LiteLLM messages safe for strict OpenAI-compatible endpoints."""
+    if isinstance(value, Message):
+        value = value.model_dump(exclude_none=True)
+    if isinstance(value, list | tuple):
+        return [_strip_unsupported_openai_message_fields(item) for item in value]
+    if isinstance(value, dict):
+        return {
+            key: _strip_unsupported_openai_message_fields(item)
+            for key, item in value.items()
+            if key not in _UNSUPPORTED_OPENAI_MESSAGE_FIELDS and item is not None
+        }
+    return value
+
+
+def _strip_invalid_required_schema_fields(value: Any) -> Any:
+    """Remove JSON-schema requirements that strict providers reject."""
+    if isinstance(value, list | tuple):
+        return [_strip_invalid_required_schema_fields(item) for item in value]
+    if not isinstance(value, dict):
+        return value
+
+    sanitized = {
+        key: _strip_invalid_required_schema_fields(item)
+        for key, item in value.items()
+    }
+    required = sanitized.get("required")
+    if not isinstance(required, list | tuple):
+        return sanitized
+
+    properties = sanitized.get("properties")
+    if not isinstance(properties, dict):
+        sanitized.pop("required")
+        return sanitized
+
+    sanitized["required"] = [
+        item for item in required if isinstance(item, str) and item in properties
+    ]
+    return sanitized
 
 
 def normalize_assistant_tool_call_content(
@@ -732,6 +776,10 @@ async def generate_response(
         # content with a non-whitespace placeholder so e.g. an empty
         # alternating-role placeholder message does not fail the whole run.
         messages = _with_nonempty_text_content(messages)
+    messages = cast(
+        list[LitellmAnyMessage],
+        _strip_unsupported_openai_message_fields(messages),
+    )
     cached_messages = _with_cached_last_message(
         _with_cached_system_prompt(messages, model), model
     )
@@ -747,7 +795,11 @@ async def generate_response(
     }
 
     if tools:
-        kwargs["tools"] = _with_cached_tools(tools, model)
+        sanitized_tools = cast(
+            list[ChatCompletionToolParam],
+            _strip_invalid_required_schema_fields(tools),
+        )
+        kwargs["tools"] = _with_cached_tools(sanitized_tools, model)
 
     # If LiteLLM proxy is configured, route completions through it and add tags.
     # Mirrors call_responses_api: rely on explicit api_base/api_key — some SDK /

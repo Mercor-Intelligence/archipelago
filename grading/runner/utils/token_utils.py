@@ -25,7 +25,9 @@ DEFAULT_CONTEXT_LIMIT = 128000
 # Models where litellm uses tiktoken fallback and underestimates actual token count.
 # We apply a conservative multiplier to avoid exceeding context limits.
 CONSERVATIVE_TOKEN_MULTIPLIER_MODELS = {
-    "gemini": 1.9,  # Gemini tokenizer seems to produce atleast ~50% more tokens than tiktoken
+    # Large artifact payloads can substantially exceed LiteLLM's estimate when
+    # counted by Gemini server-side, so leave enough headroom for grading.
+    "gemini": 5.0,
 }
 
 

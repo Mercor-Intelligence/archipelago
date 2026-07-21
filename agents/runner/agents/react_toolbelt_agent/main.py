@@ -67,7 +67,7 @@ class ReActAgent:
         config = run_input.agent_config_values
         self.timeout: int = config.get("timeout", 10800)
         self.max_steps: int = config.get("max_steps", 250)
-        self.tool_call_timeout: int = 60
+        self.tool_call_timeout: int = config.get("tool_call_timeout", 60)
         self.llm_response_timeout: int = config.get("llm_response_timeout", 600)
         self.max_toolbelt_size: int = 80
 
