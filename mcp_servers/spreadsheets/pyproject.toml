@@ -10,7 +10,7 @@ version = "0.1.0"
 description = "Mercor RLS Sheets MCP"
 readme = "README.md"
 requires-python = ">=3.13,<3.14"
-dependencies = ["aioboto3>=15.4.0", "aiobotocore>=2.25.0", "asyncer>=0.0.9", "asyncpg>=0.30.0", "datadog-api-client>=2.44.0", "fastmcp>=2.12.4", "httpx>=0.27.0", "litellm==1.83.10", "loguru>=0.7.3", "pydantic-settings>=2.11.0", "redis>=6.4.0", "openpyxl>=3.1.5", "pillow>=12.1.0", "mercor-mcp-shared"]
+dependencies = ["aioboto3>=15.4.0", "aiobotocore>=2.25.0", "asyncer>=0.0.9", "asyncpg>=0.30.0", "datadog-api-client>=2.44.0", "fastmcp>=2.12.4", "httpx>=0.27.0", "litellm==1.83.10", "loguru>=0.7.3", "pydantic-settings>=2.11.0", "redis>=6.4.0", "openpyxl>=3.1.5", "pillow>=12.3.0", "mercor-mcp-shared"]
 
 [dependency-groups]
 dev = [
