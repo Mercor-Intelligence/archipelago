@@ -1,0 +1,36 @@
+name: Sync Foundry Service
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    # Skip if the push was made by RLS automation (prevents circular sync)
+    if: ${{ github.actor != 'jwstanly' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync Foundry Service to RL Studio
+        run: |
+          MISE_TOML=$(cat mise.toml | jq -Rs .)
+          ARCO_TOML=$(cat arco.toml | jq -Rs .)
+
+          RESULT=$(curl -s -w "\n%{http_code}" -X POST "https://api.studio.mercor.com/services/sync" \
+            -H "Content-Type: application/json" \
+            -H "X-API-Key: ${{ secrets.MERCOR_INTELLIGENCE_API_KEY }}" \
+            -d "{\"mise_toml\": ${MISE_TOML}, \"arco_toml\": ${ARCO_TOML}, \"commit\": \"${{ github.sha }}\"}")
+
+          HTTP_CODE=$(echo "$RESULT" | tail -n1)
+          BODY=$(echo "$RESULT" | sed '$d')
+
+          echo "$BODY" | jq .
+
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "Foundry service sync failed with HTTP $HTTP_CODE"
+            exit 1
+          fi
+
+          echo "Foundry service synced successfully"
+
