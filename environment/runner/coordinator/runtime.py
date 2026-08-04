@@ -1,0 +1,679 @@
+import asyncio
+import json
+import os
+import shutil
+import signal
+import time
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Literal
+from uuid import uuid4
+
+from fastmcp import Client as FastMCPClient
+from fastmcp import FastMCP
+from fastmcp.tools import ToolResult
+from loguru import logger
+from pydantic import JsonValue
+
+from runner.utils.metrics import (
+    distribution,
+    increment,
+    record_latency,
+    record_latency_and_outcome,
+)
+
+from .agents.models import (
+    COORDINATOR_ACTOR_ID_VALUE,
+    TOOL_CALL_ACTOR_KEY,
+    AgentRunRecord,
+    VirtualCoworkerAgent,
+)
+from .checkpoints.check_occurrences import get_event_occurrences
+from .checkpoints.models import (
+    ActionDispatch,
+    ActionDispatchStatus,
+    Checkpoint,
+    EventOccurrence,
+    PeriodicCheckpoint,
+)
+from .config.models import CoordinatorConfig
+from .events.models import (
+    CallMCPToolAction,
+    EventAction,
+    EventDefinition,
+    InvokeAgentAction,
+)
+from .state.store import CoordinatorStore
+from .utils import (
+    get_archipelago_agents_cwd,
+    get_mcp_gateway_url,
+    summarize_tool_result,
+    utc_now,
+    validate_mcp_gateway_url,
+)
+
+# Fallback for invoke_agent actions with no timeout_seconds, so no persona
+# subprocess waits unbounded.
+DEFAULT_VCA_INVOKE_TIMEOUT_SECONDS = 900
+
+# Fraction of a persona's budget reserved for its own shutdown, floored so
+# short budgets still leave a usable window.
+INNER_TIMEOUT_HEADROOM_RATIO = 0.1
+MIN_INNER_TIMEOUT_HEADROOM_SECONDS = 30
+
+# Killing the process group SIGTERMs first so the persona's *child* processes
+# (the shells it runs tools through) can close their files. The agent itself
+# installs no SIGTERM handler, so it dies on the signal either way — its own
+# output is saved by `agent_seconds` firing first, not by this window.
+SIGTERM_GRACE_SECONDS = 10
+
+# Slack over the longest persona chain when sizing the pre-snapshot drain.
+FINISH_ACTIONS_HEADROOM_SECONDS = 300
+
+# Statuses an agent can self-report in output.json that mean the run did not
+# succeed, even if it left output behind.
+FAILED_AGENT_RUN_STATUSES = {"failed", "error", "cancelled"}
+
+# Terminal classification of one persona subprocess run. `skipped` means the
+# actor lock was already held, so no subprocess ever started;
+# `timed_out_salvaged` means the budget expired but the run left a usable
+# output.json, so it is counted as a success rather than a failure.
+PersonaOutcome = Literal[
+    "completed",
+    "timed_out",
+    "timed_out_salvaged",
+    "error_exit",
+    "no_output",
+    "agent_failed",
+    "skipped",
+]
+
+
+@dataclass(frozen=True)
+class PersonaDeadlines:
+    """One persona budget, expanded into the nested deadlines that enforce it.
+
+    Ordered by construction: ``agent_seconds`` < ``total_seconds`` <
+    ``total_seconds + sigterm_grace_seconds``. The agent stops itself and writes
+    output.json before the Coordinator ever has to kill it.
+    """
+
+    total_seconds: int
+
+    @classmethod
+    def for_action(cls, action: InvokeAgentAction) -> "PersonaDeadlines":
+        return cls(action.timeout_seconds or DEFAULT_VCA_INVOKE_TIMEOUT_SECONDS)
+
+    @property
+    def agent_seconds(self) -> int:
+        headroom = max(
+            MIN_INNER_TIMEOUT_HEADROOM_SECONDS,
+            int(self.total_seconds * INNER_TIMEOUT_HEADROOM_RATIO),
+        )
+        return max(1, self.total_seconds - headroom)
+
+    @property
+    def sigterm_grace_seconds(self) -> float:
+        return SIGTERM_GRACE_SECONDS
+
+    @property
+    def wall_seconds(self) -> float:
+        """Longest the Coordinator can be held by this action."""
+        return self.total_seconds + self.sigterm_grace_seconds
+
+
+def _persona_base_tags(vca: VirtualCoworkerAgent) -> list[str]:
+    cfg = vca.vca_harness_config
+    return [f"agent_id:{cfg.agent_id}", f"orchestrator_model:{cfg.orchestrator_model}"]
+
+
+def _finish_actions_budget_seconds(config: CoordinatorConfig) -> float:
+    """Drain ceiling: the longest sequential persona chain in any one event.
+
+    Derived from the timeouts actually configured rather than the fallback
+    constant, so chaining personas can't silently outlive the drain.
+    """
+    longest = 0.0
+    for event in config.events:
+        chain = sum(
+            PersonaDeadlines.for_action(action).wall_seconds
+            for action in event.actions
+            if isinstance(action, InvokeAgentAction)
+        )
+        longest = max(longest, chain)
+    return longest + FINISH_ACTIONS_HEADROOM_SECONDS
+
+
+class Coordinator:
+    def __init__(
+        self,
+        *,
+        root: Path | None = None,
+    ) -> None:
+        self.store = CoordinatorStore(root=root)
+        self._mcp_proxy: FastMCP
+        self._mcp_gateway_url = get_mcp_gateway_url()
+        self._cron_tasks: set[asyncio.Task[None]] = set()
+        self._action_tasks: set[asyncio.Task[None]] = set()
+        self._started = False
+
+    # ---------------------------------------------------------------------------------
+    # Lifecycle
+    # ---------------------------------------------------------------------------------
+
+    async def start(
+        self,
+        *,
+        mcp_proxy: FastMCP,
+        config: CoordinatorConfig | None = None,
+    ) -> None:
+        self._mcp_proxy = mcp_proxy
+        if config is not None and self._started:
+            await self.stop()
+        if config is not None:
+            self.store.config.write(config)
+        if self._started:
+            return
+        config = self.store.config.read()
+        if not config.enabled:
+            logger.debug("Environment Coordinator disabled")
+            return
+
+        self.store.agent_configs.validate_configs(config.agents.values())
+        await validate_mcp_gateway_url(self._mcp_gateway_url)
+        self._started = True
+        for checkpoint in config.checkpoints:
+            if checkpoint.type == "periodic":
+                task = asyncio.create_task(self._cron_loop(checkpoint))
+                self._cron_tasks.add(task)
+                task.add_done_callback(self._cron_tasks.discard)
+                break
+        logger.info(
+            "Environment Coordinator started config=" + config.model_dump_log_json()
+        )
+
+    async def stop(self) -> None:
+        for task in self._cron_tasks:
+            task.cancel()
+        for task in list(self._cron_tasks):
+            try:
+                await task
+            except asyncio.CancelledError:
+                pass
+        self._cron_tasks.clear()
+        await self.finish_actions()
+        self._started = False
+
+    async def finish_actions(self) -> None:
+        """
+        Let the coordinator finish executing actions before Archipelago snapshots.
+
+        Bounded by the configured persona timeouts; stragglers are cancelled.
+        """
+        if not self._started:
+            return
+        config = self.store.config.read()
+        if not config.enabled:
+            return
+        drained = 0
+        budget = _finish_actions_budget_seconds(config)
+        with record_latency("studio.vca.drain.duration_seconds"):
+            for checkpoint in config.checkpoints:
+                if checkpoint.type == "periodic":
+                    await self._check_for_event_occurrences(checkpoint, config.events)
+                    break
+            deadline = time.monotonic() + budget
+            while self._action_tasks:
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    stuck = {t for t in self._action_tasks if not t.done()}
+                    increment(
+                        "studio.vca.drain.abandoned",
+                        tags=["reason:budget_exceeded"],
+                        value=len(stuck),
+                    )
+                    logger.error(
+                        f"Environment Coordinator finish_actions exceeded {budget}s; "
+                        f"abandoning {len(stuck)} pending action task(s) so the "
+                        "snapshot can proceed: "
+                        + ", ".join(sorted(t.get_name() for t in stuck))
+                    )
+                    for task in stuck:
+                        task.cancel()
+                    break
+                done, _ = await asyncio.wait(set(self._action_tasks), timeout=remaining)
+                drained += len(done)
+                for task in done:
+                    exc = task.exception() if not task.cancelled() else None
+                    if exc is not None:
+                        logger.error(
+                            f"Environment Coordinator action task {task.get_name()} "
+                            f"raised: {exc!r}"
+                        )
+        distribution("studio.vca.drain.tasks", float(drained))
+
+    # ---------------------------------------------------------------------------------
+    # Checkpoints
+    # ---------------------------------------------------------------------------------
+
+    async def record_tool_call(
+        self,
+        *,
+        tool_name: str,
+        arguments: dict[str, JsonValue],
+        actor_id: str,
+        result: ToolResult | None = None,
+        error: str | None = None,
+    ) -> None:
+        if not self._started:
+            return
+        config = self.store.config.read()
+        if not config.enabled:
+            return
+
+        observation = self.store.observations.tool_calls.record(
+            actor_id=actor_id,
+            tool_name=tool_name,
+            arguments=arguments,
+            result_summary=summarize_tool_result(result)
+            if result is not None
+            else None,
+            error=error,
+        )
+        result_text = (observation.result_summary or {}).get("text")
+        if result_text is not None:
+            result_text = str(result_text)[:1_000]
+        logger.info(
+            "Environment Coordinator recorded MCP call "
+            + f"sequence={observation.sequence} actor={actor_id} tool={tool_name} "
+            + f"error={error!r} result_text={result_text!r}"
+        )
+        for checkpoint in config.checkpoints:
+            if checkpoint.type == "tool_call":
+                await self._check_for_event_occurrences(checkpoint, config.events)
+                break
+
+    async def _cron_loop(self, checkpoint: PeriodicCheckpoint) -> None:
+        while True:
+            await asyncio.sleep(checkpoint.interval_seconds)
+            try:
+                config = self.store.config.read()
+                if config.enabled:
+                    await self._check_for_event_occurrences(checkpoint, config.events)
+            except Exception as e:
+                logger.error(f"Environment Coordinator cron tick failed: {repr(e)}")
+
+    async def _check_for_event_occurrences(
+        self, checkpoint: Checkpoint, events: list[EventDefinition]
+    ) -> None:
+        observations = self.store.observations.read()
+        occurred_event_ids = self.store.event_occurrences.event_ids()
+        for occurrence in get_event_occurrences(
+            events,
+            checkpoint,
+            observations,
+            occurred_event_ids,
+        ):
+            if not self.store.event_occurrences.create(occurrence):
+                logger.info(
+                    "Environment Coordinator skipped duplicate event occurrence "
+                    + f"event={occurrence.event.event_id} checkpoint={checkpoint.type}"
+                )
+                continue
+            logger.info(
+                "Environment Coordinator created event occurrence "
+                + f"event={occurrence.event.event_id} checkpoint={checkpoint.type} "
+                + f"trigger={occurrence.trigger.type}"
+            )
+            # Each event action is run sequentially, run together in same background task.
+            # Name carries invoke_agent actors so the drain's abandon log names the persona.
+            actors = ",".join(
+                a.actor_id for a in occurrence.event.actions if a.type == "invoke_agent"
+            )
+            task_name = f"event_actions:{occurrence.event.event_id}"
+            if actors:
+                task_name += f" actors={actors}"
+            task = asyncio.create_task(
+                self._run_event_actions(occurrence),
+                name=task_name,
+            )
+            self._action_tasks.add(task)
+            task.add_done_callback(self._action_tasks.discard)
+
+    # ---------------------------------------------------------------------------------
+    # Event Actions
+    # ---------------------------------------------------------------------------------
+
+    async def _run_event_actions(self, occurrence: EventOccurrence) -> None:
+        failed_action_id: str | None = None
+        for action in occurrence.event.actions:
+            dispatch = await self._run_event_action(occurrence.event, action)
+            occurrence.dispatches.append(dispatch)
+            self.store.event_occurrences.write(occurrence)
+            logger.info(
+                "Environment Coordinator action dispatch recorded "
+                + f"event={occurrence.event.event_id} action={action.action_id} "
+                + f"type={action.type} status={dispatch.status} "
+                + f"error={dispatch.error!r} output={dispatch.output}"
+            )
+            if dispatch.status == "failed":
+                failed_action_id = failed_action_id or action.action_id
+                if action.on_failure == "abort":
+                    break
+        if failed_action_id is not None:
+            occurrence.status = "failed"
+            self.store.event_occurrences.write(occurrence)
+            increment(
+                "studio.vca.event.completed",
+                tags=["status:failed", f"trigger_type:{occurrence.trigger.type}"],
+            )
+            logger.error(
+                "Environment Coordinator event failed "
+                + f"event={occurrence.event.event_id} action={failed_action_id}"
+            )
+            return
+        occurrence.status = "completed"
+        self.store.event_occurrences.write(occurrence)
+        increment(
+            "studio.vca.event.completed",
+            tags=["status:completed", f"trigger_type:{occurrence.trigger.type}"],
+        )
+        logger.info(
+            f"Environment Coordinator event completed event={occurrence.event.event_id}"
+        )
+
+    async def _run_event_action(
+        self, event: EventDefinition, action: EventAction
+    ) -> ActionDispatch:
+        started_at = utc_now()
+        logger.info(
+            "Environment Coordinator action starting "
+            + f"event={event.event_id} action={action.action_id} type={action.type}"
+        )
+        try:
+            with record_latency_and_outcome(
+                "studio.vca.action.duration_seconds",
+                "studio.vca.action.completed",
+                [f"action_type:{action.type}"],
+            ) as t:
+                if isinstance(action, CallMCPToolAction):
+                    status: ActionDispatchStatus = "completed"
+                    output = await self._run_direct_tool_action(action)
+                elif isinstance(action, InvokeAgentAction):
+                    status, output = await self._run_agent_action(event, action)
+                else:
+                    raise ValueError(f"Unknown Coordinator action type: {action.type}")
+                t.status = status
+            logger.info(
+                "Environment Coordinator action completed "
+                + f"event={event.event_id} action={action.action_id} "
+                + f"type={action.type} status={status} output={output}"
+            )
+            return ActionDispatch(
+                action_id=action.action_id,
+                action_type=action.type,
+                status=status,
+                started_at=started_at,
+                completed_at=utc_now(),
+                output=output,
+            )
+        except Exception as e:
+            logger.error(
+                f"Environment Coordinator action failed event={event.event_id} action={action.action_id}: {repr(e)}"
+            )
+            return ActionDispatch(
+                action_id=action.action_id,
+                action_type=action.type,
+                status="failed",
+                started_at=started_at,
+                completed_at=utc_now(),
+                error=repr(e),
+            )
+
+    async def _terminate_process_group(
+        self,
+        process: asyncio.subprocess.Process,
+        run_id: str,
+        grace_seconds: float,
+    ) -> None:
+        """SIGTERM the persona's process group, then always follow up with SIGKILL.
+
+        The leader has no SIGTERM handler and dies immediately either way, so
+        its own exit says nothing about child shells in the same group that
+        ignored the signal. The follow-up SIGKILL is unconditional rather than
+        gated on the leader surviving — a no-op on an already-empty group.
+        """
+        if not await self._signal_group(process, signal.SIGTERM, grace_seconds):
+            logger.warning(
+                "Environment Coordinator VCA group survived SIGTERM for "
+                + f"{grace_seconds}s run_id={run_id} pid={process.pid}"
+            )
+        await self._signal_group(process, signal.SIGKILL, None)
+        await process.wait()
+
+    async def _signal_group(
+        self,
+        process: asyncio.subprocess.Process,
+        sig: signal.Signals,
+        grace_seconds: float | None,
+    ) -> bool:
+        """Signal the group; return whether it exited within ``grace_seconds``.
+        ``None`` sends without waiting. A vanished group counts as exited."""
+        try:
+            os.killpg(process.pid, sig)
+        except ProcessLookupError:
+            return True
+        if grace_seconds is None:
+            return False
+        try:
+            await asyncio.wait_for(process.wait(), timeout=grace_seconds)
+        except TimeoutError:
+            return False
+        return True
+
+    def _apply_timeout(
+        self, vca: VirtualCoworkerAgent, record: AgentRunRecord, error: str
+    ) -> PersonaOutcome:
+        """Classify a run whose budget expired, by whether it left a result.
+
+        Personas are routinely authored to hold their turn open waiting on work
+        that may never arrive, so reaching the budget is an ordinary end to a
+        run that already acted. Failing it would abort the event behind it.
+        """
+        record.error = error
+        if self._salvaged_run_output(vca.actor_id, record.run_id):
+            record.status = "completed"
+            return "timed_out_salvaged"
+        record.status = "failed"
+        return "timed_out"
+
+    def _salvaged_run_output(self, actor_id: str, run_id: str) -> bool:
+        """Whether a killed run left output worth counting as a success.
+
+        Read directly rather than through ``read_run_output``: on this path a
+        half-written file is expected, and its stricter errors would be noise.
+        A dict alone isn't enough — an agent that reported its own failure
+        right before the kill landed is still a failure, not a save.
+        """
+        path = self.store.agent_configs.run_output_path(actor_id, run_id)
+        try:
+            output = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            return False
+        if not isinstance(output, dict):
+            return False
+        return output.get("status") not in FAILED_AGENT_RUN_STATUSES
+
+    async def _run_direct_tool_action(
+        self, action: CallMCPToolAction
+    ) -> dict[str, JsonValue]:
+        async with FastMCPClient(self._mcp_proxy) as client:
+            result = await client.call_tool(
+                action.tool_name,
+                action.arguments,
+                meta={
+                    TOOL_CALL_ACTOR_KEY: action.actor_id or COORDINATOR_ACTOR_ID_VALUE
+                },
+            )
+        return summarize_tool_result(result)
+
+    async def _run_agent_action(
+        self, event: EventDefinition, action: InvokeAgentAction
+    ) -> tuple[ActionDispatchStatus, dict[str, JsonValue]]:
+        config = self.store.config.read()
+        vca = config.agents.get(action.actor_id)
+        if vca is None:
+            raise ValueError(f"Unknown virtual coworker: {action.actor_id}")
+
+        run_id = f"run_{uuid4().hex}"
+        with self.store.agent_configs.lock(vca.actor_id) as lock_acquired:
+            if not lock_acquired:
+                increment(
+                    "studio.vca.persona.run",
+                    tags=[*_persona_base_tags(vca), "status:skipped"],
+                )
+                logger.info(
+                    "Environment Coordinator skipped VCA run because actor is locked "
+                    + f"event={event.event_id} actor={vca.actor_id} run_id={run_id}"
+                )
+                return "skipped", {
+                    "actor_id": vca.actor_id,
+                    "reason": "already_running",
+                }
+            logger.info(
+                "Environment Coordinator starting VCA run "
+                + f"event={event.event_id} actor={vca.actor_id} run_id={run_id} "
+                + f"timeout_seconds={PersonaDeadlines.for_action(action).total_seconds}"
+            )
+            record = AgentRunRecord(
+                run_id=run_id,
+                status="running",
+                started_at=utc_now(),
+            )
+            self.store.agent_configs.write_run(vca.actor_id, record)
+            record = await self._run_vca_command(vca, action, record)
+            self.store.agent_configs.write_run(vca.actor_id, record)
+            logger.info(
+                "Environment Coordinator finished VCA run "
+                + f"event={event.event_id} actor={vca.actor_id} run_id={run_id} "
+                + f"status={record.status} error={record.error!r}"
+            )
+            if record.status == "failed":
+                raise RuntimeError(
+                    record.error or f"Virtual coworker {vca.actor_id} failed"
+                )
+            return "completed", {"run_id": run_id, "actor_id": vca.actor_id}
+
+    async def _run_vca_command(
+        self,
+        vca: VirtualCoworkerAgent,
+        action: InvokeAgentAction,
+        record: AgentRunRecord,
+    ) -> AgentRunRecord:
+        # Drop to the confined user when the VCA requests it (run_as_user); None = inherit (prior behavior).
+        run_as_user = vca.run_as_user
+        deadlines = PersonaDeadlines.for_action(action)
+        command, env = self.store.agent_configs.prepare_agent_run(
+            vca=vca,
+            run_id=record.run_id,
+            mcp_gateway_url=self._mcp_gateway_url,
+            filesystem_dir=self.store.agent_filesystems.filesystem_dir(vca.actor_id),
+            run_as_user=run_as_user,
+            agent_timeout_seconds=deadlines.agent_seconds,
+        )
+        # uvloop lacks asyncio's user/group privilege-drop kwargs, so drop via an external
+        # wrapper: setpriv (--clear-groups) or runuser. Username is its own argv element (no shell).
+        if run_as_user is not None:
+            if shutil.which("setpriv"):
+                command = [
+                    "setpriv",
+                    "--reuid",
+                    run_as_user,
+                    "--regid",
+                    run_as_user,
+                    "--clear-groups",
+                    "--",
+                    *command,
+                ]
+            else:
+                command = ["runuser", "-u", run_as_user, "--", *command]
+        with record_latency_and_outcome(
+            "studio.vca.persona.duration_seconds",
+            "studio.vca.persona.run",
+            _persona_base_tags(vca),
+        ) as t:
+            process = await asyncio.create_subprocess_exec(
+                *command,
+                cwd=get_archipelago_agents_cwd(),
+                env=env,
+                start_new_session=True,
+            )
+            logger.info(
+                "Environment Coordinator VCA process spawned "
+                + f"actor={vca.actor_id} run_id={record.run_id} pid={process.pid}"
+            )
+            outcome: PersonaOutcome
+            started = time.monotonic()
+            try:
+                await asyncio.wait_for(process.wait(), timeout=deadlines.total_seconds)
+            except TimeoutError:
+                await self._terminate_process_group(
+                    process, record.run_id, deadlines.sigterm_grace_seconds
+                )
+                outcome = self._apply_timeout(
+                    vca, record, f"Timed out after {deadlines.total_seconds}s"
+                )
+            else:
+                elapsed = time.monotonic() - started
+                if process.returncode != 0:
+                    record.status = "failed"
+                    record.error = f"Exited with status {process.returncode}"
+                    outcome = "error_exit"
+                else:
+                    run_output = self.store.agent_configs.read_run_output(
+                        vca.actor_id, record.run_id
+                    )
+                    if run_output is None:
+                        record.status = "failed"
+                        record.error = "Agent did not write output.json"
+                        outcome = "no_output"
+                    elif run_output.get("status") in FAILED_AGENT_RUN_STATUSES:
+                        # A failure reported at or past the deadline we handed the
+                        # agent is our budget expiring, not the agent breaking. The
+                        # runner has no separate "timed_out" status, so this is what
+                        # its own timeout looks like — trust it outright rather than
+                        # re-deriving it through the hard-kill salvage check, which
+                        # would otherwise read this same self-reported failure as
+                        # nothing worth salvaging.
+                        if elapsed >= deadlines.agent_seconds:
+                            record.status = "completed"
+                            record.error = f"Timed out after {deadlines.agent_seconds}s"
+                            outcome = "timed_out_salvaged"
+                        else:
+                            record.status = "failed"
+                            record.error = (
+                                f"Agent finished with status {run_output.get('status')}"
+                            )
+                            outcome = "agent_failed"
+                    else:
+                        record.status = "completed"
+                        outcome = "completed"
+
+            record.completed_at = utc_now()
+            t.status = outcome
+        return record
+
+
+_coordinator: Coordinator | None = None
+
+
+def get_coordinator() -> Coordinator:
+    global _coordinator
+    if _coordinator is None:
+        _coordinator = Coordinator()
+    return _coordinator
+
+
+def set_coordinator_for_tests(coordinator: Coordinator | None) -> None:
+    global _coordinator
+    _coordinator = coordinator

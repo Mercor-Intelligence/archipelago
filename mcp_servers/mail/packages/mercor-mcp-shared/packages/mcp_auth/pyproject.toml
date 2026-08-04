@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-auth"
+version = "1.0.0"
+description = "Shared authentication middleware and services for MCP servers"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [
+    { name = "Mercor", email = "team@example.com" }
+]
+keywords = ["mcp", "authentication", "middleware", "fastmcp"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "fastmcp>=0.1.0",
+    "loguru>=0.7.0",
+    "httpx>=0.27.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "ruff>=0.6.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Mercor-Intelligence"
+Repository = "https://github.com/Mercor-Intelligence/mercor-mcp-shared-infra/"
+Documentation = "https://github.com/Mercor-Intelligence/mercor-mcp-shared-infra/tree/main/packages/mcp-auth"
+Changelog = "https://github.com/Mercor-Intelligence/mercor-mcp-shared-infra/blob/main/packages/mcp-auth/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mcp_auth*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I", "N", "UP"]
+ignore = []
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"

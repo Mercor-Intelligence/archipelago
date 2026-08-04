@@ -1,0 +1,23 @@
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  const { accessCode } = req.body;
+  const validAccessCode = process.env.ACCESS_CODE;
+
+  if (!validAccessCode) {
+    return res.status(500).json({ error: 'ACCESS_CODE not configured' });
+  }
+
+  if (accessCode === validAccessCode) {
+    return res.status(200).json({ success: true });
+  }
+
+  return res.status(401).json({ error: 'Invalid access code' });
+}
