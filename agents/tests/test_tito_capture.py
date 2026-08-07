@@ -73,7 +73,7 @@ def test_extract_allows_empty_completion() -> None:
     "api_base",
     [
         "https://my-policy.modal.run/v1",
-        "https://acct-1.fireworks.ai/inference/v1",
+        "https://api.fireworks.ai/inference/v1",
         "http://localhost:8000/v1",
         "http://127.0.0.1:8000/v1",
     ],
@@ -88,6 +88,7 @@ def test_validate_endpoint_allows_controlled_hosts(api_base: str) -> None:
         "https://evil.com/v1",
         "http://169.254.169.254/latest/meta-data",  # metadata IP
         "https://modal.run.attacker.com/v1",  # suffix spoof
+        "https://attacker.fireworks.ai/inference/v1",
         "http://my-policy.modal.run/v1",  # remote must be https
         "ftp://localhost/v1",
     ],
@@ -95,6 +96,15 @@ def test_validate_endpoint_allows_controlled_hosts(api_base: str) -> None:
 def test_validate_endpoint_rejects_everything_else(api_base: str) -> None:
     with pytest.raises(ValueError):
         tito_capture.validate_endpoint(api_base)
+
+
+def test_validate_endpoint_enforces_configured_origin(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setenv("MERCOR_POLICY_ALLOWED_ORIGIN", "https://expected.modal.run")
+    tito_capture.validate_endpoint("https://expected.modal.run/v1")
+    with pytest.raises(ValueError, match="configured origin"):
+        tito_capture.validate_endpoint("https://other.modal.run/v1")
 
 
 def test_policy_model_name_strips_only_routing_prefixes() -> None:

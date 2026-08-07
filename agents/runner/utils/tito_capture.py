@@ -11,6 +11,7 @@ failing loud if the backend isn't capture-capable.
 from __future__ import annotations
 
 import math
+import os
 from dataclasses import dataclass
 from typing import Any
 from urllib.parse import urlparse
@@ -20,7 +21,8 @@ from openai import AsyncOpenAI
 
 # Only the self-served policy backends we control may receive a capture call.
 # A bare/metadata/loopback IP never matches these suffixes, so it's rejected.
-_ALLOWED_HOST_SUFFIXES = (".modal.run", ".fireworks.ai")
+_ALLOWED_MODAL_SUFFIX = ".modal.run"
+_FIREWORKS_HOST = "api.fireworks.ai"
 _ALLOWED_LOCALHOSTS = ("localhost", "127.0.0.1")
 
 # Keys the harness's sampling args may safely control on both OpenAI-compatible
@@ -103,14 +105,22 @@ def validate_endpoint(api_base: str) -> None:
         raise ValueError(f"policy api_base must be http(s): {api_base!r}")
     host = (parsed.hostname or "").lower()
     is_localhost = host in _ALLOWED_LOCALHOSTS
-    if not (is_localhost or host.endswith(_ALLOWED_HOST_SUFFIXES)):
+    if not (
+        is_localhost or host == _FIREWORKS_HOST or host.endswith(_ALLOWED_MODAL_SUFFIX)
+    ):
         raise ValueError(f"policy api_base host not allowed: {host!r}")
     if parsed.scheme == "http" and not is_localhost:
         raise ValueError(f"remote policy api_base must use https: {api_base!r}")
+    allowed_origin = os.environ.get("MERCOR_POLICY_ALLOWED_ORIGIN", "").rstrip("/")
+    origin = f"{parsed.scheme}://{parsed.netloc}".rstrip("/")
+    if allowed_origin and origin != allowed_origin:
+        raise ValueError(
+            f"policy api_base origin does not match configured origin: {origin!r}"
+        )
 
 
 def is_fireworks_endpoint(api_base: str) -> bool:
-    return (urlparse(api_base).hostname or "").lower().endswith(".fireworks.ai")
+    return (urlparse(api_base).hostname or "").lower() == _FIREWORKS_HOST
 
 
 def _policy_model_name(model: str) -> str:

@@ -293,6 +293,45 @@ async def test_responses_facade_uses_shared_parsed_sample(
     assert [item["type"] for item in response.output] == ["reasoning", "message"]
 
 
+def test_responses_normalization_does_not_mutate_tool_calls() -> None:
+    existing = {
+        "role": "assistant",
+        "tool_calls": [
+            {
+                "id": "call_1",
+                "type": "function",
+                "function": {"name": "first", "arguments": "{}"},
+            }
+        ],
+    }
+    messages = [
+        existing,
+        {
+            "type": "function_call",
+            "call_id": "call_2",
+            "name": "second",
+            "arguments": "{}",
+        },
+    ]
+    normalized = tito_session._normalize_responses_messages(messages)
+    assert len(existing["tool_calls"]) == 1
+    assert len(normalized[0]["tool_calls"]) == 2
+
+
+def test_responses_normalization_accepts_emitted_reasoning_items() -> None:
+    normalized = tito_session._normalize_responses_messages(
+        [
+            {
+                "type": "reasoning",
+                "content": [{"type": "reasoning_text", "text": "why"}],
+                "summary": [{"type": "summary_text", "text": "why"}],
+            },
+            {"role": "assistant", "content": "answer"},
+        ]
+    )
+    assert normalized == [{"role": "assistant", "content": "answer"}]
+
+
 async def test_responses_reasoning_and_tool_echo_remains_linear(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:

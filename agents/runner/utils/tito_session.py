@@ -200,8 +200,10 @@ def _normalize_responses_messages(messages: list[Any]) -> list[dict[str, Any]]:
             message = {"role": normalized_role, "content": item.get("content")}
             for key in ("reasoning_content", "tool_calls", "tool_call_id", "name"):
                 if item.get(key) is not None:
-                    message[key] = item[key]
+                    message[key] = list(item[key]) if key == "tool_calls" else item[key]
             out.append(message)
+            continue
+        if item_type == "reasoning":
             continue
         if item_type == "function_call":
             tool_call = {
