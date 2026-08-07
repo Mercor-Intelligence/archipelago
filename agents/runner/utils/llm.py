@@ -6,6 +6,7 @@ from functools import partial
 from typing import Any
 
 import litellm
+import openai
 from litellm import acompletion, aresponses, get_model_info, token_counter
 from litellm.exceptions import (
     APIConnectionError,
@@ -25,7 +26,7 @@ from openai.types.chat.chat_completion_tool_param import ChatCompletionToolParam
 
 import runner.utils.litellm_patches  # noqa: F401
 from runner.agents.models import LitellmAnyMessage
-from runner.utils import budget_meter
+from runner.utils import budget_meter, tito_session
 from runner.utils.budget_hydration import request_meter_hydration
 from runner.utils.decorators import (
     account_id_ctx,
@@ -995,6 +996,10 @@ async def _budget_accrue(
         APIConnectionError,
         InternalServerError,
         BadGatewayError,
+        openai.RateLimitError,
+        openai.APITimeoutError,
+        openai.APIConnectionError,
+        openai.InternalServerError,
     ),
     skip_on=(ContextWindowExceededError,),
     skip_if=_should_skip_retry,
@@ -1022,6 +1027,16 @@ async def generate_response(
     Returns:
         The model response
     """
+    _tito = tito_session.get_active_session()
+    if _tito is not None and _tito.handles(model):
+        return await _tito.generate(
+            model,
+            messages,
+            tools,
+            responses_args_to_completions(extra_args),
+            llm_response_timeout,
+        )
+
     top_level_extra, extra_body = _split_extra_args(
         responses_args_to_completions(extra_args)
     )
@@ -1197,6 +1212,10 @@ async def generate_response(
         APIConnectionError,
         InternalServerError,
         BadGatewayError,
+        openai.RateLimitError,
+        openai.APITimeoutError,
+        openai.APIConnectionError,
+        openai.InternalServerError,
     ),
     skip_on=(ContextWindowExceededError,),
     skip_if=_should_skip_retry,
@@ -1226,6 +1245,16 @@ async def call_responses_api(
     Returns:
         The OpenAI responses API response object
     """
+    _tito = tito_session.get_active_session()
+    if _tito is not None and _tito.handles(model):
+        return await _tito.generate_responses(
+            model,
+            messages,
+            tools,
+            extra_args,
+            llm_response_timeout,
+        )
+
     top_level_extra, extra_body = _split_extra_args(extra_args)
     kwargs: dict[str, Any] = {
         "model": model,

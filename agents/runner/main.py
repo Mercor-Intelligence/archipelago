@@ -19,6 +19,7 @@ from runner.agents.models import (
 )
 from runner.agents.registry import get_agent_impl
 from runner.models import AgentConfig
+from runner.utils import tito_session
 from runner.utils.decorators import (
     agent_id_ctx,
     agent_version_ctx,
@@ -123,38 +124,51 @@ async def main(
             f"Running model {orchestrator_model} with agent {agent_config.agent_name}"
         )
 
+        _tito = tito_session.session_from_env(policy_model=orchestrator_model)
+        _tito_token = tito_session.set_active_session(_tito)
+
         try:
-            async with asyncio.timeout(settings.AGENT_TIMEOUT_SECONDS):
-                output = await agent_impl(run_input)
-        except TimeoutError:
-            logger.error(
-                f"Agent timed out after {settings.AGENT_TIMEOUT_SECONDS} seconds"
-            )
-            output = AgentTrajectoryOutput(
-                messages=[],
-                status=AgentStatus.ERROR,
-                time_elapsed=float(settings.AGENT_TIMEOUT_SECONDS),
-            )
-        except asyncio.CancelledError:
-            logger.error("Agent was cancelled externally")
-            output = AgentTrajectoryOutput(
-                messages=[],
-                status=AgentStatus.CANCELLED,
-                time_elapsed=0.0,
-            )
-        except Exception as e:
-            logger.error(f"Error running agent: {repr(e)}")
-            output = AgentTrajectoryOutput(
-                messages=[],
-                status=AgentStatus.ERROR,
-                time_elapsed=0.0,
-            )
+            try:
+                async with asyncio.timeout(settings.AGENT_TIMEOUT_SECONDS):
+                    output = await agent_impl(run_input)
+            except TimeoutError:
+                logger.error(
+                    f"Agent timed out after {settings.AGENT_TIMEOUT_SECONDS} seconds"
+                )
+                output = AgentTrajectoryOutput(
+                    messages=[],
+                    status=AgentStatus.ERROR,
+                    time_elapsed=float(settings.AGENT_TIMEOUT_SECONDS),
+                )
+            except asyncio.CancelledError:
+                logger.error("Agent was cancelled externally")
+                output = AgentTrajectoryOutput(
+                    messages=[],
+                    status=AgentStatus.CANCELLED,
+                    time_elapsed=0.0,
+                )
+            except Exception as e:
+                logger.error(f"Error running agent: {repr(e)}")
+                output = AgentTrajectoryOutput(
+                    messages=[],
+                    status=AgentStatus.ERROR,
+                    time_elapsed=0.0,
+                )
 
-        logger.info(f"Agent run finished with status {output.status}")
+            logger.info(f"Agent run finished with status {output.status}")
 
-        # save_results(trajectory_id, output, None)
+            if _tito is not None:
+                if output.status in (AgentStatus.ERROR, AgentStatus.CANCELLED):
+                    _tito.mark_incomplete(f"run status {output.status}")
+                output.output = tito_session.nest_in_output(
+                    output.output, _tito.output_dict()
+                )
 
-        return output
+            # save_results(trajectory_id, output, None)
+
+            return output
+        finally:
+            tito_session.reset_active_session(_tito_token)
 
 
 async def run_and_persist(

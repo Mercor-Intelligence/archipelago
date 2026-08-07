@@ -33,6 +33,7 @@ dependencies = [
     "trafilatura>=1.12.0",
     "pymupdf>=1.27.2",
     "tenacity>=9.0.0",
+    "renderers==0.1.8",
 ]
 
 [tool.setuptools]
