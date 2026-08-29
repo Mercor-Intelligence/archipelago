@@ -1,0 +1,35 @@
+# Validate the globalair-holdings_uidsep export's ACTUAL protection code.
+# Uses the export's own (vendored) sandbox.py and reproduces the export's
+# Dockerfile uid-logic (useradd gemini, /home/gemini workspace, /filesystem
+# symlink, chmod 700 /app) + a seeded app secret, then runs the boundary
+# driver as gemini. Slim (no MCP uv-sync / libreoffice) — the boundary is a
+# kernel permission property, independent of what's under /app.
+FROM python:3.13-slim
+
+RUN apt-get update && apt-get install -y --no-install-recommends util-linux \
+    && rm -rf /var/lib/apt/lists/*
+RUN pip install --no-cache-dir loguru
+
+# --- reproduce the export's uid-separation Dockerfile steps ---
+RUN useradd -m -s /bin/bash gemini && echo "gemini:changeme" | chpasswd
+
+# root-owned app tree with sensitive content (stand-in for MCP code + seeds)
+RUN mkdir -p /app/tools/mcp_servers /app/tools/.apps_data/quickbooks \
+    && echo "TOP_SECRET_APP_zzz" > /app/secret.txt \
+    && echo "SECRET_DB_yyy" > /app/tools/.apps_data/quickbooks/data.db
+# /.apps_data mirrors the export: symlink into /app/tools/.apps_data
+RUN rm -rf /.apps_data && ln -s /app/tools/.apps_data /.apps_data
+
+# model workspace at /home/gemini, with /filesystem symlinked to it
+RUN echo "model-can-read-this" > /home/gemini/ok.txt \
+    && chown -R gemini:gemini /home/gemini \
+    && ln -sf /home/gemini /filesystem
+
+# the EXPORT's real sandbox.py under test
+COPY tests/fixtures/export_uidsep_sandbox.py /probe/utils/sandbox.py
+COPY mcp_servers/code_execution_server/tests/run_as_user_boundary_driver.py /probe/driver.py
+
+# lock the app tree last, exactly as the export does
+RUN chmod 700 /app
+
+CMD ["python", "/probe/driver.py"]
