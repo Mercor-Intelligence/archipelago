@@ -4,6 +4,18 @@ services:
       context: ..
       dockerfile: environment/Dockerfile
     container_name: archipelago-environment
+    # The environment container is where model-authored code runs
+    # (code_execution_server executes arbitrary commands as root inside it).
+    # Without a cgroup limit a single runaway script can consume all host
+    # memory: we observed one reach 228 GB RSS and drive a 251 GB host to 1 GB
+    # free, at which point the kernel OOM killer cannot help because the
+    # container's budget is the whole machine. With a limit the runaway dies
+    # alone and the task surfaces a normal error.
+    # Raise these if your workloads legitimately need more; measured peaks for
+    # the bundled tool set are well under 1 GB.
+    mem_limit: 8g
+    memswap_limit: 8g
+    pids_limit: 2048
     ports:
       - "8080:8080"
     env_file:
