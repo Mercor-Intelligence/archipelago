@@ -16,19 +16,20 @@ def _wrap_flat_arguments(
     arguments: dict[str, Any] | None,
     properties: dict[str, Any] | None,
 ) -> dict[str, Any] | None:
-    if arguments is None or not properties:
+    if properties is None:
         return arguments
 
     prop_keys = set(properties)
-    for key in _ENVELOPE_KEYS:
-        if key in arguments and key in prop_keys:
-            return arguments
+    if isinstance(arguments, dict):
+        for key in _ENVELOPE_KEYS:
+            if key in arguments and key in prop_keys:
+                return arguments
 
     if len(prop_keys) == 1:
         only = next(iter(prop_keys))
-        if only in _ENVELOPE_KEYS and only not in arguments:
+        if only in _ENVELOPE_KEYS and (arguments is None or only not in arguments):
             logger.debug("Wrapping flat tool arguments into {!r}", only)
-            return {only: arguments}
+            return {only: arguments or {}}
 
     return arguments
 
@@ -48,7 +49,7 @@ class EnvelopeCompatMiddleware(Middleware):
     ) -> ToolResult:
         message = context.message
         arguments = getattr(message, "arguments", None)
-        if isinstance(arguments, dict) and self._mcp is not None:
+        if (arguments is None or isinstance(arguments, dict)) and self._mcp is not None:
             try:
                 tool = await self._mcp.get_tool(message.name)
             except Exception:

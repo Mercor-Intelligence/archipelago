@@ -152,7 +152,13 @@ def _log_startup_banner():
 
 def main():
     """Entry point for the MCP server."""
+    from middleware.envelope_compat import EnvelopeCompatMiddleware
+
     _register_tools()
+    # Meta-tools take a single `request` object, so a flat call has to be
+    # wrapped before validation. Added after registration because the
+    # middleware resolves each tool's schema by name.
+    mcp.add_middleware(EnvelopeCompatMiddleware(mcp))
     _log_startup_banner()
     run_server(mcp, config=SERVER_CONFIG)
 

@@ -7,6 +7,7 @@ from fastmcp.server.middleware.error_handling import (
     RetryMiddleware,
 )
 from mcp_schema import flatten_schema
+from middleware.envelope_compat import EnvelopeCompatMiddleware
 from middleware.injected_errors import setup_error_injection
 from middleware.logging import LoggingMiddleware
 from middleware.validation_error_sanitizer import ValidationErrorSanitizerMiddleware
@@ -26,6 +27,7 @@ mcp.add_middleware(ErrorHandlingMiddleware(include_traceback=True))
 mcp.add_middleware(RetryMiddleware())
 mcp.add_middleware(LoggingMiddleware())
 mcp.add_middleware(ValidationErrorSanitizerMiddleware())
+mcp.add_middleware(EnvelopeCompatMiddleware(mcp))
 
 mcp.tool(code_exec)
 

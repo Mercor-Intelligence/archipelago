@@ -42,6 +42,7 @@ from fastmcp.server.middleware.error_handling import (
 # 2. python -m mcp_servers.fmp_server (module execution)
 # 3. import main (RLS wrapper from same directory)
 try:
+    from .middleware.envelope_compat import EnvelopeCompatMiddleware
     from .middleware.logging import LoggingMiddleware
     from .middleware.response_truncation import ResponseTruncationMiddleware
     from .middleware.validation_error_sanitizer import ValidationErrorSanitizerMiddleware
@@ -86,6 +87,7 @@ try:
 except ImportError:
     # Direct execution - add parent to path for local imports
     sys.path.insert(0, str(Path(__file__).parent))
+    from middleware.envelope_compat import EnvelopeCompatMiddleware
     from middleware.logging import LoggingMiddleware
     from middleware.response_truncation import ResponseTruncationMiddleware
     from middleware.validation_error_sanitizer import ValidationErrorSanitizerMiddleware
@@ -139,6 +141,7 @@ except ValueError:
     _max_items = 200
 mcp.add_middleware(ResponseTruncationMiddleware(max_items=_max_items))
 mcp.add_middleware(ValidationErrorSanitizerMiddleware())
+mcp.add_middleware(EnvelopeCompatMiddleware(mcp))
 
 
 # Monkey-patch FastMCP to sanitize tool schemas for Gemini compatibility
