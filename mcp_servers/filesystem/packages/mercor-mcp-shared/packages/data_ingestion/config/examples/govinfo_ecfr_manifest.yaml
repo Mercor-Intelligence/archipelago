@@ -1,0 +1,52 @@
+# Crawl govinfo.gov ECFR collection - manifest only
+#
+# Usage:
+#   crawl --config config/examples/govinfo_ecfr_manifest.yaml
+#
+# Output:
+#   ./output/ecfr/manifest.json
+
+crawler:
+  input:
+    type: crawl
+    root_url: "https://www.govinfo.gov/bulkdata/json/ECFR"
+
+    parser:
+      type: json
+      items_path: "$.files"
+      item_fields:
+        name:
+          path: "@.name"
+        url:
+          path: "@.link"
+        is_folder:
+          path: "@.folder"
+          type: boolean
+        size:
+          path: "@.size"
+          type: integer
+        last_modified:
+          path: "@.formattedLastModifiedTime"
+
+    options:
+      follow_folders: true
+      max_depth: -1
+      file_extensions: [".xml"]
+      exclude_patterns: ["*/resources/*"]
+      rate_limit:
+        requests_per_second: 5
+
+    http:
+      headers:
+        Accept: "application/json"
+        User-Agent: "DataIngestion/1.0"
+      timeout:
+        connect: 10
+        read: 60
+      retry:
+        max_attempts: 3
+        backoff_factor: 0.5
+
+  output:
+    mode: manifest
+    directory: "./output/ecfr"

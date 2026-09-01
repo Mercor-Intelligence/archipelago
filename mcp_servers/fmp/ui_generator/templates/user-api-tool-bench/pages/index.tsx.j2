@@ -1,0 +1,37 @@
+{% raw %}// AUTO-GENERATED - Generic MCP UI Index Page
+import { useState, useEffect } from 'react';
+import Head from 'next/head';
+import ApiTool from '@/components/ApiTool';
+
+export default function Home() {
+  // Skip access code check - authentication handled by parent app
+  const [accessGranted, setAccessGranted] = useState(true);
+  const [accessCode, setAccessCode] = useState('default_token');
+  const [accessError, setAccessError] = useState('');
+
+  // Authentication handled by parent app - skip access code check
+  return (
+    <>
+      <Head>
+        <title>MCP Tools</title>
+        <meta name="description" content="Explore and use MCP tools" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div className="h-screen flex flex-col overflow-hidden">
+        <main className="flex-1 overflow-auto">
+          <ApiTool 
+            token={accessCode}
+            user={{ email: 'user', userId: 'user' }} 
+            onLogout={() => {
+              localStorage.removeItem('access_code');
+              setAccessGranted(false);
+              setAccessCode('');
+            }} 
+          />
+        </main>
+      </div>
+    </>
+  );
+}
+{% endraw %}

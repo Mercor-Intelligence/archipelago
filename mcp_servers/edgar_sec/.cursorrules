@@ -1,0 +1,66 @@
+# Cursor AI Rules for MCP Server Development
+
+When reviewing or writing code in this repo, follow these rules:
+
+## Code Review
+
+Always check wiki/PR-Review-Guidelines.md before reviewing code.
+
+Key points:
+1. Check against build plan/spec first
+2. Verify business logic (edge cases, permissions, errors)
+3. Ensure async/await used correctly
+4. Database operations use `async with get_session()`
+5. New tools registered in main.py
+6. Tests exist and actually test the feature
+
+## Code Generation
+
+When generating MCP tools:
+
+**Always include:**
+- Pydantic Input/Output models
+- Async/await properly
+- Error handling for edge cases
+- Tests that verify business logic
+
+**Pattern to follow:**
+```python
+from models import MyToolInput, MyToolOutput
+from db.session import get_session
+from repositories.base import BaseRepository
+
+@make_async_background
+async def my_tool(request: MyToolInput) -> MyToolOutput:
+    # 1. Validate business rules
+    # 2. Database operations in async context
+    # 3. Return validated output
+    async with get_session() as session:
+        repo = BaseRepository(Model, session)
+        result = await repo.create(**request.model_dump())
+        return MyToolOutput.model_validate(result)
+```
+
+## Common Mistakes to Avoid
+
+- Don't call async functions without await
+- Don't use blocking I/O in async code (use @make_async_background)
+- Don't forget `sys.path.insert(0, str(Path(__file__).parent.parent))` in tool files
+- Don't skip Pydantic validation
+- Don't forget `await session.flush()` after delete
+
+## Testing
+
+Write tests that check:
+- Business logic (not just "it runs")
+- Edge cases (empty input, duplicates, invalid data)
+- Pydantic validation (wrong types rejected)
+- Database operations (if applicable)
+
+Reference: tests/test_spider_man_quote.py for testing patterns.
+
+## When Unsure
+
+1. Check existing tools in mcp_servers/ for patterns
+2. Reference PR_REVIEW_GUIDELINES.md
+3. Ask - don't guess

@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "transport": "stdio",
+      "command": "sh",
+      "args": [
+        "-c",
+        "ARCHIPELAGO_DIR=/tmp/archipelago-$SERVER_NAME && if [ ! -d \"$ARCHIPELAGO_DIR/.git\" ]; then git clone --depth 1 https://github.com/Mercor-Intelligence/archipelago.git \"$ARCHIPELAGO_DIR\"; fi && git -C \"$ARCHIPELAGO_DIR\" fetch --depth 1 origin 9040d7793b492e8ca320daaa40b8aee3e182e4dc && git -C \"$ARCHIPELAGO_DIR\" checkout --force 9040d7793b492e8ca320daaa40b8aee3e182e4dc && cd \"$ARCHIPELAGO_DIR\"/mcp_servers/filesystem && uv sync --all-extras && cd mcp_servers/filesystem_server && uv run python main.py"
+      ],
+      "env": {
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "filesystem_server",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "cwd": "/tmp"
+    }
+  }
+}
