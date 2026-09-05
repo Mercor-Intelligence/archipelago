@@ -12,7 +12,7 @@ readme = "README.md"
 requires-python = ">=3.13,<3.14"
 dependencies = [
     "aioboto3>=15.4.0",
-    "cryptography>=46.0.7,<47",
+    "cryptography>=46.0.7,<51",
     "aiobotocore>=2.25.0",
     "anthropic>=0.84.0",
     "datadog-api-client>=2.44.0",
