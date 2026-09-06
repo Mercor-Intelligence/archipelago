@@ -1,0 +1,343 @@
+"""
+Chart extraction utilities using LibreOffice PDF conversion.
+
+This module provides functions to extract chart images from Excel files by:
+1. Detecting if an Excel file contains charts
+2. Converting Excel to PDF via LibreOffice headless mode
+3. Extracting images from the PDF via Reducto
+
+These utilities are used by both LocalExtractor and SnapshotDiffGenerator
+for chart extraction in grading workflows.
+"""
+
+import asyncio
+import base64
+import io
+import os
+import shutil
+import tempfile
+from pathlib import Path
+from typing import Any
+
+import openpyxl
+from loguru import logger
+from pdf2image import convert_from_path
+
+from ...tool_paths import (
+    mounted_tool_env,
+    require_mounted_binary,
+    staged_bin_dir,
+)
+from ..methods.reducto_extractor import ReductoExtractor
+from ..types import ImageMetadata
+
+
+def find_libreoffice() -> str | None:
+    """LibreOffice's path: the mount first, then apt in Docker or brew locally.
+
+    The mount comes first because ``POST /grade`` strips PATH, and a world's
+    own LibreOffice is a different version when it has one. Callers read None
+    as "no charts, no evaluated formulas" and score anyway.
+    """
+    # Raises under a mount that cannot run it, because every caller here reads
+    # None as "no charts, no evaluated formulas" and scores anyway. No PATH
+    # fallback either: the world's build differs from the lane's.
+    mounted = require_mounted_binary("libreoffice", "soffice")
+    return mounted or shutil.which("libreoffice") or shutil.which("soffice")
+
+
+def has_charts_in_xlsx(file_path: Path) -> bool:
+    """Check if an Excel file contains any charts."""
+    wb = None
+    try:
+        wb = openpyxl.load_workbook(file_path, data_only=True)
+        for sheet_name in wb.sheetnames:
+            sheet = wb[sheet_name]
+            charts = getattr(sheet, "_charts", None)
+            if charts:
+                return True
+        return False
+    except Exception as e:
+        logger.warning(f"Failed to check for charts in {file_path}: {e}")
+        return False
+    finally:
+        if wb:
+            wb.close()
+
+
+async def evaluate_excel_formulas_with_libreoffice(
+    file_bytes: bytes, suffix: str = ".xlsx"
+) -> bytes | None:
+    """
+    Evaluate Excel formulas by passing the file through LibreOffice.
+    Returns file bytes with computed formula values, or None if evaluation fails.
+    """
+    soffice_path = find_libreoffice()
+    if not soffice_path:
+        logger.warning(
+            "[FORMULA] LibreOffice not found - formulas will not be evaluated"
+        )
+        return None
+
+    input_temp_path: Path | None = None
+    output_dir: str | None = None
+    user_install_dir: str | None = None
+
+    try:
+        with tempfile.NamedTemporaryFile(
+            delete=False, suffix=suffix, prefix="formula_eval_"
+        ) as temp_file:
+            temp_file.write(file_bytes)
+            input_temp_path = Path(temp_file.name)
+
+        output_dir = tempfile.mkdtemp(prefix="formula_eval_out_")
+        user_install_dir = tempfile.mkdtemp(prefix="libreoffice_profile_")
+
+        process = await asyncio.create_subprocess_exec(
+            soffice_path,
+            "--headless",
+            "--calc",
+            f"-env:UserInstallation=file://{user_install_dir}",
+            "--convert-to",
+            "xlsx",
+            "--outdir",
+            output_dir,
+            str(input_temp_path),
+            # Mounted, this is where its own libraries and the lane's
+            # fonts are. Empty on the lane, which resolves both from /.
+            env={**os.environ, **mounted_tool_env(soffice_path)},
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
+        )
+
+        try:
+            _, stderr = await asyncio.wait_for(process.communicate(), timeout=120)
+        except TimeoutError:
+            process.kill()
+            logger.warning("[FORMULA] LibreOffice formula evaluation timed out")
+            return None
+
+        if process.returncode != 0:
+            logger.warning(
+                f"[FORMULA] LibreOffice formula evaluation failed: {stderr.decode()}"
+            )
+            return None
+
+        output_path = Path(output_dir) / f"{input_temp_path.stem}.xlsx"
+        if not output_path.exists():
+            logger.warning(f"[FORMULA] Output file not found: {output_path}")
+            return None
+
+        with open(output_path, "rb") as f:
+            return f.read()
+
+    except Exception as e:
+        logger.warning(f"[FORMULA] Failed to evaluate formulas: {e}")
+        return None
+
+    finally:
+        if input_temp_path and input_temp_path.exists():
+            input_temp_path.unlink(missing_ok=True)
+        if output_dir:
+            shutil.rmtree(output_dir, ignore_errors=True)
+        if user_install_dir:
+            shutil.rmtree(user_install_dir, ignore_errors=True)
+
+
+async def convert_xlsx_to_pdf(xlsx_path: Path, soffice_path: str) -> Path | None:
+    """
+    Convert Excel file to PDF using LibreOffice headless mode.
+
+    Args:
+        xlsx_path: Path to the Excel file
+        soffice_path: Path to the LibreOffice executable
+
+    Returns:
+        Path to the generated PDF file, or None if conversion failed.
+        Caller is responsible for cleaning up the PDF and its parent temp directory.
+    """
+    temp_dir: str | None = None
+    user_install_dir: str | None = None
+    try:
+        temp_dir = tempfile.mkdtemp(prefix="xlsx_to_pdf_")
+        user_install_dir = tempfile.mkdtemp(prefix="libreoffice_profile_")
+
+        process = await asyncio.create_subprocess_exec(
+            soffice_path,
+            "--headless",
+            f"-env:UserInstallation=file://{user_install_dir}",
+            "--convert-to",
+            "pdf",
+            "--outdir",
+            temp_dir,
+            str(xlsx_path),
+            env={**os.environ, **mounted_tool_env(soffice_path)},
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
+        )
+
+        try:
+            _, stderr = await asyncio.wait_for(process.communicate(), timeout=120)
+        except TimeoutError:
+            process.kill()
+            logger.warning(f"LibreOffice conversion timed out for {xlsx_path}")
+            return None
+
+        if process.returncode == 0:
+            pdf_path = Path(temp_dir) / f"{xlsx_path.stem}.pdf"
+            if pdf_path.exists():
+                temp_dir = None
+                return pdf_path
+            logger.warning(f"PDF not found after LibreOffice conversion: {pdf_path}")
+        else:
+            logger.warning(f"LibreOffice conversion failed: {stderr.decode()}")
+
+        return None
+
+    except Exception as e:
+        logger.warning(f"Failed to convert {xlsx_path} to PDF: {e}")
+        return None
+
+    finally:
+        if temp_dir:
+            shutil.rmtree(temp_dir, ignore_errors=True)
+        if user_install_dir:
+            shutil.rmtree(user_install_dir, ignore_errors=True)
+
+
+def pdf_to_base64_images(pdf_path: Path, max_pages: int = 10) -> list[ImageMetadata]:
+    """
+    Extract chart images from PDF pages and convert to base64 data URLs.
+
+    Args:
+        pdf_path: Path to the PDF file
+        max_pages: Maximum number of pages to extract (default 10)
+
+    Returns:
+        List of ImageMetadata objects with base64 data URLs
+    """
+    images = []
+
+    # Outside the try below, which turns any raise into an empty image list and
+    # a scored grade. A misconfigured mount has to reach the caller.
+    poppler_path = staged_bin_dir("poppler")
+
+    try:
+        # None leaves pdf2image to find poppler on PATH. The ignore is a wrong
+        # stub: the runtime signature declares `poppler_path=None`.
+        pil_images = convert_from_path(
+            pdf_path,
+            dpi=150,
+            first_page=1,
+            last_page=max_pages,
+            poppler_path=poppler_path,  # pyright: ignore[reportArgumentType]
+        )
+
+        for i, pil_image in enumerate(pil_images):
+            buffer = io.BytesIO()
+            pil_image.save(buffer, format="PNG")
+            buffer.seek(0)
+
+            base64_data = base64.b64encode(buffer.read()).decode("utf-8")
+            images.append(
+                ImageMetadata(
+                    url=f"data:image/png;base64,{base64_data}",
+                    placeholder=f"[CHART_{i + 1}]",
+                    type="Chart",
+                    caption=f"Chart from Excel (Page {i + 1})",
+                )
+            )
+
+    except Exception as e:
+        logger.warning(f"Failed to extract images from PDF: {e}")
+
+    return images
+
+
+async def extract_chart_images_from_excel(
+    excel_path: Path,
+    semaphore: asyncio.Semaphore | None = None,
+    metrics: dict[str, Any] | None = None,
+) -> list[dict[str, Any]]:
+    """
+    Extract chart images from Excel via LibreOffice PDF conversion + Reducto.
+
+    Args:
+        excel_path: Path to the Excel file
+        semaphore: Optional semaphore for rate limiting Reducto API calls
+        metrics: Optional dict to track reducto_calls_total/success/failed
+
+    Returns:
+        List of image dicts with placeholder, type, and image data
+    """
+    # A workbook with no charts needs no LibreOffice, so ask that first: this
+    # already logs and returns False on a malformed file.
+    if not has_charts_in_xlsx(excel_path):
+        return []
+
+    # And resolve OUTSIDE the try below, which catches Exception and returns
+    # []. A mount that cannot run LibreOffice has to stop the grade, not score
+    # a workbook that does have charts as though it had none.
+    soffice_path = find_libreoffice()
+    if not soffice_path:
+        logger.warning("[CHART] LibreOffice not found - install for chart extraction")
+        return []
+
+    try:
+        pdf_path = await convert_xlsx_to_pdf(excel_path, soffice_path)
+
+        try:
+            if not pdf_path:
+                return []
+
+            if metrics is not None:
+                metrics["reducto_calls_total"] = (
+                    metrics.get("reducto_calls_total", 0) + 1
+                )
+
+            reducto_extractor = ReductoExtractor()
+
+            if semaphore is not None:
+                async with semaphore:
+                    extracted = await reducto_extractor.extract_from_file(
+                        pdf_path, include_images=True
+                    )
+            else:
+                extracted = await reducto_extractor.extract_from_file(
+                    pdf_path, include_images=True
+                )
+
+            if metrics is not None:
+                metrics["reducto_calls_success"] = (
+                    metrics.get("reducto_calls_success", 0) + 1
+                )
+
+            if extracted and extracted.images:
+                chart_images = []
+                for i, img in enumerate(extracted.images):
+                    img_dict = img if isinstance(img, dict) else img.model_dump()
+                    img_dict["placeholder"] = f"[CHART_{i + 1}]"
+                    img_dict["type"] = "Chart"
+                    chart_images.append(img_dict)
+                return chart_images
+            return []
+
+        except Exception as e:
+            if metrics is not None:
+                metrics["reducto_calls_failed"] = (
+                    metrics.get("reducto_calls_failed", 0) + 1
+                )
+            logger.warning(f"[CHART] Reducto extraction failed: {e}")
+            return []
+
+        finally:
+            # Cleanup runs on success, Exception, AND CancelledError
+            if pdf_path:
+                if pdf_path.exists():
+                    pdf_path.unlink()
+                if pdf_path.parent.exists():
+                    shutil.rmtree(pdf_path.parent, ignore_errors=True)
+
+    except Exception as e:
+        logger.warning(f"[CHART] Chart extraction failed: {e}")
+        return []

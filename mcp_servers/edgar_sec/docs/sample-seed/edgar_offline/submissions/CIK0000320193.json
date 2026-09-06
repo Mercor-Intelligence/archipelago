@@ -1,0 +1,66 @@
+{
+  "cik": "0000320193",
+  "entityType": "operating",
+  "sic": "3571",
+  "sicDescription": "Electronic Computers",
+  "insiderTransactionForOwnerExists": 1,
+  "insiderTransactionForIssuerExists": 1,
+  "name": "Apple Inc.",
+  "tickers": [
+    "AAPL"
+  ],
+  "exchanges": [
+    "Nasdaq"
+  ],
+  "ein": "942404110",
+  "category": "Large accelerated filer",
+  "fiscalYearEnd": "0928",
+  "stateOfIncorporation": "CA",
+  "stateOfIncorporationDescription": "CA",
+  "phone": "408-996-1010",
+  "filings": {
+    "recent": {
+      "accessionNumber": [
+        "0000320193-24-000123",
+        "0000320193-24-000081",
+        "0000320193-23-000106"
+      ],
+      "filingDate": [
+        "2024-11-01",
+        "2024-08-02",
+        "2023-11-03"
+      ],
+      "reportDate": [
+        "2024-09-28",
+        "2024-06-29",
+        "2023-09-30"
+      ],
+      "form": [
+        "10-K",
+        "10-Q",
+        "10-K"
+      ],
+      "primaryDocument": [
+        "aapl-20240928.htm",
+        "aapl-20240629.htm",
+        "aapl-20230930.htm"
+      ],
+      "primaryDocDescription": [
+        "10-K Annual Report",
+        "10-Q Quarterly Report",
+        "10-K Annual Report"
+      ],
+      "isXBRL": [
+        1,
+        1,
+        1
+      ],
+      "isInlineXBRL": [
+        1,
+        1,
+        1
+      ]
+    },
+    "files": []
+  }
+}
