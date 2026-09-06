@@ -14,6 +14,26 @@ from utils.path_utils import (
     validate_real_path as _validate_real_path,
 )
 
+_EXT_TO_FORMAT = {
+    "png": "png",
+    "jpg": "jpeg",
+    "jpeg": "jpeg",
+    "gif": "gif",
+    "webp": "webp",
+}
+
+
+def _sniff_image_format(data: bytes) -> str | None:
+    if data.startswith(b"\x89PNG\r\n\x1a\n"):
+        return "png"
+    if data.startswith(b"\xff\xd8\xff"):
+        return "jpeg"
+    if data.startswith((b"GIF87a", b"GIF89a")):
+        return "gif"
+    if len(data) >= 12 and data[:4] == b"RIFF" and data[8:12] == b"WEBP":
+        return "webp"
+    return None
+
 
 @make_async_background
 def read_image_file(
@@ -57,14 +77,7 @@ def read_image_file(
         with open(real_path, "rb") as f:
             image_data = f.read()
 
-        # Determine image format
-        image_format = {
-            "png": "png",
-            "jpg": "jpeg",
-            "jpeg": "jpeg",
-            "gif": "gif",
-            "webp": "webp",
-        }[file_ext]
+        image_format = _sniff_image_format(image_data) or _EXT_TO_FORMAT[file_ext]
 
         return Image(data=image_data, format=image_format)
 
