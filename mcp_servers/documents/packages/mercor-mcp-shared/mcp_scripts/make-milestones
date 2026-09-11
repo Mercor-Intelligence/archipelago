@@ -1,0 +1,100 @@
+#!/bin/sh
+
+# A brain-dead script to create milestones in github.  Before
+# running this script, you should authenticate with 'gh auth login'
+# Specify the name of the repo as the first argument.
+
+repo=${1?}
+base_date=${2-$(date +%s)}  # seconds from epoch, default to today
+
+gh auth status || gh auth login || exit
+
+create_milestone() {
+
+	title=${1?}
+	: $((base_date += ${2-0} * 86400))
+	due_date=$(date -f %s -j "$base_date" "+%Y-%m-%dT23:59:59Z")
+	description=${3}
+	GH_PAGER= gh api repos/Mercor-Intelligence/$repo/milestones \
+		-f title="$title" \
+		${description:+-f description="$description"} \
+		${due_date:+-f due_on="$due_date"} || exit
+}
+
+
+create_milestone "Product Spec Completed and Reviewed" 2 '
+	Objective:
+		Finalize the product specs. Review and get approval.
+
+	Deliverables:
+		Product Spec
+		Review sign‑off recorded
+
+	Writer: Domain Expert Writer
+	Reviewer: Domain Expert Reviewer / Mercor In-House
+	Super Reviewer: Jesse Boyle (jesseboyle@mercor.com)
+'
+
+create_milestone 'API Design Spec' 2 '
+	Objective:
+		Finalize an API design build plan that meets the product specs. Review and get approval for this build plan.
+
+	Deliverables:
+		Build plan (API design document)
+		Review sign‑off recorded
+
+	Writer: SWE Writer / Tech Lead
+	Reviewer: Tech Lead / SWE Reviewer
+	Super Reviewer: Debnil Sur (debnil@mercor.com)
+'
+
+create_milestone 'Live API tests' 4 '
+	Objective:
+		Create tests against the live API
+
+	Deliverables:
+		Comprehensive tests of both happy and sad paths against the live API
+		Review sign‑off recorded
+
+	Writer: SWE Writer
+	Reviewer: SWE Reviewer / Tech Lead
+	Super Reviewer: Debnil Sur (debnil@mercor.com)
+'
+
+create_milestone 'Build Verifiers' 2 '
+	Writer: Mercor In-House Applied AI Engineer
+	Reviewer / Super Reviewer: Calix Huang (calix@mercor.com)
+'
+
+create_milestone 'App build' 3 '
+	Writer: SWE Writer
+	Reviewer: SWE Reviewer / Tech Lead
+'
+create_milestone 'App reviewed + accepted' 1 '
+	Reviewer: Tech Lead
+	Super Reviewer: Debnil Sur (debnil@mercor.com)
+'
+create_milestone 'App implemented in RLStudio' 1 '
+	Writer: Mercor In-House Eng
+	Reviewer / Super Reviewer: Debnil Sur (debnil@mercor.com)
+'
+create_milestone 'Experts can access tool via GUI' 1 '
+	Writer: Mercor In-House Eng
+	Reviewer / Super Reviewer: Neel Venugopal (neelvenugopal@mercor.com)
+'
+create_milestone 'Necessary data pre-loaded' 0 '
+	Writer: Mercor In-House
+	Reviewer / Super Reviewer(s):
+		Abby Fennelly (abby@mercor.com)
+		Daniyal Khan (daniyalkhan@mercor.com)
+'
+create_milestone 'Reviewed and used live' 0 '
+	Writer: Mercor In-House
+	Reviewer / Super Reviewer(s):
+	Abby Fennelly (abby@mercor.com)
+	Daniyal Khan (daniyalkhan@mercor.com)
+'
+create_milestone 'Complete documentation' 1 '
+	Writer: Mercor In-House
+	Reviewer / Super Reviewer: Neel Venugopal
+'

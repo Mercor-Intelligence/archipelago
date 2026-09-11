@@ -1,0 +1,274 @@
+You are analyzing an MCP server to determine its current development stage (1-6).
+
+CRITICAL OUTPUT FORMAT:
+Return ONLY a JSON object with this exact structure.
+DO NOT wrap in markdown code blocks (no ```json).
+DO NOT add any explanations before or after.
+Just return the raw JSON object:
+
+{
+  "stage": <number 1-6>,
+  "tool_completion_pct": <number 0-100 or null if BUILD_PLAN missing>,
+  "flags": [<string array>],
+  "stage_checks": {
+    "foundation_complete": <bool>,
+    "tools_implemented": <bool>,
+    "ui_exists": <bool>,
+    "meta_tools_exist": <bool>,
+    "wiki_created": <bool>,
+    "guide_json_exists": <bool>
+  },
+  "rationale": "<one sentence explanation>"
+}
+
+STAGE DETERMINATION LOGIC:
+
+Stage 1: Foundation / Core Infrastructure
+  Required:
+    - main.py exists
+    - BUILD_PLAN.md OR PRODUCT_SPEC.md exists
+
+  Flags:
+    - "missing_BUILD_PLAN" if BUILD_PLAN.md missing
+    - "missing_PRODUCT_SPEC" if PRODUCT_SPEC.md missing
+
+Stage 2: Tool Implementation
+  Required:
+    - Tests exist (test_count > 0)
+    - Tools being implemented from BUILD_PLAN
+
+  Tool Completion (YOU MUST CALCULATE THIS):
+    - If BUILD_PLAN.md is missing → set tool_completion_pct = null
+    - If BUILD_PLAN exists: YOU must extract and compare tools:
+
+      Step 1: Extract Expected Tools from BUILD_PLAN.md
+        - Look for tool tables (format: | `tool_name` | description |)
+        - Common sections: "### Tools", "### 3.1 Endpoint Catalog", or similar
+        - Tool names follow pattern: server_category_action (e.g., bamboohr_employees_get)
+        - Count all tool names in table
+
+      Step 2: Extract Registered Tools from Code
+        TWO PATTERNS EXIST:
+
+        Pattern A (Direct Registration - e.g., BambooHR):
+          - Check main.py for @mcp.tool() decorators or mcp.tool(name="...")() calls
+          - Example: @mcp.tool(name="bamboo_employees_get")
+          - Example: mcp.tool(name="bamboo_employees_get")(get_employee)
+          - Count all unique tool registrations
+
+        Pattern B (Grouped Registration - e.g., Greenhouse):
+          - Check tools/__init__.py for exported register_* functions
+          - Read individual tools/*.py files
+          - Look for: def register_*_tools(mcp: FastMCP):
+          - Inside each function, count mcp.tool()(...) calls
+          - Example: mcp.tool()(greenhouse_candidates_get)
+          - Aggregate all registrations across all files
+
+      Step 3: Calculate Percentage
+        - tool_completion_pct = (registered_tools / expected_tools) × 100
+        - Round to nearest integer
+        - If expected_tools = 0 but BUILD_PLAN exists → set tool_completion_pct = 0
+
+Stage 3: UI Work
+  Required:
+    - ui/{server}/ directory exists
+    - package.json exists
+    - components/ directory exists
+    - lib/api-config.ts exists
+
+Stage 4: Meta Tool Registry
+  Required:
+    - tools/_meta_tools.py exists
+    - GUI_ENABLED check in main.py
+    - Dual registration pattern ("if GUI_ENABLED:")
+
+Stage 5: Wiki Creation
+  Required:
+    - Wiki directory exists (mcp_servers/{server}/wiki/ OR root wiki/)
+    - guide.json exists at ui/{server}/public/guide.json
+
+  Flag: "guide_out_of_sync" if guide.json exists but not in sync with wiki (warning only)
+
+Stage 6: QC Testing
+  Required:
+    - Automatically reached when Stage 5 requirements are met
+    - No additional requirements beyond Stage 5
+
+CRITICAL RULES:
+
+1. HIGHEST STAGE WINS
+   - Report the highest stage reached, even if earlier stages incomplete
+   - Example: If UI exists (Stage 3) but only 50% tools (Stage 2 incomplete)
+     → Report Stage 3
+   - Example: If meta tools exist (Stage 4) but no wiki (Stage 5 incomplete)
+     → Report Stage 4
+
+2. TOOL COMPLETION IN ALL STAGES
+   - Always calculate and include tool_completion_pct in JSON
+   - Show percentage for Stage 1, 2, 3, 4, 5, 6
+   - Even if tools are "not relevant" to that stage, show the percentage
+
+3. STAGE CHECKS
+   - foundation_complete: Stage 1 requirements met
+   - tools_implemented: tool_completion_pct = 100
+   - ui_exists: Stage 3 requirements met
+   - meta_tools_exist: Stage 4 requirements met
+   - wiki_created: Wiki directory exists with .md files
+   - guide_json_exists: guide.json exists at ui/{server}/public/guide.json
+
+4. FLAGS
+   - Include ALL applicable flags in array
+   - Possible flags: "missing_BUILD_PLAN", "missing_PRODUCT_SPEC", "guide_out_of_sync"
+   - Empty array if no flags
+
+STAGE DETERMINATION ALGORITHM:
+
+Step 1: Check Stage 6 → if Stage 5 passes (wiki + guide.json exist) → Stage 6
+Step 2: Check Stage 5 → if wiki exists and guide.json exists → Stage 5
+Step 3: Check Stage 4 → if meta tools exist → Stage 4
+Step 4: Check Stage 3 → if UI exists → Stage 3
+Step 5: Check Stage 2 → if tests exist → Stage 2
+Step 6: Check Stage 1 → if foundation exists → Stage 1
+Step 7: Otherwise → Stage 1 (default)
+
+EXAMPLE OUTPUTS:
+
+Example 1 - Foundation only:
+{
+  "stage": 1,
+  "tool_completion_pct": 0,
+  "flags": ["missing_PRODUCT_SPEC"],
+  "stage_checks": {
+    "foundation_complete": true,
+    "tools_implemented": false,
+    "ui_exists": false,
+    "meta_tools_exist": false,
+    "wiki_created": false,
+    "guide_json_exists": false
+  },
+  "rationale": "Foundation complete with main.py and BUILD_PLAN, 15 tools registered in main.py"
+}
+
+Example 2 - Tools in progress (BambooHR Pattern A):
+{
+  "stage": 2,
+  "tool_completion_pct": 46,
+  "flags": [],
+  "stage_checks": {
+    "foundation_complete": true,
+    "tools_implemented": false,
+    "ui_exists": false,
+    "meta_tools_exist": false,
+    "wiki_created": false,
+    "guide_json_exists": false
+  },
+  "rationale": "46% tools complete (16/35 from BUILD_PLAN table vs main.py registrations), 23 tests exist"
+}
+
+Example 2b - Tools in progress (Greenhouse Pattern B):
+{
+  "stage": 2,
+  "tool_completion_pct": 65,
+  "flags": [],
+  "stage_checks": {
+    "foundation_complete": true,
+    "tools_implemented": false,
+    "ui_exists": false,
+    "meta_tools_exist": false,
+    "wiki_created": false,
+    "guide_json_exists": false
+  },
+  "rationale": "65% tools complete (15/23 from BUILD_PLAN vs aggregated register_*_tools), 18 tests exist"
+}
+
+Example 3 - UI exists, tools incomplete (HIGHEST STAGE WINS):
+{
+  "stage": 3,
+  "tool_completion_pct": 50,
+  "flags": [],
+  "stage_checks": {
+    "foundation_complete": true,
+    "tools_implemented": false,
+    "ui_exists": true,
+    "meta_tools_exist": false,
+    "wiki_created": false,
+    "guide_json_exists": false
+  },
+  "rationale": "UI directory exists with complete structure (Stage 3 reached despite 50% tool completion)"
+}
+
+Example 4 - Meta tools exist, tools incomplete (HIGHEST STAGE WINS):
+{
+  "stage": 4,
+  "tool_completion_pct": 65,
+  "flags": [],
+  "stage_checks": {
+    "foundation_complete": true,
+    "tools_implemented": false,
+    "ui_exists": true,
+    "meta_tools_exist": true,
+    "wiki_created": false,
+    "guide_json_exists": false
+  },
+  "rationale": "Meta tools and dual registration complete (Stage 4 reached with 65% tool completion)"
+}
+
+Example 5 - QC Testing:
+{
+  "stage": 6,
+  "tool_completion_pct": 100,
+  "flags": [],
+  "stage_checks": {
+    "foundation_complete": true,
+    "tools_implemented": true,
+    "ui_exists": true,
+    "meta_tools_exist": true,
+    "wiki_created": true,
+    "guide_json_exists": true
+  },
+  "rationale": "Stage 5 complete (wiki + guide.json), QC testing ready"
+}
+
+DETAILED TOOL EXTRACTION GUIDE:
+
+Pattern A Example (BambooHR - Direct Registration in main.py):
+  Expected tools from BUILD_PLAN.md:
+    | `bamboohr_employees_get` | Get employee details |
+    | `bamboohr_employees_create` | Create new employee |
+    | `bamboohr_time_off_get_requests` | List time-off requests |
+    → Expected: 3 tools
+
+  Registered tools from main.py:
+    @mcp.tool(name="bamboohr_employees_get")
+    def get_employee(...)
+
+    @mcp.tool(name="bamboohr_employees_create")
+    async def create_employee(...)
+
+    mcp.tool(name="bamboohr_time_off_get_requests")(get_requests)
+    → Registered: 3 tools
+
+  Calculation: 3/3 = 100%
+
+Pattern B Example (Greenhouse - Grouped Registration in tools/*.py):
+  Expected tools from BUILD_PLAN.md:
+    | `greenhouse_candidates_get` | Get candidate by ID |
+    | `greenhouse_candidates_create` | Create candidate |
+    | `greenhouse_applications_list` | List applications |
+    → Expected: 3 tools
+
+  Registered tools from tools/candidates.py:
+    def register_candidate_tools(mcp: FastMCP) -> None:
+        mcp.tool()(greenhouse_candidates_get)
+        mcp.tool()(greenhouse_candidates_create)
+    → 2 tools
+
+  Registered tools from tools/applications.py:
+    def register_application_tools(mcp: FastMCP) -> None:
+        mcp.tool()(greenhouse_applications_list)
+    → 1 tool
+
+  Total registered: 2 + 1 = 3 tools
+  Calculation: 3/3 = 100%
+
+Return ONLY the JSON object. No markdown, no code blocks, no explanations before or after.

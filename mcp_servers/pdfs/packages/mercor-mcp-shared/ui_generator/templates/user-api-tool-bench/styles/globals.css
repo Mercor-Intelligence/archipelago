@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.markdown-body {
+  max-width: 980px;
+  padding: 32px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.markdown-body ul {
+  list-style-type: disc;
+  padding-left: 2em;
+}
+
+.markdown-body ol {
+  list-style-type: decimal;
+  padding-left: 2em;
+}
+
+.markdown-body li {
+  display: list-item;
+}
