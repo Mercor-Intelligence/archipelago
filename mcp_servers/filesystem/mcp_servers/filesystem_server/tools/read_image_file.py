@@ -15,6 +15,19 @@ from utils.path_utils import (
 )
 
 
+def _sniff_image_format(data: bytes) -> str | None:
+    """Return the image format implied by the file's magic bytes, or None."""
+    if data.startswith(b"\x89PNG\r\n\x1a\n"):
+        return "png"
+    if data.startswith(b"\xff\xd8\xff"):
+        return "jpeg"
+    if data[:6] in (b"GIF87a", b"GIF89a"):
+        return "gif"
+    if data[:4] == b"RIFF" and data[8:12] == b"WEBP":
+        return "webp"
+    return None
+
+
 @make_async_background
 def read_image_file(
     file_path: Annotated[
@@ -57,8 +70,8 @@ def read_image_file(
         with open(real_path, "rb") as f:
             image_data = f.read()
 
-        # Determine image format
-        image_format = {
+        # Determine image format from magic bytes, fallback to extension
+        image_format = _sniff_image_format(image_data) or {
             "png": "png",
             "jpg": "jpeg",
             "jpeg": "jpeg",
