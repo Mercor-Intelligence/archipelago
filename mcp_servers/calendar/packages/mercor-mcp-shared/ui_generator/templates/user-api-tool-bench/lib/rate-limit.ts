@@ -1,0 +1,50 @@
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+// Simple in-memory rate limiting
+const requests = new Map<string, number[]>();
+
+const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
+const MAX_REQUESTS = 100; // requests per window
+
+export function checkRateLimit(
+  req: NextApiRequest,
+  res: NextApiResponse
+): boolean {
+  const ip = (req.headers?.['x-forwarded-for'] as string) ||
+             (req.headers?.['x-real-ip'] as string) ||
+             req.socket?.remoteAddress ||
+             'unknown';
+
+  const now = Date.now();
+  const userRequests = requests.get(ip) || [];
+
+  // Filter out old requests
+  const recentRequests = userRequests.filter(
+    time => now - time < RATE_LIMIT_WINDOW
+  );
+
+  if (recentRequests.length >= MAX_REQUESTS) {
+    res.status(429).json({
+      error: 'Too many requests. Please try again later.'
+    });
+    return false;
+  }
+
+  // Add current request
+  recentRequests.push(now);
+  requests.set(ip, recentRequests);
+
+  // Cleanup old entries periodically
+  if (Math.random() < 0.01) {
+    requests.forEach((times, key) => {
+      const recent = times.filter((time: number) => now - time < RATE_LIMIT_WINDOW);
+      if (recent.length === 0) {
+        requests.delete(key);
+      } else {
+        requests.set(key, recent);
+      }
+    });
+  }
+
+  return true;
+}
