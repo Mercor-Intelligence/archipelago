@@ -1,0 +1,76 @@
+[project]
+name = "mcp-testing"
+version = "0.3.0"
+description = "Professional testing framework for MCP servers with fixture generation, live API comparison, mocking, and acceptance testing"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    { name = "Dan F" },
+    { name = "Jared W" }
+]
+license = { text = "MIT" }
+keywords = ["mcp", "testing", "api", "comparison", "fixtures", "acceptance-testing", "fastmcp"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Testing",
+]
+
+dependencies = [
+    "pydantic>=2.0",
+    "httpx>=0.24.0",
+    "python-dotenv>=1.0.0",
+    "pyyaml>=6.0",
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.6.0",
+]
+cli = [
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+mcp-test = "mcp_testing.cli:main"
+mcp-setup-tests = "mcp_testing.setup_acceptance_tests:main"
+
+[project.urls]
+Homepage = "https://github.com/Mercor-Intelligence/mercor-mcp"
+Documentation = "https://github.com/Mercor-Intelligence/mercor-mcp/tree/main/packages/mcp_testing"
+Repository = "https://github.com/Mercor-Intelligence/mercor-mcp"
+Issues = "https://github.com/Mercor-Intelligence/mercor-mcp/issues"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mcp_testing*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I", "N", "UP"]
+ignore = []
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+asyncio_mode = "auto"
