@@ -151,14 +151,14 @@ wheels = [
 
 [[package]]
 name = "anyio"
-version = "4.12.1"
+version = "4.14.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "idna" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/96/f0/5eb65b2bb0d09ac6776f2eb54adee6abe8228ea05b20a5ad0e4945de8aac/anyio-4.12.1.tar.gz", hash = "sha256:41cfcc3a4c85d3f05c932da7c26d0201ac36f72abd4435ba90d0464a3ffed703", size = 228685, upload-time = "2026-01-06T11:45:21.246Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz", hash = "sha256:cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f", size = 260176, upload-time = "2026-07-12T20:29:07.082Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/38/0e/27be9fdef66e72d64c0cdc3cc2823101b80585f8119b5c112c2e8f5f7dab/anyio-4.12.1-py3-none-any.whl", hash = "sha256:d405828884fc140aa80a3c667b8beed277f1dfedec42ba031bd6ac3db606ab6c", size = 113592, upload-time = "2026-01-06T11:45:19.497Z" },
+    { url = "https://files.pythonhosted.org/packages/da/35/f2287558c17e29fafc8ef3daf819bb9834061cfa43bff8014f7df7f63bdc/anyio-4.14.2-py3-none-any.whl", hash = "sha256:9f505dda5ac9f0c8309b5e8bd445a8c2bf7246f3ce950121e45ea15bc41d1494", size = 125813, upload-time = "2026-07-12T20:29:05.763Z" },
 ]
 
 [[package]]
@@ -1164,6 +1164,47 @@ dependencies = [
     { name = "titlecase" },
 ]
 
+[package.metadata]
+requires-dist = [
+    { name = "aiosqlite", specifier = ">=0.19.0" },
+    { name = "aiosqlite", marker = "extra == 'database'", specifier = ">=0.19.0" },
+    { name = "alembic", marker = "extra == 'database'", specifier = ">=1.13.0" },
+    { name = "asyncer" },
+    { name = "basedpyright", marker = "extra == 'dev'", specifier = ">=1.29.0" },
+    { name = "click", specifier = ">=8.0.0" },
+    { name = "fastapi", marker = "extra == 'rest'", specifier = ">=0.121.2" },
+    { name = "fastmcp", specifier = ">=3.2.0" },
+    { name = "greenlet", marker = "extra == 'database'", specifier = ">=3.0" },
+    { name = "httpx", specifier = ">=0.27.0" },
+    { name = "jinja2", specifier = ">=3.0.0" },
+    { name = "jsonpath-ng", specifier = ">=1.5.0" },
+    { name = "loguru" },
+    { name = "lxml", specifier = ">=5.0.0" },
+    { name = "pandas", specifier = ">=2.0.0" },
+    { name = "pandas", marker = "extra == 'database'", specifier = ">=2.0.0" },
+    { name = "polars", specifier = ">=1.41" },
+    { name = "pre-commit", marker = "extra == 'dev'", specifier = ">=3.0.0" },
+    { name = "pydantic", specifier = ">=2.0" },
+    { name = "pytest", specifier = ">=7.0.0" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=7.0.0" },
+    { name = "pytest-asyncio", specifier = ">=0.21.0" },
+    { name = "pytest-asyncio", marker = "extra == 'dev'", specifier = ">=0.21.0" },
+    { name = "pytest-httpx", marker = "extra == 'dev'", specifier = ">=0.21.0" },
+    { name = "python-dotenv", specifier = ">=1.0.0" },
+    { name = "pyyaml", specifier = ">=6.0" },
+    { name = "requests", specifier = ">=2.28.0" },
+    { name = "responses", marker = "extra == 'dev'", specifier = ">=0.25.0" },
+    { name = "respx", marker = "extra == 'dev'", specifier = ">=0.20.0" },
+    { name = "ruamel-yaml", specifier = ">=0.19.1" },
+    { name = "ruamel-yaml", marker = "extra == 'migration'", specifier = ">=0.18.0" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.6.0" },
+    { name = "sqlalchemy", extras = ["asyncio"], specifier = ">=2.0.0" },
+    { name = "sqlalchemy", extras = ["asyncio"], marker = "extra == 'database'", specifier = ">=2.0" },
+    { name = "titlecase", specifier = ">=2.4" },
+    { name = "uvicorn", marker = "extra == 'rest'", specifier = ">=0.38.0" },
+]
+provides-extras = ["dev", "database", "rest", "migration"]
+
 [[package]]
 name = "mercor-rls-calendar"
 version = "0.1.0"
@@ -1205,7 +1246,7 @@ requires-dist = [
     { name = "icalendar", specifier = ">=6.1.0" },
     { name = "litellm", specifier = "==1.83.10" },
     { name = "loguru", specifier = ">=0.7.3" },
-    { name = "mercor-mcp-shared", directory = "packages/mercor-mcp-shared"  },
+    { name = "mercor-mcp-shared", directory = "packages/mercor-mcp-shared" },
     { name = "pydantic-settings", specifier = ">=2.11.0" },
     { name = "redis", specifier = ">=6.4.0" },
 ]
@@ -1915,8 +1956,8 @@ name = "secretstorage"
 version = "3.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cryptography", marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
-    { name = "jeepney", marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
+    { name = "cryptography" },
+    { name = "jeepney" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz", hash = "sha256:f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be", size = 19884, upload-time = "2025-11-23T19:02:53.191Z" }
 wheels = [
