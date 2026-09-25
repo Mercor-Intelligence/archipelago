@@ -1,0 +1,100 @@
+name: Validate ArCo
+
+# Runs on every PR into main or dev: patches arco.toml into the target
+# branch's shape (driven by arco-patcher.toml in the repo root), then
+# POSTs the patched files to Studio's /services/validate.
+
+on:
+  pull_request:
+    branches: [main, dev]
+    paths:
+      - "mise.toml"
+      - "arco.toml"
+      - "arco-patcher.toml"
+      - "pyproject.toml"
+      - "mcp_servers/**"
+      - "packages/**"
+      - ".github/workflows/arco-validate.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.MCP_SHARED_APP_ID }}
+          private-key: ${{ secrets.MCP_SHARED_APP_PRIVATE_KEY }}
+          owner: Mercor-Intelligence
+
+      - name: Configure git for private dependencies
+        run: |
+          token='${{ steps.app-token.outputs.token }}'
+          git config --global url."https://x-access-token:${token}@github.com/".insteadOf "https://github.com/"
+          git config --global --add url."https://x-access-token:${token}@github.com/".insteadOf "ssh://github.com/"
+          git config --global --add url."https://x-access-token:${token}@github.com/".insteadOf "ssh://git@github.com/"
+          git config --global --add url."https://x-access-token:${token}@github.com/".insteadOf "git@github.com:"
+
+      - name: Install mise
+        # ~/.local/bin puts the mise binary itself on PATH; the shims dir
+        # exposes the toolchain it manages (uv / python / node …).  Without
+        # the shims line, `mise run install` shells out to `uv sync` and
+        # fails with `uv: command not found`.
+        run: |
+          curl https://mise.run | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          echo "$HOME/.local/share/mise/shims" >> "$GITHUB_PATH"
+
+      - name: Trust mise config
+        # mise refuses to read an untrusted config in CI's non-interactive
+        # shell.  Without this step every subsequent `mise …` call errors
+        # before reading mise.toml.
+        run: mise trust
+
+      - name: Install toolchain (uv + python via mise)
+        # Fetches the pinned versions declared in mise.toml.  Must run
+        # before `mise run install` because the task itself invokes uv.
+        run: mise install
+
+      - name: Install dependencies (uv sync via mise task)
+        # Pulls mercor-mcp-shared into the venv so the next step can run
+        # `python -m mcp_scripts.patch_arco_for_branch`.
+        run: mise run install
+
+      - name: Patch arco.toml for the target branch
+        # Rewrites arco.toml into the shape `${{ github.base_ref }}` needs
+        # (name = "...", REPO_BRANCH, STATE_LOCATION, DATABASE_URL/PATH,
+        # …) so each branch deploys to its own Studio identity without
+        # manual edits.  Driven by arco-patcher.toml in the repo root.
+        run: uv run python -m mcp_scripts.patch_arco_for_branch "${{ github.base_ref }}"
+
+      - name: Validate ArCo against Studio
+        run: |
+          MISE_TOML=$(cat mise.toml | jq -Rs .)
+          ARCO_TOML=$(cat arco.toml | jq -Rs .)
+
+          RESULT=$(curl -s -w "\n%{http_code}" -X POST "https://api.studio.mercor.com/services/validate" \
+            -H "Content-Type: application/json" \
+            -H "X-API-Key: ${{ secrets.MERCOR_INTELLIGENCE_API_KEY }}" \
+            -d "{\"mise_toml\": ${MISE_TOML}, \"arco_toml\": ${ARCO_TOML}}")
+
+          HTTP_CODE=$(echo "$RESULT" | tail -n1)
+          BODY=$(echo "$RESULT" | sed '$d')
+
+          echo "$BODY" | jq .
+
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "ArCo validation failed with HTTP $HTTP_CODE"
+            exit 1
+          fi
+
+          if echo "$BODY" | jq -e '.valid == false' > /dev/null; then
+            echo "ArCo validation failed:"
+            echo "$BODY" | jq -r '.errors[]'
+            exit 1
+          fi
+
+          echo "ArCo validation passed"
