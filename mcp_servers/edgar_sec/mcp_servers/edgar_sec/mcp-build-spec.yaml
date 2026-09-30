@@ -1,0 +1,43 @@
+version: "1.0"
+project_name: "edgar_sec"
+
+servers:
+- name: edgar_sec
+  display_name: "SEC EDGAR"
+  description: "SEC EDGAR API tools for company filings, XBRL financial data, and document analysis"
+  tools_module: "mcp_servers.edgar_sec.tools"
+  base_url: "http://localhost:8000"
+  requires_auth: false
+
+categories:
+- name: &filings "Filings & Data"
+  description: "Access SEC filings, company submissions, and XBRL financial data"
+  servers: [edgar_sec]
+- name: &analysis "Financial Analysis"
+  description: "Extract structured financial data like debt schedules and equity compensation"
+  servers: [edgar_sec]
+- name: &lookup "Lookup & Utilities"
+  description: "Company lookup and server health utilities"
+  servers: [edgar_sec]
+
+tool_overrides:
+- tool: "edgar_sec.get_company_submissions"
+  category: *filings
+- tool: "edgar_sec.get_company_facts"
+  category: *filings
+- tool: "edgar_sec.get_company_concept"
+  category: *filings
+- tool: "edgar_sec.get_frames"
+  category: *filings
+
+- tool: "edgar_sec.get_debt_schedule"
+  category: *analysis
+- tool: "edgar_sec.get_equity_compensation"
+  category: *analysis
+- tool: "edgar_sec.extract_html_table"
+  category: *analysis
+
+- tool: "edgar_sec.lookup_cik"
+  category: *lookup
+- tool: "edgar_sec.health_check"
+  category: *lookup

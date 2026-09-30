@@ -1,0 +1,273 @@
+# UI Drift Detection Workflow
+# Detects when UI files are out of sync with MCP server Pydantic models.
+#
+# Features:
+# - Change detection to only check affected servers
+# - Regenerates UI and checks for differences
+# - Posts helpful PR comments with fix instructions
+# - Verifies UI builds successfully
+#
+# Prerequisites:
+# - scripts/regenerate_ui.py (from mercor-mcp-shared)
+# - ui/ directory with generated UIs
+
+name: UI Drift Detection
+
+on:
+  pull_request:
+  merge_group:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  detect-changes:
+    name: detect-changes
+    runs-on: ubuntu-latest
+    outputs:
+      servers: ${{ steps.set-matrix.outputs.servers }}
+      any_changes: ${{ steps.set-matrix.outputs.any_changes }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v46
+        with:
+          files: |
+            mcp_servers/**
+            ui/**
+            packages/mercor-mcp-shared/ui_generator/**
+            scripts/regenerate_ui.py
+            .github/workflows/ui-drift-detection.yml
+
+      - name: Determine affected servers
+        id: set-matrix
+        run: |
+          set -euo pipefail
+
+          # Check if ui directory exists
+          if [[ ! -d "ui" ]]; then
+            echo "No ui/ directory found, skipping UI drift checks"
+            echo "servers=[]" >> $GITHUB_OUTPUT
+            echo "any_changes=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Get all servers with UIs
+          all_servers=$(find ui -maxdepth 1 -mindepth 1 -type d -exec basename {} \; | sort)
+
+          # If no servers with UIs found, skip
+          if [[ -z "$all_servers" ]]; then
+            echo "No servers with UIs found, skipping"
+            echo "servers=[]" >> $GITHUB_OUTPUT
+            echo "any_changes=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # If no files changed, skip all servers
+          if [[ "${{ steps.changed-files.outputs.any_changed }}" != "true" ]]; then
+            affected_servers=""
+          # If UI generator or workflow changed, test all servers with UIs
+          elif echo "${{ steps.changed-files.outputs.all_changed_files }}" | grep -qE '(ui_generator/|scripts/regenerate_ui\.py|ui-drift-detection\.yml)'; then
+            affected_servers="$all_servers"
+          else
+            # Find affected servers based on changed files
+            affected_servers=""
+            for server in $all_servers; do
+              if echo "${{ steps.changed-files.outputs.all_changed_files }}" | grep -qE "(mcp_servers/$server/|ui/$server/)"; then
+                affected_servers="$affected_servers $server"
+              fi
+            done
+          fi
+
+          # Convert to JSON array for matrix
+          if [[ -n "$affected_servers" ]]; then
+            servers_json=$(echo $affected_servers | tr ' ' '\n' | jq -R . | jq -sc .)
+            echo "servers=$servers_json" >> $GITHUB_OUTPUT
+            echo "any_changes=true" >> $GITHUB_OUTPUT
+            echo "Affected servers: $affected_servers"
+          else
+            echo "servers=[]" >> $GITHUB_OUTPUT
+            echo "any_changes=false" >> $GITHUB_OUTPUT
+            echo "No servers affected"
+          fi
+
+  check-ui-drift:
+    name: ${{ matrix.server }}
+    runs-on: ubuntu-latest
+    needs: detect-changes
+    if: ${{ needs.detect-changes.outputs.any_changes == 'true' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        server: ${{ fromJson(needs.detect-changes.outputs.servers) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache uv environment
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/uv
+          key: ui-${{ matrix.server }}-${{ runner.os }}-${{ hashFiles('uv.lock', 'pyproject.toml') }}
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Install dependencies
+        run: uv sync --all-extras
+
+      # NOTE: CI uses mcp-ui-gen directly for its detailed output.
+      # User instructions use scripts/regenerate_ui.py which is a simpler wrapper that calls
+      # the same underlying logic. Both produce identical results - the difference is intentional
+      # to provide better CI debugging while keeping the user experience simple.
+      - name: Regenerate UI
+        run: |
+          echo "Regenerating UI for ${{ matrix.server }}..."
+          uv run mcp-ui-gen generate --server mcp_servers/${{ matrix.server }} --output ui/${{ matrix.server }} --project-name ${{ matrix.server }}
+
+      - name: Check for UI drift
+        id: drift-check
+        run: |
+          if ! git diff --exit-code -- 'ui/${{ matrix.server }}'; then
+            echo "drift_detected=true" >> $GITHUB_OUTPUT
+            echo "::error::UI is out of sync! Generated UI differs from committed version."
+
+            # Capture diff summary
+            DIFF_SUMMARY=$(git diff --stat -- 'ui/${{ matrix.server }}')
+            echo "diff_summary<<EOF" >> $GITHUB_OUTPUT
+            echo "$DIFF_SUMMARY" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+
+            # Show full diff in logs
+            git diff -- 'ui/${{ matrix.server }}'
+            exit 1
+          fi
+          echo "drift_detected=false" >> $GITHUB_OUTPUT
+          echo "UI is up to date"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: ui/${{ matrix.server }}/package.json
+
+      - name: Install UI dependencies
+        working-directory: ui/${{ matrix.server }}
+        run: npm install
+
+      - name: Build UI
+        working-directory: ui/${{ matrix.server }}
+        run: npm run build
+
+  comment-on-drift:
+    name: Comment on PR if drift detected
+    runs-on: ubuntu-latest
+    needs:
+      - detect-changes
+      - check-ui-drift
+    if: ${{ always() && github.event_name == 'pull_request' && needs.check-ui-drift.result == 'failure' }}
+    steps:
+      - name: Post drift warning comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const serversJson = '${{ needs.detect-changes.outputs.servers }}';
+            const checkedServers = JSON.parse(serversJson);
+
+            // Query the GitHub API to find which matrix jobs actually failed
+            const { data: jobs } = await github.rest.actions.listJobsForWorkflowRun({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.runId,
+            });
+
+            // Matrix jobs are named after the server (from `name: ${{ matrix.server }}`)
+            const failedServers = checkedServers.filter(server => {
+              const job = jobs.jobs.find(j => j.name === server);
+              return job && job.conclusion === 'failure';
+            });
+
+            // Fall back to all checked servers if API query didn't find specific failures
+            const serversToReport = failedServers.length > 0 ? failedServers : checkedServers;
+
+            const body = `## UI Drift Detected
+
+            The following servers have UI that is out of sync with the Pydantic models:
+
+            ${serversToReport.map(s => `- \`${s}\``).join('\n')}
+
+            **[View detailed diff in workflow logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})**
+
+            ### How to Fix:
+
+            **Option 1: Automatic Fix (Recommended)**
+            Comment on this PR:
+            \`\`\`
+            /regenerate-ui
+            \`\`\`
+            This will automatically regenerate the UI for all affected servers and commit the changes.
+
+            **Option 2: Fix Specific Servers**
+            Comment on this PR with comma-separated server names:
+            \`\`\`
+            /regenerate-ui ${serversToReport.join(',')}
+            \`\`\`
+
+            **Option 3: Manual Fix**
+            Run locally:
+            \`\`\`bash
+            ${serversToReport.map(s => `uv run python scripts/regenerate_ui.py --server ${s}`).join('\n')}
+            git add ui/
+            git commit -m "Regenerate UI for ${serversToReport.join(', ')}"
+            git push
+            \`\`\`
+
+            ---
+            <sub>The UI must match the Pydantic models exactly. This check ensures UI stays in sync with backend changes.</sub>`;
+
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            });
+
+  ui-drift-gate:
+    name: ui-drift-gate
+    runs-on: ubuntu-latest
+    needs:
+      - detect-changes
+      - check-ui-drift
+    if: ${{ always() }}
+    steps:
+      - name: Evaluate UI drift checks
+        run: |
+          set -euo pipefail
+
+          echo "Change detection: ${{ needs.detect-changes.result }}"
+          echo "UI drift checks: ${{ needs.check-ui-drift.result }}"
+
+          # Change detection must succeed
+          if [[ "${{ needs.detect-changes.result }}" != "success" ]]; then
+            echo "::error::Change detection failed"
+            exit 1
+          fi
+
+          # UI drift checks must pass or be skipped (if no changes)
+          if [[ "${{ needs.detect-changes.outputs.any_changes }}" == "true" ]]; then
+            if [[ "${{ needs.check-ui-drift.result }}" != "success" ]]; then
+              echo "::error::UI drift checks failed"
+              exit 1
+            fi
+          else
+            echo "No changes detected, skipping UI drift checks"
+          fi
+
+          echo "All UI drift checks passed"
