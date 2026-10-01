@@ -1119,6 +1119,46 @@ dependencies = [
     { name = "titlecase" },
 ]
 
+[package.metadata]
+requires-dist = [
+    { name = "aiosqlite", specifier = ">=0.19.0" },
+    { name = "aiosqlite", marker = "extra == 'database'", specifier = ">=0.19.0" },
+    { name = "alembic", marker = "extra == 'database'", specifier = ">=1.13.0" },
+    { name = "asyncer" },
+    { name = "basedpyright", marker = "extra == 'dev'", specifier = ">=1.29.0" },
+    { name = "click", specifier = ">=8.0.0" },
+    { name = "fastapi", marker = "extra == 'rest'", specifier = ">=0.121.2" },
+    { name = "fastmcp", specifier = ">=3.2.0" },
+    { name = "greenlet", marker = "extra == 'database'", specifier = ">=3.0" },
+    { name = "httpx", specifier = ">=0.27.0" },
+    { name = "jinja2", specifier = ">=3.0.0" },
+    { name = "jsonpath-ng", specifier = ">=1.5.0" },
+    { name = "loguru" },
+    { name = "lxml", specifier = ">=5.0.0" },
+    { name = "pandas", specifier = ">=2.0.0" },
+    { name = "pandas", marker = "extra == 'database'", specifier = ">=2.0.0" },
+    { name = "pre-commit", marker = "extra == 'dev'", specifier = ">=3.0.0" },
+    { name = "pydantic", specifier = ">=2.0" },
+    { name = "pytest", specifier = ">=7.0.0" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=7.0.0" },
+    { name = "pytest-asyncio", specifier = ">=0.21.0" },
+    { name = "pytest-asyncio", marker = "extra == 'dev'", specifier = ">=0.21.0" },
+    { name = "pytest-httpx", marker = "extra == 'dev'", specifier = ">=0.21.0" },
+    { name = "python-dotenv", specifier = ">=1.0.0" },
+    { name = "pyyaml", specifier = ">=6.0" },
+    { name = "requests", specifier = ">=2.28.0" },
+    { name = "responses", marker = "extra == 'dev'", specifier = ">=0.25.0" },
+    { name = "respx", marker = "extra == 'dev'", specifier = ">=0.20.0" },
+    { name = "ruamel-yaml", specifier = ">=0.19.1" },
+    { name = "ruamel-yaml", marker = "extra == 'migration'", specifier = ">=0.18.0" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.6.0" },
+    { name = "sqlalchemy", extras = ["asyncio"], specifier = ">=2.0.0" },
+    { name = "sqlalchemy", extras = ["asyncio"], marker = "extra == 'database'", specifier = ">=2.0" },
+    { name = "titlecase", specifier = ">=2.4" },
+    { name = "uvicorn", marker = "extra == 'rest'", specifier = ">=0.38.0" },
+]
+provides-extras = ["dev", "database", "rest", "migration"]
+
 [[package]]
 name = "mercor-rls-sheets"
 version = "0.1.0"
@@ -1160,7 +1200,7 @@ requires-dist = [
     { name = "httpx", specifier = ">=0.27.0" },
     { name = "litellm", specifier = "==1.83.10" },
     { name = "loguru", specifier = ">=0.7.3" },
-    { name = "mercor-mcp-shared", directory = "packages/mercor-mcp-shared"  },
+    { name = "mercor-mcp-shared", directory = "packages/mercor-mcp-shared" },
     { name = "openpyxl", specifier = ">=3.1.5" },
     { name = "pillow", specifier = ">=12.1.0" },
     { name = "pydantic-settings", specifier = ">=2.11.0" },
@@ -1889,8 +1929,8 @@ name = "secretstorage"
 version = "3.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cryptography", marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
-    { name = "jeepney", marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
+    { name = "cryptography" },
+    { name = "jeepney" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz", hash = "sha256:f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be", size = 19884, upload-time = "2025-11-23T19:02:53.191Z" }
 wheels = [
@@ -2104,11 +2144,11 @@ wheels = [
 
 [[package]]
 name = "urllib3"
-version = "2.6.3"
+version = "2.8.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz", hash = "sha256:1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed", size = 435556, upload-time = "2026-01-07T16:24:43.925Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz", hash = "sha256:63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63", size = 458972, upload-time = "2026-09-15T19:29:36.253Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/39/08/aaaad47bc4e9dc8c725e68f9d04865dbcb2052843ff09c97b08904852d84/urllib3-2.6.3-py3-none-any.whl", hash = "sha256:bf272323e553dfb2e87d9bfd225ca7b0f467b919d7bbd355436d3fd37cb0acd4", size = 131584, upload-time = "2026-01-07T16:24:42.685Z" },
+    { url = "https://files.pythonhosted.org/packages/92/9d/c4e665119135114480843e7ab388fa94d8480650450e6f8e26b70d323a4c/urllib3-2.8.0-py3-none-any.whl", hash = "sha256:0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3", size = 135717, upload-time = "2026-09-15T19:29:34.577Z" },
 ]
 
 [[package]]
