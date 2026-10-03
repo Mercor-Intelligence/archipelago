@@ -1,0 +1,58 @@
+[project]
+name = "mcp-unified-endpoint"
+version = "0.1.0"
+description = "Single-decorator MCP tool + REST route + OpenAPI registration. The OpenAPI document is the source of truth; the endpoint function signature only declares the parameters its implementation actually uses."
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    { name = "Mercor", email = "support@mercor.com" }
+]
+keywords = ["mcp", "openapi", "starlette", "decorator", "fastmcp"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    # Starlette is already a transitive dep via fastmcp; we just import its
+    # types for the synthesised route handler. No new top-level deps.
+    "starlette>=0.40",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24.0",
+    "httpx>=0.27",
+    "ruff>=0.6.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mcp_unified_endpoint*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I", "N", "UP"]
+ignore = []
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+asyncio_mode = "auto"

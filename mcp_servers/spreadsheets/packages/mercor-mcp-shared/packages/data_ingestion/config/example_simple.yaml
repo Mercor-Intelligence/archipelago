@@ -1,0 +1,62 @@
+# Simple Example: Product Catalog XML Ingestion
+#
+# This is a minimal example showing how to configure the framework
+# for a simple product catalog XML file.
+#
+# XML structure:
+#   <catalog>
+#     <product>
+#       <id>12345</id>
+#       <name>Widget Pro</name>
+#       <price>29.99</price>
+#       <category>Tools</category>
+#       <tags>
+#         <tag>premium</tag>
+#         <tag>bestseller</tag>
+#       </tags>
+#     </product>
+#     ...
+#   </catalog>
+
+source:
+  type: file
+  path: /data/products.xml
+
+extractor:
+  type: xml
+  record_tags: [product]        # Each <product> is one record
+
+  fields:
+    # Simple string fields
+    product_id:
+      xpath: ./id
+      type: string
+      required: true
+
+    product_name:
+      xpath: ./name
+      type: string
+      required: true
+
+    category:
+      xpath: ./category
+      type: string
+      required: false
+
+    # Numeric field
+    price:
+      xpath: ./price
+      type: decimal
+      required: true
+
+    # Array field
+    tags:
+      xpath: ./tags/tag
+      type: array
+      required: false
+      array_item_fields:
+        tag_name:
+          xpath: ./text()
+
+pipeline:
+  batch_size: 100
