@@ -1,0 +1,46 @@
+# Document tooling under the REAL sandbox, built the way a Studio platform is.
+#
+# * Base and base packages mirror the Studio single-stage platform image
+#   (debian:trixie-slim + BASE_SYSTEM_PACKAGES_WITH_BROWSER minus the browser
+#   bits), which already carries libreoffice-core + libreoffice-calc.
+# * Every apt package this app declares in arco.toml [arco.requires.system]
+#   is read from arco.toml itself and installed in one `apt-get install`, the
+#   same union the platform builder takes — so a declared package that conflicts
+#   with the base fails this build too.
+# * The app is installed by running mise.toml's real [tasks.install] script:
+#   sandbox_fs.so, the private package mirror, and the soffice wrapper all come
+#   from the code under test, not from a copy in this file.
+#
+# The test then drives model-style commands through run_sandboxed_command (the
+# code_exec path) with the default blocked paths, /proc included.
+FROM debian:trixie-slim
+
+ENV DEBIAN_FRONTEND=noninteractive
+COPY arco.toml /tmp/arco.toml
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends python3 \
+ && python3 -c 'import tomllib; s = tomllib.load(open("/tmp/arco.toml", "rb"))["arco"]["requires"]["system"]; print(" ".join(sorted({p["apt_package"] for st in s.values() for p in st})))' > /tmp/arco-apt.txt \
+ && cat /tmp/arco-apt.txt
+RUN apt-get install -y --no-install-recommends \
+      ca-certificates curl python3.13 python3.13-venv python3.13-dev python3-pip \
+      libsqlite3-dev build-essential git libreoffice-calc libreoffice-core \
+      coreutils fonts-liberation \
+      $(cat /tmp/arco-apt.txt) \
+ && rm -rf /var/lib/apt/lists/*
+
+COPY --from=ghcr.io/astral-sh/uv:0.11.6 /uv /usr/local/bin/uv
+
+WORKDIR /app
+COPY . /app
+RUN python3 -c 'import tomllib; print(tomllib.load(open("/app/mise.toml", "rb"))["tasks"]["install"]["run"])' > /tmp/install.sh
+RUN INSTALL_MEDICINE=false INSTALL_SCICOMP=false CODE_EXEC_PACKAGE_PROFILE= \
+    UV_PYTHON=/usr/bin/python3.13 UV_LINK_MODE=copy bash /tmp/install.sh \
+ && rm -rf /root/.cache
+
+RUN mkdir -p /filesystem /.apps_data && chmod 777 /filesystem
+
+ENV SANDBOX_LIBRARY_PATH=/app/lib/sandbox_fs.so \
+    APP_FS_ROOT=/filesystem \
+    DOC_TOOLS_CANARY=doc-tools-canary-must-not-leak
+CMD ["/app/.venv/bin/python", "-m", "pytest", "-v", "-p", "no:cacheprovider", \
+     "mcp_servers/code_execution_server/tests/test_document_tools_sandbox.py"]

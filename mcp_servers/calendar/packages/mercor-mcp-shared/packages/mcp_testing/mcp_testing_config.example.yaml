@@ -1,0 +1,66 @@
+# MCP Testing Framework - Optional Configuration
+#
+# The framework works WITHOUT this file (zero-config).
+# Use this ONLY if you need to customize test generation for specific endpoints.
+#
+# Usage:
+#   python -m mcp_testing.auto_testing \
+#     --api-url https://api.example.com/v1 \
+#     --token-env API_TOKEN \
+#     --endpoints /users,/invoices \
+#     --config mcp_testing.yaml
+
+# ----------------------------------------------------------------------------
+# Endpoint-Specific Overrides (only configure what you need to change)
+# ----------------------------------------------------------------------------
+endpoints:
+  # Example 1: Endpoint requires specific parameters in all requests
+  - path: "/invoices"
+    required_params:
+      company_id: "123"  # Added to ALL test cases for this endpoint
+
+  # Example 2: Add custom test cases beyond auto-generated ones
+  - path: "/users"
+    custom_success_cases:
+      - name: "Empty user list"
+        method: "GET"
+        params:
+          customer_id: "999"  # ID that has no users
+        note: "Should return empty array"
+
+    custom_error_cases:
+      - name: "Invalid user ID format"
+        method: "GET"
+        params:
+          user_id: "not-a-number"
+        note: "Should return 400 Bad Request"
+
+  # Example 3: Endpoint doesn't support pagination
+  - path: "/health"
+    test_config:
+      generate_pagination: false
+      generate_sorting: false
+
+  # Example 4: Skip auto-generation, use only custom cases (GraphQL, etc.)
+  - path: "/graphql"
+    skip_auto_generation: true
+    custom_success_cases:
+      - name: "GraphQL query - users"
+        method: "POST"
+        data:
+          query: "{ users { id name } }"
+
+# ----------------------------------------------------------------------------
+# Global Defaults (rarely need to change these)
+# ----------------------------------------------------------------------------
+
+# Uncomment to customize parameter names for non-standard APIs
+# default_test_config:
+#   limit_param_name: "max"      # If API uses "max" instead of "limit"
+#   offset_param_name: "skip"    # If API uses "skip" instead of "offset"
+#   sort_param_name: "order_by"  # If API uses "order_by" instead of "sort"
+
+# Uncomment to disable certain test types globally
+# default_test_config:
+#   generate_pagination: false
+#   generate_404_errors: false

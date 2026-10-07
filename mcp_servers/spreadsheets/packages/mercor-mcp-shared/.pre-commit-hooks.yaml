@@ -1,0 +1,86 @@
+# Pre-commit hooks provided by mercor-mcp-shared.
+#
+# Reference these from any MCP server application:
+#
+#   repos:
+#     - repo: https://github.com/Mercor-Intelligence/mercor-mcp-shared
+#       rev: v3.0.1   # pin to a release tag
+#       hooks:
+#         - id: format
+#         - id: lint
+#         - id: typecheck
+#         - id: check-schema-drift   # opt-in: docs/schema.sql (+ handover md)
+#
+# The lint / format / typecheck hooks delegate to `mise run <task>` so they
+# match your CI exactly.  They require mise to be installed on the developer's
+# machine; if it is not, they print an install link and exit 1.
+#
+# The check-schema-drift hook derives the schema from your app's SQLAlchemy
+# models (via Base.metadata.create_all into a temp SQLite file) and diffs it
+# against the committed docs/schema.sql.  Requires the project venv (it
+# imports your app's models), so it runs via `uv run` under language: system.
+
+# ---------------------------------------------------------------------------
+# Lint / format / typecheck  (delegate to mise tasks)
+# ---------------------------------------------------------------------------
+
+- id: format
+  name: Format (mise run format)
+  description: >-
+    Run ruff-format via `mise run format`.
+    Requires mise (https://mise.jdx.dev).
+  language: system
+  entry: "bash -c 'command -v mise >/dev/null 2>&1 || { echo \"ERROR: mise not installed - install from https://mise.jdx.dev/getting-started.html\"; exit 1; }; mise run format'"
+  pass_filenames: false
+  types: [python]
+
+- id: lint
+  name: Lint (mise run lint)
+  description: >-
+    Run ruff check via `mise run lint`.
+    Requires mise (https://mise.jdx.dev).
+  language: system
+  entry: "bash -c 'command -v mise >/dev/null 2>&1 || { echo \"ERROR: mise not installed - install from https://mise.jdx.dev/getting-started.html\"; exit 1; }; mise run lint'"
+  pass_filenames: false
+  types: [python]
+
+- id: typecheck
+  name: Typecheck (mise run typecheck)
+  description: >-
+    Run basedpyright via `mise run typecheck`.
+    Requires mise (https://mise.jdx.dev).
+  language: system
+  entry: "bash -c 'command -v mise >/dev/null 2>&1 || { echo \"ERROR: mise not installed - install from https://mise.jdx.dev/getting-started.html\"; exit 1; }; mise run typecheck'"
+  pass_filenames: false
+  types: [python]
+
+# ---------------------------------------------------------------------------
+# Schema drift detection
+# ---------------------------------------------------------------------------
+
+- id: check-schema-drift
+  name: Check docs are up to date (schema.sql + handover md)
+  description: >-
+    Derives the schema from your SQLAlchemy models (Base.metadata.create_all
+    into a temp SQLite file) and diffs it against the committed
+    docs/schema.sql.  Pass the Base import path via args, e.g.
+    args: ["--models", "db.models:Base"].
+    Optionally also drift-checks the client handover doc
+    (docs/populate_and_run.md — populate/run lifecycle + which source files
+    have which columns) when a --snapshot-config is supplied, e.g.
+    args: ["--models", "db.models:Base",
+           "--snapshot-config", "mcp_servers/<name>/snapshot_config.yaml"].
+    Use --config-factory module:build_config instead of --snapshot-config to
+    also document registered import hooks (their docstrings).
+    Regenerate with: uv run python -m mcp_scripts.generate_schema_sql
+    --models db.models:Base  (and mcp_scripts.generate_server_docs for the md).
+  language: system
+  entry: uv run python -m mcp_scripts.check_schema_drift
+  pass_filenames: false
+  # Trigger when ORM models, the schema file, the snapshot config, or the
+  # handover doc are staged.  The models.py branch matches a file literally
+  # named ``models.py`` at any depth (so it fires for ``db/models.py`` and
+  # ``mcp_servers/foo/db/models.py`` but NOT for ``my_models.py`` or
+  # ``dont_run_models.py``).  Likewise ``snapshot_config.yaml`` matches at
+  # any depth.  Adjust the pattern if your files live under different names.
+  files: '^(.*/)?models\.py$|^docs/schema\.sql$|^(.*/)?snapshot_config\.yaml$|^docs/populate_and_run\.md$'
