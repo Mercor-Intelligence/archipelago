@@ -1,0 +1,68 @@
+#!/bin/sh
+# soffice / libreoffice for sandboxed code_exec commands.
+#
+# Installed to /usr/local/lib/code_execution/bin (CODE_EXEC_MIRROR_BIN), which
+# build_sandbox_env() puts first on PATH for model commands only, so this
+# shadows /usr/bin/soffice inside the sandbox and nowhere else.
+#
+# Why it exists: the stock launcher chain is
+#   /usr/bin/soffice -> program/soffice (sh) -> program/oosplash -> soffice.bin
+# and oosplash's system_checks() exits 1 with
+#   "ERROR: /proc not mounted - LibreOffice is unlikely to work well if at all"
+# when stat("/proc/version") fails (upstream desktop/unx/source/start.c). The
+# sandbox shim denies /proc on purpose (it protects /proc/self/environ), so the
+# stock launcher can never start there. soffice.bin itself runs fine without
+# /proc, so this does what the launcher + oosplash would and skips the check:
+#
+#   * export SAL_ENABLE_FILE_LOCKING=1 (the only setting program/soffice makes
+#     on Linux);
+#   * re-run soffice.bin when it exits 81 (EXITHELPER_NORMAL_RESTART), which it
+#     does on the first run against a fresh profile, without converting anything.
+#     oosplash loops on that code; without the loop the first `--convert-to`
+#     in a new sandbox silently produces nothing.
+#
+# The profile is LibreOffice's default ($HOME/.config/libreoffice/4), so
+# scripts that drop macros there (e.g. the xlsx skill's recalc.py) keep
+# working. Only when $HOME is not a writable directory does this fall back to a
+# private per-uid profile under /tmp. The caller's arguments are passed through
+# untouched.
+
+LO_PROGRAM_DIR="${LO_PROGRAM_DIR:-/usr/lib/libreoffice/program}"
+SOFFICE_BIN="$LO_PROGRAM_DIR/soffice.bin"
+
+if [ ! -x "$SOFFICE_BIN" ]; then
+    echo "soffice: LibreOffice is not installed in this environment ($SOFFICE_BIN not found)" >&2
+    exit 127
+fi
+
+SAL_ENABLE_FILE_LOCKING=1
+export SAL_ENABLE_FILE_LOCKING
+
+needs_profile=1
+if [ -n "${HOME:-}" ] && [ -d "$HOME" ] && [ -w "$HOME" ]; then
+    needs_profile=0
+fi
+for arg in "$@"; do
+    case "$arg" in
+        -env:UserInstallation=*) needs_profile=0 ;;
+    esac
+done
+
+if [ "$needs_profile" = 1 ]; then
+    profile="${TMPDIR:-/tmp}/libreoffice-profile-$(id -u)"
+    if ! mkdir -p "$profile" 2>/dev/null || [ ! -O "$profile" ] || [ ! -w "$profile" ]; then
+        # Not ours (or not usable): never share another user's profile.
+        profile=$(mktemp -d "${TMPDIR:-/tmp}/libreoffice-profile.XXXXXX") || exit 1
+    fi
+    set -- "-env:UserInstallation=file://$profile" "$@"
+fi
+
+attempt=1
+while :; do
+    "$SOFFICE_BIN" "$@"
+    status=$?
+    if [ "$status" -ne 81 ] || [ "$attempt" -ge 3 ]; then
+        exit "$status"
+    fi
+    attempt=$((attempt + 1))
+done

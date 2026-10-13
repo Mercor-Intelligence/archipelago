@@ -1,0 +1,263 @@
+// AUTO-GENERATED - DO NOT EDIT MANUALLY
+// Generated from MCP servers: {{ servers | map(attribute='name') | join(', ') }}
+
+/** Authenticated user information for persona-based access */
+export interface AuthUser {
+  userId: string;
+  username: string;
+  roles: string[];
+  scopes: string[];
+  description?: string;
+  employeeId?: number;
+}
+
+/** Field definition for nested object sub-fields */
+export interface FieldDefinition {
+  name: string;
+  label: string;
+  type: 'string' | 'number' | 'boolean' | 'date' | 'datetime' | 'object' | 'array';
+  required: boolean;
+  description: string;
+  minLength?: number;
+  maxLength?: number;
+  min?: number;
+  max?: number;
+  enum?: string[];
+  default?: any;
+  /** Whether this field accepts multiple values */
+  isList?: boolean;
+  /** For nested object fields, the sub-field definitions */
+  fields?: FieldDefinition[];
+  /** Reference to a model name in the models array (for reusable types) */
+  modelRef?: string;
+}
+
+export interface DataType {
+  id: string;
+  name: string;
+  displayName?: string;  // Optional display name for UI (falls back to name)
+  category: string;
+  description: string;
+  icon?: string;
+  server: string;
+  hidden?: boolean;  // Hidden tools are in dataTypes but filtered from sidebar
+  _internal: {
+    method: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
+    url: string;
+    requiresAuth: boolean;
+  };
+  parameters?: {
+    name: string;
+    label: string;
+    type: 'string' | 'number' | 'boolean' | 'date' | 'datetime' | 'object' | 'array';
+    required: boolean;
+    description: string;
+    placeholder?: string;
+    location: 'query' | 'body' | 'header' | 'path';
+    minLength?: number;
+    maxLength?: number;
+    min?: number;
+    max?: number;
+    enum?: string[];
+    enumDescriptions?: Record<string, string>;
+    pattern?: string;
+    jsonExample?: string;
+    isJsonField?: boolean;
+    default?: any;
+    /** Whether this parameter accepts multiple values (rendered as a list with add/remove) */
+    isList?: boolean;
+    /** For object types, the sub-field definitions for structured input */
+    fields?: FieldDefinition[];
+    /** Reference to a model name in the models array (for reusable types) */
+    modelRef?: string;
+    /** Tool name to call for populating this field's enum dynamically */
+    populateFrom?: string;
+    /** Field name in the tool response containing the options array */
+    populateField?: string;
+    /** For object arrays: field name to use as the option value (sent to API) */
+    populateValue?: string;
+    /** For object arrays: field name to use as the display text */
+    populateDisplay?: string;
+    /** Dependencies that must be filled before this field can be populated.
+     * Values can be: string (form field reference), { const: any } (constant value),
+     * or nested Record for complex dependencies like filters */
+    populateDependencies?: Record<string, string | { const: any } | Record<string, string | { const: any }>>;
+  }[];
+}
+
+{# Macro for rendering field definitions recursively #}
+{% macro render_fields(fields) %}
+[
+{% for field in fields %}
+      {
+        name: '{{ field.name }}',
+        label: '{{ field.label }}',
+        type: '{{ field.type }}',
+        required: {{ field.required | lower }},
+        description: {{ field.description | tojson }},
+{% if field.minLength is defined %}        minLength: {{ field.minLength }},
+{% endif %}{% if field.maxLength is defined %}        maxLength: {{ field.maxLength }},
+{% endif %}{% if field.min is defined %}        min: {{ field.min }},
+{% endif %}{% if field.max is defined %}        max: {{ field.max }},
+{% endif %}{% if field.enum %}        enum: {{ field.enum | tojson }},
+{% endif %}{% if field.default is defined %}        default: {{ field.default | tojson }},
+{% endif %}{% if field.isList %}        isList: true,
+{% endif %}{% if field.fields %}        fields: {{ render_fields(field.fields) }},
+{% endif %}{% if field.modelRef %}        modelRef: {{ field.modelRef | tojson }},
+{% endif %}
+      },
+{% endfor %}
+    ]
+{% endmacro %}
+
+export const dataTypes: DataType[] = [
+{% for tool in tools %}
+  {
+    id: {{ tool.id | tojson }},
+    name: {{ tool.name | tojson }},
+    category: {{ tool.category | tojson }},
+    description: {{ tool.description | tojson }},
+{% if tool.icon %}    icon: {{ tool.icon | tojson }},
+{% endif %}    server: {{ tool.server | tojson }},
+{% if tool.hidden %}    hidden: true,
+{% endif %}    _internal: {
+      method: {{ tool._internal.method | tojson }},
+      url: {{ tool._internal.url | tojson }},
+      requiresAuth: {{ tool._internal.requiresAuth | lower }},
+    },
+    {% if tool.parameters %}
+    parameters: [
+    {% for param in tool.parameters %}
+      {
+        name: {{ param.name | tojson }},
+        label: {{ param.label | tojson }},
+        type: {{ param.type | tojson }},
+        required: {{ param.required | lower }},
+        description: {{ param.description | tojson }},
+{% if param.placeholder %}        placeholder: {{ param.placeholder | tojson }},
+{% endif %}        location: {{ param.location | tojson }},
+{% if param.minLength is defined %}        minLength: {{ param.minLength }},
+{% endif %}{% if param.maxLength is defined %}        maxLength: {{ param.maxLength }},
+{% endif %}{% if param.min is defined %}        min: {{ param.min }},
+{% endif %}{% if param.max is defined %}        max: {{ param.max }},
+{% endif %}{% if param.enum %}        enum: {{ param.enum | tojson }},
+{% endif %}{% if param.enumDescriptions %}        enumDescriptions: {{ param.enumDescriptions | tojson }},
+{% endif %}{% if param.pattern %}        pattern: {{ param.pattern | tojson }},
+{% endif %}{% if param.isJsonField %}        isJsonField: {{ param.isJsonField | lower }},
+{% endif %}{% if param.jsonExample %}        jsonExample: `{{ param.jsonExample }}`,
+{% endif %}{% if param.default is defined %}        default: {{ param.default | tojson }},
+{% endif %}{% if param.isList %}        isList: true,
+{% endif %}{% if param.fields %}        fields: {{ render_fields(param.fields) }},
+{% endif %}{% if param.modelRef %}        modelRef: {{ param.modelRef | tojson }},
+{% endif %}{% if param.populateFrom %}        populateFrom: {{ param.populateFrom | tojson }},
+{% endif %}{% if param.populateField %}        populateField: {{ param.populateField | tojson }},
+{% endif %}{% if param.populateValue %}        populateValue: {{ param.populateValue | tojson }},
+{% endif %}{% if param.populateDisplay %}        populateDisplay: {{ param.populateDisplay | tojson }},
+{% endif %}{% if param.populateDependencies %}        populateDependencies: {{ param.populateDependencies | tojson }},
+{% endif %}
+      },
+    {% endfor %}
+    ],
+    {% endif %}
+  },
+{% endfor %}
+];
+
+export function getDataTypeById(id: string): DataType | undefined {
+  return dataTypes.find(dt => dt.id === id);
+}
+
+export function getDataTypesByCategory(): Record<string, DataType[]> {
+  return dataTypes.reduce((acc, dt) => {
+    if (!acc[dt.category]) {
+      acc[dt.category] = [];
+    }
+    acc[dt.category].push(dt);
+    return acc;
+  }, {} as Record<string, DataType[]>);
+}
+
+export function getDataTypesByServer(): Record<string, DataType[]> {
+  return dataTypes.reduce((acc, dt) => {
+    if (!acc[dt.server]) {
+      acc[dt.server] = [];
+    }
+    acc[dt.server].push(dt);
+    return acc;
+  }, {} as Record<string, DataType[]>);
+}
+
+// API Model Documentation
+export interface ModelField {
+  type: string;
+  required: boolean;
+  description: string;
+  default: string | number | boolean | null | unknown[];
+  /** Pre-extracted enum values from Literal types */
+  enum?: string[];
+  /** Whether this field is a list (renders as add/remove list) */
+  isList?: boolean;
+  /** Reference to a model name for nested object types */
+  modelRef?: string;
+}
+
+export interface Model {
+  name: string;
+  docstring: string;
+  fields: Record<string, ModelField>;
+  bases: string[];
+  is_enum: boolean;
+}
+
+export const models: Model[] = {{ models | tojson }};
+
+export function getModelByName(name: string): Model | undefined {
+  return models.find(m => m.name === name);
+}
+
+/**
+ * Get tool endpoint from URL (e.g., "/tools/login_tool" -> "login_tool")
+ * This is more reliable than using display name transformation
+ */
+export function getToolEndpoint(dt: DataType): string {
+  const url = dt._internal?.url || '';
+  return url.split('/').pop() || dt.name.toLowerCase().replace(/\s+/g, '_');
+}
+
+// Persona definitions for login tool (if available)
+export interface Persona {
+  username: string;
+  password: string;
+  description: string;
+  roles?: string[];
+}
+
+{% if personas %}
+export const personas: Persona[] = {{ personas | tojson }};
+{% else %}
+export const personas: Persona[] = [];
+{% endif %}
+
+// Server authentication configuration
+// Maps server names to their auth type and environment variable name
+export interface ServerAuthConfig {
+  authType: 'api_key' | 'oauth2' | 'none';
+  envVar: string | null;  // Environment variable name (without process.env prefix)
+}
+
+export const serverAuthConfig: Record<string, ServerAuthConfig> = {
+{% for server in servers %}
+  '{{ server.name }}': {
+{% if server.auth_type == 'api_key' %}
+    authType: 'api_key',
+    envVar: '{{ server.name | upper }}_API_KEY',
+{% elif server.auth_type == 'oauth2' %}
+    authType: 'oauth2',
+    envVar: '{{ server.name | upper }}_ACCESS_TOKEN',
+{% else %}
+    authType: 'none',
+    envVar: null,
+{% endif %}
+  },
+{% endfor %}
+};
