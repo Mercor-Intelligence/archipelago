@@ -1,0 +1,128 @@
+name: Publish Status to Central Dashboard
+
+on:
+  workflow_run:
+    workflows: ["MCP Server Stage Tracker"]
+    types:
+      - completed
+    branches:
+      - main  # Only publish from main branch
+
+# Ensure only one publish runs at a time
+concurrency:
+  group: publish-status-${{ github.ref }}
+  cancel-in-progress: false
+
+# Environment variables
+env:
+  APP_NAME: {{SERVER_NAME}}  # Name used for apps/{app-name}.json in central repo
+  CENTRAL_REPO: Mercor-Intelligence/mercor-mcp-status  # Central status repository
+
+jobs:
+  publish-status:
+    name: Publish Status to Central Repo
+    runs-on: ubuntu-latest
+    # Only run if the stage tracker workflow succeeded
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - name: Download status.json artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: status
+          path: ./status-artifact
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify status.json exists
+        run: |
+          if [ ! -f "./status-artifact/status.json" ]; then
+            echo "ERROR: status.json not found in artifact"
+            exit 1
+          fi
+
+          echo "Found status.json:"
+          cat ./status-artifact/status.json | jq '.'
+
+      - name: Checkout central status repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.CENTRAL_REPO }}
+          token: ${{ secrets.STATUS_REPO_TOKEN }}
+          path: central-repo
+
+      - name: Write status to central repo
+        run: |
+          #!/bin/bash
+          set -euo pipefail
+
+          APP_NAME="${{ env.APP_NAME }}"
+
+          # Create apps directory if it doesn't exist
+          mkdir -p central-repo/apps
+
+          # Copy status.json to apps/{app-name}.json
+          cp ./status-artifact/status.json "central-repo/apps/${APP_NAME}.json"
+
+          echo "Written to central-repo/apps/${APP_NAME}.json"
+
+          # Show what was written
+          echo "Content:"
+          cat "central-repo/apps/${APP_NAME}.json" | jq '.'
+
+      - name: Check for changes
+        id: changes
+        working-directory: central-repo
+        run: |
+          git add apps/${{ env.APP_NAME }}.json
+
+          if git diff --cached --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No changes to status file"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Status file has changed:"
+            git diff --cached
+          fi
+
+      - name: Commit and push changes
+        id: push
+        if: steps.changes.outputs.has_changes == 'true'
+        working-directory: central-repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git commit -m "Update ${{ env.APP_NAME }} status
+
+          Triggered by: ${{ github.repository }}@${{ github.event.workflow_run.head_sha }}
+          Workflow run: ${{ github.event.workflow_run.html_url }}
+
+          [skip ci]"
+
+          git push
+
+      - name: Create summary
+        if: always()
+        run: |
+          echo "## Publish Status Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Check if workflow failed
+          if [ "${{ job.status }}" != "success" ]; then
+            echo "**Workflow failed**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Check the workflow logs for details." >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.changes.outputs.has_changes }}" == "true" ] && [ "${{ steps.push.outcome }}" == "success" ]; then
+            echo "**Status published successfully**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Updated: \`apps/${{ env.APP_NAME }}.json\` in \`${{ env.CENTRAL_REPO }}\`" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.changes.outputs.has_changes }}" == "true" ]; then
+            echo "**Push failed**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Changes were detected but git push failed. Check logs for details." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**No changes needed**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Status file is already up to date." >> $GITHUB_STEP_SUMMARY
+          fi
