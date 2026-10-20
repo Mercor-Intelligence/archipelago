@@ -47,7 +47,7 @@ dependencies = [
     "pytest-asyncio>=0.23.0",
     "formulas>=1.2.0",               # For evaluating Spreadsheets formulas in spreadsheet_verifier
     "playwright>=1.49.0",            # Drives a live headless browser in bua_verifier
-    "claude-agent-sdk==0.2.86",
+    "claude-agent-sdk==0.2.121",
     "google-antigravity==0.1.11",
     "mcp>=1.23.0,<2",
     "transformers==5.10.2",
