@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 5
 requires-python = "==3.13.*"
 resolution-markers = [
     "sys_platform == 'win32'",
@@ -1120,6 +1120,48 @@ dependencies = [
     { name = "titlecase" },
 ]
 
+[package.metadata]
+requires-dist = [
+    { name = "aiomysql", marker = "extra == 'dev'", specifier = ">=0.2.0" },
+    { name = "aiosqlite", specifier = ">=0.19.0" },
+    { name = "aiosqlite", marker = "extra == 'database'", specifier = ">=0.19.0" },
+    { name = "alembic", marker = "extra == 'database'", specifier = ">=1.13.0" },
+    { name = "asyncer" },
+    { name = "basedpyright", marker = "extra == 'dev'", specifier = ">=1.29.0" },
+    { name = "click", specifier = ">=8.0.0" },
+    { name = "fastapi", marker = "extra == 'rest'", specifier = ">=0.121.2" },
+    { name = "fastmcp", specifier = ">=3.2.0" },
+    { name = "greenlet", marker = "extra == 'database'", specifier = ">=3.0" },
+    { name = "httpx", specifier = ">=0.27.0" },
+    { name = "jinja2", specifier = ">=3.0.0" },
+    { name = "jsonpath-ng", specifier = ">=1.5.0" },
+    { name = "loguru" },
+    { name = "lxml", specifier = ">=5.0.0" },
+    { name = "pandas", specifier = ">=2.0.0" },
+    { name = "pandas", marker = "extra == 'database'", specifier = ">=2.0.0" },
+    { name = "polars", specifier = ">=1.41" },
+    { name = "pre-commit", marker = "extra == 'dev'", specifier = ">=3.0.0" },
+    { name = "pydantic", specifier = ">=2.0" },
+    { name = "pytest", specifier = ">=7.0.0" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=7.0.0" },
+    { name = "pytest-asyncio", specifier = ">=0.21.0" },
+    { name = "pytest-asyncio", marker = "extra == 'dev'", specifier = ">=0.21.0" },
+    { name = "pytest-httpx", marker = "extra == 'dev'", specifier = ">=0.21.0" },
+    { name = "python-dotenv", specifier = ">=1.0.0" },
+    { name = "pyyaml", specifier = ">=6.0" },
+    { name = "requests", specifier = ">=2.28.0" },
+    { name = "responses", marker = "extra == 'dev'", specifier = ">=0.25.0" },
+    { name = "respx", marker = "extra == 'dev'", specifier = ">=0.20.0" },
+    { name = "ruamel-yaml", specifier = ">=0.19.1" },
+    { name = "ruamel-yaml", marker = "extra == 'migration'", specifier = ">=0.18.0" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.6.0" },
+    { name = "sqlalchemy", extras = ["asyncio"], specifier = ">=2.0.0" },
+    { name = "sqlalchemy", extras = ["asyncio"], marker = "extra == 'database'", specifier = ">=2.0" },
+    { name = "titlecase", specifier = ">=2.4" },
+    { name = "uvicorn", marker = "extra == 'rest'", specifier = ">=0.38.0" },
+]
+provides-extras = ["dev", "database", "rest", "migration"]
+
 [[package]]
 name = "mercor-rls-sheets"
 version = "0.1.0"
@@ -1161,7 +1203,7 @@ requires-dist = [
     { name = "httpx", specifier = ">=0.27.0" },
     { name = "litellm", specifier = "==1.83.10" },
     { name = "loguru", specifier = ">=0.7.3" },
-    { name = "mercor-mcp-shared", directory = "packages/mercor-mcp-shared"  },
+    { name = "mercor-mcp-shared", directory = "packages/mercor-mcp-shared" },
     { name = "openpyxl", specifier = ">=3.1.5" },
     { name = "pillow", specifier = ">=12.1.0" },
     { name = "pydantic-settings", specifier = ">=2.11.0" },
@@ -1321,15 +1363,14 @@ wheels = [
 
 [[package]]
 name = "opentelemetry-api"
-version = "1.41.1"
+version = "1.45.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "importlib-metadata" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/fa/fc/b7564cbef36601aef0d6c9bc01f7badb64be8e862c2e1c3c5c3b43b53e4f/opentelemetry_api-1.41.1.tar.gz", hash = "sha256:0ad1814d73b875f84494387dae86ce0b12c68556331ce6ce8fe789197c949621", size = 71416, upload-time = "2026-04-24T13:15:38.262Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/2e/02/6e0ae9cc61bd3169d401077b507b3ebc344745171e1051ab430be012dcd9/opentelemetry_api-1.45.1.tar.gz", hash = "sha256:aa38ed19bcc084ba42782a73255b3582283eced7ad6dddbd6695189e69adfb75", size = 72804, upload-time = "2026-10-06T17:32:58.133Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/29/59/3e7118ed140f76b0982ba4321bdaed1997a0473f9720de2d10788a577033/opentelemetry_api-1.41.1-py3-none-any.whl", hash = "sha256:a22df900e75c76dc08440710e51f52f1aa6b451b429298896023e60db5b3139f", size = 69007, upload-time = "2026-04-24T13:15:15.662Z" },
+    { url = "https://files.pythonhosted.org/packages/1e/41/f7dcf80b81ee8e71c1a2b59f14208bc723edbd89ed027a73b175abf6348e/opentelemetry_api-1.45.1-py3-none-any.whl", hash = "sha256:b31553efa588ae44bc306f863c785c5333a9ecc091248c6ee68b4b6c87fdedfb", size = 60256, upload-time = "2026-10-06T17:32:33.506Z" },
 ]
 
 [[package]]
@@ -1918,8 +1959,8 @@ name = "secretstorage"
 version = "3.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cryptography", marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
-    { name = "jeepney", marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
+    { name = "cryptography" },
+    { name = "jeepney" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz", hash = "sha256:f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be", size = 19884, upload-time = "2025-11-23T19:02:53.191Z" }
 wheels = [
