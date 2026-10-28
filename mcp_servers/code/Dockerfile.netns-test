@@ -1,0 +1,16 @@
+# CODE_EXEC_ISOLATE_NETWORK check: root runs as `gemini` (run-as-user); `--user 1001` runs the shim mode.
+FROM python:3.13-slim
+
+RUN apt-get update && apt-get install -y --no-install-recommends util-linux iproute2 socat gcc libc-dev \
+    && rm -rf /var/lib/apt/lists/*
+RUN pip install --no-cache-dir loguru
+RUN useradd -m -s /bin/bash gemini && useradd -m -u 1001 -s /bin/bash svc_code_execution \
+    && mkdir -p /filesystem /.apps_data && chmod 777 /filesystem \
+    && echo APPS_DATA_SECRET > /.apps_data/secret.txt && chmod 644 /.apps_data/secret.txt
+
+COPY mcp_servers/code_execution_server/sandbox_fs.c /tmp/sandbox_fs.c
+RUN mkdir -p /app/lib && gcc -shared -fPIC -O2 -o /app/lib/sandbox_fs.so /tmp/sandbox_fs.c -ldl -lpthread
+COPY mcp_servers/code_execution_server/utils/sandbox.py /probe/utils/sandbox.py
+COPY mcp_servers/code_execution_server/tests/netns_isolation_driver.py /probe/driver.py
+
+CMD ["python", "/probe/driver.py"]
