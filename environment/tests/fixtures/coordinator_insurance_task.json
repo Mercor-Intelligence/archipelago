@@ -1,0 +1,55 @@
+{
+  "enabled": true,
+  "events": [
+    {
+      "event_id": "claim_seen_mark_reviewer_note",
+      "enabled": true,
+      "trigger": {
+        "type": "tool_call_seen",
+        "selector": {
+          "tool_name": "insurance_get_claim"
+        }
+      },
+      "actions": [
+        {
+          "type": "call_mcp_tool",
+          "action_id": "add_reviewer_note",
+          "tool_name": "insurance_add_internal_note",
+          "arguments": {
+            "claim_id": "claim_001",
+            "note": "Reviewer packet opened by target agent."
+          },
+          "actor_id": "claims_admin"
+        }
+      ]
+    },
+    {
+      "event_id": "two_minutes_later_queue_followup",
+      "enabled": true,
+      "trigger": {
+        "type": "physical_time_elapsed",
+        "after_seconds": 120
+      },
+      "actions": [
+        {
+          "type": "call_mcp_tool",
+          "action_id": "queue_followup",
+          "tool_name": "insurance_queue_followup_email",
+          "arguments": {
+            "template": "missing_document_followup"
+          },
+          "actor_id": "claims_admin"
+        }
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "type": "tool_call"
+    },
+    {
+      "type": "periodic",
+      "interval_seconds": 1
+    }
+  ]
+}
