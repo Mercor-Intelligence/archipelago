@@ -1,0 +1,91 @@
+[project]
+name = "mcp-middleware"
+version = "1.0.0"
+description = "Common middleware utilities for FastMCP servers (rate limiting, latency tracking)"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    { name = "Mercor", email = "support@mercor.com" }
+]
+keywords = ["mcp", "middleware", "ratelimit", "latency", "fastmcp"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "fastmcp>=0.2.0",
+    "loguru>=0.7.0",
+    "mcp-auth",
+    "mcp-schema",
+    "pandas>=2.0.0",
+    "pyyaml>=6.0",
+    "sqlalchemy[asyncio]>=2.0.0",
+    "aiosqlite>=0.19.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21.0",
+    "ruff>=0.6.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mcp_middleware*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I", "N", "UP"]
+ignore = []
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+asyncio_mode = "auto"
+
+[tool.uv]
+#
+# These versions are the oldest the firewall still serves; everything below
+# them is refused as a critical CVE, so a re-lock must not drop under them.
+constraint-dependencies = [
+    "anyio>=4.15.1",
+    "authlib>=1.9.1",
+    "certifi>=2026.10.23",
+    "pyjwt>=2.15.1",
+]
+# Resolve only releases the firewall has had time to scan (>= 7 days old at
+# migration time). Raise the date to deliberately take newer releases.
+exclude-newer = "2026-10-24T00:00:00Z"
+# --- end package firewall ---
+
+# mcp-auth / mcp-schema are sibling packages in this repo, not published to any
+# index; without this the package cannot be locked on its own (it could not on
+# main either). Ignored when it is consumed as a path dependency of the app.
+[tool.uv.sources]
+mcp-auth = { path = "../mcp_auth" }
+mcp-schema = { path = "../mcp_schema" }
+
+# Public PyPI through the Socket package firewall. The login comes from ~/.netrc
+# (CI writes it from the SOCKET_FIREWALL_GATE_TOKEN secret); never commit a token.
+[[tool.uv.index]]
+name = "firewall"
+url = "https://pypi.org/simple"
+default = true

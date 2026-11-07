@@ -1,0 +1,68 @@
+[project]
+name = "parity-test"
+version = "0.1.0"
+description = "Unit-test-forward parity testing: write pytest tests against the clone; shape/response parity falls out as a side effect (capture vs. replay, snapshot-mediated)"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    { name = "Mercor", email = "support@mercor.com" }
+]
+keywords = ["parity", "testing", "pytest", "snapshot", "mcp", "oas", "coverage"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Framework :: Pytest",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+
+# The library is effectively a pytest plugin: `import parity_test` pulls in
+# `seeding` which imports pytest at module load. Responses are duck-typed
+# (`status_code`/`headers`/`json()`), so there is no httpx/requests hard dep.
+#
+# `mcp-middleware` is a hard dependency: the sole populate factory
+# (`defaults.script_populate`) runs the app's real lifecycle and uses the
+# shared runtime-DB sentinel. It is a sibling in the flattened
+# `mercor-mcp-shared` distribution, so it always resolves in practice; the
+# entry documents the coupling for standalone use.
+dependencies = [
+    "pytest>=7.0",
+    "mcp-middleware",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.6.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["parity_test*"]
+
+[tool.setuptools.package-data]
+"parity_test" = ["py.typed"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I", "N", "UP"]
+ignore = []
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+asyncio_mode = "auto"

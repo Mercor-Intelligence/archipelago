@@ -1,0 +1,75 @@
+[project]
+name = "mcp-files"
+version = "0.1.0"
+description = "Generic file import, metadata, content extraction, and populate/snapshot for MCP servers"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    { name = "Mercor", email = "support@mercor.com" }
+]
+keywords = ["mcp", "files", "ingest", "extraction", "snapshot", "fastmcp"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+
+# Core has zero hard third-party deps: extraction uses the stdlib and degrades
+# gracefully when an optional extractor backend is absent.
+dependencies = []
+
+[project.optional-dependencies]
+extractors = [
+    "pypdf>=4.0.0",
+    "icalendar>=5.0.0",
+]
+ocr = [
+    "pytesseract>=0.3.10",
+    "Pillow>=10.0.0",
+]
+# Semantic indexing: vec0 virtual tables need the sqlite-vec extension;
+# embeddings additionally need a model backend. Keyword (FTS5) indexing works
+# with no extras since FTS5 ships with stock SQLite.
+vector = [
+    "sqlite-vec>=0.1.0",
+]
+embeddings = [
+    "sqlite-vec>=0.1.0",
+    "sentence-transformers>=2.2.0",
+]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.6.0",
+]
+
+[project.scripts]
+mcp-files = "mcp_files.cli:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mcp_files*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I", "N", "UP"]
+ignore = []
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+asyncio_mode = "auto"

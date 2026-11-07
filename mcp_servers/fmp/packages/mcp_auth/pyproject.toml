@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-auth"
+version = "1.0.0"
+description = "Shared authentication middleware and services for MCP servers"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [
+    { name = "Mercor", email = "team@example.com" }
+]
+keywords = ["mcp", "authentication", "middleware", "fastmcp"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    # The package is written against the fastmcp 3 API (fastmcp 4 dropped
+    # `fastmcp.tools.tool.ToolResult`), and 3.3.1 is what the application
+    # itself resolves. Capped below 3.4 as well: 3.4.x widens its transitive
+    # range onto the starlette 1.x major.
+    "fastmcp>=3.3.1,<3.4",
+    "loguru>=0.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "ruff>=0.6.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Mercor-Intelligence"
+Repository = "https://github.com/Mercor-Intelligence/mercor-mcp-shared-infra/"
+Documentation = "https://github.com/Mercor-Intelligence/mercor-mcp-shared-infra/tree/main/packages/mcp-auth"
+Changelog = "https://github.com/Mercor-Intelligence/mercor-mcp-shared-infra/blob/main/packages/mcp-auth/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mcp_auth*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I", "N", "UP"]
+ignore = []
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.uv]
+# fastmcp 3 caps neither starlette nor mcp, so an unconstrained relock of this
+# package drifts past the stack the application actually runs. Hold both at the
+# root `uv.lock` versions (starlette 0.50.0, mcp 1.25.0); the root gets the
+# starlette cap from fastapi 0.128.0, which this package does not depend on.
+constraint-dependencies = ["starlette<0.51", "mcp<1.26"]
+
+[[tool.uv.index]]
+name = "firewall"
+url = "https://pypi.org/simple"
+default = true

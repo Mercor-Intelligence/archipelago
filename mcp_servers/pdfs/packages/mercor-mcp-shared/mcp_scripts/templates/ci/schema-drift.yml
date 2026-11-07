@@ -1,0 +1,195 @@
+# Documentation Drift Detection
+# ------------------------------
+# Checks that the committed docs stay in lockstep with the code:
+#   • docs/schema.sql          — the DB schema, from the SQLAlchemy models.
+#   • docs/populate_and_run.md — the handover doc (populate/run lifecycle +
+#                                app-specific CSV formats), from the app's
+#                                snapshot_config.yaml.  Optional: only checked
+#                                when SNAPSHOT_CONFIG is set below.
+#
+# How it works:
+#   1. Install dependencies (mise run install).
+#   2. Run check_schema_drift, which imports your declarative Base, calls
+#      Base.metadata.create_all() into a temp SQLite file, generates the
+#      canonical schema SQL, and diffs against docs/schema.sql.  When
+#      SNAPSHOT_CONFIG is set it also regenerates the handover markdown from
+#      that config and diffs it against docs/populate_and_run.md.
+#
+# Configuration:
+#   • Set MODELS_SPEC to the import path of your Base, in the form
+#     'module.path:Attr' (e.g. "db.models:Base").
+#   • Set SNAPSHOT_CONFIG to your app's snapshot_config.yaml to also
+#     drift-check the handover doc.  Leave empty to check schema only.
+#   • If your app code lives in a sub-directory (e.g. mcp_servers/<name>),
+#     adjust the working-directory step accordingly.
+#
+# Trigger paths:
+#   Adjust the `paths:` filters to match where your models, schema, snapshot
+#   config, and handover doc live.
+#
+# Dependencies:
+#   mercor-mcp-shared must be listed in the project's pyproject.toml so that
+#   mcp_scripts.check_schema_drift is importable after `uv sync`.
+
+name: Docs Drift
+
+on:
+  push:
+    paths:
+      - "**/models.py"
+      - "**/snapshot_config.yaml"
+      - "docs/schema.sql"
+      - "docs/populate_and_run.md"
+      - ".github/workflows/schema-drift.yml"
+  pull_request:
+    paths:
+      - "**/models.py"
+      - "**/snapshot_config.yaml"
+      - "docs/schema.sql"
+      - "docs/populate_and_run.md"
+      - ".github/workflows/schema-drift.yml"
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+  # ---------------------------------------------------------------------------
+  # TODO: configure for your app
+  # ---------------------------------------------------------------------------
+
+  # Import path of the SQLAlchemy declarative Base, in the form
+  # 'module.path:Attr'.  Example: "db.models:Base".
+  #
+  # Resolution: --models-root (if set) wins; otherwise the script reads
+  # [tool.pytest.ini_options].pythonpath from pyproject.toml so Foundry-*
+  # layouts (mcp_servers/<server>/db/models.py) work out of the box.
+  MODELS_SPEC: db.models:Base
+
+  # Path to the app's snapshot_config.yaml.  Set this to ALSO drift-check the
+  # client handover doc (docs/populate_and_run.md — populate/run lifecycle +
+  # which source files have which columns).  Leave empty ("") to check
+  # docs/schema.sql only.  MODELS_SPEC is reused to fill in columns for files
+  # without an explicit header signature.
+  #   Example: mcp_servers/zoho/snapshot_config.yaml
+  SNAPSHOT_CONFIG: ""
+  # Optional: instead of SNAPSHOT_CONFIG, point at a zero-arg factory
+  # ('module.path:build_config') returning a fully-registered SnapshotConfig.
+  # Use this to also document app-specific import hooks (their docstrings).
+  # When set, it takes precedence over SNAPSHOT_CONFIG.
+  CONFIG_FACTORY: ""
+  # Optional: server name + on-disk DB path shown in the handover doc.
+  SERVER_NAME: ""
+  DB_PATH: ""
+
+jobs:
+  schema-drift:
+    name: schema-drift
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.MCP_SHARED_APP_ID }}
+          private-key: ${{ secrets.MCP_SHARED_APP_PRIVATE_KEY }}
+          owner: Mercor-Intelligence
+
+      - name: Configure git for private dependencies
+        run: |
+          token='${{ steps.app-token.outputs.token }}'
+          git config --global url."https://x-access-token:${token}@github.com/".insteadOf "https://github.com/"
+          git config --global --add url."https://x-access-token:${token}@github.com/".insteadOf "ssh://github.com/"
+          git config --global --add url."https://x-access-token:${token}@github.com/".insteadOf "ssh://git@github.com/"
+          git config --global --add url."https://x-access-token:${token}@github.com/".insteadOf "git@github.com:"
+
+      - name: Install mise
+        # ~/.local/bin puts the mise binary itself on PATH; the shims dir
+        # exposes the toolchain it manages (uv / python / node …).  Without
+        # the shims line, `mise run install` shells out to `uv sync` and
+        # fails with `uv: command not found`.
+        run: |
+          curl https://mise.run | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          echo "$HOME/.local/share/mise/shims" >> "$GITHUB_PATH"
+
+      - name: Trust mise config
+        # mise refuses to read an untrusted config in CI's non-interactive
+        # shell.  Without this step every subsequent `mise …` call errors
+        # before reading mise.toml.
+        run: mise trust
+
+      - name: Install toolchain (uv + python via mise)
+        # Fetches the pinned versions declared in mise.toml.  Must run
+        # before `mise run install` because the task itself invokes uv.
+        run: mise install
+
+      - name: Install dependencies
+        run: mise run install
+
+      - name: Check docs drift
+        # Derives the schema from MODELS_SPEC's metadata via create_all into a
+        # temp SQLite file (no live DB needed) and diffs against
+        # docs/schema.sql.  When SNAPSHOT_CONFIG is set, ALSO regenerates the
+        # handover doc from that config and diffs it against
+        # docs/populate_and_run.md.  Fails if any artifact differs.
+        # Output is tee'd to a file so the post-step can surface it as a PR comment.
+        id: drift-check
+        run: |
+          set -o pipefail
+          EXTRA_ARGS=()
+          if [ -n "$CONFIG_FACTORY" ]; then
+            EXTRA_ARGS+=(--config-factory "$CONFIG_FACTORY")
+          elif [ -n "$SNAPSHOT_CONFIG" ]; then
+            EXTRA_ARGS+=(--snapshot-config "$SNAPSHOT_CONFIG")
+          fi
+          if [ -n "$CONFIG_FACTORY" ] || [ -n "$SNAPSHOT_CONFIG" ]; then
+            [ -n "$SERVER_NAME" ] && EXTRA_ARGS+=(--server-name "$SERVER_NAME")
+            [ -n "$DB_PATH" ] && EXTRA_ARGS+=(--db-path "$DB_PATH")
+          fi
+          uv run python -m mcp_scripts.check_schema_drift \
+            --models "$MODELS_SPEC" \
+            "${EXTRA_ARGS[@]}" \
+            2>&1 | tee /tmp/drift_output.txt
+
+      - name: Post drift comment
+        # Only runs on pull_request events when the drift check failed.
+        # Surfaces the diff directly in the PR thread without requiring a click
+        # through to the Actions log.
+        #
+        # The `always()` prefix is load-bearing: GitHub Actions short-circuits
+        # subsequent steps the moment any earlier step fails (default
+        # behaviour), so without it this step would be skipped on the exact
+        # event we want it to fire — drift detected.  `always()` makes the
+        # job's failure state irrelevant to step evaluation; the explicit
+        # outcome check below is what actually gates whether we post.
+        if: always() && steps.drift-check.outcome == 'failure' && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const output = fs.readFileSync('/tmp/drift_output.txt', 'utf8');
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: [
+                '## ⚠️ Documentation drift detected',
+                '',
+                'A committed doc is out of sync with the code — `docs/schema.sql`',
+                '(SQLAlchemy models) and/or `docs/populate_and_run.md` (snapshot',
+                'config). The exact artifact and the regenerate command are in the',
+                'log below:',
+                '',
+                '```',
+                output.trim(),
+                '```',
+                '',
+                'Run the regenerate command shown above, then commit the updated file(s).',
+              ].join('\n'),
+            });
+        env:
+          MODELS_SPEC: ${{ env.MODELS_SPEC }}
