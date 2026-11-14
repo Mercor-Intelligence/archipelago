@@ -1,0 +1,40 @@
+[project]
+name = "edgar-sec-smoke-test"
+version = "0.1.0"
+description = "Smoke tests for Edgar Sec MCP server"
+requires-python = ">=3.13"
+dependencies = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "httpx>=0.24.0",
+    "testcontainers>=3.7.0",
+    "fastmcp",]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["."]
+
+[tool.uv.sources]
+fastmcp = { git = "https://github.com/jlowin/fastmcp.git", rev = "bc2f601" }
+
+[tool.uv]
+#
+# These versions are the oldest the firewall still serves; everything below
+# them is refused as a critical CVE, so a re-lock must not drop under them.
+constraint-dependencies = [
+    "anyio>=4.15.1",
+    "authlib>=1.9.1",
+    "certifi>=2026.10.23",
+    "pyjwt>=2.15.1",
+]
+# Resolve only releases the firewall has had time to scan (>= 7 days old at
+# migration time). Raise the date to deliberately take newer releases.
+exclude-newer = "2026-10-24T00:00:00Z"
+# --- end package firewall ---
+
+# Public PyPI through the Socket package firewall. The login comes from ~/.netrc
+# (CI writes it from the SOCKET_FIREWALL_GATE_TOKEN secret); never commit a token.
+[[tool.uv.index]]
+name = "firewall"
+url = "https://pypi.org/simple"
+default = true

@@ -1,0 +1,175 @@
+{
+  "agents": {
+    "codebase_qna": {
+      "benchmark": "code_qa_ext",
+      "harbor_agent": "oracle",
+      "harness_type": "harbor",
+      "sandbox_type": "modal",
+      "validate_patch": false,
+      "dump_trajectory": true,
+      "sandbox_timeout": 11400,
+      "modal_vm_runtime": false,
+      "enable_docker_compose": false,
+      "verifier_allow_network": false
+    },
+    "deepswe": {
+      "benchmark": "terminal_bench",
+      "harbor_agent": "oracle",
+      "harness_type": "harbor",
+      "sandbox_type": "modal",
+      "sandbox_timeout": 7200
+    },
+    "terminal_bench": {
+      "benchmark": "terminal_bench",
+      "harbor_agent": "oracle",
+      "harness_type": "harbor",
+      "sandbox_type": "modal",
+      "sandbox_timeout": 7200
+    },
+    "apex_swe": {
+      "agent": "oracle",
+      "benchmark": "terminal_bench",
+      "max_steps": 1000,
+      "cost_cap_usd": 25,
+      "harness_type": "harbor",
+      "test_timeout": 3600,
+      "live_log_level": "normal",
+      "validate_patch": false,
+      "dump_trajectory": true,
+      "sandbox_timeout": 14400,
+      "environment_cpus": 4,
+      "modal_vm_runtime": true,
+      "honor_task_timeouts": true,
+      "disable_verification": false,
+      "enable_docker_compose": true,
+      "environment_memory_mb": 8192,
+      "capture_task_artifacts": true,
+      "verifier_allow_network": true,
+      "environment_memory_request_mb": 8192
+    },
+    "programbench": {
+      "benchmark": "terminal_bench",
+      "harbor_agent": "oracle",
+      "harness_type": "harbor",
+      "sandbox_type": "modal",
+      "sandbox_timeout": 1800
+    },
+    "swe_marathon": {
+      "benchmark": "terminal_bench",
+      "harbor_agent": "oracle",
+      "harness_type": "harbor",
+      "sandbox_type": "modal",
+      "sandbox_timeout": 7200
+    },
+    "code_review": {
+      "benchmark": "terminal_bench",
+      "harbor_agent": "oracle",
+      "harness_type": "harbor",
+      "sandbox_type": "modal",
+      "test_timeout": 3600,
+      "live_log_level": "normal",
+      "rewardkit_judge": "litellm_proxy/vertex_ai/gemini-3.8-flash",
+      "sandbox_timeout": 7200,
+      "environment_cpus": 4,
+      "honor_task_timeouts": true,
+      "environment_memory_mb": 8192,
+      "studio_snapshot_paths": [
+        ".github/REVIEWING.md"
+      ],
+      "capture_task_artifacts": true,
+      "capture_studio_snapshot": true
+    }
+  },
+  "tasks": [
+    {
+      "pipeline": "codebase_qna",
+      "task": "ethers_2_arch",
+      "task_data_id": "snap_3438e57a028f4cdcb4a01cb00dbac820",
+      "task_custom_fields": {
+        "harbor__submission_snapshot": "snap_88cafe362fac43d780939cded5291f3e"
+      }
+    },
+    {
+      "pipeline": "codebase_qna",
+      "task": "pgbackrest_1_arch",
+      "task_data_id": "snap_14d5368c02c246d6bdcdecbd48be5bda",
+      "task_custom_fields": {
+        "harbor__submission_snapshot": "snap_30d01085d81f42829c7de34a8d4c65dc"
+      }
+    },
+    {
+      "pipeline": "deepswe",
+      "task": "deepswe_public-MindAct-f8a312265a-803",
+      "task_data_id": "snap_fb44b714ec404ca3bc179aaf466297f7",
+      "task_custom_fields": {}
+    },
+    {
+      "pipeline": "deepswe",
+      "task": "imba.io-92",
+      "task_data_id": "snap_7b73d1d5347042f2a9dff5abe3c23273",
+      "task_custom_fields": {}
+    },
+    {
+      "pipeline": "terminal_bench",
+      "task": "backgammon-match-adjudicator",
+      "task_data_id": "snap_c239889ac6684fc2825a1c2cf08731f2",
+      "task_custom_fields": {}
+    },
+    {
+      "pipeline": "terminal_bench",
+      "task": "hollowgate-chronicle-drift-solver",
+      "task_data_id": "snap_4f3b903a3c8144f4bc319c3b23814be3",
+      "task_custom_fields": {}
+    },
+    {
+      "pipeline": "apex_swe",
+      "task": "QA ramp-card-switchover 1015-2226",
+      "task_data_id": "snap_08a8cab6c35440c399341ecffafc92a7",
+      "task_custom_fields": {}
+    },
+    {
+      "pipeline": "apex_swe",
+      "task": "QA zendesk-postgres-move 1015-2159",
+      "task_data_id": "snap_696f9f88176d4c66a9a830e54ef9c785",
+      "task_custom_fields": {}
+    },
+    {
+      "pipeline": "programbench",
+      "task": "alejandra",
+      "task_data_id": "snap_bdca23336ed2482689677da0e9534302",
+      "task_custom_fields": {}
+    },
+    {
+      "pipeline": "programbench",
+      "task": "capnproto-capnproto-15",
+      "task_data_id": "snap_132a5db438004b9aa80af321dd1afe61",
+      "task_custom_fields": {}
+    },
+    {
+      "pipeline": "swe_marathon",
+      "task": "formance-ledger-formula-dag-clone",
+      "task_data_id": "snap_342b415dc9fc46b58ec18fa921ad323f",
+      "task_custom_fields": {}
+    },
+    {
+      "pipeline": "swe_marathon",
+      "task": "redocly-clone-cache-invalidation",
+      "task_data_id": "snap_b3f8326f251b4867a680e1e64cdbbd79",
+      "task_custom_fields": {}
+    },
+    {
+      "pipeline": "code_review",
+      "task": "[Clean] heroku/cli #2583",
+      "task_data_id": "snap_2b2897b9eb734fe68885152cf941e8a5",
+      "task_custom_fields": {}
+    },
+    {
+      "pipeline": "code_review",
+      "task": "[Synthetic] [Clean] kubernetes/cloud-provider-openstack #939",
+      "task_data_id": "snap_44b673db15cb41968563a259d7ef1176",
+      "task_custom_fields": {
+        "workdir": "/workspace/repo"
+      }
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+# Schema Drift Detection
+# ----------------------
+# Checks that docs/schema.sql is consistent with the SQLAlchemy models.
+#
+# How it works:
+#   1. Install dependencies (mise run install).
+#   2. Run check_schema_drift, which imports your declarative Base, calls
+#      Base.metadata.create_all() into a temp SQLite file, generates the
+#      canonical schema SQL, and diffs against docs/schema.sql.
+#
+# Configuration:
+#   • Set MODELS_SPEC to the import path of your Base, in the form
+#     'module.path:Attr' (e.g. "db.models:Base").
+#   • If your app code lives in a sub-directory (e.g. mcp_servers/<name>),
+#     adjust the working-directory step accordingly.
+#
+# Trigger paths:
+#   Adjust the `paths:` filters to match where your models and schema live.
+#
+# Dependencies:
+#   mercor-mcp-shared must be listed in the project's pyproject.toml so that
+#   mcp_scripts.check_schema_drift is importable after `uv sync`.
+
+name: Schema Drift
+
+on:
+  push:
+    paths:
+      - "**/models.py"
+      - "docs/schema.sql"
+      - ".github/workflows/schema-drift.yml"
+  pull_request:
+    paths:
+      - "**/models.py"
+      - "docs/schema.sql"
+      - ".github/workflows/schema-drift.yml"
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+  # ---------------------------------------------------------------------------
+  # TODO: configure for your app
+  # ---------------------------------------------------------------------------
+
+  # Import path of the SQLAlchemy declarative Base, in the form
+  # 'module.path:Attr'.  Example: "db.models:Base".
+  #
+  # Resolution: --models-root (if set) wins; otherwise the script reads
+  # [tool.pytest.ini_options].pythonpath from pyproject.toml so Foundry-*
+  # layouts (mcp_servers/<server>/db/models.py) work out of the box.
+  MODELS_SPEC: db.models:Base
+
+jobs:
+  schema-drift:
+    name: schema-drift
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.MCP_SHARED_APP_ID }}
+          private-key: ${{ secrets.MCP_SHARED_APP_PRIVATE_KEY }}
+          owner: Mercor-Intelligence
+
+      - name: Configure git for private dependencies
+        run: |
+          token='${{ steps.app-token.outputs.token }}'
+          git config --global url."https://x-access-token:${token}@github.com/".insteadOf "https://github.com/"
+          git config --global --add url."https://x-access-token:${token}@github.com/".insteadOf "ssh://github.com/"
+          git config --global --add url."https://x-access-token:${token}@github.com/".insteadOf "ssh://git@github.com/"
+          git config --global --add url."https://x-access-token:${token}@github.com/".insteadOf "git@github.com:"
+
+      - name: Install mise
+        # ~/.local/bin puts the mise binary itself on PATH; the shims dir
+        # exposes the toolchain it manages (uv / python / node …).  Without
+        # the shims line, `mise run install` shells out to `uv sync` and
+        # fails with `uv: command not found`.
+        run: |
+          curl https://mise.run | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          echo "$HOME/.local/share/mise/shims" >> "$GITHUB_PATH"
+
+      - name: Trust mise config
+        # mise refuses to read an untrusted config in CI's non-interactive
+        # shell.  Without this step every subsequent `mise …` call errors
+        # before reading mise.toml.
+        run: mise trust
+
+      - name: Install toolchain (uv + python via mise)
+        # Fetches the pinned versions declared in mise.toml.  Must run
+        # before `mise run install` because the task itself invokes uv.
+        run: mise install
+
+      - name: Install dependencies
+        run: mise run install
+
+      - name: Check schema drift
+        # Derives the schema from MODELS_SPEC's metadata via create_all into a
+        # temp SQLite file (no live DB needed) and diffs against
+        # docs/schema.sql.  Fails if they differ.
+        # Output is tee'd to a file so the post-step can surface it as a PR comment.
+        id: drift-check
+        run: |
+          set -o pipefail
+          uv run python -m mcp_scripts.check_schema_drift \
+            --models "$MODELS_SPEC" \
+            2>&1 | tee /tmp/drift_output.txt
+
+      - name: Post drift comment
+        # Only runs on pull_request events when the drift check failed.
+        # Surfaces the diff directly in the PR thread without requiring a click
+        # through to the Actions log.
+        #
+        # The `always()` prefix is load-bearing: GitHub Actions short-circuits
+        # subsequent steps the moment any earlier step fails (default
+        # behaviour), so without it this step would be skipped on the exact
+        # event we want it to fire — drift detected.  `always()` makes the
+        # job's failure state irrelevant to step evaluation; the explicit
+        # outcome check below is what actually gates whether we post.
+        if: always() && steps.drift-check.outcome == 'failure' && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const output = fs.readFileSync('/tmp/drift_output.txt', 'utf8');
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: [
+                '## ⚠️ Schema drift detected',
+                '',
+                '`docs/schema.sql` is out of sync with the SQLAlchemy models.',
+                '',
+                '```',
+                output.trim(),
+                '```',
+                '',
+                'Fix with:',
+                '```bash',
+                'uv run python -m mcp_scripts.generate_schema_sql --models "' + process.env.MODELS_SPEC + '" --output docs/schema.sql',
+                'git add docs/schema.sql && git commit -m "Regenerate docs/schema.sql"',
+                '```',
+              ].join('\n'),
+            });
+        env:
+          MODELS_SPEC: ${{ env.MODELS_SPEC }}

@@ -1,0 +1,58 @@
+cff-version: 1.2.0
+title: "APEX-Agents"
+message: "If you use this software, please cite our paper."
+type: software
+repository-code: "https://github.com/Mercor-Intelligence/archipelago"
+license: Apache-2.0
+preferred-citation:
+  type: article
+  title: "APEX-Agents"
+  year: 2026
+  url: "https://arxiv.org/abs/2601.14242"
+  identifiers:
+    - type: other
+      value: "arXiv:2601.14242"
+      description: "arXiv preprint"
+  authors:
+    - family-names: Vidgen
+      given-names: Bertie
+    - family-names: Mann
+      given-names: Austin
+    - family-names: Fennelly
+      given-names: Abby
+    - family-names: Stanly
+      given-names: John Wright
+    - family-names: Rothman
+      given-names: Lucas
+    - family-names: Burstein
+      given-names: Marco
+    - family-names: Benchek
+      given-names: Julien
+    - family-names: Ostrofsky
+      given-names: David
+    - family-names: Ravichandran
+      given-names: Anirudh
+    - family-names: Sur
+      given-names: Debnil
+    - family-names: Venugopal
+      given-names: Neel
+    - family-names: Hsia
+      given-names: Alannah
+    - family-names: Robinson
+      given-names: Isaac
+    - family-names: Huang
+      given-names: Calix
+    - family-names: Varones
+      given-names: Olivia
+    - family-names: Khan
+      given-names: Daniyal
+    - family-names: Haines
+      given-names: Michael
+    - family-names: Richards
+      given-names: Zach
+    - family-names: Mahapatra
+      given-names: Chirag
+    - family-names: Foody
+      given-names: Brendan
+    - family-names: Nitski
+      given-names: Osvald

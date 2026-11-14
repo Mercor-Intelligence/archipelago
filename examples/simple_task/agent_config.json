@@ -1,0 +1,8 @@
+{
+  "agent_config_id": "react_toolbelt_agent",
+  "agent_name": "React Toolbelt Agent",
+  "agent_config_values": {
+    "timeout": 3600,
+    "max_steps": 20
+  }
+}

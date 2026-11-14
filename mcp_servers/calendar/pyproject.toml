@@ -1,0 +1,92 @@
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["mcp_servers/calendar_server/tests"]
+pythonpath = ["mcp_servers/calendar_server"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.coverage.run]
+source = ["mcp_servers/calendar_server/tools"]
+omit = [
+    "*/tests/*",
+    "*/test_*.py",
+    "*/__pycache__/*",
+]
+
+[tool.coverage.report]
+precision = 2
+show_missing = true
+skip_covered = false
+
+[project]
+name = "mercor-rls-calendar"
+version = "0.1.0"
+description = "Mercor RLS Calendar MCP"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = ["aioboto3>=15.4.0", "aiobotocore>=2.25.0", "asyncer>=0.0.9", "asyncpg>=0.30.0", "datadog-api-client>=2.44.0", "fastmcp>=3.3.1,<3.4", "httpx>=0.27.0", "litellm==1.106.5", "loguru>=0.7.3", "mercor-mcp-shared", "pydantic-settings>=2.11.0", "redis>=6.4.0", "icalendar>=6.1.0"]
+
+[dependency-groups]
+dev = [
+    "basedpyright>=1.31.6",
+    "ruff>=0.14.0",
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest-cov>=6.0.0",
+]
+
+[tool.basedpyright]
+typeCheckingMode = "recommended"
+reportUnusedCallResult = "none"
+failOnWarnings = false
+exclude = ["scripts", "packages", "tests", "modal_labs.py", "modal_helpers.py", ".venv", ".git", ".tmp", "venv", "mcp_servers", "smoke_test"]
+
+[tool.ruff.lint]
+# Enable linting rules
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "W",   # pycodestyle warnings
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade
+]
+
+ignore = [
+    "E501",  # Line too long
+]
+
+
+[tool.uv]
+# litellm 1.83.4+ pins python-dotenv==1.0.1 while fastmcp requires >=1.1.0;
+# override to break the conflict (runtime works fine with python-dotenv 1.1.x).
+override-dependencies = [
+    "python-dotenv>=1.0.1",
+    # aioboto3 15.5.0 (its newest release) pins aiobotocore[boto3]==2.25.1,
+    # which caps boto3/botocore below the >=1.43.117 that litellm 1.106.5
+    # needs. Nothing in this repo imports either SDK, so force the newer boto3
+    # rather than hold litellm on a firewall-blocked release.
+    "boto3>=1.43.117",
+    "botocore>=1.43.117",
+]
+# Floors for transitive packages the package firewall refuses to serve
+# (critical CVEs). Constraints rather than dependencies: they bound the
+# resolution without making the app declare a direct dependency it never
+# imports.
+constraint-dependencies = [
+    "anyio>=4.15.1",
+    "authlib>=1.9.1",
+    "certifi>=2026.10.23",
+    "pyjwt>=2.15.1",
+]
+
+[tool.uv.sources]
+mercor-mcp-shared = { path = "packages/mercor-mcp-shared" }
+
+# Public PyPI via the Socket package firewall. Auth comes from ~/.netrc
+#
+# secret and Docker mounts it as a BuildKit secret.
+[[tool.uv.index]]
+name = "firewall"
+url = "https://pypi.org/simple"
+default = true
