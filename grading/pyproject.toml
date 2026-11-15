@@ -66,7 +66,7 @@ dependencies = [
     "pylatexenc==2.10",                # LaTeX-to-text for MonitorBench's vendored DeepScaleR grader
     "sympy==1.13.3",                   # MonitorBench's DeepScaleR grader imports it at load time; same pin as data-science
     "rouge-score==0.1.2",
-    "nltk==3.10.3",
+    "nltk==3.10.4",
     "langdetect==1.0.9",
     "immutabledict==4.2.2",
     "absl-py==2.3.1",
