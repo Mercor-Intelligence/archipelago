@@ -1,0 +1,17 @@
+# Local state that must never be copied into a built image: a host-built venv
+# has absolute paths and host-arch wheels, and stale bytecode can shadow source.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.git/
+dist/
+build/
+coverage.xml
+.coverage
+node_modules/
+rls-ui-dev/node_modules/
