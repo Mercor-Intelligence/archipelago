@@ -14,6 +14,17 @@ from utils.path_utils import (
     validate_real_path as _validate_real_path,
 )
 
+# Extension fallback for bytes with no recognizable signature (issue #205).
+# Sniffing takes precedence; this map is only used when sniffing is
+# inconclusive, and only for extensions already validated below.
+EXTENSION_FORMATS = {
+    "png": "png",
+    "jpg": "jpeg",
+    "jpeg": "jpeg",
+    "gif": "gif",
+    "webp": "webp",
+}
+
 
 def _sniff_image_format(image_data: bytes) -> str | None:
     """Detect the image format from magic bytes, not the filename.
@@ -53,9 +64,9 @@ def read_image_file(
 
     # Validate file extension
     file_ext = file_path.lower().split(".")[-1]
-    if file_ext not in ("png", "jpg", "jpeg", "gif", "webp"):
+    if file_ext not in EXTENSION_FORMATS:
         raise ValueError(
-            f"Unsupported image format: {file_ext}. Supported formats: png, jpg, jpeg, gif, webp"
+            f"Unsupported image format: {file_ext}. Supported formats: {', '.join(EXTENSION_FORMATS)}"
         )
 
     try:
@@ -77,19 +88,7 @@ def read_image_file(
         with open(real_path, "rb") as f:
             image_data = f.read()
 
-        # Determine image format from the actual bytes first: the extension
-        # may not match the content (issue #205). Fall back to the extension
-        # only when the bytes carry no recognizable signature.
-        image_format = (
-            _sniff_image_format(image_data)
-            or {
-                "png": "png",
-                "jpg": "jpeg",
-                "jpeg": "jpeg",
-                "gif": "gif",
-                "webp": "webp",
-            }[file_ext]
-        )
+        image_format = _sniff_image_format(image_data) or EXTENSION_FORMATS[file_ext]
 
         return Image(data=image_data, format=image_format)
 

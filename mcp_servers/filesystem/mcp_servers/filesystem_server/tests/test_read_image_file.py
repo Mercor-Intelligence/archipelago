@@ -37,17 +37,38 @@ async def test_jpeg_named_png_returns_jpeg(sandbox):
 
 
 @pytest.mark.asyncio
-async def test_shipped_simple_task_fixtures_are_real_pngs(sandbox):
-    """The shipped fixtures were JPEG bytes named .png (#205); they are now
-    re-encoded as genuine PNGs, so they must be typed png."""
+async def test_png_named_jpg_returns_png(sandbox):
+    """Sniffing must win in both directions: PNG content named .jpg is png."""
+    (sandbox / "photo.jpg").write_bytes(_make_image_bytes("PNG"))
+
+    result = await read_image_file("/photo.jpg")
+
+    assert result._format == "png"
+    assert result.to_image_content().mimeType == "image/png"
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize(
+    "fixture_path",
+    [
+        "filesystem/animals/xk92m/qz7fw.png",
+        "filesystem/animals/jh21q/pl4nc.png",
+        "filesystem/animals/ab47z/rt3ky.png",
+        "filesystem/animals/mn83p/jw9vb.png",
+    ],
+)
+async def test_shipped_simple_task_fixtures_are_real_pngs(sandbox, fixture_path):
+    """All four shipped fixtures were JPEG bytes named .png (#205); they are
+    now re-encoded as genuine PNGs, so each must be typed png."""
     with zipfile.ZipFile(
         REPO_ROOT / "examples/simple_task/original_snapshot.zip"
     ) as zf:
-        png_bytes = zf.read("filesystem/animals/xk92m/qz7fw.png")
+        png_bytes = zf.read(fixture_path)
     assert png_bytes[:8] == b"\x89PNG\r\n\x1a\n"
-    (sandbox / "qz7fw.png").write_bytes(png_bytes)
+    filename = Path(fixture_path).name
+    (sandbox / filename).write_bytes(png_bytes)
 
-    result = await read_image_file("/qz7fw.png")
+    result = await read_image_file(f"/{filename}")
 
     assert result._format == "png"
     assert result.to_image_content().mimeType == "image/png"
