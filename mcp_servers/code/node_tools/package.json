@@ -1,0 +1,13 @@
+{
+  "name": "code-execution-node-tools",
+  "private": true,
+  "description": "Node modules preinstalled for sandboxed model code (see mise.toml [tasks.install]). Exact pins; regenerate package-lock.json with `npm install --package-lock-only --ignore-scripts` after editing.",
+  "dependencies": {
+    "docx": "9.7.2",
+    "pptxgenjs": "4.0.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-icons": "5.7.0",
+    "sharp": "0.35.4"
+  }
+}

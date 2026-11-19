@@ -1,0 +1,41 @@
+# Standard MCP Server Pre-commit Configuration
+# Install: pre-commit install
+#
+# All hooks are provided by mercor-mcp-shared.  Pin `rev` to the same
+# release tag your pyproject.toml uses; update both together.
+#
+# The lint / format / typecheck hooks require mise (https://mise.jdx.dev).
+# If mise is not installed they print an install link and exit 1.
+#
+# The check-schema-drift hook is opt-in (uncomment it below).  It derives
+# the ground-truth schema from your SQLAlchemy models (no live database
+# needed) by calling Base.metadata.create_all() into a temp SQLite file
+# and diffing the result against docs/schema.sql.  Wire your Base import
+# path via args (see below).  If your code lives under mcp_servers/<name>/
+# rather than at the repo root, the hook automatically reads
+# [tool.pytest.ini_options].pythonpath from pyproject.toml so 'db.models:Base'
+# resolves without extra wiring.  Pass --models-root to override.
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: check-merge-conflict
+
+  - repo: https://github.com/Mercor-Intelligence/mercor-mcp-shared
+    rev: v3.0.1   # pin to the same tag as pyproject.toml
+    hooks:
+      - id: format
+      - id: lint
+      - id: typecheck
+      # Uncomment to enable schema drift detection (requires docs/schema.sql).
+      # Pass your SQLAlchemy declarative Base via --models in 'module:Attr' form.
+      # See: https://github.com/Mercor-Intelligence/mercor-mcp-shared#schema-drift
+      # - id: check-schema-drift
+      #   args: ["--models", "db.models:Base"]
