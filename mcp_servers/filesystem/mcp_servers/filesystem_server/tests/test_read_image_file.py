@@ -60,15 +60,14 @@ async def test_png_named_jpg_returns_png(sandbox):
 async def test_shipped_simple_task_fixtures_are_real_pngs(
     sandbox, fixture_path, width, height
 ):
-    """All four shipped fixtures were JPEG bytes named .png (#205); they are
-    now re-encoded as genuine PNGs, so each must decode as a PNG at its
-    original dimensions."""
+    """Each shipped fixture must decode as a PNG at its original dimensions."""
     with zipfile.ZipFile(
         REPO_ROOT / "examples/simple_task/original_snapshot.zip"
     ) as zf:
         png_bytes = zf.read(fixture_path)
     assert png_bytes[:8] == b"\x89PNG\r\n\x1a\n"
     with PILImage.open(io.BytesIO(png_bytes)) as image:
+        image.load()
         assert image.format == "PNG"
         assert image.size == (width, height)
     filename = Path(fixture_path).name
@@ -128,7 +127,7 @@ async def test_unknown_bytes_fall_back_to_extension(sandbox):
 async def test_truncated_input_falls_back_to_extension(
     sandbox, filename, data, expected_format
 ):
-    """Empty or truncated bytes carry no signature, so the extension wins."""
+    """Bytes with an incomplete signature fall back to the extension."""
     (sandbox / filename).write_bytes(data)
 
     result = await read_image_file(f"/{filename}")
