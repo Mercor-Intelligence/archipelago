@@ -15,6 +15,26 @@ from utils.path_utils import (
 )
 
 
+def _sniff_image_format(image_data: bytes) -> str | None:
+    """Detect the image format from magic bytes, not the filename.
+
+    The filename extension cannot be trusted: the shipped
+    ``examples/simple_task`` fixtures were JPEG bytes named ``.png``, and
+    sending them as ``image/png`` is rejected by Anthropic (issue #205).
+    Returns "png", "jpeg", "gif", or "webp", or None if the bytes do not
+    match a known signature.
+    """
+    if image_data.startswith(b"\x89PNG\r\n\x1a\n"):
+        return "png"
+    if image_data.startswith(b"\xff\xd8\xff"):
+        return "jpeg"
+    if image_data.startswith((b"GIF87a", b"GIF89a")):
+        return "gif"
+    if image_data.startswith(b"RIFF") and image_data[8:12] == b"WEBP":
+        return "webp"
+    return None
+
+
 @make_async_background
 def read_image_file(
     file_path: Annotated[
@@ -57,14 +77,19 @@ def read_image_file(
         with open(real_path, "rb") as f:
             image_data = f.read()
 
-        # Determine image format
-        image_format = {
-            "png": "png",
-            "jpg": "jpeg",
-            "jpeg": "jpeg",
-            "gif": "gif",
-            "webp": "webp",
-        }[file_ext]
+        # Determine image format from the actual bytes first: the extension
+        # may not match the content (issue #205). Fall back to the extension
+        # only when the bytes carry no recognizable signature.
+        image_format = (
+            _sniff_image_format(image_data)
+            or {
+                "png": "png",
+                "jpg": "jpeg",
+                "jpeg": "jpeg",
+                "gif": "gif",
+                "webp": "webp",
+            }[file_ext]
+        )
 
         return Image(data=image_data, format=image_format)
 
