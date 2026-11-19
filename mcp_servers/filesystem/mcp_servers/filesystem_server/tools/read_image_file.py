@@ -14,9 +14,7 @@ from utils.path_utils import (
     validate_real_path as _validate_real_path,
 )
 
-# Extension fallback for bytes with no recognizable signature (issue #205).
-# Sniffing takes precedence; this map is only used when sniffing is
-# inconclusive, and only for extensions already validated below.
+# Extension fallback when sniffing finds no signature (issue #205).
 EXTENSION_FORMATS = {
     "png": "png",
     "jpg": "jpeg",
@@ -27,13 +25,10 @@ EXTENSION_FORMATS = {
 
 
 def _sniff_image_format(image_data: bytes) -> str | None:
-    """Detect the image format from magic bytes, not the filename.
+    """Detect the image format from magic bytes, not the filename extension.
 
-    The filename extension cannot be trusted: the shipped
-    ``examples/simple_task`` fixtures were JPEG bytes named ``.png``, and
-    sending them as ``image/png`` is rejected by Anthropic (issue #205).
     Returns "png", "jpeg", "gif", or "webp", or None if the bytes do not
-    match a known signature.
+    match a known signature. See issue #205.
     """
     if image_data.startswith(b"\x89PNG\r\n\x1a\n"):
         return "png"
