@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "filesystem_server": {
+      "transport": "stdio",
+      "command": "python",
+      "args": [
+        "main.py"
+      ],
+      "cwd": "/app/mcp_servers/filesystem/mcp_servers/filesystem_server",
+      "env": {
+        "APP_FS_ROOT": "/filesystem",
+        "SERVER_NAME": "filesystem_server"
+      }
+    }
+  }
+}
