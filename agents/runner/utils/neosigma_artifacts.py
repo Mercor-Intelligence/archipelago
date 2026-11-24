@@ -1,5 +1,6 @@
 """Read and publish workspace snapshots outside the timed agent execution."""
 
+import asyncio
 import hashlib
 import json
 import os
@@ -10,14 +11,75 @@ from urllib.parse import urlsplit
 from uuid import uuid4
 
 import httpx
+from loguru import logger
 
 from runner.utils.signing import sign_env_runner_request
 
 _PART_BYTES = 16 * 1024 * 1024
+_PART_CONCURRENCY = 4
+_MAX_ATTEMPTS = 3
+_BACKOFF_SECONDS = 0.5
 
 
 class SnapshotUploadError(RuntimeError):
     """A workspace snapshot could not be published in full."""
+
+
+async def _request(
+    client: httpx.AsyncClient,
+    method: str,
+    url: str,
+    *,
+    accept: tuple[int, ...] = (),
+    **kwargs,
+) -> httpx.Response:
+    for attempt in range(_MAX_ATTEMPTS):
+        try:
+            response = await client.request(method, url, **kwargs)
+            if response.status_code in accept:
+                return response
+            response.raise_for_status()
+            return response
+        except httpx.HTTPError as error:
+            transient = isinstance(error, httpx.TransportError) or (
+                isinstance(error, httpx.HTTPStatusError)
+                and (
+                    error.response.status_code in (408, 429)
+                    or error.response.status_code >= 500
+                )
+            )
+            if not transient or attempt == _MAX_ATTEMPTS - 1:
+                raise
+            await asyncio.sleep(_BACKOFF_SECONDS * 2**attempt)
+    raise AssertionError("No request attempts")
+
+
+async def _rollback(client, base_url, headers, file_ids) -> None:
+    if not file_ids:
+        return
+    try:
+        async with asyncio.timeout(2):
+            for start in range(0, len(file_ids), _PART_CONCURRENCY):
+                results = await asyncio.gather(
+                    *(
+                        _request(
+                            client,
+                            "DELETE",
+                            f"{base_url}/files.delete",
+                            headers=headers,
+                            json={"file_id": file_id},
+                            accept=(404,),
+                        )
+                        for file_id in file_ids[start : start + _PART_CONCURRENCY]
+                    ),
+                    return_exceptions=True,
+                )
+                if any(isinstance(result, Exception) for result in results):
+                    logger.warning(
+                        "NeoSigma could not clean up some unpublished artifact files"
+                    )
+    except TimeoutError:
+        logger.warning("NeoSigma cleanup of unpublished artifact files timed out")
 
 
 async def read_workspace(sandbox_url: str, token: str | None) -> BinaryIO:
@@ -49,9 +111,13 @@ async def _upload_file(
     name: str,
     contents: bytes,
     media_type: str,
+    file_ids: list[str],
 ) -> str:
     file_id = str(uuid4())
-    prepared = await client.post(
+    file_ids.append(file_id)
+    prepared = await _request(
+        client,
+        "POST",
         f"{base_url}/files.create",
         headers=headers,
         json={
@@ -62,7 +128,6 @@ async def _upload_file(
             "size_bytes": len(contents),
         },
     )
-    prepared.raise_for_status()
     reservation = prepared.json()
     if (
         reservation["file"]["id"] != file_id
@@ -72,16 +137,22 @@ async def _upload_file(
     if urlsplit(reservation["upload_url"]).scheme != "https":
         raise SnapshotUploadError("NeoSigma returned an invalid upload URL")
 
-    uploaded = await client.put(
+    await _request(
+        client,
+        "PUT",
         reservation["upload_url"],
         headers=reservation["upload_headers"],
         content=contents,
+        # A retry may see the object from a PUT whose response was lost.
+        accept=(412,),
     )
-    uploaded.raise_for_status()
-    confirmed = await client.post(
-        f"{base_url}/files.complete", headers=headers, json={"file_id": file_id}
+    confirmed = await _request(
+        client,
+        "POST",
+        f"{base_url}/files.complete",
+        headers=headers,
+        json={"file_id": file_id},
     )
-    confirmed.raise_for_status()
     file = confirmed.json()["file"]
     if file["id"] != file_id or file["status"] != "complete":
         raise SnapshotUploadError("NeoSigma did not confirm the snapshot file")
@@ -103,18 +174,21 @@ async def publish_artifact(
         raise SnapshotUploadError("The environment returned an empty snapshot stream")
 
     async with httpx.AsyncClient(timeout=30) as client:
-        response = await client.get(
-            f"{base_url}/projects.get", headers=headers, params={"project_id": project}
+        response = await _request(
+            client,
+            "GET",
+            f"{base_url}/projects.get",
+            headers=headers,
+            params={"project_id": project},
         )
-        response.raise_for_status()
         workspace_id = response.json()["project"]["workspace_id"]
         if not workspace_id:
             raise SnapshotUploadError("The NeoSigma project has no workspace")
 
-        parts = []
         count = (size + _PART_BYTES - 1) // _PART_BYTES
-        for index in range(1, count + 1):
-            data = snapshot.read(_PART_BYTES)
+        file_ids: list[str] = []
+
+        async def upload_part(index: int, data: bytes):
             filename = name if count == 1 else f"{name}.part-{index:05d}"
             try:
                 location = await _upload_file(
@@ -125,31 +199,51 @@ async def publish_artifact(
                     filename,
                     data,
                     media_type if count == 1 else "application/octet-stream",
+                    file_ids,
                 )
             except Exception as exc:
                 raise SnapshotUploadError(
                     f"Snapshot part {index} of {count} was not confirmed"
                 ) from exc
-            parts.append(
-                {
-                    "name": filename,
-                    "location": location,
-                    "size_bytes": len(data),
-                    "sha256": hashlib.sha256(data).hexdigest(),
-                }
-            )
-        if count == 1:
-            return parts[0]["location"], name
+            return {
+                "name": filename,
+                "location": location,
+                "size_bytes": len(data),
+                "sha256": hashlib.sha256(data).hexdigest(),
+            }
 
-        manifest_name = f"{PurePosixPath(name).name}.manifest.json"
-        manifest = json.dumps({"filename": name, "parts": parts}).encode()
-        location = await _upload_file(
-            client,
-            base_url,
-            headers,
-            workspace_id,
-            manifest_name,
-            manifest,
-            "application/json",
-        )
-        return location, manifest_name
+        try:
+            parts = []
+            for start in range(1, count + 1, _PART_CONCURRENCY):
+                batch = await asyncio.gather(
+                    *(
+                        upload_part(index, snapshot.read(_PART_BYTES))
+                        for index in range(
+                            start, min(count + 1, start + _PART_CONCURRENCY)
+                        )
+                    ),
+                    return_exceptions=True,
+                )
+                for part in batch:
+                    if isinstance(part, BaseException):
+                        raise part
+                    parts.append(part)
+            if count == 1:
+                return parts[0]["location"], name
+
+            manifest_name = f"{PurePosixPath(name).name}.manifest.json"
+            manifest = json.dumps({"filename": name, "parts": parts}).encode()
+            location = await _upload_file(
+                client,
+                base_url,
+                headers,
+                workspace_id,
+                manifest_name,
+                manifest,
+                "application/json",
+                file_ids,
+            )
+            return location, manifest_name
+        except BaseException:
+            await _rollback(client, base_url, headers, file_ids)
+            raise

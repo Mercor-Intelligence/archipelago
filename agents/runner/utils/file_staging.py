@@ -62,6 +62,7 @@ from pathlib import PurePosixPath
 from typing import Any
 
 from runner.agents.models import get_msg_content, get_msg_role
+from runner.utils.neosigma_tracing import record_staged_inputs
 from runner.utils.sandbox_files import (
     SandboxUploadError,
     upload_archive_to_filesystem,
@@ -376,6 +377,7 @@ async def stage_message_files(
             auth_token=auth_token,
             timeout=timeout,
         )
+        record_staged_inputs(archive)
         notice = {"type": "text", "text": STAGED_FILES_NOTICE + "\n".join(paths)}
         staged.append({**dict(msg), "content": [*kept_content, notice]})
     return staged

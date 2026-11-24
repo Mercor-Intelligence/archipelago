@@ -1,6 +1,8 @@
 import asyncio
 import hashlib
 import json
+import tarfile
+from collections import Counter
 from io import BytesIO
 
 import httpx
@@ -10,7 +12,7 @@ from opentelemetry.trace import StatusCode
 from runner import main as runner_main
 from runner.agents.models import AgentStatus, AgentTrajectoryOutput
 from runner.models import AgentConfig
-from runner.utils import neosigma_artifacts, neosigma_tracing
+from runner.utils import file_staging, neosigma_artifacts, neosigma_tracing
 
 neosigma = pytest.importorskip("neosigma")
 sdk_spans = pytest.importorskip("neosigma.spans")
@@ -33,21 +35,35 @@ def install_mock_transport(monkeypatch, respond):
 
 
 @pytest.mark.asyncio
-@pytest.mark.parametrize("failed_part", [None, 3])
+@pytest.mark.parametrize("failed_part", [None, 3, "timeout"])
 async def test_large_artifact_confirmed_before_publication(monkeypatch, failed_part):
     monkeypatch.setenv("NEOSIGMA_API_KEY", "fixture")
     monkeypatch.setenv("NEOSIGMA_PROJECT", "fixture")
     monkeypatch.setattr(neosigma_artifacts, "_PART_BYTES", 4)
+    monkeypatch.setattr(neosigma_artifacts, "_BACKOFF_SECONDS", 0)
     reservations = {}
     stored = {}
     completed = []
+    deleted = []
+    attempts = Counter()
 
-    def respond(request):
+    async def respond(request):
         if request.url.host == "storage.example":
             assert "Authorization" not in request.headers
             file_id = request.url.path.rsplit("/", 1)[1]
             assert len(request.content) == reservations[file_id]["size_bytes"]
+            attempts["PUT", file_id] += 1
+            if (
+                reservations[file_id]["filename"].endswith("part-00001")
+                and attempts["PUT", file_id] == 2
+            ):
+                return httpx.Response(412)
             stored[file_id] = request.content
+            if (
+                reservations[file_id]["filename"].endswith("part-00001")
+                and attempts["PUT", file_id] == 1
+            ):
+                raise httpx.ReadError("response lost", request=request)
             return httpx.Response(200)
 
         assert request.headers["Authorization"] == "Bearer fixture"
@@ -57,9 +73,16 @@ async def test_large_artifact_confirmed_before_publication(monkeypatch, failed_p
 
         payload = json.loads(request.content)
         file_id = payload["file_id"]
+        attempts[request.url.path, file_id] += 1
         if request.url.path == "/files.create":
-            assert set(completed) == reservations.keys()
+            if payload["filename"].endswith("manifest.json"):
+                assert len(completed) == 128
             reservations[file_id] = payload
+            if (
+                payload["filename"].endswith("part-00001")
+                and attempts[request.url.path, file_id] == 1
+            ):
+                return httpx.Response(503)
             return httpx.Response(
                 200,
                 json={
@@ -68,24 +91,49 @@ async def test_large_artifact_confirmed_before_publication(monkeypatch, failed_p
                     "upload_headers": {},
                 },
             )
+        if request.url.path == "/files.delete":
+            deleted.append(file_id)
+            stored.pop(file_id, None)
+            return httpx.Response(200)
         assert request.url.path == "/files.complete"
         assert file_id in stored
-        if failed_part == len(reservations):
+        filename = reservations[file_id]["filename"]
+        if failed_part is not None and filename.endswith("part-00003"):
+            if failed_part == "timeout":
+                await asyncio.Event().wait()
             return httpx.Response(503)
+        if filename.endswith("part-00001") and attempts[request.url.path, file_id] == 1:
+            return httpx.Response(429)
         completed.append(file_id)
         return httpx.Response(200, json={"file": {"id": file_id, "status": "complete"}})
 
     install_mock_transport(monkeypatch, respond)
     content = bytes(range(256)) * 2
     if failed_part:
-        with pytest.raises(
-            neosigma_artifacts.SnapshotUploadError, match="part 3 of 128"
-        ):
-            await neosigma_artifacts.publish_artifact(
-                BytesIO(content), "world.tar.gz", "application/gzip"
-            )
-        assert len(completed) == 2
-        assert len(reservations) == 3
+        if failed_part == "timeout":
+            with pytest.raises(TimeoutError):
+                async with asyncio.timeout(0.25):
+                    await neosigma_artifacts.publish_artifact(
+                        BytesIO(content), "world.tar.gz", "application/gzip"
+                    )
+        else:
+            with pytest.raises(
+                neosigma_artifacts.SnapshotUploadError, match="part 3 of 128"
+            ):
+                await neosigma_artifacts.publish_artifact(
+                    BytesIO(content), "world.tar.gz", "application/gzip"
+                )
+        assert len(completed) == 3
+        assert set(deleted) == reservations.keys()
+        assert not stored
+        failed = next(
+            key
+            for key, value in reservations.items()
+            if value["filename"].endswith("part-00003")
+        )
+        assert attempts["/files.complete", failed] == (
+            1 if failed_part == "timeout" else 3
+        )
         return
 
     location, name = await neosigma_artifacts.publish_artifact(
@@ -93,6 +141,14 @@ async def test_large_artifact_confirmed_before_publication(monkeypatch, failed_p
     )
     assert name == "world.tar.gz.manifest.json"
     assert len(completed) == 129
+    first = next(
+        key
+        for key, value in reservations.items()
+        if value["filename"].endswith("part-00001")
+    )
+    assert [
+        attempts[phase, first] for phase in ("/files.create", "PUT", "/files.complete")
+    ] == [2, 2, 2]
     manifest = json.loads(stored[location.rsplit("/", 1)[1]])
     rebuilt = bytearray()
     for part in manifest["parts"]:
@@ -143,19 +199,29 @@ async def run_fixture(monkeypatch, agent):
 
 
 @pytest.mark.asyncio
-async def test_trace_only_reads_world_at_run_boundaries(monkeypatch):
+@pytest.mark.parametrize("stall", [False, True])
+async def test_trace_only_reads_world_at_run_boundaries(monkeypatch, request, stall):
     monkeypatch.setenv("NEOSIGMA_API_KEY", "fixture")
+    monkeypatch.setenv("NEOSIGMA_CAPTURE_TIMEOUT_SECONDS", "0.25")
     exporter = InMemorySpanExporter()
     provider = TracerProvider()
     provider.add_span_processor(SimpleSpanProcessor(exporter))
 
     def init():
         neosigma.init(api_key="", project="fixture", tracer_provider=provider)
+        request.addfinalizer(neosigma.shutdown)
         return neosigma
 
     monkeypatch.setattr(neosigma_tracing, "_init", init)
     events = []
     refs = []
+    staged = []
+
+    async def stage(archive, **kwargs):
+        events.append("staged")
+        staged.append(archive)
+
+    monkeypatch.setattr(file_staging, "upload_turn_archive", stage)
 
     async def read(_url, _token):
         events.append("workspace")
@@ -165,6 +231,8 @@ async def test_trace_only_reads_world_at_run_boundaries(monkeypatch):
     async def publish(content, name, media_type):
         events.append(("published", name, media_type, content.read()))
         if name == "final-workspace.tar.gz":
+            if stall:
+                await asyncio.Event().wait()
             raise neosigma_artifacts.SnapshotUploadError(
                 "Snapshot part 2 of 2 was not confirmed"
             )
@@ -173,7 +241,9 @@ async def test_trace_only_reads_world_at_run_boundaries(monkeypatch):
     monkeypatch.setattr(neosigma_tracing, "read_workspace", read)
     monkeypatch.setattr(neosigma_tracing, "publish_artifact", publish)
     monkeypatch.setattr(
-        neosigma, "artifact", lambda location, **kwargs: refs.append(location)
+        neosigma,
+        "artifact",
+        lambda location, **kwargs: refs.append((location, kwargs["direction"])),
     )
 
     @neosigma_tracing.trace_model
@@ -186,6 +256,24 @@ async def test_trace_only_reads_world_at_run_boundaries(monkeypatch):
         return {"success": True}
 
     async def agent(run_input):
+        await file_staging.stage_message_files(
+            [
+                {
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "file",
+                            "file": {
+                                "filename": "input.txt",
+                                "file_data": "YWJj",
+                            },
+                        }
+                    ],
+                }
+            ],
+            mcp_gateway_url=run_input.mcp_gateway_url,
+            auth_token=run_input.mcp_gateway_auth_token,
+        )
         await model(
             run_input.orchestrator_model,
             run_input.initial_messages,
@@ -203,23 +291,44 @@ async def test_trace_only_reads_world_at_run_boundaries(monkeypatch):
             final_answer="partial answer",
         )
 
-    result = await run_fixture(monkeypatch, agent)
+    result = await asyncio.wait_for(run_fixture(monkeypatch, agent), 2)
     assert result.status == AgentStatus.FAILED
-    assert events[:5] == ["workspace", "model", "tool", "tool", "workspace"]
-    assert len(events[5:]) == 4
-    assert "fixture:starting-workspace.tar.gz" in refs
-    assert "fixture:final-workspace.tar.gz" not in refs
+    assert events[:6] == ["workspace", "staged", "model", "tool", "tool", "workspace"]
+    assert events[6] == (
+        "published",
+        "staged-inputs-001.tar.gz",
+        "application/gzip",
+        staged[0],
+    )
+    with tarfile.open(fileobj=BytesIO(staged[0]), mode="r:gz") as archive:
+        assert archive.extractfile("turn_inputs/turn_1/input.txt").read() == b"abc"
+    assert ("fixture:staged-inputs-001.tar.gz", "input") in refs
+    assert ("fixture:starting-workspace.tar.gz", "input") in refs
+    assert ("fixture:final-workspace.tar.gz", "output") not in refs
 
     spans = exporter.get_finished_spans()
     (root,) = [span for span in spans if span.parent is None]
     assert root.status.status_code == StatusCode.ERROR
     assert root.attributes["archipelago.status"] == "failed"
-    assert root.attributes["archipelago.artifacts.final-workspace.tar.gz.error"] == (
-        "Snapshot part 2 of 2 was not confirmed"
-    )
+    if stall:
+        assert (
+            root.attributes["archipelago.artifacts.after-run.error"] == "TimeoutError"
+        )
+    else:
+        assert len(events[6:]) == 5
+        assert root.attributes[
+            "archipelago.artifacts.final-workspace.tar.gz.error"
+        ] == ("Snapshot part 2 of 2 was not confirmed")
     children = [span for span in spans if span.parent is not None]
     assert {span.name for span in children}.issuperset({"first", "second"})
     assert all(span.parent.span_id == root.context.span_id for span in children)
+    (model_span,) = [
+        span for span in children if "archipelago.tool_schemas" in span.attributes
+    ]
+    assert json.loads(model_span.attributes["archipelago.tool_schemas"]) == [
+        {"name": "write"}
+    ]
+    assert "tool_schemas" not in model_span.attributes["gen_ai.prompt"]
 
 
 def sdk_failure(*args, **kwargs):
@@ -264,3 +373,31 @@ async def test_sdk_turn_setup_failure_preserves_run_result(monkeypatch, failure)
 
     result = await run_fixture(monkeypatch, agent)
     assert result.status == AgentStatus.COMPLETED
+
+
+@pytest.mark.asyncio
+async def test_cli_persists_result_before_flushing_traces(monkeypatch):
+    events = []
+    outcome = AgentTrajectoryOutput(
+        messages=[], status=AgentStatus.COMPLETED, time_elapsed=0
+    )
+
+    async def run():
+        return outcome
+
+    def persist(result):
+        assert result is outcome
+        events.append("persist")
+
+    async def flush():
+        events.append("flush")
+
+    async def teardown():
+        events.append("teardown")
+
+    monkeypatch.setattr(runner_main, "flush_traces", flush)
+    result = await runner_main.run_and_persist(
+        trajectory_id="fixture", run=run, persist=persist, teardown=teardown
+    )
+    assert result is outcome
+    assert events == ["persist", "flush", "teardown"]
