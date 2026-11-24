@@ -15,7 +15,6 @@ exclude-newer-span = "P7D"
 modal = "2026-10-04T00:00:00Z"
 
 [manifest]
-constraints = [{ name = "opentelemetry-api", specifier = "==1.39.1" }]
 overrides = [
     { name = "pillow", specifier = "==13.0.0" },
     { name = "python-dotenv", specifier = ">=1.0.1" },

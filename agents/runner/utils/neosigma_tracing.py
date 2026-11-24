@@ -4,13 +4,15 @@ import asyncio
 import base64
 import inspect
 import json
+import math
 import os
 import sys
 from contextlib import ExitStack
 from contextvars import ContextVar
 from functools import cache, wraps
 from io import BytesIO
-from typing import Any
+from tempfile import TemporaryFile
+from typing import Any, BinaryIO
 
 from litellm.experimental_mcp_client import call_openai_tool as _call_openai_tool
 from loguru import logger
@@ -23,6 +25,10 @@ from runner.utils.neosigma_artifacts import (
 )
 
 _active = ContextVar("neosigma_trace_active", default=False)
+_staging = ContextVar[tuple[ExitStack, list[BinaryIO]] | None](
+    "neosigma_staging", default=None
+)
+_CAPTURE_TIMEOUT_SECONDS = 30.0
 _secrets = {
     "authorization",
     "api_key",
@@ -43,6 +49,22 @@ def _artifacts_enabled() -> bool:
     )
 
 
+def _capture_timeout() -> float:
+    value = os.getenv("NEOSIGMA_CAPTURE_TIMEOUT_SECONDS")
+    if value is not None:
+        try:
+            seconds = float(value)
+            if math.isfinite(seconds) and seconds > 0:
+                return seconds
+        except ValueError:
+            pass
+        logger.warning(
+            "Invalid NeoSigma capture timeout; using {} seconds",
+            _CAPTURE_TIMEOUT_SECONDS,
+        )
+    return _CAPTURE_TIMEOUT_SECONDS
+
+
 def _observe(operation, call, *args, **kwargs):
     try:
         return call(*args, **kwargs)
@@ -57,6 +79,29 @@ def _init():
 
     neosigma.init()
     return neosigma
+
+
+async def flush_traces() -> None:
+    """Flush batch exports after the CLI has persisted the trajectory result."""
+    try:
+        if _init.cache_info().currsize:
+            await asyncio.to_thread(_init().flush)
+    except Exception as exc:
+        logger.warning("NeoSigma flush failed ({})", type(exc).__name__)
+
+
+def record_staged_inputs(archive: bytes) -> None:
+    """Record the exact archive successfully staged by the runner as task input."""
+    if state := _staging.get():
+        files, inputs = state
+
+        def record():
+            file = files.enter_context(TemporaryFile())
+            file.write(archive)
+            file.seek(0)
+            inputs.append(file)
+
+        _observe("staged input capture", record)
 
 
 def _recordable(value: Any) -> Any:
@@ -110,6 +155,49 @@ async def _attach(sdk, turn, content, name, direction, media_type):
         sdk.artifact(location, name=display_name, direction=direction)
     except Exception as exc:
         _capture_error(turn, name, exc)
+
+
+async def _publish_evidence(sdk, turn, starting, final, staged, messages, result):
+    for index, archive in enumerate(staged, 1):
+        await _attach(
+            sdk,
+            turn,
+            archive,
+            f"staged-inputs-{index:03d}.tar.gz",
+            "input",
+            "application/gzip",
+        )
+    await _attach(
+        sdk, turn, starting, "starting-workspace.tar.gz", "input", "application/gzip"
+    )
+    await _attach(
+        sdk, turn, final, "final-workspace.tar.gz", "output", "application/gzip"
+    )
+    initial = await asyncio.to_thread(
+        _observe, "initial message encoding", _json, messages
+    )
+    if initial is not None:
+        await _attach(
+            sdk,
+            turn,
+            BytesIO(initial.encode()),
+            "initial-messages.json",
+            "input",
+            "application/json",
+        )
+    if result is not None:
+        transcript = await asyncio.to_thread(
+            _observe, "trajectory encoding", _json, result
+        )
+        if transcript is not None:
+            await _attach(
+                sdk,
+                turn,
+                BytesIO(transcript.encode()),
+                "trajectory-result.json",
+                "output",
+                "application/json",
+            )
 
 
 def _finish_result(turn, result, trajectory_id: str) -> None:
@@ -182,6 +270,11 @@ def trace_agent_run(run):
 
         active = _active.set(True)
         files = ExitStack()
+        capture = _artifacts_enabled()
+        timeout = _capture_timeout() if capture else _CAPTURE_TIMEOUT_SECONDS
+        staged: list[BinaryIO] = []
+        staging = _staging.set((files, staged) if capture else None)
+        starting = None
         result = None
         try:
             _observe(
@@ -189,56 +282,37 @@ def trace_agent_run(run):
                 turn.set_attributes,
                 {"archipelago.model": fields["orchestrator_model"]},
             )
-            starting = await _collect_workspace(turn, "starting", gateway, auth_token)
-            if starting is not None:
-                files.enter_context(starting)
+            if capture:
+                try:
+                    async with asyncio.timeout(timeout):
+                        starting = await _collect_workspace(
+                            turn, "starting", gateway, auth_token
+                        )
+                    if starting is not None:
+                        files.enter_context(starting)
+                except TimeoutError as exc:
+                    _capture_error(turn, "starting", exc)
             try:
                 result = await run(*args, **kwargs)
                 _observe("turn outcome", _finish_result, turn, result, trajectory_id)
                 return result
             finally:
-                final = await _collect_workspace(turn, "final", gateway, auth_token)
-                if final is not None:
-                    files.enter_context(final)
-                await _attach(
-                    sdk,
-                    turn,
-                    starting,
-                    "starting-workspace.tar.gz",
-                    "input",
-                    "application/gzip",
-                )
-                await _attach(
-                    sdk,
-                    turn,
-                    final,
-                    "final-workspace.tar.gz",
-                    "output",
-                    "application/gzip",
-                )
-                if _artifacts_enabled():
-                    initial = _observe("initial message encoding", _json, messages)
-                    transcript = _observe("trajectory encoding", _json, result)
-                    if initial is not None:
-                        await _attach(
-                            sdk,
-                            turn,
-                            BytesIO(initial.encode()),
-                            "initial-messages.json",
-                            "input",
-                            "application/json",
-                        )
-                    if result is not None and transcript is not None:
-                        await _attach(
-                            sdk,
-                            turn,
-                            BytesIO(transcript.encode()),
-                            "trajectory-result.json",
-                            "output",
-                            "application/json",
-                        )
+                if capture:
+                    try:
+                        async with asyncio.timeout(timeout):
+                            final = await _collect_workspace(
+                                turn, "final", gateway, auth_token
+                            )
+                            if final is not None:
+                                files.enter_context(final)
+                            await _publish_evidence(
+                                sdk, turn, starting, final, staged, messages, result
+                            )
+                    except TimeoutError as exc:
+                        _capture_error(turn, "after-run", exc)
         finally:
             _observe("snapshot cleanup", files.close)
+            _staging.reset(staging)
             _active.reset(active)
             error = sys.exc_info()
             if error[1] is None and getattr(result, "status", None) in {
@@ -251,7 +325,6 @@ def trace_agent_run(run):
                 )
                 error = type(failure), failure, None
             _observe("turn completion", scope.__exit__, *error)
-            await asyncio.to_thread(_observe, "flush", sdk.flush)
 
     return wrapped
 
@@ -301,9 +374,16 @@ def trace_model(call):
                 PromptMessage(role=str(msg.get("role", "")), content=_json(msg))
                 for msg in _recordable(messages)
             ]
-            if tools:
-                prompt.append(PromptMessage(role="tool_schemas", content=_json(tools)))
-            return start_chat(ChatStart(model=model, prompt_messages=prompt))
+            schemas = _json(tools) if tools else None
+            span = start_chat(ChatStart(model=model, prompt_messages=prompt))
+            if schemas is not None:
+                _observe(
+                    "tool schemas",
+                    span.set_attribute,
+                    "archipelago.tool_schemas",
+                    schemas,
+                )
+            return span
 
         def finish(span, response, error):
             from neosigma.spans import end_chat

@@ -82,8 +82,6 @@ exclude-newer = "7 days"
 # re-pinned on every release. Paired with the `>=` floor in dependencies: a
 # re-lock picks up the newest client with no pyproject edit.
 exclude-newer-package = { modal = "2026-10-04T00:00:00Z"  }
-# Keep the runner's existing OpenTelemetry API version with either extra selection.
-constraint-dependencies = ["opentelemetry-api==1.39.1"]
 override-dependencies = [
     # litellm 1.83.4+ pins python-dotenv==1.0.1 while fastmcp>=3.2.0 requires >=1.1.0;
     # override to break the conflict (runtime works fine with python-dotenv 1.1.x).

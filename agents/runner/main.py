@@ -48,7 +48,7 @@ from runner.utils.logging.terminal_error import (
     peek_terminal_fault,
 )
 from runner.utils.metrics import increment, modal_placement
-from runner.utils.neosigma_tracing import trace_agent_run
+from runner.utils.neosigma_tracing import flush_traces, trace_agent_run
 from runner.utils.progress_monitor import (
     DECLARED_BUDGET_SLACK_S,
     declared_backstop_s,
@@ -364,6 +364,7 @@ async def run_and_persist(
             if result.fault is None:
                 result.fault = peek_terminal_fault(trajectory_id)
         persist(result)
+        await flush_traces()
         return result
     finally:
         try:
