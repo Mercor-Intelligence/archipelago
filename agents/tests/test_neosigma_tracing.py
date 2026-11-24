@@ -1,214 +1,134 @@
+import asyncio
 import hashlib
 import json
-import tarfile
 from io import BytesIO
-from types import SimpleNamespace
-from zipfile import ZipFile
 
 import httpx
-import neosigma
 import pytest
-from opentelemetry.sdk.trace import TracerProvider
-from opentelemetry.sdk.trace.export import SimpleSpanProcessor
-from opentelemetry.sdk.trace.export.in_memory_span_exporter import InMemorySpanExporter
-from opentelemetry.trace import StatusCode, get_current_span
-from pydantic import BaseModel
+from opentelemetry.trace import StatusCode
 
 from runner import main as runner_main
 from runner.agents.models import AgentStatus, AgentTrajectoryOutput
 from runner.models import AgentConfig
 from runner.utils import neosigma_artifacts, neosigma_tracing
 
-
-def snapshot(files: dict[str, bytes]) -> bytes:
-    data = BytesIO()
-    with tarfile.open(fileobj=data, mode="w:gz") as archive:
-        for path, contents in files.items():
-            member = tarfile.TarInfo(path)
-            member.size = len(contents)
-            member.mode = 0o750
-            archive.addfile(member, BytesIO(contents))
-    return data.getvalue()
-
-
-def test_snapshot_delta_retains_relative_paths_empty_files_and_deletions():
-    destination = BytesIO()
-    current, changed, deleted = neosigma_artifacts.workspace_delta(
-        BytesIO(
-            snapshot(
-                {
-                    "filesystem/subdir/output.txt": b"written",
-                    "filesystem/empty": b"",
-                    ".apps_data/expert.json": b"private",
-                    "filesystem/../../secrets": b"outside workspace",
-                    "filesystem/tests/test.sh": b"reserved",
-                    "filesystem/steps/2/solution/reference.txt": b"reserved",
-                }
-            )
-        ),
-        {
-            "removed.txt": ("old digest", 0o644),
-            "subdir/output.txt": (hashlib.sha256(b"written").hexdigest(), 0o644),
-        },
-        destination,
-    )
-    assert set(current) == {"subdir/output.txt", "empty"}
-    assert set(changed) == set(current)
-    assert deleted == ["removed.txt"]
-    with ZipFile(destination) as archive:
-        assert archive.read("files/subdir/output.txt") == b"written"
-        assert archive.read("files/empty") == b""
-        assert (
-            archive.getinfo("files/subdir/output.txt").external_attr >> 16 & 0o777
-            == 0o750
-        )
-        assert json.loads(archive.read("manifest.json")) == {
-            "files": {
-                path: {"sha256": digest, "mode": mode}
-                for path, (digest, mode) in current.items()
-            },
-            "deleted": deleted,
-        }
+neosigma = pytest.importorskip("neosigma")
+sdk_spans = pytest.importorskip("neosigma.spans")
+TracerProvider = pytest.importorskip("opentelemetry.sdk.trace").TracerProvider
+SimpleSpanProcessor = pytest.importorskip(
+    "opentelemetry.sdk.trace.export"
+).SimpleSpanProcessor
+InMemorySpanExporter = pytest.importorskip(
+    "opentelemetry.sdk.trace.export.in_memory_span_exporter"
+).InMemorySpanExporter
 
 
-def test_large_artifact_can_be_reassembled(monkeypatch):
-    uploads = []
-    monkeypatch.setattr(neosigma_artifacts, "_UPLOAD_PART_BYTES", 4)
-    monkeypatch.setattr(
-        neosigma,
-        "upload_artifact",
-        lambda data, *, name, direction: (
-            uploads.append((name, direction, data)) or SimpleNamespace(location=name)
-        ),
-    )
-    parts = neosigma_artifacts.upload_parts(
-        BytesIO(b"0123456789"), "state.zip", "input"
-    )
-    assert [name for _, name in parts] == [
-        "state.zip.part-00001",
-        "state.zip.part-00002",
-        "state.zip.part-00003",
-    ]
-    assert all(direction == "input" for _, direction, _ in uploads)
-    assert b"".join(data for _, _, data in uploads) == b"0123456789"
-
-
-class ModelReply(BaseModel):
-    response: str
-    usage: dict[str, int]
-
-
-@pytest.mark.asyncio
-async def test_run_tracks_model_tool_and_artifact_io_on_failed_run(monkeypatch):
-    monkeypatch.setenv("NEOSIGMA_API_KEY", "ns_live_fixture")
-    monkeypatch.setenv("NEOSIGMA_CAPTURE_CONTENT", "true")
-    monkeypatch.setenv("NEOSIGMA_ENABLED", "true")
-    exporter = InMemorySpanExporter()
-    provider = TracerProvider()
-    provider.add_span_processor(SimpleSpanProcessor(exporter))
-    monkeypatch.setattr(
-        neosigma_tracing,
-        "_init",
-        lambda: neosigma.init(
-            api_key="", project="archipelago-fixture", tracer_provider=provider
-        ),
-    )
-    workspace = {"filesystem/input.txt": b"initial"}
-    requests = []
-    snapshot_failed = False
-
-    def respond(request):
-        nonlocal snapshot_failed
-        requests.append(request)
-        if "filesystem/recovered.txt" in workspace and not snapshot_failed:
-            snapshot_failed = True
-            return httpx.Response(503)
-        return httpx.Response(200, content=snapshot(workspace))
-
+def install_mock_transport(monkeypatch, respond):
     client = httpx.AsyncClient
     monkeypatch.setattr(
         neosigma_artifacts.httpx,
         "AsyncClient",
         lambda **kwargs: client(transport=httpx.MockTransport(respond), **kwargs),
     )
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("failed_part", [None, 3])
+async def test_large_artifact_confirmed_before_publication(monkeypatch, failed_part):
+    monkeypatch.setenv("NEOSIGMA_API_KEY", "fixture")
+    monkeypatch.setenv("NEOSIGMA_PROJECT", "fixture")
+    monkeypatch.setattr(neosigma_artifacts, "_PART_BYTES", 4)
+    reservations = {}
+    stored = {}
+    completed = []
+
+    def respond(request):
+        if request.url.host == "storage.example":
+            assert "Authorization" not in request.headers
+            file_id = request.url.path.rsplit("/", 1)[1]
+            assert len(request.content) == reservations[file_id]["size_bytes"]
+            stored[file_id] = request.content
+            return httpx.Response(200)
+
+        assert request.headers["Authorization"] == "Bearer fixture"
+        if request.url.path == "/projects.get":
+            assert request.url.params["project_id"] == "fixture"
+            return httpx.Response(200, json={"project": {"workspace_id": "w"}})
+
+        payload = json.loads(request.content)
+        file_id = payload["file_id"]
+        if request.url.path == "/files.create":
+            assert set(completed) == reservations.keys()
+            reservations[file_id] = payload
+            return httpx.Response(
+                200,
+                json={
+                    "file": {"id": file_id, "status": "pending"},
+                    "upload_url": f"https://storage.example/{file_id}",
+                    "upload_headers": {},
+                },
+            )
+        assert request.url.path == "/files.complete"
+        assert file_id in stored
+        if failed_part == len(reservations):
+            return httpx.Response(503)
+        completed.append(file_id)
+        return httpx.Response(200, json={"file": {"id": file_id, "status": "complete"}})
+
+    install_mock_transport(monkeypatch, respond)
+    content = bytes(range(256)) * 2
+    if failed_part:
+        with pytest.raises(
+            neosigma_artifacts.SnapshotUploadError, match="part 3 of 128"
+        ):
+            await neosigma_artifacts.publish_artifact(
+                BytesIO(content), "world.tar.gz", "application/gzip"
+            )
+        assert len(completed) == 2
+        assert len(reservations) == 3
+        return
+
+    location, name = await neosigma_artifacts.publish_artifact(
+        BytesIO(content), "world.tar.gz", "application/gzip"
+    )
+    assert name == "world.tar.gz.manifest.json"
+    assert len(completed) == 129
+    manifest = json.loads(stored[location.rsplit("/", 1)[1]])
+    rebuilt = bytearray()
+    for part in manifest["parts"]:
+        data = stored[part["location"].rsplit("/", 1)[1]]
+        assert len(data) == part["size_bytes"]
+        assert hashlib.sha256(data).hexdigest() == part["sha256"]
+        rebuilt.extend(data)
+    assert rebuilt == content
+
+
+@pytest.mark.asyncio
+async def test_workspace_read_uses_signed_read_only_route(monkeypatch):
     monkeypatch.setattr(
         neosigma_artifacts,
         "sign_env_runner_request",
-        lambda method, url, body: {"X-Test": f"{method} {url} {len(body)}"},
+        lambda method, url: {"X-Test-Signature": f"{method} {url}"},
     )
-    uploads = []
-    read_refs = []
 
-    def upload(data, *, name, direction):
-        uploads.append((get_current_span().name, name, direction, data))
-        return SimpleNamespace(location=f"fixture:{len(uploads)}")
+    def respond(request):
+        assert request.url.path == "/data/snapshot/workspace"
+        assert request.headers["Authorization"] == "Bearer fixture"
+        assert request.headers["X-Test-Signature"].startswith("POST ")
+        assert request.content == b""
+        return httpx.Response(200, content=b"tar stream")
 
-    def reference(location, *, name, direction):
-        read_refs.append((get_current_span().name, location, name, direction))
+    install_mock_transport(monkeypatch, respond)
+    with await neosigma_artifacts.read_workspace(
+        "https://world.example", "fixture"
+    ) as snapshot:
+        assert snapshot.read() == b"tar stream"
 
-    monkeypatch.setattr(neosigma, "upload_artifact", upload)
-    monkeypatch.setattr(neosigma, "artifact", reference)
 
-    @neosigma_tracing.trace_model
-    async def model_call(model, messages, tools):
-        return ModelReply(
-            response="Use a tool", usage={"prompt_tokens": 7, "completion_tokens": 2}
-        )
-
-    async def write():
-        workspace["filesystem/result.txt"] = b"first"
-        return {"success": True}
-
-    async def invoke_mcp(session, tool_call):
-        assert tool_call["function"]["arguments"] == '{"path":"input.txt"}'
-        return await write()
-
-    monkeypatch.setattr(neosigma_tracing, "_call_openai_tool", invoke_mcp)
-
-    async def overwrite_and_fail():
-        workspace["filesystem/result.txt"] = b"second"
-        raise ValueError("tool failed")
-
-    async def write_during_snapshot_error():
-        workspace["filesystem/recovered.txt"] = b"created before recovery"
-        return {}
-
-    async def read_recovered():
-        return {"success": True}
-
-    async def run_agent(run_input):
-        workspace["filesystem/turn_inputs/attachment.txt"] = b"staged"
-        await neosigma_tracing.capture_staged_inputs()
-        await model_call(
-            run_input.orchestrator_model,
-            run_input.initial_messages,
-            [{"name": "write"}],
-        )
-        await neosigma_tracing.call_openai_tool(
-            object(),
-            {"function": {"name": "write", "arguments": '{"path":"input.txt"}'}},
-        )
-        with pytest.raises(ValueError, match="tool failed"):
-            await neosigma_tracing.trace_tool(
-                "overwrite", {"path": "/filesystem/result.txt"}, overwrite_and_fail
-            )
-        await neosigma_tracing.trace_tool(
-            "write-during-outage", {}, write_during_snapshot_error
-        )
-        await neosigma_tracing.trace_tool(
-            "read-recovered", {"path": "recovered.txt"}, read_recovered
-        )
-        return AgentTrajectoryOutput(
-            status=AgentStatus.FAILED,
-            error="failed",
-            final_answer="partial answer",
-            messages=[],
-            time_elapsed=0,
-        )
-
-    monkeypatch.setattr(runner_main, "get_agent_impl", lambda _: run_agent)
-    result = await runner_main.main(
-        trajectory_id="traj-1",
+async def run_fixture(monkeypatch, agent):
+    monkeypatch.setattr(runner_main, "get_agent_impl", lambda _: agent)
+    return await runner_main.main(
+        trajectory_id="fixture",
         initial_messages=[{"role": "user", "content": "Write a file"}],
         mcp_gateway_url="https://sandbox.example/mcp/",
         mcp_gateway_auth_token="fixture",
@@ -217,57 +137,130 @@ async def test_run_tracks_model_tool_and_artifact_io_on_failed_run(monkeypatch):
             agent_name="Fixture",
             agent_config_values={},
         ),
-        orchestrator_model="gemini-fixture",
+        orchestrator_model="fixture",
         orchestrator_extra_args=None,
     )
-    assert result.status == "failed"
+
+
+@pytest.mark.asyncio
+async def test_trace_only_reads_world_at_run_boundaries(monkeypatch):
+    monkeypatch.setenv("NEOSIGMA_API_KEY", "fixture")
+    exporter = InMemorySpanExporter()
+    provider = TracerProvider()
+    provider.add_span_processor(SimpleSpanProcessor(exporter))
+
+    def init():
+        neosigma.init(api_key="", project="fixture", tracer_provider=provider)
+        return neosigma
+
+    monkeypatch.setattr(neosigma_tracing, "_init", init)
+    events = []
+    refs = []
+
+    async def read(_url, _token):
+        events.append("workspace")
+        await asyncio.sleep(0.025)
+        return BytesIO(b"tar")
+
+    async def publish(content, name, media_type):
+        events.append(("published", name, media_type, content.read()))
+        if name == "final-workspace.tar.gz":
+            raise neosigma_artifacts.SnapshotUploadError(
+                "Snapshot part 2 of 2 was not confirmed"
+            )
+        return f"fixture:{name}", name
+
+    monkeypatch.setattr(neosigma_tracing, "read_workspace", read)
+    monkeypatch.setattr(neosigma_tracing, "publish_artifact", publish)
+    monkeypatch.setattr(
+        neosigma, "artifact", lambda location, **kwargs: refs.append(location)
+    )
+
+    @neosigma_tracing.trace_model
+    async def model(model, messages, tools):
+        events.append("model")
+        return {"content": "use a tool"}
+
+    async def tool():
+        events.append("tool")
+        return {"success": True}
+
+    async def agent(run_input):
+        await model(
+            run_input.orchestrator_model,
+            run_input.initial_messages,
+            [{"name": "write"}],
+        )
+        for name in ["first", "second"]:
+            result = await asyncio.wait_for(
+                neosigma_tracing.trace_tool(name, {"file": "report"}, tool), 0.01
+            )
+            assert result == {"success": True}
+        return AgentTrajectoryOutput(
+            messages=[],
+            status=AgentStatus.FAILED,
+            time_elapsed=0,
+            final_answer="partial answer",
+        )
+
+    result = await run_fixture(monkeypatch, agent)
+    assert result.status == AgentStatus.FAILED
+    assert events[:5] == ["workspace", "model", "tool", "tool", "workspace"]
+    assert len(events[5:]) == 4
+    assert "fixture:starting-workspace.tar.gz" in refs
+    assert "fixture:final-workspace.tar.gz" not in refs
+
     spans = exporter.get_finished_spans()
     (root,) = [span for span in spans if span.parent is None]
+    assert root.status.status_code == StatusCode.ERROR
     assert root.attributes["archipelago.status"] == "failed"
+    assert root.attributes["archipelago.artifacts.final-workspace.tar.gz.error"] == (
+        "Snapshot part 2 of 2 was not confirmed"
+    )
     children = [span for span in spans if span.parent is not None]
+    assert {span.name for span in children}.issuperset({"first", "second"})
     assert all(span.parent.span_id == root.context.span_id for span in children)
-    assert any(
-        span.attributes.get("gen_ai.request.model") == "gemini-fixture"
-        for span in children
-    )
-    assert {span.name: span.status.status_code for span in children}[
-        "overwrite"
-    ] == StatusCode.ERROR
-    assert requests and all(
-        request.url.path == "/data/snapshot"
-        and request.headers["Authorization"] == "Bearer fixture"
-        and request.headers["X-Test"]
-        for request in requests
-    )
-    assert {name for name, _, _, direction in read_refs if direction == "input"} == {
-        "write",
-        "overwrite",
-        "read-recovered",
-    }
 
-    snapshots = {
-        (span, name, direction): data for span, name, direction, data in uploads
-    }
-    assert ("read-recovered", "tool-files.zip", "output") not in snapshots
-    for span_name, archive_name, direction, path, contents in [
-        (root.name, "starting-files.zip", "input", "input.txt", b"initial"),
-        (
-            root.name,
-            "staged-inputs.zip",
-            "input",
-            "turn_inputs/attachment.txt",
-            b"staged",
-        ),
-        ("write", "tool-files.zip", "output", "result.txt", b"first"),
-        ("overwrite", "tool-files.zip", "output", "result.txt", b"second"),
-        (
-            "read-recovered",
-            "workspace-before-tool.zip",
-            "input",
-            "recovered.txt",
-            b"created before recovery",
-        ),
-        (root.name, "final-files.zip", "output", "result.txt", b"second"),
-    ]:
-        with ZipFile(BytesIO(snapshots[span_name, archive_name, direction])) as archive:
-            assert archive.read(f"files/{path}") == contents
+
+def sdk_failure(*args, **kwargs):
+    raise ValueError("synthetic SDK error")
+
+
+@pytest.mark.asyncio
+async def test_sdk_span_setup_failure_preserves_call_results(monkeypatch):
+    monkeypatch.setattr(sdk_spans, "start_chat", sdk_failure)
+    monkeypatch.setattr(sdk_spans, "start_tool", sdk_failure)
+
+    @neosigma_tracing.trace_model
+    async def model(model, messages, tools):
+        return "response"
+
+    async def tool():
+        raise RuntimeError("real tool error")
+
+    token = neosigma_tracing._active.set(True)
+    try:
+        assert await model("fixture", [], []) == "response"
+        with pytest.raises(RuntimeError, match="real tool error"):
+            await neosigma_tracing.trace_tool("tool", {}, tool)
+    finally:
+        neosigma_tracing._active.reset(token)
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("failure", ["initialize", "turn"])
+async def test_sdk_turn_setup_failure_preserves_run_result(monkeypatch, failure):
+    monkeypatch.setenv("NEOSIGMA_CONSOLE_EXPORT", "true")
+    if failure == "initialize":
+        monkeypatch.setattr(neosigma_tracing, "_init", sdk_failure)
+    else:
+        monkeypatch.setattr(neosigma_tracing, "_init", lambda: neosigma)
+        monkeypatch.setattr(neosigma, "turn", sdk_failure)
+
+    async def agent(_input):
+        return AgentTrajectoryOutput(
+            messages=[], status=AgentStatus.COMPLETED, time_elapsed=0
+        )
+
+    result = await run_fixture(monkeypatch, agent)
+    assert result.status == AgentStatus.COMPLETED

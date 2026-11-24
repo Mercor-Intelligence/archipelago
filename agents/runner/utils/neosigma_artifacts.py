@@ -1,226 +1,155 @@
-"""Attach versioned Archipelago workspace files to the active NeoSigma span."""
+"""Read and publish workspace snapshots outside the timed agent execution."""
 
-import asyncio
 import hashlib
 import json
-import shutil
-import stat
-import tarfile
-from collections.abc import Iterator
-from dataclasses import dataclass, field
+import os
 from pathlib import PurePosixPath
-from tempfile import SpooledTemporaryFile
-from typing import BinaryIO, Literal
-from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
+from tempfile import TemporaryFile
+from typing import BinaryIO
+from urllib.parse import urlsplit
+from uuid import uuid4
 
 import httpx
-import neosigma
-from loguru import logger
-from opentelemetry.trace import get_current_span
 
-from runner.harbor_world_source import is_reserved_answer_path
 from runner.utils.signing import sign_env_runner_request
 
-Direction = Literal["input", "output"]
-Artifact = tuple[str, str]
-FileVersion = tuple[str, int]
-_UPLOAD_PART_BYTES = 16 * 1024 * 1024
-_SNAPSHOT_BODY = b'{"exclude_globs":[".apps_data",".apps_data/*"]}'
+_PART_BYTES = 16 * 1024 * 1024
 
 
-def _workspace_path(member: tarfile.TarInfo) -> str | None:
-    path = PurePosixPath(member.name)
+class SnapshotUploadError(RuntimeError):
+    """A workspace snapshot could not be published in full."""
+
+
+async def read_workspace(sandbox_url: str, token: str | None) -> BinaryIO:
+    """Spool the environment's read-only tar stream to disk."""
+    url = f"{sandbox_url}/data/snapshot/workspace"
+    headers = sign_env_runner_request("POST", url)
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+
+    snapshot = TemporaryFile()
+    try:
+        async with httpx.AsyncClient(timeout=30) as client:
+            async with client.stream("POST", url, headers=headers) as response:
+                response.raise_for_status()
+                async for chunk in response.aiter_bytes():
+                    snapshot.write(chunk)
+        snapshot.seek(0)
+        return snapshot
+    except BaseException:
+        snapshot.close()
+        raise
+
+
+async def _upload_file(
+    client: httpx.AsyncClient,
+    base_url: str,
+    headers: dict[str, str],
+    workspace_id: str,
+    name: str,
+    contents: bytes,
+    media_type: str,
+) -> str:
+    file_id = str(uuid4())
+    prepared = await client.post(
+        f"{base_url}/files.create",
+        headers=headers,
+        json={
+            "file_id": file_id,
+            "workspace_id": workspace_id,
+            "filename": name,
+            "media_type": media_type,
+            "size_bytes": len(contents),
+        },
+    )
+    prepared.raise_for_status()
+    reservation = prepared.json()
     if (
-        not member.isfile()
-        or path.is_absolute()
-        or "\\" in member.name
-        or ".." in path.parts
-        or len(path.parts) < 2
-        or path.parts[0] != "filesystem"
-        or is_reserved_answer_path(path.parts[1:])
+        reservation["file"]["id"] != file_id
+        or reservation["file"]["status"] != "pending"
     ):
-        return None
-    return str(PurePosixPath(*path.parts[1:]))
+        raise SnapshotUploadError("NeoSigma did not reserve the snapshot file")
+    if urlsplit(reservation["upload_url"]).scheme != "https":
+        raise SnapshotUploadError("NeoSigma returned an invalid upload URL")
+
+    uploaded = await client.put(
+        reservation["upload_url"],
+        headers=reservation["upload_headers"],
+        content=contents,
+    )
+    uploaded.raise_for_status()
+    confirmed = await client.post(
+        f"{base_url}/files.complete", headers=headers, json={"file_id": file_id}
+    )
+    confirmed.raise_for_status()
+    file = confirmed.json()["file"]
+    if file["id"] != file_id or file["status"] != "complete":
+        raise SnapshotUploadError("NeoSigma did not confirm the snapshot file")
+    return f"neosigma://artifacts/{file_id}"
 
 
-def workspace_delta(
-    snapshot: BinaryIO, previous: dict[str, FileVersion], destination: BinaryIO
-) -> tuple[dict[str, FileVersion], list[str], list[str]]:
-    """Write added or modified file bytes and a manifest into a ZIP archive."""
-    current: dict[str, FileVersion] = {}
-    changed: list[str] = []
-    with (
-        tarfile.open(fileobj=snapshot, mode="r:gz") as source,
-        ZipFile(destination, mode="w", compression=ZIP_DEFLATED) as output,
-    ):
-        for member in source:
-            path = _workspace_path(member)
-            if path is None:
-                continue
-            content = source.extractfile(member)
-            assert content is not None
-            with content:
-                digest = hashlib.file_digest(content, "sha256").hexdigest()
-                mode = member.mode & 0o777
-                current[path] = (digest, mode)
-                if previous.get(path) == current[path]:
-                    continue
-                content.seek(0)
-                entry = ZipInfo(f"files/{path}")
-                entry.create_system = 3
-                entry.external_attr = (stat.S_IFREG | mode) << 16
-                entry.compress_type = ZIP_DEFLATED
-                with output.open(entry, "w", force_zip64=True) as file:
-                    shutil.copyfileobj(content, file)
-                changed.append(path)
-        deleted = sorted(previous.keys() - current.keys())
-        output.writestr(
-            "manifest.json",
-            json.dumps(
-                {
-                    "files": {
-                        path: {"sha256": current[path][0], "mode": current[path][1]}
-                        for path in sorted(changed)
-                    },
-                    "deleted": deleted,
-                },
-                ensure_ascii=False,
-            ),
+async def publish_artifact(
+    snapshot: BinaryIO, name: str, media_type: str
+) -> tuple[str, str]:
+    """Return a managed reference only after every part is confirmed."""
+    base_url = os.getenv(
+        "NEOSIGMA_MANAGED_AGENTS_BASE_URL", "https://api.neosigma.ai"
+    ).rstrip("/")
+    headers = {"Authorization": f"Bearer {os.environ['NEOSIGMA_API_KEY']}"}
+    project = os.environ["NEOSIGMA_PROJECT"]
+    size = snapshot.seek(0, 2)
+    snapshot.seek(0)
+    if size == 0:
+        raise SnapshotUploadError("The environment returned an empty snapshot stream")
+
+    async with httpx.AsyncClient(timeout=30) as client:
+        response = await client.get(
+            f"{base_url}/projects.get", headers=headers, params={"project_id": project}
         )
-    return current, changed, deleted
+        response.raise_for_status()
+        workspace_id = response.json()["project"]["workspace_id"]
+        if not workspace_id:
+            raise SnapshotUploadError("The NeoSigma project has no workspace")
 
-
-def upload_parts(
-    data: BinaryIO, name: str, direction: Direction
-) -> tuple[Artifact, ...]:
-    size = data.seek(0, 2)
-    data.seek(0)
-    parts: list[Artifact] = []
-    for index in range((size + _UPLOAD_PART_BYTES - 1) // _UPLOAD_PART_BYTES):
-        part_name = (
-            name if size <= _UPLOAD_PART_BYTES else f"{name}.part-{index + 1:05d}"
-        )
-        uploaded = neosigma.upload_artifact(
-            data.read(_UPLOAD_PART_BYTES), name=part_name, direction=direction
-        )
-        parts.append((uploaded.location, part_name))
-    return tuple(parts)
-
-
-def _file_arguments(value: object) -> Iterator[str]:
-    if isinstance(value, str):
-        yield value.removeprefix("/filesystem/").removeprefix("./")
-    elif isinstance(value, dict):
-        for item in value.values():
-            yield from _file_arguments(item)
-    elif isinstance(value, list):
-        for item in value:
-            yield from _file_arguments(item)
-
-
-@dataclass
-class WorkspaceArtifacts:
-    sandbox_url: str
-    auth_token: str | None
-    files: dict[str, FileVersion] = field(default_factory=dict)
-    starting_files: dict[str, FileVersion] = field(default_factory=dict)
-    versions: dict[str, tuple[Artifact, ...]] = field(default_factory=dict)
-    lock: asyncio.Lock = field(default_factory=asyncio.Lock)
-    pending: asyncio.Task[None] | None = None
-    needs_baseline: bool = False
-
-    async def drain(self) -> None:
-        if self.pending is not None:
-            await asyncio.shield(self.pending)
-            self.pending = None
-
-    async def capture(
-        self,
-        name: str,
-        direction: Direction,
-        *,
-        starting: bool = False,
-        final: bool = False,
-    ) -> None:
-        url = f"{self.sandbox_url}/data/snapshot"
-        try:
-            headers = {
-                "Content-Type": "application/json",
-                **sign_env_runner_request("POST", url, body=_SNAPSHOT_BODY),
-            }
-            if self.auth_token:
-                headers["Authorization"] = f"Bearer {self.auth_token}"
-            with SpooledTemporaryFile(max_size=_UPLOAD_PART_BYTES) as snapshot:
-                async with httpx.AsyncClient(timeout=30) as client:
-                    async with client.stream(
-                        "POST", url, content=_SNAPSHOT_BODY, headers=headers
-                    ) as response:
-                        response.raise_for_status()
-                        async for chunk in response.aiter_bytes():
-                            snapshot.write(chunk)
-                snapshot.seek(0)
-                # The thread borrows the archive until it finishes.
-                task = asyncio.create_task(
-                    asyncio.to_thread(
-                        self._attach,
-                        snapshot,
-                        name,
-                        direction,
-                        starting=starting,
-                        final=final,
-                    )
-                )
-                try:
-                    await asyncio.shield(task)
-                except asyncio.CancelledError:
-                    await task
-                    raise
-            self.needs_baseline = False
-        except Exception as exc:
-            self.needs_baseline = True
-            get_current_span().set_attribute(
-                "archipelago.artifacts.capture_error", type(exc).__name__
-            )
-            logger.warning(
-                "NeoSigma workspace artifact capture failed ({})", type(exc).__name__
-            )
-
-    def _attach(
-        self,
-        snapshot: BinaryIO,
-        name: str,
-        direction: Direction,
-        *,
-        starting: bool,
-        final: bool,
-    ) -> None:
-        # shortcut: snapshots capture files that survive each call, use sandbox file events
-        # if artifacts created and removed within one call are required.
-        previous = self.starting_files if final else self.files
-        with SpooledTemporaryFile(max_size=_UPLOAD_PART_BYTES) as destination:
-            current, changed, deleted = workspace_delta(snapshot, previous, destination)
-            if not changed and not deleted:
-                return
-            parts = upload_parts(destination, name, direction)
-        self.versions.update({path: parts for path in changed})
-        for path in deleted:
-            self.versions.pop(path, None)
-        self.files = current
-        if starting:
-            self.starting_files.update({path: current[path] for path in changed})
-            for path in deleted:
-                self.starting_files.pop(path, None)
-
-    def attach_referenced_inputs(self, arguments: object) -> None:
-        if isinstance(arguments, str):
+        parts = []
+        count = (size + _PART_BYTES - 1) // _PART_BYTES
+        for index in range(1, count + 1):
+            data = snapshot.read(_PART_BYTES)
+            filename = name if count == 1 else f"{name}.part-{index:05d}"
             try:
-                arguments = json.loads(arguments)
-            except ValueError:
-                return
-        paths = sorted(set(_file_arguments(arguments)) & self.versions.keys())
-        for location, name in sorted(
-            {part for path in paths for part in self.versions[path]}
-        ):
-            neosigma.artifact(location, name=name, direction="input")
-        if paths:
-            get_current_span().set_attribute("archipelago.artifacts.input_paths", paths)
+                location = await _upload_file(
+                    client,
+                    base_url,
+                    headers,
+                    workspace_id,
+                    filename,
+                    data,
+                    media_type if count == 1 else "application/octet-stream",
+                )
+            except Exception as exc:
+                raise SnapshotUploadError(
+                    f"Snapshot part {index} of {count} was not confirmed"
+                ) from exc
+            parts.append(
+                {
+                    "name": filename,
+                    "location": location,
+                    "size_bytes": len(data),
+                    "sha256": hashlib.sha256(data).hexdigest(),
+                }
+            )
+        if count == 1:
+            return parts[0]["location"], name
+
+        manifest_name = f"{PurePosixPath(name).name}.manifest.json"
+        manifest = json.dumps({"filename": name, "parts": parts}).encode()
+        location = await _upload_file(
+            client,
+            base_url,
+            headers,
+            workspace_id,
+            manifest_name,
+            manifest,
+            "application/json",
+        )
+        return location, manifest_name

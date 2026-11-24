@@ -264,8 +264,9 @@ with open("initial_messages.json", "w") as f:
 
 ## NeoSigma tracing
 
-Set these variables in the environment of the agent runner before starting it.
-Set the API key through your runtime's secret configuration.
+Install the optional SDK with `uv sync --extra neosigma`. Use the extra when
+launching via `uv run` as well. Set the project in the runner's environment
+and provide the API key through your runtime's secret configuration.
 
 ```bash
 export NEOSIGMA_PROJECT='<project-slug>'
@@ -273,24 +274,21 @@ export NEOSIGMA_PROJECT='<project-slug>'
 ```
 
 Each trajectory records its original messages, model inputs and outputs, MCP
-arguments and results, final response, and status. Large payloads are also
-attached as JSON when the SDK would truncate span content.
+arguments and results, final response, and status. The input messages and the
+final trajectory result are uploaded once, at the end of the run. Span content
+uses the SDK's content limits.
 
-The runner fetches the sandbox's signed workspace snapshot at startup, after
-attachment staging and MCP calls, and at the end of the run, including failures.
-The opening turn has the starting files and staged attachments as inputs. Tool
-spans get added or changed files as outputs and reference known file arguments
-as inputs. The turn also has the final changes relative to the starting files.
-Archives preserve relative paths under `files/`. Each `manifest.json` records
-file digests, permissions, and deletions. For split archives, concatenate the numbered
-`.part-*` files in order before opening the archive.
+The runner captures the shared workspace before and after execution through
+the environment's signed `/data/snapshot/workspace` endpoint. That endpoint
+reads regular workspace files and excludes reserved Harbor answer paths.
+Each trace links the original tar stream or a manifest containing the ordered
+parts and their SHA-256 digests. The runner publishes a link after the gateway
+confirms all uploads. Capture failures appear on the turn and in the runner log.
+The starting snapshot precedes agent-side attachment staging. The two snapshots
+preserve the workspace's starting and final states. Tool spans carry arguments
+and results.
 
-Capture is scoped to regular files in the sandbox's shared `filesystem` tree,
-with Harbor's reserved answer paths excluded.
-Archives retain the version present at each snapshot boundary. Observing
-multiple versions written within one command requires filesystem events.
-The snapshot request reuses the runner's existing sandbox credentials and
-request signing. For local trace inspection, use `NEOSIGMA_CONSOLE_EXPORT=true`.
+For local trace inspection, use `NEOSIGMA_CONSOLE_EXPORT=true`.
 
 [NeoSigma SDK setup](https://docs.neosigma.ai/sdk/getting-started/installation) ·
 [Artifact capture](https://docs.neosigma.ai/sdk/instrument/tracing/artifacts)

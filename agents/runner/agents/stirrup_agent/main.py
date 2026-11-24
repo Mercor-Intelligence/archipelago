@@ -24,6 +24,7 @@ from typing import Any, cast
 from fastmcp import Client as FastMCPClient
 from litellm import Choices
 from litellm.exceptions import ContextWindowExceededError
+from litellm.experimental_mcp_client import call_openai_tool as call_internal_mcp_tool
 from litellm.experimental_mcp_client import load_mcp_tools
 from litellm.files.main import ModelResponse
 from litellm.types.utils import ChatCompletionMessageToolCall, Function
@@ -1552,7 +1553,7 @@ class StirrupAgent:
         name, arg = shell
         try:
             result = await asyncio.wait_for(
-                call_openai_tool(
+                call_internal_mcp_tool(
                     client.session,
                     ChatCompletionMessageToolCall(
                         id="finish_path_check",
