@@ -12,11 +12,15 @@ The router is mounted at the /data prefix in the main FastAPI application.
 """
 
 import json
+from pathlib import Path
+from uuid import uuid4
 
 from fastapi import APIRouter, File, Form, HTTPException, Query, UploadFile
 from fastapi.responses import StreamingResponse
 from loguru import logger
 from pydantic import ValidationError
+
+from runner.utils.settings import get_settings
 
 from .populate import (
     cancel_populate_job,
@@ -37,6 +41,7 @@ from .populate.models import (
     PopulateResult,
     PopulateStreamResult,
 )
+from .populate.utils import is_reserved_harbor_answer
 from .rootfs import handle_rootfs_baseline, handle_rootfs_capture
 from .rootfs.models import (
     RootfsBaselineResult,
@@ -62,6 +67,8 @@ from .snapshot.models import (
     SnapshotResult,
     SnapshotStreamRequest,
 )
+from .snapshot.streaming import create_tar_gz_stream
+from .snapshot.utils import iter_paths
 
 router = APIRouter()
 
@@ -239,6 +246,25 @@ async def lifecycle_hooks(request: LifecycleHooksRequest) -> LifecycleHooksResul
         logger.error(f"{request.phase} hook failed: {e}")
         raise HTTPException(status_code=500, detail=str(e)) from e
     return LifecycleHooksResult(hook_timings=timings)
+
+
+def _workspace_files(root: str, prefix: str):
+    for path, name in iter_paths(root, prefix):
+        if not path.is_symlink() and not is_reserved_harbor_answer(
+            Path(name).relative_to(prefix).as_posix()
+        ):
+            yield path, name
+
+
+@router.post("/snapshot/workspace")
+async def workspace_snapshot():
+    """Stream the shared filesystem without advancing or draining world actions."""
+    snapshot_id = f"workspace_{uuid4().hex}"
+    subsystem = get_settings().FILESYSTEM_SUBSYSTEM_NAME
+    return StreamingResponse(
+        create_tar_gz_stream([subsystem], snapshot_id, _workspace_files),
+        media_type="application/gzip",
+    )
 
 
 @router.post("/snapshot")

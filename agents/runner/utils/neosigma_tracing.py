@@ -1,37 +1,28 @@
-"""NeoSigma tracing for the shared runner and its model and tool boundaries."""
+"""Optional tracing for the shared runner and its model and MCP boundaries."""
 
 import asyncio
 import base64
 import inspect
 import json
 import os
-import time
-from contextlib import nullcontext
+import sys
+from contextlib import ExitStack
 from contextvars import ContextVar
 from functools import cache, wraps
 from io import BytesIO
 from typing import Any
 
-import neosigma
 from litellm.experimental_mcp_client import call_openai_tool as _call_openai_tool
 from loguru import logger
-from neosigma.spans import end_chat, end_tool, start_chat, start_tool
-from neosigma.types import (
-    ChatEnd,
-    ChatStart,
-    PromptMessage,
-    TokenUsage,
-    ToolEnd,
-    ToolStart,
-)
-from opentelemetry.trace import get_current_span, use_span
+from opentelemetry.trace import use_span
 
-from runner.utils.neosigma_artifacts import Direction, WorkspaceArtifacts, upload_parts
+from runner.utils.neosigma_artifacts import (
+    SnapshotUploadError,
+    publish_artifact,
+    read_workspace,
+)
 
 _active = ContextVar("neosigma_trace_active", default=False)
-_workspace: ContextVar[WorkspaceArtifacts | None] = ContextVar(
-    "neosigma_workspace", default=None
-)
 _secrets = {
     "authorization",
     "api_key",
@@ -52,9 +43,20 @@ def _artifacts_enabled() -> bool:
     )
 
 
+def _observe(operation, call, *args, **kwargs):
+    try:
+        return call(*args, **kwargs)
+    except Exception as exc:
+        logger.warning("NeoSigma {} failed ({})", operation, type(exc).__name__)
+        return None
+
+
 @cache
-def _init() -> None:
+def _init():
+    import neosigma
+
     neosigma.init()
+    return neosigma
 
 
 def _recordable(value: Any) -> Any:
@@ -74,36 +76,64 @@ def _recordable(value: Any) -> Any:
 
 
 def _json(value: Any) -> str:
+    return json.dumps(_recordable(value), ensure_ascii=True, default=str)
+
+
+def _capture_error(turn, name: str, exc: Exception) -> None:
+    detail = str(exc) if isinstance(exc, SnapshotUploadError) else type(exc).__name__
+    logger.warning("NeoSigma capture failed for {} ({})", name, detail)
+    _observe(
+        "capture diagnostics",
+        turn.set_attributes,
+        {f"archipelago.artifacts.{name}.error": detail},
+    )
+
+
+async def _collect_workspace(turn, name, gateway, token):
+    if not _artifacts_enabled() or not gateway:
+        return None
     try:
-        return json.dumps(_recordable(value), ensure_ascii=False, default=str)
-    except (TypeError, ValueError, RecursionError) as exc:
-        return json.dumps({"serialization_error": type(exc).__name__})
+        from runner.utils.file_staging import sandbox_url_from_gateway
+
+        return await read_workspace(sandbox_url_from_gateway(gateway), token)
+    except Exception as exc:
+        _capture_error(turn, name, exc)
+        return None
 
 
-async def _attach_payload(
-    text: str, name: str, direction: Direction, *, include_small: bool = False
-) -> None:
-    if not _artifacts_enabled():
+async def _attach(sdk, turn, content, name, direction, media_type):
+    if content is None:
         return
     try:
-        max_chars = int(os.getenv("NEOSIGMA_MAX_CONTENT_CHARS", "24000"))
-        if include_small or (max_chars and len(text) > min(max_chars, 12000)):
-            await asyncio.to_thread(
-                upload_parts, BytesIO(text.encode("utf-8")), name, direction
-            )
+        with content:
+            location, display_name = await publish_artifact(content, name, media_type)
+        sdk.artifact(location, name=display_name, direction=direction)
     except Exception as exc:
-        get_current_span().set_attribute(
-            "archipelago.artifacts.payload_error", type(exc).__name__
-        )
-        logger.warning(
-            "NeoSigma payload artifact capture failed ({})", type(exc).__name__
-        )
+        _capture_error(turn, name, exc)
 
 
-async def capture_staged_inputs() -> None:
-    if workspace := _workspace.get():
-        await workspace.drain()
-        await workspace.capture("staged-inputs.zip", "input", starting=True)
+def _finish_result(turn, result, trajectory_id: str) -> None:
+    from runner.utils.logging.final_answer import peek_final_answer
+    from runner.utils.logging.terminal_error import peek_terminal_error
+
+    answer = result.final_answer or peek_final_answer(trajectory_id)
+    if answer is None and result.messages:
+        last = _recordable(result.messages[-1])
+        if isinstance(last, dict) and last.get("role") == "assistant":
+            answer = last.get("content")
+    if answer is not None:
+        turn.set_content(
+            completion=answer if isinstance(answer, str) else _json(answer)
+        )
+    attributes = {"archipelago.status": str(result.status)}
+    if error := result.error or peek_terminal_error(trajectory_id):
+        attributes["archipelago.error"] = error
+    turn.set_attributes(attributes)
+
+
+def _end_if_open(span) -> None:
+    if span.is_recording():
+        span.end()
 
 
 def trace_agent_run(run):
@@ -116,88 +146,145 @@ def trace_agent_run(run):
         ):
             return await run(*args, **kwargs)
 
-        from runner.utils.file_staging import sandbox_url_from_gateway
-        from runner.utils.logging.final_answer import peek_final_answer
-        from runner.utils.logging.terminal_error import peek_terminal_error
-
-        fields = signature.bind(*args, **kwargs).arguments
-        trajectory_id = fields["trajectory_id"]
-        messages = fields["initial_messages"]
-        user_message = next(
-            (
-                message.get("content")
-                for message in reversed(messages)
-                if message.get("role") == "user"
-            ),
-            "",
-        )
-        workspace = None
-        if _artifacts_enabled() and fields["mcp_gateway_url"]:
-            workspace = WorkspaceArtifacts(
-                sandbox_url_from_gateway(fields["mcp_gateway_url"]),
-                fields["mcp_gateway_auth_token"],
-            )
-
-        _init()
-        active_token = _active.set(True)
-        workspace_token = _workspace.set(workspace)
+        scope = ExitStack()
         try:
-            with neosigma.turn(
-                session_id=trajectory_id,
-                turn_id=trajectory_id,
-                user_message=user_message
-                if isinstance(user_message, str)
-                else _json(user_message),
-                agent_id=fields.get("agent_id")
-                or fields["agent_config"].agent_config_id,
-                source="archipelago",
-                source_ref=trajectory_id,
-            ) as turn:
-                turn.set_attributes({"archipelago.model": fields["orchestrator_model"]})
-                await _attach_payload(
-                    _json(messages),
-                    "initial-messages.json",
-                    "input",
-                    include_small=True,
+            fields = signature.bind(*args, **kwargs).arguments
+            sdk = _init()
+            trajectory_id = fields["trajectory_id"]
+            messages = fields["initial_messages"]
+            user_message = next(
+                (
+                    msg.get("content")
+                    for msg in reversed(messages)
+                    if msg.get("role") == "user"
+                ),
+                "",
+            )
+            turn = scope.enter_context(
+                sdk.turn(
+                    session_id=trajectory_id,
+                    turn_id=trajectory_id,
+                    user_message=user_message
+                    if isinstance(user_message, str)
+                    else _json(user_message),
+                    agent_id=fields.get("agent_id")
+                    or fields["agent_config"].agent_config_id,
+                    source="archipelago",
+                    source_ref=trajectory_id,
                 )
-                if workspace:
-                    await workspace.capture(
-                        "starting-files.zip", "input", starting=True
-                    )
-                try:
-                    result = await run(*args, **kwargs)
-                    answer = result.final_answer or peek_final_answer(trajectory_id)
-                    if answer is None and result.messages:
-                        last = _recordable(result.messages[-1])
-                        if isinstance(last, dict) and last.get("role") == "assistant":
-                            answer = last.get("content")
-                    if answer is not None:
-                        turn.set_content(
-                            completion=answer
-                            if isinstance(answer, str)
-                            else _json(answer)
+            )
+            gateway = fields["mcp_gateway_url"]
+            auth_token = fields["mcp_gateway_auth_token"]
+        except Exception as exc:
+            logger.warning("NeoSigma turn setup failed ({})", type(exc).__name__)
+            _observe("turn cleanup", scope.close)
+            return await run(*args, **kwargs)
+
+        active = _active.set(True)
+        files = ExitStack()
+        result = None
+        try:
+            _observe(
+                "turn metadata",
+                turn.set_attributes,
+                {"archipelago.model": fields["orchestrator_model"]},
+            )
+            starting = await _collect_workspace(turn, "starting", gateway, auth_token)
+            if starting is not None:
+                files.enter_context(starting)
+            try:
+                result = await run(*args, **kwargs)
+                _observe("turn outcome", _finish_result, turn, result, trajectory_id)
+                return result
+            finally:
+                final = await _collect_workspace(turn, "final", gateway, auth_token)
+                if final is not None:
+                    files.enter_context(final)
+                await _attach(
+                    sdk,
+                    turn,
+                    starting,
+                    "starting-workspace.tar.gz",
+                    "input",
+                    "application/gzip",
+                )
+                await _attach(
+                    sdk,
+                    turn,
+                    final,
+                    "final-workspace.tar.gz",
+                    "output",
+                    "application/gzip",
+                )
+                if _artifacts_enabled():
+                    initial = _observe("initial message encoding", _json, messages)
+                    transcript = _observe("trajectory encoding", _json, result)
+                    if initial is not None:
+                        await _attach(
+                            sdk,
+                            turn,
+                            BytesIO(initial.encode()),
+                            "initial-messages.json",
+                            "input",
+                            "application/json",
                         )
-                    attributes = {"archipelago.status": str(result.status)}
-                    if error := result.error or peek_terminal_error(trajectory_id):
-                        attributes["archipelago.error"] = error
-                    turn.set_attributes(attributes)
-                    await _attach_payload(
-                        _json(result),
-                        "trajectory-result.json",
-                        "output",
-                        include_small=True,
-                    )
-                    return result
-                finally:
-                    if workspace:
-                        await workspace.drain()
-                        await workspace.capture("final-files.zip", "output", final=True)
+                    if result is not None and transcript is not None:
+                        await _attach(
+                            sdk,
+                            turn,
+                            BytesIO(transcript.encode()),
+                            "trajectory-result.json",
+                            "output",
+                            "application/json",
+                        )
         finally:
-            _workspace.reset(workspace_token)
-            _active.reset(active_token)
-            await asyncio.to_thread(neosigma.flush)
+            _observe("snapshot cleanup", files.close)
+            _active.reset(active)
+            error = sys.exc_info()
+            if error[1] is None and getattr(result, "status", None) in {
+                "failed",
+                "error",
+                "cancelled",
+            }:
+                failure = RuntimeError(
+                    f"Archipelago trajectory returned {result.status}"
+                )
+                error = type(failure), failure, None
+            _observe("turn completion", scope.__exit__, *error)
+            await asyncio.to_thread(_observe, "flush", sdk.flush)
 
     return wrapped
+
+
+async def _trace_call(invoke, start, finish):
+    """Observe a call while keeping SDK failures separate from its result."""
+    span = _observe("span setup", start)
+    if span is None:
+        return await invoke()
+    scope = ExitStack()
+    _observe(
+        "span activation",
+        lambda: scope.enter_context(
+            use_span(
+                span,
+                end_on_exit=False,
+                record_exception=False,
+                set_status_on_exception=False,
+            )
+        ),
+    )
+    result = None
+    error = None
+    try:
+        result = await invoke()
+        return result
+    except BaseException as exc:
+        error = exc
+        raise
+    finally:
+        _observe("span completion", finish, span, result, error)
+        _observe("span end", _end_if_open, span)
+        _observe("span cleanup", scope.close)
 
 
 def trace_model(call):
@@ -206,31 +293,32 @@ def trace_model(call):
         if not _active.get():
             return await call(model, messages, tools, *args, **kwargs)
 
-        prompt = [
-            PromptMessage(role=str(message.get("role", "")), content=_json(message))
-            for message in _recordable(messages)
-        ]
-        span = start_chat(ChatStart(model=model, prompt_messages=prompt))
-        result = ChatEnd()
-        try:
-            with use_span(
-                span,
-                end_on_exit=False,
-                record_exception=False,
-                set_status_on_exception=False,
-            ):
-                await _attach_payload(
-                    _json({"messages": messages, "tools": tools}),
-                    "model-input.json",
-                    "input",
-                    include_small=bool(tools),
+        def start():
+            from neosigma.spans import start_chat
+            from neosigma.types import ChatStart, PromptMessage
+
+            prompt = [
+                PromptMessage(role=str(msg.get("role", "")), content=_json(msg))
+                for msg in _recordable(messages)
+            ]
+            if tools:
+                prompt.append(PromptMessage(role="tool_schemas", content=_json(tools)))
+            return start_chat(ChatStart(model=model, prompt_messages=prompt))
+
+        def finish(span, response, error):
+            from neosigma.spans import end_chat
+            from neosigma.types import ChatEnd, TokenUsage
+
+            if error is not None:
+                end_chat(
+                    span, ChatEnd(is_error=True, error_message=type(error).__name__)
                 )
-                response = await call(model, messages, tools, *args, **kwargs)
-                completion = _json(response)
-                await _attach_payload(completion, "model-output.json", "output")
-                usage = _recordable(getattr(response, "usage", None)) or {}
-                result = ChatEnd(
-                    completion=completion,
+                return
+            usage = _recordable(getattr(response, "usage", None)) or {}
+            end_chat(
+                span,
+                ChatEnd(
+                    completion=_json(response),
                     usage=TokenUsage(
                         input_tokens=max(
                             0,
@@ -245,26 +333,14 @@ def trace_model(call):
                             or 0,
                         ),
                     ),
-                )
-                return response
-        except BaseException as exc:
-            result = ChatEnd(is_error=True, error_message=type(exc).__name__)
-            raise
-        finally:
-            end_chat(span, result)
+                ),
+            )
+
+        return await _trace_call(
+            lambda: call(model, messages, tools, *args, **kwargs), start, finish
+        )
 
     return wrapped
-
-
-async def _finish_tool_files(workspace, span, outcome: ToolEnd, end_time: int) -> None:
-    try:
-        if workspace.needs_baseline:
-            span.set_attribute("archipelago.artifacts.unattributed", True)
-            await workspace.capture("workspace-after-tool.zip", "output")
-        else:
-            await workspace.capture("tool-files.zip", "output")
-    finally:
-        end_tool(span, outcome, end_time=end_time)
 
 
 def _tool_failed(result: Any) -> bool:
@@ -279,69 +355,52 @@ def _tool_failed(result: Any) -> bool:
 async def trace_tool(name, arguments, invoke):
     if not _active.get():
         return await invoke()
-    if isinstance(arguments, str):
-        try:
-            arguments = json.loads(arguments)
-        except ValueError:
-            pass
-    payload = _json(arguments)
-    span = start_tool(ToolStart(name=name, args_json=payload))
-    outcome = ToolEnd()
-    workspace = _workspace.get()
-    deferred = False
-    try:
-        with use_span(
+
+    def start():
+        from neosigma.spans import start_tool
+        from neosigma.types import ToolStart
+
+        args = arguments
+        if isinstance(args, str):
+            try:
+                args = json.loads(args)
+            except ValueError:
+                pass
+        return start_tool(ToolStart(name=name, args_json=_json(args)))
+
+    def finish(span, result, error):
+        from neosigma.spans import end_tool
+        from neosigma.types import ToolEnd
+
+        end_tool(
             span,
-            end_on_exit=False,
-            record_exception=False,
-            set_status_on_exception=False,
-        ):
-            async with workspace.lock if workspace else nullcontext():
-                if workspace:
-                    await workspace.drain()
-                    if workspace.needs_baseline:
-                        await workspace.capture("workspace-before-tool.zip", "input")
-                    workspace.attach_referenced_inputs(arguments)
-                await _attach_payload(payload, "tool-input.json", "input")
-                try:
-                    result = await invoke()
-                    content = _json(result)
-                    await _attach_payload(content, "tool-output.json", "output")
-                    outcome = ToolEnd(
-                        result=content,
-                        is_error=_tool_failed(result),
-                    )
-                    return result
-                except BaseException as exc:
-                    outcome = ToolEnd(is_error=True, error_message=type(exc).__name__)
-                    raise
-                finally:
-                    if workspace:
-                        # Keep snapshot I/O outside the completed tool's timeout.
-                        workspace.pending = asyncio.create_task(
-                            _finish_tool_files(workspace, span, outcome, time.time_ns())
-                        )
-                        deferred = True
-    except BaseException as exc:
-        outcome = ToolEnd(is_error=True, error_message=type(exc).__name__)
-        raise
-    finally:
-        if not deferred:
-            end_tool(span, outcome)
+            ToolEnd(
+                result=_json(result) if error is None else None,
+                is_error=error is not None or _tool_failed(result),
+                error_message=type(error).__name__ if error is not None else "",
+            ),
+        )
+
+    return await _trace_call(invoke, start, finish)
 
 
 async def call_openai_tool(session, tool_call, *args, **kwargs):
-    if not _active.get():
+    async def invoke():
         return await _call_openai_tool(session, tool_call, *args, **kwargs)
-    function = (
-        tool_call["function"] if isinstance(tool_call, dict) else tool_call.function
-    )
-    name = function["name"] if isinstance(function, dict) else function.name
-    arguments = (
-        function.get("arguments") if isinstance(function, dict) else function.arguments
-    )
-    return await trace_tool(
-        name,
-        arguments,
-        lambda: _call_openai_tool(session, tool_call, *args, **kwargs),
-    )
+
+    if not _active.get():
+        return await invoke()
+    try:
+        function = (
+            tool_call["function"] if isinstance(tool_call, dict) else tool_call.function
+        )
+        name = function["name"] if isinstance(function, dict) else function.name
+        arguments = (
+            function.get("arguments")
+            if isinstance(function, dict)
+            else function.arguments
+        )
+    except Exception as exc:
+        logger.warning("NeoSigma tool metadata failed ({})", type(exc).__name__)
+        return await invoke()
+    return await trace_tool(name, arguments, invoke)

@@ -28,7 +28,6 @@ dependencies = [
     # plain Sandbox.create defaulting to sandbox v2 (STPL-206)
     # Sandbox._experimental_set_outbound_network_policy (harbor 0.18.0)
     "modal==1.6.1",
-    "neosigma==0.18.1",
     "openpyxl>=3.1.0",
     "python-docx>=1.1.0",
     "pydantic-settings>=2.11.0",
@@ -39,6 +38,9 @@ dependencies = [
     "tenacity>=9.0.0",
     "pandas>=2.2.0",
 ]
+
+[project.optional-dependencies]
+neosigma = ["neosigma==0.18.0"]
 
 [tool.setuptools]
 # Declare the shipped package explicitly. Without this, setuptools' flat-layout
@@ -79,8 +81,9 @@ exclude-newer = "7 days"
 # PyPI, which does not apply here, so it is exempted outright rather than
 # re-pinned on every release. Paired with the `>=` floor in dependencies: a
 # re-lock picks up the newest client with no pyproject edit.
-# The NeoSigma cutoff admits the exact SDK version pinned above.
-exclude-newer-package = { modal = "2026-10-04T00:00:00Z", neosigma = "2026-11-25T00:00:00Z" }
+exclude-newer-package = { modal = "2026-10-04T00:00:00Z"  }
+# Keep the runner's existing OpenTelemetry API version with either extra selection.
+constraint-dependencies = ["opentelemetry-api==1.39.1"]
 override-dependencies = [
     # litellm 1.83.4+ pins python-dotenv==1.0.1 while fastmcp>=3.2.0 requires >=1.1.0;
     # override to break the conflict (runtime works fine with python-dotenv 1.1.x).
