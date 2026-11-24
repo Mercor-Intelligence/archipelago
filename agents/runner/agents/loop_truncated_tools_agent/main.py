@@ -12,7 +12,7 @@ from typing import Any, cast
 from fastmcp import Client as FastMCPClient
 from litellm import Choices
 from litellm.exceptions import ContextWindowExceededError, Timeout
-from litellm.experimental_mcp_client import call_openai_tool, load_mcp_tools
+from litellm.experimental_mcp_client import load_mcp_tools
 from litellm.files.main import ModelResponse
 from loguru import logger
 from openai.types.chat.chat_completion_tool_param import ChatCompletionToolParam
@@ -71,6 +71,7 @@ from runner.utils.mcp import (
     empty_tool_result_content,
     probe_gateway_health,
 )
+from runner.utils.neosigma_tracing import call_openai_tool
 from runner.utils.text_only_models import is_known_text_only
 from runner.utils.usage import UsageTracker
 

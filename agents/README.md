@@ -262,6 +262,39 @@ with open("initial_messages.json", "w") as f:
     json.dump(initial_messages, f, indent=2)
 ```
 
+## NeoSigma tracing
+
+Set these variables in the environment of the agent runner before starting it.
+Set the API key through your runtime's secret configuration.
+
+```bash
+export NEOSIGMA_PROJECT='<project-slug>'
+# NEOSIGMA_API_KEY is set by your runtime
+```
+
+Each trajectory records its original messages, model inputs and outputs, MCP
+arguments and results, final response, and status. Large payloads are also
+attached as JSON when the SDK would truncate span content.
+
+The runner fetches the sandbox's signed workspace snapshot at startup, after
+attachment staging and MCP calls, and at the end of the run, including failures.
+The opening turn has the starting files and staged attachments as inputs. Tool
+spans get added or changed files as outputs and reference known file arguments
+as inputs. The turn also has the final changes relative to the starting files.
+Archives preserve relative paths under `files/`. Each `manifest.json` records
+file digests, permissions, and deletions. For split archives, concatenate the numbered
+`.part-*` files in order before opening the archive.
+
+Capture is scoped to regular files in the sandbox's shared `filesystem` tree,
+with Harbor's reserved answer paths excluded.
+Archives retain the version present at each snapshot boundary. Observing
+multiple versions written within one command requires filesystem events.
+The snapshot request reuses the runner's existing sandbox credentials and
+request signing. For local trace inspection, use `NEOSIGMA_CONSOLE_EXPORT=true`.
+
+[NeoSigma SDK setup](https://docs.neosigma.ai/sdk/getting-started/installation) ·
+[Artifact capture](https://docs.neosigma.ai/sdk/instrument/tracing/artifacts)
+
 ## Data Models
 
 ### AgentRunInput

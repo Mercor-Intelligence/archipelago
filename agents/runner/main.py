@@ -48,6 +48,7 @@ from runner.utils.logging.terminal_error import (
     peek_terminal_fault,
 )
 from runner.utils.metrics import increment, modal_placement
+from runner.utils.neosigma_tracing import trace_agent_run
 from runner.utils.settings import get_settings
 from runner.utils.system_instructions import (
     CONTRACT_FAULT,
@@ -94,6 +95,7 @@ def wall_clock_budget_sec(
     return budget
 
 
+@trace_agent_run
 async def main(
     trajectory_id: str,
     initial_messages: list[dict[str, Any]],

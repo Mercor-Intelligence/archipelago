@@ -79,6 +79,7 @@ from runner.utils.image_fetch import (
 )
 from runner.utils.mcp import tool_accepts_extra_headers
 from runner.utils.metrics import distribution
+from runner.utils.neosigma_tracing import trace_model
 from runner.utils.pdf_text import inline_pdfs_as_text, rejects_inline_pdf
 from runner.utils.settings import get_settings, work_unit_ctx
 from runner.utils.system_instructions import check_first_request
@@ -1987,6 +1988,7 @@ def cli_cas_spend_tags(*, trajectory_id: str | None) -> dict[str, str]:
     skip_on=(ContextWindowExceededError,),
     skip_if=_should_skip_retry,
 )
+@trace_model
 async def generate_response(
     model: str,
     messages: list[LitellmAnyMessage],
@@ -2304,6 +2306,7 @@ async def generate_response(
     skip_on=(ContextWindowExceededError,),
     skip_if=_should_skip_retry,
 )
+@trace_model
 async def call_responses_api(
     model: str,
     messages: list[LitellmAnyMessage],
