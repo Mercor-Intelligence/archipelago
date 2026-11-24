@@ -10,7 +10,7 @@ from typing import Any, ClassVar, cast
 from fastmcp import Client as FastMCPClient
 from litellm import Choices
 from litellm.exceptions import ContextWindowExceededError, Timeout
-from litellm.experimental_mcp_client import call_openai_tool, load_mcp_tools
+from litellm.experimental_mcp_client import load_mcp_tools
 from litellm.experimental_mcp_client.tools import (
     transform_mcp_tool_to_openai_tool,
     transform_openai_tool_call_request_to_mcp_tool_call_request,
@@ -73,6 +73,7 @@ from runner.utils.mcp import (
     reconnect_mcp_session,
     wait_before_gateway_5xx_replay,
 )
+from runner.utils.neosigma_tracing import call_openai_tool, trace_tool
 from runner.utils.progress_monitor import (
     LOOP_OUTCOME,
     STALL_OUTCOME,
@@ -899,7 +900,11 @@ class ReActAgent:
         request = transform_openai_tool_call_request_to_mcp_tool_call_request(
             openai_tool=tool_call
         )
-        return await client.call_tool_mcp(request.name, request.arguments or {})
+        return await trace_tool(
+            request.name,
+            request.arguments or {},
+            lambda: client.call_tool_mcp(request.name, request.arguments or {}),
+        )
 
     async def _reconnect_mcp(
         self, client: Any, tool_call: Any, error: Exception
