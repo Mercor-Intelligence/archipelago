@@ -153,7 +153,9 @@ async def _attach(sdk, turn, content, name, direction, media_type):
         return
     try:
         with content:
-            location, display_name = await publish_artifact(content, name, media_type)
+            location, display_name = await publish_artifact(
+                sdk, content, name, media_type
+            )
         sdk.artifact(location, name=display_name, direction=direction)
     except Exception as exc:
         _capture_error(turn, name, exc)
@@ -314,6 +316,13 @@ def trace_agent_run(run):
         active = _active.set(True)
         files = ExitStack()
         capture = _artifacts_enabled()
+        if capture and not hasattr(sdk, "PendingArtifact"):
+            _capture_error(
+                turn,
+                "disabled",
+                SnapshotUploadError("Confirmed uploads require NeoSigma SDK 0.19.0+"),
+            )
+            capture = False
         timeout_override = _capture_timeout_override() if capture else None
         staged: list[BinaryIO] = []
         staging = _staging.set((files, staged) if capture else None)
