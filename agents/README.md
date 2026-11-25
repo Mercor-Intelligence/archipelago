@@ -275,8 +275,9 @@ export NEOSIGMA_PROJECT='<project-slug>'
 
 Each trajectory records its original messages, model inputs and outputs, MCP
 arguments and results, final response, and status. The input messages and the
-final trajectory result are uploaded once, at the end of the run. Span content
-uses the SDK's content limits. Tool schemas are a model span attribute.
+final trajectory result upload once per run and take priority over workspace
+uploads. The final workspace is read while these JSON files upload. Span
+content uses the SDK's content limits. Tool schemas are a model span attribute.
 
 The runner captures the shared workspace before and after execution through
 the environment's signed `/data/snapshot/workspace` endpoint. That endpoint
@@ -292,10 +293,12 @@ records each successfully staged archive as input, preserving its paths and
 bytes. The final snapshot shows the workspace when the agent finishes. A
 grading snapshot can include later changes from pending coordinator actions.
 
-`NEOSIGMA_CAPTURE_TIMEOUT_SECONDS` limits starting capture and post-run capture
-and uploads, with 30 seconds for each phase by default. Failed uploads get up
-to two additional seconds for cleanup. The CLI saves the trajectory result
-before flushing the SDK's span exporter.
+Starting capture has a 30-second default budget. The post-run budget starts at
+30 seconds and gains 30 seconds per 128 MiB of workspace evidence as archive
+sizes become known, up to 120 seconds. `NEOSIGMA_CAPTURE_TIMEOUT_SECONDS` sets
+a fixed cap for each phase. Failed uploads get up to two additional seconds
+for cleanup. Every runner flushes the SDK's span exporter during logger
+teardown, and the CLI saves the trajectory result before teardown.
 
 For local trace inspection, use `NEOSIGMA_CONSOLE_EXPORT=true`.
 
