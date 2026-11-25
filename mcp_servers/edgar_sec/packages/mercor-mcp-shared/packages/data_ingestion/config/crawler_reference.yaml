@@ -1,0 +1,194 @@
+# ================================================================================
+# Crawler Reference Configuration
+# ================================================================================
+#
+# This is a comprehensive reference showing all available configuration options
+# for the web crawler module. Use this as a template for creating your own
+# crawler configurations.
+#
+# The crawler supports two workflows:
+#   1. Crawl → Manifest: Discover files and save list to manifest.json
+#   2. Crawl → Download: Discover files and download them (with optional confirmation)
+#   3. Manifest → Download: Read existing manifest and download files
+#
+# Downloads are resumable via checkpoint files. If a download is interrupted,
+# re-running the same command will skip already-completed files and continue
+# from where it left off.
+#
+# ================================================================================
+
+crawler:
+  # ============================================================
+  # INPUT: Where to get the list of files
+  # ============================================================
+  input:
+    # Input type: "crawl" to discover from URL, "manifest" to read from file
+    type: crawl
+
+    # ------ When type: crawl ------
+    # Root URL to start crawling from
+    root_url: "https://www.govinfo.gov/bulkdata/json"
+
+    # ------ When type: manifest ------
+    # Path to existing manifest file (uncomment to use)
+    # file: "./output/manifest.json"
+
+    # Parser configuration (required when type: crawl)
+    # Describes how to extract items from JSON API responses
+    parser:
+      type: json                         # Parser type (currently only json supported)
+
+      # JSONPath to the array of items in the response
+      # Examples:
+      #   "$.files"           - govinfo.gov
+      #   "$.result.resources" - CKAN APIs
+      #   "$.data.entries"    - Custom APIs
+      items_path: "$.files"
+
+      # Field mappings: Extract data from each item
+      # Path uses "@." prefix for current item context
+      item_fields:
+        # Name/filename of the item
+        name:
+          path: "@.name"
+          # type: string (default)
+
+        # URL to download or crawl further
+        url:
+          path: "@.link"
+
+        # Whether this is a folder (needs further crawling)
+        is_folder:
+          path: "@.folder"
+          type: boolean                  # Convert to boolean
+
+        # File size in bytes (optional)
+        size:
+          path: "@.size"
+          type: integer                  # Convert to integer
+
+        # Last modified timestamp (optional)
+        last_modified:
+          path: "@.formattedLastModifiedTime"
+
+    # Crawl behavior options (only used when type: crawl)
+    options:
+      # Follow folder links to discover nested files
+      follow_folders: true
+
+      # Maximum crawl depth (-1 = unlimited)
+      # 0 = only root URL, 1 = root + immediate children, etc.
+      max_depth: -1
+
+      # Only include files with these extensions
+      # Leave empty [] to include all files
+      file_extensions: [".xml", ".zip"]
+
+      # Exclude URLs matching these regex patterns (uses re.search)
+      # Examples:
+      #   "/resources/"     - Skip URLs containing /resources/
+      #   "/title-[1-9]$"   - Skip URLs ending with title-1 to title-9
+      #   "/2020/"          - Skip anything with 2020 in path
+      exclude_patterns: ["/resources/"]
+
+      # Rate limiting to avoid overwhelming the server
+      rate_limit:
+        requests_per_second: 5
+
+    # HTTP client settings (only used when type: crawl)
+    http:
+      # Headers to send with every request
+      headers:
+        Accept: "application/json"
+        User-Agent: "DataIngestion/1.0"
+
+      # Timeouts in seconds
+      timeout:
+        connect: 10                      # Connection timeout
+        read: 60                         # Read timeout
+
+      # Retry configuration for failed requests
+      retry:
+        max_attempts: 3                  # Number of retry attempts
+        backoff_factor: 0.5              # Exponential backoff factor
+
+  # ============================================================
+  # OUTPUT: What to do with the files
+  # ============================================================
+  output:
+    # Output mode:
+    #   "manifest" - Only save manifest.json (list of discovered files)
+    #   "download" - Save manifest.json AND download all files
+    mode: manifest
+
+    # Output directory for manifest and downloaded files
+    # Directory structure:
+    #   ./output/
+    #   ├── manifest.json              # Always created
+    #   ├── checkpoint.json            # Download progress (for resume)
+    #   └── data/                      # Only in download mode
+    #       └── <url-path-structure>/  # Files preserve URL directory structure
+    #           ├── file1.xml
+    #           └── ...
+    directory: "./output"
+
+    # When true, shows a download summary (file count, total size) and
+    # prompts for confirmation before downloading. Useful for large
+    # collections. Default: false (downloads immediately, suitable for automation).
+    confirm_before_download: false
+
+# ================================================================================
+# Workflow Reference
+# ================================================================================
+#
+# | input.type | output.mode | What happens                              |
+# |------------|-------------|-------------------------------------------|
+# | crawl      | manifest    | Crawl API → save manifest.json → stop     |
+# | crawl      | download    | Crawl API → save manifest.json → download |
+# | manifest   | download    | Read manifest.json → download files       |
+#
+# Typical workflow:
+#   1. Run with type=crawl, mode=manifest to discover files
+#   2. Review/edit manifest.json to filter unwanted files
+#   3. Run with type=manifest, mode=download to download filtered files
+#
+# Or use confirm_before_download for a single-config workflow:
+#   1. Run with type=crawl, mode=download, confirm_before_download=true
+#   2. Review the summary, confirm to proceed
+#   3. If interrupted, re-run the same command to resume
+#
+# Resume behavior:
+#   Downloads are tracked via checkpoint.json. Re-running the same
+#   command skips files that were already downloaded with correct size.
+#   If an existing manifest is found, you'll be prompted to reuse it
+#   or re-crawl.
+#
+# ================================================================================
+# Example Configurations for Different APIs
+# ================================================================================
+#
+# govinfo.gov:
+#   parser:
+#     items_path: "$.files"
+#     item_fields:
+#       name: { path: "@.name" }
+#       url: { path: "@.link" }
+#       is_folder: { path: "@.folder", type: boolean }
+#
+# CKAN API (data.gov):
+#   parser:
+#     items_path: "$.result.resources"
+#     item_fields:
+#       name: { path: "@.name" }
+#       url: { path: "@.url" }
+#       is_folder: { path: "false", type: boolean }  # CKAN is flat
+#
+# Custom API:
+#   parser:
+#     items_path: "$.data.entries"
+#     item_fields:
+#       name: { path: "@.title" }
+#       url: { path: "@.metadata.download_url" }
+#       is_folder: { path: "@.entry_type == 'folder'", type: boolean }
+#
+# ================================================================================

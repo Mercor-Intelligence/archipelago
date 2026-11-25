@@ -1,0 +1,442 @@
+# UI Regeneration Workflow
+# Regenerates UI files via PR comments or manual trigger.
+#
+# Features:
+# - Trigger via /regenerate-ui PR comment
+# - Manual workflow dispatch trigger
+# - Permission checks for comment triggers
+# - Optional build verification
+# - Automatic merge conflict resolution for UI-only conflicts
+#
+# Prerequisites:
+# - scripts/regenerate_ui.py (from mercor-mcp-shared)
+
+name: UI Regeneration
+
+on:
+  # Manual trigger from Actions tab
+  workflow_dispatch:
+    inputs:
+      servers:
+        description: 'Servers to regenerate (comma-separated or "all")'
+        required: true
+        default: 'all'
+        type: string
+      verify_build:
+        description: 'Run npm build verification (slow, ~5-10 min)'
+        required: false
+        default: false
+        type: boolean
+      resolve_conflicts:
+        description: 'Merge target branch and resolve UI-only conflicts by regenerating'
+        required: false
+        default: false
+        type: boolean
+
+  # PR comment trigger: /regenerate-ui
+  issue_comment:
+    types: [created]
+
+jobs:
+  # Check if this should run (comment trigger only)
+  check-trigger:
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'issue_comment' &&
+       github.event.issue.pull_request &&
+       contains(github.event.comment.body, '/regenerate-ui'))
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.check.outputs.run }}
+      servers: ${{ steps.parse.outputs.servers }}
+      pr_number: ${{ steps.pr.outputs.number }}
+      pr_ref: ${{ steps.pr.outputs.ref }}
+      pr_base: ${{ steps.pr.outputs.base }}
+      verify_build: ${{ steps.parse.outputs.verify_build }}
+      resolve_conflicts: ${{ steps.parse.outputs.resolve_conflicts }}
+
+    steps:
+      - name: Check permissions
+        id: check
+        uses: actions/github-script@v7
+        with:
+          script: |
+            if (context.eventName === 'workflow_dispatch') {
+              core.setOutput('run', 'true');
+              return;
+            }
+
+            // For comment trigger, check if user has write access
+            const { data: user } = await github.rest.repos.getCollaboratorPermissionLevel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              username: context.actor
+            });
+
+            const hasPermission = ['admin', 'write'].includes(user.permission);
+            core.setOutput('run', hasPermission ? 'true' : 'false');
+
+            if (!hasPermission) {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `@${context.actor} Sorry, you don't have permission to trigger UI regeneration. Only repository collaborators can do this.`
+              });
+            }
+
+      - name: Get PR info
+        if: github.event_name == 'issue_comment'
+        id: pr
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number
+            });
+            core.setOutput('number', pr.data.number);
+            core.setOutput('ref', pr.data.head.ref);
+            core.setOutput('base', pr.data.base.ref);
+
+      - name: Parse servers from input
+        id: parse
+        run: |
+          if [ "${{ github.event_name }}" == "issue_comment" ]; then
+            COMMENT="${{ github.event.comment.body }}"
+            # Check for --resolve-conflicts flag
+            if echo "$COMMENT" | grep -q '\-\-resolve-conflicts'; then
+              RESOLVE="true"
+              # Remove the flag from comment for server parsing
+              COMMENT=$(echo "$COMMENT" | sed 's/--resolve-conflicts//g')
+            else
+              RESOLVE="false"
+            fi
+            # Extract servers from comment: /regenerate-ui server1,server2
+            # Or just /regenerate-ui (defaults to all servers with drift)
+            SERVERS=$(echo "$COMMENT" | grep -oP '/regenerate-ui\s+\K\S+' || echo "all")
+            # No verification for comment triggers (too slow)
+            VERIFY="false"
+          else
+            SERVERS="${{ inputs.servers }}"
+            VERIFY="${{ inputs.verify_build }}"
+            RESOLVE="${{ inputs.resolve_conflicts }}"
+          fi
+          echo "servers=$SERVERS" >> $GITHUB_OUTPUT
+          echo "verify_build=$VERIFY" >> $GITHUB_OUTPUT
+          echo "resolve_conflicts=$RESOLVE" >> $GITHUB_OUTPUT
+
+  # Do the actual regeneration
+  regenerate:
+    needs: check-trigger
+    if: needs.check-trigger.outputs.should_run == 'true'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Post start comment
+        if: github.event_name == 'issue_comment'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const servers = '${{ needs.check-trigger.outputs.servers }}';
+            const verify = '${{ needs.check-trigger.outputs.verify_build }}' === 'true';
+            const resolveConflicts = '${{ needs.check-trigger.outputs.resolve_conflicts }}' === 'true';
+            const targetBranch = '${{ needs.check-trigger.outputs.pr_base }}';
+
+            const body = `## UI Regeneration Started
+
+            **Servers:** \`${servers}\`
+            ${verify ? '**Build verification:** Enabled (this may take 5-10 minutes)' : ''}
+            ${resolveConflicts ? `**Conflict resolution:** Will merge \`${targetBranch}\` and resolve UI-only conflicts` : ''}
+
+            [View workflow run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})`;
+
+            await github.rest.issues.createComment({
+              issue_number: ${{ needs.check-trigger.outputs.pr_number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            });
+
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.check-trigger.outputs.pr_ref || github.ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0  # Full history needed for merge
+
+      - name: Merge target branch and check conflicts
+        id: merge
+        if: needs.check-trigger.outputs.resolve_conflicts == 'true'
+        run: |
+          set -euo pipefail
+
+          TARGET_BRANCH="${{ needs.check-trigger.outputs.pr_base }}"
+
+          # Validate TARGET_BRANCH is set (only available from PR comments, not workflow_dispatch)
+          if [ -z "$TARGET_BRANCH" ]; then
+            echo "::error::--resolve-conflicts requires a PR context to determine the target branch. Use this flag from a PR comment (/regenerate-ui --resolve-conflicts), not from workflow_dispatch."
+            exit 1
+          fi
+
+          echo "Attempting to merge origin/$TARGET_BRANCH..."
+
+          # Configure git for the merge
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Store current HEAD to reset to if merge succeeds (handles fast-forward case)
+          ORIGINAL_HEAD=$(git rev-parse HEAD)
+
+          # Fetch the target branch
+          git fetch origin "$TARGET_BRANCH"
+
+          # Attempt merge, allowing conflicts
+          if git merge "origin/$TARGET_BRANCH" --no-edit; then
+            echo "::error::No merge conflicts detected. Use /regenerate-ui without --resolve-conflicts, or merge $TARGET_BRANCH manually."
+            # Undo the merge using stored HEAD (works for both fast-forward and real merges)
+            git reset --hard "$ORIGINAL_HEAD"
+            exit 1
+          else
+            echo "Merge has conflicts, checking if UI-only..."
+
+            # Get list of conflicted files
+            CONFLICTED_FILES=$(git diff --name-only --diff-filter=U)
+            echo "Conflicted files:"
+            echo "$CONFLICTED_FILES"
+
+            # Check if all conflicts are in ui/ folder
+            NON_UI_CONFLICTS=$(echo "$CONFLICTED_FILES" | grep -v '^ui/' || true)
+
+            if [ -n "$NON_UI_CONFLICTS" ]; then
+              echo "non_ui_conflicts=true" >> $GITHUB_OUTPUT
+              echo "conflicted_files<<EOF" >> $GITHUB_OUTPUT
+              echo "$NON_UI_CONFLICTS" >> $GITHUB_OUTPUT
+              echo "EOF" >> $GITHUB_OUTPUT
+              echo "::error::Conflicts found outside ui/ folder - cannot auto-resolve"
+              exit 1
+            fi
+
+            echo "All conflicts are in ui/ folder - will resolve by regenerating"
+            echo "had_conflicts=true" >> $GITHUB_OUTPUT
+
+            # Resolve conflicts by accepting theirs first (to clear conflict markers),
+            # then we'll regenerate and overwrite anyway.
+            # Handle both content conflicts and delete/modify conflicts.
+            for file in $CONFLICTED_FILES; do
+              if [ -f "$file" ]; then
+                git checkout --theirs "$file" 2>/dev/null || git rm "$file"
+              else
+                # File was deleted on theirs side
+                git rm "$file" 2>/dev/null || true
+              fi
+            done
+            git add ui/
+          fi
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Setup Node (if verification enabled)
+        if: needs.check-trigger.outputs.verify_build == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Python dependencies
+        run: uv sync --all-extras
+
+      - name: Regenerate UI
+        id: regen
+        run: |
+          SERVERS="${{ needs.check-trigger.outputs.servers }}"
+          VERIFY_FLAG=""
+          if [ "${{ needs.check-trigger.outputs.verify_build }}" == "true" ]; then
+            VERIFY_FLAG="--verify"
+          fi
+
+          if [ "$SERVERS" == "all" ]; then
+            uv run python scripts/regenerate_ui.py --all $VERIFY_FLAG
+          else
+            # Support comma-separated list
+            for server in $(echo "$SERVERS" | tr ',' ' '); do
+              uv run python scripts/regenerate_ui.py --server "$server" $VERIFY_FLAG
+            done
+          fi
+
+          echo "servers=$SERVERS" >> $GITHUB_OUTPUT
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet ui/; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No changes to commit"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            git diff --stat ui/
+          fi
+
+      - name: Commit and push changes
+        id: commit
+        if: steps.changes.outputs.has_changes == 'true' || steps.merge.outputs.had_conflicts == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add ui/
+
+          SERVERS="${{ steps.regen.outputs.servers }}"
+
+          # Check if we're in a merge state (resolved conflicts)
+          if [ -f .git/MERGE_HEAD ]; then
+            TARGET_BRANCH="${{ needs.check-trigger.outputs.pr_base }}"
+            git commit -m "Merge $TARGET_BRANCH and regenerate UI: $SERVERS
+
+          Resolved UI conflicts by regenerating from models.
+
+          Generated by: ${{ github.actor }}
+          Workflow: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          else
+            git commit -m "Regenerate UI: $SERVERS
+
+          Generated by: ${{ github.actor }}
+          Workflow: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          fi
+
+          git push
+
+          # Capture the new commit SHA
+          echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+
+  # Post finish comment (runs always to catch failures)
+  comment-on-finish:
+    needs:
+      - check-trigger
+      - regenerate
+    if: ${{ always() && github.event_name == 'issue_comment' && needs.check-trigger.outputs.should_run == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post result comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const servers = '${{ needs.check-trigger.outputs.servers }}';
+            const verified = '${{ needs.check-trigger.outputs.verify_build }}' === 'true';
+            const resolveConflicts = '${{ needs.check-trigger.outputs.resolve_conflicts }}' === 'true';
+            const targetBranch = '${{ needs.check-trigger.outputs.pr_base }}';
+            const regenResult = '${{ needs.regenerate.result }}';
+
+            // Query the GitHub API to find failure details
+            const { data: jobs } = await github.rest.actions.listJobsForWorkflowRun({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.runId,
+            });
+
+            const regenJob = jobs.jobs.find(j => j.name === 'regenerate');
+
+            let body;
+
+            if (regenResult === 'success') {
+              // Check if there were actual changes from the commit step
+              const commitStep = regenJob?.steps?.find(s => s.name === 'Commit and push changes');
+              const hasChanges = commitStep?.conclusion === 'success';
+
+              // Check if merge resolved conflicts
+              const mergeStep = regenJob?.steps?.find(s => s.name === 'Merge target branch and check conflicts');
+              const mergedWithConflicts = mergeStep?.conclusion === 'success' && resolveConflicts;
+
+              if (hasChanges) {
+                body = `## UI Regeneration Complete
+
+            **Servers:** \`${servers}\`
+            ${verified ? '**Build verification:** Passed' : ''}
+            ${mergedWithConflicts ? `**Merge conflicts:** Resolved by regenerating UI from \`${targetBranch}\`` : ''}
+
+            Changes have been committed and pushed to this PR.
+
+            [View workflow run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})`;
+              } else {
+                body = `## UI Regeneration Complete
+
+            **Servers:** \`${servers}\`
+            ${mergedWithConflicts ? `**Merged:** \`${targetBranch}\` (no conflicts)` : ''}
+
+            No changes needed — the UI is already up to date with the models.
+
+            [View workflow run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})`;
+              }
+            } else {
+              // Find which step failed
+              let failedStep = null;
+              let failureReason = 'Unknown error';
+              let troubleshooting = [];
+
+              if (regenJob?.steps) {
+                const failed = regenJob.steps.find(s => s.conclusion === 'failure');
+                if (failed) {
+                  failedStep = failed.name;
+
+                  // Map step names to human-readable failure reasons
+                  if (failed.name.includes('Checkout')) {
+                    failureReason = 'Failed to checkout the PR branch';
+                    troubleshooting = ['Check if the branch still exists', 'Verify repository permissions'];
+                  } else if (failed.name.includes('Merge target branch')) {
+                    failureReason = `Merge with \`${targetBranch}\` failed`;
+                    troubleshooting = [
+                      'If there were no conflicts: use `/regenerate-ui` without `--resolve-conflicts`',
+                      'If there were non-UI conflicts: resolve them manually first',
+                      `Run \`git merge origin/${targetBranch}\` locally to see what conflicts exist`,
+                      'Push the resolved changes, then retry `/regenerate-ui --resolve-conflicts`'
+                    ];
+                  } else if (failed.name.includes('Install Python')) {
+                    failureReason = 'Failed to install Python dependencies';
+                    troubleshooting = ['Check if pyproject.toml is valid', 'Verify dependency versions'];
+                  } else if (failed.name.includes('Regenerate')) {
+                    failureReason = 'UI generation script failed — check if Pydantic models are valid';
+                    troubleshooting = [
+                      'Ensure all models have valid schemas',
+                      'Try running locally: `uv run python scripts/regenerate_ui.py --server <server>`'
+                    ];
+                  } else if (failed.name.includes('Commit')) {
+                    failureReason = 'Failed to commit changes — possible merge conflict';
+                    troubleshooting = ['Check for uncommitted changes', 'Verify git permissions'];
+                  } else if (failed.name.includes('Node') || failed.name.includes('npm')) {
+                    failureReason = 'Build verification failed — TypeScript or compilation error';
+                    troubleshooting = ['Run `npm run build` locally to see TypeScript errors'];
+                  } else {
+                    failureReason = `Failed at step: ${failed.name}`;
+                    troubleshooting = ['Check the workflow logs for details'];
+                  }
+                }
+              }
+
+              const troubleshootingList = troubleshooting.length > 0
+                ? troubleshooting.map((t, i) => `${i + 1}. ${t}`).join('\n')
+                : '1. Check the workflow logs for the specific error';
+
+              body = `## UI Regeneration Failed
+
+            **Servers:** \`${servers}\`
+            **Error:** ${failureReason}
+
+            [View detailed logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+            ### Troubleshooting
+
+            ${troubleshootingList}`;
+            }
+
+            await github.rest.issues.createComment({
+              issue_number: ${{ needs.check-trigger.outputs.pr_number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            });
