@@ -278,8 +278,7 @@ arguments and results, final response, and status. The input messages and the
 final trajectory result upload once per run and take priority over workspace
 uploads. The final workspace is read while these JSON files upload. Span
 content uses the SDK's content limits. Tool schemas are a model span attribute.
-Confirmed artifact capture requires NeoSigma SDK 0.19.0 or later. The current
-extra pins 0.18.0 for span tracing while 0.19.0 is pending release.
+Confirmed artifact capture requires NeoSigma SDK 0.19.0 or later.
 
 The runner captures the shared workspace before and after execution through
 the environment's signed `/data/snapshot/workspace` endpoint. That endpoint
