@@ -13,6 +13,7 @@ exclude-newer-span = "P7D"
 
 [options.exclude-newer-package]
 modal = "2026-10-04T00:00:00Z"
+neosigma = "2026-11-26T00:00:00Z"
 
 [manifest]
 overrides = [{ name = "python-dotenv", specifier = ">=1.0.1" }]
@@ -251,7 +252,7 @@ requires-dist = [
     { name = "litellm", specifier = "==1.84.0" },
     { name = "loguru", specifier = ">=0.7.3" },
     { name = "modal", specifier = "==1.6.1" },
-    { name = "neosigma", marker = "extra == 'neosigma'", specifier = "==0.18.0" },
+    { name = "neosigma", marker = "extra == 'neosigma'", specifier = "==0.19.0" },
     { name = "openpyxl", specifier = ">=3.1.0" },
     { name = "pandas", specifier = ">=2.2.0" },
     { name = "pillow", specifier = "==13.0.0" },
@@ -1533,18 +1534,19 @@ wheels = [
 
 [[package]]
 name = "neosigma"
-version = "0.18.0"
+version = "0.19.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "opentelemetry-api" },
+    { name = "opentelemetry-exporter-otlp-proto-common" },
     { name = "opentelemetry-exporter-otlp-proto-http" },
     { name = "opentelemetry-sdk" },
     { name = "pydantic" },
     { name = "pydantic-settings" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/5d/36/99ecc2c4036278af2437e0d20a6936cf5ca25b3e8e64f78a4edce2004566/neosigma-0.18.0.tar.gz", hash = "sha256:2c54ad698b22480b8d15bde569ddfee1513764fbb230ba620ffaeed84011d478", size = 201884, upload-time = "2026-11-05T21:11:22.072Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/23/ae/2481d81202b33666dee583b585a25c74cbe86c8e54a2405001e5a57c0d98/neosigma-0.19.0.tar.gz", hash = "sha256:733a460dbeca021a38461810bf04a05007c5edc9e39766ae804e84cffd3478ba", size = 204866, upload-time = "2026-11-25T01:58:00.752Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/79/e6/5cec9eaa455a130d85202a5ab00bc5ab1fdea608837e5bff34d617107f34/neosigma-0.18.0-py3-none-any.whl", hash = "sha256:01d8b2c3fd2d83c4379010a8560a738d1a95ba704ee4cd4748939d435035cca9", size = 208386, upload-time = "2026-11-05T21:11:20.644Z" },
+    { url = "https://files.pythonhosted.org/packages/92/5a/23a2f4ad32b11330f201007ed0f528226ce7f6b55335447e91e20e541de7/neosigma-0.19.0-py3-none-any.whl", hash = "sha256:a8bd1e3ca7571bf268f3ba750d4790a5dbe92339fe8a526c85319589f210c58e", size = 210868, upload-time = "2026-11-25T01:57:59.59Z" },
 ]
 
 [[package]]
@@ -2393,8 +2395,8 @@ name = "secretstorage"
 version = "3.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cryptography" },
-    { name = "jeepney" },
+    { name = "cryptography", marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
+    { name = "jeepney", marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/1c/03/e834bcd866f2f8a49a85eaff47340affa3bfa391ee9912a952a1faa68c7b/secretstorage-3.5.0.tar.gz", hash = "sha256:f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be", size = 19884, upload-time = "2025-11-23T19:02:53.191Z" }
 wheels = [

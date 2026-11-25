@@ -493,3 +493,48 @@ async def test_direct_worker_teardown_flushes_before_last_trajectory(monkeypatch
 
     assert calls == ["flush", "complete"]
     assert runner_logging._active_trajectory_count == 1
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize(
+    "usage",
+    [
+        {
+            "prompt_tokens": 100,
+            "completion_tokens": 5,
+            "cache_read_input_tokens": 80,
+            "cache_creation_input_tokens": 10,
+        },
+        {
+            "prompt_tokens": 100,
+            "completion_tokens": 5,
+            "prompt_tokens_details": {"cached_tokens": 80, "cache_creation_tokens": 10},
+        },
+        {
+            "input_tokens": 100,
+            "output_tokens": 5,
+            "input_tokens_details": {"cached_tokens": 80, "cache_creation_tokens": 10},
+        },
+    ],
+)
+async def test_model_span_records_cache_tokens(request, usage):
+    exporter = InMemorySpanExporter()
+    provider = TracerProvider()
+    provider.add_span_processor(SimpleSpanProcessor(exporter))
+    neosigma.init(api_key="", project="fixture", tracer_provider=provider)
+    request.addfinalizer(neosigma.shutdown)
+
+    @neosigma_tracing.trace_model
+    async def model(model, messages, tools):
+        return SimpleNamespace(usage=usage)
+
+    token = neosigma_tracing._active.set(True)
+    try:
+        await model("fixture", [{"role": "user", "content": "hi"}], [])
+    finally:
+        neosigma_tracing._active.reset(token)
+    (span,) = exporter.get_finished_spans()
+    assert span.attributes["gen_ai.usage.input_tokens"] == 100
+    assert span.attributes["gen_ai.usage.output_tokens"] == 5
+    assert span.attributes["gen_ai.usage.cache_read_input_tokens"] == 80
+    assert span.attributes["gen_ai.usage.cache_creation_input_tokens"] == 10

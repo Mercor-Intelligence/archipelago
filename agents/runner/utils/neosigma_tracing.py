@@ -452,23 +452,30 @@ def trace_model(call):
                 )
                 return
             usage = _recordable(getattr(response, "usage", None)) or {}
+            details = (
+                usage.get("prompt_tokens_details")
+                or usage.get("input_tokens_details")
+                or {}
+            )
             end_chat(
                 span,
                 ChatEnd(
                     completion=_json(response),
                     usage=TokenUsage(
-                        input_tokens=max(
-                            0,
-                            usage.get("input_tokens")
-                            or usage.get("prompt_tokens")
-                            or 0,
+                        input_tokens=_token_count(
+                            usage, "input_tokens", "prompt_tokens"
                         ),
-                        output_tokens=max(
-                            0,
-                            usage.get("output_tokens")
-                            or usage.get("completion_tokens")
-                            or 0,
+                        output_tokens=_token_count(
+                            usage, "output_tokens", "completion_tokens"
                         ),
+                        cache_read_input_tokens=_token_count(
+                            usage, "cache_read_input_tokens"
+                        )
+                        or _token_count(details, "cached_tokens"),
+                        cache_creation_input_tokens=_token_count(
+                            usage, "cache_creation_input_tokens"
+                        )
+                        or _token_count(details, "cache_creation_tokens"),
                     ),
                 ),
             )
@@ -478,6 +485,14 @@ def trace_model(call):
         )
 
     return wrapped
+
+
+def _token_count(usage: dict, *keys: str) -> int:
+    for key in keys:
+        value = usage.get(key)
+        if isinstance(value, int) and not isinstance(value, bool) and value > 0:
+            return value
+    return 0
 
 
 def _tool_failed(result: Any) -> bool:
