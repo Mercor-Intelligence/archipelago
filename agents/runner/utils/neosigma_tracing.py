@@ -29,6 +29,8 @@ _staging = ContextVar[tuple[ExitStack, list[BinaryIO]] | None](
     "neosigma_staging", default=None
 )
 _CAPTURE_TIMEOUT_SECONDS = 30.0
+_WORKSPACE_BUDGET_BYTES = 128 * 1024 * 1024
+_MAX_EXTRA_WORKSPACE_WINDOWS = 3
 _secrets = {
     "authorization",
     "api_key",
@@ -49,7 +51,7 @@ def _artifacts_enabled() -> bool:
     )
 
 
-def _capture_timeout() -> float:
+def _capture_timeout_override() -> float | None:
     value = os.getenv("NEOSIGMA_CAPTURE_TIMEOUT_SECONDS")
     if value is not None:
         try:
@@ -62,7 +64,7 @@ def _capture_timeout() -> float:
             "Invalid NeoSigma capture timeout; using {} seconds",
             _CAPTURE_TIMEOUT_SECONDS,
         )
-    return _CAPTURE_TIMEOUT_SECONDS
+    return None
 
 
 def _observe(operation, call, *args, **kwargs):
@@ -82,7 +84,7 @@ def _init():
 
 
 async def flush_traces() -> None:
-    """Flush batch exports after the CLI has persisted the trajectory result."""
+    """Flush batch exports when any runner tears down a trajectory."""
     try:
         if _init.cache_info().currsize:
             await asyncio.to_thread(_init().flush)
@@ -157,7 +159,7 @@ async def _attach(sdk, turn, content, name, direction, media_type):
         _capture_error(turn, name, exc)
 
 
-async def _publish_evidence(sdk, turn, starting, final, staged, messages, result):
+async def _publish_workspaces(sdk, turn, starting, final, staged):
     for index, archive in enumerate(staged, 1):
         await _attach(
             sdk,
@@ -173,31 +175,72 @@ async def _publish_evidence(sdk, turn, starting, final, staged, messages, result
     await _attach(
         sdk, turn, final, "final-workspace.tar.gz", "output", "application/gzip"
     )
-    initial = await asyncio.to_thread(
-        _observe, "initial message encoding", _json, messages
-    )
-    if initial is not None:
+
+
+async def _publish_json(sdk, turn, value, name, direction):
+    encoded = await asyncio.to_thread(_observe, "transcript encoding", _json, value)
+    if encoded is not None:
         await _attach(
-            sdk,
-            turn,
-            BytesIO(initial.encode()),
-            "initial-messages.json",
-            "input",
-            "application/json",
+            sdk, turn, BytesIO(encoded.encode()), name, direction, "application/json"
         )
-    if result is not None:
-        transcript = await asyncio.to_thread(
-            _observe, "trajectory encoding", _json, result
-        )
-        if transcript is not None:
-            await _attach(
-                sdk,
-                turn,
-                BytesIO(transcript.encode()),
-                "trajectory-result.json",
-                "output",
-                "application/json",
+
+
+def _workspace_bytes(workspaces) -> int:
+    size = 0
+    for workspace in workspaces:
+        if workspace is not None:
+            size += workspace.seek(0, os.SEEK_END)
+            workspace.seek(0)
+    return size
+
+
+def _post_run_timeout(workspace_bytes: int) -> float:
+    extra_windows = min(
+        _MAX_EXTRA_WORKSPACE_WINDOWS, workspace_bytes // _WORKSPACE_BUDGET_BYTES
+    )
+    return _CAPTURE_TIMEOUT_SECONDS * (1 + extra_windows)
+
+
+async def _publish_after_run(
+    sdk,
+    turn,
+    files,
+    gateway,
+    auth_token,
+    starting,
+    staged,
+    messages,
+    result,
+    timeout_override,
+):
+    async def read_final():
+        final = await _collect_workspace(turn, "final", gateway, auth_token)
+        return files.enter_context(final) if final is not None else None
+
+    loop = asyncio.get_running_loop()
+    started_at = loop.time()
+    known_bytes = (
+        _workspace_bytes((starting, *staged)) if timeout_override is None else 0
+    )
+    async with asyncio.timeout(
+        timeout_override or _post_run_timeout(known_bytes)
+    ) as deadline:
+        # Capture the final state promptly while publishing the transcript first.
+        async with asyncio.TaskGroup() as preparation:
+            final_capture = preparation.create_task(read_final())
+            preparation.create_task(
+                _publish_json(sdk, turn, messages, "initial-messages.json", "input")
             )
+            if result is not None:
+                preparation.create_task(
+                    _publish_json(sdk, turn, result, "trajectory-result.json", "output")
+                )
+        final = final_capture.result()
+        if timeout_override is None:
+            deadline.reschedule(
+                started_at + _post_run_timeout(known_bytes + _workspace_bytes((final,)))
+            )
+        await _publish_workspaces(sdk, turn, starting, final, staged)
 
 
 def _finish_result(turn, result, trajectory_id: str) -> None:
@@ -271,7 +314,7 @@ def trace_agent_run(run):
         active = _active.set(True)
         files = ExitStack()
         capture = _artifacts_enabled()
-        timeout = _capture_timeout() if capture else _CAPTURE_TIMEOUT_SECONDS
+        timeout_override = _capture_timeout_override() if capture else None
         staged: list[BinaryIO] = []
         staging = _staging.set((files, staged) if capture else None)
         starting = None
@@ -284,7 +327,9 @@ def trace_agent_run(run):
             )
             if capture:
                 try:
-                    async with asyncio.timeout(timeout):
+                    async with asyncio.timeout(
+                        timeout_override or _CAPTURE_TIMEOUT_SECONDS
+                    ):
                         starting = await _collect_workspace(
                             turn, "starting", gateway, auth_token
                         )
@@ -299,16 +344,19 @@ def trace_agent_run(run):
             finally:
                 if capture:
                     try:
-                        async with asyncio.timeout(timeout):
-                            final = await _collect_workspace(
-                                turn, "final", gateway, auth_token
-                            )
-                            if final is not None:
-                                files.enter_context(final)
-                            await _publish_evidence(
-                                sdk, turn, starting, final, staged, messages, result
-                            )
-                    except TimeoutError as exc:
+                        await _publish_after_run(
+                            sdk,
+                            turn,
+                            files,
+                            gateway,
+                            auth_token,
+                            starting,
+                            staged,
+                            messages,
+                            result,
+                            timeout_override,
+                        )
+                    except Exception as exc:
                         _capture_error(turn, "after-run", exc)
         finally:
             _observe("snapshot cleanup", files.close)

@@ -133,10 +133,10 @@ async def teardown_logger(trajectory_id: str | None = None) -> None:
     concurrent trajectory in this container has finished.
 
     Closing the sinks early (while a sibling call under @modal.concurrent is
-    still logging) would drop that sibling's remaining log lines. Only
-    logger.complete() runs on every call; the actual sink teardown — which
+    still logging) would drop that sibling's remaining log lines.
+    logger.complete() runs on every call. The actual sink teardown, which
     drains the API log queue's background HTTP worker and closes the file
-    handle — waits for the last in-flight trajectory so pending logs are
+    handle, waits for the last in-flight trajectory so pending logs are
     still shipped before a single-use container is destroyed.
 
     Args:
@@ -151,6 +151,9 @@ async def teardown_logger(trajectory_id: str | None = None) -> None:
     running is no reason to sit on this trajectory's events while the container
     waits to be reaped. Ordering matters too, since the drain reports dropped
     events by logging, and ``logger.complete()`` below is what ships that line.
+
+    The NeoSigma exporter also flushes on every call so runners that invoke
+    ``main`` directly send their completed spans before container shutdown.
     """
     global _active_trajectory_count
 
@@ -159,6 +162,9 @@ async def teardown_logger(trajectory_id: str | None = None) -> None:
     except Exception as e:
         logger.warning(f"CAS ledger flush failed, ignoring: {e!r}")
 
+    from runner.utils.neosigma_tracing import flush_traces
+
+    await flush_traces()
     await logger.complete()
 
     if settings.REDIS_LOGGING:

@@ -3,6 +3,7 @@ import hashlib
 import json
 import tarfile
 from collections import Counter
+from contextlib import ExitStack
 from io import BytesIO
 
 import httpx
@@ -13,6 +14,7 @@ from runner import main as runner_main
 from runner.agents.models import AgentStatus, AgentTrajectoryOutput
 from runner.models import AgentConfig
 from runner.utils import file_staging, neosigma_artifacts, neosigma_tracing
+from runner.utils.logging import main as runner_logging
 
 neosigma = pytest.importorskip("neosigma")
 sdk_spans = pytest.importorskip("neosigma.spans")
@@ -199,7 +201,7 @@ async def run_fixture(monkeypatch, agent):
 
 
 @pytest.mark.asyncio
-@pytest.mark.parametrize("stall", [False, True])
+@pytest.mark.parametrize("stall", [None, "upload", "download"])
 async def test_trace_only_reads_world_at_run_boundaries(monkeypatch, request, stall):
     monkeypatch.setenv("NEOSIGMA_API_KEY", "fixture")
     monkeypatch.setenv("NEOSIGMA_CAPTURE_TIMEOUT_SECONDS", "0.25")
@@ -225,13 +227,15 @@ async def test_trace_only_reads_world_at_run_boundaries(monkeypatch, request, st
 
     async def read(_url, _token):
         events.append("workspace")
+        if stall == "download" and events.count("workspace") == 2:
+            await asyncio.Event().wait()
         await asyncio.sleep(0.025)
         return BytesIO(b"tar")
 
     async def publish(content, name, media_type):
         events.append(("published", name, media_type, content.read()))
         if name == "final-workspace.tar.gz":
-            if stall:
+            if stall == "upload":
                 await asyncio.Event().wait()
             raise neosigma_artifacts.SnapshotUploadError(
                 "Snapshot part 2 of 2 was not confirmed"
@@ -294,16 +298,25 @@ async def test_trace_only_reads_world_at_run_boundaries(monkeypatch, request, st
     result = await asyncio.wait_for(run_fixture(monkeypatch, agent), 2)
     assert result.status == AgentStatus.FAILED
     assert events[:6] == ["workspace", "staged", "model", "tool", "tool", "workspace"]
-    assert events[6] == (
-        "published",
-        "staged-inputs-001.tar.gz",
-        "application/gzip",
-        staged[0],
-    )
+    assert {publication[1] for publication in events[6:8]} == {
+        "initial-messages.json",
+        "trajectory-result.json",
+    }
     with tarfile.open(fileobj=BytesIO(staged[0]), mode="r:gz") as archive:
         assert archive.extractfile("turn_inputs/turn_1/input.txt").read() == b"abc"
-    assert ("fixture:staged-inputs-001.tar.gz", "input") in refs
-    assert ("fixture:starting-workspace.tar.gz", "input") in refs
+    assert ("fixture:initial-messages.json", "input") in refs
+    assert ("fixture:trajectory-result.json", "output") in refs
+    if stall == "download":
+        assert len(events[6:]) == 2
+    else:
+        assert events[8] == (
+            "published",
+            "staged-inputs-001.tar.gz",
+            "application/gzip",
+            staged[0],
+        )
+        assert ("fixture:staged-inputs-001.tar.gz", "input") in refs
+        assert ("fixture:starting-workspace.tar.gz", "input") in refs
     assert ("fixture:final-workspace.tar.gz", "output") not in refs
 
     spans = exporter.get_finished_spans()
@@ -329,6 +342,46 @@ async def test_trace_only_reads_world_at_run_boundaries(monkeypatch, request, st
         {"name": "write"}
     ]
     assert "tool_schemas" not in model_span.attributes["gen_ai.prompt"]
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("timeout_override", [None, 0.1])
+async def test_large_workspace_extends_only_the_default_budget(
+    monkeypatch, timeout_override
+):
+    monkeypatch.setattr(neosigma_tracing, "_CAPTURE_TIMEOUT_SECONDS", 0.1)
+    monkeypatch.setattr(neosigma_tracing, "_WORKSPACE_BUDGET_BYTES", 8)
+    uploaded = []
+
+    async def read(*args):
+        await asyncio.sleep(0.15)
+        return BytesIO(b"final workspace bytes")
+
+    async def attach(_sdk, _turn, content, name, _direction, _media_type):
+        with content:
+            if name == "starting-workspace.tar.gz":
+                await asyncio.sleep(0.15)
+            assert content.read()
+            uploaded.append(name)
+
+    monkeypatch.setattr(neosigma_tracing, "_collect_workspace", read)
+    monkeypatch.setattr(neosigma_tracing, "_attach", attach)
+    with ExitStack() as files:
+        starting = files.enter_context(BytesIO(b"starting workspace bytes"))
+        run = neosigma_tracing._publish_after_run(
+            None, None, files, "gateway", None, starting, [], [], {}, timeout_override
+        )
+        if timeout_override is None:
+            await run
+            assert uploaded[2:] == [
+                "starting-workspace.tar.gz",
+                "final-workspace.tar.gz",
+            ]
+        else:
+            with pytest.raises(TimeoutError):
+                await run
+            assert len(uploaded) == 2
+    assert set(uploaded[:2]) == {"initial-messages.json", "trajectory-result.json"}
 
 
 def sdk_failure(*args, **kwargs):
@@ -392,12 +445,42 @@ async def test_cli_persists_result_before_flushing_traces(monkeypatch):
     async def flush():
         events.append("flush")
 
-    async def teardown():
-        events.append("teardown")
+    async def complete():
+        events.append("complete")
 
-    monkeypatch.setattr(runner_main, "flush_traces", flush)
+    monkeypatch.setattr(neosigma_tracing, "flush_traces", flush)
+    monkeypatch.setattr(runner_logging, "flush_cas_ledger", lambda: None)
+    monkeypatch.setattr(runner_logging.logger, "complete", complete)
+    monkeypatch.setattr(runner_logging, "_active_trajectory_count", 2)
+    monkeypatch.setattr(runner_logging.settings, "REDIS_LOGGING", False)
     result = await runner_main.run_and_persist(
-        trajectory_id="fixture", run=run, persist=persist, teardown=teardown
+        trajectory_id="fixture",
+        run=run,
+        persist=persist,
+        teardown=runner_logging.teardown_logger,
     )
     assert result is outcome
-    assert events == ["persist", "flush", "teardown"]
+    assert events == ["persist", "flush", "complete"]
+    assert runner_logging._active_trajectory_count == 1
+
+
+@pytest.mark.asyncio
+async def test_direct_worker_teardown_flushes_before_last_trajectory(monkeypatch):
+    calls = []
+
+    async def complete():
+        calls.append("complete")
+
+    async def flush():
+        calls.append("flush")
+
+    monkeypatch.setattr(neosigma_tracing, "flush_traces", flush)
+    monkeypatch.setattr(runner_logging, "flush_cas_ledger", lambda: None)
+    monkeypatch.setattr(runner_logging.logger, "complete", complete)
+    monkeypatch.setattr(runner_logging, "_active_trajectory_count", 2)
+    monkeypatch.setattr(runner_logging.settings, "REDIS_LOGGING", False)
+
+    await runner_logging.teardown_logger()
+
+    assert calls == ["flush", "complete"]
+    assert runner_logging._active_trajectory_count == 1
