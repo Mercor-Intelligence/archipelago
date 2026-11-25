@@ -2,9 +2,10 @@ import asyncio
 import hashlib
 import json
 import tarfile
-from collections import Counter
 from contextlib import ExitStack
 from io import BytesIO
+from pathlib import Path
+from types import SimpleNamespace
 
 import httpx
 import pytest
@@ -37,128 +38,104 @@ def install_mock_transport(monkeypatch, respond):
 
 
 @pytest.mark.asyncio
-@pytest.mark.parametrize("failed_part", [None, 3, "timeout"])
+@pytest.mark.parametrize("failed_part", [None, 3, "timeout", "manifest"])
 async def test_large_artifact_confirmed_before_publication(monkeypatch, failed_part):
-    monkeypatch.setenv("NEOSIGMA_API_KEY", "fixture")
-    monkeypatch.setenv("NEOSIGMA_PROJECT", "fixture")
     monkeypatch.setattr(neosigma_artifacts, "_PART_BYTES", 4)
-    monkeypatch.setattr(neosigma_artifacts, "_BACKOFF_SECONDS", 0)
-    reservations = {}
     stored = {}
-    completed = []
-    deleted = []
-    attempts = Counter()
+    queued = []
+    active = set()
+    completed_parts = 0
 
-    async def respond(request):
-        if request.url.host == "storage.example":
-            assert "Authorization" not in request.headers
-            file_id = request.url.path.rsplit("/", 1)[1]
-            assert len(request.content) == reservations[file_id]["size_bytes"]
-            attempts["PUT", file_id] += 1
-            if (
-                reservations[file_id]["filename"].endswith("part-00001")
-                and attempts["PUT", file_id] == 2
-            ):
-                return httpx.Response(412)
-            stored[file_id] = request.content
-            if (
-                reservations[file_id]["filename"].endswith("part-00001")
-                and attempts["PUT", file_id] == 1
-            ):
-                raise httpx.ReadError("response lost", request=request)
-            return httpx.Response(200)
-
-        assert request.headers["Authorization"] == "Bearer fixture"
-        if request.url.path == "/projects.get":
-            assert request.url.params["project_id"] == "fixture"
-            return httpx.Response(200, json={"project": {"workspace_id": "w"}})
-
-        payload = json.loads(request.content)
-        file_id = payload["file_id"]
-        attempts[request.url.path, file_id] += 1
-        if request.url.path == "/files.create":
-            if payload["filename"].endswith("manifest.json"):
-                assert len(completed) == 128
-            reservations[file_id] = payload
-            if (
-                payload["filename"].endswith("part-00001")
-                and attempts[request.url.path, file_id] == 1
-            ):
-                return httpx.Response(503)
-            return httpx.Response(
-                200,
-                json={
-                    "file": {"id": file_id, "status": "pending"},
-                    "upload_url": f"https://storage.example/{file_id}",
-                    "upload_headers": {},
-                },
-            )
-        if request.url.path == "/files.delete":
-            deleted.append(file_id)
-            stored.pop(file_id, None)
-            return httpx.Response(200)
-        assert request.url.path == "/files.complete"
-        assert file_id in stored
-        filename = reservations[file_id]["filename"]
-        if failed_part is not None and filename.endswith("part-00003"):
-            if failed_part == "timeout":
-                await asyncio.Event().wait()
-            return httpx.Response(503)
-        if filename.endswith("part-00001") and attempts[request.url.path, file_id] == 1:
-            return httpx.Response(429)
-        completed.append(file_id)
-        return httpx.Response(200, json={"file": {"id": file_id, "status": "complete"}})
-
-    install_mock_transport(monkeypatch, respond)
-    content = bytes(range(256)) * 2
-    if failed_part:
-        if failed_part == "timeout":
-            with pytest.raises(TimeoutError):
-                async with asyncio.timeout(0.25):
-                    await neosigma_artifacts.publish_artifact(
-                        BytesIO(content), "world.tar.gz", "application/gzip"
-                    )
+    def upload_artifact(source, *, name, content_type, attach):
+        assert attach is False
+        queued.append(name)
+        location = f"fixture:{name}"
+        if name.endswith(".manifest.json"):
+            assert completed_parts == 128
+            assert content_type == "application/json"
         else:
-            with pytest.raises(
-                neosigma_artifacts.SnapshotUploadError, match="part 3 of 128"
-            ):
-                await neosigma_artifacts.publish_artifact(
-                    BytesIO(content), "world.tar.gz", "application/gzip"
-                )
-        assert len(completed) == 3
-        assert set(deleted) == reservations.keys()
-        assert not stored
-        failed = next(
-            key
-            for key, value in reservations.items()
-            if value["filename"].endswith("part-00003")
-        )
-        assert attempts["/files.complete", failed] == (
-            1 if failed_part == "timeout" else 3
-        )
+            assert isinstance(source, Path) and source.is_file()
+            assert content_type == "application/octet-stream"
+
+        async def wait():
+            nonlocal completed_parts
+            active.add(name)
+            assert len(active) <= 4
+            try:
+                await asyncio.sleep(0)
+                if name.endswith("part-00003"):
+                    if failed_part == "timeout":
+                        await asyncio.Event().wait()
+                    if failed_part == 3:
+                        raise RuntimeError("SDK upload could not be confirmed")
+                if name.endswith(".manifest.json"):
+                    if failed_part == "manifest":
+                        raise RuntimeError("SDK manifest could not be confirmed")
+                    stored[location] = source
+                else:
+                    stored[location] = source.read_bytes()
+                    completed_parts += 1
+            finally:
+                active.remove(name)
+
+        return SimpleNamespace(location=location, wait=wait)
+
+    sdk = SimpleNamespace(upload_artifact=upload_artifact)
+    content = bytes(range(256)) * 2
+    publication = neosigma_artifacts.publish_artifact(
+        sdk, BytesIO(content), "world.tar.gz", "application/gzip"
+    )
+    if failed_part == "timeout":
+        with pytest.raises(TimeoutError):
+            async with asyncio.timeout(0.25):
+                await publication
+    elif failed_part == 3:
+        with pytest.raises(
+            neosigma_artifacts.SnapshotUploadError, match="part 3 of 128"
+        ):
+            await publication
+    elif failed_part == "manifest":
+        with pytest.raises(
+            neosigma_artifacts.SnapshotUploadError, match="manifest was not confirmed"
+        ):
+            await publication
+        assert completed_parts == 128
+    else:
+        location, name = await publication
+        assert name == "world.tar.gz.manifest.json"
+        assert len(queued) == 129
+        manifest = json.loads(stored[location])
+        rebuilt = bytearray()
+        for part in manifest["parts"]:
+            data = stored[part["location"]]
+            assert len(data) == part["size_bytes"]
+            assert hashlib.sha256(data).hexdigest() == part["sha256"]
+            rebuilt.extend(data)
+        assert rebuilt == content
         return
 
-    location, name = await neosigma_artifacts.publish_artifact(
-        BytesIO(content), "world.tar.gz", "application/gzip"
-    )
-    assert name == "world.tar.gz.manifest.json"
-    assert len(completed) == 129
-    first = next(
-        key
-        for key, value in reservations.items()
-        if value["filename"].endswith("part-00001")
-    )
-    assert [
-        attempts[phase, first] for phase in ("/files.create", "PUT", "/files.complete")
-    ] == [2, 2, 2]
-    manifest = json.loads(stored[location.rsplit("/", 1)[1]])
-    rebuilt = bytearray()
-    for part in manifest["parts"]:
-        data = stored[part["location"].rsplit("/", 1)[1]]
-        assert len(data) == part["size_bytes"]
-        assert hashlib.sha256(data).hexdigest() == part["sha256"]
-        rebuilt.extend(data)
-    assert rebuilt == content
+    assert "fixture:world.tar.gz.manifest.json" not in stored
+    if failed_part in (3, "timeout"):
+        assert len(queued) == 4
+
+
+@pytest.mark.asyncio
+async def test_small_artifact_uploads_as_one_file():
+    def upload_artifact(source, *, name, content_type, attach):
+        assert name == "initial-messages.json"
+        assert content_type == "application/json"
+        assert attach is False
+        assert source.read_bytes() == b"[]"
+
+        async def wait():
+            assert source.is_file()
+
+        return SimpleNamespace(location="fixture:transcript", wait=wait)
+
+    sdk = SimpleNamespace(upload_artifact=upload_artifact)
+    assert await neosigma_artifacts.publish_artifact(
+        sdk, BytesIO(b"[]"), "initial-messages.json", "application/json"
+    ) == ("fixture:transcript", "initial-messages.json")
 
 
 @pytest.mark.asyncio
@@ -201,10 +178,41 @@ async def run_fixture(monkeypatch, agent):
 
 
 @pytest.mark.asyncio
+async def test_sdk_without_upload_receipts_preserves_traces(monkeypatch, request):
+    monkeypatch.setenv("NEOSIGMA_API_KEY", "fixture")
+    monkeypatch.delattr(neosigma, "PendingArtifact", raising=False)
+    exporter = InMemorySpanExporter()
+    provider = TracerProvider()
+    provider.add_span_processor(SimpleSpanProcessor(exporter))
+    neosigma.init(api_key="", project="fixture", tracer_provider=provider)
+    request.addfinalizer(neosigma.shutdown)
+    monkeypatch.setattr(neosigma_tracing, "_init", lambda: neosigma)
+
+    async def unexpected_read(*args):
+        pytest.fail("SDK without receipts should not start capture")
+
+    monkeypatch.setattr(neosigma_tracing, "read_workspace", unexpected_read)
+
+    async def agent(_input):
+        return AgentTrajectoryOutput(
+            messages=[], status=AgentStatus.COMPLETED, time_elapsed=0
+        )
+
+    result = await run_fixture(monkeypatch, agent)
+    assert result.status == AgentStatus.COMPLETED
+    (root,) = exporter.get_finished_spans()
+    assert root.attributes["archipelago.artifacts.disabled.error"] == (
+        "Confirmed uploads require NeoSigma SDK 0.19.0+"
+    )
+
+
+@pytest.mark.asyncio
 @pytest.mark.parametrize("stall", [None, "upload", "download"])
 async def test_trace_only_reads_world_at_run_boundaries(monkeypatch, request, stall):
     monkeypatch.setenv("NEOSIGMA_API_KEY", "fixture")
     monkeypatch.setenv("NEOSIGMA_CAPTURE_TIMEOUT_SECONDS", "0.25")
+    if not hasattr(neosigma, "PendingArtifact"):
+        monkeypatch.setattr(neosigma, "PendingArtifact", object(), raising=False)
     exporter = InMemorySpanExporter()
     provider = TracerProvider()
     provider.add_span_processor(SimpleSpanProcessor(exporter))
@@ -232,7 +240,8 @@ async def test_trace_only_reads_world_at_run_boundaries(monkeypatch, request, st
         await asyncio.sleep(0.025)
         return BytesIO(b"tar")
 
-    async def publish(content, name, media_type):
+    async def publish(sdk, content, name, media_type):
+        assert sdk is neosigma
         events.append(("published", name, media_type, content.read()))
         if name == "final-workspace.tar.gz":
             if stall == "upload":
