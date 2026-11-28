@@ -1,0 +1,56 @@
+# Base build spec - merged with application's mcp-build-spec.yaml
+# Categories and tool_overrides defined here are available to all applications
+# that use database tools from mcp_middleware.db_tools
+
+version: "1.0"
+
+# Common categories that all MCP servers with database tools inherit
+categories:
+  - name: "Database"
+    description: "Database management and data import/export"
+    servers: []  # Will be populated from application spec
+
+# Tool overrides - supports glob patterns (e.g., "*import_csv" matches "greenhouse.import_csv")
+tool_overrides:
+  # Database tools from create_database_tools() - hidden from sidebar, shown via Database dropdown
+  - tool: "*import_csv"
+    category: "Database"
+    display_name: "Import CSV"
+    hidden: true
+
+  - tool: "*export_csv"
+    category: "Database"
+    display_name: "Export CSV"
+    hidden: true
+
+  - tool: "*list_tables"
+    category: "Database"
+    display_name: "List Tables"
+    hidden: true
+
+  - tool: "*clear_database"
+    category: "Database"
+    display_name: "Clear Database"
+    hidden: true
+
+  # Server info - hidden from sidebar, used internally for auth status
+  - tool: "*server_info"
+    category: "Admin"
+    hidden: true
+
+  # Auth tools - hidden from sidebar, shown via dedicated UI
+  - tool: "*login_tool"
+    hidden: true
+
+  - tool: "*list_users"
+    hidden: true
+
+  # Filesystem tools - hidden from sidebar, available via FileBrowser component
+  - tool: "*list_fs_roots"
+    hidden: true
+
+  - tool: "*list_folder"
+    hidden: true
+
+  - tool: "*download_file"
+    hidden: true
